@@ -198,11 +198,11 @@ void LFT::Initialisation()
 
 	Information.ReadChamberSize();
 	Information.RefreshValuesProgress = Information.RefreshValuesProgress + 1;
-
-	Settings.ReadBeepWhenReadySetting();
+	
+	Auto.SetChamberBeepReady(Settings.ReadBeepWhenReadySetting());
 	Information.RefreshValuesProgress = Information.RefreshValuesProgress + 1;
-
-	Settings.ReadLanguage();
+	
+	Texts::setLanguage(Settings.ReadLanguage());
 	Information.RefreshValuesProgress = Information.RefreshValuesProgress + 1;
 
 	Information.ReadRunCounter();

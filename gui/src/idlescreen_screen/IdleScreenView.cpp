@@ -92,9 +92,8 @@ void IdleScreenView::handleTickEvent()
 		//Allow pulse now		
 		allowPulse = true;
 
-		//Since initialisation is finished, use the settings we just loaded to setup the software
-		Texts::setLanguage(LFT::Settings.GetLanguage());
-		LFT::Auto.SetChamberBeepReady(LFT::Settings.GetBeepWhenReadySetting());
+		//Since initialisation is finished, use the settings we just loaded to setup the software		
+		
 
 		initialisingBar.setVisible(false);
 		initialisingBar.invalidate();
