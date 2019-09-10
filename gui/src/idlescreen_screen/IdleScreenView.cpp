@@ -356,12 +356,12 @@ void IdleScreenView::UpdateClock()
 	txtClock.invalidate();
 
 
-	String month = Utils::GetMonthString(current.GetMonth());
-	Unicode::UnicodeChar monthString[5];
-	Unicode::fromUTF8((const uint8_t*)month.c_str(), monthString, 5);
+	const uint16_t* month = Utils::GetMonthString(current.GetMonth(), true);
+	Unicode::snprintf(txtDateBuffer, TXTDATE_SIZE, "%02d %s %04d",
+		current.GetDay(),
+		month,
+		current.GetYear());
 
-
-	Unicode::snprintf(txtDateBuffer, TXTDATE_SIZE, "%02d %s %04d", current.GetDay(), monthString, current.GetYear());
 	txtDate.invalidate();
 }
 

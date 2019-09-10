@@ -126,9 +126,17 @@ public:
 
 	static String GetMonthString(int month)
 	{
-		//const uint16_t * text = NULL;
-		touchgfx::TypedText text = touchgfx::TypedText();
+		const uint16_t* unicodeFormat;
+		unicodeFormat = GetMonthString(month, true);
+		uint8_t utf8Format[20];
+		touchgfx::Unicode::toUTF8(unicodeFormat, utf8Format, 20);
+		return String((char*)utf8Format);
+	}
 
+
+	static const uint16_t* GetMonthString(int month, bool)
+	{
+		touchgfx::TypedText text = touchgfx::TypedText();
 		switch (month)
 		{
 		case 0:
@@ -167,23 +175,11 @@ public:
 		case 11:
 			text = touchgfx::TypedText(T_DATE_DEC);
 			break;
-		default:			
+		default:
 			break;
-		}		
-		
-		if (text.hasValidId())		
-		{
-			const uint16_t * unicodeFormat = text.getText();
-
-
-			uint8_t utf8Format[20];
-			touchgfx::Unicode::toUTF8(unicodeFormat, utf8Format, 20);
-			
-
-			return String((char*)utf8Format);
 		}
 
-		return String();
+		return (const uint16_t*)text.getText();
 	}
 
 	static bool CompareArrays(int* array1, const int* array2, int size)
