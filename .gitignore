@@ -1,1 +1,9 @@
-text
+text/
+build/
+generated/fonts/
+generated/gui_generated/
+generated/images/
+generated/texts/
+*.log
+*.o
+*.ipch
