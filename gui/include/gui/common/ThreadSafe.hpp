@@ -39,24 +39,13 @@ protected:
 
 
 public:	
-<<<<<<< .mine
 	ThreadSafe() 
 	{ 
 #ifdef SIMULATOR
 		_value = { 0 };
-		_xSemaphore = 0;
+		_xSemaphore = { 0 };
 #endif
 	}
-||||||| .r4140
-	ThreadSafe() 
-	{ 
-#ifdef SIMULATOR
-		_xSemaphore = 0;
-#endif
-	}
-=======
-	ThreadSafe() {}
->>>>>>> .r4063
 
 	ThreadSafe(T value)
 	{
