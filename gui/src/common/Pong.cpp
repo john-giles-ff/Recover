@@ -1,5 +1,9 @@
 #include <gui\common\Pong.hpp>
 
+#ifndef M_PI
+#define M_PI 3.14159265359
+#endif
+
 Pong::Pong()
 {
 	setTouchable(true);
@@ -97,7 +101,7 @@ void Pong::SetupGame()
 		
 	//Randomise Puck start direction
 	puckDirection = std::rand() % 90;
-	puckDirection = AddDegrees(puckDirection, -45);
+	puckDirection = (int)AddDegrees(puckDirection, -45);
 
 	//Update the score
 	UpdateScore();
@@ -142,19 +146,19 @@ void Pong::handleTickEvent()
 	
 	//Move puck in specified direction
 	double angleRadians = (M_PI * puckDirection) / 180;
-	puckX += (speed * (float)std::cos(angleRadians));
-	puckY += (speed * (float)std::sin(angleRadians));	
+	puckX += ((double)speed * (double)std::cos(angleRadians));
+	puckY += ((double)speed * (double)std::sin(angleRadians));	
 
 	//If the pucks about to go off the top or bottom
-	if (puckY > (getHeight() - Puck.getHeight()) || puckY < 0)
+	if (puckY > ((double)getHeight() - (double)Puck.getHeight()) || puckY < 0)
 	{
 		if (puckY < 0)
 			puckY = 0;
 		else
-			puckY = getHeight() - Puck.getHeight();		
+			puckY = (double)getHeight() - (double)Puck.getHeight();
 
 		int angleToY = 90 - puckDirection;			
-		puckDirection = AddDegrees(puckDirection, 180 + (angleToY * 2));								
+		puckDirection = (int)AddDegrees(puckDirection, (double)180 + (angleToY * 2.0));
 	}
 
 	//If the puck was missed
@@ -164,7 +168,7 @@ void Pong::handleTickEvent()
 		SetupGame();
 		return;
 	}
-	if (puckX > getWidth() - Puck.getWidth())
+	if (puckX > (double)getWidth() - (double)Puck.getWidth())
 	{		
 		enemyScore++;
 		SetupGame();
@@ -172,17 +176,17 @@ void Pong::handleTickEvent()
 	}
 
 	//If the puck hit the player paddle
-	if (Collides(puckX, puckY, Puck.getWidth(), Puck.getHeight(), Player.getX(), Player.getY(), Player.getWidth(), Player.getHeight()))
+	if (Collides((int)puckX, (int)puckY, (int)Puck.getWidth(), (int)Puck.getHeight(), (int)Player.getX(), (int)Player.getY(), (int)Player.getWidth(), (int)Player.getHeight()))
 	{
 		//Bounce off paddle
 		int angleToX = 180 - puckDirection;
-		puckDirection = AddDegrees(puckDirection, 180 + (angleToX * 2));
-		puckX = getWidth() - padding - Player.getWidth() - Puck.getWidth();		
+		puckDirection = (int)AddDegrees((double)puckDirection, (double)(180 + (angleToX * 2.0)));
+		puckX = (double)getWidth() - (double)padding - (double)Player.getWidth() - (double)Puck.getWidth();
 
 		//Work out extra angle from positioning on paddle
-		float distanceFromCenterOfPaddle = Player.getY() + (Player.getHeight() / 2) - Puck.getY();
+		float distanceFromCenterOfPaddle = (float)(Player.getY() + (Player.getHeight() / 2) - Puck.getY());
 		float percentageToHeight = distanceFromCenterOfPaddle / (Player.getHeight() / 2);
-		puckDirection = AddDegrees(puckDirection, bounceModifier * percentageToHeight);
+		puckDirection = (int)AddDegrees(puckDirection, (double)bounceModifier * (double)percentageToHeight);
 
 		//Restrict Puck Direction
 		if (puckDirection < 105 && puckDirection > 75)
@@ -192,17 +196,17 @@ void Pong::handleTickEvent()
 	}
 
 	//If the puck hit the enemy paddle
-	if (Collides(puckX, puckY, Puck.getWidth(), Puck.getHeight(), Enemy.getX(), Enemy.getY(), Enemy.getWidth(), Enemy.getHeight()))
+	if (Collides((int)puckX, (int)puckY, (int)Puck.getWidth(), (int)Puck.getHeight(), (int)Enemy.getX(), (int)Enemy.getY(), (int)Enemy.getWidth(), (int)Enemy.getHeight()))
 	{
 		//Bounce off paddle
 		int angleToY = 180 - puckDirection;
-		puckDirection = AddDegrees(puckDirection, 180 + (angleToY * 2));
-		puckX = padding + Enemy.getWidth();
+		puckDirection = (int)AddDegrees(puckDirection, 180.0 + (angleToY * 2.0));
+		puckX = (double)padding + (double)Enemy.getWidth();
 
 		//Work out extra angle from positioning on paddle
-		float distanceFromCenterOfPaddle = Enemy.getY() + (Enemy.getHeight() / 2) - Puck.getY();
+		float distanceFromCenterOfPaddle = (float)(Enemy.getY() + (Enemy.getHeight() / 2) - Puck.getY());
 		float percentageToHeight = distanceFromCenterOfPaddle / (Enemy.getHeight() / 2);
-		puckDirection = AddDegrees(puckDirection, bounceModifier * percentageToHeight);
+		puckDirection = (int)AddDegrees(puckDirection, (double)bounceModifier * (double)percentageToHeight);
 
 		//Restrict Puck Direction
 		if (puckDirection < 105 && puckDirection > 75)
@@ -213,8 +217,8 @@ void Pong::handleTickEvent()
 	}
 
 	//Update Puck Location
-	Puck.setX(puckX);
-	Puck.setY(puckY);
+	Puck.setX((int16_t)puckX);
+	Puck.setY((int16_t)puckY);
 	
 
 	//Workout Enemy Location

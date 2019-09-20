@@ -31,7 +31,9 @@ public:
 		PatternSubmittedCallback(this, &IdleScreenView::PatternEntered),
 		UnlockClickedCallback(this, &IdleScreenView::UnlockClicked),
 		UnlockSwipedCallback(this, &IdleScreenView::UnlockSwiped)
-	{}	
+	{
+		allowPulse = false;		
+	}	
 
     virtual ~IdleScreenView() {}
     virtual void setupScreen();

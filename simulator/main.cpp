@@ -3,6 +3,7 @@
 #include <common/TouchGFXInit.hpp>
 #include <gui_generated/common/SimConstants.hpp>
 #include <platform/driver/touch/SDL2TouchController.hpp>
+#define _MATH_DEFINES_DEFINED
 #if !defined(USE_BPP) || USE_BPP==16
 #include <platform/driver/lcd/LCD16bpp.hpp>
 #elif USE_BPP==24
@@ -16,7 +17,7 @@
 #else
 #error Unknown USE_BPP
 #endif
-#include <stdlib.h>
+//#include <stdlib.h>
 
 //#include <touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp>
 //#define CANVAS_BUFFER_SIZE (92000)

@@ -117,12 +117,12 @@ void ProgressBar::handleTickEvent()
 			accelerationFactor = 3.0f;
 
 
-		width = Foreground.getWidth() + 3 + (accelerationFactor * 5);
+		width = (int)(Foreground.getWidth() + 3 + (accelerationFactor * 5));
 		//width = Foreground.getWidth() + 1 + (float)(pow(((float)distanceToTarget / 100), M_PI));
 	}
 	else
 	{		
-		width = Foreground.getWidth() + (float)(Background.getWidth() / 100);		
+		width = (int)(Foreground.getWidth() + (float)(Background.getWidth() / 100));
 	}
 
 	if (width > _targetWidth)
@@ -138,11 +138,11 @@ void ProgressBar::updateProgress()
 	if (_maximum == 0)
 		return;
 
-	int valueWidth = getWidth() * ((float)_value / _maximum);
+	int valueWidth = (int)(getWidth() * ((float)_value / _maximum));
 
 	
 
-	int percentage = (((float)_value / (float)_maximum) * 100);	
+	int percentage = (int)(((float)_value / (float)_maximum) * 100);	
 	Unicode::snprintf(ProgressTextBuffer, PROGRESSTEXTBUFFER_SIZE, "%d%", percentage);
 	ProgressText.invalidate();
 

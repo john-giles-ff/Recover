@@ -3,6 +3,7 @@
 LFT_Logs::LFT_Logs(LFT_Information * information)
 {
 	_information = information;
+	_model = { 0 };
 
 	GetSamplesRequired.SetSemaphore(_information->xSemaphore);
 	GetLogsRequired.SetSemaphore(_information->xSemaphore);
@@ -229,7 +230,7 @@ RecoverLog* LFT_Logs::GetSampleQueLogs()
 int RecoverLog::BaseHeaterDeviation()
 {
 	float percentage = ((float)FinalBaseHeaterTemperature / BaseHeaterSetpoint) * 100;
-	return percentage - 100;
+	return (int)(percentage - 100);
 }
 
 bool RecoverLog::BaseHeaterDeviationAcceptable()
@@ -242,7 +243,7 @@ bool RecoverLog::BaseHeaterDeviationAcceptable()
 int RecoverLog::PrecursorHeaterDeviation()
 {
 	float percentage = ((float)FullPrecursorHeaterTemperature / PrecursorHeaterSetpoint) * 100;
-	return percentage - 100.0f;
+	return (int)(percentage - 100.0f);
 }
 
 bool RecoverLog::PrecursorDeviationAcceptable()
@@ -254,7 +255,7 @@ bool RecoverLog::PrecursorDeviationAcceptable()
 int RecoverLog::PressureDeviation()
 {
 	float percentage = ((float)FinalPressureMeasurement / VacuumSetpoint) * 100;
-	return percentage - 100.0f;
+	return (int)(percentage - 100.0f);
 }
 
 bool RecoverLog::PressureDeviationAcceptable()

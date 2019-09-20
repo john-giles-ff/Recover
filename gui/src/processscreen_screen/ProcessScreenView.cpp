@@ -293,7 +293,7 @@ void ProcessScreenView::pulseStageText()
 		stageTextCounter = 0;
 
 
-	TxtStageInformation.setAlpha(level);
+	TxtStageInformation.setAlpha((uint8_t)level);
 	TxtStageInformation.invalidate();
 }
 
@@ -388,7 +388,7 @@ void ProcessScreenView::checkLFTValues()
 	}
 
 	//Check Delta Level in pumpdown (only works below 15Torr)
-	int pressure = LFT::Information.Pressure;
+	int pressure = (int)LFT::Information.Pressure;
 	if (LFT::Information.Delta >= 0 && LFT::Information.Delta < LFT::Information.DELTA_MIN)
 	{
 		if (stage == LFT_STAGE_CHAMBER_CONDITIONING && pressure < 15.0f)
@@ -865,7 +865,7 @@ void ProcessScreenView::DemoProcess()
 			else if (demoCounter < 120)
 			{ 
 				float percentage = (float)(demoCounter - 60) / 60.0f;
-				tapImage.setAlpha(percentage * 255);
+				tapImage.setAlpha((uint8_t)(percentage * 255));
 				tapImage.invalidate();
 			}
 			else if (demoCounter > 200)
@@ -892,7 +892,7 @@ void ProcessScreenView::DemoProcess()
 			else if (demoCounter < 120)
 			{
 				float percentage = (float)(demoCounter - 60) / 60.0f;
-				tapImage.setAlpha(percentage * 255);
+				tapImage.setAlpha((uint8_t)(percentage * 255));
 				tapImage.invalidate();
 			}
 			else if (demoCounter > 200)
@@ -927,7 +927,7 @@ void ProcessScreenView::DemoProcess()
 			{
 				float percentage = (float)(demoCounter - 60) / 60.0f;
 				//touchgfx_printf("percentage = %f\n", percentage);
-				pointerImage.setAlpha(percentage * 255);
+				pointerImage.setAlpha((uint8_t)(percentage * 255));
 				pointerImage.invalidate();
 			}
 			//Make sure finger is on max, disable lever animation
@@ -945,8 +945,8 @@ void ProcessScreenView::DemoProcess()
 				int maximumY = lvrLidControl.getY() + lvrLidControl.getHeight() - (pointerImage.getHeight() / 2) - 25;
 				int distance = maximumY - minimumY;
 				float percentage = (float)(demoCounter - 120) / 60;
-				pointerImage.setY(minimumY + (percentage * distance));
-				lvrLidControl.SetYPos((lvrLidControl.getHeight() / 2) + (percentage * distance) - 25);
+				pointerImage.setY((uint16_t)(minimumY + (percentage * distance)));
+				lvrLidControl.SetYPos((int)((lvrLidControl.getHeight() / 2) + (percentage * distance) - 25));
 				pointerImage.invalidate();
 
 				checkDemoLidState(false);
@@ -962,8 +962,8 @@ void ProcessScreenView::DemoProcess()
 				int maximumY = lvrLidControl.getY() + lvrLidControl.getHeight() - (pointerImage.getHeight() / 2) - 25;
 				int distance = maximumY - minimumY;
 				float percentage = (float)(demoCounter - 480) / 60;
-				pointerImage.setY(maximumY - (percentage * distance));
-				lvrLidControl.SetYPos(lvrLidControl.getHeight() - (percentage * distance) - 50);
+				pointerImage.setY((int16_t)(maximumY - (percentage * distance)));
+				lvrLidControl.SetYPos((int)(lvrLidControl.getHeight() - (percentage * distance) - 50));
 				pointerImage.invalidate();
 			}
 			//Allow Animation again
@@ -976,14 +976,14 @@ void ProcessScreenView::DemoProcess()
 			{
 				float percentage = (float)(demoCounter - 540) / 60.0f;
 				//touchgfx_printf("percentage = %f\n", percentage);
-				pointerImage.setAlpha(255 - (percentage * 255));
+				pointerImage.setAlpha((uint8_t)(255 - (percentage * 255)));
 				pointerImage.invalidate();
 			}
 			//Fade Tap Finger in
 			else if (demoCounter < 660)
 			{
 				float percentage = (float)(demoCounter - 600) / 60.0f;
-				tapImage.setAlpha(percentage * 255);
+				tapImage.setAlpha((uint8_t)(percentage * 255));
 				tapImage.invalidate();
 			}
 			//Move to next
@@ -1019,7 +1019,7 @@ void ProcessScreenView::DemoProcess()
 		{
 			float percentage = (float)(demoCounter - 120) / 60.0f;
 			//touchgfx_printf("percentage = %f\n", percentage);
-			tapImage.setAlpha(percentage * 255);
+			tapImage.setAlpha((uint8_t)(percentage * 255));
 			tapImage.invalidate();
 		}		
 		//Goto next stage
@@ -1049,7 +1049,7 @@ void ProcessScreenView::DemoProcess()
 		else if (demoCounter < 240)
 		{
 			float percentage = (float)(demoCounter - 180) / 60.0f;			
-			tapImage.setAlpha(percentage * 255);
+			tapImage.setAlpha((uint8_t)(percentage * 255));
 			tapImage.invalidate();
 			
 		}		
@@ -1074,7 +1074,7 @@ void ProcessScreenView::DemoProcess()
 		else if (demoCounter < 420)
 		{
 			float percentage = (float)(demoCounter - 360) / 60.0f;
-			tapImage.setAlpha(percentage * 255);
+			tapImage.setAlpha((uint8_t)(percentage * 255));
 			tapImage.invalidate();
 			
 		}

@@ -43,7 +43,9 @@ public:
      *        where the polygon should be rendered.
      */
     Renderer()
-    {
+    {		
+		painter = { 0 };
+		renderingBuffer = { 0 };
     }
 
     /**

@@ -21,9 +21,12 @@ class LFT_Information
 
 public:	
 	LFT_Information() {
+		_model = { 0 };		
 #ifndef SIMULATOR
 		/* Create a mutex type semaphore. */
 		xSemaphore = xSemaphoreCreateMutex();		
+#else
+		xSemaphore = { 0 };
 #endif	
 
 		Build.SetSemaphore(xSemaphore);

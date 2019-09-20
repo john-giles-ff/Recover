@@ -20,5 +20,5 @@ void MainScreenPresenter::deactivate()
 
 void MainScreenPresenter::ChangeBacklight(int value)
 {
-	model->SetBacklight(value);
+	model->SetBacklight((float)value);
 }

@@ -28,7 +28,15 @@ public:
 	short Status;
 	bool Exists;
 
-	Sample() { Exists = false; }
+	Sample() { 
+		Exists = false; 
+		Mode = SAMPLE_INITIALISE;
+		BaseTemperature = 0;
+		PrecursorTemperature = 0;
+		Pressure = 0;
+		SampleNumber = 0;
+		Status = 0;			
+	}
 	Sample(String input) {
 		Exists = true;
 		int pos = 0;
@@ -277,7 +285,36 @@ public:
 		do { next++; } while (input[next] != '\t' && input[next] != '\n' && next < (int)input.len());
 		MetalType = input.substr(pos, next - pos).toBool();		
 	}
-	RecoverLog() { Exists = false; };
+	RecoverLog() 
+	{ 
+		Exists = false; 
+		BaseHeaterSetpoint = 0;
+		ChamberSize = 0;
+		FilterCount = 0;
+		FinalBaseHeaterTemperature = 0;
+		FinalPrecursorHeaterTemperature = 0;
+		FinalPressureMeasurement = 0;
+		FullPrecursorHeaterTemperature = 0;
+		HeatRunTime = 0;
+		Index = 0;
+		LeakTest1Result = 0;
+		LeakTest2Result = 0;
+		LowVacSetting = 0;
+		MaximumLeakSetting = 0;
+		MetalType = 0;
+		NumberOfSamples = 0;
+		PrecursorHeaterSetpoint = 0;
+		PressurePSW2Operates = 0;
+		PumpDownRunTime = 0;
+		SampleRateDevelop = 0;
+		SampleRatePumpdown = 0;
+		TimeForPSW2ToOperate = 0;
+		TimeToReachVacuumSetpoint = 0;
+		TotalRunCount = 0;
+		VacuumSetpoint = 0;
+		firmwareBuild = 0;		
+
+	};
 
 	void GetData(uint16_t* buffer, int *length);	
 

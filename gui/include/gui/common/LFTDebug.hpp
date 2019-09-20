@@ -70,7 +70,7 @@ private:
 	touchgfx::Unicode::UnicodeChar TxtExternalSwitchBuffer[GENERIC_BUFFER_SIZE];
 	touchgfx::Unicode::UnicodeChar TxtStatusBuffer[GENERIC_BUFFER_SIZE];
 	touchgfx::Unicode::UnicodeChar TxtProgressBuffer[GENERIC_BUFFER_SIZE];
-	touchgfx::Unicode::UnicodeChar TxtAttemptsBuffer[GENERIC_BUFFER_SIZE];	
+	//touchgfx::Unicode::UnicodeChar TxtAttemptsBuffer[GENERIC_BUFFER_SIZE];	
 	touchgfx::Unicode::UnicodeChar TxtTimerBuffer[GENERIC_BUFFER_SIZE];
 	touchgfx::Unicode::UnicodeChar TxtValvesBuffer[GENERIC_BUFFER_SIZE];	
 };

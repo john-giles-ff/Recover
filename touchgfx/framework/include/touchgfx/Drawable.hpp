@@ -64,6 +64,8 @@ public:
         touchable(false),
         visible(true)
     {
+		cachedAbsX = { 0 };
+		cachedAbsY = { 0 };
     }
 
     /**

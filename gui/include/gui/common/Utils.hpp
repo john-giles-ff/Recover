@@ -24,7 +24,13 @@ struct ErrorMessage
 	//NULL Quanitifier
 	bool exists;
 
-	ErrorMessage() { exists = false; }
+	ErrorMessage() { 
+		ErrorID = 0;
+		ErrorText = T_ERROR_GENERIC;
+		isActionable = false;
+		isIgnored = true;		
+		exists = false; 
+	}
 	ErrorMessage(int errorID)
 	{
 		ErrorID = errorID;
@@ -32,6 +38,7 @@ struct ErrorMessage
 		exists = true;
 		isActionable = false;
 		isIgnored = false;
+		ErrorText = T_ERROR_GENERIC;
 
 		switch (errorID)
 		{

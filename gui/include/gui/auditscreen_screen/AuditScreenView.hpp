@@ -13,6 +13,7 @@ class AuditScreenView : public AuditScreenViewBase
 {
 public:
 	AuditScreenView() :
+		_logToDeleteIndex(-1),		
 		LogResizedCallback(this, &AuditScreenView::AuditLogResized),
 		LogDeleteClickedCallback(this, &AuditScreenView::AuditLogDeleteClicked),
 		DeleteLogMsgBoxReturnedCallback(this, &AuditScreenView::DeleteLogMsgBoxReturned),

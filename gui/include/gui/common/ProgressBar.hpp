@@ -10,8 +10,7 @@
 #include <texts/TextKeysAndLanguages.hpp>
 #include <ctgmath>
 
-#define _USE_MATH_DEFINES
-#include <math.h>
+#include <cmath>
 
 using namespace touchgfx;
 

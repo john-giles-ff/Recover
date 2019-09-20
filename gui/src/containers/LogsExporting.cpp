@@ -18,7 +18,7 @@ void LogsExporting::handleTickEvent()
 
 
 	int degree = spinnerCounter * 8;
-	int size = value * 60.0f;	
+	int size = (int)(value * 60.0f);
 	
 	Spinner.setStartEndAngle(degree, degree + 10 + size);	
 	Spinner.invalidate();	

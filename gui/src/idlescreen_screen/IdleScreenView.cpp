@@ -134,7 +134,7 @@ void IdleScreenView::handleTickEvent()
 		if (!faded)
 		{
 			//Fade to 0!		
-			value = EquationFadeOut(pulseCounter, 15.0f);
+			value = EquationFadeOut((float)pulseCounter, 15.0f);
 
 			//If faded
 			if (pulseCounter >= 47)
@@ -144,7 +144,7 @@ void IdleScreenView::handleTickEvent()
 		else if (lockType == LOCK_MODE_PULSE)
 		{
 			//Pulse backlight
-			value = EquationPulse(pulseCounter + 229);
+			value = EquationPulse((float)pulseCounter + 229);
 
 			//Reset at 120Pi
 			if (pulseCounter % 376 == 0)
@@ -168,7 +168,7 @@ void IdleScreenView::handleTickEvent()
 			fadeUpCounter++;
 			float value = 100;
 			if (fadeUpCounter < endValue)
-				value = EquationFadeOut(endValue - fadeUpCounter, 15);
+				value = EquationFadeOut((float)(endValue - fadeUpCounter), 15);
 			else if (fadeUpCounter < endValue + 18)
 				value = 100;
 			else
@@ -408,5 +408,5 @@ float IdleScreenView::EquationPulse(float x, float dampening)
 	*/
 
 
-	return 0.0f + pow(15.0f, sin((x + 94.257) / dampening));
+	return (float)(0.0f + pow(15.0f, sin((x + 94.257) / dampening)));
 }

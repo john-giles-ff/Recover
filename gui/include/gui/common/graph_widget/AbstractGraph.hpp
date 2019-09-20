@@ -40,7 +40,11 @@ public:
          *
          *        Default constructor.
          */
-        GraphPoint()
+        GraphPoint() :
+			x(0),
+			y(0),
+			dx(0),
+			dy(0)
         {
         }
 

@@ -39,7 +39,10 @@ public:
      *
      *        Default constructor.
      */
-    JSMOCHelper()
+    JSMOCHelper() :
+		cachedAbsX(0),
+		cachedAbsY(0),
+		widget(0)
     {
     }
 

@@ -94,7 +94,11 @@ String::String(int number)
 		digits++;
 	}
 
+#ifndef SIMULATOR
 	sprintf(data, "%d", number);	
+#else
+	sprintf_s(data, "%d", number);
+#endif
 	length = digits;		
 }
 
@@ -141,7 +145,7 @@ float String::toFloat()
 		if (!isDigit(data[i], true, i == 0))
 			return 0;
 
-	return atof(data);
+	return (float)atof(data);
 }
 
 void String::clear()

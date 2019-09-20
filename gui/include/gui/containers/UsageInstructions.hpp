@@ -39,7 +39,7 @@ private:
 
 	void updatePage();
 
-	int pageCount() { return ceil((float)instructionCount / 2.0f) -1; }
+	int pageCount() { return (int)ceil((float)instructionCount / 2.0f) -1; }
 
 };
 

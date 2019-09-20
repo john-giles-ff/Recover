@@ -40,7 +40,9 @@ public:
     static const uint16_t GMASK = 0x07E0; ///< Mask for green (0000011111100000)
     static const uint16_t BMASK = 0x001F; ///< Mask for blue  (0000000000011111)
 
-    AbstractPainterRGB565()
+    AbstractPainterRGB565():
+		currentX(0),
+		currentY(0)
     {
         assert(HAL::lcd().bitDepth() == 16 && "The chosen painter only works with 16bpp displays");
     }

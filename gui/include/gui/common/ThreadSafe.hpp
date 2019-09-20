@@ -49,6 +49,7 @@ public:
 
 	ThreadSafe(T value)
 	{
+		_xSemaphore = { 0 };
 		_value = value;
 	}	
 

@@ -1,6 +1,7 @@
 #include <gui/common/LFTDebug.hpp>
 
-LFTDebug::LFTDebug()
+LFTDebug::LFTDebug() :
+	hideSensitiveValues(false)
 {
 	TxtBuild.setPosition(0, 0, 240, 28);
 	TxtBuild.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
@@ -149,8 +150,8 @@ void LFTDebug::SetBaseTemperature(int setPoint, int actual)
 {	
 	if (hideSensitiveValues)
 	{
-		setPoint = ((float)setPoint / 35.0f) * 100;
-		actual = ((float)actual / 35.0f) * 100;
+		setPoint = (int)(((float)setPoint / 35.0f) * 100);
+		actual = (int)(((float)actual / 35.0f) * 100);
 	}
 
 
@@ -162,8 +163,8 @@ void LFTDebug::SetPrecursorTemperature(int setPoint, int actual)
 {	
 	if (hideSensitiveValues)
 	{
-		setPoint = ((float)setPoint / 190.0f) * 100;
-		actual = ((float)actual / 190.0f) * 100;
+		setPoint = (int)(((float)setPoint / 190.0f) * 100);
+		actual = (int)(((float)actual / 190.0f) * 100);
 	}
 
 	touchgfx::Unicode::snprintf(TxtPrecursorTemperatureBuffer1, GENERIC_BUFFER_SIZE, "%d", setPoint);

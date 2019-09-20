@@ -50,7 +50,9 @@ public:
      * @param borderSize  Size of the border.
      * @param alpha       (Optional) The alpha.
      */
-    BoxWithBorder(uint16_t width, uint16_t height, colortype color, colortype borderColor, uint8_t borderSize, uint8_t alpha = 255) : Widget(),
+    BoxWithBorder(uint16_t width, uint16_t height, colortype color, colortype borderColor, uint8_t borderSize, uint8_t alpha = 255) : 
+		Widget(),
+		borderSize(0),		
         alpha(alpha), color(color)
     {
         rect.width = width;

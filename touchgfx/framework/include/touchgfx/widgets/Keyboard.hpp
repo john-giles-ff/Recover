@@ -65,9 +65,9 @@ public:
      */
     typedef struct
     {
-        uint8_t  keyId;             ///< The id of a key
+        uint8_t  keyId = 0;             ///< The id of a key
         Rect     keyArea;           ///< The area occupied by the key
-        BitmapId highlightBitmapId; ///< A bitmap to show when the area is "pressed"
+        BitmapId highlightBitmapId = 0; ///< A bitmap to show when the area is "pressed"
     } Key;
 
     /**

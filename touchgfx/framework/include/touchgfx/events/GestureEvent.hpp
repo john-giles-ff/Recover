@@ -136,7 +136,13 @@ public:
     }
 
 private:
-    GestureEvent() { }
+    GestureEvent() 
+	{  
+		type = SWIPE_HORIZONTAL;
+		velocity = 0;
+		x = 0;
+		y = 0;
+	}
     GestureType type;
     int16_t velocity;
     int16_t x;
