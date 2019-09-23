@@ -1336,6 +1336,9 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\touchtestscreen_screen\TouchTestScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\touchtestscreen_screen</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\touchgfx\framework\include\touchgfx\widgets\BoxWithBorder.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\touchgfx.rc">

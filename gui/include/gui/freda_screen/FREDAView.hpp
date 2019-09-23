@@ -18,12 +18,12 @@ class FREDAView : public FREDAViewBase
 {
 public:
 	FREDAView() : 		
-		currentLanguage(GB),
+		enterClickedCallback(this, &FREDAView::enterPressedHandler), 
+		ClockKeypadReturnedCallback(this, &FREDAView::ClockKeypadReturned),
 		onScreenActualValues(0), 
 		onScreenMaxBaseCurrent(0),
 		onScreenMaxPreCurrent(0),
-		enterClickedCallback(this, &FREDAView::enterPressedHandler), 
-		ClockKeypadReturnedCallback(this, &FREDAView::ClockKeypadReturned)
+		currentLanguage(GB)
 	{
 
 	};

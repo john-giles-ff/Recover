@@ -13,11 +13,11 @@ class AuditScreenView : public AuditScreenViewBase
 {
 public:
 	AuditScreenView() :
-		_logToDeleteIndex(-1),		
 		LogResizedCallback(this, &AuditScreenView::AuditLogResized),
 		LogDeleteClickedCallback(this, &AuditScreenView::AuditLogDeleteClicked),
 		DeleteLogMsgBoxReturnedCallback(this, &AuditScreenView::DeleteLogMsgBoxReturned),
-		DeleteAllMsgBoxReturnedCallback(this, &AuditScreenView::DeleteAllMsgBoxReturned)
+		DeleteAllMsgBoxReturnedCallback(this, &AuditScreenView::DeleteAllMsgBoxReturned),
+		_logToDeleteIndex(-1)
 	{} 
     virtual ~AuditScreenView() {}
     virtual void setupScreen();

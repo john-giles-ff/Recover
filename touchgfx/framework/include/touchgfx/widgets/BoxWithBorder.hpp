@@ -52,8 +52,9 @@ public:
      */
     BoxWithBorder(uint16_t width, uint16_t height, colortype color, colortype borderColor, uint8_t borderSize, uint8_t alpha = 255) : 
 		Widget(),
-		borderSize(0),		
-        alpha(alpha), color(color)
+        alpha(alpha), 
+		color(color),
+		borderSize(0)
     {
         rect.width = width;
         rect.height = height;

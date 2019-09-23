@@ -94,10 +94,11 @@ String::String(int number)
 		digits++;
 	}
 
-#ifndef SIMULATOR
-	sprintf(data, "%d", number);	
+	//Visual studio needs this to be sprintf_s, touchgfx needs it to be sprintf
+#ifdef _MSC_VER
+	sprintf_s(data, "%d", number);	
 #else
-	sprintf_s(data, "%d", number);
+	sprintf(data, "%d", number);	
 #endif
 	length = digits;		
 }

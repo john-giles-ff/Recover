@@ -40,9 +40,9 @@ public:
      *        Default constructor.
      */
     JSMOCHelper() :
+		widget(0),
 		cachedAbsX(0),
-		cachedAbsY(0),
-		widget(0)
+		cachedAbsY(0)
     {
     }
 

@@ -68,22 +68,22 @@ public:
 		refreshStrategy(REFRESH_STRATEGY_DEFAULT),
 		fingerSize(1),
 		lockDMAToPorch(true),
+		frameBufferUpdatedThisFrame(0),
+		listener(0),
+		lastX(0),
+		lastY(0),
 		touchSampleRate(1),
 		mcuLoadPct(0),
 		vSyncCnt(0),
 		vSyncForFrame(1),
 		vSyncCompensationEnabled(false),
 		clientDirty(false),
-		swapRequested(false),
+		swapRequested(false),		
 		lastTouched(false),
 		updateMCULoad(0),
 		cc_begin(0),
-		displayOrientationChangeRequested(false),
-		frameBufferUpdatedThisFrame(0),
-		lastX(0),
-		lastY(0),
-		listener(0),
-		requestedOrientation(ORIENTATION_LANDSCAPE)
+		requestedOrientation(ORIENTATION_LANDSCAPE),
+		displayOrientationChangeRequested(false)	
     {
         instance = this;
         DISPLAY_WIDTH = width;
