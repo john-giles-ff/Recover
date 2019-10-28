@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Product xmlns="http://schemas.microsoft.com/developer/2004/01/bootstrapper" ProductCode=".NET Framework 4.6.2">
+  <PackageFiles>
+    <PackageFile Name="Dot Net 4.6.2.exe"/>
+  </PackageFiles>
+  <InstallChecks>
+    <RegistryCheck Property="Property1" Key="HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" Value="Release"/>
+  </InstallChecks>
+  <Commands>
+    <Command PackageFile="Dot Net 4.6.2.exe" Arguments="">
+      <InstallConditions>
+        <BypassIf Property="Property1" Compare="ValueGreaterThan" Value="394253"/>
+        <BypassIf Property="VersionNT" Compare="VersionEqualTo" Value="6.0.6002"/>
+        <BypassIf Property="VersionNT" Compare="VersionEqualTo" Value="6.0.6002"/>
+        <BypassIf Property="VersionNT64" Compare="VersionEqualTo" Value="6.0.6002"/>
+        <BypassIf Property="VersionNT64" Compare="VersionEqualTo" Value="6.0.6002"/>
+        <BypassIf Property="VersionNT64" Compare="VersionEqualTo" Value="6.1.7600"/>
+      </InstallConditions>
+      <ExitCodes>
+        <ExitCode Value="0" Result="Success"/>
+        <DefaultExitCode Result="Fail" FormatMessageFromSystem="true" String="GeneralFailure"/>
+      </ExitCodes>
+    </Command>
+  </Commands>
+</Product>

@@ -1,0 +1,145 @@
+﻿<Window x:Class="FosterAndFreeman.RecoverCompanionApplication.UserInterface.Views.AuditLogPicker"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FosterAndFreeman.RecoverCompanionApplication.UserInterface.Views"
+        xmlns:languages="clr-namespace:FosterAndFreeman.RecoverCompanionApplication.Resources.Languages"
+        mc:Ignorable="d"
+        AllowsTransparency="True"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner"
+        Height="600" Width="400"
+        ResizeMode="NoResize"
+        Loaded="Window_Loaded"
+        WindowStyle="None">
+    <Border Background="Black" BorderBrush="{StaticResource FFGreenBrush}" BorderThickness="2">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="{x:Static languages:Strings.SelectAuditLogstoPrint}"                        
+                       Grid.ColumnSpan="2"
+                       Grid.RowSpan="2"
+                       VerticalAlignment="Top"
+                       Margin="20, 20, 0, 0"
+                       TextAlignment="Left" />
+
+            <Button x:Name="BtnExit"
+                    Click="Exit_Clicked"      
+                    Visibility="Visible"
+                    BorderBrush="Transparent"                    
+                    VerticalAlignment="Top"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="0"
+                    HorizontalAlignment="Right"
+                    Margin="10">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <ContentPresenter />
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+                <Image Source="/RecoverCompanionApplication;component/Resources/Images/X.png" Stretch="Uniform" Height="30" Width="30"/>
+            </Button>
+
+
+            <!-- Logs to choose -->
+            <ScrollViewer HorizontalScrollBarVisibility="Hidden"
+                          Grid.Row="1"                          
+                          Grid.ColumnSpan="2"
+                          VerticalScrollBarVisibility="Auto"
+                          Margin="10">
+                <ItemsControl x:Name="LstLogs" 
+                     Grid.Row="1"
+                     Background="Transparent"
+                     Margin="10"                     
+                     BorderBrush="Transparent">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button Command="{Binding ToggleChecked}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Height="25" Margin="0, 0, 20, 0">
+                                        <Image.Style>
+                                            <Style TargetType="Image">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsChecked}" Value="True">
+                                                        <Setter Property="Source" Value="/RecoverCompanionApplication;component/Resources/Images/Check_checked.png"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding IsChecked}" Value="False">
+                                                        <Setter Property="Source" Value="/RecoverCompanionApplication;component/Resources/Images/Check_unchecked.png"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Image.Style>
+                                    </Image>
+
+                                    <TextBlock Text="{Binding Title}"
+                                               Margin="5"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Left"
+                                               Grid.Column="1"/>
+
+                                </Grid>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+
+
+            <!-- Check All -->
+            <Button Content="{x:Static languages:Strings.CheckAll}"
+                    Margin="-2"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Click="CheckAll_Clicked"/>
+
+            <!-- Uncheck All -->
+            <Button Content="{x:Static languages:Strings.UncheckAll}"
+                    Margin="-2"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Click="UncheckAll_Clicked"/>
+
+            
+            <!-- Toggle Single Mode per log -->
+            <ToggleButton x:Name="TglUseSingleLogPerPage"
+                          Content="{x:Static languages:Strings.SinglePageMode}"
+                          Margin="-2"
+                          Grid.ColumnSpan="2"
+                          Grid.Row="3"              
+                          MinHeight="40"
+                          VerticalAlignment="Center"/>
+
+
+            <!-- Confirm button -->
+            <Button Click="Confirm_Clicked"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="4"
+                    Margin="-2, 16, -2, -2"
+                    Content="{x:Static languages:Strings.Confirm}"
+                    VerticalAlignment="Center"/>
+        </Grid>
+    </Border>
+</Window>    

@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="InputPath" xml:space="preserve">
+    <value>Input:</value>
+  </data>
+  <data name="Firmware" xml:space="preserve">
+    <value>Firmware:</value>
+  </data>
+  <data name="Software" xml:space="preserve">
+    <value>Software:</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Totale:</value>
+  </data>
+  <data name="FinishedProgramming" xml:space="preserve">
+    <value>Programmazione terminata!</value>
+  </data>
+  <data name="Initialising" xml:space="preserve">
+    <value>Inizializzazione</value>
+  </data>
+  <data name="AttemptingConnection" xml:space="preserve">
+    <value>Tentativo di connessione</value>
+  </data>
+  <data name="FailedConnection" xml:space="preserve">
+    <value>Connessione non riuscita:
+{0}</value>
+  </data>
+  <data name="ConnectionSuccesful" xml:space="preserve">
+    <value>Connessione riuscita </value>
+  </data>
+  <data name="UnableToEnumerateDevices" xml:space="preserve">
+    <value>Impossibile enumerare i dispositivi</value>
+  </data>
+  <data name="UnableToFetchDevices" xml:space="preserve">
+    <value>Impossibile recuperare i dispositivi</value>
+  </data>
+  <data name="NoDevicesFound" xml:space="preserve">
+    <value>Nessun dispositivo trovato</value>
+  </data>
+  <data name="UnableToOpenDevice" xml:space="preserve">
+    <value>Impossibile aprire il dispositivo</value>
+  </data>
+  <data name="AuditLogs" xml:space="preserve">
+    <value>Registri di audit</value>
+  </data>
+  <data name="UpdateSoftware" xml:space="preserve">
+    <value>Aggiorna software</value>
+  </data>
+  <data name="FirmwareInititalise" xml:space="preserve">
+    <value>Inizializzazione aggiornamento firmware in corso</value>
+  </data>
+  <data name="FirmwareErasing" xml:space="preserve">
+    <value>Cancellazione della precedente versione del firmware in corso</value>
+  </data>
+  <data name="FirmwareUpdating" xml:space="preserve">
+    <value>Aggiornamento della nuova versione del firmware in corso</value>
+  </data>
+  <data name="FirmwareFinished" xml:space="preserve">
+    <value>Firmware terminato</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Sì</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Annulla</value>
+  </data>
+  <data name="Dismiss" xml:space="preserve">
+    <value>Chiudi</value>
+  </data>
+  <data name="InvalidEraseStartedKey" xml:space="preserve">
+    <value>Tasto di inizio cancellazione non valido</value>
+  </data>
+  <data name="InvalidEraseFinishedKey" xml:space="preserve">
+    <value>Tasto di termine cancellazione non valido</value>
+  </data>
+  <data name="InvalidReadReceipt" xml:space="preserve">
+    <value>Ricevuta di lettura non valida</value>
+  </data>
+  <data name="NoDataToWrite" xml:space="preserve">
+    <value>Non sono stati trovati dati da scrivere nel file</value>
+  </data>
+  <data name="ConfirmProgram" xml:space="preserve">
+    <value>Sei sicuro di voler programmare il dispositivo attualmente connesso?</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>Ora di inizio: </value>
+  </data>
+  <data name="PumpdownMinutes" xml:space="preserve">
+    <value>Tempo di condizionamento(minuti):</value>
+  </data>
+  <data name="HeatMinutes" xml:space="preserve">
+    <value>Tempo di fumigazione(minuti):</value>
+  </data>
+  <data name="BaseHeaterDeviation" xml:space="preserve">
+    <value>Fase 1 Deviazione del riscaldatore:</value>
+  </data>
+  <data name="PrecursorHeaterDeviation" xml:space="preserve">
+    <value>Fase 2 Deviazione del riscaldatore:</value>
+  </data>
+  <data name="PressureDeviation" xml:space="preserve">
+    <value>Deviazione della pressione:</value>
+  </data>
+  <data name="TestSuccess" xml:space="preserve">
+    <value>Riuscita</value>
+  </data>
+  <data name="TestFail" xml:space="preserve">
+    <value>Fallita</value>
+  </data>
+  <data name="LeakTest1Result" xml:space="preserve">
+    <value>Risultato prova di tenuta 1:</value>
+  </data>
+  <data name="LeakTest2Result" xml:space="preserve">
+    <value>Risultato prova di tenuta 2:</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Esportazione</value>
+  </data>
+  <data name="ShowGraphs" xml:space="preserve">
+    <value>Visualizza grafici</value>
+  </data>
+  <data name="Pressure" xml:space="preserve">
+    <value>Pressione</value>
+  </data>
+  <data name="Base" xml:space="preserve">
+    <value>Base</value>
+  </data>
+  <data name="Precursor" xml:space="preserve">
+    <value>Precursore</value>
+  </data>
+  <data name="FetchingLogHeaders" xml:space="preserve">
+    <value>Recupero intestazioni del registro</value>
+  </data>
+  <data name="NoDataSelected" xml:space="preserve">
+    <value>Nessun dato selezionato</value>
+  </data>
+  <data name="NoLogsFound" xml:space="preserve">
+    <value>Nessun registro trovato</value>
+  </data>
+  <data name="UnableToEnterPCMode" xml:space="preserve">
+    <value>Recover non è stato in grado di attivare la modalità PC. Si prega di riprovare più tardi.</value>
+  </data>
+  <data name="Stage" xml:space="preserve">
+    <value>Fase</value>
+  </data>
+  <data name="ChamberConditioning" xml:space="preserve">
+    <value>Condizionamento</value>
+  </data>
+  <data name="ChamberHeat" xml:space="preserve">
+    <value>Riscaldamento</value>
+  </data>
+  <data name="ChamberInitialisation" xml:space="preserve">
+    <value>Inizializzazione</value>
+  </data>
+  <data name="ChamberCooling" xml:space="preserve">
+    <value>Raffreddamento</value>
+  </data>
+  <data name="ChamberBreakSeal" xml:space="preserve">
+    <value>Spurgo</value>
+  </data>
+  <data name="PrecursorTarget" xml:space="preserve">
+    <value>Target del precursore</value>
+  </data>
+  <data name="BaseTarget" xml:space="preserve">
+    <value>Target di base</value>
+  </data>
+  <data name="PressureTarget" xml:space="preserve">
+    <value>Target di pressione</value>
+  </data>
+  <data name="ExportAll" xml:space="preserve">
+    <value>Esporta tutto</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Avanzato</value>
+  </data>
+  <data name="UnableToGenerateReport" xml:space="preserve">
+    <value>Impossibile generare il report.</value>
+  </data>
+  <data name="ReportGenerated" xml:space="preserve">
+    <value>Report generato</value>
+  </data>
+  <data name="ConfirmDeleteLog" xml:space="preserve">
+    <value>Sei sicuro di voler rimuovere questo registro?</value>
+  </data>
+  <data name="SuccesfullyExportedAll" xml:space="preserve">
+    <value>Tutti i registri esportati con successo.</value>
+  </data>
+  <data name="EnterSerial" xml:space="preserve">
+    <value>Immettere il numero di serie del dispositivo:</value>
+  </data>
+  <data name="InvalidSerialNumber" xml:space="preserve">
+    <value>Il numero di serie immesso non è valido. Immettere un numero di serie valido.</value>
+  </data>
+  <data name="FirmwareVersion" xml:space="preserve">
+    <value>Versione firmware:</value>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>Numero di serie:</value>
+  </data>
+  <data name="MetalType" xml:space="preserve">
+    <value>Tipo di metallo:</value>
+  </data>
+  <data name="ChamberType" xml:space="preserve">
+    <value>Tipo di camera:</value>
+  </data>
+  <data name="DevelopRType" xml:space="preserve">
+    <value>Tipo di Develop-R:</value>
+  </data>
+  <data name="LargeChamber" xml:space="preserve">
+    <value>Camera grande</value>
+  </data>
+  <data name="SmallChamber" xml:space="preserve">
+    <value>Camera piccola</value>
+  </data>
+  <data name="CopperBased" xml:space="preserve">
+    <value>A base di rame</value>
+  </data>
+  <data name="SilverColoured" xml:space="preserve">
+    <value>Colorato argento</value>
+  </data>
+  <data name="DevelopR1" xml:space="preserve">
+    <value>DEVELOP-R1</value>
+  </data>
+  <data name="DevelopR2" xml:space="preserve">
+    <value>DEVELOP-R2</value>
+  </data>
+  <data name="DevelopR3" xml:space="preserve">
+    <value>DEVELOP-R3</value>
+  </data>
+  <data name="DevelopR4" xml:space="preserve">
+    <value>DEVELOP-R4</value>
+  </data>
+  <data name="SingleInstanceError" xml:space="preserve">
+    <value>L’applicazione Recover Companion è già aperta. Impossibile aprire più istanze</value>
+  </data>
+  <data name="SelectLanguage" xml:space="preserve">
+    <value>Seleziona la lingua</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confermare</value>
+  </data>
+  <data name="FileMode" xml:space="preserve">
+    <value>Modalità file</value>
+  </data>
+  <data name="USBMode" xml:space="preserve">
+    <value>Modalità USB</value>
+  </data>
+</root>

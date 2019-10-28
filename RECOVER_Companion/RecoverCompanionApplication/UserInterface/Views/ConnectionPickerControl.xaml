@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="FosterAndFreeman.RecoverCompanionApplication.UserInterface.Views.ConnectionPickerControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FosterAndFreeman.RecoverCompanionApplication.UserInterface.Views"
+             xmlns:common="clr-namespace:FosterAndFreeman.RecoverCompanionApplication.UserInterface.Common"
+             xmlns:languages="clr-namespace:FosterAndFreeman.RecoverCompanionApplication.Resources.Languages"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="750">
+    <Grid>
+        <common:Background/>
+        <StackPanel Orientation="Vertical"  VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+
+                <!-- FileMode Button -->
+                <Button x:Name="BtnFileMode" Click="FileMode_Clicked"
+                    Margin="40"                    
+                    BorderThickness="0">
+                    <StackPanel>
+                        <Image Source="/RecoverCompanionApplication;component/Resources/Images/file.png"
+                               Stretch="Uniform"                               
+                               Height="100"
+                               Margin="20">
+                        </Image>
+                        <TextBlock Text="{x:Static languages:Strings.FileMode}" 
+                               TextAlignment="Center"                               
+                               FontFamily="Segoe UI Semilight"                                    
+                               Foreground="{StaticResource FFGreenBrush}"                                
+                               FontSize="24" 
+                               TextWrapping="Wrap">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsEnabled" Value="False">
+                                            <Setter Property="Opacity" Value="0.5"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <!-- Update Software Button -->
+                <Button x:Name="BtnUSBMode" Click="USBMode_Clicked"
+                    Margin="40"
+                    BorderThickness="0">
+                    <StackPanel>
+                        <Image Source="/RecoverCompanionApplication;component/Resources/Images/USB_Icon.png" 
+                               Stretch="Uniform"                                
+                               Height="100"
+                               Margin="20">
+                            <Image.Style>
+                                <Style TargetType="Image">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsEnabled" Value="False">
+                                            <Setter Property="Opacity" Value="0.5" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                        <TextBlock Text="{x:Static languages:Strings.USBMode}"                                   
+                               TextAlignment="Center"
+                               FontFamily="Segoe UI Semilight"                                                                   
+                               Foreground="{StaticResource FFGreenBrush}" 
+                               FontSize="24" 
+                               TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            
+            <Button x:Name="ChangeLanguage"                                        
+                    Padding="25, 10"
+                    HorizontalAlignment="Center"
+                    
+                    Margin="0, 20, 0, 0"
+                    Click="ChangeLanguage_Click"
+                    Content="{x:Static languages:Strings.SelectLanguage}"/>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

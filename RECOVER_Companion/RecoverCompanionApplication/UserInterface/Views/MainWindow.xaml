@@ -1,0 +1,20 @@
+﻿<Window x:Class="FosterAndFreeman.RecoverCompanionApplication.UserInterface.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FosterAndFreeman.RecoverCompanionApplication.UserInterface.Views"
+        xmlns:common="clr-namespace:FosterAndFreeman.RecoverCompanionApplication.UserInterface.Common"
+        mc:Ignorable="d"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        Background="Transparent"
+        WindowStyle="None"
+        Title="Recover:LFT" 
+        Height="700" Width="800" Icon="/RecoverCompanionApplication;component/Resources/Images/icon.ico">
+    <Border CornerRadius="25" Background="Black" x:Name="Border" BorderBrush="{StaticResource FFGreenBrush}" BorderThickness="2" Padding="0, 0, 0, 0">
+        
+    </Border>
+</Window>

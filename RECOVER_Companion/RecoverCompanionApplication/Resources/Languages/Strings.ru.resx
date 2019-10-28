@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="InputPath" xml:space="preserve">
+    <value>Ввод:</value>
+  </data>
+  <data name="Firmware" xml:space="preserve">
+    <value>Микропрограмма:</value>
+  </data>
+  <data name="Software" xml:space="preserve">
+    <value>Программа:</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Всего:</value>
+  </data>
+  <data name="FinishedProgramming" xml:space="preserve">
+    <value>Программирование закончено!</value>
+  </data>
+  <data name="Initialising" xml:space="preserve">
+    <value>Инициализация</value>
+  </data>
+  <data name="AttemptingConnection" xml:space="preserve">
+    <value>Попытка подключения</value>
+  </data>
+  <data name="FailedConnection" xml:space="preserve">
+    <value>Ошибка подключения: 
+{0}</value>
+  </data>
+  <data name="ConnectionSuccesful" xml:space="preserve">
+    <value>Успешно подключено </value>
+  </data>
+  <data name="UnableToEnumerateDevices" xml:space="preserve">
+    <value>Не удалось перечислить устройства</value>
+  </data>
+  <data name="UnableToFetchDevices" xml:space="preserve">
+    <value>Не удалось получить устройства</value>
+  </data>
+  <data name="NoDevicesFound" xml:space="preserve">
+    <value>Устройства не найдены</value>
+  </data>
+  <data name="UnableToOpenDevice" xml:space="preserve">
+    <value>Не удалось открыть устройство</value>
+  </data>
+  <data name="AuditLogs" xml:space="preserve">
+    <value>Журналы аудита</value>
+  </data>
+  <data name="UpdateSoftware" xml:space="preserve">
+    <value>Обновление ПО</value>
+  </data>
+  <data name="FirmwareInititalise" xml:space="preserve">
+    <value>Инициализация обновления микропрограммы</value>
+  </data>
+  <data name="FirmwareErasing" xml:space="preserve">
+    <value>Стирание старой микропрограммы</value>
+  </data>
+  <data name="FirmwareUpdating" xml:space="preserve">
+    <value>Запись новой микропрограммы</value>
+  </data>
+  <data name="FirmwareFinished" xml:space="preserve">
+    <value>Микропрограмма обновлена</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Да</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>Okay</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="Dismiss" xml:space="preserve">
+    <value>Отменить</value>
+  </data>
+  <data name="InvalidEraseStartedKey" xml:space="preserve">
+    <value>Недопустимый ключ начала стирания</value>
+  </data>
+  <data name="InvalidEraseFinishedKey" xml:space="preserve">
+    <value>Недопустимый ключ окончания стирания</value>
+  </data>
+  <data name="InvalidReadReceipt" xml:space="preserve">
+    <value>Недопустимое чтение рецепта</value>
+  </data>
+  <data name="NoDataToWrite" xml:space="preserve">
+    <value>Нет данных для записи в файл</value>
+  </data>
+  <data name="ConfirmProgram" xml:space="preserve">
+    <value>Запрограммировать текущее подключенное устройство?</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>Время начала: </value>
+  </data>
+  <data name="PumpdownMinutes" xml:space="preserve">
+    <value>Продолжительность подготовки (минут):</value>
+  </data>
+  <data name="HeatMinutes" xml:space="preserve">
+    <value>Продолжительность обработки (минут):</value>
+  </data>
+  <data name="BaseHeaterDeviation" xml:space="preserve">
+    <value>Отклонение нагревателя Этап 1:</value>
+  </data>
+  <data name="PrecursorHeaterDeviation" xml:space="preserve">
+    <value>Отклонение нагревателя Этап 2:</value>
+  </data>
+  <data name="PressureDeviation" xml:space="preserve">
+    <value>Отклонение давления:</value>
+  </data>
+  <data name="TestSuccess" xml:space="preserve">
+    <value>Успешно</value>
+  </data>
+  <data name="TestFail" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="LeakTest1Result" xml:space="preserve">
+    <value>Результат теста утечки 1:</value>
+  </data>
+  <data name="LeakTest2Result" xml:space="preserve">
+    <value>Результат теста утечки 2:</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Экспорт</value>
+  </data>
+  <data name="ShowGraphs" xml:space="preserve">
+    <value>Показать диаграммы</value>
+  </data>
+  <data name="Pressure" xml:space="preserve">
+    <value>Давление</value>
+  </data>
+  <data name="Base" xml:space="preserve">
+    <value>Основа</value>
+  </data>
+  <data name="Precursor" xml:space="preserve">
+    <value>Исходный материал</value>
+  </data>
+  <data name="FetchingLogHeaders" xml:space="preserve">
+    <value>Получение заголовков журнала</value>
+  </data>
+  <data name="NoDataSelected" xml:space="preserve">
+    <value>Данные не выбраны</value>
+  </data>
+  <data name="NoLogsFound" xml:space="preserve">
+    <value>Журналы не найдены</value>
+  </data>
+  <data name="UnableToEnterPCMode" xml:space="preserve">
+    <value>Recover не удалось войти в режим ПК. Повторите попытку позже.</value>
+  </data>
+  <data name="Stage" xml:space="preserve">
+    <value>Этап</value>
+  </data>
+  <data name="ChamberConditioning" xml:space="preserve">
+    <value>Подготовка</value>
+  </data>
+  <data name="ChamberHeat" xml:space="preserve">
+    <value>Нагрев</value>
+  </data>
+  <data name="ChamberInitialisation" xml:space="preserve">
+    <value>Инициализация</value>
+  </data>
+  <data name="ChamberCooling" xml:space="preserve">
+    <value>Охлаждение</value>
+  </data>
+  <data name="ChamberBreakSeal" xml:space="preserve">
+    <value>Продувка</value>
+  </data>
+  <data name="PrecursorTarget" xml:space="preserve">
+    <value>Целевое значение исходного материала</value>
+  </data>
+  <data name="BaseTarget" xml:space="preserve">
+    <value>Целевое значение основы</value>
+  </data>
+  <data name="PressureTarget" xml:space="preserve">
+    <value>Целевое значение давления</value>
+  </data>
+  <data name="ExportAll" xml:space="preserve">
+    <value>Экспортировать все</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Дополнительно</value>
+  </data>
+  <data name="UnableToGenerateReport" xml:space="preserve">
+    <value>Не удалось сгенерировать отчет.</value>
+  </data>
+  <data name="ReportGenerated" xml:space="preserve">
+    <value>Отчет сгенерирован</value>
+  </data>
+  <data name="ConfirmDeleteLog" xml:space="preserve">
+    <value>Удалить этот журнал?</value>
+  </data>
+  <data name="SuccesfullyExportedAll" xml:space="preserve">
+    <value>Все журналы успешно экспортированы.</value>
+  </data>
+  <data name="EnterSerial" xml:space="preserve">
+    <value>Введите серийный номер устройства:</value>
+  </data>
+  <data name="InvalidSerialNumber" xml:space="preserve">
+    <value>Введен недопустимый серийный номер устройства. Введите допустимый серийный номер.</value>
+  </data>
+  <data name="FirmwareVersion" xml:space="preserve">
+    <value>Версия микропрограммы:</value>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>Серийный номер:</value>
+  </data>
+  <data name="MetalType" xml:space="preserve">
+    <value>Тип металла:</value>
+  </data>
+  <data name="ChamberType" xml:space="preserve">
+    <value>Тип камеры:</value>
+  </data>
+  <data name="DevelopRType" xml:space="preserve">
+    <value>Тип DEVELOP-R:</value>
+  </data>
+  <data name="LargeChamber" xml:space="preserve">
+    <value>Большая камера</value>
+  </data>
+  <data name="SmallChamber" xml:space="preserve">
+    <value>Малая камера</value>
+  </data>
+  <data name="CopperBased" xml:space="preserve">
+    <value>На основе меди</value>
+  </data>
+  <data name="SilverColoured" xml:space="preserve">
+    <value>Серебристого цвета</value>
+  </data>
+  <data name="DevelopR1" xml:space="preserve">
+    <value>DEVELOP-R1</value>
+  </data>
+  <data name="DevelopR2" xml:space="preserve">
+    <value>DEVELOP-R2</value>
+  </data>
+  <data name="DevelopR3" xml:space="preserve">
+    <value>DEVELOP-R3</value>
+  </data>
+  <data name="DevelopR4" xml:space="preserve">
+    <value>DEVELOP-R4</value>
+  </data>
+  <data name="SingleInstanceError" xml:space="preserve">
+    <value>Приложение Recover Companion уже открыто. Не удалось открыть несколько экземпляров</value>
+  </data>
+  <data name="SelectLanguage" xml:space="preserve">
+    <value>Выберите язык</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>подтвердить</value>
+  </data>
+  <data name="FileMode" xml:space="preserve">
+    <value>Файловый режим</value>
+  </data>
+  <data name="USBMode" xml:space="preserve">
+    <value>Режим USB</value>
+  </data>
+</root>

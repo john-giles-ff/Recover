@@ -1,0 +1,150 @@
+﻿<UserControl x:Class="RecoverLogInspector.BarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RecoverLogInspector"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <!-- Grid with four sections -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Peak base temperature x chart/title -->
+        <TextBlock Grid.Row="0"
+                   Grid.Column="0"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   Panel.ZIndex="1"                   
+                   Text="X bar chart: Peak base temperature"/>
+        <lvc:CartesianChart x:Name="chart_baseTemp"
+                            Margin="10"
+                            Grid.Row="0"
+                            DataClick="On_DataClick"
+                            Grid.Column="0" Loaded="Chart_baseTemp_Loaded">
+            <lvc:CartesianChart.AxisY>
+                <lvc:Axis>
+                    <lvc:Axis.Sections>
+                        <lvc:AxisSection x:Name="baseTempHCL" StrokeThickness="3" Stroke="Green"/>
+                        <lvc:AxisSection x:Name="baseTempAVG" StrokeThickness="3" Stroke="Orange"/>
+                        <lvc:AxisSection x:Name="baseTempLCL"  StrokeThickness="3" Stroke="Red"/>
+                    </lvc:Axis.Sections>
+                </lvc:Axis>
+            </lvc:CartesianChart.AxisY>
+            <lvc:CartesianChart.AxisX>
+                <lvc:Axis x:Name="peakBaseXAxis"/>
+            </lvc:CartesianChart.AxisX>
+            <lvc:CartesianChart.Series>
+                <lvc:LineSeries x:Name="peakBaseLine"
+                                LineSmoothness="0"
+                                Fill="Transparent"
+                                Title="Mean peak temperature"/>
+            </lvc:CartesianChart.Series>
+        </lvc:CartesianChart>
+
+        <!-- Peak base time x chart/title -->
+        <TextBlock Grid.Row="0"
+                   Grid.Column="1"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   Panel.ZIndex="1"                   
+                   Text="X bar chart: Time to reach peak base temperature"/>
+        <lvc:CartesianChart x:Name="chart_baseTime"
+                            Margin="10"
+                            Grid.Row="0"
+                            DataClick="On_DataClick"
+                            Grid.Column="1">
+            <lvc:CartesianChart.AxisY>
+                <lvc:Axis>
+                    <lvc:Axis.Sections>
+                        <lvc:AxisSection x:Name="baseTimeHCL" StrokeThickness="3" Stroke="Green"/>
+                        <lvc:AxisSection x:Name="baseTimeAVG" StrokeThickness="3" Stroke="Orange"/>
+                        <lvc:AxisSection x:Name="baseTimeLCL" StrokeThickness="3" Stroke="Red"/>
+                    </lvc:Axis.Sections>
+                </lvc:Axis>
+            </lvc:CartesianChart.AxisY>
+            <lvc:CartesianChart.AxisX>
+                <lvc:Axis x:Name="peakBaseTimeXAxis"/>
+            </lvc:CartesianChart.AxisX>
+            <lvc:CartesianChart.Series>
+                <lvc:LineSeries x:Name="peakBaseTimeLine"
+                                LineSmoothness="0"
+                                Fill="Transparent"
+                                Title="Mean peak temperature"/>
+            </lvc:CartesianChart.Series>
+        </lvc:CartesianChart>
+
+        <!-- Pumpdown time x chart/title -->
+        <TextBlock Grid.Row="1"
+                   Grid.Column="0"
+                   HorizontalAlignment="Center"
+                   Panel.ZIndex="1"                   
+                   VerticalAlignment="Top"
+                   Text="X bar chart: Pumpdown time"/>
+        <lvc:CartesianChart x:Name="chart_pumpdown"
+                            Margin="10"
+                            Grid.Row="1"
+                            DataClick="On_DataClick"
+                            Grid.Column="0">
+            <lvc:CartesianChart.AxisY>
+                <lvc:Axis>
+                    <lvc:Axis.Sections>
+                        <lvc:AxisSection x:Name="pumpdownHCL" StrokeThickness="3" Stroke="Green"/>
+                        <lvc:AxisSection x:Name="pumpdownAVG" StrokeThickness="3" Stroke="Orange"/>
+                        <lvc:AxisSection x:Name="pumpdownLCL" StrokeThickness="3" Stroke="Red"/>
+                    </lvc:Axis.Sections>
+                </lvc:Axis>
+            </lvc:CartesianChart.AxisY>
+            <lvc:CartesianChart.AxisX>
+                <lvc:Axis x:Name="pumpdownXAxis"/>
+            </lvc:CartesianChart.AxisX>
+            <lvc:CartesianChart.Series>
+                <lvc:LineSeries x:Name="pumpdownTimeLine"
+                                LineSmoothness="0"
+                                Fill="Transparent"
+                                Title="Mean peak temperature"/>
+            </lvc:CartesianChart.Series>
+        </lvc:CartesianChart>
+
+        <!-- Precursor time x chart/title -->
+        <TextBlock Grid.Row="1"
+                   Grid.Column="1"
+                   HorizontalAlignment="Center"
+                   Panel.ZIndex="1"                   
+                   VerticalAlignment="Top"
+                   Text="X bar chart: Precursor time"/>
+        <lvc:CartesianChart x:Name="chart_precursor"
+                            Margin="10"
+                            Grid.Row="1"
+                            DataClick="On_DataClick"
+                            Grid.Column="1">
+            <lvc:CartesianChart.AxisY>
+                <lvc:Axis>
+                    <lvc:Axis.Sections>
+                        <lvc:AxisSection x:Name="precursorHCL" StrokeThickness="3" Stroke="Green"/>
+                        <lvc:AxisSection x:Name="precursorAVG" StrokeThickness="3" Stroke="Orange"/>
+                        <lvc:AxisSection x:Name="precursorLCL" StrokeThickness="3" Stroke="Red"/>
+                    </lvc:Axis.Sections>
+                </lvc:Axis>
+            </lvc:CartesianChart.AxisY>
+            <lvc:CartesianChart.AxisX>
+                <lvc:Axis x:Name="precursorTimeXAxis"/>
+            </lvc:CartesianChart.AxisX>
+            <lvc:CartesianChart.Series>
+                <lvc:LineSeries x:Name="precursorTimeLine"                                               
+                                LineSmoothness="0"
+                                Fill="Transparent"
+                                Title="Mean peak temperature"/>
+            </lvc:CartesianChart.Series>
+        </lvc:CartesianChart>
+
+    </Grid>
+</UserControl>

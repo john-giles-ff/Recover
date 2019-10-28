@@ -1,0 +1,310 @@
+﻿<Window x:Name="WndGraph"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FosterAndFreeman.RecoverCompanionApplication.UserInterface.Views"
+        xmlns:ig="http://schemas.infragistics.com/xaml"        
+        xmlns:wpf="clr-namespace:FosterAndFreeman.RecoverCompanionApplication.Definitions.WPF"
+        xmlns:languages="clr-namespace:FosterAndFreeman.RecoverCompanionApplication.Resources.Languages"
+        x:Class="FosterAndFreeman.RecoverCompanionApplication.UserInterface.Views.GraphScreen"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterOwner"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"    
+        AllowsTransparency="True"
+        ShowInTaskbar="False"
+        WindowState="Normal"
+        SizeChanged="WndGraph_SizeChanged"
+        ResizeMode="CanResizeWithGrip"
+        MinHeight="350"
+        MinWidth="500"
+        Height="450"
+        Width="700"    
+        WindowStyle="None"
+        Loaded="Window_Loaded">
+    <Window.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="VerticalInfoStripTemplate">
+                <Grid Margin="0" Width="{Binding Width}" Height="{Binding Height}">
+                    <Rectangle Fill="{Binding Fill}" Opacity="1" />
+                    <TextBlock HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" 
+                               RenderTransformOrigin=".5,.5" 
+                               Foreground="LightGray"
+                               FontSize="18" 
+                               FontWeight="Bold" 
+                               Text="{Binding Label}">
+                        <TextBlock.LayoutTransform>
+                            <RotateTransform Angle="90" />
+                        </TextBlock.LayoutTransform>
+                    </TextBlock>
+                </Grid>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Border Background="Black" BorderBrush="{StaticResource FFGreenBrush}" BorderThickness="2">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <!-- Window Navigation Buttons -->
+            <StackPanel Orientation="Horizontal"
+                        Grid.Row="0"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Right"                        
+                        Margin="10">
+                <!-- Toggle Window State (Maximise/Normalise) Button -->
+                <Button x:Name="BtnMaximiseState"
+                        Grid.Row="0"
+                        Click="ToggleWindowState_Clicked"
+                        BorderBrush="Transparent"                                        
+                        Width="40">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <ContentPresenter />
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                    <Image Stretch="Uniform" 
+                           Source="/RecoverCompanionApplication;component/Resources/Images/maximise.png"
+                           Height="20" 
+                           Width="20"/>
+                </Button>
+                <Button x:Name="BtnNormaliseState"
+                        Visibility="Collapsed"
+                        Grid.Row="0"
+                        Click="ToggleWindowState_Clicked"
+                        BorderBrush="Transparent"                                        
+                        Width="40">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <ContentPresenter />
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                    <Image Stretch="Uniform" 
+                           Source="/RecoverCompanionApplication;component/Resources/Images/normalise.png"
+                           Height="20" 
+                           Width="20"/>
+                </Button>
+
+
+                <!-- Exit Button -->
+                <Button x:Name="BtnExit"                    
+                        Click="Exit_Clicked"                                            
+                        BorderBrush="Transparent"                                            
+                        Width="40">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <ContentPresenter />
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                    <Image Source="/RecoverCompanionApplication;component/Resources/Images/X.png" 
+                           Stretch="Uniform"                            
+                           Height="20" 
+                           Width="20"/>
+                </Button>
+            </StackPanel>
+
+            <!-- Title -->
+            <TextBlock x:Name="TxtTitle" 
+                       Grid.Row="0"
+                       VerticalAlignment="Top" 
+                       HorizontalAlignment="Center" 
+                       FontSize="28" 
+                       Margin="0, 5, 0, 0"/>
+
+            <!-- Chart -->
+            <!-- Border is required because otherwise rendering the graph breaks -->
+            <Border x:Name="RenderBorder" 
+                    Grid.Row="1"
+                    Margin="0, 30, 0, 0">
+            <ig:XamDataChart x:Name="DataChart"                              
+                             DataContext="{Binding _log}"                              
+                             Background="Transparent"
+                             Legend="{Binding ElementName=Legend}">
+                <ig:XamDataChart.Axes>
+                    <ig:CategoryDateTimeXAxis x:Name="XAxis" ItemsSource="{Binding Samples}" DateTimeMemberPath="SampleTime">
+                        <ig:CategoryDateTimeXAxis.LabelSettings>
+                            <ig:AxisLabelSettings Visibility="Collapsed"/>
+                        </ig:CategoryDateTimeXAxis.LabelSettings>
+                    </ig:CategoryDateTimeXAxis>
+
+                    <ig:NumericYAxis x:Name="PressureYAxis" 
+                                     MaximumValue="24000" 
+                                     MinimumValue="0"
+                                     MajorStroke="Transparent" 
+                                     MinorStroke="Transparent" >
+                        <ig:NumericYAxis.LabelSettings>
+                            <ig:AxisLabelSettings Visibility="Collapsed"/>
+                        </ig:NumericYAxis.LabelSettings>
+                    </ig:NumericYAxis>
+                    <ig:NumericYAxis x:Name="TemperatureYAxis" 
+                                     MaximumValue="210" 
+                                     MinimumValue="0"
+                                     MajorStroke="Transparent" 
+                                     MinorStroke="Transparent">
+                        <ig:NumericYAxis.LabelSettings>
+                            <ig:AxisLabelSettings Visibility="Collapsed"/>
+                        </ig:NumericYAxis.LabelSettings>
+                    </ig:NumericYAxis>
+                </ig:XamDataChart.Axes>
+                <ig:XamDataChart.Series>
+                    <!-- Pressure Line -->
+                    <ig:LineSeries x:Name="Pressure"
+                                   Thickness="5"
+                                   MarkerType="None"                                                
+                                   ItemsSource="{Binding Samples}"
+                                   ValueMemberPath="Pressure"                
+                                   Visibility="{Binding ElementName=TglPressure, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}"
+                                   Title="{x:Static languages:Strings.Pressure}"
+                                   XAxis="{Binding ElementName=XAxis}"
+                                   YAxis="{Binding ElementName=PressureYAxis}"/>
+                    <!-- Base Line -->                    
+                    <ig:LineSeries x:Name="Base"
+                                   Thickness="5"
+                                   MarkerType="None"                                                
+                                   ItemsSource="{Binding Samples}"
+                                   ValueMemberPath="BaseTemperature"
+                                   Visibility="{Binding ElementName=TglBase, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}"
+                                   Title="{x:Static languages:Strings.Base}"
+                                   XAxis="{Binding ElementName=XAxis}"
+                                   YAxis="{Binding ElementName=TemperatureYAxis}"/>
+                    <!-- Precursor Line -->
+                    <ig:LineSeries x:Name="Precursor"                                   
+                                   Thickness="5"                                   
+                                   MarkerType="None"                                                
+                                   ItemsSource="{Binding Samples}"
+                                   ValueMemberPath="PrecursorTemperature"                                   
+                                   Visibility="{Binding ElementName=TglPrecursor, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}"
+                                   Title="{x:Static languages:Strings.Precursor}"
+                                   XAxis="{Binding ElementName=XAxis}"
+                                   YAxis="{Binding ElementName=TemperatureYAxis}"/>
+
+
+                    <!-- Pressure Overlay -->
+                    <!--
+                    <ig:ValueOverlay Thickness="5"
+                                     LegendItemVisibility="Collapsed"
+                                     Axis="{Binding ElementName=PressureYAxis}"
+                                     Value="{Binding VacuumSetPoint}"                                     
+                                     Visibility="{Binding ElementName=TglPressure, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}"
+                                     DashArray="3"
+                                     DashCap="Round"/>-->
+                    <!-- Base Overlay -->
+                    <!--
+                    <ig:ValueOverlay Thickness="5"
+                                     LegendItemVisibility="Collapsed"
+                                     Axis="{Binding ElementName=TemperatureYAxis}"
+                                     Value="{Binding BaseHeaterSetPoint}"                                     
+                                     Visibility="{Binding ElementName=TglBase, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}"
+                                     DashArray="3"
+                                     DashCap="Round"/>-->
+                    <!-- Precursor Overlay -->
+                    <!--
+                    <ig:ValueOverlay Thickness="5"
+                                     LegendItemVisibility="Collapsed"                                     
+                                     Axis="{Binding ElementName=TemperatureYAxis}"                                     
+                                     Value="{Binding PrecursorHeaterSetPoint}"                                                                          
+                                     Visibility="{Binding ElementName=TglPrecursor, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}"
+                                     DashArray="3"
+                                     DashCap="Round"/>-->
+
+
+                </ig:XamDataChart.Series>
+                <wpf:ChartStripBehaviors.ChartInfoStrips>
+                    <wpf:ChartInfoStripsBehavior x:Name="Strips">
+                        <wpf:ChartInfoStripsBehavior.InfoStrips>
+                            <!-- Initialisation -->
+                            <wpf:InfoStrip x:Name="InitStrip"                                           
+                                           UseDates="True"                                           
+                                           Fill="#A55F5F7A" 
+                                           Label="{x:Static languages:Strings.ChamberInitialisation}"
+                                           StripTemplate="{StaticResource VerticalInfoStripTemplate}" />
+                            <!-- Pump down -->
+                            <wpf:InfoStrip x:Name="PumpDownStrip"                                           
+                                           UseDates="True"
+                                           Fill="#A5A55F7A" 
+                                           Label="{x:Static languages:Strings.ChamberConditioning}"
+                                           StripTemplate="{StaticResource VerticalInfoStripTemplate}" />
+                            <!-- Heat -->
+                            <wpf:InfoStrip x:Name="HeatStrip"                                           
+                                           UseDates="True"
+                                           Fill="#A5610808" 
+                                           Label="{x:Static languages:Strings.ChamberHeat}"
+                                           StripTemplate="{StaticResource VerticalInfoStripTemplate}" />
+                            <!-- Cool -->
+                            <wpf:InfoStrip x:Name="CoolStrip"
+                                           UseDates="True"
+                                           Fill="#A5A0A57A" 
+                                           Label="{x:Static languages:Strings.ChamberCooling}"
+                                           StripTemplate="{StaticResource VerticalInfoStripTemplate}" />
+                            <!-- Break Seal -->
+                            <wpf:InfoStrip x:Name="BreaksealStrip"
+                                           UseDates="True"
+                                           Fill="#A55FA57A" 
+                                           Label="{x:Static languages:Strings.ChamberBreakSeal}"
+                                           StripTemplate="{StaticResource VerticalInfoStripTemplate}" />
+
+                        </wpf:ChartInfoStripsBehavior.InfoStrips>
+                    </wpf:ChartInfoStripsBehavior>
+                </wpf:ChartStripBehaviors.ChartInfoStrips>
+            </ig:XamDataChart>
+            </Border>
+            <!-- Legend -->
+            <Border x:Name="LegendRenderBorder"
+                    Grid.Row="1"
+                    Margin="0"
+                    VerticalAlignment="Top"                       
+                    HorizontalAlignment="Center">
+                <ig:Legend x:Name="Legend"          
+                           HorizontalAlignment="Center"
+                           Orientation="Horizontal"/>
+            </Border>
+
+
+            <!-- Toggle Buttons -->
+            <Grid Margin="5, 0, 5, 5" Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <ToggleButton Grid.Column="0" Margin="5" x:Name="TglPressure" Content="{x:Static languages:Strings.Pressure}" IsChecked="True"/>
+                <ToggleButton Grid.Column="1" Margin="5" x:Name="TglBase" Content="{x:Static languages:Strings.Base}" IsChecked="True"/>
+                <ToggleButton Grid.Column="2" Margin="5" x:Name="TglPrecursor" Content="{x:Static languages:Strings.Precursor}" IsChecked="True" />
+            </Grid>
+
+            <Button Margin="10, 0, 10, 10" 
+                    Grid.Row="3" 
+                    Content="{x:Static languages:Strings.Export}"
+                    IsEnabled="{Binding SamplesLoaded}"
+                    Click="Export_Clicked"/>
+
+        </Grid>
+    </Border>
+</Window>

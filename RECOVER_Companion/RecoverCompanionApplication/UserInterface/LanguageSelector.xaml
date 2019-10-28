@@ -1,0 +1,76 @@
+﻿<Window x:Class="FosterAndFreeman.RecoverCompanionApplication.UserInterface.LanguageSelector"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FosterAndFreeman.RecoverCompanionApplication.UserInterface"
+        xmlns:languages="clr-namespace:FosterAndFreeman.RecoverCompanionApplication.Resources.Languages"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterOwner"
+        AllowsTransparency="True"
+        ShowInTaskbar="False"
+        Height="400" Width="600"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Loaded="Window_Loaded">
+    <Border Background="Black" BorderBrush="{StaticResource FFGreenBrush}" BorderThickness="2">
+        <Grid>
+            <Button x:Name="BtnExit"
+                    Click="BtnExit_Click"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Left"
+                    BorderThickness="0">
+                <Image Source="/RecoverCompanionApplication;component/Resources/Images/X.png"
+                       Height="28" Stretch="Uniform" Margin="10"/>
+            </Button>
+
+            <ListBox x:Name="LstLanguages" Margin="45" SelectionMode="Single">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <!--<Setter Property="IsSelected" Value="{Binding Content.IsSelected, Mode=TwoWay, RelativeSource={RelativeSource Self}}"/>-->
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListBoxItem">
+                                    <ContentPresenter/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+                <ListBox.Template>
+                    <ControlTemplate>
+                        <WrapPanel IsItemsHost="True" HorizontalAlignment="Center" />
+                    </ControlTemplate>
+                </ListBox.Template>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border VerticalAlignment="Stretch" Width="250" Background="Black">
+                            <TextBlock Name="Text"
+                                       Text="{Binding DisplayName}"
+                                       Margin="20"
+                                       HorizontalAlignment="Center"
+                                       TextAlignment="Center"
+                                       FontFamily="Segoe UI Semilight"                                       
+                                       FontSize="18"
+                                       VerticalAlignment="Center"
+                                       TextWrapping="Wrap"/>
+                        </Border>
+                        <DataTemplate.Triggers>
+                            <DataTrigger Value="True" Binding="{Binding IsSelected, RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}}">
+                                <Setter TargetName="Text" Property="Foreground" Value="{StaticResource FFGreenBrush}" />
+                            </DataTrigger>
+                        </DataTemplate.Triggers>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <Button x:Name="BtnConfirm"
+                    Click="BtnConfirm_Click" 
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Center"
+                    Margin="20"
+                    Padding="30, 10"
+                    Content="{x:Static languages:Strings.Confirm}"/>
+        </Grid>
+    </Border>
+</Window>

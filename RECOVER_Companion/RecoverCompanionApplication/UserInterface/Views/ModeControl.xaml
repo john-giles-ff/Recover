@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="FosterAndFreeman.RecoverCompanionApplication.UserInterface.Views.ModeControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FosterAndFreeman.RecoverCompanionApplication.UserInterface.Views"
+             xmlns:common="clr-namespace:FosterAndFreeman.RecoverCompanionApplication.UserInterface.Common"
+             xmlns:languages="clr-namespace:FosterAndFreeman.RecoverCompanionApplication.Resources.Languages"
+             mc:Ignorable="d" 
+             Loaded="UserControl_Loaded"
+             d:DesignHeight="400" d:DesignWidth="750">
+    <Grid>
+        <common:Background/>
+        <StackPanel Orientation="Vertical"  VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+
+                <!-- Audit Logs Button -->
+                <Button x:Name="BtnAuditLogs" Click="AuditLogs_Clicked"
+                    Margin="40"                    
+                    BorderThickness="0">
+                    <StackPanel>
+                        <Image Source="/RecoverCompanionApplication;component/Resources/Images/Audit-log.png"
+                           Stretch="Uniform"
+                           IsEnabled="{Binding ElementName=BtnAuditLogs, Path=IsEnabled}"
+                           Height="100">
+                            <Image.Style>
+                                <Style TargetType="Image">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsEnabled" Value="False">
+                                            <Setter Property="Opacity" Value="0.5" />
+                                            <Setter Property="ToolTip" Value="{x:Static languages:Strings.NoLogsFound}"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                        <TextBlock Text="{x:Static languages:Strings.AuditLogs}" 
+                               TextAlignment="Center"                               
+                               FontFamily="Segoe UI Semilight"                                    
+                               Foreground="{StaticResource FFGreenBrush}" 
+                               IsEnabled="{Binding ElementName=BtnAuditLogs, Path=IsEnabled}"
+                               FontSize="24" 
+                               TextWrapping="Wrap">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsEnabled" Value="False">
+                                            <Setter Property="Opacity" Value="0.5"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <!-- Update Software Button -->
+                <Button x:Name="BtnSoftwareUpdate" Click="UpdateSoftware_Clicked"
+                    Margin="40"
+                    BorderThickness="0">
+                    <StackPanel>
+                        <Image Source="/RecoverCompanionApplication;component/Resources/Images/Upgrade.png" 
+                           Stretch="Uniform" 
+                           IsEnabled="{Binding ElementName=BtnSoftwareUpdate, Path=IsEnabled}"
+                           Height="100">
+                            <Image.Style>
+                                <Style TargetType="Image">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsEnabled" Value="False">
+                                            <Setter Property="Opacity" Value="0.5" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                        <TextBlock Text="{x:Static languages:Strings.UpdateSoftware}"
+                               TextAlignment="Center"
+                               FontFamily="Segoe UI Semilight"                                    
+                               IsEnabled="{Binding ElementName=BtnSoftwareUpdate, Path=IsEnabled}"
+                               Foreground="{StaticResource FFGreenBrush}" 
+                               FontSize="24" 
+                               TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

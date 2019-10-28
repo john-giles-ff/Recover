@@ -1,0 +1,565 @@
+﻿<UserControl x:Class="FosterAndFreeman.RecoverCompanionApplication.UserInterface.Views.AuditLogsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FosterAndFreeman.RecoverCompanionApplication.UserInterface.Views"
+             xmlns:common="clr-namespace:FosterAndFreeman.RecoverCompanionApplication.UserInterface.Common"
+             mc:Ignorable="d" 
+             xmlns:languages="clr-namespace:FosterAndFreeman.RecoverCompanionApplication.Resources.Languages"
+             d:DesignHeight="450" d:DesignWidth="800" Loaded="UserControl_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        
+        <common:Background x:Name="Backdrop"
+                           Grid.RowSpan="9"/>
+        <!-- Left Title Buttons -->
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    Grid.Row="0">
+            <Button x:Name="BtnBack"
+                    Click="Back_Clicked"                                                 
+                    BorderBrush="Transparent"    
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Left"
+                    Margin="10"                
+                    Background="Transparent">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <ContentPresenter />
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+                <Border Height="50" Width="50" Background="Black">
+                    <Image Source="/RecoverCompanionApplication;component/Resources/Images/back.png" Stretch="None"/>
+                </Border>
+            </Button>
+            <Button x:Name="BtnOpen" 
+                    Padding="5"                                                                        
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Left"
+                    Margin="5, 10"                
+                    Click="Open_Clicked">
+                <Image Width="32"
+                       Height="32" 
+                       Source="/RecoverCompanionApplication;component/Resources/Images/open.png"
+                       Stretch="Uniform"/>
+            </Button>
+            <Button x:Name="BtnCloseFiles" 
+                    Padding="5"                                                                        
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Left"
+                    Margin="5, 10"                
+                    Click="CloseFiles_Clicked">
+                <Image Width="32"
+                       Height="32" 
+                       Source="/RecoverCompanionApplication;component/Resources/Images/xWhite.png"
+                       Stretch="Uniform"/>
+            </Button>
+            <Button x:Name="BtnPrintMultiple" 
+                Padding="5"                                                                        
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Margin="5, 10"                
+                Click="BtnPrintMultiple_Click">
+                <Image Width="32"
+                       Height="32" 
+                       Source="/RecoverCompanionApplication;component/Resources/Images/printer.png"
+                       Stretch="Uniform"/>
+        </Button>
+        </StackPanel>
+        
+        <!-- Right Title Buttons -->
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="0" 
+                    Margin="0, 0, 75, 0"
+                    HorizontalAlignment="Right">
+            <Button x:Name="BtnExportAll"
+                    Padding="5"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Left"
+                    Margin="10"
+                    Click="BtnExportAll_Clicked">
+                <Image Width="32"
+                       Height="32" 
+                       Source="/RecoverCompanionApplication;component/Resources/Images/export_multiple.png"
+                       Stretch="Uniform"/>
+            </Button>
+            <Button x:Name="BtnSaveAll"
+                    Padding="5"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Left"
+                    Margin="5, 10"
+                    Click="BtnSaveAll_Clicked">
+                <Image Width="32"
+                       Height="32" 
+                       Source="/RecoverCompanionApplication;component/Resources/Images/save_multiple.png"
+                       Stretch="Uniform"/>
+            </Button>
+
+        </StackPanel>                    
+
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ScrollViewer HorizontalScrollBarVisibility="Hidden"
+                          Grid.Row="0"
+                          VerticalScrollBarVisibility="Auto"
+                          Margin="10">
+                <ItemsControl x:Name="LstLogs">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="{StaticResource FFGreenBrush}" BorderThickness="2">
+                                <Expander HorizontalAlignment="Stretch">
+                                    <Expander.Header>
+                                        <Grid HorizontalAlignment="{Binding Path=HorizontalAlignment, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContentPresenter}}, Mode=OneWayToSource}"
+                                              MinHeight="40">
+                                            <!-- Start Time -->
+                                            <TextBlock Text="{Binding StartTime, StringFormat=G}"                                    
+                                                       VerticalAlignment="Center"                                                   
+                                                       TextWrapping="Wrap"/>
+
+                                            <!-- Advanced Button -->
+                                            <Button Content="{x:Static languages:Strings.Advanced}" 
+                                                    HorizontalAlignment="Right" 
+                                                    Margin="5" 
+                                                    Padding="5"                                                     
+                                                    Command="{Binding OpenGraph}">
+                                                <Button.Style>
+                                                    <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Path=IsAdvanced, Source={x:Static Application.Current}}" Value="False">
+                                                                <DataTrigger.Setters>
+                                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                                </DataTrigger.Setters>
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Binding NumberOfSamples}" Value="0">
+                                                                <DataTrigger.Setters>
+                                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                                </DataTrigger.Setters>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Button.Style>
+                                            </Button>
+                                        </Grid>
+                                    </Expander.Header>
+                                    <Border BorderBrush="{StaticResource FFGreenBrush}" BorderThickness="0, 2, 0, 0">
+                                        <Grid>
+                                            <Grid.Resources>
+                                                <Color x:Key="AcceptableColor">#00FF00</Color>
+                                                <Color x:Key="UnacceptableColor">#FF0000</Color>
+                                                <SolidColorBrush x:Key="AcceptableColorBrush" Color="{StaticResource AcceptableColor}"/>
+                                                <SolidColorBrush x:Key="UnacceptableColorBrush" Color="{StaticResource UnacceptableColor}"/>
+                                                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource {x:Type TextBlock}}">
+                                                    <Setter Property="Margin" Value="5" />
+                                                </Style>
+                                            </Grid.Resources>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="20"/>
+                                            </Grid.RowDefinitions>
+
+                                            <StackPanel Orientation="Vertical"
+                                                        Grid.RowSpan="10"
+                                                        Grid.ColumnSpan="5"
+                                                        VerticalAlignment="Top"
+                                                        HorizontalAlignment="Right">
+
+                                                <!-- Delete Log Icon -->
+                                                <Button Padding="5"                                                        
+                                                        Command="{Binding Delete}"
+                                                        Margin="10, 10, 10, 5">
+                                                    <Image Width="32"
+                                                           Height="32" 
+                                                           Source="/RecoverCompanionApplication;component/Resources/Images/trash.png"
+                                                           Stretch="Uniform"/>
+                                                    <Button.Style>
+                                                        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding IsUSB}" Value="False">
+                                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Button.Style>
+                                                </Button>
+
+                                                <!-- Print Log icon -->
+                                                <Button Padding="5"                                                        
+                                                        Command="{Binding Print}"
+                                                        Margin="10, 5, 10, 5">
+                                                    <Image Width="32"
+                                                           Height="32" 
+                                                           Source="/RecoverCompanionApplication;component/Resources/Images/printer.png"
+                                                           Stretch="Uniform"/>
+                                                </Button>
+
+                                                <!-- Edit Log Icon -->
+                                                <Button Padding="5"                                                        
+                                                        Command="{Binding Edit}"
+                                                        Margin="10, 5, 10, 5">
+                                                    <Image Width="32"
+                                                           Height="32" 
+                                                           Source="/RecoverCompanionApplication;component/Resources/Images/Edit.png"
+                                                           Stretch="Uniform"/>
+                                                    <Button.Style>
+                                                        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding HasExtraInformation}" Value="True">
+                                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                                </DataTrigger>
+                                                                <DataTrigger Binding="{Binding IsUSB}" Value="True">
+                                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Button.Style>
+                                                </Button>
+                                                
+                                                <!-- Save Icon -->
+                                                <Button Padding="5"
+                                                        Command="{Binding Save}"
+                                                        Margin="10, 5, 10, 5">
+                                                    <Image Width="32"
+                                                           Height="32"
+                                                           Source="/RecoverCompanionApplication;component/Resources/Images/save.png"/>
+                                                    <Button.Style>
+                                                        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding IsUSB}" Value="False">
+                                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Button.Style>
+                                                </Button>
+
+                                                <!-- Export Icon -->
+                                                <Button Padding="5"
+                                                        Command="{Binding Export}"
+                                                        Margin="10, 5, 10, 5">
+                                                    <Image Width="32"
+                                                           Height="32"
+                                                           Source="/RecoverCompanionApplication;component/Resources/Images/export.png"/>
+                                                </Button>
+                                            </StackPanel>
+                                            
+                                            
+                                            <!-- Case Reference -->
+                                            <TextBlock Grid.Row="0"
+                                                       Grid.Column="1"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Right"
+                                                       Visibility="{Binding HasCaseReference, Converter={StaticResource BoolToVisibilityConverter}}"
+                                                       Text="{x:Static languages:Strings.CaseReference}"/>
+                                            <TextBlock Grid.Row="0"
+                                                       Grid.Column="2"
+                                                       Visibility="{Binding HasCaseReference, Converter={StaticResource BoolToVisibilityConverter}}"
+                                                       Text="{Binding CaseReference}"
+                                                       FontWeight="Bold"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Left"/>
+
+                                            <!-- Case Operator -->
+                                            <TextBlock Grid.Row="1"
+                                                       Grid.Column="1"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Right"
+                                                       Visibility="{Binding HasCaseOperator, Converter={StaticResource BoolToVisibilityConverter}}"
+                                                       Text="{x:Static languages:Strings.CaseOperator}"/>
+                                            <TextBlock Grid.Row="1"
+                                                       Grid.Column="2"
+                                                       Visibility="{Binding HasCaseOperator, Converter={StaticResource BoolToVisibilityConverter}}"
+                                                       Text="{Binding CaseOperator}"
+                                                       FontWeight="Bold"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Left"/>
+                                            
+
+
+                                            <!-- Base Heater Deviation -->
+                                            <TextBlock Grid.Row="2"
+                                               Grid.Column="1"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Right"
+                                               Text="{x:Static languages:Strings.BaseHeaterDeviation}"/>
+                                            <TextBlock Grid.Row="2"
+                                               Grid.Column="2"
+                                               Text="{Binding BaseString, Mode=OneTime}"
+                                               FontWeight="Bold"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Left">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource {x:Type TextBlock}}">
+                                                        <Setter Property="Foreground" Value="{StaticResource AcceptableColorBrush}"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding BaseHeaterWithinTolerance}" Value="False">
+                                                                <Setter Property="Foreground" Value="{StaticResource UnacceptableColorBrush}"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+
+                                            <!-- Precusor Heater Deviation -->
+                                            <TextBlock Grid.Row="3"
+                                               Grid.Column="1"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Right"
+                                               Text="{x:Static languages:Strings.PrecursorHeaterDeviation}"/>
+                                            <TextBlock Grid.Row="3"
+                                               Grid.Column="2"
+                                               Text="{Binding PrecursorString, Mode=OneTime}"
+                                               FontWeight="Bold"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Left">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource {x:Type TextBlock}}">
+                                                        <Setter Property="Foreground" Value="{StaticResource AcceptableColorBrush}"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding PrecursorHeaterWithinTolerance}" Value="False">
+                                                                <Setter Property="Foreground" Value="{StaticResource UnacceptableColorBrush}"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+
+                                            <!-- Pressure Deviation -->
+                                            <TextBlock Grid.Row="4"
+                                               Grid.Column="1"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Right"
+                                               Text="{x:Static languages:Strings.PressureDeviation}"/>
+                                            <TextBlock Grid.Row="4"
+                                               Grid.Column="2"
+                                               Text="{Binding PressureString, Mode=OneTime}"
+                                               FontWeight="Bold"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Left">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource {x:Type TextBlock}}">
+                                                        <Setter Property="Foreground" Value="{StaticResource AcceptableColorBrush}"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding PressureDeviationWithinTolerance}" Value="False">
+                                                                <Setter Property="Foreground" Value="{StaticResource UnacceptableColorBrush}"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+
+                                            <!-- Leak Test 1 -->
+                                            <TextBlock Grid.Row="5"
+                                               Grid.Column="1"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Right"
+                                               Text="{x:Static languages:Strings.LeakTest1Result}"/>
+                                            <TextBlock Grid.Row="5"
+                                               Grid.Column="2"                                               
+                                               FontWeight="Bold"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Left">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource {x:Type TextBlock}}">
+                                                        <Setter Property="Foreground" Value="{StaticResource AcceptableColorBrush}"/>
+                                                        <Setter Property="Text" Value="{x:Static languages:Strings.TestSuccess}"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding LeakTest1}" Value="False">
+                                                                <Setter Property="Foreground" Value="{StaticResource UnacceptableColorBrush}"/>
+                                                                <Setter Property="Text" Value="{x:Static languages:Strings.TestFail}"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+
+                                            <!-- Leak Test 2 -->
+                                            <TextBlock Grid.Row="6"
+                                               Grid.Column="1"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Right"
+                                               Text="{x:Static languages:Strings.LeakTest2Result}"/>
+                                            <TextBlock Grid.Row="6"
+                                               Grid.Column="2"                                               
+                                               FontWeight="Bold"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Left">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource {x:Type TextBlock}}">
+                                                        <Setter Property="Foreground" Value="{StaticResource AcceptableColorBrush}"/>
+                                                        <Setter Property="Text" Value="{x:Static languages:Strings.TestSuccess}"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding LeakTest2}" Value="False">
+                                                                <Setter Property="Foreground" Value="{StaticResource UnacceptableColorBrush}"/>
+                                                                <Setter Property="Text" Value="{x:Static languages:Strings.TestFail}"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+
+                                            <!-- Pump Down Time -->
+                                            <TextBlock Grid.Row="7"
+                                           Grid.Column="1"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Right"
+                                           Text="{x:Static languages:Strings.PumpdownMinutes}" />
+                                            <TextBlock Grid.Row="7"
+                                           Grid.Column="2"
+                                           FontWeight="Bold"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Left"
+                                           Text="{Binding TimeToReachVacuumSetpoint}"/>
+
+                                            <!-- Heat Time -->
+                                            <TextBlock Grid.Row="8"
+                                           Grid.Column="1"                                       
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Right"
+                                           Text="{x:Static languages:Strings.HeatMinutes}"/>
+                                            <TextBlock Grid.Row="8"
+                                           Grid.Column="2"
+                                           FontWeight="Bold"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Left"
+                                           Text="{Binding HeatRunTime}"/>
+                                            
+                                            <!-- Firmware Version -->
+                                            <TextBlock Grid.Row="9"
+                                                       Grid.Column="1"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Right"
+                                                       Text="{x:Static languages:Strings.FirmwareVersion}"/>
+                                            <TextBlock Grid.Row="9"
+                                                       Grid.Column="2"
+                                                       FontWeight="Bold"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Left"
+                                                       Text="{Binding FirmwareBuild}"/>
+
+
+                                            <!-- Serial Number -->
+                                            <TextBlock Grid.Row="10"
+                                                       Grid.Column="1"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Right"
+                                                       Text="{x:Static languages:Strings.SerialNumber}"/>
+                                            <TextBlock Grid.Row="10"
+                                                       Grid.Column="2"
+                                                       FontWeight="Bold"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Left"
+                                                       Text="{Binding SerialNumber}"/>
+
+                                            <!-- Metal Type -->
+                                            <TextBlock Grid.Row="11"
+                                                       Grid.Column="1"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Right"
+                                                       Text="{x:Static languages:Strings.MetalType}"/>
+                                            <TextBlock Grid.Row="11"
+                                                       Grid.Column="2"
+                                                       FontWeight="Bold"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Left"
+                                                       Text="{Binding MetalTypeString}"/>
+                                            
+                                            <!-- Chamber Type -->
+                                            <TextBlock Grid.Row="12"
+                                                       Grid.Column="1"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Right"
+                                                       Text="{x:Static languages:Strings.ChamberType}"/>
+                                            <TextBlock Grid.Row="12"
+                                                       Grid.Column="2"
+                                                       FontWeight="Bold"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Left"
+                                                       Text="{Binding ChamberSizeString}"/>
+
+                                            <!-- DevelopR Type -->
+                                            <TextBlock Grid.Row="13"
+                                                       Grid.Column="1"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Right"
+                                                       Text="{x:Static languages:Strings.DevelopRType}"/>
+                                            <TextBlock Grid.Row="13"
+                                                       Grid.Column="2"
+                                                       FontWeight="Bold"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Left"
+                                                       Text="{Binding DevelopRType}"/>
+                                            
+                                            <!-- Notes -->
+                                            <TextBlock Grid.Row="14"
+                                                       Grid.Column="1"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Right"
+                                                       Visibility="{Binding HasNotes, Converter={StaticResource BoolToVisibilityConverter}}"
+                                                       Text="{x:Static languages:Strings.Notes}"/>
+                                            <TextBlock Grid.Row="14"
+                                                       Grid.Column="2"
+                                                       Text="{Binding Notes}"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Left"
+                                                       TextWrapping="Wrap"
+                                                       FontWeight="Bold"
+                                                       MaxWidth="400"
+                                                       TextAlignment="Left"
+                                                       Visibility="{Binding HasNotes, Converter={StaticResource BoolToVisibilityConverter}}"/>
+
+                                        </Grid>
+                                    </Border>
+                                </Expander>
+                            </Border>
+
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+
+            <TextBlock x:Name="TxtLogsNotFound" Text="{x:Static languages:Strings.NoLogsFound}"
+                       VerticalAlignment="Center"
+                       FontSize="42"
+                       Foreground="{StaticResource ResourceKey=FFGreenBrush}"/>
+        </Grid>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,49 @@
+﻿<Window x:Class="RecoverLogInspector.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RecoverLogInspector"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        Icon="Resources/Csscreme-Halloween-Ghost.ico"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        WindowState="Maximized"
+        Title="RECOVER Log Inspector" Height="450" Width="800">
+    <Window.CommandBindings>
+        <CommandBinding Command="Open" CanExecute="OpenCommand_CanExecute" Executed="OpenCommand_Executed"/>
+    </Window.CommandBindings>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Toolbar -->
+        <Menu x:Name="mainMenu"
+              VerticalAlignment="Top"
+              Grid.ColumnSpan="9"
+              MinHeight="20">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Open" Click="MenuOpenLogs_Click"/>
+                <Separator/>
+                <MenuItem Header="_Exit" Click="MenuExit_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="logSelectTab"
+                      Header="Select Log"/>
+            <MenuItem Header="Summary"
+                      Click="Summary_Click"/>
+            <MenuItem Header="Settings" 
+                      Click="OpenSettings"/>
+        </Menu>
+
+        <local:LogView x:Name="logView"
+                       Visibility="Collapsed"
+                       Grid.Row="1"/>
+
+        <local:BarView x:Name="barView"                           
+                       Grid.Row="1"/>
+
+    </Grid>
+</Window>
