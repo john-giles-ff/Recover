@@ -1,15 +1,12 @@
-text/
-build/
-generated/fonts/
-generated/gui_generated/
-generated/images/
-generated/texts/
+
 *.log
 *.o
 *.ipch
 
 RECOVER/simulator/msvs/.vs/
 RECOVER/screenshots/
+RECOVER/build/
+RECOVER/generated/
 
 Autoflash/bin/
 Autoflash/obj/
