@@ -9,7 +9,3 @@ generated/texts/
 *.ipch
 simulator/msvs/.vs/Application/v16/Browse.VC.db
 simulator/msvs/.vs/Application/v16/Browse.VC.opendb
-packages/
-PressureCurveLinearizing/bin/
-PressureCurveLinearizing/obj/
-RECOVER/screenshots/

@@ -1,0 +1,78 @@
+﻿<Window x:Class="PressureCurveLinearizing.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PressureCurveLinearizing"        
+        xmlns:viewModels="clr-namespace:PressureCurveLinearizing.ViewModels"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <viewModels:MainWindowViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Margin="10" Grid.Row="0">
+            <Button Content="..." DockPanel.Dock="Right" Margin="2" Width="25" Command="{Binding BrowseCommand}"/>
+            <TextBox DockPanel.Dock="Left" 
+                     Text="{Binding LogLocation}"
+                     Margin="0,0,5, 0"
+                     IsReadOnly="True"/>
+        </DockPanel>
+        <DockPanel Margin="10" Grid.Row="1">
+            <TextBlock Text="Section Count:" DockPanel.Dock="Left" VerticalAlignment="Center"/>
+            <TextBox Text="{Binding SectionCount, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Left" VerticalContentAlignment="Center" MinWidth="200" Margin="5, 0"/>
+            <Button Content="Go" DockPanel.Dock="Right" MinWidth="100" Command="{Binding LoadLogs}" IsDefault="True"/>
+            <WrapPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Fill="Purple" Width="20" Height="20" Margin="5, 2"/>
+                    <TextBlock Text="Original Values" VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Fill="Green" Width="20" Height="20" Margin="5, 2"/>
+                    <TextBlock Text="Individual Values" VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Fill="Red" Width="20" Height="20" Margin="5, 2"/>
+                    <TextBlock Text="Minimum Values" VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Fill="Blue" Width="20" Height="20" Margin="5, 2"/>
+                    <TextBlock Text="Average Values" VerticalAlignment="Center"/>
+                </StackPanel>
+            </WrapPanel>
+        </DockPanel>
+
+        <ListView Grid.Row="2" ItemsSource="{Binding BindableLogs}"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <ItemContainerTemplate>
+                    <Grid>
+                        <lvc:CartesianChart MinWidth="460" MinHeight="200" 
+                                            Series="{Binding ChartData}"
+                                            DisableAnimations="True"                                            
+                                            Hoverable="False"                                                                                        
+                                            DataTooltip="{x:Null}">
+                            <lvc:CartesianChart.AxisY>
+                                <lvc:Axis IsMerged="True" ShowLabels="False"/>
+                                <lvc:Axis IsMerged="True"/>
+                            </lvc:CartesianChart.AxisY>
+                        </lvc:CartesianChart>
+                    </Grid>
+                </ItemContainerTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Window>

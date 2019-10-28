@@ -550,7 +550,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId202",
               "UseBuffer": true,
-              "BufferSize": 4
+              "BufferSize": 6
             },
             "Name": "TxtFumeTimer",
             "X": 531,
@@ -8574,7 +8574,7 @@
                 "Type": "TextButtonStyle",
                 "X": 0,
                 "Y": 11,
-                "TextId": "SingleUseId213",
+                "TextId": "SingleUseId250",
                 "TextRotation": "0",
                 "ColorReleased": {
                   "Red": 255,
@@ -10668,10 +10668,6 @@
         "IsResource": true
       },
       {
-        "TextEntryId": "SingleUseId213",
-        "IsResource": false
-      },
-      {
         "TextEntryId": "DefaultWildcard",
         "IsResource": true
       },
@@ -10785,6 +10781,34 @@
       },
       {
         "TextEntryId": "SingleUseId243",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId244",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "SingleUseId245",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "SingleUseId246",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "SingleUseId247",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "SingleUseId248",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "SingleUseId249",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "SingleUseId250",
         "IsResource": false
       }
     ],
