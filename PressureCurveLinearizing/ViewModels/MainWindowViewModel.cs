@@ -37,7 +37,9 @@ namespace PressureCurveLinearizing.ViewModels
         private string _logLocation;
         private List<RecoverLog> _logs = new List<RecoverLog>();
         private List<BindableLog> _bindableLogs = new List<BindableLog>();
-        private BindableLog _bindableLog;
+
+        Section[] AverageSections;
+        Section[] MinimumSections;
         private int _sectionCount = 10;
 
         public int SectionCount
@@ -145,17 +147,17 @@ namespace PressureCurveLinearizing.ViewModels
                         catch (Exception ex) { Console.WriteLine(ex.Message); }
                     }
 
-                    var minimumSections = new Section[SectionCount];
-                    var averageSections = new Section[SectionCount];
-                    for (int i = 0; i < averageSections.Length; i++)
+                    MinimumSections = new Section[SectionCount];
+                    AverageSections = new Section[SectionCount];
+                    for (int i = 0; i < SectionCount; i++)
                     {
-                        minimumSections[i] = new Section()
+                        MinimumSections[i] = new Section()
                         {
                             ValueStart = Math.Round(newBindableLogs.Select(a => a.IndividualSections[i].ValueStart).Min()),
                             ValueEnd = Math.Round(newBindableLogs.Select(a => a.IndividualSections[i].ValueEnd).Min()),
                             ProgressRange = Math.Round(newBindableLogs.First().IndividualSections.First().ProgressRange)
                         };
-                        averageSections[i] = new Section()
+                        AverageSections[i] = new Section()
                         {
                             ValueStart = Math.Round(newBindableLogs.Select(a => a.IndividualSections[i].ValueStart).Average()),
                             ValueEnd = Math.Round(newBindableLogs.Select(a => a.IndividualSections[i].ValueEnd).Average()),
@@ -165,7 +167,7 @@ namespace PressureCurveLinearizing.ViewModels
                     }
 
                     foreach (var log in newBindableLogs)
-                        log.SetGenericSections(minimumSections, averageSections);
+                        log.SetGenericSections(MinimumSections, AverageSections);
 
 
                     Logs = newLogs;
@@ -175,6 +177,21 @@ namespace PressureCurveLinearizing.ViewModels
             }            
         }
 
+        public ICommand ExportLogs
+        {
+            get
+            {
+                return new ButtonCommand(a =>
+                {
+                    var dialog = new Ookii.Dialogs.Wpf.VistaSaveFileDialog();
+
+                    if (dialog.ShowDialog() != true)
+                        return;
+
+                    System.IO.File.WriteAllText(dialog.FileName, string.Join("\n", MinimumSections));
+                });
+            }        
+        }
 
 
 

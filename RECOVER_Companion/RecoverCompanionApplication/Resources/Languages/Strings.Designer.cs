@@ -259,6 +259,25 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create Service Pack.
+        /// </summary>
+        public static string CreateServicePack {
+            get {
+                return ResourceManager.GetString("CreateServicePack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Creating Service Pack...
+        ///This may take a few minutes..
+        /// </summary>
+        public static string CreatingServicePack {
+            get {
+                return ResourceManager.GetString("CreatingServicePack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DEVELOP-R1.
         /// </summary>
         public static string DevelopR1 {

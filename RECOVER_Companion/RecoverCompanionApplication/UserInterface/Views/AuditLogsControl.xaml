@@ -88,7 +88,7 @@
                     Padding="5"
                     VerticalAlignment="Top"
                     HorizontalAlignment="Left"
-                    Margin="10"
+                    Margin="5, 10"
                     Click="BtnExportAll_Clicked">
                 <Image Width="32"
                        Height="32" 

@@ -409,4 +409,11 @@
   <data name="UnableToOpenFileRightNow" xml:space="preserve">
     <value>Unable to open the file right now. Please try again later.</value>
   </data>
+  <data name="CreateServicePack" xml:space="preserve">
+    <value>Create Service Pack</value>
+  </data>
+  <data name="CreatingServicePack" xml:space="preserve">
+    <value>Creating Service Pack...
+This may take a few minutes.</value>
+  </data>
 </root>

@@ -111,6 +111,7 @@
     <Compile Include="Definitions\Misc\LowLevelKeyboardHook.cs" />
     <Compile Include="Definitions\Misc\PrintManager.cs" />
     <Compile Include="Definitions\Misc\Reporting.cs" />
+    <Compile Include="Definitions\Misc\ServiceReport.cs" />
     <Compile Include="Definitions\WPF\ButtonCommand.cs" />
     <Compile Include="Definitions\WPF\ChartStripsBehavior.cs" />
     <Compile Include="Resources\Languages\Strings.Designer.cs">
