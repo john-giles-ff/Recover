@@ -747,6 +747,15 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Service Pack Created!.
+        /// </summary>
+        public static string ServicePackCreated {
+            get {
+                return ResourceManager.GetString("ServicePackCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show Graphs.
         /// </summary>
         public static string ShowGraphs {

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Xml;
 using System.Xml.Serialization;
 
 namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
@@ -26,8 +27,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
                 Text = Strings.CreatingServicePack,
                 Maximum = totalSamples,
                 Value = 0
-            };
-            progressWindow.Show();
+            };            
 
             RecoverManager.OnSampleLoaded = (a, b) =>
             {
@@ -46,26 +46,35 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
                     {
                         try
                         {
+                            var valueBefore = 0d;
+                            Application.Current.Dispatcher.Invoke(() =>
+                            {
+                                valueBefore = progressWindow.Value;                                
+                            });                            
+
                             //Only fetch is not previously fetched
                             if (log.Samples == null || !log.Samples.Any())
                             {
                                 RecoverManager.GetLogSamples(log);
                                 RecoverManager.SampleFinishedEvent.WaitOne();
                             }
-                            else
-                                progressWindow.Value += log.NumberOfSamples;
+
+                            Application.Current.Dispatcher.Invoke(() =>
+                            {
+                                progressWindow.Value = valueBefore + log.NumberOfSamples;
+                            });
 
                             //Escape only on success
                             break;
                         }
                         catch (Exception) { }
-                    } while (true);
-
-                    Application.Current.Dispatcher.Invoke(() =>
-                    {
-                        progressWindow.Value = totalSamples;
-                    });
+                    } while (true);                    
                 }
+
+                Application.Current.Dispatcher.Invoke(() =>
+                {
+                    progressWindow.Value = totalSamples;
+                });
 
                 //Serialise and encrypt
                 var individualData = new List<string>();
@@ -93,11 +102,15 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
                 //Ask for location to save
                 bool success = false;
                 var filename = string.Empty;
+                
+
                 Application.Current.Dispatcher.Invoke(() =>
-                {
+                {                    
                     var saveFileDialog = new Ookii.Dialogs.Wpf.VistaSaveFileDialog()
                     {
+                        FileName = RecoverManager.SerialNumber,
                         Filter = "*.LFT_SVC|*.LFT_SVC",
+                        AddExtension = true,
                     };
 
                     if (saveFileDialog.ShowDialog() != true)
@@ -112,9 +125,15 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
 
                 //Save
                 File.WriteAllBytes(filename, data.ToArray());
-            });
 
+                Application.Current.Dispatcher.Invoke(() =>
+                {                    
+                    progressWindow.Text = Strings.ServicePackCreated;
+                    progressWindow.IsCloseAllowed = true;
+                });
+            }).Start();
 
+            progressWindow.ShowDialog();
         }
 
         public static void Decrypt()
@@ -131,8 +150,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
             if (saveDirectoryDialog.ShowDialog() != true)
                 return;
 
-            var bytes = File.ReadAllBytes(openFileDialog.FileName);
-            int filename = 0;
+            var bytes = File.ReadAllBytes(openFileDialog.FileName);            
             int index = 0;
             do
             {
@@ -144,8 +162,12 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
 
                 var decryptedString = EncryptionManager.Decrypt(Encoding.UTF8.GetString(individualBytes));
 
-                File.WriteAllText(Path.Combine(saveDirectoryDialog.SelectedPath, filename.ToString()), decryptedString);
-                filename++;
+                var xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(decryptedString);
+                var startTime = DateTime.Parse(xmlDoc["RecoverLog"]["StartTime"].FirstChild.Value);
+                var logFilename = Path.Combine(saveDirectoryDialog.SelectedPath, $"{startTime.ToString("yyyy-MM-dd-HH-mm-ss")}.XML");
+
+                File.WriteAllText(logFilename, decryptedString);
             }
             while (index < bytes.Length);
         }

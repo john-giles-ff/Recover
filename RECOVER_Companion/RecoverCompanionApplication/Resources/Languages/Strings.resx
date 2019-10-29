@@ -416,4 +416,7 @@
     <value>Creating Service Pack...
 This may take a few minutes.</value>
   </data>
+  <data name="ServicePackCreated" xml:space="preserve">
+    <value>Service Pack Created!</value>
+  </data>
 </root>
