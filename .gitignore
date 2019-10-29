@@ -3,6 +3,8 @@
 *.o
 *.ipch
 
+.vs/
+
 RECOVER/simulator/msvs/.vs/
 RECOVER/screenshots/
 RECOVER/build/
