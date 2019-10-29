@@ -1048,40 +1048,172 @@
           <name>$PROJ_DIR$\..\..\generated\fonts\src\ApplicationFontProvider.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_consola_150_2bpp.cpp</name>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\CachedFont.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_consola_20_1bpp.cpp</name>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_consola_150_2bpp_0.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_consola_20_2bpp.cpp</name>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_consola_20_1bpp_0.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_segoeuisl_20_2bpp.cpp</name>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_consola_20_1bpp_4.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_segoeuisl_24_2bpp.cpp</name>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_consola_20_2bpp_0.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_segoeuisl_38_2bpp.cpp</name>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_consola_20_2bpp_4.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_segoeuisl_42_2bpp.cpp</name>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_segoeuisl_20_2bpp_0.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_segoeuisl_55_4bpp.cpp</name>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_segoeuisl_20_2bpp_4.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp.cpp</name>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_segoeuisl_24_2bpp_0.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp.cpp</name>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_segoeuisl_24_2bpp_4.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_55_2bpp.cpp</name>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_segoeuisl_38_2bpp_0.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\FontGetters.cpp</name>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_segoeuisl_42_2bpp_0.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_segoeuisl_55_4bpp_0.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_0.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_10.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_11.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_12.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_13.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_14.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_15.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_16.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_17.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_18.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_19.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_31.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_6.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_9.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_0.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_10.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_11.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_12.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_13.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_14.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_15.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_16.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_17.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_18.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_19.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_31.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_4.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_6.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_9.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_55_2bpp_0.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_55_2bpp_10.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_55_2bpp_11.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_55_2bpp_12.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_55_2bpp_13.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_55_2bpp_14.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_55_2bpp_15.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_55_2bpp_16.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_55_2bpp_17.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_55_2bpp_18.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_55_2bpp_19.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_55_2bpp_9.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\FontCache.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\generated\fonts\src\GeneratedFont.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_consola_150_2bpp.cpp</name>

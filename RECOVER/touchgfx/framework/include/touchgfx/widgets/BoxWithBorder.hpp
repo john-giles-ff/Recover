@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
-  * This file is part of the TouchGFX 4.10.0 distribution.
+  * This file is part of the TouchGFX 4.12.3 distribution.
   *
-  * <h2><center>&copy; Copyright (c) 2018 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under Ultimate Liberty license
@@ -50,11 +50,8 @@ public:
      * @param borderSize  Size of the border.
      * @param alpha       (Optional) The alpha.
      */
-    BoxWithBorder(uint16_t width, uint16_t height, colortype color, colortype borderColor, uint8_t borderSize, uint8_t alpha = 255) : 
-		Widget(),
-        alpha(alpha), 
-		color(color),
-		borderSize(0)
+    BoxWithBorder(uint16_t width, uint16_t height, colortype color, colortype borderColor, uint8_t borderSize, uint8_t alpha = 255) : Widget(),
+        alpha(alpha), color(color)
     {
         rect.width = width;
         rect.height = height;
