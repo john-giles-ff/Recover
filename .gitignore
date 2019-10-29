@@ -30,6 +30,7 @@ RECOVER_Companion/Installer/Output/
 
 packages/
 
+.vs/
 
 PressureCurveLinearizing/bin/
 PressureCurveLinearizing/obj/
