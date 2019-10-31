@@ -10773,6 +10773,10 @@
       {
         "TextEntryId": "Tuning",
         "IsResource": true
+      },
+      {
+        "TextEntryId": "Delta",
+        "IsResource": true
       }
     ],
     "Name": "LFT",

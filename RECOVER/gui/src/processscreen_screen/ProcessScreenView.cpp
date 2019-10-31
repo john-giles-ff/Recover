@@ -396,12 +396,8 @@ void ProcessScreenView::checkLFTValues()
 	if (LFT::Information.Delta >= 0 && LFT::Information.Delta < LFT::Information.DELTA_MIN)
 	{
 		if (stage == LFT_STAGE_CHAMBER_CONDITIONING && pressure < 15.0f)
-		{
-			if (pressure < LFT::Information.DELTA_STOPPED_ACCEPTABLE_MAX) //If pressure is good enough to continue without warning user
-			{
-				LFT::Auto.QueStage(LFT_STAGE_READY_TO_FUME);
-			}
-			else if (pressure < LFT::Information.DELTA_STOPPED_UNACCEPTABLE_MAX) //If pressure is in warning area
+		{			
+			if (pressure < LFT::Information.DELTA_STOPPED_ACCEPTABLE_MAX) //If pressure is in warning area
 			{
 				LowPressureWindow.setVisible(true);
 				BtnLowPressure.setVisible(true);
@@ -428,16 +424,16 @@ void ProcessScreenView::checkLFTValues()
 			STime time(dateTime.getRaw());
 			int minutes = time.GetTotalMinutes();
 
-			if (minutes > 0)
-			{
-				Unicode::snprintf(TxtFumeTimerBuffer, TXTFUMETIMER_SIZE, "%d", minutes);
-				TxtFumeTimer.invalidate();
-			}
+			if (minutes < 0)
+				minutes = 0;
+						
+			Unicode::snprintf(TxtFumeTimerBuffer, TXTFUMETIMER_SIZE, "%d", minutes);
+			TxtFumeTimer.invalidate();					
 		}
 	}
 	if (stage == LFT_STAGE_CHAMBER_CONDITIONING)
 	{
-		if (((DateTime)LFT::Information.ConditioningStartTime).isValid)
+		if (((DateTime)LFT::Information.ConditioningStartTime).isValid())
 		{
 			DateTime current = (DateTime)LFT::Information.GetCurrentTime();
 			DateTime startTime = (DateTime)LFT::Information.ConditioningStartTime;

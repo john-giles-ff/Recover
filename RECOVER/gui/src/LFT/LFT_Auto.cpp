@@ -299,8 +299,9 @@ void LFT_Auto::StartChamberConditioning()
 
 void LFT_Auto::StartFuming()
 {
-	//Invalidate Conditioning start time ready for next run
+	//Invalidate Information for next run
 	_information->ConditioningStartTime = DateTime();
+	_information->Delta = -1;
 
 
 
