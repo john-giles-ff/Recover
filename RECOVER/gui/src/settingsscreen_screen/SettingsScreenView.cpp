@@ -73,13 +73,18 @@ void SettingsScreenView::setupScreen()
 
 
 	//Load other settings
-	TglChamberBeep.forceState(LFT::Information.ChamberReadyBeep);		
-	TglShowOverwriteWarning.forceState(LFT::Settings.GetLogOverwriteWarning());
+	TglChamberBeep.forceState(LFT::Information.ChamberReadyBeep);			
 }
 
 void SettingsScreenView::tearDownScreen()
 {
 
+}
+
+void SettingsScreenView::StartAutoClean()
+{
+	LFT::AutoClean.StartAutoClean();
+	application().gotoProcessScreenScreenNoTransition();
 }
 
 void SettingsScreenView::ToggleChamberReadyBeep()
@@ -88,10 +93,6 @@ void SettingsScreenView::ToggleChamberReadyBeep()
 	LFT::Settings.SetBeepWhenReadySetting(TglChamberBeep.getState());
 }
 
-void SettingsScreenView::ToggleLogOverwriteWarning()
-{
-	LFT::Settings.SetLogOverwriteWarning(TglShowOverwriteWarning.getState());
-}
 
 void SettingsScreenView::LanguageClicked(const TextRadioButton & u)
 {													

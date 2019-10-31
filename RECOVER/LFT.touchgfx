@@ -503,6 +503,72 @@
             "Pressed": "transparent\\transparent.png",
             "Released": "transparent\\transparent.png",
             "Alpha": 255,
+            "IconPressed": "states\\filter_good.png",
+            "IconReleased": "states\\filter_good.png",
+            "IconX": 14,
+            "IconY": 14,
+            "IconHeight": 32,
+            "IconWidth": 32,
+            "Name": "BtnFilter",
+            "X": 680,
+            "Y": 0,
+            "Width": 60,
+            "Height": 60,
+            "Type": "ButtonWithIcon",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "transparent\\transparent.png",
+            "Released": "transparent\\transparent.png",
+            "Alpha": 255,
+            "IconPressed": "states\\lowpressureicon.png",
+            "IconReleased": "states\\lowpressureicon.png",
+            "IconX": 14,
+            "IconY": 14,
+            "IconHeight": 32,
+            "IconWidth": 32,
+            "Name": "BtnLowPressure",
+            "X": 560,
+            "Y": 0,
+            "Width": 60,
+            "Height": 60,
+            "Type": "ButtonWithIcon",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "transparent\\transparent.png",
+            "Released": "transparent\\transparent.png",
+            "Alpha": 255,
+            "IconPressed": "states\\fan_bad.png",
+            "IconReleased": "states\\fan_bad.png",
+            "IconX": 14,
+            "IconY": 14,
+            "IconHeight": 32,
+            "IconWidth": 32,
+            "Name": "BtnExternal",
+            "X": 620,
+            "Y": 0,
+            "Width": 60,
+            "Height": 60,
+            "Type": "ButtonWithIcon",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "transparent\\transparent.png",
+            "Released": "transparent\\transparent.png",
+            "Alpha": 255,
             "IconPressed": "abort.png",
             "IconReleased": "abort.png",
             "IconX": 14,
@@ -1274,50 +1340,6 @@
             "Moveable": false
           },
           {
-            "Pressed": "transparent\\transparent.png",
-            "Released": "transparent\\transparent.png",
-            "Alpha": 255,
-            "IconPressed": "states\\fan_bad.png",
-            "IconReleased": "states\\fan_bad.png",
-            "IconX": 14,
-            "IconY": 14,
-            "IconHeight": 32,
-            "IconWidth": 32,
-            "Name": "BtnExternal",
-            "X": 620,
-            "Y": 0,
-            "Width": 60,
-            "Height": 60,
-            "Type": "ButtonWithIcon",
-            "Visible": true,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Pressed": "transparent\\transparent.png",
-            "Released": "transparent\\transparent.png",
-            "Alpha": 255,
-            "IconPressed": "states\\filter_good.png",
-            "IconReleased": "states\\filter_good.png",
-            "IconX": 14,
-            "IconY": 14,
-            "IconHeight": 32,
-            "IconWidth": 32,
-            "Name": "BtnFilter",
-            "X": 680,
-            "Y": 0,
-            "Width": 60,
-            "Height": 60,
-            "Type": "ButtonWithIcon",
-            "Visible": true,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
             "TextId": "SingleUseId186",
             "TextRotation": "0",
             "Color": {
@@ -1358,28 +1380,6 @@
             "Height": 200,
             "Type": "TextArea",
             "Visible": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Pressed": "transparent\\transparent.png",
-            "Released": "transparent\\transparent.png",
-            "Alpha": 255,
-            "IconPressed": "states\\lowpressureicon.png",
-            "IconReleased": "states\\lowpressureicon.png",
-            "IconX": 14,
-            "IconY": 14,
-            "IconHeight": 32,
-            "IconWidth": 32,
-            "Name": "BtnLowPressure",
-            "X": 560,
-            "Y": 0,
-            "Width": 60,
-            "Height": 60,
-            "Type": "ButtonWithIcon",
-            "Visible": true,
             "Draggable": false,
             "Clickable": false,
             "Fadeable": false,
@@ -1913,7 +1913,7 @@
                   {
                     "Type": "TextButtonStyle",
                     "X": 0,
-                    "Y": 11,
+                    "Y": 8,
                     "TextId": "ResetFilter",
                     "TextRotation": "0",
                     "ColorReleased": {
@@ -1959,7 +1959,7 @@
                 ],
                 "Name": "BtnResetFilter",
                 "X": 20,
-                "Y": 261,
+                "Y": 276,
                 "Width": 763,
                 "Height": 50,
                 "Type": "FlexButton",
@@ -2209,40 +2209,65 @@
                 "Moveable": false
               },
               {
-                "InitialStatePressed": false,
-                "Pressed": "Check_checked.png",
-                "Released": "Check_unchecked.png",
                 "Alpha": 255,
-                "Name": "TglShowOverwriteWarning",
-                "X": 20,
-                "Y": 204,
-                "Width": 40,
-                "Height": 40,
-                "Type": "ToggleButton",
-                "Visible": false,
-                "Draggable": false,
-                "Clickable": false,
-                "Fadeable": false,
-                "Moveable": false
-              },
-              {
-                "TextId": "SingleUseId220",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
                 },
-                "Alpha": 255,
-                "AutoSize": false,
-                "LineSpacing": 0,
-                "Name": "TxtShowOverwriteWarning",
-                "X": 77,
-                "Y": 209,
-                "Width": 706,
-                "Height": 31,
-                "Type": "TextArea",
-                "Visible": false,
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "X": 0,
+                    "Y": 7,
+                    "TextId": "SingleUseId251",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "ColorPressed": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "X": 0,
+                    "Y": 0,
+                    "Width": 763,
+                    "Height": 50,
+                    "LockToFlexButtonSize": true,
+                    "BorderSize": 2,
+                    "ColorReleased": {
+                      "Red": 0,
+                      "Green": 0,
+                      "Blue": 0
+                    },
+                    "ColorPressed": {
+                      "Red": 46,
+                      "Green": 172,
+                      "Blue": 98
+                    },
+                    "ColorBorderReleased": {
+                      "Red": 46,
+                      "Green": 172,
+                      "Blue": 98
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 46,
+                      "Green": 172,
+                      "Blue": 98
+                    }
+                  }
+                ],
+                "Name": "BtnStartTuningCycle",
+                "X": 20,
+                "Y": 216,
+                "Width": 763,
+                "Height": 50,
+                "Type": "FlexButton",
+                "Visible": true,
                 "Draggable": false,
                 "Clickable": false,
                 "Fadeable": false,
@@ -2381,11 +2406,22 @@
             "InteractionName": "ToggleLogOverwriteWarning",
             "HasCompletedTrigger": false,
             "Trigger": {
-              "TriggerComponent": "TglShowOverwriteWarning",
               "Type": "TriggerClicked"
             },
             "Action": {
               "FunctionName": "ToggleLogOverwriteWarning",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "StartAutoClean",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "BtnStartTuningCycle",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "StartAutoClean",
               "Type": "ActionCustom"
             }
           }
@@ -10627,10 +10663,6 @@
         "IsResource": true
       },
       {
-        "TextEntryId": "SingleUseId220",
-        "IsResource": false
-      },
-      {
         "TextEntryId": "ConfirmLogOverwrite",
         "IsResource": true
       },
@@ -10733,6 +10765,14 @@
       {
         "TextEntryId": "SingleUseId250",
         "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId251",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "Tuning",
+        "IsResource": true
       }
     ],
     "Name": "LFT",

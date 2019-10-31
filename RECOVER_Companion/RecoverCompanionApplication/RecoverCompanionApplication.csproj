@@ -54,14 +54,14 @@
     <Reference Include="IntelHexFormatReader, Version=2.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\IntelHexFormatReader.2.2.3\lib\net46\IntelHexFormatReader.dll</HintPath>
     </Reference>
-    <Reference Include="MigraDoc.DocumentObjectModel-wpf, Version=1.50.4845.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\PDFsharp-MigraDoc-wpf.1.50.4845-RC2a\lib\net30\MigraDoc.DocumentObjectModel-wpf.dll</HintPath>
+    <Reference Include="MigraDoc.DocumentObjectModel-wpf, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PDFsharp-MigraDoc-wpf.1.50.5147\lib\net30\MigraDoc.DocumentObjectModel-wpf.dll</HintPath>
     </Reference>
-    <Reference Include="MigraDoc.Rendering-wpf, Version=1.50.4845.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\PDFsharp-MigraDoc-wpf.1.50.4845-RC2a\lib\net30\MigraDoc.Rendering-wpf.dll</HintPath>
+    <Reference Include="MigraDoc.Rendering-wpf, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PDFsharp-MigraDoc-wpf.1.50.5147\lib\net30\MigraDoc.Rendering-wpf.dll</HintPath>
     </Reference>
-    <Reference Include="MigraDoc.RtfRendering-wpf, Version=1.50.4845.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\PDFsharp-MigraDoc-wpf.1.50.4845-RC2a\lib\net30\MigraDoc.RtfRendering-wpf.dll</HintPath>
+    <Reference Include="MigraDoc.RtfRendering-wpf, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PDFsharp-MigraDoc-wpf.1.50.5147\lib\net30\MigraDoc.RtfRendering-wpf.dll</HintPath>
     </Reference>
     <Reference Include="NetMQ, Version=4.0.0.239, Culture=neutral, PublicKeyToken=a6decef4ddc58b3a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\NetMQ.4.0.0.239-pre\lib\net40\NetMQ.dll</HintPath>
@@ -69,11 +69,11 @@
     <Reference Include="Ookii.Dialogs.Wpf, Version=1.0.0.0, Culture=neutral, PublicKeyToken=66aa232afad40158, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Ookii.Dialogs.Wpf.1.1.0\lib\net45\Ookii.Dialogs.Wpf.dll</HintPath>
     </Reference>
-    <Reference Include="PdfSharp-wpf, Version=1.50.4845.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\PDFsharp-MigraDoc-wpf.1.50.4845-RC2a\lib\net30\PdfSharp-wpf.dll</HintPath>
+    <Reference Include="PdfSharp-wpf, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PDFsharp-MigraDoc-wpf.1.50.5147\lib\net30\PdfSharp-wpf.dll</HintPath>
     </Reference>
-    <Reference Include="PdfSharp.Charting-wpf, Version=1.50.4845.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\PDFsharp-MigraDoc-wpf.1.50.4845-RC2a\lib\net30\PdfSharp.Charting-wpf.dll</HintPath>
+    <Reference Include="PdfSharp.Charting-wpf, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PDFsharp-MigraDoc-wpf.1.50.5147\lib\net30\PdfSharp.Charting-wpf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

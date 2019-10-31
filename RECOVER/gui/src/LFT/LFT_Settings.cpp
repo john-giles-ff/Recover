@@ -122,22 +122,6 @@ int LFT_Settings::GetLockMode()
 	return _lockMode;;
 }
 
-void LFT_Settings::SetLogOverwriteWarning(bool value)
-{
-	_logOverwriteWarning = value;
-	WriteInt(LOG_OVERWRITE_WARNING, value);
-}
-
-int LFT_Settings::ReadLogOverwriteWarning()
-{
-	_logOverwriteWarning = (bool)ReadInt(LOG_OVERWRITE_WARNING, DEFAULT_LOG_OVERWRITE_WARNING);
-	return _logOverwriteWarning;
-}
-
-int LFT_Settings::GetLogOverwriteWarning()
-{
-	return _logOverwriteWarning;
-}
 
 void LFT_Settings::WriteInt(int location, int value)
 {

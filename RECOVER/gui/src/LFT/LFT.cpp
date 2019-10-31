@@ -5,7 +5,8 @@ LFT_Information LFT::Information;
 LFT_Settings LFT::Settings(&LFT::Information);
 LFT_Manual LFT::Manual(&LFT::Information);
 LFT_Logs LFT::Logs(&LFT::Information);
-LFT_Auto LFT::Auto(&LFT::Information, &LFT::Manual, &LFT::Settings);
+LFT_AutoClean LFT::AutoClean(&LFT::Information, &LFT::Manual, &LFT::Settings);
+LFT_Auto LFT::Auto(&LFT::Information, &LFT::Manual, &LFT::Settings, &LFT::AutoClean);
 LFT_ProductionTests LFT::ProductionTests(&LFT::Information, &LFT::Manual, &LFT::Auto, &LFT::Settings);
 int LFT::progressContinueOverride(0);
 
@@ -37,6 +38,7 @@ void LFT::SetModel(Model * model)
 	_model = model;		
 	Manual.SetModel(model);
 	Auto.SetModel(model);
+	AutoClean.SetModel(model);
 	Logs.SetModel(model);
 	Information.SetModel(model);
 	ProductionTests.SetModel(model);
@@ -80,14 +82,13 @@ void LFT::LFTThreadProcess()
 		Logs.GetAllSamples();
 	//Export Logs if required
 	if (Logs.ExportAllRequired)
-		Logs.ExportAll();
-
+		Logs.ExportAll();	
 
 	//If Abort is qued
 	if (Information.AbortRequired)
-	{
+	{		
 		//Abort Process
-		Auto.Abort();		
+		Auto.Abort();				
 
 		//Wait until process is aborted (Progress == 100)
 		int progress;
@@ -141,7 +142,9 @@ void LFT::LFTThreadProcess()
 		ProductionTests.IsSoakTestQued = false;
 	}	
 	if (ProductionTests.IsEMCModeOn)
-		ProductionTests.EmcMode();
+		ProductionTests.EmcMode();	
+	
+	AutoClean.ProcessAutoClean();
 
 
 	//Read General Information that should be kept up to date
@@ -220,8 +223,7 @@ void LFT::Initialisation()
 	//Set PC mode to 0, if power reset then PC mode shouldn't be enabled
 	Settings.SetPCMode(0);
 	Information.RefreshValuesProgress = Information.RefreshValuesProgress + 1;
-
-	Settings.ReadLogOverwriteWarning();
+	
 	Information.RefreshValuesProgress = Information.RefreshValuesProgress + 1;
 
 	Information.ReadRTC();

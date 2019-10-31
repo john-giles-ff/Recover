@@ -1,10 +1,11 @@
 #include <gui/LFT/LFT_Auto.hpp>
 
-LFT_Auto::LFT_Auto(LFT_Information * information, LFT_Manual * manual, LFT_Settings * settings)
+LFT_Auto::LFT_Auto(LFT_Information * information, LFT_Manual * manual, LFT_Settings * settings, LFT_AutoClean * autoClean)
 {
 	_information = information;
 	_manual = manual;
 	_settings = settings;
+	_autoClean = autoClean;
 
 	CurrentStage.SetSemaphore(_information->xSemaphore);
 }
@@ -154,6 +155,8 @@ void LFT_Auto::QueCool()
 
 void LFT_Auto::QueAbort()
 {
+	_autoClean->Abort();
+
 	_information->ProgressUpdating = false;
 	_information->Progress = 0;
 
@@ -162,7 +165,7 @@ void LFT_Auto::QueAbort()
 
 
 void LFT_Auto::Abort()
-{		
+{			
 	_model->SendCommand("HALT");
 }
 
@@ -235,6 +238,11 @@ void LFT_Auto::SetStage(int value)
 
 int LFT_Auto::GetStage()
 {
+	if (_autoClean->GetState() == AUTOCLEAN_STAGE_FINISHED)			
+		return LFT_STAGE_FINISHED;	
+	if (_autoClean->GetState() != AUTOCLEAN_STAGE_NONE)
+		return LFT_STAGE_TUNING;
+
 	return CurrentStage;
 }
 
