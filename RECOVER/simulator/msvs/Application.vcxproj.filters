@@ -609,6 +609,9 @@
     <ClCompile Include="..\..\generated\gui_generated\src\touchtestscreen_screen\TouchTestScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\touchtestscreen_screen</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\gui\src\LFT\LFT_AutoClean.cpp">
+      <Filter>Source Files\gui\LFT</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\assets\texts\texts.xlsx">
@@ -1338,6 +1341,9 @@
     </ClInclude>
     <ClInclude Include="..\..\touchgfx\framework\include\touchgfx\widgets\BoxWithBorder.hpp">
       <Filter>Header Files\TouchGFX\touchgfx\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\LFT\LFT_AutoClean.hpp">
+      <Filter>Header Files\gui\LFT</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

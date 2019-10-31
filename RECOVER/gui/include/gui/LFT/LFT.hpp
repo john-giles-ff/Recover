@@ -4,6 +4,7 @@
 #include <gui\model\Model.hpp>
 
 #include <gui\LFT\LFT_Auto.hpp>
+#include <gui\LFT\LFT_AutoClean.hpp>
 #include <gui\LFT\LFT_Manual.hpp>
 #include <gui\LFT\LFT_Information.hpp>
 #include <gui\LFT\LFT_Logs.hpp>
@@ -40,6 +41,7 @@ public:
 	static LFT_Information Information;	
 	static LFT_Manual Manual;
 	static LFT_Auto Auto;
+	static LFT_AutoClean AutoClean;
 	static LFT_Logs Logs;
 	static LFT_ProductionTests ProductionTests;
 	static LFT_Settings Settings;

@@ -146,11 +146,7 @@ void ProcessScreenView::handleTickEvent()
 	//Ticker
 	tickCounter++;		
 
-
-
-
-	int stage = LFT::Auto.GetStage();	
-		
+	int stage = LFT::Auto.GetStage();				
 
 	//Animate Progress bar if it's shown and not paused
 	if (progressBar.isVisible() && !_isDemoModePaused)
@@ -178,6 +174,7 @@ void ProcessScreenView::handleTickEvent()
 			AbortInProcessWindow.invalidate();
 
 			LFT::Auto.SetStage(LFT_STAGE_FINISHED);
+			LFT::AutoClean.SetStage(AUTOCLEAN_STAGE_FINISHED);
 			UpdateStage();
 		}
 	}
@@ -213,12 +210,13 @@ void ProcessScreenView::handleTickEvent()
 	case LFT_STAGE_CHAMBER_CONDITIONING:
 	case LFT_STAGE_COOLDOWN:						
 	case LFT_STAGE_FUMING:
+	case LFT_STAGE_TUNING:
 		//Animate Text if it's a waiting stage		
 		pulseStageText();
 		break;			
 	default:
-		break;
-	}
+		break;	
+	}	
 
 #ifdef SIMULATOR
 	//Simulator, goto next stage on count, normally uses value from LFT
@@ -228,7 +226,12 @@ void ProcessScreenView::handleTickEvent()
 		if (stage == LFT_STAGE_CHAMBER_CONDITIONING || stage == LFT_STAGE_COOLDOWN || stage == LFT_STAGE_PRECHECKS)
 		{			
 			tickCounter = 0;
-			NextStage();
+			NextStage();		
+		}
+		if (stage == LFT_STAGE_TUNING)
+		{			
+			LFT::AutoClean.SetStage(AUTOCLEAN_STAGE_FINISHED);
+			UpdateStage();
 		}
 	}	
 #endif
@@ -326,8 +329,9 @@ void ProcessScreenView::checkLFTValues()
 {
 	int status = LFT::Information.Status;
 	int stage = LFT::Auto.GetStage();
+	
 
-	//Uncomment this to show fake errors
+	//Uncomment this to show fake errors (helpful for debug and screenshots)
 	//status = 1;
 
 
@@ -437,28 +441,34 @@ void ProcessScreenView::checkLFTValues()
 
 
 	//Update Progress bar to match LFT value	
-	if (stage == LFT_STAGE_PRECHECKS || stage == LFT_STAGE_CHAMBER_CONDITIONING || stage == LFT_STAGE_COOLDOWN)
+	if (stage == LFT_STAGE_PRECHECKS || stage == LFT_STAGE_CHAMBER_CONDITIONING || stage == LFT_STAGE_COOLDOWN || stage == LFT_STAGE_TUNING)
 		updateToProgress();
 }
 
 void ProcessScreenView::updateToProgress()
 {		
-#ifdef REAL
-	int progress = LFT::Information.Progress;
+	int progress = 0;
 
+#ifdef REAL
+	progress = LFT::Information.Progress;
+
+	//If currently doing a tuning cycle
+	if (LFT::AutoClean.GetState() != AUTOCLEAN_STAGE_NONE)
+		progress = LFT::AutoClean.GetProgress();
+#else		
+	progress = tickCounter;
+	if (AbortInProcessWindow.isVisible())
+		return;
+#endif					
 	//Happens when screen hasn't been updated to current stage
 	if (progress < localProgress)
 		return;
 
 	//If read failed, don't update bar
 	if (progress <= 1)
-		return;	
+		return;		
 
-	progressBar.SetValue(progress);		
-#else
-	if (!AbortInProcessWindow.isVisible())
-		progressBar.SetValue(tickCounter);
-#endif					
+	progressBar.SetValue(progress);					
 
 	_requiresInvalidate = true;
 
@@ -641,18 +651,18 @@ void ProcessScreenView::NextStage()
 
 void ProcessScreenView::UpdateStage()
 {
-	int stage = LFT::Auto.GetStage();
+	int stage = LFT::Auto.GetStage();	
 
 	if (application().isDemoModeOn)
 		stage = demoStage;
 
 	//Show/Hide Buttons
-	BtnAbort.setVisible(stage == LFT_STAGE_CHAMBER_CONDITIONING || stage == LFT_STAGE_READY_TO_FUME || stage == LFT_STAGE_PRECHECKS);
+	BtnAbort.setVisible(stage == LFT_STAGE_CHAMBER_CONDITIONING || stage == LFT_STAGE_READY_TO_FUME || stage == LFT_STAGE_PRECHECKS || stage == LFT_STAGE_TUNING);
 	BtnBack.setVisible(stage == LFT_STAGE_LID_CONTROL);
 	BtnHome.setVisible(stage == LFT_STAGE_FINISHED);
 	BtnStopFuming.setVisible(stage == LFT_STAGE_FUMING);
 	BtnStartFuming.setVisible(stage == LFT_STAGE_READY_TO_FUME);
-	progressBar.setVisible(stage == LFT_STAGE_PRECHECKS || stage == LFT_STAGE_CHAMBER_CONDITIONING || stage == LFT_STAGE_COOLDOWN);
+	progressBar.setVisible(stage == LFT_STAGE_PRECHECKS || stage == LFT_STAGE_CHAMBER_CONDITIONING || stage == LFT_STAGE_COOLDOWN || stage == LFT_STAGE_TUNING);
 	BtnHint.setVisible(stage == LFT_STAGE_LID_CONTROL);
 	TxtFumeTimer.setVisible(stage == LFT_STAGE_FUMING);
 
@@ -724,7 +734,7 @@ void ProcessScreenView::UpdateStage()
 
 	//Stop Animation and hide depending on stage	
 	Animation.StopAnimation();
-	Animation.setVisible(stage == LFT_STAGE_PRECHECKS || stage == LFT_STAGE_CHAMBER_CONDITIONING || stage == LFT_STAGE_FUMING || stage == LFT_STAGE_COOLDOWN);
+	Animation.setVisible(stage == LFT_STAGE_PRECHECKS || stage == LFT_STAGE_CHAMBER_CONDITIONING || stage == LFT_STAGE_FUMING || stage == LFT_STAGE_COOLDOWN || stage == LFT_STAGE_TUNING);
 
 	//Set Progress bar to default maximum
 
@@ -743,7 +753,7 @@ void ProcessScreenView::UpdateStage()
 
 	//Show correct stage information 
 	//Start correct animation
-	//Send command to device
+	//Send command to device	
 	switch (stage)
 	{
 	case LFT_STAGE_LID_CONTROL:
@@ -777,7 +787,13 @@ void ProcessScreenView::UpdateStage()
 		LFT::Information.LidClosedState = false;
 		TxtStageInformation.setTypedText(TypedText(T_REMOVEEVIDENCE));
 		break;
+	case LFT_STAGE_TUNING:
+		TxtStageInformation.setTypedText(TypedText(T_TUNING));
+		Animation.SetImages(BITMAP_TUNING0000_ID, BITMAP_TUNING0019_ID);
+		Animation.StartAnimation(false, true, true);
+
 	}
+	
 
 	//Reset/Update Local variables
 	shownStage = stage;
@@ -1235,9 +1251,7 @@ void ProcessScreenView::StartProcess(bool skipOverwriteCheck)
 	{
 		//Check if Warning should be given about overwriting log before continuing
 		if (!skipOverwriteCheck)
-		{			
-			if (LFT::Settings.GetLogOverwriteWarning())
-			{
+		{						
 				bool willOverwrite = LFT::Logs.IsNextLogPresent();
 				if (willOverwrite)
 				{
@@ -1246,7 +1260,7 @@ void ProcessScreenView::StartProcess(bool skipOverwriteCheck)
 					ConfirmLogOverwrite.invalidate();
 					return;
 				}
-			}
+			
 		}
 
 		//Set Parameters then start
@@ -1305,6 +1319,7 @@ void ProcessScreenView::AbortProcess()
 void ProcessScreenView::GotoHome()
 {
 	LFT::Auto.SetStage(LFT_STAGE_LID_CONTROL);
+	LFT::AutoClean.SetStage(AUTOCLEAN_STAGE_NONE);
 	LFT::Manual.SetBaseFanState(false);
 	application().gotoMainScreenNoTransition();
 }

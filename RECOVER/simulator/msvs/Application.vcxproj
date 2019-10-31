@@ -18,6 +18,7 @@
     <ClCompile Include="..\..\gui\src\common\CustomKeyboard.cpp"/>
     <ClCompile Include="..\..\gui\src\common\String.cpp"/>
     <ClCompile Include="..\..\gui\src\common\TextRadioButton.cpp"/>
+    <ClCompile Include="..\..\gui\src\LFT\LFT_AutoClean.cpp"/>
     <ClCompile Include="..\main.cpp"/>
     <ClCompile Include="..\..\gui\src\common\FrontendApplication.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\common\FrontendApplicationBase.cpp"/>
@@ -262,6 +263,7 @@
     <ClInclude Include="..\..\gui\include\gui\common\String.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\TextRadioButton.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\Utils.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\LFT\LFT_AutoClean.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\model\Model.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp"/>
