@@ -288,6 +288,9 @@ void LFT_Auto::StartChamberConditioning()
 	//Remove Que'd Command
 	_information->ChamberConditioningRequired = false;
 
+	//Set Start Timer
+	_information->ConditioningStartTime = _information->GetCurrentTime();
+
 	//Reset Comms and Progress
 	_model->ResetComms();
 	_information->Progress = 0;

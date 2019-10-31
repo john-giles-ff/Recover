@@ -149,11 +149,13 @@ private:
 
 	int lidSubStage = 0;
 	bool selectSingleStage = false;
+	
 
 	void showError(ErrorMessage * errorCode, int count);	
 
 	void UpdateExternalSwitch(int state);
 	void UpdateProcessSelected();	
+	
 
 	void RepositionErrors();
 	

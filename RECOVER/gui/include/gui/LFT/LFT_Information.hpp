@@ -77,6 +77,7 @@ public:
 		AlwaysUpdateRTC.SetSemaphore(xSemaphore);
 		DoorOpenState.SetSemaphore(xSemaphore);
 		PowerlossDetected.SetSemaphore(xSemaphore);
+		ConditioningStartTime.SetSemaphore(xSemaphore);
 }
 
 
@@ -108,6 +109,7 @@ public:
 	ThreadSafe<DateTime> Time;
 	ThreadSafe<DateTime> TimerStart;
 	ThreadSafe<DateTime> Uptime;
+	ThreadSafe<DateTime> ConditioningStartTime;
 
 	//Current Values
 	ThreadSafe<int> Progress;
