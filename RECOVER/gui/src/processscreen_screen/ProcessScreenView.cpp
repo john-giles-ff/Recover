@@ -419,16 +419,14 @@ void ProcessScreenView::checkLFTValues()
 		}
 	}
 
-	//Check Processed Time
+	//Update Fuming Time
 	if (stage == LFT_STAGE_FUMING)
 	{
 		DateTime dateTime = (DateTime)LFT::Information.Time;
 		if (dateTime.isValid())
 		{
 			STime time(dateTime.getRaw());
-
-			int minutes = time.GetMinute();
-			minutes += time.GetHour() * 60;
+			int minutes = time.GetTotalMinutes();
 
 			if (minutes > 0)
 			{
@@ -436,6 +434,21 @@ void ProcessScreenView::checkLFTValues()
 				TxtFumeTimer.invalidate();
 			}
 		}
+	}
+	if (stage == LFT_STAGE_CHAMBER_CONDITIONING)
+	{
+		DateTime current = (DateTime)LFT::Information.GetCurrentTime();
+		DateTime startTime = (DateTime)LFT::Information.ConditioningStartTime;
+
+		STime time(current.getRaw() - startTime.getRaw());
+		int minutes = time.GetTotalMinutes();
+
+#ifdef SIMULATOR
+		minutes = 10;
+#endif
+
+		Unicode::snprintf(TxtFumeTimerBuffer, TXTFUMETIMER_SIZE, "%d", minutes);
+		TxtFumeTimer.invalidate();
 	}
 
 
@@ -664,7 +677,7 @@ void ProcessScreenView::UpdateStage()
 	BtnStartFuming.setVisible(stage == LFT_STAGE_READY_TO_FUME);
 	progressBar.setVisible(stage == LFT_STAGE_PRECHECKS || stage == LFT_STAGE_CHAMBER_CONDITIONING || stage == LFT_STAGE_COOLDOWN || stage == LFT_STAGE_TUNING);
 	BtnHint.setVisible(stage == LFT_STAGE_LID_CONTROL);
-	TxtFumeTimer.setVisible(stage == LFT_STAGE_FUMING);
+	TxtFumeTimer.setVisible(stage == LFT_STAGE_FUMING || stage == LFT_STAGE_CHAMBER_CONDITIONING);
 
 	ImgFinished.setVisible(stage == LFT_STAGE_FINISHED);
 	if (stage == LFT_STAGE_FINISHED)
