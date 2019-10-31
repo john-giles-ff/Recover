@@ -27,7 +27,6 @@ public:
 	LFT_AutoClean(LFT_Information * information, LFT_Manual * manual, LFT_Settings * settings);
 	void SetModel(Model * model);	
 	
-
 	void StartAutoClean();
 	void ProcessAutoClean();
 
@@ -44,14 +43,12 @@ public:
 	bool GetIsStandalone();
 	
 	void Abort();
-	
 
 private:	
 	void StageStart();	
 	void StagePushMoisture();
 	void StageBuildPressure();
 	void StageFinishing();
-
 
 	void msleep(int ms);
 
@@ -72,9 +69,7 @@ private:
 	ThreadSafe<int> _status = 0;
 	ThreadSafe<bool> _isStandalone;
 
-	static constexpr int ESTIMATE_FULL_CLEAN_SECONDS = 1350;	
-	
-
+	static constexpr int ESTIMATE_FULL_CLEAN_SECONDS = 1350;		
 };
 
 
