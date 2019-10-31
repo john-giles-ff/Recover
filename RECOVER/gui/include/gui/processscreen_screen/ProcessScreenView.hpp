@@ -9,6 +9,7 @@
 #include <gui/containers/ExternalSwitchErrorWindow.hpp>
 #include <gui/containers/FilterStateMessage.hpp>
 #include <gui/containers/InternalSwitchError.hpp>
+#include <gui/LFT/Definitions/ProgressStages.hpp>
 #include <BitmapDatabase.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <gui/containers/UsageInstructions.hpp>
@@ -147,6 +148,7 @@ private:
 	const float stageTextMaximum = 255;
 	const float stageTextDeviation = 100;
 
+	int previousChamberConditioningPercentage = 0;
 	int lidSubStage = 0;
 	bool selectSingleStage = false;
 	

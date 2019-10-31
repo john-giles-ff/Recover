@@ -437,18 +437,21 @@ void ProcessScreenView::checkLFTValues()
 	}
 	if (stage == LFT_STAGE_CHAMBER_CONDITIONING)
 	{
-		DateTime current = (DateTime)LFT::Information.GetCurrentTime();
-		DateTime startTime = (DateTime)LFT::Information.ConditioningStartTime;
+		if (((DateTime)LFT::Information.ConditioningStartTime).isValid)
+		{
+			DateTime current = (DateTime)LFT::Information.GetCurrentTime();
+			DateTime startTime = (DateTime)LFT::Information.ConditioningStartTime;
 
-		STime time(current.getRaw() - startTime.getRaw());
-		int minutes = time.GetTotalMinutes();
+			STime time(current.getRaw() - startTime.getRaw());
+			int minutes = time.GetTotalMinutes();
 
 #ifdef SIMULATOR
-		minutes = 10;
-#endif
+			minutes = 10;
+#endif		
 
-		Unicode::snprintf(TxtFumeTimerBuffer, TXTFUMETIMER_SIZE, "%d", minutes);
-		TxtFumeTimer.invalidate();
+			Unicode::snprintf(TxtFumeTimerBuffer, TXTFUMETIMER_SIZE, "%d", minutes);
+			TxtFumeTimer.invalidate();
+		}
 	}
 
 
@@ -468,6 +471,13 @@ void ProcessScreenView::updateToProgress()
 	//If currently doing a tuning cycle
 	if (LFT::AutoClean.GetState() != AUTOCLEAN_STAGE_NONE)
 		progress = LFT::AutoClean.GetProgress();
+
+	if (LFT::Auto.GetStage() == LFT_STAGE_CHAMBER_CONDITIONING && progress >= 10)
+	{
+		progress = ProgressStages().TranslatePressureToPercentage((double)LFT::Information.Pressure, previousChamberConditioningPercentage);
+		previousChamberConditioningPercentage = progress;
+	}
+	
 #else		
 	progress = tickCounter;
 	if (AbortInProcessWindow.isVisible())
@@ -1282,6 +1292,7 @@ void ProcessScreenView::StartProcess(bool skipOverwriteCheck)
 		LFT::Auto.QuePrechecks();
 		UpdateStage();
 		tickCounter = 0;
+		previousChamberConditioningPercentage = 0;
 	}
 }
 

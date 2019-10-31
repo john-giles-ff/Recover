@@ -299,6 +299,11 @@ void LFT_Auto::StartChamberConditioning()
 
 void LFT_Auto::StartFuming()
 {
+	//Invalidate Conditioning start time ready for next run
+	_information->ConditioningStartTime = DateTime();
+
+
+
 	_model->SendCommand("HEAT");
 
 	//Remove Que'd Command
