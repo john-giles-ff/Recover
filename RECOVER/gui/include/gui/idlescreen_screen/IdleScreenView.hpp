@@ -57,6 +57,11 @@ protected:
 	
 	int tickCounter = 0;
 
+#ifdef SIMULATOR
+	Box backlightBox;
+#endif
+
+
 	ProgressBar initialisingBar;		
 	PatternCode patternCode;
 	LFTDebug lftDebug;
@@ -66,6 +71,8 @@ protected:
 	void UnlockSwiped(const Unlock& u);
 	touchgfx::Callback<IdleScreenView, const Unlock&, void> UnlockClickedCallback;
 	touchgfx::Callback<IdleScreenView, const Unlock&, void> UnlockSwipedCallback;		
+
+	void SetBacklight(float value);
 
 #ifdef ALLOW_SIMPLE_ENGINEER_ENTRY
 	static const int SIMPLE_BUFFER_SIZE = 2;
