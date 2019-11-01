@@ -18,6 +18,7 @@
     <ClCompile Include="..\..\gui\src\common\CustomKeyboard.cpp"/>
     <ClCompile Include="..\..\gui\src\common\String.cpp"/>
     <ClCompile Include="..\..\gui\src\common\TextRadioButton.cpp"/>
+    <ClCompile Include="..\..\gui\src\LFT\Definitions\ProgressStages.cpp"/>
     <ClCompile Include="..\..\gui\src\LFT\LFT_AutoClean.cpp"/>
     <ClCompile Include="..\main.cpp"/>
     <ClCompile Include="..\..\gui\src\common\FrontendApplication.cpp"/>
@@ -111,6 +112,7 @@
     <ClCompile Include="..\..\gui\src\touchtestscreen_screen\TouchTestScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\touchtestscreen_screen\TouchTestScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\touchtestscreen_screen\TouchTestScreenViewBase.cpp"/>
+    <ClCompile Include="ProgressStages.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\assets\texts\texts.xlsx"/>
@@ -263,6 +265,7 @@
     <ClInclude Include="..\..\gui\include\gui\common\String.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\TextRadioButton.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\Utils.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\LFT\Definitions\ProgressStages.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\LFT\LFT_AutoClean.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\model\Model.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp"/>
@@ -360,6 +363,7 @@
     <ClInclude Include="..\..\gui\include\gui\touchtestscreen_screen\TouchTestScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\touchtestscreen_screen\TouchTestScreenViewBase.hpp"/>
     <ClInclude Include="..\..\touchgfx\framework\include\touchgfx\widgets\BoxWithBorder.hpp"/>
+    <ClInclude Include="ProgressStages.h"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\touchgfx.rc"/>

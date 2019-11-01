@@ -88,6 +88,15 @@ LFTDebug::LFTDebug() :
 	TxtValvesBuffer[0] = 0;
 	TxtValves.setWildcard(TxtValvesBuffer);
 	add(TxtValves);	
+
+	TxtDelta.setPosition(0, 0, 240, 28);
+	TxtDelta.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+	TxtDelta.setLinespacing(0);
+	TxtDelta.setTypedText(touchgfx::TypedText(T_DELTA));
+	TxtDeltaBuffer[0] = 0;
+	TxtDelta.setWildcard(TxtDeltaBuffer);
+	add(TxtDelta);
+
 }
 
 LFTDebug::~LFTDebug()
@@ -108,6 +117,7 @@ void LFTDebug::SetTextEnabledColor(touchgfx::colortype color)
 	TxtProgress.setColor(color);		
 	TxtTimer.setColor(color);
 	TxtValves.setColor(color);	
+	TxtDelta.setColor(color);
 }
 
 void LFTDebug::SetTextDisabledColor(touchgfx::colortype color)
@@ -133,6 +143,7 @@ void LFTDebug::SetEnabled(bool state)
 	TxtProgress.setColor(currentColor);		
 	TxtTimer.setColor(currentColor);
 	TxtValves.setColor(currentColor);
+	TxtDelta.setColor(currentColor);
 }
 
 void LFTDebug::SetHideSensitiveValues(bool state)
@@ -209,4 +220,9 @@ void LFTDebug::SetTimer(int hour, int minute, int second)
 void LFTDebug::SetValves(bool inlet, bool purge, bool bypass)
 {
 	touchgfx::Unicode::snprintf(TxtValvesBuffer, GENERIC_BUFFER_SIZE, "%d|%d|%d", (int)inlet, (int)purge, (int)bypass);
+}
+
+void LFTDebug::SetDelta(int delta)
+{
+	touchgfx::Unicode::snprintf(TxtDeltaBuffer, GENERIC_BUFFER_SIZE, "%d", delta);
 }

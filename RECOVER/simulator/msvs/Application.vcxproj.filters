@@ -310,6 +310,9 @@
     <Filter Include="Source Files\generated\gui_generated\touchtestscreen_screen">
       <UniqueIdentifier>EBA54334-66EA-4BB1-B37C-368DC5DAFB88</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\LFT\Definitions">
+      <UniqueIdentifier>{0521e566-103d-4399-b9d3-23fe1020e9c2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -611,6 +614,12 @@
     </ClCompile>
     <ClCompile Include="..\..\gui\src\LFT\LFT_AutoClean.cpp">
       <Filter>Source Files\gui\LFT</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgressStages.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\LFT\Definitions\ProgressStages.cpp">
+      <Filter>Source Files\gui\LFT\Definitions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1344,6 +1353,12 @@
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\LFT\LFT_AutoClean.hpp">
       <Filter>Header Files\gui\LFT</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgressStages.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\LFT\Definitions\ProgressStages.hpp">
+      <Filter>Header Files\gui\LFT\Definitions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

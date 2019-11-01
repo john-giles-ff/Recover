@@ -75,7 +75,7 @@ namespace PressureCurveLinearizing.Definitions.DeviceData
             IndividualSections = sections;
 
             //Define Series
-            lastNumber = 100;
+            lastNumber = 0;
             _originalSeries = new LiveCharts.ChartValues<double>(_sampleValues);            
             _fixedSeries = new LiveCharts.ChartValues<double>(_sampleValues.Select(a => TranslatePoint(a, IndividualSections)));
             _minimumFixedSeries = new LiveCharts.ChartValues<double>();
@@ -94,9 +94,9 @@ namespace PressureCurveLinearizing.Definitions.DeviceData
         
         public void SetGenericSections(Section[] minimumSections, Section[] averageSections)
         {
-            lastNumber = 100;
+            lastNumber = 0;
             _minimumFixedSeries.AddRange(_sampleValues.Select(a => TranslatePoint(a, minimumSections)).ToArray());
-            lastNumber = 100;
+            lastNumber = 0;
             _averageFixedSeries.AddRange(_sampleValues.Select(a => TranslatePoint(a, averageSections)).ToArray());
         }
 
@@ -104,7 +104,7 @@ namespace PressureCurveLinearizing.Definitions.DeviceData
 
         private double TranslatePoint(double input, Section[] sections)
         {
-            double offset = 100;
+            double offset = 0;
             var last = sections.Last();
             foreach (var section in sections)
             {
@@ -112,16 +112,16 @@ namespace PressureCurveLinearizing.Definitions.DeviceData
                 {
                     var basedValue = section.ValueStart - input;
                     var decValue = basedValue / (section.ValueStart - section.ValueEnd);
-                    var adjustedPercentage = offset - (section.ProgressRange * decValue);
+                    var adjustedPercentage = offset + (section.ProgressRange * decValue);
 
-                    if (lastNumber < adjustedPercentage)
+                    if (lastNumber > adjustedPercentage)
                         adjustedPercentage = lastNumber;
                     lastNumber = adjustedPercentage;
 
                     return adjustedPercentage;
                 }
 
-                offset -= section.ProgressRange;
+                offset += section.ProgressRange;
             }
 
             return 0;

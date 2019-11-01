@@ -165,8 +165,7 @@ public:
 	const int VAC_MAX = 6000;
 
 	const int DELTA_MIN = 1;
-	const float DELTA_STOPPED_ACCEPTABLE_MAX = 1.0f;	
-	const float DELTA_STOPPED_UNACCEPTABLE_MAX = 2.0f;
+	const float DELTA_STOPPED_ACCEPTABLE_MAX = 1.0f;		
 
 	const int LEAKRATE_MAX = 75;
 
