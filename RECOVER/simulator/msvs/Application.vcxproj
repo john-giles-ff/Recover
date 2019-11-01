@@ -112,7 +112,6 @@
     <ClCompile Include="..\..\gui\src\touchtestscreen_screen\TouchTestScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\touchtestscreen_screen\TouchTestScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\touchtestscreen_screen\TouchTestScreenViewBase.cpp"/>
-    <ClCompile Include="ProgressStages.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\assets\texts\texts.xlsx"/>

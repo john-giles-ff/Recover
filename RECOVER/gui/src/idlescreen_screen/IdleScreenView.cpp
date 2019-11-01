@@ -61,6 +61,17 @@ void IdleScreenView::setupScreen()
 		lftDebug.SetTextDisabledColor(Color::getColorFrom24BitRGB(46, 172, 98));
 		add(lftDebug);				
 	}
+
+
+#ifdef SIMULATOR
+	backlightBox.setWidth(800);
+	backlightBox.setHeight(480);
+	backlightBox.moveTo(0, 0);
+	backlightBox.setAlpha(0);
+	backlightBox.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+	add(backlightBox);
+#endif
+
 			
 	UpdateLockMode();
 	UpdateClock();
@@ -69,7 +80,7 @@ void IdleScreenView::setupScreen()
 void IdleScreenView::tearDownScreen()
 {
 	//Set backlight to 100% when window is exited
-	presenter->SetBacklight(100);
+	SetBacklight(100);	
 }
 
 void IdleScreenView::handleTickEvent()
@@ -152,7 +163,7 @@ void IdleScreenView::handleTickEvent()
 		}							
 
 		//Set led backlight
-		presenter->SetBacklight(value);
+		SetBacklight(value);		
 	}
 	if (queFadeUp)
 	{
@@ -174,7 +185,7 @@ void IdleScreenView::handleTickEvent()
 			else
 				faded = false;
 
-			presenter->SetBacklight(value);		
+			SetBacklight(value);		
 		}
 		else		
 			application().gotoMainScreenNoTransition();
@@ -301,17 +312,14 @@ void IdleScreenView::PatternEntered(const PatternCode & pattern)
 	
 
 
-void IdleScreenView::UnlockClicked(const Unlock & u)
-{		
-
-}
+void IdleScreenView::UnlockClicked(const Unlock & u) { }
 
 void IdleScreenView::UnlockSwiped(const Unlock & u)
 {		
 	//Don't allow backlight pulsing, it if was pulsing bright it back up to max brightness
 	allowPulse = false;
 	faded = false;
-	presenter->SetBacklight(100);
+	SetBacklight(100);	
 
 	DateClock.setVisible(false);
 	DateClock.invalidate();
@@ -322,6 +330,20 @@ void IdleScreenView::UnlockSwiped(const Unlock & u)
 
 	//Show empty splash screen
 	SwitchSplash(false);
+}
+
+void IdleScreenView::SetBacklight(float value)
+{
+#ifdef SIMULATOR
+	float decimal = value / 100;
+	value = (255 * decimal);
+
+
+	backlightBox.setAlpha((int)(255 - value));
+	backlightBox.invalidate();
+#else	
+	presenter->SetBacklight(value);
+#endif
 }
 
 void IdleScreenView::UpdateLockMode()
@@ -337,7 +359,7 @@ void IdleScreenView::UpdateLockMode()
 	case LOCK_MODE_TIME:
 		DateClock.setVisible(true);		
 		SwitchSplash(false);
-		presenter->SetBacklight(15);
+		SetBacklight(15);
 		faded = true;		
 		break;
 	}	

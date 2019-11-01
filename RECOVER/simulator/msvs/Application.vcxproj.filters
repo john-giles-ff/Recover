@@ -615,9 +615,6 @@
     <ClCompile Include="..\..\gui\src\LFT\LFT_AutoClean.cpp">
       <Filter>Source Files\gui\LFT</Filter>
     </ClCompile>
-    <ClCompile Include="ProgressStages.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gui\src\LFT\Definitions\ProgressStages.cpp">
       <Filter>Source Files\gui\LFT\Definitions</Filter>
     </ClCompile>
