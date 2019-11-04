@@ -167,6 +167,8 @@ public:
 	const int DELTA_MIN = 1;
 	const float DELTA_STOPPED_ACCEPTABLE_MAX = 1.0f;		
 
+	const int DEFAULT_TIMEOUT = 30;
+
 	const int LEAKRATE_MAX = 75;
 
 	const int STIRRING_TIME = 10;
