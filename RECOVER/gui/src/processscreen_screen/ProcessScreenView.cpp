@@ -391,6 +391,15 @@ void ProcessScreenView::checkLFTValues()
 		}
 	}
 
+	/* DEPRECIATED!
+	* This is kept here incase it needs to come back in the future. The error code is also kept but should never be shown
+	*
+	* This will trigger when the delta (mTorr of pressure reduced per 10 seconds) is 0, it will then do different things
+	* depending on where the pressure is currently.
+	*
+	* Science department didn't like this as they saw it as too inacurate and believed that certain scientific bodies 
+	* would have issues with the wording used. This is replaced by the timeout allowing progress if under 0.9Torr.
+
 	//Check Delta Level in pumpdown (only works below 15Torr)
 	int pressure = (int)LFT::Information.Pressure;
 	if (LFT::Information.Delta >= 0 && LFT::Information.Delta < LFT::Information.DELTA_MIN)
@@ -413,7 +422,7 @@ void ProcessScreenView::checkLFTValues()
 			}
 
 		}
-	}
+	}*/
 
 	//Update Fuming Time
 	if (stage == LFT_STAGE_FUMING)
