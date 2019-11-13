@@ -162,7 +162,7 @@ public:
 	const int LOWTEMP_OFF = 29;
 
 	const int VAC_VALUE = 750;
-	const int VAC_MAX = 6000;
+	const int VAC_MAX = 900;
 
 	const int DELTA_MIN = 1;
 	const float DELTA_STOPPED_ACCEPTABLE_MAX = 1.0f;		

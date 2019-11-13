@@ -10,7 +10,7 @@ namespace LFTFileCreator
 {
     class Program
     {
-        static string SoftwareBuildFileName => @"F:\Users\Alex\Documents\Projects\Recover\LFT\gui\include\gui\common\Build.hpp";
+        static string SoftwareBuildFileName => @"F:\Users\Alex\Documents\GitHub\RECOVER\RECOVER\RECOVER\gui\include\gui\common\Build.hpp";
 
         static void Main(string[] args)
         {
