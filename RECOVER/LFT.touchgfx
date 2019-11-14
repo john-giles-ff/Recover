@@ -1384,33 +1384,6 @@
             "Clickable": false,
             "Fadeable": false,
             "Moveable": false
-          },
-          {
-            "TextId": "SingleUseId252",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": false,
-            "LineSpacing": 0,
-            "Wildcard1": {
-              "UseBuffer": true,
-              "BufferSize": 16
-            },
-            "Name": "TxtUserCipher",
-            "X": 60,
-            "Y": 0,
-            "Width": 228,
-            "Height": 60,
-            "Type": "TextArea",
-            "Visible": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
           }
         ],
         "Interactions": [
@@ -10807,7 +10780,7 @@
       },
       {
         "TextEntryId": "SingleUseId252",
-        "IsResource": false
+        "IsResource": true
       }
     ],
     "Name": "LFT",
