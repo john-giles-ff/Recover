@@ -17,6 +17,13 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
         // This constant determines the number of iterations for the password bytes generation function.
         private const int DerivationIterations = 1000;
 
+        private const string DefaultPhrase = @"8b1cf05b-73fe-46d8-be1c-d919a8550bb4";
+
+        public static string Encrypt(string plainText)
+        {
+            return Encrypt(plainText, DefaultPhrase);
+        }
+
         public static string Encrypt(string plainText, string passPhrase)
         {
             // Salt and IV is randomly generated each time, but is preprended to encrypted cipher text
@@ -52,6 +59,11 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
                     }
                 }
             }
+        }
+
+        public static string Decrypt(string cipherText)
+        {
+            return Decrypt(cipherText, DefaultPhrase);
         }
 
         public static string Decrypt(string cipherText, string passPhrase)

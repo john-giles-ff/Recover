@@ -65,7 +65,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
 
             //Setup Progress window
             progressWindow = new ProgressWindow();
-            progressWindow.SetText(Strings.PrintingInProgress);
+            progressWindow.Text = Strings.PrintingInProgress;
 
             //Reset Values
             logIndex = 0;
@@ -85,9 +85,9 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
 
                 App.Current.Dispatcher.Invoke(() =>
                 {
-                    progressWindow.SetText(Strings.PrintingFinished);
-                    progressWindow.SetAllowClose(true);
-                    progressWindow.SetIsIndetermite(false);
+                    progressWindow.Text = Strings.PrintingFinished;
+                    progressWindow.IsCloseAllowed = true;
+                    progressWindow.IsIndetermite = false;
                 });
 
 

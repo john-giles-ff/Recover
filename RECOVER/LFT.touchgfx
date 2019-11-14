@@ -90,6 +90,7 @@
                 "Moveable": false
               }
             ],
+            "IsCacheableContainer": false,
             "Name": "DateClock",
             "X": 0,
             "Y": 130,
@@ -502,6 +503,72 @@
             "Pressed": "transparent\\transparent.png",
             "Released": "transparent\\transparent.png",
             "Alpha": 255,
+            "IconPressed": "states\\filter_good.png",
+            "IconReleased": "states\\filter_good.png",
+            "IconX": 14,
+            "IconY": 14,
+            "IconHeight": 32,
+            "IconWidth": 32,
+            "Name": "BtnFilter",
+            "X": 680,
+            "Y": 0,
+            "Width": 60,
+            "Height": 60,
+            "Type": "ButtonWithIcon",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "transparent\\transparent.png",
+            "Released": "transparent\\transparent.png",
+            "Alpha": 255,
+            "IconPressed": "states\\lowpressureicon.png",
+            "IconReleased": "states\\lowpressureicon.png",
+            "IconX": 14,
+            "IconY": 14,
+            "IconHeight": 32,
+            "IconWidth": 32,
+            "Name": "BtnLowPressure",
+            "X": 560,
+            "Y": 0,
+            "Width": 60,
+            "Height": 60,
+            "Type": "ButtonWithIcon",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "transparent\\transparent.png",
+            "Released": "transparent\\transparent.png",
+            "Alpha": 255,
+            "IconPressed": "states\\fan_bad.png",
+            "IconReleased": "states\\fan_bad.png",
+            "IconX": 14,
+            "IconY": 14,
+            "IconHeight": 32,
+            "IconWidth": 32,
+            "Name": "BtnExternal",
+            "X": 620,
+            "Y": 0,
+            "Width": 60,
+            "Height": 60,
+            "Type": "ButtonWithIcon",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "transparent\\transparent.png",
+            "Released": "transparent\\transparent.png",
+            "Alpha": 255,
             "IconPressed": "abort.png",
             "IconReleased": "abort.png",
             "IconX": 14,
@@ -711,6 +778,7 @@
                 "Moveable": false
               }
             ],
+            "IsCacheableContainer": false,
             "Name": "TypeSelector",
             "X": 0,
             "Y": 0,
@@ -870,6 +938,7 @@
                 "Moveable": false
               }
             ],
+            "IsCacheableContainer": false,
             "Name": "ChamberSelector",
             "X": 0,
             "Y": 0,
@@ -1043,6 +1112,7 @@
                 "Moveable": false
               }
             ],
+            "IsCacheableContainer": false,
             "Name": "PrecursorElement",
             "X": 100,
             "Y": 155,
@@ -1270,50 +1340,6 @@
             "Moveable": false
           },
           {
-            "Pressed": "transparent\\transparent.png",
-            "Released": "transparent\\transparent.png",
-            "Alpha": 255,
-            "IconPressed": "states\\fan_bad.png",
-            "IconReleased": "states\\fan_bad.png",
-            "IconX": 14,
-            "IconY": 14,
-            "IconHeight": 32,
-            "IconWidth": 32,
-            "Name": "BtnExternal",
-            "X": 620,
-            "Y": 0,
-            "Width": 60,
-            "Height": 60,
-            "Type": "ButtonWithIcon",
-            "Visible": true,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Pressed": "transparent\\transparent.png",
-            "Released": "transparent\\transparent.png",
-            "Alpha": 255,
-            "IconPressed": "states\\filter_good.png",
-            "IconReleased": "states\\filter_good.png",
-            "IconX": 14,
-            "IconY": 14,
-            "IconHeight": 32,
-            "IconWidth": 32,
-            "Name": "BtnFilter",
-            "X": 680,
-            "Y": 0,
-            "Width": 60,
-            "Height": 60,
-            "Type": "ButtonWithIcon",
-            "Visible": true,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
             "TextId": "SingleUseId186",
             "TextRotation": "0",
             "Color": {
@@ -1360,22 +1386,27 @@
             "Moveable": false
           },
           {
-            "Pressed": "transparent\\transparent.png",
-            "Released": "transparent\\transparent.png",
+            "TextId": "SingleUseId252",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
             "Alpha": 255,
-            "IconPressed": "states\\lowpressureicon.png",
-            "IconReleased": "states\\lowpressureicon.png",
-            "IconX": 14,
-            "IconY": 14,
-            "IconHeight": 32,
-            "IconWidth": 32,
-            "Name": "BtnLowPressure",
-            "X": 560,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 16
+            },
+            "Name": "TxtUserCipher",
+            "X": 60,
             "Y": 0,
-            "Width": 60,
+            "Width": 228,
             "Height": 60,
-            "Type": "ButtonWithIcon",
-            "Visible": true,
+            "Type": "TextArea",
+            "Visible": false,
             "Draggable": false,
             "Clickable": false,
             "Fadeable": false,
@@ -1831,6 +1862,7 @@
                     "Moveable": false
                   }
                 ],
+                "IsCacheableContainer": false,
                 "Name": "TabJoiners",
                 "X": 0,
                 "Y": 38,
@@ -1844,6 +1876,7 @@
                 "Moveable": false
               }
             ],
+            "IsCacheableContainer": false,
             "Name": "Tabs",
             "X": 0,
             "Y": 65,
@@ -1907,7 +1940,7 @@
                   {
                     "Type": "TextButtonStyle",
                     "X": 0,
-                    "Y": 11,
+                    "Y": 8,
                     "TextId": "ResetFilter",
                     "TextRotation": "0",
                     "ColorReleased": {
@@ -1953,7 +1986,7 @@
                 ],
                 "Name": "BtnResetFilter",
                 "X": 20,
-                "Y": 261,
+                "Y": 276,
                 "Width": 763,
                 "Height": 50,
                 "Type": "FlexButton",
@@ -2203,46 +2236,72 @@
                 "Moveable": false
               },
               {
-                "InitialStatePressed": false,
-                "Pressed": "Check_checked.png",
-                "Released": "Check_unchecked.png",
                 "Alpha": 255,
-                "Name": "TglShowOverwriteWarning",
-                "X": 20,
-                "Y": 204,
-                "Width": 40,
-                "Height": 40,
-                "Type": "ToggleButton",
-                "Visible": false,
-                "Draggable": false,
-                "Clickable": false,
-                "Fadeable": false,
-                "Moveable": false
-              },
-              {
-                "TextId": "SingleUseId220",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
                 },
-                "Alpha": 255,
-                "AutoSize": false,
-                "LineSpacing": 0,
-                "Name": "TxtShowOverwriteWarning",
-                "X": 77,
-                "Y": 209,
-                "Width": 706,
-                "Height": 31,
-                "Type": "TextArea",
-                "Visible": false,
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "X": 0,
+                    "Y": 7,
+                    "TextId": "SingleUseId251",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "ColorPressed": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "X": 0,
+                    "Y": 0,
+                    "Width": 763,
+                    "Height": 50,
+                    "LockToFlexButtonSize": true,
+                    "BorderSize": 2,
+                    "ColorReleased": {
+                      "Red": 0,
+                      "Green": 0,
+                      "Blue": 0
+                    },
+                    "ColorPressed": {
+                      "Red": 46,
+                      "Green": 172,
+                      "Blue": 98
+                    },
+                    "ColorBorderReleased": {
+                      "Red": 46,
+                      "Green": 172,
+                      "Blue": 98
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 46,
+                      "Green": 172,
+                      "Blue": 98
+                    }
+                  }
+                ],
+                "Name": "BtnStartTuningCycle",
+                "X": 20,
+                "Y": 216,
+                "Width": 763,
+                "Height": 50,
+                "Type": "FlexButton",
+                "Visible": true,
                 "Draggable": false,
                 "Clickable": false,
                 "Fadeable": false,
                 "Moveable": false
               }
             ],
+            "IsCacheableContainer": false,
             "Name": "ContentGeneral",
             "X": 0,
             "Y": 110,
@@ -2259,6 +2318,7 @@
             "Components": [
               {
                 "Components": [],
+                "IsCacheableContainer": false,
                 "Name": "LanguageContainer",
                 "X": 10,
                 "Y": 25,
@@ -2272,6 +2332,7 @@
                 "Moveable": false
               }
             ],
+            "IsCacheableContainer": false,
             "Name": "ContentLanguage",
             "X": 0,
             "Y": 110,
@@ -2301,6 +2362,7 @@
                 "Moveable": false
               }
             ],
+            "IsCacheableContainer": false,
             "Name": "ContentTime",
             "X": 0,
             "Y": 110,
@@ -2371,11 +2433,22 @@
             "InteractionName": "ToggleLogOverwriteWarning",
             "HasCompletedTrigger": false,
             "Trigger": {
-              "TriggerComponent": "TglShowOverwriteWarning",
               "Type": "TriggerClicked"
             },
             "Action": {
               "FunctionName": "ToggleLogOverwriteWarning",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "StartAutoClean",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "BtnStartTuningCycle",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "StartAutoClean",
               "Type": "ActionCustom"
             }
           }
@@ -2617,6 +2690,7 @@
           },
           {
             "Components": [],
+            "IsCacheableContainer": false,
             "Name": "ExportWindow",
             "X": 0,
             "Y": 0,
@@ -2802,6 +2876,7 @@
               },
               {
                 "Components": [],
+                "IsCacheableContainer": false,
                 "Name": "KeyboardContainer",
                 "X": 0,
                 "Y": 127,
@@ -2815,6 +2890,7 @@
                 "Moveable": false
               }
             ],
+            "IsCacheableContainer": false,
             "Name": "CustomCommands",
             "X": 240,
             "Y": 0,
@@ -3450,6 +3526,7 @@
                 "Moveable": false
               }
             ],
+            "IsCacheableContainer": false,
             "Name": "PresetCommands",
             "X": 240,
             "Y": 0,
@@ -3728,6 +3805,7 @@
                 "Moveable": false
               }
             ],
+            "IsCacheableContainer": false,
             "Name": "AutoCommands",
             "X": 240,
             "Y": 0,
@@ -3839,6 +3917,7 @@
                 "Moveable": false
               }
             ],
+            "IsCacheableContainer": false,
             "Name": "ProductionTestFeedback",
             "X": 240,
             "Y": 0,
@@ -4102,6 +4181,7 @@
                 "Moveable": false
               }
             ],
+            "IsCacheableContainer": false,
             "Name": "GraphDisplay",
             "X": 240,
             "Y": 0,
@@ -4201,6 +4281,7 @@
                 "Moveable": false
               }
             ],
+            "IsCacheableContainer": false,
             "Name": "Tabs",
             "X": 245,
             "Y": 415,
@@ -4418,6 +4499,7 @@
                 "Moveable": false
               }
             ],
+            "IsCacheableContainer": false,
             "Name": "SoakTestWindow",
             "X": 0,
             "Y": 0,
@@ -4503,6 +4585,7 @@
                 "Moveable": false
               }
             ],
+            "IsCacheableContainer": false,
             "Name": "CntBigClock",
             "X": 0,
             "Y": 0,
@@ -6313,13 +6396,7 @@
         "X": 0,
         "Y": 0,
         "Width": 740,
-        "Height": 400,
-        "Type": "CustomContainerDefinition",
-        "Visible": true,
-        "Draggable": false,
-        "Clickable": false,
-        "Fadeable": false,
-        "Moveable": false
+        "Height": 400
       },
       {
         "Components": [
@@ -6416,13 +6493,7 @@
         "X": 0,
         "Y": 0,
         "Width": 800,
-        "Height": 480,
-        "Type": "CustomContainerDefinition",
-        "Visible": true,
-        "Draggable": false,
-        "Clickable": false,
-        "Fadeable": false,
-        "Moveable": false
+        "Height": 480
       },
       {
         "Components": [
@@ -6595,13 +6666,7 @@
         "X": 0,
         "Y": 0,
         "Width": 800,
-        "Height": 480,
-        "Type": "CustomContainerDefinition",
-        "Visible": true,
-        "Draggable": false,
-        "Clickable": false,
-        "Fadeable": false,
-        "Moveable": false
+        "Height": 480
       },
       {
         "Components": [],
@@ -6610,13 +6675,7 @@
         "X": 0,
         "Y": 0,
         "Width": 225,
-        "Height": 225,
-        "Type": "CustomContainerDefinition",
-        "Visible": true,
-        "Draggable": false,
-        "Clickable": false,
-        "Fadeable": false,
-        "Moveable": false
+        "Height": 225
       },
       {
         "Components": [
@@ -6916,13 +6975,7 @@
         "X": 0,
         "Y": 0,
         "Width": 800,
-        "Height": 480,
-        "Type": "CustomContainerDefinition",
-        "Visible": true,
-        "Draggable": false,
-        "Clickable": false,
-        "Fadeable": false,
-        "Moveable": false
+        "Height": 480
       },
       {
         "Components": [
@@ -6970,13 +7023,7 @@
         "X": 0,
         "Y": 0,
         "Width": 800,
-        "Height": 480,
-        "Type": "CustomContainerDefinition",
-        "Visible": true,
-        "Draggable": false,
-        "Clickable": false,
-        "Fadeable": false,
-        "Moveable": false
+        "Height": 480
       },
       {
         "Components": [
@@ -7149,13 +7196,7 @@
         "X": 0,
         "Y": 0,
         "Width": 800,
-        "Height": 480,
-        "Type": "CustomContainerDefinition",
-        "Visible": true,
-        "Draggable": false,
-        "Clickable": false,
-        "Fadeable": false,
-        "Moveable": false
+        "Height": 480
       },
       {
         "Components": [
@@ -7247,13 +7288,7 @@
         "X": 0,
         "Y": 0,
         "Width": 800,
-        "Height": 480,
-        "Type": "CustomContainerDefinition",
-        "Visible": true,
-        "Draggable": false,
-        "Clickable": false,
-        "Fadeable": false,
-        "Moveable": false
+        "Height": 480
       },
       {
         "Components": [
@@ -7386,13 +7421,7 @@
         "X": 0,
         "Y": 0,
         "Width": 800,
-        "Height": 485,
-        "Type": "CustomContainerDefinition",
-        "Visible": true,
-        "Draggable": false,
-        "Clickable": false,
-        "Fadeable": false,
-        "Moveable": false
+        "Height": 485
       },
       {
         "Components": [
@@ -7512,13 +7541,7 @@
         "X": 0,
         "Y": 0,
         "Width": 800,
-        "Height": 480,
-        "Type": "CustomContainerDefinition",
-        "Visible": true,
-        "Draggable": false,
-        "Clickable": false,
-        "Fadeable": false,
-        "Moveable": false
+        "Height": 480
       },
       {
         "Components": [
@@ -7651,13 +7674,7 @@
         "X": 0,
         "Y": 0,
         "Width": 800,
-        "Height": 485,
-        "Type": "CustomContainerDefinition",
-        "Visible": true,
-        "Draggable": false,
-        "Clickable": false,
-        "Fadeable": false,
-        "Moveable": false
+        "Height": 485
       },
       {
         "Components": [
@@ -7862,13 +7879,7 @@
         "X": 0,
         "Y": 0,
         "Width": 800,
-        "Height": 480,
-        "Type": "CustomContainerDefinition",
-        "Visible": true,
-        "Draggable": false,
-        "Clickable": false,
-        "Fadeable": false,
-        "Moveable": false
+        "Height": 480
       },
       {
         "Components": [
@@ -7980,13 +7991,7 @@
         "X": 0,
         "Y": 0,
         "Width": 800,
-        "Height": 480,
-        "Type": "CustomContainerDefinition",
-        "Visible": true,
-        "Draggable": false,
-        "Clickable": false,
-        "Fadeable": false,
-        "Moveable": false
+        "Height": 480
       },
       {
         "Components": [
@@ -8108,6 +8113,7 @@
                 "Moveable": false
               }
             ],
+            "IsCacheableContainer": false,
             "Name": "Minute",
             "X": 570,
             "Y": 29,
@@ -8219,6 +8225,7 @@
                 "Moveable": false
               }
             ],
+            "IsCacheableContainer": false,
             "Name": "Hour",
             "X": 470,
             "Y": 29,
@@ -8330,6 +8337,7 @@
                 "Moveable": false
               }
             ],
+            "IsCacheableContainer": false,
             "Name": "Day",
             "X": 320,
             "Y": 29,
@@ -8441,6 +8449,7 @@
                 "Moveable": false
               }
             ],
+            "IsCacheableContainer": false,
             "Name": "Month",
             "X": 220,
             "Y": 29,
@@ -8552,6 +8561,7 @@
                 "Moveable": false
               }
             ],
+            "IsCacheableContainer": false,
             "Name": "Year",
             "X": 70,
             "Y": 29,
@@ -8768,13 +8778,7 @@
         "X": 0,
         "Y": 0,
         "Width": 740,
-        "Height": 305,
-        "Type": "CustomContainerDefinition",
-        "Visible": true,
-        "Draggable": false,
-        "Clickable": false,
-        "Fadeable": false,
-        "Moveable": false
+        "Height": 305
       },
       {
         "Components": [
@@ -8902,13 +8906,7 @@
         "X": 0,
         "Y": 0,
         "Width": 250,
-        "Height": 40,
-        "Type": "CustomContainerDefinition",
-        "Visible": true,
-        "Draggable": false,
-        "Clickable": false,
-        "Fadeable": false,
-        "Moveable": false
+        "Height": 40
       },
       {
         "Components": [
@@ -9798,13 +9796,7 @@
         "X": 0,
         "Y": 0,
         "Width": 800,
-        "Height": 480,
-        "Type": "CustomContainerDefinition",
-        "Visible": true,
-        "Draggable": false,
-        "Clickable": false,
-        "Fadeable": false,
-        "Moveable": false
+        "Height": 480
       },
       {
         "Components": [
@@ -9833,13 +9825,7 @@
         "X": 0,
         "Y": 0,
         "Width": 800,
-        "Height": 485,
-        "Type": "CustomContainerDefinition",
-        "Visible": true,
-        "Draggable": false,
-        "Clickable": false,
-        "Fadeable": false,
-        "Moveable": false
+        "Height": 485
       }
     ],
     "TextEntries": [
@@ -10704,10 +10690,6 @@
         "IsResource": true
       },
       {
-        "TextEntryId": "SingleUseId220",
-        "IsResource": false
-      },
-      {
         "TextEntryId": "ConfirmLogOverwrite",
         "IsResource": true
       },
@@ -10810,6 +10792,22 @@
       {
         "TextEntryId": "SingleUseId250",
         "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId251",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "Tuning",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "Delta",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "SingleUseId252",
+        "IsResource": false
       }
     ],
     "Name": "LFT",
@@ -10830,12 +10828,10 @@
       "AvailableColorDepths": [
         16
       ],
-      "AvailableImageFormats": {
-        "16": {
-          "Opaque": "RGB565",
-          "NonOpaque": "ARGB8888"
-        }
-      },
+      "AvailableSections": [
+        "ExtFlashSection",
+        "IntFlashSection"
+      ],
       "AvailableResolutions": [
         {
           "Width": 800,
@@ -10849,8 +10845,13 @@
       "RunSimulatorCommand": "build\\bin\\simulator.exe",
       "CompileTargetCommand": "make -f target/gcc/Makefile -j10",
       "FlashTargetCommand": "make -f target/gcc/Makefile -j10 flash"
-    }
+    },
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape"
   },
-  "Version": "4.10.0",
+  "Version": "4.12.3",
   "CreatedBy": "4.9.3"
 }

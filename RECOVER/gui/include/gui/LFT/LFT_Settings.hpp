@@ -44,12 +44,7 @@ public:
 	//Lock Mode
 	void SetLockMode(int value);
 	int ReadLockMode();
-	int GetLockMode();
-
-	//Log Overwrite Warning
-	void SetLogOverwriteWarning(bool value);
-	int ReadLogOverwriteWarning();
-	int GetLogOverwriteWarning();
+	int GetLockMode();	
 
 private:	
 	void WriteInt(int location, int value);

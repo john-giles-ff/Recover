@@ -1,10 +1,11 @@
 #include <gui/LFT/LFT_Auto.hpp>
 
-LFT_Auto::LFT_Auto(LFT_Information * information, LFT_Manual * manual, LFT_Settings * settings)
+LFT_Auto::LFT_Auto(LFT_Information * information, LFT_Manual * manual, LFT_Settings * settings, LFT_AutoClean * autoClean)
 {
 	_information = information;
 	_manual = manual;
 	_settings = settings;
+	_autoClean = autoClean;
 
 	CurrentStage.SetSemaphore(_information->xSemaphore);
 }
@@ -53,6 +54,14 @@ void LFT_Auto::SetLeakMax(int mTorrPer10s)
 
 	_model->SendInt("MAXLEAK", mTorrPer10s);
 
+}
+
+void LFT_Auto::SetTimeout(int minutes)
+{
+	if (minutes == -1 || minutes == 0)
+		minutes = _information->DEFAULT_TIMEOUT;
+
+	_model->SendInt("TIMEOUT", minutes);
 }
 
 void LFT_Auto::SetChamberSize(bool value)
@@ -154,6 +163,8 @@ void LFT_Auto::QueCool()
 
 void LFT_Auto::QueAbort()
 {
+	_autoClean->Abort();
+
 	_information->ProgressUpdating = false;
 	_information->Progress = 0;
 
@@ -162,7 +173,7 @@ void LFT_Auto::QueAbort()
 
 
 void LFT_Auto::Abort()
-{		
+{			
 	_model->SendCommand("HALT");
 }
 
@@ -235,6 +246,11 @@ void LFT_Auto::SetStage(int value)
 
 int LFT_Auto::GetStage()
 {
+	if (_autoClean->GetState() == AUTOCLEAN_STAGE_FINISHED)			
+		return LFT_STAGE_FINISHED;	
+	if (_autoClean->GetState() != AUTOCLEAN_STAGE_NONE)
+		return LFT_STAGE_TUNING;
+
 	return CurrentStage;
 }
 
@@ -257,6 +273,7 @@ void LFT_Auto::SetSettings()
 	SetVacMax();
 	SetLeakMax();
 	SetStirTime();
+	SetTimeout();
 	SetUsePurgeFans(true);
 }
 
@@ -280,6 +297,9 @@ void LFT_Auto::StartChamberConditioning()
 	//Remove Que'd Command
 	_information->ChamberConditioningRequired = false;
 
+	//Set Start Timer
+	_information->ConditioningStartTime = _information->GetCurrentTime();
+
 	//Reset Comms and Progress
 	_model->ResetComms();
 	_information->Progress = 0;
@@ -288,6 +308,12 @@ void LFT_Auto::StartChamberConditioning()
 
 void LFT_Auto::StartFuming()
 {
+	//Invalidate Information for next run
+	_information->ConditioningStartTime = DateTime();
+	_information->Delta = -1;
+
+
+
 	_model->SendCommand("HEAT");
 
 	//Remove Que'd Command

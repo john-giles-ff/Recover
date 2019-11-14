@@ -83,6 +83,9 @@
                     </StackPanel>
                 </Button>
             </StackPanel>
+            <Button Content="{x:Static languages:Strings.CreateServicePack}" 
+                    HorizontalAlignment="Center"
+                    Click="CreateServicePack_Click"/>
         </StackPanel>
     </Grid>
 </UserControl>

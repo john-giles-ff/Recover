@@ -30,6 +30,7 @@
             <TextBlock Text="Section Count:" DockPanel.Dock="Left" VerticalAlignment="Center"/>
             <TextBox Text="{Binding SectionCount, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Left" VerticalContentAlignment="Center" MinWidth="200" Margin="5, 0"/>
             <Button Content="Go" DockPanel.Dock="Right" MinWidth="100" Command="{Binding LoadLogs}" IsDefault="True"/>
+            <Button Content="Export" DockPanel.Dock="Right" MinWidth="100" Command="{Binding ExportLogs}" Margin="5, 0"/>
             <WrapPanel>
                 <StackPanel Orientation="Horizontal">
                     <Rectangle Fill="Purple" Width="20" Height="20" Margin="5, 2"/>

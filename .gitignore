@@ -3,6 +3,8 @@
 *.o
 *.ipch
 
+.vs/
+
 RECOVER/simulator/msvs/.vs/
 RECOVER/screenshots/
 RECOVER/build/
@@ -26,9 +28,13 @@ RECOVER_Companion/RecoverCompanionApplication/obj/
 RecoverControl/bin/
 RecoverControl/obj/
 
+UserDecode/bin/
+UserDecode/obj/
+
 RECOVER_Companion/Installer/Output/
 
 packages/
+.vs/
 
 .vs/
 

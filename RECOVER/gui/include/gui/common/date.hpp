@@ -6,6 +6,7 @@
 #include <touchgfx\Utils.hpp>
 #include <touchgfx/TypedText.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
+#include <math.h>
 
 class DateTime {
   /** Seconds since the start of January, 1 of the 1'st year
@@ -110,6 +111,12 @@ public:
 	int GetHour() { return hour; }
 	int GetMinute() { return minute; }
 	int GetSecond() { return second; }	
+	
+	int GetTotalMinutes() {
+
+		return (int)floor((double)(get() / 60));
+	}
+
 
 	// Returns day-of-year for the date
 	int dayOfYear(void) const;
