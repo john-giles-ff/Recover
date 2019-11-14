@@ -31,6 +31,7 @@ public:
 	void SetVac(int mTorr = -1);
 	void SetVacMax(int mTorr = -1);
 	void SetLeakMax(int mTorrPer10s = -1);
+	void SetTimeout(int minutes = -1);
 	void SetChamberSize(bool value);	
 	void SetMetalType(bool value);
 	void SetChamberBeepReady(bool value);
