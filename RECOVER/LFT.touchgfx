@@ -1406,7 +1406,7 @@
             "Width": 222,
             "Height": 46,
             "Type": "TextArea",
-            "Visible": true,
+            "Visible": false,
             "Draggable": false,
             "Clickable": false,
             "Fadeable": false,
