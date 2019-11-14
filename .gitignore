@@ -28,8 +28,6 @@ RECOVER_Companion/RecoverCompanionApplication/obj/
 RecoverControl/bin/
 RecoverControl/obj/
 
-UserDecode/bin/
-UserDecode/obj/
 
 RECOVER_Companion/Installer/Output/
 
@@ -40,3 +38,6 @@ packages/
 
 PressureCurveLinearizing/bin/
 PressureCurveLinearizing/obj/
+
+UserDecode/bin/
+UserDecode/obj/
