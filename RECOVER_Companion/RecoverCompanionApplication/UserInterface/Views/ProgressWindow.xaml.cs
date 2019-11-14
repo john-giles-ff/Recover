@@ -25,29 +25,68 @@ namespace FosterAndFreeman.RecoverCompanionApplication.UserInterface.Views
             Owner = App.MainAppWindow;
         }
 
-        public void SetAllowClose(bool state)
+        public bool IsCloseAllowed
         {
-            if (state)
-                BtnExit.Visibility = Visibility.Visible;
-            else
-                BtnExit.Visibility = Visibility.Collapsed;
-        }
-
-        public void SetIsIndetermite(bool state)
-        {
-            PbrProgress.IsIndeterminate = state;
-
-            if (!state)
+            get
             {
-                PbrProgress.Maximum = 1;
-                PbrProgress.Value = 1;
+                return BtnExit.Visibility == Visibility.Visible;
             }
-                   
+            set
+            {
+                if (value)
+                    BtnExit.Visibility = Visibility.Visible;
+                else
+                    BtnExit.Visibility = Visibility.Collapsed;
+            }
         }
 
-        public void SetText(string text)
+        public bool IsIndetermite
         {
-            TxtContent.Text = text;
+            get
+            {
+                return PbrProgress.IsIndeterminate;
+            }
+            set
+            {
+                PbrProgress.IsIndeterminate = value;
+                if (!value)
+                {
+                    PbrProgress.Maximum = 1;
+                    PbrProgress.Value = 1;
+                }
+            }
+        }
+
+        public double Maximum
+        {
+            get
+            {
+                return PbrProgress.Maximum;
+            }
+            set
+            {
+                PbrProgress.Maximum = value;
+            }
+        }
+
+        public double Value
+        { 
+            get
+            {
+                return PbrProgress.Value;
+            }
+            set
+            {
+                PbrProgress.Value = value;
+            }
+        }
+
+        public string Text
+        {
+            set 
+            {
+                TxtContent.Text = value;
+            }
         }
 
 

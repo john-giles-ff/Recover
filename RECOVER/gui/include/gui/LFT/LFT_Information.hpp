@@ -77,6 +77,8 @@ public:
 		AlwaysUpdateRTC.SetSemaphore(xSemaphore);
 		DoorOpenState.SetSemaphore(xSemaphore);
 		PowerlossDetected.SetSemaphore(xSemaphore);
+		ConditioningStartTime.SetSemaphore(xSemaphore);
+		UserCipherMode.SetSemaphore(xSemaphore);
 }
 
 
@@ -108,6 +110,7 @@ public:
 	ThreadSafe<DateTime> Time;
 	ThreadSafe<DateTime> TimerStart;
 	ThreadSafe<DateTime> Uptime;
+	ThreadSafe<DateTime> ConditioningStartTime;
 
 	//Current Values
 	ThreadSafe<int> Progress;
@@ -134,6 +137,7 @@ public:
 	ThreadSafe<bool> ProgressUpdating = false;
 	ThreadSafe<bool> SensitiveDataHidden = false;
 	ThreadSafe<bool> EngineeringMode = false;
+	ThreadSafe<bool> UserCipherMode = false;
 	ThreadSafe<bool> AllowStageAutoProgression = false;
 
 	//Initialisation Progress
@@ -160,11 +164,12 @@ public:
 	const int LOWTEMP_OFF = 29;
 
 	const int VAC_VALUE = 750;
-	const int VAC_MAX = 6000;
+	const int VAC_MAX = 900;
 
 	const int DELTA_MIN = 1;
-	const float DELTA_STOPPED_ACCEPTABLE_MAX = 1.0f;	
-	const float DELTA_STOPPED_UNACCEPTABLE_MAX = 2.0f;
+	const float DELTA_STOPPED_ACCEPTABLE_MAX = 1.0f;		
+
+	const int DEFAULT_TIMEOUT = 30;
 
 	const int LEAKRATE_MAX = 75;
 

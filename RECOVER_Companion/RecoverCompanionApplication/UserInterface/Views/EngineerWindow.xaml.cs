@@ -1,4 +1,5 @@
 ﻿using FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceCommunications;
+using FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -85,10 +86,10 @@ namespace FosterAndFreeman.RecoverCompanionApplication.UserInterface.Views
                     }
                     while (true);
 
-                            Application.Current.Dispatcher.Invoke(() =>
-                        {
-                            PbrExportAllProgress.Value = progress;
-                        });                    
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        PbrExportAllProgress.Value = progress;
+                    });                    
                 }
 
                 bool threwError = true;
@@ -159,6 +160,11 @@ namespace FosterAndFreeman.RecoverCompanionApplication.UserInterface.Views
         private void TxtResult_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             e.Handled = true;
-        }        
+        }
+
+        private void DecryptServiceReport_Click(object sender, RoutedEventArgs e)
+        {
+            ServiceReport.Decrypt();
+        }
     }
 }

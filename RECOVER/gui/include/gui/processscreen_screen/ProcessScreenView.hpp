@@ -9,6 +9,7 @@
 #include <gui/containers/ExternalSwitchErrorWindow.hpp>
 #include <gui/containers/FilterStateMessage.hpp>
 #include <gui/containers/InternalSwitchError.hpp>
+#include <gui/LFT/Definitions/ProgressStages.hpp>
 #include <BitmapDatabase.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <gui/containers/UsageInstructions.hpp>
@@ -22,6 +23,7 @@
 #include <gui/containers/LowPressureMessage.hpp>
 #include <ctgmath>
 #include <gui/containers/MsgBox.hpp>
+#include <gui/common/Cipher.hpp>
 
 #ifndef SIMULATOR
 #define REAL
@@ -147,13 +149,16 @@ private:
 	const float stageTextMaximum = 255;
 	const float stageTextDeviation = 100;
 
+	int previousChamberConditioningPercentage = 0;
 	int lidSubStage = 0;
 	bool selectSingleStage = false;
+	
 
 	void showError(ErrorMessage * errorCode, int count);	
 
 	void UpdateExternalSwitch(int state);
 	void UpdateProcessSelected();	
+	
 
 	void RepositionErrors();
 	

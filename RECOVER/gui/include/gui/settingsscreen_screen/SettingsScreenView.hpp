@@ -36,8 +36,9 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
-	virtual void ToggleChamberReadyBeep();		
-	virtual void ToggleLogOverwriteWarning();
+	virtual void StartAutoClean();
+
+	virtual void ToggleChamberReadyBeep();			
 protected:
 
 	touchgfx::Callback<SettingsScreenView, const TextRadioButton&, void> LanguageClickedCallback;

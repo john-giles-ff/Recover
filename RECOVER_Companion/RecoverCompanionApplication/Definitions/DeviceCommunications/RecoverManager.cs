@@ -335,7 +335,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceCommuni
 
                 Write("READSERIAL");
                 var result = Read();
-                result = result.Substring(result.Length - 11, 11);
+                result = result.Substring(result.Length - 11, 11).Replace("\n", "");
 
                 ExitTransparentMode();
 

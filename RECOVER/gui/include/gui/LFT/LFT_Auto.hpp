@@ -6,6 +6,7 @@
 #include <gui\LFT\LFT_Information.hpp>
 #include <gui\LFT\LFT_Manual.hpp>
 #include <gui\LFT\LFT_Settings.hpp>
+#include <gui\LFT\LFT_AutoClean.hpp>
 
 #include <gui\common\date.hpp>
 #include <gui\common\Utils.hpp>
@@ -20,7 +21,7 @@
 class LFT_Auto
 {
 public:	
-	LFT_Auto(LFT_Information * information, LFT_Manual * manual, LFT_Settings * settings);
+	LFT_Auto(LFT_Information * information, LFT_Manual * manual, LFT_Settings * settings, LFT_AutoClean * autoClean);
 
 	void SetModel(Model * model);
 
@@ -30,6 +31,7 @@ public:
 	void SetVac(int mTorr = -1);
 	void SetVacMax(int mTorr = -1);
 	void SetLeakMax(int mTorrPer10s = -1);
+	void SetTimeout(int minutes = -1);
 	void SetChamberSize(bool value);	
 	void SetMetalType(bool value);
 	void SetChamberBeepReady(bool value);
@@ -72,6 +74,7 @@ private:
 	LFT_Information * _information;
 	LFT_Manual * _manual;
 	LFT_Settings * _settings;
+	LFT_AutoClean* _autoClean;
 };
 
 

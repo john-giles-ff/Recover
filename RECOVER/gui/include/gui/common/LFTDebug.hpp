@@ -32,6 +32,7 @@ public:
 	void SetProgress(int value);		
 	void SetTimer(int hour, int minute, int second);
 	void SetValves(bool inlet, bool purge, bool bypass);
+	void SetDelta(int delta);
 	
 private:		
 	touchgfx::colortype enabledColor;
@@ -51,6 +52,7 @@ private:
 	touchgfx::TextAreaWithOneWildcard  TxtProgress;		
 	touchgfx::TextAreaWithOneWildcard  TxtTimer;
 	touchgfx::TextAreaWithOneWildcard  TxtValves;		
+	touchgfx::TextAreaWithOneWildcard  TxtDelta;
 
 
 
@@ -73,6 +75,7 @@ private:
 	//touchgfx::Unicode::UnicodeChar TxtAttemptsBuffer[GENERIC_BUFFER_SIZE];	
 	touchgfx::Unicode::UnicodeChar TxtTimerBuffer[GENERIC_BUFFER_SIZE];
 	touchgfx::Unicode::UnicodeChar TxtValvesBuffer[GENERIC_BUFFER_SIZE];	
+	touchgfx::Unicode::UnicodeChar TxtDeltaBuffer[GENERIC_BUFFER_SIZE];
 };
 
 

@@ -39,6 +39,7 @@ void LFT_Information::UpdateLFTDebug(LFTDebug * control)
 	control->SetProgress(Progress);	
 	control->SetTimer(differenceTimeData.GetHour(), differenceTimeData.GetMinute(), differenceTimeData.GetSecond());	
 	control->SetValves(InletState, PurgeState, BypassState);
+	control->SetDelta(Delta);
 }
 
 void LFT_Information::SetClockFrequency(long value)
@@ -272,8 +273,8 @@ void LFT_Information::ReadFilterCounter()
 
 void LFT_Information::ReadDelta()
 {
-	//Shouldn't be ran if not in pump down or below 15 Torr
-	if (Pressure < 15.0f)
+	//Shouldn't be ran if above 15 Torr
+	if (Pressure > 15.0f)
 		return;
 
 	Delta = _model->ReadInt("DELTA");
@@ -376,7 +377,7 @@ void LFT_Information::ReadStandardValues(int stage)
 	if (stage == LFT_STAGE_FUMING)
 		ReadTime();
 
-	if (stage != LFT_STAGE_CHAMBER_CONDITIONING && Pressure < 15.0f)
+	if (stage == LFT_STAGE_CHAMBER_CONDITIONING)
 		ReadDelta();
 	
 	if (EngineeringMode)
