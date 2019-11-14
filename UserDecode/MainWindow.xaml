@@ -13,6 +13,8 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -21,23 +23,27 @@
         </Grid.ColumnDefinitions>
         
         <!-- Code -->        
-        <TextBlock Text="Code:" Margin="5" Grid.Row="0" Grid.Column="0"/>
+        <TextBlock Text="Cipher:" Margin="5" Grid.Row="0" Grid.Column="0"/>
         <TextBox x:Name="TxtCode" Margin="5" Grid.Row="0" Grid.Column="1" TextChanged="TxtCode_TextChanged"/>
 
         <!-- Pressure -->
         <TextBlock Text="Pressure:" Margin="5" Grid.Row="2" Grid.Column="0"/>
         <Slider x:Name="SldPressure" Grid.Row="2" Grid.Column="1" Margin="5" Minimum="0.75" Maximum="20.5" TickFrequency="0.001" IsSnapToTickEnabled="True" Value="15" ValueChanged="ValuesChanged"/>
-        <TextBox Margin="5" Grid.Row="2" Grid.Column="2" Text="{Binding ElementName=SldPressure, Path=Value, Mode=TwoWay}"/>
+        <TextBox Margin="5" Grid.Row="2" Grid.Column="2" Text="{Binding ElementName=SldPressure, Path=Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
         <!-- Base Temperature -->
         <TextBlock Text="Base:" Margin="5" Grid.Row="3" Grid.Column="0"/>
         <Slider x:Name="SldBase" Grid.Row="3" Grid.Column="1" Margin="5" Minimum="0" Maximum="200" TickFrequency="1" IsSnapToTickEnabled="True" Value="35" ValueChanged="ValuesChanged"/>
-        <TextBox Margin="5" Grid.Row="3" Grid.Column="2" Text="{Binding ElementName=SldBase, Path=Value, Mode=TwoWay}"/>
+        <TextBox Margin="5" Grid.Row="3" Grid.Column="2" Text="{Binding ElementName=SldBase, Path=Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         
         <!-- Precursor Temperature -->
         <TextBlock Text="Precursor:" Margin="5" Grid.Row="4" Grid.Column="0"/>
         <Slider x:Name="SldPrecursor" Grid.Row="4" Grid.Column="1" Margin="5" Minimum="0" Maximum="240" TickFrequency="1" IsSnapToTickEnabled="True" Value="190" ValueChanged="ValuesChanged"/>
-        <TextBox Margin="5" Grid.Row="4" Grid.Column="2" Text="{Binding ElementName=SldPrecursor, Path=Value, Mode=TwoWay}"/>
+        <TextBox Margin="5" Grid.Row="4" Grid.Column="2" Text="{Binding ElementName=SldPrecursor, Path=Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        
+        <!-- Cipher Out -->
+        <TextBlock Text="Result:" Margin="5" Grid.Row="6" Grid.Column="0"/>
+        <TextBox x:Name="TxtCipherResult" Margin="5" Grid.Row="6" Grid.Column="1" IsReadOnly="True"/>
 
     </Grid>
 </Window>

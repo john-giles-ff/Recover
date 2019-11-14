@@ -78,6 +78,7 @@ public:
 		DoorOpenState.SetSemaphore(xSemaphore);
 		PowerlossDetected.SetSemaphore(xSemaphore);
 		ConditioningStartTime.SetSemaphore(xSemaphore);
+		UserCipherMode.SetSemaphore(xSemaphore);
 }
 
 
@@ -136,6 +137,7 @@ public:
 	ThreadSafe<bool> ProgressUpdating = false;
 	ThreadSafe<bool> SensitiveDataHidden = false;
 	ThreadSafe<bool> EngineeringMode = false;
+	ThreadSafe<bool> UserCipherMode = false;
 	ThreadSafe<bool> AllowStageAutoProgression = false;
 
 	//Initialisation Progress

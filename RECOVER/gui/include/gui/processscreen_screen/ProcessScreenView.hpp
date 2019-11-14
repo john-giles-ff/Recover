@@ -23,6 +23,7 @@
 #include <gui/containers/LowPressureMessage.hpp>
 #include <ctgmath>
 #include <gui/containers/MsgBox.hpp>
+#include <gui/common/Cipher.hpp>
 
 #ifndef SIMULATOR
 #define REAL

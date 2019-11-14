@@ -254,6 +254,7 @@
     <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\TouchArea.hpp"/>
     <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\Widget.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\Build.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\common\Cipher.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\CustomKeyboard.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\FrontendApplication.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendApplicationBase.hpp"/>

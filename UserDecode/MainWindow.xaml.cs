@@ -20,13 +20,15 @@ namespace UserDecode
     /// </summary>
     public partial class MainWindow : Window
     {
+        bool blockStackOverflow = false;
+
         public MainWindow()
         {
             InitializeComponent();
-
-            var pressure = 12.51;
-            var baseTemp = 38;
-            var preTemp = 189;
+            
+            var pressure = 15.04;
+            var baseTemp = 36;
+            var preTemp = 178;
 
             var first = new UserCipher(pressure, baseTemp, preTemp);
             var second = new UserCipher(first.Cipher);
@@ -43,16 +45,29 @@ namespace UserDecode
 
         private void ValuesChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+            if (blockStackOverflow)
+                return;
+
             if (!IsLoaded)
                 return;
 
+            blockStackOverflow = true;
             var cipher = new UserCipher(SldPressure.Value, SldBase.Value, SldPrecursor.Value);
-            TxtCode.Text = cipher.Cipher;
+            TxtCipherResult.Text = cipher.Cipher;            
+            blockStackOverflow = false;
         }
 
         private void TxtCode_TextChanged(object sender, TextChangedEventArgs e)
         {
-            new UserCipher(TxtCode.Text);
+            if (blockStackOverflow)
+                return;
+
+            blockStackOverflow = true;
+            var decodedCipher = new UserCipher(TxtCode.Text);
+            SldPressure.Value = decodedCipher.Pressure;
+            SldBase.Value = decodedCipher.BaseTemp;
+            blockStackOverflow = false;
+            SldPrecursor.Value = decodedCipher.PreTemp;
         }
     }
 }

@@ -308,6 +308,13 @@ void IdleScreenView::PatternEntered(const PatternCode & pattern)
 	//Check if it was the pattern for the touchscreen test
 	if (pathLength == TOUCH_TEST_BUFFER_SIZE && Utils::CompareArrays(path, TouchTestCode, pathLength))
 		application().gotoTouchscreenTestNoTransition();
+
+	//Check if used has called for the cipher
+	if (pathLength == USER_CIPHER_BUFFER_SIZE && Utils::CompareArrays(path, UserCipherCode, pathLength))
+	{
+		LFT::Information.UserCipherMode = !LFT::Information.UserCipherMode;
+		application().gotoProcessScreenScreenNoTransition();
+	}
 }
 	
 

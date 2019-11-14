@@ -68,6 +68,8 @@ void ProcessScreenView::setupScreen()
 	Animation.SetUpdateTicksInterval(3);
 	Animation.SetImages(Bitmap(BITMAP_ANIMATIONBACKGROUND_ID));
 	
+	//Setup user cipher
+	TxtUserCipher.setVisible(LFT::Information.UserCipherMode);
 
 	//Setup Selection	
 	lidSubStage = 0;	
@@ -363,7 +365,15 @@ void ProcessScreenView::checkLFTValues()
 	if (LFT::Information.EngineeringMode)
 	{
 		LFT::Information.UpdateLFTDebug(&lftDebug);
-		_requiresInvalidate = true;
+		_requiresInvalidate = true;	
+	}
+
+	//If User Cipher mode is on then update the values
+	if (LFT::Information.UserCipherMode)
+	{		
+		long cipher = Cipher().GetCipher(LFT::Information.Pressure, LFT::Information.BaseTemp, LFT::Information.PreTemp);
+		Unicode::snprintf(TxtUserCipherBuffer, TXTUSERCIPHER_SIZE, "%X", cipher);
+		TxtUserCipher.invalidate();
 	}
 
 

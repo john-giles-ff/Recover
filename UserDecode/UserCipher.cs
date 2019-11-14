@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,6 @@ namespace UserDecode
             UInt16 uPressure = (UInt16)(Pressure * 100);
             byte uBase = (byte)BaseTemp;
             byte uPre = (byte)PreTemp;
-
 
             var bitArray = new bool[32];
             byte pressurePos = 15;
@@ -51,62 +51,83 @@ namespace UserDecode
 
             }
 
-            debug = BinaryToString(bitArray);
-            Console.Write(debug);
+            var number = BoolArrayToInt(bitArray);
+            Trace.WriteLine("Generated:");
+            Trace.WriteLine($"Number - {number}");
+            Trace.WriteLine($"Binary - {BinaryToString(bitArray)}");
+            Trace.WriteLine($"Cipher - {number.ToString("X")}");
+            Trace.WriteLine("");
 
-            Cipher = BoolArrayToInt(bitArray).ToString("X");
+
+            Cipher = number.ToString("X");
         }
 
         public UserCipher(string cipher)
         {            
             var number = Convert.ToUInt32(cipher, 16);
-
             var array = IntToBoolArray(number);
-            UInt16 uPressure = 0;
-            byte uBase = 0;
-            byte uPre = 0;
 
-            int pressureShift = 15;
-            int baseShift = 7;
-            int preShift = 7;
+            var debug = BinaryToString(array);
+            var pressureBits = new List<bool>();
+            var baseBits = new List<bool>();
+            var precursorBits = new List<bool>();
+            
 
             for (int i = 0; i < 32; i++)
             {
                 if (i % 2 == 0)
-                {
-                    uPressure += (UInt16)((array[i] ? 1u : 0u) << pressureShift);
-                    pressureShift--;                    
-                }
+                    pressureBits.Add(array[i]);
                 else if (i % 4 == 1)
-                {
-                    uBase += (byte)((array[i] ? 1u : 0u) << baseShift);
-                    baseShift--;                    
-                }
+                    baseBits.Add(array[i]);
                 else
-                {
-                    uPre += (byte)((array[i] ? 1u : 0u) << preShift);
-                    preShift--;                    
-                }
+                    precursorBits.Add(array[i]);
+            }
+            
+
+            Trace.WriteLine("Read:");
+            Trace.WriteLine($"Number - {number}");
+            Trace.WriteLine($"Binary - {BinaryToString(array)}");
+            Trace.WriteLine($"Cipher - {number.ToString("X")}");
+            Trace.WriteLine("");
+
+
+            Pressure = ((double)BoolArrayToInt(pressureBits.ToArray())) / 100.0;
+            BaseTemp = BoolArrayToInt(baseBits.ToArray());
+            PreTemp = BoolArrayToInt(precursorBits.ToArray());
+        }
+
+        private UInt32 BoolArrayToInt(bool[] arr)
+        {
+            UInt32 ret = 0;
+            UInt32 tmp;
+            UInt32 count = (UInt32)arr.Length;            
+            for (int i = 0; i < count; i++)
+            {
+                tmp = arr[i] ? 1u : 0u;
+                ret |= tmp << (int)(count - i - 1);
+            }
+            return (UInt32)ret;
+        } 
+
+        private bool[] IntToBoolArray(UInt32 n)
+        {
+            var bytes = BitConverter.GetBytes(n);
+            Array.Reverse(bytes);
+            var bits = new List<bool>();
+            foreach (var b in bytes)
+            {
+                var eightBits = new bool[8];
+                for (int i = 0; i < 8; i++)
+                    eightBits[i] = (b & (1 << i)) == 0 ? false : true;
+
+                Array.Reverse(eightBits);                
+                var a = BinaryToString(eightBits);
+                bits.AddRange(eightBits);
+
             }
 
 
-            Pressure = uPressure / 100.0;
-            BaseTemp = uBase;
-            PreTemp = uPre;
-        }
-
-        private UInt32 BoolArrayToInt(bool[] bits)
-        {
-            var r = new int[1];
-            new BitArray(bits).CopyTo(r, 0);
-            return (UInt32)r[0];
-        } 
-
-        private bool[] IntToBoolArray(UInt32 number)
-        {
-            var r = new bool[32];
-            new BitArray(BitConverter.GetBytes(number)).CopyTo(r, 0);
-            return r;
+            return bits.ToArray();
         }
 
         

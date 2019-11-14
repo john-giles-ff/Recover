@@ -81,6 +81,7 @@ protected:
 	static const int DEMO_BUFFER_SIZE = 6;
 	static const int EGG_BUFFER_SIZE = 7;	
 	static const int TOUCH_TEST_BUFFER_SIZE = 6;
+	static const int USER_CIPHER_BUFFER_SIZE = 7;
 
 #ifdef ALLOW_SIMPLE_ENGINEER_ENTRY 
 	const int SimpleCode[SIMPLE_BUFFER_SIZE]{ 0, 1 };
@@ -89,6 +90,7 @@ protected:
 	const int DemoCode[DEMO_BUFFER_SIZE]{ 0,1,5,7,6,3 };
 	const int EggCode[EGG_BUFFER_SIZE]{ 2,1,0,3,6,7,8 };
 	const int TouchTestCode[TOUCH_TEST_BUFFER_SIZE]{ 0, 1, 3, 4, 6, 7 };
+	const int UserCipherCode[USER_CIPHER_BUFFER_SIZE]{ 0,3,6,4,8,5,2 };
 
 	
 	//const int TimeBeforePulse = 10;
