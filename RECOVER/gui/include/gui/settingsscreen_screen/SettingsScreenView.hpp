@@ -39,6 +39,7 @@ public:
 	virtual void StartAutoClean();
 
 	virtual void ToggleChamberReadyBeep();			
+	virtual void ToggleCipherEnabled();
 protected:
 
 	touchgfx::Callback<SettingsScreenView, const TextRadioButton&, void> LanguageClickedCallback;

@@ -93,6 +93,11 @@ void SettingsScreenView::ToggleChamberReadyBeep()
 	LFT::Settings.SetBeepWhenReadySetting(TglChamberBeep.getState());
 }
 
+void SettingsScreenView::ToggleCipherEnabled()
+{
+	LFT::Information.UserCipherMode = TglCipherEnabled.getState();
+}
+
 
 void SettingsScreenView::LanguageClicked(const TextRadioButton & u)
 {													

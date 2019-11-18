@@ -341,6 +341,8 @@ void ProcessScreenView::checkLFTValues()
 	//Status up to date is false if an error has been deleted since the status was last polled.	
 	if (status > 0 && LFT::Information.StatusUpToDate)
 	{
+		_isUpdateCipherAllowed = false;
+
 		//Read All Errors		
 		ErrorMessage errorBuffer[32];
 		for (int i = 0; i <= status; i++)
@@ -369,7 +371,7 @@ void ProcessScreenView::checkLFTValues()
 	}
 
 	//If User Cipher mode is on then update the values
-	if (LFT::Information.UserCipherMode)
+	if (LFT::Information.UserCipherMode && _isUpdateCipherAllowed)
 	{		
 		long cipher = Cipher().GetCipher(LFT::Information.Pressure, LFT::Information.BaseTemp, LFT::Information.PreTemp);
 		Unicode::snprintf(TxtUserCipherBuffer, TXTUSERCIPHER_SIZE, "%X", cipher);
@@ -1284,6 +1286,7 @@ void ProcessScreenView::StartProcess()
 void ProcessScreenView::StartProcess(bool skipOverwriteCheck)
 {	
 	_processSuccess = true;
+	_isUpdateCipherAllowed = true;
 
 	if (!application().isDemoModeOn)
 	{
@@ -1334,6 +1337,7 @@ void ProcessScreenView::StartCool()
 void ProcessScreenView::AbortProcess()
 {	
 	_processSuccess = false;
+	_isUpdateCipherAllowed = false;
 
 	//Hide Abort Confirmation
 	AbortConfirmWindow.setVisible(false);
