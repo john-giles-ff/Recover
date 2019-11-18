@@ -462,6 +462,9 @@ void ProcessScreenView::checkLFTValues()
 			STime time(current.getRaw() - startTime.getRaw());
 			int minutes = time.GetTotalMinutes();
 
+			if (current.getRaw() == 0 || startTime.getRaw() == 0)
+				minutes = 0;
+
 #ifdef SIMULATOR
 			minutes = 10;
 #endif		
@@ -853,8 +856,13 @@ void ProcessScreenView::UpdateStage()
 		break; 	
 
 	}
+
 	//Update External Switch error for this state
 	UpdateExternalSwitch(LFT::Information.ExternalSwitchValue);
+
+	//Reset elapsed time to 0
+	Unicode::snprintf(TxtFumeTimerBuffer, TXTFUMETIMER_SIZE, "%d", 0);
+	TxtFumeTimer.invalidate();
 
 	//Invalidate controls so that they update
 	Backdrop.invalidate();
