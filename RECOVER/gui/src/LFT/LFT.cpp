@@ -287,13 +287,14 @@ void LFT::CheckForNextStage()
 		return;
 
 	//For the precheck and cooldown stage, progress continues when 100% is reached
-	if (Information.Progress == 100 && (Auto.GetStage() == LFT_STAGE_PRECHECKS || Auto.GetStage() == LFT_STAGE_COOLDOWN))
+	if (Information.Progress == 100 && (Auto.GetStage() == LFT_STAGE_PRECHECKS || Auto.GetStage() == LFT_STAGE_COOLDOWN || Auto.GetStage() == LFT_STAGE_CHAMBER_CONDITIONING))
 		GotoNextStage();	
 
 	//For the chamber conditioning stage, progress continues when the correct pressure is reached
-	float vacValueFloat = (float)(Information.VAC_VALUE / 1000.0f);
+	//DONE THE NORMAL WAY!
+	/*float vacValueFloat = (float)(Information.VAC_VALUE / 1000.0f);
 	if (Auto.GetStage() == LFT_STAGE_CHAMBER_CONDITIONING && Information.Pressure > 0 && Information.Pressure <= vacValueFloat)
-		GotoNextStage();
+		GotoNextStage();*/
 	
 }
 
