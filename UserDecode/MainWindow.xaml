@@ -26,6 +26,8 @@
         <TextBlock Text="Cipher:" Margin="5" Grid.Row="0" Grid.Column="0"/>
         <TextBox x:Name="TxtCode" Margin="5" Grid.Row="0" Grid.Column="1" TextChanged="TxtCode_TextChanged"/>
 
+        <TextBlock x:Name="TxtInvalidCipher" Text="!!! Invalid Cipher !!!!!" Grid.Row="1" Grid.Column="1" TextAlignment="Center" Foreground="Red" FontWeight="Bold"/>
+
         <!-- Pressure -->
         <TextBlock Text="Pressure:" Margin="5" Grid.Row="2" Grid.Column="0"/>
         <Slider x:Name="SldPressure" Grid.Row="2" Grid.Column="1" Margin="5" Minimum="0.75" Maximum="20.5" TickFrequency="0.001" IsSnapToTickEnabled="True" Value="15" ValueChanged="ValuesChanged"/>

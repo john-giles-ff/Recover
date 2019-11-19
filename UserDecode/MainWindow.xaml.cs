@@ -50,11 +50,13 @@ namespace UserDecode
 
             if (!IsLoaded)
                 return;
+            
+                blockStackOverflow = true;
+                var cipher = new UserCipher(SldPressure.Value, SldBase.Value, SldPrecursor.Value);
+                TxtCipherResult.Text = cipher.Cipher;
+                blockStackOverflow = false;
 
-            blockStackOverflow = true;
-            var cipher = new UserCipher(SldPressure.Value, SldBase.Value, SldPrecursor.Value);
-            TxtCipherResult.Text = cipher.Cipher;            
-            blockStackOverflow = false;
+
         }
 
         private void TxtCode_TextChanged(object sender, TextChangedEventArgs e)
@@ -62,12 +64,24 @@ namespace UserDecode
             if (blockStackOverflow)
                 return;
 
-            blockStackOverflow = true;
-            var decodedCipher = new UserCipher(TxtCode.Text);
-            SldPressure.Value = decodedCipher.Pressure;
-            SldBase.Value = decodedCipher.BaseTemp;
-            blockStackOverflow = false;
-            SldPrecursor.Value = decodedCipher.PreTemp;
+            try
+            {
+                if (!Int32.TryParse(TxtCode.Text, System.Globalization.NumberStyles.HexNumber, System.Globalization.CultureInfo.InvariantCulture, out int result))
+                    throw new Exception("Invalid HEX Code!");
+
+                blockStackOverflow = true;
+                var decodedCipher = new UserCipher(TxtCode.Text);
+                SldPressure.Value = decodedCipher.Pressure;
+                SldBase.Value = decodedCipher.BaseTemp;
+                blockStackOverflow = false;
+                SldPrecursor.Value = decodedCipher.PreTemp;
+
+                TxtInvalidCipher.Visibility = Visibility.Collapsed;
+            }
+            catch
+            {
+                TxtInvalidCipher.Visibility = Visibility.Visible;
+            }
         }
     }
 }
