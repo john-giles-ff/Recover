@@ -105,18 +105,31 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
                 
 
                 Application.Current.Dispatcher.Invoke(() =>
-                {                    
+                {
                     var saveFileDialog = new Ookii.Dialogs.Wpf.VistaSaveFileDialog()
                     {
                         FileName = RecoverManager.SerialNumber,
-                        Filter = "*.LFT_SVC|*.LFT_SVC",
+                        Filter = "RECOVER Service Pack (*.LFT_SVC)|*.LFT_SVC",
                         AddExtension = true,
                     };
 
                     if (saveFileDialog.ShowDialog() != true)
+                    {
+                        Application.Current.Dispatcher.Invoke(() =>
+                        {
+                            progressWindow.Text = Strings.ServicePackCreatingCancelled;
+                            progressWindow.IsCloseAllowed = true;
+                        });
+
                         return;
+                    }
 
                     filename = saveFileDialog.FileName;
+
+                    if (Path.HasExtension(filename))
+                        filename = Path.ChangeExtension(filename, "LFT_SVC");
+                    else
+                        filename += ".LFT_SVC";
                     success = true;
                 });
 
@@ -140,7 +153,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
         {
             var openFileDialog = new Ookii.Dialogs.Wpf.VistaOpenFileDialog()
             {
-                Filter = "*.LFT_SVC|*.LFT_SVC",
+                Filter = "RECOVER Service Pack (*.LFT_SVC)|*.LFT_SVC",
             };
 
             if (openFileDialog.ShowDialog() != true)

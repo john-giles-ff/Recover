@@ -419,4 +419,7 @@ This may take a few minutes.</value>
   <data name="ServicePackCreated" xml:space="preserve">
     <value>Service Pack Created!</value>
   </data>
+  <data name="ServicePackCreatingCancelled" xml:space="preserve">
+    <value>Service Pack Creation Cancelled!</value>
+  </data>
 </root>

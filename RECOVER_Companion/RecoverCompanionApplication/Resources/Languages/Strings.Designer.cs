@@ -756,6 +756,15 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Service Pack Creation Cancelled!.
+        /// </summary>
+        public static string ServicePackCreatingCancelled {
+            get {
+                return ResourceManager.GetString("ServicePackCreatingCancelled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show Graphs.
         /// </summary>
         public static string ShowGraphs {
