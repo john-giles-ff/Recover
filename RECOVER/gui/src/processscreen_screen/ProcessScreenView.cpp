@@ -443,18 +443,23 @@ void ProcessScreenView::checkLFTValues()
 	//Update Fuming Time
 	if (stage == LFT_STAGE_FUMING)
 	{
-		DateTime dateTime = (DateTime)LFT::Information.Time;
-		if (dateTime.isValid())
+		if (((DateTime)LFT::Information.FumingStartTime).isValid())
 		{
-			STime time(dateTime.getRaw());
-			int minutes = time.GetTotalMinutes();
+			DateTime current = (DateTime)LFT::Information.GetCurrentTime();
+			DateTime startTime = (DateTime)LFT::Information.FumingStartTime;
 
-			if (minutes < 0)
+			STime time(current.getRaw() - startTime.getRaw());
+			int minutes = time.GetTotalMinutes();
+			if (current.getRaw() == 0 || startTime.getRaw() == 0)
 				minutes = 0;
-						
+
+#ifdef SIMULATOR
+			minutes = 13;
+#endif		
+
 			Unicode::snprintf(TxtFumeTimerBuffer, TXTFUMETIMER_SIZE, "%d", minutes);
-			TxtFumeTimer.invalidate();					
-		}
+			TxtFumeTimer.invalidate();
+	    }		
 	}
 	if (stage == LFT_STAGE_CHAMBER_CONDITIONING)
 	{
@@ -758,6 +763,19 @@ void ProcessScreenView::UpdateStage()
 	}
 	else if (stage == LFT_STAGE_FINISHED)
 	{
+		//Update Ciphers
+		int* ciphers = LFT::Settings.GetCiphers();
+		for (int i = CIPHER_COUNT - 2; i >= 0; i--)
+		{
+			ciphers[i + 1] = ciphers[i];
+
+			if (i == 0)
+				ciphers[i] = _cipher;
+		}
+		LFT::Settings.SetCiphers(ciphers);
+
+
+		//Reposition UI
 		lvrLidControl.setXY(LVR_POS_END_X, LVR_POS_END_Y);
 		txtFinalLidControl.setY(LVR_POS_END_Y);
 		lvrLidControl.setVisible(true);
@@ -1371,16 +1389,7 @@ void ProcessScreenView::AbortProcess()
 
 void ProcessScreenView::GotoHome()
 {
-	//Update Ciphers
-	int* ciphers = LFT::Settings.GetCiphers();
-	for (int i = CIPHER_COUNT - 2; i >= 0; i--)
-	{
-		ciphers[i + 1] = ciphers[i];
 
-		if (i == 0)		
-			ciphers[i] = _cipher;						
-	}
-	LFT::Settings.SetCiphers(ciphers);
 
 
 	LFT::Auto.SetStage(LFT_STAGE_LID_CONTROL);

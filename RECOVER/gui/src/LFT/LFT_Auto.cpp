@@ -265,8 +265,7 @@ void LFT_Auto::DisableTimeout(bool state)
 }
 
 void LFT_Auto::SetSettings()
-{
-	_information->Time = DateTime();
+{	
 	SetPreTemperatureSetting();
 	SetBaseTemperatureSetting();
 	SetVac();
@@ -312,6 +311,8 @@ void LFT_Auto::StartFuming()
 	_information->ConditioningStartTime = DateTime();
 	_information->Delta = -1;
 
+	//Setup Fuming timer
+	_information->FumingStartTime = _information->GetCurrentTime();
 
 
 	_model->SendCommand("HEAT");
@@ -326,6 +327,9 @@ void LFT_Auto::StartFuming()
 
 void LFT_Auto::StartCool()
 {
+	//Invalidate information for next run
+	_information->FumingStartTime = DateTime();
+
 	_model->SendCommand("COOL");
 
 	//Remove Que'd Command

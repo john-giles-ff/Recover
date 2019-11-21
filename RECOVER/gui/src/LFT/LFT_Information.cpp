@@ -373,10 +373,7 @@ void LFT_Information::ReadStandardValues(int stage)
 	ReadInlet();
 	ReadBypass();
 	ReadPurge();
-
-	if (stage == LFT_STAGE_FUMING)
-		ReadTime();
-
+	
 	if (stage == LFT_STAGE_CHAMBER_CONDITIONING)
 		ReadDelta();
 	

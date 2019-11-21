@@ -16,6 +16,7 @@ constexpr int FILTER_BAD_BAND = 100;
 
 constexpr int UPDATE_INTERNAL_RTC_MAX = 120;
 
+
 class LFT_Information
 {	
 
@@ -77,6 +78,7 @@ public:
 		AlwaysUpdateRTC.SetSemaphore(xSemaphore);
 		DoorOpenState.SetSemaphore(xSemaphore);
 		PowerlossDetected.SetSemaphore(xSemaphore);
+		FumingStartTime.SetSemaphore(xSemaphore);
 		ConditioningStartTime.SetSemaphore(xSemaphore);
 		UserCipherMode.SetSemaphore(xSemaphore);
 }
@@ -106,10 +108,11 @@ public:
 
 	ThreadSafe<bool> IsInformationCurrent = true;
 
-	ThreadSafe<DateTime> RtcTime;
-	ThreadSafe<DateTime> Time;
+	ThreadSafe<DateTime> RtcTime;		
+	ThreadSafe<DateTime> Time; //Use onboard clock for keeping track of fuming time instead of firmware
 	ThreadSafe<DateTime> TimerStart;
 	ThreadSafe<DateTime> Uptime;
+	ThreadSafe<DateTime> FumingStartTime;
 	ThreadSafe<DateTime> ConditioningStartTime;
 
 	//Current Values
@@ -188,8 +191,8 @@ public:
 	void ReadPreTemperature();
 	void ReadPrePowerPercentage();
 	void ReadPressure();
-	void ReadRTC();
-	void ReadTime();
+	void ReadRTC();	
+	void ReadTime(); //Use onboard clock for keeping track of fuming time instead of firmware
 	void ReadUptime();
 	void ReadProgress(int& output);
 	void ReadProgress();

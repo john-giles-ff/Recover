@@ -1081,7 +1081,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
                 PrecursorHeaterSetPoint = int.Parse(datas[2]);
                 VacuumSetPoint = int.Parse(datas[3]);
                 FinalBaseHeaterTemperature = int.Parse(datas[4]);
-                FinalPrecusorHeaterTemperature = int.Parse(datas[5]);
+                FullPrecursorTemperature = int.Parse(datas[5]);
                 FinalPressureMeasurement = int.Parse(datas[6]);
                 LeakTest1Result = int.Parse(datas[7]);
                 LeakTest2Result = int.Parse(datas[8]);
@@ -1093,7 +1093,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
                     NumberOfSamples = samples;
 
 
-                FullPrecursorTemperature = int.Parse(datas[12]);
+                FinalPrecusorHeaterTemperature = int.Parse(datas[12]);
                 TimeToReachVacuumSetpoint = int.Parse(datas[13]);
                 MaximumLeakSetting = int.Parse(datas[14]);
                 ChamberSize = int.Parse(datas[15]) == 1;

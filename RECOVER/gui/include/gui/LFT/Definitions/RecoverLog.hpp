@@ -175,7 +175,7 @@ public:
 		//Final Precursor Temperature
 		pos = next + 1;
 		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		FinalPrecursorHeaterTemperature = input.substr(pos, next - pos).toInt();
+		FullPrecursorHeaterTemperature = input.substr(pos, next - pos).toInt();
 
 		//Final Pressure
 		pos = next + 1;
@@ -214,8 +214,8 @@ public:
 		//Full Precursor temperature
 		pos = next + 1;
 		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		FullPrecursorHeaterTemperature = input.substr(pos, next - pos).toInt();
-		
+		FinalPrecursorHeaterTemperature = input.substr(pos, next - pos).toInt();
+				
 		//Time to reach vacuum
 		pos = next + 1;
 		do { next++; } while (input[next] != '\t' && next < (int)input.len());
