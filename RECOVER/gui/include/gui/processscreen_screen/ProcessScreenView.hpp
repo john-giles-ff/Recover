@@ -153,6 +153,7 @@ private:
 	int lidSubStage = 0;
 	bool selectSingleStage = false;
 	
+	long _cipher = -1;
 	bool _isUpdateCipherAllowed = false;
 
 	void showError(ErrorMessage * errorCode, int count);	

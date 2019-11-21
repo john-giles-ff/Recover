@@ -69,8 +69,9 @@ void SettingsScreenView::setupScreen()
 	selectedIdleMode = LFT::Settings.GetLockMode();	
 	UpdateToSelectedIdleMode();
 
-
-
+	//Setup View Diagnostics
+	ViewDiagnosticsWindow.setVisible(false);
+	add(ViewDiagnosticsWindow);
 
 	//Load other settings
 	TglChamberBeep.forceState(LFT::Information.ChamberReadyBeep);			
@@ -96,6 +97,15 @@ void SettingsScreenView::ToggleChamberReadyBeep()
 void SettingsScreenView::ToggleCipherEnabled()
 {
 	LFT::Information.UserCipherMode = TglCipherEnabled.getState();
+}
+
+void SettingsScreenView::OpenViewDiagnostics()
+{
+	int* ciphers = LFT::Settings.GetCiphers();
+
+	ViewDiagnosticsWindow.SetCiphers(ciphers, CIPHER_COUNT);
+	ViewDiagnosticsWindow.setVisible(true);
+	ViewDiagnosticsWindow.invalidate();
 }
 
 

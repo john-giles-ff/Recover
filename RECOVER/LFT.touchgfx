@@ -2331,9 +2331,74 @@
                 "Name": "TxtCipherEnabled",
                 "X": 77,
                 "Y": 213,
-                "Width": 706,
-                "Height": 31,
+                "Width": 435,
+                "Height": 28,
                 "Type": "TextArea",
+                "Visible": true,
+                "Draggable": false,
+                "Clickable": false,
+                "Fadeable": false,
+                "Moveable": false
+              },
+              {
+                "Alpha": 255,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "X": 0,
+                    "Y": 10,
+                    "TextId": "SingleUseId255",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "ColorPressed": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "X": 0,
+                    "Y": 0,
+                    "Width": 223,
+                    "Height": 54,
+                    "LockToFlexButtonSize": true,
+                    "BorderSize": 2,
+                    "ColorReleased": {
+                      "Red": 0,
+                      "Green": 0,
+                      "Blue": 0
+                    },
+                    "ColorPressed": {
+                      "Red": 46,
+                      "Green": 172,
+                      "Blue": 98
+                    },
+                    "ColorBorderReleased": {
+                      "Red": 46,
+                      "Green": 172,
+                      "Blue": 98
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 46,
+                      "Green": 172,
+                      "Blue": 98
+                    }
+                  }
+                ],
+                "Name": "BtnViewDiagnostics",
+                "X": 560,
+                "Y": 208,
+                "Width": 223,
+                "Height": 54,
+                "Type": "FlexButton",
                 "Visible": true,
                 "Draggable": false,
                 "Clickable": false,
@@ -2493,7 +2558,7 @@
             }
           },
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "ToggleCipherEnabled",
             "HasCompletedTrigger": false,
             "Trigger": {
               "TriggerComponent": "TglCipherEnabled",
@@ -2501,6 +2566,18 @@
             },
             "Action": {
               "FunctionName": "ToggleCipherEnabled",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "OpenViewDiagnostics",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "BtnViewDiagnostics",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "OpenViewDiagnostics",
               "Type": "ActionCustom"
             }
           }
@@ -9878,6 +9955,296 @@
         "Y": 0,
         "Width": 800,
         "Height": 485
+      },
+      {
+        "Components": [
+          {
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 150,
+            "Name": "Background",
+            "X": 0,
+            "Y": 0,
+            "Width": 800,
+            "Height": 480,
+            "Type": "Box",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderColor": {
+              "Red": 46,
+              "Green": 172,
+              "Blue": 98
+            },
+            "BorderSize": 5,
+            "Alpha": 255,
+            "Name": "boxWithBorder1",
+            "X": 275,
+            "Y": 102,
+            "Width": 250,
+            "Height": 276,
+            "Type": "BoxWithBorder",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Alpha": 255,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "X": 0,
+                "Y": 5,
+                "TextId": "Close",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                }
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "X": 0,
+                "Y": 0,
+                "Width": 250,
+                "Height": 47,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 0,
+                "ColorReleased": {
+                  "Red": 46,
+                  "Green": 172,
+                  "Blue": 98
+                },
+                "ColorPressed": {
+                  "Red": 46,
+                  "Green": 172,
+                  "Blue": 98
+                },
+                "ColorBorderReleased": {
+                  "Red": 46,
+                  "Green": 172,
+                  "Blue": 98
+                },
+                "ColorBorderPressed": {
+                  "Red": 46,
+                  "Green": 172,
+                  "Blue": 98
+                }
+              }
+            ],
+            "Name": "BtnClose",
+            "X": 275,
+            "Y": 331,
+            "Width": 250,
+            "Height": 47,
+            "Type": "FlexButton",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "Wildcard",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "TxtCipher1",
+            "X": 275,
+            "Y": 118,
+            "Width": 250,
+            "Height": 30,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "Wildcard",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "TxtCipher2",
+            "X": 275,
+            "Y": 148,
+            "Width": 250,
+            "Height": 30,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "Wildcard",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "TxtCipher3",
+            "X": 275,
+            "Y": 178,
+            "Width": 250,
+            "Height": 30,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "Wildcard",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "TxtCipher4",
+            "X": 275,
+            "Y": 210,
+            "Width": 250,
+            "Height": 30,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "Wildcard",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "TxtCipher5",
+            "X": 275,
+            "Y": 240,
+            "Width": 250,
+            "Height": 30,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId256",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Name": "TxtNoDiagnostics",
+            "X": 282,
+            "Y": 191,
+            "Width": 236,
+            "Height": 98,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Close",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "BtnClose",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "Close",
+              "Type": "ActionCustom"
+            }
+          }
+        ],
+        "Name": "ViewDiagnostics",
+        "X": 0,
+        "Y": 0,
+        "Width": 800,
+        "Height": 480
       }
     ],
     "TextEntries": [
@@ -10867,6 +11234,18 @@
       },
       {
         "TextEntryId": "SingleUseId254",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId255",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "Close",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "SingleUseId256",
         "IsResource": false
       }
     ],

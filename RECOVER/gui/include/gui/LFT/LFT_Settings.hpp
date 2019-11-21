@@ -8,6 +8,7 @@
 #include <gui\common\LFTDebug.hpp>
 #include <gui\common\String.hpp>
 
+#define CIPHER_COUNT 5
 
 class LFT_Settings
 {
@@ -46,6 +47,11 @@ public:
 	int ReadLockMode();
 	int GetLockMode();	
 
+	//Ciphers
+	void SetCiphers(int values[]);
+	int* ReadCiphers();
+	int* GetCiphers();
+
 private:	
 	void WriteInt(int location, int value);
 	int ReadInt(int location, int defaultValue);
@@ -61,7 +67,8 @@ private:
 		RECOVERY_STATE,
 		USE_PURGE_FANS,
 		LOCK_MODE,
-		LOG_OVERWRITE_WARNING
+		LOG_OVERWRITE_WARNING,
+		CIPHERS
 	};
 
 	const touchgfx::LanguageId DEFAULT_LANGUAGE = GB;
@@ -81,7 +88,7 @@ private:
 	ThreadSafe<int> _pcMode;
 	ThreadSafe<int> _lockMode;
 	ThreadSafe<bool> _logOverwriteWarning;
-
+	int _ciphers[CIPHER_COUNT];
 
 
 

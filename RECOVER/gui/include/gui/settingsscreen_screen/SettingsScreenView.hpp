@@ -9,6 +9,8 @@
 #include <gui\containers\Keypad.hpp>
 #include <gui\common\Build.hpp>
 
+#include <gui/containers/ViewDiagnostics.hpp>
+
 constexpr int LANGUAGE_COUNT = 8;
 
 constexpr int LANGUAGE_HEIGHT = 75;
@@ -40,6 +42,8 @@ public:
 
 	virtual void ToggleChamberReadyBeep();			
 	virtual void ToggleCipherEnabled();
+
+	virtual void OpenViewDiagnostics();
 protected:
 
 	touchgfx::Callback<SettingsScreenView, const TextRadioButton&, void> LanguageClickedCallback;
@@ -73,6 +77,8 @@ private:
 
 	void UpdateToCurrentTab();
 	void UpdateToSelectedIdleMode();
+
+	ViewDiagnostics ViewDiagnosticsWindow;
 
 	
 };

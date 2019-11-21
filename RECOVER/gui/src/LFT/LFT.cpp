@@ -224,6 +224,7 @@ void LFT::Initialisation()
 	Settings.SetPCMode(0);
 	Information.RefreshValuesProgress = Information.RefreshValuesProgress + 1;
 	
+	Settings.ReadCiphers();
 	Information.RefreshValuesProgress = Information.RefreshValuesProgress + 1;
 
 	Information.ReadRTC();

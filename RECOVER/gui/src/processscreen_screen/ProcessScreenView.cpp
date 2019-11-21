@@ -371,11 +371,15 @@ void ProcessScreenView::checkLFTValues()
 	}
 
 	//If User Cipher mode is on then update the values
-	if (LFT::Information.UserCipherMode && _isUpdateCipherAllowed)
-	{		
-		long cipher = Cipher().GetCipher(LFT::Information.Pressure, LFT::Information.BaseTemp, LFT::Information.PreTemp);
-		Unicode::snprintf(TxtUserCipherBuffer, TXTUSERCIPHER_SIZE, "%X", cipher);
-		TxtUserCipher.invalidate();
+	if (_isUpdateCipherAllowed)
+	{				
+		_cipher = Cipher().GetCipher(LFT::Information.Pressure, LFT::Information.BaseTemp, LFT::Information.PreTemp);
+
+		if (LFT::Information.UserCipherMode)
+		{
+			Unicode::snprintf(TxtUserCipherBuffer, TXTUSERCIPHER_SIZE, "%X", _cipher);
+			TxtUserCipher.invalidate();
+		}
 	}
 
 
@@ -1362,13 +1366,23 @@ void ProcessScreenView::AbortProcess()
 
 	//Show Abort Happening Window
 	AbortInProcessWindow.setVisible(true);
-	AbortInProcessWindow.invalidate();
-
-	
+	AbortInProcessWindow.invalidate();	
 }
 
 void ProcessScreenView::GotoHome()
 {
+	//Update Ciphers
+	int* ciphers = LFT::Settings.GetCiphers();
+	for (int i = CIPHER_COUNT - 2; i >= 0; i--)
+	{
+		ciphers[i + 1] = ciphers[i];
+
+		if (i == 0)		
+			ciphers[i] = _cipher;						
+	}
+	LFT::Settings.SetCiphers(ciphers);
+
+
 	LFT::Auto.SetStage(LFT_STAGE_LID_CONTROL);
 	LFT::AutoClean.SetStage(AUTOCLEAN_STAGE_NONE);
 	LFT::Manual.SetBaseFanState(false);

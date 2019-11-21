@@ -12,6 +12,7 @@ LFT_Settings::LFT_Settings(LFT_Information * information)
 	_pcMode.SetSemaphore(_information->xSemaphore);
 	_lockMode.SetSemaphore(_information->xSemaphore);
 	_logOverwriteWarning.SetSemaphore(_information->xSemaphore);
+	
 }
 
 void LFT_Settings::SetModel(Model * model)
@@ -120,6 +121,58 @@ int LFT_Settings::ReadLockMode()
 int LFT_Settings::GetLockMode()
 {
 	return _lockMode;;
+}
+
+void LFT_Settings::SetCiphers(int values[])
+{
+	String value = "";
+	for (int i = 0; i < CIPHER_COUNT; i++)
+	{
+		_ciphers[i] = values[i];		
+		value += values[i];
+		if (i != CIPHER_COUNT - 1)
+			value += ",";
+	}
+	
+	WriteString(CIPHERS, value);
+}
+
+int* LFT_Settings::ReadCiphers()
+{
+	String value = ReadString(CIPHERS);
+#ifdef SIMULATOR
+	value = "51245,15542,11555,14475,15236";	
+#endif
+
+	int i = 0; 
+	while (value.len() > 0)
+	{
+		//Find length till comma
+		int index = value.index(',');		
+
+		//Get relevant part of string
+		String subString = value.substr(0, index );
+		if (index == -1)				
+			subString = value;
+
+		//On last run, change to using 
+		_ciphers[i] = subString.toInt();
+		
+		//Take off first part of string
+		if (index == -1)	
+			value.erase(0, value.len());		
+		else		
+			value.erase(0, index + 1);
+		
+		i++;
+	}
+
+	return _ciphers;	
+}
+
+int* LFT_Settings::GetCiphers()
+{
+	return _ciphers;
 }
 
 

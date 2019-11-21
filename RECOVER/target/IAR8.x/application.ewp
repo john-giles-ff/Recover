@@ -1349,6 +1349,9 @@
           <file>
             <name>$PROJ_DIR$\..\..\generated\gui_generated\src\containers\UsageInstructionsBase.cpp</name>
           </file>
+          <file>
+            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\containers\ViewDiagnosticsBase.cpp</name>
+          </file>
         </group>
         <group>
           <name>eggscreen_screen</name>
@@ -2342,6 +2345,9 @@
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\gui\src\containers\UsageInstructions.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\gui\src\containers\ViewDiagnostics.cpp</name>
         </file>
       </group>
       <group>
