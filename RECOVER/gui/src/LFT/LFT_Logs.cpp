@@ -25,16 +25,22 @@ void LFT_Logs::SetModel(Model * model)
 
 RecoverLog LFT_Logs::GetHeader(int index)
 {		
-	String result = _model->SendIntReadString("READHEADER", index);
-	
-	//If no log, return log where Exists = false
-	if (result.index('\t') == -1 || result.index('\0') != -1)
-	{		
-		return RecoverLog();
-	}	
+	//Attempt read 10 times
+	for (int i = 0; i < 10; i++)
+	{
+		String result = _model->SendIntReadString("READHEADER", index);
 
+		if (result[0] == '-' && result[1] == '1')
+			break;
 
-	return RecoverLog(result, index);
+		//If mis-read then try again
+		if (result.index('\t') == -1 || result.index('\0') != -1)
+			continue;
+
+		return RecoverLog(result, index);
+	}
+
+	return RecoverLog();	
 }
 
 bool LFT_Logs::IsNextLogPresent()
