@@ -192,10 +192,10 @@ public:
 		do { next++; } while (input[next] != '\t' && next < (int)input.len());
 		LeakTest2Result = input.substr(pos, next - pos).toInt();		
 		
-		//Pumpdown runtime 
+		//Pumpdown runtime (8 bit value that is now ignored)
 		pos = next + 1;
 		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		PumpDownRunTime = input.substr(pos, next - pos).toInt();		
+		//PumpDownRunTime = input.substr(pos, next - pos).toInt();		
 		
 		//Heat runtime
 		pos = next + 1;
@@ -284,6 +284,36 @@ public:
 		pos = next + 1;
 		do { next++; } while (input[next] != '\t' && input[next] != '\n' && next < (int)input.len());
 		MetalType = input.substr(pos, next - pos).toBool();		
+
+		//Process Info 2 (Ignored)
+		pos = next + 1;
+		do { next++; } while (input[next] != '\t' && input[next] != '\n' && next < (int)input.len());
+
+		//Process Info 3 (Ignored)
+		pos = next + 1;
+		do { next++; } while (input[next] != '\t' && input[next] != '\n' && next < (int)input.len());
+
+		//Process Info 4 (Ignored)
+		pos = next + 1;
+		do { next++; } while (input[next] != '\t' && input[next] != '\n' && next < (int)input.len());
+
+		//Relative Humidity (Ignored)
+		pos = next + 1;
+		do { next++; } while (input[next] != '\t' && input[next] != '\n' && next < (int)input.len());
+
+		//Relative temperature (Ignored)
+		pos = next + 1;
+		do { next++; } while (input[next] != '\t' && input[next] != '\n' && next < (int)input.len());
+
+		//Time to target temperature (Ignored)
+		pos = next + 1;
+		do { next++; } while (input[next] != '\t' && input[next] != '\n' && next < (int)input.len());
+
+		//Pumpdown Time (16 bit now)
+		pos = next + 1;
+		do { next++; } while (input[next] != '\t' && input[next] != '\n' && next < (int)input.len());
+		PumpDownRunTime = input.substr(pos, next - pos).toInt();
+
 	}
 	RecoverLog() 
 	{ 
