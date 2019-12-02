@@ -144,57 +144,50 @@ public:
 	RecoverLog(String input, int index) {
 		Index = index;
 		Exists = true;		
-		int pos = 0;
-		int next = 0;
-
-		String parts[40];
-		int i = 0;
-		do
-		{
-			do { next++; } while (input[next] != '\t' && next < (int)input.len());
-			parts[i] = input.substr(pos, next - pos);
-
-			pos = next + 1;
-			i++;
-		} while (next != input.len());
 		
-		StartTime = parts[0].toDateTime();
-		BaseHeaterSetpoint = parts[1].toInt();
-		PrecursorHeaterSetpoint = parts[2].toInt();
-		VacuumSetpoint = parts[3].toInt();
-		FinalBaseHeaterTemperature = parts[4].toInt();
-		FullPrecursorHeaterTemperature = parts[5].toInt();
-		FinalPressureMeasurement = parts[6].toInt();
-		LeakTest1Result = parts[7].toInt();
-		LeakTest2Result = parts[8].toInt();
-		PumpDownRunTime = parts[9].toInt(); //Old 8 bit value, no longer used
-		//HeatRunTime = int.Parse(datas[10]);
+
+		//Split to parts
+
+		
+		//Decode Parts
+		StartTime = GetPart(input, 0).toDateTime();
+		BaseHeaterSetpoint = GetPart(input, 1).toInt();
+		PrecursorHeaterSetpoint = GetPart(input, 2).toInt();
+		VacuumSetpoint = GetPart(input, 3).toInt();
+		FinalBaseHeaterTemperature = GetPart(input, 4).toInt();
+		FullPrecursorHeaterTemperature = GetPart(input, 5).toInt();
+		FinalPressureMeasurement = GetPart(input, 6).toInt();
+		LeakTest1Result = GetPart(input, 7).toInt();
+		LeakTest2Result = GetPart(input, 8).toInt();
+		PumpDownRunTime = GetPart(input, 9).toInt();
+		//HeatRunTime = int.Parse(datas[10]); //Old 8 bit value, no longer used
 
 		//Samples will return \ if there are no samples (Happens when the process fails)		
-		if (parts[11][0] != '\\' || parts[11][0] != '/')
-			NumberOfSamples = parts[11].toInt();
+		String samplesString = GetPart(input, 11);
+		if (samplesString[0] != '\\' && samplesString[0] != '/')
+			NumberOfSamples = samplesString.toInt();
 		if (NumberOfSamples > 1000)
 			NumberOfSamples = 1000;
 
-		FinalPrecursorHeaterTemperature = parts[12].toInt();
+		FinalPrecursorHeaterTemperature = GetPart(input, 12).toInt();
 		
-		TimeToReachVacuumSetpoint = parts[13].toInt();
-		MaximumLeakSetting = parts[14].toInt();
-		ChamberSize = parts[15].toBool();
-		FilterCount = parts[16].toInt();
-		TotalRunCount = parts[17].toInt();
-		TimeForPSW2ToOperate = parts[18].toInt();
-		PressurePSW2Operates = parts[19].toInt();
-		LowVacSetting = parts[20].toInt();
-		SampleRatePumpdown = parts[21].toInt();
-		SampleRateDevelop = parts[22].toInt();
-		firmwareBuild = parts[23].toInt();
-		SerialNumber = parts[24];
+		TimeToReachVacuumSetpoint = GetPart(input, 13).toInt();
+		MaximumLeakSetting = GetPart(input, 14).toInt();
+		ChamberSize = GetPart(input, 15).toBool();
+		FilterCount = GetPart(input, 16).toInt();
+		TotalRunCount = GetPart(input, 17).toInt();
+		TimeForPSW2ToOperate = GetPart(input, 18).toInt();
+		PressurePSW2Operates = GetPart(input, 19).toInt();
+		LowVacSetting = GetPart(input, 20).toInt();
+		SampleRatePumpdown = GetPart(input, 21).toInt();
+		SampleRateDevelop = GetPart(input, 22).toInt();
+		firmwareBuild = GetPart(input, 23).toInt();
+		SerialNumber = GetPart(input, 24);
 		//There is a skipped case number variable here
-		MetalType = parts[26].toBool();
+		MetalType = GetPart(input, 26).toBool();
 
 		//New 16 bit value
-		HeatRunTime = parts[33].toInt();
+		HeatRunTime = GetPart(input, 33).toInt();
 	}
 	RecoverLog() 
 	{ 
@@ -231,6 +224,24 @@ public:
 
 
 private:
+	String GetPart(String input, int index)
+	{		
+		int i = 0;
+		int pos = 0;
+		int next = 0;
+		do
+		{
+			do { next++; } while (input[next] != '\t' && next < (int)input.len());
+
+			if (index == i)
+				return input.substr(pos, next - pos);			
+
+			pos = next + 1;
+			i++;
+		} while (next != input.len());
+
+		return String();
+	}
 
 };
 

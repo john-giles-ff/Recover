@@ -132,6 +132,9 @@ int String::index(int i) const
 
 int String::toInt()
 {
+	if (length == -1)
+		return -1;
+
 	for (unsigned i = 0; i < length; i++)
 		if (!isDigit(data[i], false, i == 0))
 			return -1;
@@ -272,6 +275,9 @@ DateTime String::toDateTime()
 
 bool String::toBool()
 {
+	if (length == 0)
+		return false;
+
 	return data[0] == '1';
 }
 

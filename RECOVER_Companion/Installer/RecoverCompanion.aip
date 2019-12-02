@@ -22,10 +22,10 @@
     <ROW Property="ARPURLINFOABOUT" Value="http://www.fosterfreeman.com"/>
     <ROW Property="AppLogoIcon" Value="applogoicon" Type="1" MsiKey="AppLogoIcon"/>
     <ROW Property="Manufacturer" Value="Foster + Freeman"/>
-    <ROW Property="ProductCode" Value="2057:{E08A5BDF-43E3-4C9E-A635-8FEA26E8FE00} " Type="16"/>
+    <ROW Property="ProductCode" Value="2057:{03EB968A-56C0-4792-952B-5B31034ACC8E} " Type="16"/>
     <ROW Property="ProductLanguage" Value="2057"/>
     <ROW Property="ProductName" Value="RECOVER:LFT Companion"/>
-    <ROW Property="ProductVersion" Value="1.0.32.0" Type="32" TargetFile="RecoverCompanionApplication.exe"/>
+    <ROW Property="ProductVersion" Value="1.0.33.0" Type="32" TargetFile="RecoverCompanionApplication.exe"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{25C4E787-3C08-44EF-B854-D45B7E681A07}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
