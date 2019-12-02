@@ -145,175 +145,56 @@ public:
 		Index = index;
 		Exists = true;		
 		int pos = 0;
-		
-
-		//Start Time
 		int next = 0;
-		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		StartTime = input.substr(pos, next - pos).toDateTime();		
 
-		//Base heater
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		BaseHeaterSetpoint = input.substr(pos, next - pos).toInt();
+		String parts[40];
+		int i = 0;
+		do
+		{
+			do { next++; } while (input[next] != '\t' && next < (int)input.len());
+			parts[i] = input.substr(pos, next - pos);
 
-		//Precursor Heater
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		PrecursorHeaterSetpoint = input.substr(pos, next - pos).toInt();
-
-		//Vacuum Setpoint
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		VacuumSetpoint = input.substr(pos, next - pos).toInt();
-
-		//Final Base Temperature
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		FinalBaseHeaterTemperature = input.substr(pos, next - pos).toInt();		
-
-		//Final Precursor Temperature
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		FullPrecursorHeaterTemperature = input.substr(pos, next - pos).toInt();
-
-		//Final Pressure
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		FinalPressureMeasurement = input.substr(pos, next - pos).toInt();	
+			pos = next + 1;
+			i++;
+		} while (next != input.len());
 		
-		//Leak Test 1 Result
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		LeakTest1Result = input.substr(pos, next - pos).toInt();		
-		
-		//Leak Test 2 Result
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		LeakTest2Result = input.substr(pos, next - pos).toInt();		
-		
-		//Pumpdown runtime (8 bit value that is now ignored)
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		//PumpDownRunTime = input.substr(pos, next - pos).toInt();		
-		
-		//Heat runtime
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		HeatRunTime = input.substr(pos, next - pos).toInt();		
-		
-		//Number of samples 
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		String samplesString = input.substr(pos, next - pos);
-		if (samplesString[0] != '\\' || samplesString[0] != '/')
-			NumberOfSamples = samplesString.toInt();		
+		StartTime = parts[0].toDateTime();
+		BaseHeaterSetpoint = parts[1].toInt();
+		PrecursorHeaterSetpoint = parts[2].toInt();
+		VacuumSetpoint = parts[3].toInt();
+		FinalBaseHeaterTemperature = parts[4].toInt();
+		FullPrecursorHeaterTemperature = parts[5].toInt();
+		FinalPressureMeasurement = parts[6].toInt();
+		LeakTest1Result = parts[7].toInt();
+		LeakTest2Result = parts[8].toInt();
+		PumpDownRunTime = parts[9].toInt(); //Old 8 bit value, no longer used
+		//HeatRunTime = int.Parse(datas[10]);
+
+		//Samples will return \ if there are no samples (Happens when the process fails)		
+		if (parts[11][0] != '\\' || parts[11][0] != '/')
+			NumberOfSamples = parts[11].toInt();
 		if (NumberOfSamples > 1000)
 			NumberOfSamples = 1000;
+
+		FinalPrecursorHeaterTemperature = parts[12].toInt();
 		
-		//Full Precursor temperature
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		FinalPrecursorHeaterTemperature = input.substr(pos, next - pos).toInt();
-				
-		//Time to reach vacuum
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		TimeToReachVacuumSetpoint = input.substr(pos, next - pos).toInt();		
+		TimeToReachVacuumSetpoint = parts[13].toInt();
+		MaximumLeakSetting = parts[14].toInt();
+		ChamberSize = parts[15].toBool();
+		FilterCount = parts[16].toInt();
+		TotalRunCount = parts[17].toInt();
+		TimeForPSW2ToOperate = parts[18].toInt();
+		PressurePSW2Operates = parts[19].toInt();
+		LowVacSetting = parts[20].toInt();
+		SampleRatePumpdown = parts[21].toInt();
+		SampleRateDevelop = parts[22].toInt();
+		firmwareBuild = parts[23].toInt();
+		SerialNumber = parts[24];
+		//There is a skipped case number variable here
+		MetalType = parts[26].toBool();
 
-		//Maximum Leak Setting
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		MaximumLeakSetting = input.substr(pos, next - pos).toInt();
-
-		//Chamber Size
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		ChamberSize = input.substr(pos, next - pos).toBool();
-
-		//Filter Count
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		FilterCount = input.substr(pos, next - pos).toInt();
-
-		//Total Run count
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		TotalRunCount = input.substr(pos, next - pos).toInt();
-
-		//Time for PSW2 to operate
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		TimeForPSW2ToOperate = input.substr(pos, next - pos).toInt();
-
-		//Pressure when PSW2 Operates
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		PressurePSW2Operates = input.substr(pos, next - pos).toInt();
-
-		//Low Vac Setting
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		LowVacSetting = input.substr(pos, next - pos).toInt();
-
-		//Sample Rate pumpdown
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		SampleRatePumpdown = input.substr(pos, next - pos).toInt();
-
-		//Sample rate develop
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		SampleRateDevelop = input.substr(pos, next - pos).toInt();
-
-		//Firmware Build
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && next < (int)input.len());
-		firmwareBuild = input.substr(pos, next - pos).toInt();
-
-		//Machine Serial
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && input[next] != '\n' && next < (int)input.len());
-		SerialNumber = input.substr(pos, next - pos);		
-		
-		//Case Number (Ignored)
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && input[next] != '\n' && next < (int)input.len());
-
-		//Metal Type
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && input[next] != '\n' && next < (int)input.len());
-		MetalType = input.substr(pos, next - pos).toBool();		
-
-		//Process Info 2 (Ignored)
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && input[next] != '\n' && next < (int)input.len());
-
-		//Process Info 3 (Ignored)
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && input[next] != '\n' && next < (int)input.len());
-
-		//Process Info 4 (Ignored)
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && input[next] != '\n' && next < (int)input.len());
-
-		//Relative Humidity (Ignored)
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && input[next] != '\n' && next < (int)input.len());
-
-		//Relative temperature (Ignored)
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && input[next] != '\n' && next < (int)input.len());
-
-		//Time to target temperature (Ignored)
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && input[next] != '\n' && next < (int)input.len());
-
-		//Pumpdown Time (16 bit now)
-		pos = next + 1;
-		do { next++; } while (input[next] != '\t' && input[next] != '\n' && next < (int)input.len());
-		PumpDownRunTime = input.substr(pos, next - pos).toInt();
-
+		//New 16 bit value
+		HeatRunTime = parts[33].toInt();
 	}
 	RecoverLog() 
 	{ 
