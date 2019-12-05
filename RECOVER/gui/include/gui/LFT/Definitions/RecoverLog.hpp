@@ -160,7 +160,7 @@ public:
 		LeakTest1Result = GetPart(input, 7).toInt();
 		LeakTest2Result = GetPart(input, 8).toInt();
 		PumpDownRunTime = GetPart(input, 9).toInt();
-		//HeatRunTime = int.Parse(datas[10]); //Old 8 bit value, no longer used
+		HeatRunTime = GetPart(input, 10).toInt(); //Old 8 bit value, no longer used
 
 		//Samples will return \ if there are no samples (Happens when the process fails)		
 		String samplesString = GetPart(input, 11);
@@ -187,7 +187,9 @@ public:
 		MetalType = GetPart(input, 26).toBool();
 
 		//New 16 bit value
-		HeatRunTime = GetPart(input, 33).toInt();
+		int newHeatRunTime = GetPart(input, 33).toInt();
+		if (newHeatRunTime > HeatRunTime)
+			HeatRunTime = newHeatRunTime;
 	}
 	RecoverLog() 
 	{ 
@@ -228,10 +230,10 @@ private:
 	{		
 		int i = 0;
 		int pos = 0;
-		int next = 0;
+		unsigned int next = 0;
 		do
 		{
-			do { next++; } while (input[next] != '\t' && next < (int)input.len());
+			do { next++; } while (input[next] != '\t' && next < input.len());
 
 			if (index == i)
 				return input.substr(pos, next - pos);			

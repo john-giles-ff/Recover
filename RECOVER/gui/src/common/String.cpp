@@ -132,7 +132,7 @@ int String::index(int i) const
 
 int String::toInt()
 {
-	if (length == -1)
+	if (length == 0u)
 		return -1;
 
 	for (unsigned i = 0; i < length; i++)

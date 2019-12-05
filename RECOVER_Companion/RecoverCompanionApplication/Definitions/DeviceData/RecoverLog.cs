@@ -1085,8 +1085,8 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
                 FinalPressureMeasurement = int.Parse(datas[6]);
                 LeakTest1Result = int.Parse(datas[7]);
                 LeakTest2Result = int.Parse(datas[8]);
-                PumpDownRunTime = int.Parse(datas[9]); //Old 8 bit value, no longer used
-                //HeatRunTime = int.Parse(datas[10]);
+                PumpDownRunTime = int.Parse(datas[9]);
+                HeatRunTime = int.Parse(datas[10]); //Old 8 bit value, no longer used
 
                 //Samples will return \ if there are no samples (Happens when the process fails)
                 if (int.TryParse(datas[11], out int samples))
@@ -1110,7 +1110,9 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
                 MetalType = int.Parse(datas[26]) == 1;
 
                 //New 16 bit value
-                HeatRunTime = int.Parse(datas[33]);
+                int heatTime16bit = int.Parse(datas[33]);
+                if (heatTime16bit > HeatRunTime)
+                    HeatRunTime = heatTime16bit;
 
             }
             catch (Exception) { };
