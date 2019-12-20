@@ -143,7 +143,7 @@
 {0}</value>
   </data>
   <data name="ConnectionSuccesful" xml:space="preserve">
-    <value>Ligação bem-sucedida </value>
+    <value>Ligação bem-sucedida</value>
   </data>
   <data name="UnableToEnumerateDevices" xml:space="preserve">
     <value>Não é possível enumerar dispositivos</value>
@@ -353,7 +353,7 @@
     <value>DEVELOP-R4</value>
   </data>
   <data name="SingleInstanceError" xml:space="preserve">
-    <value>A aplicação RECOVER COMPANION já está aberta. Não é possível abrir várias vezes.</value>
+    <value>A aplicação RECOVER COMPANION já está aberta. Não é possível abrir várias vezes</value>
   </data>
   <data name="SelectLanguage" xml:space="preserve">
     <value>Selecione o idioma</value>
@@ -366,5 +366,60 @@
   </data>
   <data name="USBMode" xml:space="preserve">
     <value>Modo USB</value>
+  </data>
+  <data name="PrintingInProgress" xml:space="preserve">
+    <value>Impressão em curso...</value>
+  </data>
+  <data name="PrintingFinished" xml:space="preserve">
+    <value>Impressão terminada</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>Página</value>
+  </data>
+  <data name="SelectAuditLogstoPrint" xml:space="preserve">
+    <value>Selecione os registos de auditoria para imprimir:</value>
+  </data>
+  <data name="CheckAll" xml:space="preserve">
+    <value>Marcar todos</value>
+  </data>
+  <data name="UncheckAll" xml:space="preserve">
+    <value>Desmarcar todos</value>
+  </data>
+  <data name="SinglePageMode" xml:space="preserve">
+    <value>Utilizar uma só página por registo</value>
+  </data>
+  <data name="CaseReference" xml:space="preserve">
+    <value>Referência:</value>
+  </data>
+  <data name="CaseOperator" xml:space="preserve">
+    <value>Utilizador:</value>
+  </data>
+  <data name="EnterExtraInformation" xml:space="preserve">
+    <value>Digite a referência do caso e o operador abaixo.</value>
+  </data>
+  <data name="ConfirmWriteExtraData" xml:space="preserve">
+    <value>AVISO: Estas alterações não podem ser desfeitas.</value>
+  </data>
+  <data name="ThisCannotBeUndone" xml:space="preserve">
+    <value>Estas alterações são permanentes e não poderão ser editadas mais tarde.</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>Notas:</value>
+  </data>
+  <data name="UnableToOpenFileRightNow" xml:space="preserve">
+    <value>Impossível abrir o ficheiro agora. Tente novamente mais tarde.</value>
+  </data>
+  <data name="CreateServicePack" xml:space="preserve">
+    <value>Criar Ficheiro de Suporte</value>
+  </data>
+  <data name="CreatingServicePack" xml:space="preserve">
+    <value>A criar Ficheiro de Suporte…
+Isto pode demorar alguns minutos</value>
+  </data>
+  <data name="ServicePackCreated" xml:space="preserve">
+    <value>Ficheiro de Suporte criado!</value>
+  </data>
+  <data name="ServicePackCreatingCancelled" xml:space="preserve">
+    <value>Criação de Ficheiro de Suporte cancelada!</value>
   </data>
 </root>

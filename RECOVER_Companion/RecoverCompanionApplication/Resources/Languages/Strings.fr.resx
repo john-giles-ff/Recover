@@ -206,7 +206,7 @@
     <value>Voulez-vous vraiment programmer l'appareil connecté actuellement ?</value>
   </data>
   <data name="StartTime" xml:space="preserve">
-    <value>Heure de début :</value>
+    <value>Heure de début : </value>
   </data>
   <data name="PumpdownMinutes" xml:space="preserve">
     <value>Temps de conditionnement (Minutes) :</value>
@@ -296,7 +296,7 @@
     <value>Avancé</value>
   </data>
   <data name="UnableToGenerateReport" xml:space="preserve">
-    <value>Impossible de générer un rapport</value>
+    <value>Impossible de générer un rapport.</value>
   </data>
   <data name="ReportGenerated" xml:space="preserve">
     <value>Rapport généré</value>
@@ -366,5 +366,60 @@
   </data>
   <data name="USBMode" xml:space="preserve">
     <value>Mode USB</value>
+  </data>
+  <data name="PrintingInProgress" xml:space="preserve">
+    <value>Impression en cours...</value>
+  </data>
+  <data name="PrintingFinished" xml:space="preserve">
+    <value>Impression terminée</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>Page</value>
+  </data>
+  <data name="SelectAuditLogstoPrint" xml:space="preserve">
+    <value>Sélectionner les journaux d'audit à imprimer :</value>
+  </data>
+  <data name="CheckAll" xml:space="preserve">
+    <value>Cocher tout</value>
+  </data>
+  <data name="UncheckAll" xml:space="preserve">
+    <value>Décocher tout</value>
+  </data>
+  <data name="SinglePageMode" xml:space="preserve">
+    <value>Utiliser une page par journal</value>
+  </data>
+  <data name="CaseReference" xml:space="preserve">
+    <value>Référence :</value>
+  </data>
+  <data name="CaseOperator" xml:space="preserve">
+    <value>Utilisateur :</value>
+  </data>
+  <data name="EnterExtraInformation" xml:space="preserve">
+    <value>Veuillez saisir la référence de cas et l'opérateur ci-dessous.</value>
+  </data>
+  <data name="ConfirmWriteExtraData" xml:space="preserve">
+    <value>AVERTISSEMENT : ces changements ne peuvent pas être rétablis.</value>
+  </data>
+  <data name="ThisCannotBeUndone" xml:space="preserve">
+    <value>Ces changements sont permanents et ne peuvent pas être modifiés par la suite.</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>Notes :</value>
+  </data>
+  <data name="UnableToOpenFileRightNow" xml:space="preserve">
+    <value>Impossible d'ouvrir le fichier pour le moment. Veuillez essayer à nouveau plus tard.</value>
+  </data>
+  <data name="CreateServicePack" xml:space="preserve">
+    <value>Créer un Pack Support</value>
+  </data>
+  <data name="CreatingServicePack" xml:space="preserve">
+    <value>Création d'un Pack Support en cours… 
+Ceci peut prendre quelques minutes.</value>
+  </data>
+  <data name="ServicePackCreated" xml:space="preserve">
+    <value>Pack Support créé !</value>
+  </data>
+  <data name="ServicePackCreatingCancelled" xml:space="preserve">
+    <value>Création du Pack Support annulée !</value>
   </data>
 </root>

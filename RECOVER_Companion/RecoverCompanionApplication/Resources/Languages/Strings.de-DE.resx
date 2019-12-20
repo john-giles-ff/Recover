@@ -143,7 +143,7 @@
 {0}</value>
   </data>
   <data name="ConnectionSuccesful" xml:space="preserve">
-    <value>Verbindung erfolgreich </value>
+    <value>Verbindung erfolgreich</value>
   </data>
   <data name="UnableToEnumerateDevices" xml:space="preserve">
     <value>Geräte können nicht aufgezählt werden</value>
@@ -366,5 +366,60 @@
   </data>
   <data name="USBMode" xml:space="preserve">
     <value>USB-Modus</value>
+  </data>
+  <data name="PrintingInProgress" xml:space="preserve">
+    <value>Druckvorgang läuft...</value>
+  </data>
+  <data name="PrintingFinished" xml:space="preserve">
+    <value>Druckvorgang abgeschlossen</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>Seite</value>
+  </data>
+  <data name="SelectAuditLogstoPrint" xml:space="preserve">
+    <value>Zu druckende Auditprotokolle auswählen:</value>
+  </data>
+  <data name="CheckAll" xml:space="preserve">
+    <value>Alle markieren</value>
+  </data>
+  <data name="UncheckAll" xml:space="preserve">
+    <value>Auswahl aufheben</value>
+  </data>
+  <data name="SinglePageMode" xml:space="preserve">
+    <value>Eine Seite pro Protokoll verwenden</value>
+  </data>
+  <data name="CaseReference" xml:space="preserve">
+    <value>Referenz:</value>
+  </data>
+  <data name="CaseOperator" xml:space="preserve">
+    <value>Benutzer:</value>
+  </data>
+  <data name="EnterExtraInformation" xml:space="preserve">
+    <value>Geben Sie unten die Fall-Referenz und den Bediener ein.</value>
+  </data>
+  <data name="ConfirmWriteExtraData" xml:space="preserve">
+    <value>WARNUNG: Diese Änderungen können nicht rückgängig gemacht werden.</value>
+  </data>
+  <data name="ThisCannotBeUndone" xml:space="preserve">
+    <value>Diese Änderungen sind dauerhaft und können nicht zu einem späteren Zeitpunkt bearbeitet werden.</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>Notizen:</value>
+  </data>
+  <data name="UnableToOpenFileRightNow" xml:space="preserve">
+    <value>Die Datei kann momentan nicht geöffnet werden. Bitte versuchen Sie es später noch einmal.</value>
+  </data>
+  <data name="CreateServicePack" xml:space="preserve">
+    <value>Service-Paket erstellen</value>
+  </data>
+  <data name="CreatingServicePack" xml:space="preserve">
+    <value>Service-Paket wird erstellt...
+Dieser Vorgang kann ein paar Minuten dauern.</value>
+  </data>
+  <data name="ServicePackCreated" xml:space="preserve">
+    <value>Service-Paket erstellt!</value>
+  </data>
+  <data name="ServicePackCreatingCancelled" xml:space="preserve">
+    <value>Erstellung des Service-Pakets abgebrochen!</value>
   </data>
 </root>

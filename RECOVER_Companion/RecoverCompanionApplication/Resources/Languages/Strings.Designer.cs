@@ -241,7 +241,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Connection Successful .
+        ///   Looks up a localized string similar to Connection Successful.
         /// </summary>
         public static string ConnectionSuccesful {
             get {
@@ -693,7 +693,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Printing in progress.
+        ///   Looks up a localized string similar to Printing in progress....
         /// </summary>
         public static string PrintingInProgress {
             get {

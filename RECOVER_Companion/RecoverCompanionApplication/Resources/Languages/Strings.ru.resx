@@ -143,7 +143,7 @@
 {0}</value>
   </data>
   <data name="ConnectionSuccesful" xml:space="preserve">
-    <value>Успешно подключено </value>
+    <value>Успешно подключено</value>
   </data>
   <data name="UnableToEnumerateDevices" xml:space="preserve">
     <value>Не удалось перечислить устройства</value>
@@ -366,5 +366,60 @@
   </data>
   <data name="USBMode" xml:space="preserve">
     <value>Режим USB</value>
+  </data>
+  <data name="PrintingInProgress" xml:space="preserve">
+    <value>Идет печать...</value>
+  </data>
+  <data name="PrintingFinished" xml:space="preserve">
+    <value>Печать завершена</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>Страница</value>
+  </data>
+  <data name="SelectAuditLogstoPrint" xml:space="preserve">
+    <value>Выберите журналы аудита для печати:</value>
+  </data>
+  <data name="CheckAll" xml:space="preserve">
+    <value>Выбрать все</value>
+  </data>
+  <data name="UncheckAll" xml:space="preserve">
+    <value>Отменить выбор</value>
+  </data>
+  <data name="SinglePageMode" xml:space="preserve">
+    <value>Одна страница на журнал</value>
+  </data>
+  <data name="CaseReference" xml:space="preserve">
+    <value>Номер обращения:</value>
+  </data>
+  <data name="CaseOperator" xml:space="preserve">
+    <value>Оператор:</value>
+  </data>
+  <data name="EnterExtraInformation" xml:space="preserve">
+    <value>Введите номер обращения и оператора ниже:</value>
+  </data>
+  <data name="ConfirmWriteExtraData" xml:space="preserve">
+    <value>ВНИМАНИЕ: эти изменения нельзя отменить</value>
+  </data>
+  <data name="ThisCannotBeUndone" xml:space="preserve">
+    <value>Эти изменения постоянные, и их нельзя будет изменить.</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>Примечания:</value>
+  </data>
+  <data name="UnableToOpenFileRightNow" xml:space="preserve">
+    <value>В данный момент невозможно открыть файл. Повторите попытку позже.</value>
+  </data>
+  <data name="CreateServicePack" xml:space="preserve">
+    <value>Создать файл поддержки</value>
+  </data>
+  <data name="CreatingServicePack" xml:space="preserve">
+    <value>Создание файла поддержки… 
+Это может занять несколько минут.</value>
+  </data>
+  <data name="ServicePackCreated" xml:space="preserve">
+    <value>Файл поддержки создан!</value>
+  </data>
+  <data name="ServicePackCreatingCancelled" xml:space="preserve">
+    <value>Создание файла поддержки отменено!</value>
   </data>
 </root>
