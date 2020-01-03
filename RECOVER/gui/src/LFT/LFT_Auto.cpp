@@ -56,12 +56,15 @@ void LFT_Auto::SetLeakMax(int mTorrPer10s)
 
 }
 
-void LFT_Auto::SetTimeout(int minutes)
+void LFT_Auto::SetTimeout(int timeout1, int timeout2)
 {
-	if (minutes == -1 || minutes == 0)
-		minutes = _information->DEFAULT_TIMEOUT;
+	if (timeout1 <= 0)
+		timeout1 = _information->DEFAULT_TIMEOUT1;
+	if (timeout2 <= 0)
+		timeout2 = _information->DEFAULT_TIMEOUT2;
 
-	_model->SendInt("TIMEOUT", minutes);
+	_model->SendInt("TIMEOUT30", timeout1);
+	_model->SendInt("TIMEOUT45", timeout2);
 }
 
 void LFT_Auto::SetChamberSize(bool value)
@@ -271,8 +274,7 @@ void LFT_Auto::SetSettings()
 	SetVac();
 	SetVacMax();
 	SetLeakMax();
-	SetStirTime();
-	SetTimeout();
+	SetStirTime();	
 	SetUsePurgeFans(true);
 }
 
