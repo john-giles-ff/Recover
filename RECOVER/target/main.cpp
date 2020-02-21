@@ -21,7 +21,7 @@ using namespace touchgfx;
 */
 #define configGUI_TASK_PRIORITY                 ( tskIDLE_PRIORITY + 3 )
 
-#define configGUI_TASK_STK_SIZE                 ( 2000 )
+#define configGUI_TASK_STK_SIZE                 ( 3000 )
 
 //#define CANVAS_BUFFER_SIZE (3600)
 

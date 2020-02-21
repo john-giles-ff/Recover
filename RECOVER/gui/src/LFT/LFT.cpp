@@ -11,7 +11,7 @@ LFT_ProductionTests LFT::ProductionTests(&LFT::Information, &LFT::Manual, &LFT::
 int LFT::progressContinueOverride(0);
 
 Model* LFT::_model = 0;
-bool LFT::_initalised;
+bool LFT::_initalised = false;
 
 void LFT::Initialise()
 {

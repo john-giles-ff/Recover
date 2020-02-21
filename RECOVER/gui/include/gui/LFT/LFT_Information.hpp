@@ -21,8 +21,9 @@ class LFT_Information
 {	
 
 public:	
-	LFT_Information() {
-		_model = { 0 };		
+	LFT_Information() :
+		_model(0)
+	{		
 #ifndef SIMULATOR
 		/* Create a mutex type semaphore. */
 		xSemaphore = xSemaphoreCreateMutex();		
@@ -85,9 +86,7 @@ public:
 
 
 	void SetModel(Model* model);
-//#ifndef  SIMULATOR
 	SemaphoreHandle_t xSemaphore;
-//#endif // ! SIMULATOR
 
 
 

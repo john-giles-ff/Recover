@@ -1216,6 +1216,9 @@ void ProcessScreenView::DemoProcess()
 	case LFT_STAGE_CHAMBER_CONDITIONING:
 	case LFT_STAGE_COOLDOWN:
 		progressBar.SetValue(tickCounter);		
+#ifdef SIMULATOR
+		[[fallthrough]];
+#endif
 	case LFT_STAGE_FUMING:
 		pulseStageText();
 		break;	

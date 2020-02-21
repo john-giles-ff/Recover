@@ -18,12 +18,12 @@ enum GraphType
 class LFT_Status
 {
 public:
-	short Time;
-	float Pressure;
-	short BaseTemp;
-	short BasePower;
-	short PreTemp;
-	short PrePower;	
+	short Time = 0;
+	float Pressure = 0;
+	short BaseTemp = 0;
+	short BasePower = 0;
+	short PreTemp = 0;
+	short PrePower = 0;	
 };
 
 

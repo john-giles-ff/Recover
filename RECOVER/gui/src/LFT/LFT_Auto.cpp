@@ -1,12 +1,12 @@
 #include <gui/LFT/LFT_Auto.hpp>
 
-LFT_Auto::LFT_Auto(LFT_Information * information, LFT_Manual * manual, LFT_Settings * settings, LFT_AutoClean * autoClean)
-{
-	_information = information;
-	_manual = manual;
-	_settings = settings;
-	_autoClean = autoClean;
-
+LFT_Auto::LFT_Auto(LFT_Information* information, LFT_Manual* manual, LFT_Settings* settings, LFT_AutoClean* autoClean) :
+	_information(information),
+	_manual(manual),
+	_settings(settings),
+	_autoClean(autoClean),
+	_model(0)
+{	
 	CurrentStage.SetSemaphore(_information->xSemaphore);
 }
 

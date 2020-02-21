@@ -1,8 +1,12 @@
 #include <gui/LFT/LFT_Settings.hpp>
 
-LFT_Settings::LFT_Settings(LFT_Information * information)
-{
-	_information = information;
+LFT_Settings::LFT_Settings(LFT_Information * information):
+	_information(information),
+	_model(0)	
+{		
+	for (int i = 0; i < CIPHER_COUNT; i++)
+		_ciphers[i] = 0;
+
 
 	_languageSetting.SetSemaphore(_information->xSemaphore);
 	_beepWhenReadySetting.SetSemaphore(_information->xSemaphore);

@@ -120,7 +120,7 @@ void hw_init()
 	//Clear Frame
 	uint16_t* frameBuf0Ptr = &(*reinterpret_cast<uint16_t *>(frameBuf0));	
 	for (int i = 0; i < 384000; i++)
-		frameBuf0Ptr[i] = (uint16_t)0x0000;
+		frameBuf0Ptr[i] = (uint16_t)0xFFFF;
 	
 #endif
 	
@@ -233,6 +233,11 @@ LCD24bpp display;
 
 void touchgfx_init()
 {
+	//Clear Frame
+	uint16_t* frameBuf0Ptr = &(*reinterpret_cast<uint16_t *>(frameBuf0));	
+	for (int i = 0; i < 384000; i++)
+		frameBuf0Ptr[i] = (uint16_t)0x0000;
+	
     HAL& hal = touchgfx_generic_init<STM32F7HAL>(dma, display, tc, 800, 480, 0, 0);
     os_inited = true;
 
@@ -275,6 +280,7 @@ void touchgfx_init()
     //Set MCU instrumentation and Load calculation
     hal.setMCUInstrumentation(&mcuInstr);
     hal.enableMCULoadCalculation(false);
+			
 }
 }
 
