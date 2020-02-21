@@ -11283,7 +11283,20 @@
     "FrameworkFeatures": {
       "LCD16bpp": {
         "Id": "LCD16bpp",
-        "IsEnabled": true
+        "Features": [
+          {
+            "Id": "RGB565",
+            "IsEnabled": true
+          },
+          {
+            "Id": "ARGB8888",
+            "IsEnabled": true
+          },
+          {
+            "Id": "A4",
+            "IsEnabled": true
+          }
+        ]
       }
     },
     "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j10",

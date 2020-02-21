@@ -176,6 +176,8 @@ SECTIONS
 	ExtFlashSection :
 	{
 		*(ExtFlashSection ExtFlashSection.*)
+		*(FontFlashSection FontFlashSection.*)
+		*(ExtFlashSection TextFlashSection.*)
 		*(.gnu.linkonce.r.*)
         . = ALIGN(0x4);
 	} >QUADSPI

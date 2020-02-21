@@ -134,6 +134,8 @@ void LFT_Auto::QueStage(int stage)
 	case LFT_STAGE_FINISHED:		
 		_information->ReadRunCounter();
 		_information->ReadFilterCounter();
+		SetStage(stage);
+		break;
 	default:
 		SetStage(stage);		
 		break;

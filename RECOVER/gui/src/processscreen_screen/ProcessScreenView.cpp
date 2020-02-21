@@ -1215,7 +1215,7 @@ void ProcessScreenView::DemoProcess()
 	case LFT_STAGE_PRECHECKS:
 	case LFT_STAGE_CHAMBER_CONDITIONING:
 	case LFT_STAGE_COOLDOWN:
-		progressBar.SetValue(tickCounter);
+		progressBar.SetValue(tickCounter);		
 	case LFT_STAGE_FUMING:
 		pulseStageText();
 		break;	
