@@ -82,7 +82,7 @@ public:
         lastTouched(false),
         updateMCULoad(0),
         cc_begin(0),
-        displayOrientationChangeRequested(false)
+        displayOrientationChangeRequested(false)		
     {
         instance = this;
         DISPLAY_WIDTH = width;

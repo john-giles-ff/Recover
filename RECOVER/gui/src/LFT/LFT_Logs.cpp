@@ -1,8 +1,8 @@
 #include <gui/LFT/LFT_Logs.hpp>
 
 LFT_Logs::LFT_Logs(LFT_Information* information) :
-	_information(information),
-	_model(0)
+	_model(0),
+	_information(information)
 {	
 
 	GetSamplesRequired.SetSemaphore(_information->xSemaphore);

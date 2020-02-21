@@ -1,8 +1,8 @@
 #include <gui/LFT/LFT_Manual.hpp>
 
 LFT_Manual::LFT_Manual(LFT_Information* information) :
-	_information(information),
-	_model(0)
+	_model(0),
+	_information(information)
 {	
 }
 

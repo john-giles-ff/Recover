@@ -1,6 +1,8 @@
 #include <gui/model/Model.hpp>
 
-Model::Model() : modelListener(0)
+Model::Model() : 
+	modelListener(0),
+	xSemaphore(0)
 {						
 #ifndef SIMULATOR
 	/* Create a mutex type semaphore. */

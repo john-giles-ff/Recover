@@ -1,11 +1,11 @@
 #include <gui/LFT/LFT_ProductionTests.hpp>
 
 LFT_ProductionTests::LFT_ProductionTests(LFT_Information* lft_information, LFT_Manual* lft_manual, LFT_Auto* lft_auto, LFT_Settings* lft_settings) :
+	_model(0),
 	_information(lft_information),
 	_manual(lft_manual),
 	_auto(lft_auto),
-	_settings(lft_settings),
-	_model(0)	
+	_settings(lft_settings)
 {	
 	//LFTActual[StatusMaximumPoints];
 	for (int i = 0; i < StatusMaximumPoints; i++)

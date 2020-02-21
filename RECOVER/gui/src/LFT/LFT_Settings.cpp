@@ -1,11 +1,10 @@
 #include <gui/LFT/LFT_Settings.hpp>
 
 LFT_Settings::LFT_Settings(LFT_Information * information):
+	_model(0),
 	_information(information),
-	_model(0)	
-{		
-	for (int i = 0; i < CIPHER_COUNT; i++)
-		_ciphers[i] = 0;
+	_ciphers()
+{			
 
 
 	_languageSetting.SetSemaphore(_information->xSemaphore);

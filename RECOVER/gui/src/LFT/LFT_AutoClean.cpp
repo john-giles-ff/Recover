@@ -1,10 +1,10 @@
 #include <gui/LFT/LFT_AutoClean.hpp>
 
 LFT_AutoClean::LFT_AutoClean(LFT_Information* information, LFT_Manual* manual, LFT_Settings* settings) :
+	_model(0),
 	_information(information),
 	_manual(manual),
-	_settings(settings),
-	_model(0)
+	_settings(settings)
 {		
 	_status.SetSemaphore(_information->xSemaphore);
 	_totalStartTime.SetSemaphore(_information->xSemaphore);
