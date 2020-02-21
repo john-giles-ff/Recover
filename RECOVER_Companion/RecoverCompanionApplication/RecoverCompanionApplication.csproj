@@ -268,6 +268,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Languages\Strings.ru.resx" />
+    <EmbeddedResource Include="Resources\Languages\Strings.zh-Hans.resx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

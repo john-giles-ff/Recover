@@ -1315,6 +1315,11 @@ void ProcessScreenView::StartProcess()
 
 void ProcessScreenView::StartProcess(bool skipOverwriteCheck)
 {	
+#ifdef SIMULATOR
+	LFT::Auto.SetSettings();
+#endif
+
+
 	_processSuccess = true;
 	_isUpdateCipherAllowed = true;
 
