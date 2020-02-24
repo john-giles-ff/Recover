@@ -1,8 +1,12 @@
 #include <gui/containers/AuditLog.hpp>
 
-AuditLog::AuditLog()
+AuditLog::AuditLog() :
+	_log(),
+	resizedEvent(),
+	deleteClickedEvent()
 {
 	setHeight(CollapsedSize);	
+	UpdateExpandedState();
 }
 
 void AuditLog::SetLog(RecoverLog * log)
@@ -132,7 +136,7 @@ void AuditLog::UpdateExpandedState()
 	else
 	{
 		setHeight(CollapsedSize);
-		BtnExpander.setBitmaps(Bitmap(BITMAP_TRANSPARENT_ID), Bitmap(BITMAP_TRANSPARENT_ID), Bitmap(BITMAP_EXPAND_ID), Bitmap(BITMAP_EXPAND_ID));
+		BtnExpander.setBitmaps(Bitmap(BITMAP_TRANSPARENT_ID), Bitmap(BITMAP_TRANSPARENT_ID), Bitmap(BITMAP_MAXIMISE_ID), Bitmap(BITMAP_MAXIMISE_ID));
 	}
 
 	//Fire event

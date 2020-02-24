@@ -1,9 +1,9 @@
 #include <gui/LFT/LFT_Settings.hpp>
 
 LFT_Settings::LFT_Settings(LFT_Information * information):
-	_model(0),
-	_information(information),
-	_ciphers()
+	_ciphers(),
+	_model(0),	
+	_information(information)
 {			
 
 

@@ -1468,9 +1468,6 @@
           <name>$PROJ_DIR$/../../generated/images/src/ErrorIcon.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$/../../generated/images/src/expand.cpp</name>
-        </file>
-        <file>
           <name>$PROJ_DIR$/../../generated/images/src/Failed.cpp</name>
         </file>
         <file>
@@ -1913,6 +1910,9 @@
         </group>
         <file>
           <name>$PROJ_DIR$/../../generated/images/src/LargeChamber.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/maximise.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$/../../generated/images/src/MessageBackground.cpp</name>
