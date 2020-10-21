@@ -220,17 +220,25 @@ namespace RecoverLogInspector
                     if (logs.Count() == 0)
                         continue;
 
-                    var stats = new Stats(logs);
+                    try
+                    {                    
+                        var stats = new Stats(logs);
 
-                    // Get log averages
-                    sampleAvgs_baseTemp.Add(stats.AvgTemp_PeakBase);
-                    sampleAvgs_baseTime.Add(stats.AvgTime_PeakBase);
-                    sampleAvgs_pumpdown.Add(stats.AvgTime_Pumpdown);
-                    sampleAvgs_precursor.Add(stats.AvgTime_Precursor);
-                    sampleNames.Add(logs.First().SerialNumber);
+                        // Get log averages
+                        sampleAvgs_baseTemp.Add(stats.AvgTemp_PeakBase);
+                        sampleAvgs_baseTime.Add(stats.AvgTime_PeakBase);
+                        sampleAvgs_pumpdown.Add(stats.AvgTime_Pumpdown);
+                        sampleAvgs_precursor.Add(stats.AvgTime_Precursor);
+                        sampleNames.Add(logs.First().SerialNumber);
 
-                    cachedDirectories.Add(new UnitDirectory { Path = directory, Logs = logs, UnitStats = stats });
-                    index++;                    
+                        cachedDirectories.Add(new UnitDirectory { Path = directory, Logs = logs, UnitStats = stats });
+                        index++;
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Windows.MessageBox.Show($"Unable to parse files for directory:\n{Path.GetFileName(directory)}\n{ex.Message}");
+                    }
+
                 }
 
                 // Plot peak base temp x-bar chart

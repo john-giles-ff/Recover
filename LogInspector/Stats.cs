@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows;
 
 namespace RecoverLogInspector
 {
@@ -15,6 +16,7 @@ namespace RecoverLogInspector
             if (logs.Count() == 0)
                 return;
 
+            StartTimes = new List<DateTime>();
             PumpdownTimes = new List<int>();
             PrecursorTimes = new List<int>();
             BaseTimes = new List<int>();
@@ -29,31 +31,44 @@ namespace RecoverLogInspector
                 // Just to shorten the code
                 var samples = log.SerializableSamples.Samples;
 
-                // Get peak temperatures
-                int peakPrecursorTemp = samples.Max(a => a.PrecursorTemperature);
-                int peakBaseTemp = samples.Where(a => a.Mode != SampleMode.SAMPLE_INITIALISE).Max(a => a.BaseTemperature);
+                //Null references will occur when samples were cut short, these do not need to be included
+                try
+                {
+                    // Get peak temperatures
+                    int peakPrecursorTemp = samples.Max(a => a.PrecursorTemperature);
+                    int peakBaseTemp = samples.Where(a => a.Mode != SampleMode.SAMPLE_INITIALISE).Max(a => a.BaseTemperature);
 
-                // Get peak samples
-                var peakPrecursorSample = samples.FirstOrDefault(a => a.PrecursorTemperature == peakPrecursorTemp);
-                var peakBaseSample = samples.Where(a => a.Mode != SampleMode.SAMPLE_INITIALISE).First(a => a.BaseTemperature == peakBaseTemp);
+                    // Get peak samples
+                    var peakPrecursorSample = samples.FirstOrDefault(a => a.PrecursorTemperature == peakPrecursorTemp);
+                    var peakBaseSample = samples.Where(a => a.Mode != SampleMode.SAMPLE_INITIALISE).First(a => a.BaseTemperature == peakBaseTemp);
 
-                // Get reference points
-                var firstPumpSample = samples.FirstOrDefault(a => a.Mode == SampleMode.SAMPLE_PUMPDOWN);
-                var firstHeatSample = samples.FirstOrDefault(a => a.Mode == SampleMode.SAMPLE_HEAT);
+                    // Get reference points
+                    var firstPumpSample = samples.FirstOrDefault(a => a.Mode == SampleMode.SAMPLE_PUMPDOWN);
+                    var firstHeatSample = samples.FirstOrDefault(a => a.Mode == SampleMode.SAMPLE_HEAT);
 
-                // Get times
-                int pumpdownTime = (firstHeatSample.SampleNumber - firstPumpSample.SampleNumber) * log.SampleRatePumpdown;
-                int precursorTime = (peakPrecursorSample.SampleNumber - firstHeatSample.SampleNumber) * log.SampleRateDevelop;
-                int baseTime = (peakBaseSample.SampleNumber - firstPumpSample.SampleNumber) * log.SampleRateDevelop;
+                    //Check if null
+                    if (peakPrecursorSample == null || peakBaseSample == null || firstPumpSample == null || firstHeatSample == null)
+                        continue;
 
-                // Store values
-                PumpdownTimes.Add(pumpdownTime);
-                PrecursorTimes.Add(precursorTime);
-                BaseTimes.Add(baseTime);
-                BaseTemps.Add(peakBaseTemp);
+                    // Get times                    
+                    int pumpdownTime = (firstHeatSample.SampleNumber - firstPumpSample.SampleNumber) * log.SampleRatePumpdown;
+                    int precursorTime = (peakPrecursorSample.SampleNumber - firstHeatSample.SampleNumber) * log.SampleRateDevelop;
+                    int baseTime = (peakBaseSample.SampleNumber - firstPumpSample.SampleNumber) * log.SampleRateDevelop;
+
+                    // Store values
+                    StartTimes.Add(log.StartTime);
+                    PumpdownTimes.Add(pumpdownTime);
+                    PrecursorTimes.Add(precursorTime);
+                    BaseTimes.Add(baseTime);
+                    BaseTemps.Add(peakBaseTemp);
+                }
+                catch (NullReferenceException ex)
+                {
+                    MessageBox.Show($"Unable to load log: {log.Path}\n{ex.Message}");
+                    continue;
+                }
             }
-
-            StartTimes = logs.Select(a => a.StartTime).ToList();
+            
 
             // Calculate stats for pumpdown time
             AvgTime_Pumpdown = Math.Round(PumpdownTimes.Average(), 2);
