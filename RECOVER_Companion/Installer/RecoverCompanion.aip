@@ -86,6 +86,10 @@
     <ROW Component="SHORTCUTDIR" ComponentId="{53408A3D-198C-46FF-A987-79C37AD309EE}" Directory_="SHORTCUTDIR" Attributes="0"/>
     <ROW Component="STDFU.dll" ComponentId="{CAF815C6-5086-4BCF-9BFB-8FBD1B0F7558}" Directory_="APPDIR" Attributes="0" KeyPath="STDFU.dll"/>
     <ROW Component="STTubeDevice30.dll" ComponentId="{97FA66B9-318E-4AFD-85B4-99351FFD5F51}" Directory_="APPDIR" Attributes="0" KeyPath="STTubeDevice30.dll"/>
+    <ROW Component="VirtualComportDriv" ComponentId="{7B3BEFC6-72AB-4A4F-9C75-6F6615163CA8}" Directory_="APPDIR" Attributes="4" KeyPath="VirtualComportDriv" Options="2"/>
+    <ROW Component="VirtualComportDriv_1" ComponentId="{208F7423-6B87-4FA1-8127-F135B571B171}" Directory_="APPDIR" Attributes="4" KeyPath="VirtualComportDriv_1" Options="2"/>
+    <ROW Component="VirtualComportDriv_2" ComponentId="{71AE1A76-4F0C-4491-A728-E0AC5732E14A}" Directory_="APPDIR" Attributes="4" KeyPath="VirtualComportDriv_2" Options="2"/>
+    <ROW Component="VirtualComportDriv_3" ComponentId="{61281019-DDB2-4CE9-8C63-4566B3F19A4A}" Directory_="APPDIR" Attributes="4" KeyPath="VirtualComportDriv_3" Options="2"/>
     <ROW Component="deDE" ComponentId="{C32E2DF7-8C1C-4F7D-A43E-AC17CB125EFF}" Directory_="deDE_Dir" Attributes="0"/>
     <ROW Component="esES" ComponentId="{6417AFB7-EFC7-46C1-A8AD-2D3CB35742B5}" Directory_="esES_Dir" Attributes="0"/>
     <ROW Component="fr" ComponentId="{B7D2630B-508A-4ECA-93CA-7B436F8DB4C9}" Directory_="fr_Dir" Attributes="0"/>
@@ -107,6 +111,10 @@
     <ROW Feature="Microsoft.NETFrame" Title="Microsoft .NET Framework 4.6.2" Description="Microsoft .NET Framework 4.6.2" Display="7" Level="1" Attributes="0"/>
     <ROW Feature="Microsoft.NETFrame_1" Title="Microsoft .NET Framework 4.6.2" Description="Microsoft .NET Framework 4.6.2" Display="9" Level="1" Attributes="0" Components="Microsoft.NETFrame"/>
     <ROW Feature="MicrosoftVisualC" Title="Microsoft Visual C++ 2010  x86 Redistributable" Description="Microsoft Visual C++ 2010  x86 Redistributable" Display="13" Level="1" Attributes="0" Components="MicrosoftVisualC"/>
+    <ROW Feature="VirtualComportDriv" Title="Virtual Comport Driver Windows 7 x86" Description="Virtual Comport Driver Windows 7 x86" Display="31" Level="1" Attributes="0" Components="VirtualComportDriv"/>
+    <ROW Feature="VirtualComportDriv_1" Title="Virtual Comport Driver Windows 7 x64" Description="Virtual Comport Driver Windows 7 x64" Display="33" Level="1" Attributes="0" Components="VirtualComportDriv_1"/>
+    <ROW Feature="VirtualComportDriv_2" Title="Virtual Comport Driver Windows 8 x86" Description="Virtual Comport Driver Windows 8 x86" Display="35" Level="1" Attributes="0" Components="VirtualComportDriv_2"/>
+    <ROW Feature="VirtualComportDriv_3" Title="Virtual Comport Driver Windows 8 x64" Description="Virtual Comport Driver Windows 8 x64" Display="37" Level="1" Attributes="0" Components="VirtualComportDriv_3"/>
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
@@ -145,7 +153,7 @@
     <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DigCertStoreComponent">
-    <ROW DigitalCertificate="\\Ffnas02\r&amp;d\R&amp;D Software and Drivers\Code signing digital certificates\Current Certificate valid until Nov 2022\ffcert.pfx" TimeStampUrl="http://timestamp.digicert.com" SignerDescription="[|ProductName]" DescriptionUrl="http://www.fosterfreeman.com" SignOptions="7" SignTool="0" UseSha256="1" Password="4B99BEA4D293E7030980A353A642"/>
+    <ROW DigitalCertificate="ffcert.pfx" TimeStampUrl="http://timestamp.digicert.com" SignerDescription="[|ProductName]" DescriptionUrl="http://www.fosterfreeman.com" SignOptions="7" SignTool="0" UseSha256="1" Password="4B99BEA4D293E7030980A353A642"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
     <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
@@ -356,6 +364,10 @@
     <ROW Registry="MicrosoftVisualC" Root="-1" Key="Software\Caphyon\Advanced Installer\Prereqs\[ProductCode]\[ProductVersion]" Name="MicrosoftVisualC" Value="1" Component_="MicrosoftVisualC"/>
     <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
     <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+    <ROW Registry="VirtualComportDriv" Root="-1" Key="Software\Caphyon\Advanced Installer\Prereqs\[ProductCode]\[ProductVersion]" Name="VirtualComportDriv" Value="1" Component_="VirtualComportDriv"/>
+    <ROW Registry="VirtualComportDriv_1" Root="-1" Key="Software\Caphyon\Advanced Installer\Prereqs\[ProductCode]\[ProductVersion]" Name="VirtualComportDriv_1" Value="1" Component_="VirtualComportDriv_1"/>
+    <ROW Registry="VirtualComportDriv_2" Root="-1" Key="Software\Caphyon\Advanced Installer\Prereqs\[ProductCode]\[ProductVersion]" Name="VirtualComportDriv_2" Value="1" Component_="VirtualComportDriv_2"/>
+    <ROW Registry="VirtualComportDriv_3" Root="-1" Key="Software\Caphyon\Advanced Installer\Prereqs\[ProductCode]\[ProductVersion]" Name="VirtualComportDriv_3" Value="1" Component_="VirtualComportDriv_3"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
     <ROW Shortcut="RecoverCompanionApplication.exe" Directory_="SHORTCUTDIR" Name="RECOVE~1|RECOVER LFT Companion" Component_="RecoverCompanionApplication.exe" Target="[#RecoverCompanionApplication.exe]" Description="RecoverCompanionApplication.exe" Hotkey="0" Icon_="icon.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
@@ -384,12 +396,20 @@
     <ROW PrereqKey="DriverPackageInsta_9" DisplayName="DFU Windows 7 x86" VersionMin="2.1.0.0" SetupFileUrl="DFU\Win7\x86\dpinst_x86.exe" Location="0" ExactSize="0" WinNTVersions="Windows XP SP3 x86, Windows Server 2003 SP2 x86, Windows Vista x86, Windows Server 2008 x86, Windows 8 x86, Windows 8.1 x86, Windows 10 x86" WinNT64Versions="Windows XP/Vista/Windows 7/Windows 8 x64/Windows 8.1 x64/Windows 10 x64" Operator="1" ComLine="/q /se" Options="fi" TargetName="Data\DFU\Windows7\dpinst_x86.exe" AdditionalFiles="sttube.cat|STtube.inf|x86\STTub30.sys" Feature="DriverPackageInsta_9"/>
     <ROW PrereqKey="Microsoft.NETFrame" DisplayName="Microsoft .NET Framework 4.6.2" VersionMin="4.6.1590.0" SetupFileUrl=".NET Framework 4.6.2\Dot Net 4.6.2.exe" Location="0" ExactSize="0" Operator="1" ComLine="/q /norestart" Options="if" TargetName="Data\NET\Dot Net 4.6.2.exe" Feature="Microsoft.NETFrame_1"/>
     <ROW PrereqKey="MicrosoftVisualC" DisplayName="Microsoft Visual C++ 2010  x86 Redistributable" VersionMin="10.0.30319.1" SetupFileUrl="C++ 2010 x86.exe" Location="0" ExactSize="0" Operator="1" ComLine="/q" Options="fi" TargetName="Data\Microsoft\C++ 2010 x86.exe" Feature="MicrosoftVisualC"/>
-    <ATTRIBUTE name="PrereqsOrder" value="MicrosoftVisualC Microsoft.NETFrame CertificateInstaller DriverPackageInsta_2 DriverPackageInsta_3 DriverPackageInsta_4 DriverPackageInsta_5 DriverPackageInsta_6 DriverPackageInsta_7 DriverPackageInsta_8 DriverPackageInsta_9"/>
+    <ROW PrereqKey="VirtualComportDriv" DisplayName="Virtual Comport Driver Windows 7 x86" VersionMin="8.1.160.0" SetupFileUrl="VirtualComPort\VCP_V1.5.0_Setup_W7_x86_32bits.exe" Location="0" ExactSize="0" WinNTVersions="Windows XP SP3 x86, Windows Server 2003 SP2 x86, Windows Vista x86, Windows Server 2008 x86, Windows 8 x86, Windows 8.1 x86, Windows 10 x86" WinNT64Versions="Windows XP/Vista/Windows 7/Windows 8 x64/Windows 8.1 x64/Windows 10 x64" Operator="1" Options="fi" TargetName="Data\VCP\Windows7\VCP_V1.5.0_Setup_W7_x86_32bits.exe" Feature="VirtualComportDriv"/>
+    <ROW PrereqKey="VirtualComportDriv_1" DisplayName="Virtual Comport Driver Windows 7 x64" VersionMin="8.1.160.0" SetupFileUrl="VirtualComPort\VCP_V1.5.0_Setup_W7_x64_64bits.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" WinNT64Versions="Windows XP SP2 x64, Windows Server 2003 SP2 x64, Windows Vista x64, Windows Server 2008 x64, Windows Server 2008 R2 x64, Windows 8 x64, Windows Server 2012 x64, Windows 8.1 x64, Windows Server 2012 R2 x64, Windows 10 x64, Windows Server 2016 x64" Operator="1" Options="fi" TargetName="Data\VCP\Windows7\VCP_V1.5.0_Setup_W7_x64_64bits.exe" Feature="VirtualComportDriv_1"/>
+    <ROW PrereqKey="VirtualComportDriv_2" DisplayName="Virtual Comport Driver Windows 8 x86" VersionMin="8.1.160.0" SetupFileUrl="VirtualComPort\VCP_V1.5.0_Setup_W8_x86_32bits.exe" Location="0" ExactSize="0" WinNTVersions="Windows XP SP3 x86, Windows Server 2003 SP2 x86, Windows Vista x86, Windows Server 2008 x86, Windows 7 x86, Windows 10 x86" WinNT64Versions="Windows XP/Vista/Windows 7/Windows 8 x64/Windows 8.1 x64/Windows 10 x64" Operator="1" Options="fi" TargetName="Data\VCP\Windows8\VCP_V1.5.0_Setup_W8_x86_32bits.exe" Feature="VirtualComportDriv_2"/>
+    <ROW PrereqKey="VirtualComportDriv_3" DisplayName="Virtual Comport Driver Windows 8 x64" VersionMin="8.1.160.0" SetupFileUrl="VirtualComPort\VCP_V1.5.0_Setup_W8_x64_64bits.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" WinNT64Versions="Windows XP SP2 x64, Windows Server 2003 SP2 x64, Windows Vista x64, Windows Server 2008 x64, Windows 7 x64, Windows Server 2008 R2 x64, Windows Server 2012 x64, Windows Server 2012 R2 x64, Windows 10 x64, Windows Server 2016 x64" Operator="1" Options="fi" TargetName="Data\VCP\Windows8\VCP_V1.5.0_Setup_W8_x64_64bits.exe" Feature="VirtualComportDriv_3"/>
+    <ATTRIBUTE name="PrereqsOrder" value="MicrosoftVisualC Microsoft.NETFrame CertificateInstaller DriverPackageInsta_2 DriverPackageInsta_3 DriverPackageInsta_4 DriverPackageInsta_5 DriverPackageInsta_6 DriverPackageInsta_7 DriverPackageInsta_8 DriverPackageInsta_9 VirtualComportDriv VirtualComportDriv_1 VirtualComportDriv_2 VirtualComportDriv_3"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.PreReqSearchComponent">
+    <ROW SearchKey="SystemFolderfile.dll" Prereq="VirtualComportDriv" SearchType="0" SearchString="[SystemFolder]file.dll" VerMin="1.0" Order="1" Property="PreReqSearch"/>
+    <ROW SearchKey="SystemFolderfile.dll_1" Prereq="VirtualComportDriv_1" SearchType="0" SearchString="[SystemFolder]file.dll" VerMin="1.0" Order="1" Property="PreReqSearch_1"/>
     <ROW SearchKey="SystemFolderfile.dll_10" Prereq="DriverPackageInsta_7" SearchType="0" SearchString="[SystemFolder]file.dll" VerMin="1.0" Order="1" Property="PreReqSearch_10"/>
     <ROW SearchKey="SystemFolderfile.dll_11" Prereq="DriverPackageInsta_8" SearchType="0" SearchString="[SystemFolder]file.dll" VerMin="1.0" Order="1" Property="PreReqSearch_11"/>
     <ROW SearchKey="SystemFolderfile.dll_12" Prereq="DriverPackageInsta_9" SearchType="0" SearchString="[SystemFolder]file.dll" VerMin="1.0" Order="1" Property="PreReqSearch_12"/>
+    <ROW SearchKey="SystemFolderfile.dll_13" Prereq="VirtualComportDriv_2" SearchType="0" SearchString="[SystemFolder]file.dll" VerMin="1.0" Order="1" Property="PreReqSearch_13"/>
+    <ROW SearchKey="SystemFolderfile.dll_14" Prereq="VirtualComportDriv_3" SearchType="0" SearchString="[SystemFolder]file.dll" VerMin="1.0" Order="1" Property="PreReqSearch_14"/>
     <ROW SearchKey="SystemFolderfile.dll_2" Prereq="Microsoft.NETFrame" SearchType="0" SearchString="[SystemFolder]file.dll" VerMin="1.0" Order="1" Property="PreReqSearch_2"/>
     <ROW SearchKey="SystemFolderfile.dll_3" Prereq="CertificateInstaller" SearchType="0" SearchString="[SystemFolder]file.dll" VerMin="1.0" Order="1" Property="PreReqSearch_3"/>
     <ROW SearchKey="SystemFolderfile.dll_4" Prereq="MicrosoftVisualC" SearchType="0" SearchString="[SystemFolder]file.dll" VerMin="1.0" Order="1" Property="PreReqSearch_4"/>
