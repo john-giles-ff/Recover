@@ -282,7 +282,7 @@ namespace RecoverLogInspector
 
             barView.baseTimeHCL.Value = settings.AverageBaseTimeHCL;
             barView.baseTimeAVG.Value = settings.AverageBaseTimeAVG;
-            barView.baseTimeLCL.Value = settings.AverageBaseTimeLCL;
+            barView.baseTimeLCL.Value = settings.AverageBaseTimeLCL;            
 
             barView.pumpdownHCL.Value = settings.AveragePumpdownTimeHCL;
             barView.pumpdownAVG.Value = settings.AveragePumpdownTimeAVG;
@@ -292,23 +292,30 @@ namespace RecoverLogInspector
             barView.precursorAVG.Value = settings.AveragePrecursorTimeAVG;
             barView.precursorLCL.Value = settings.AveragePrecursorTimeLCL;
 
-
-
+            
             logView.baseTempHCL.Value = settings.IndividualPeakBaseTemperatureHCL;
             logView.baseTempAVG.Value = settings.IndividualPeakBaseTemperatureAVG;
             logView.baseTempLCL.Value = settings.IndividualPeakBaseTemperatureLCL;
+            logView.baseTempAxis.MinValue = settings.IndividualPeakBaseTemperatureMin;
+            logView.baseTempAxis.MaxValue = settings.IndividualPeakBaseTemperatureMax;
 
             logView.baseTimeHCL.Value = settings.IndividualBaseTimeHCL;
             logView.baseTimeAVG.Value = settings.IndividualBaseTimeAVG;
             logView.baseTimeLCL.Value = settings.IndividualBaseTimeLCL;
+            logView.baseTimeAxis.MinValue = settings.IndividualBaseTimeMin;
+            logView.baseTimeAxis.MaxValue = settings.IndividualBaseTimeMax;
 
             logView.pumpdownHCL.Value = settings.IndividualPumpdownTimeHCL;
             logView.pumpdownAVG.Value = settings.IndividualPumpdownTimeAVG;
             logView.pumpdownLCL.Value = settings.IndividualPumpdownTimeLCL;
+            logView.pumpdownAxis.MinValue = settings.IndividualPumpdownTimeMin;
+            logView.pumpdownAxis.MaxValue = settings.IndividualPumpdownTimeMax;
 
             logView.precursorHCL.Value = settings.IndividualPrecursorTimeHCL;
             logView.precursorAVG.Value = settings.IndividualPrecursorTimeAVG;
             logView.precursorLCL.Value = settings.IndividualPrecursorTimeLCL;
+            logView.precursorAxis.MinValue = settings.IndividualPrecursorTimeMin;
+            logView.precursorAxis.MaxValue = settings.IndividualPrecursorTimeMax;
         }
 
         private void OpenSettings(object sender, RoutedEventArgs e)

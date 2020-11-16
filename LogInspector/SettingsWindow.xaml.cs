@@ -49,18 +49,26 @@ namespace RecoverLogInspector
             TxtIndividualPeakBaseTempLCL.Text = settings.IndividualPeakBaseTemperatureLCL.ToString();
             TxtIndividualPeakBaseTempHCL.Text = settings.IndividualPeakBaseTemperatureHCL.ToString();
             TxtIndividualPeakBaseTempAVG.Text = settings.IndividualPeakBaseTemperatureAVG.ToString();
+            TxtIndividualPeakBaseTempMin.Text = settings.IndividualPeakBaseTemperatureMin.ToString();
+            TxtIndividualPeakBaseTempMax.Text = settings.IndividualPeakBaseTemperatureMax.ToString();            
 
             TxtIndividualTimeToReachPeakBaseTemperatureLCL.Text = settings.IndividualBaseTimeLCL.ToString();
             TxtIndividualTimeToReachPeakBaseTemperatureHCL.Text = settings.IndividualBaseTimeHCL.ToString();
             TxtIndividualTimeToReachPeakBaseTemperatureAVG.Text = settings.IndividualBaseTimeAVG.ToString();
+            TxtIndividualTimeToReachPeakBaseTemperatureMin.Text = settings.IndividualBaseTimeMin.ToString();
+            TxtIndividualTimeToReachPeakBaseTemperatureMax.Text = settings.IndividualBaseTimeMax.ToString();
 
             TxtIndividualPumpdownTimeLCL.Text = settings.IndividualPumpdownTimeLCL.ToString();
             TxtIndividualPumpdownTimeHCL.Text = settings.IndividualPumpdownTimeHCL.ToString();
             TxtIndividualPumpdownTimeAVG.Text = settings.IndividualPumpdownTimeAVG.ToString();
+            TxtIndividualPumpdownTimeMin.Text = settings.IndividualPumpdownTimeMin.ToString();
+            TxtIndividualPumpdownTimeMax.Text = settings.IndividualPumpdownTimeMax.ToString();
 
             TxtIndividualTimeToReachPrecursorTempLCL.Text = settings.IndividualPrecursorTimeLCL.ToString();
             TxtIndividualTimeToReachPrecursorTempHCL.Text = settings.IndividualPrecursorTimeHCL.ToString();
             TxtIndividualTimeToReachPrecursorTempAVG.Text = settings.IndividualPrecursorTimeAVG.ToString();
+            TxtIndividualTimeToReachPrecursorTempMin.Text = settings.IndividualPrecursorTimeMin.ToString();
+            TxtIndividualTimeToReachPrecursorTempMax.Text = settings.IndividualPrecursorTimeMax.ToString();
 
         }
 
@@ -96,18 +104,26 @@ namespace RecoverLogInspector
                 settings.IndividualPeakBaseTemperatureLCL = int.Parse(TxtIndividualPeakBaseTempLCL.Text);
                 settings.IndividualPeakBaseTemperatureHCL = int.Parse(TxtIndividualPeakBaseTempHCL.Text);
                 settings.IndividualPeakBaseTemperatureAVG = int.Parse(TxtIndividualPeakBaseTempAVG.Text);
+                settings.IndividualPeakBaseTemperatureMin = int.Parse(TxtIndividualPeakBaseTempMin.Text);
+                settings.IndividualPeakBaseTemperatureMax = int.Parse(TxtIndividualPeakBaseTempMax.Text);
 
                 settings.IndividualBaseTimeLCL = int.Parse(TxtIndividualTimeToReachPeakBaseTemperatureLCL.Text);
                 settings.IndividualBaseTimeHCL = int.Parse(TxtIndividualTimeToReachPeakBaseTemperatureHCL.Text);
                 settings.IndividualBaseTimeAVG = int.Parse(TxtIndividualTimeToReachPeakBaseTemperatureAVG.Text);
+                settings.IndividualBaseTimeMin = int.Parse(TxtIndividualTimeToReachPeakBaseTemperatureMin.Text);
+                settings.IndividualBaseTimeMax = int.Parse(TxtIndividualTimeToReachPeakBaseTemperatureMax.Text);
 
                 settings.IndividualPumpdownTimeLCL = int.Parse(TxtIndividualPumpdownTimeLCL.Text);
                 settings.IndividualPumpdownTimeHCL = int.Parse(TxtIndividualPumpdownTimeHCL.Text);
                 settings.IndividualPumpdownTimeAVG = int.Parse(TxtIndividualPumpdownTimeAVG.Text);
+                settings.IndividualPumpdownTimeMin = int.Parse(TxtIndividualPumpdownTimeMin.Text);
+                settings.IndividualPumpdownTimeMax = int.Parse(TxtIndividualPumpdownTimeMax.Text);
 
                 settings.IndividualPrecursorTimeLCL = int.Parse(TxtIndividualTimeToReachPrecursorTempLCL.Text);
                 settings.IndividualPrecursorTimeHCL = int.Parse(TxtIndividualTimeToReachPrecursorTempHCL.Text);
                 settings.IndividualPrecursorTimeAVG = int.Parse(TxtIndividualTimeToReachPrecursorTempAVG.Text);
+                settings.IndividualPrecursorTimeMin = int.Parse(TxtIndividualTimeToReachPrecursorTempMin.Text);
+                settings.IndividualPrecursorTimeMax = int.Parse(TxtIndividualTimeToReachPrecursorTempMax.Text);
 
 
                 settings.Save();

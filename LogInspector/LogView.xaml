@@ -32,8 +32,7 @@
                         Grid.Row="0"
                         Grid.Column="0">
             <lvc:CartesianChart.AxisY>
-                <lvc:Axis MinValue="30"
-                        MaxValue="50">
+                <lvc:Axis x:Name="baseTempAxis">
                     <lvc:Axis.Sections>
                         <lvc:AxisSection x:Name="baseTempHCL" StrokeThickness="3" Stroke="Green"/>
                         <lvc:AxisSection x:Name="baseTempAVG" StrokeThickness="3" Stroke="Orange"/>
@@ -77,8 +76,7 @@
                             Grid.Row="0"
                             Grid.Column="1">
             <lvc:CartesianChart.AxisY>
-                <lvc:Axis MinValue="500"
-                          MaxValue="2000">
+                <lvc:Axis x:Name="baseTimeAxis">
                     <lvc:Axis.Sections>
                         <lvc:AxisSection x:Name="baseTimeHCL" StrokeThickness="3" Stroke="Green"/>
                         <lvc:AxisSection x:Name="baseTimeAVG" StrokeThickness="3" Stroke="Orange"/>
@@ -122,8 +120,7 @@
                             Grid.Row="1"
                             Grid.Column="0">
             <lvc:CartesianChart.AxisY>
-                <lvc:Axis MinValue="800"
-                          MaxValue="1500">
+                <lvc:Axis x:Name="pumpdownAxis">
                     <lvc:Axis.Sections>
                         <lvc:AxisSection x:Name="pumpdownHCL" StrokeThickness="3" Stroke="Green"/>
                         <lvc:AxisSection x:Name="pumpdownAVG" StrokeThickness="3" Stroke="Orange"/>
@@ -167,8 +164,7 @@
                             Grid.Row="1"
                             Grid.Column="1">
             <lvc:CartesianChart.AxisY>
-                <lvc:Axis MinValue="0"
-                          MaxValue="150">
+                <lvc:Axis x:Name="precursorAxis">
                     <lvc:Axis.Sections>
                         <lvc:AxisSection x:Name="precursorHCL" StrokeThickness="3" Stroke="Green"/>
                         <lvc:AxisSection x:Name="precursorAVG" StrokeThickness="3" Stroke="Orange"/>
