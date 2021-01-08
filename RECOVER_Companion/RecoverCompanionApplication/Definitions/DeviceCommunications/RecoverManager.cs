@@ -49,6 +49,8 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceCommuni
         public static EventHandler<SampleLoadedArgument> OnSampleLoaded;
         public static AutoResetEvent SampleFinishedEvent;
 
+        public static bool IsOpen = false;
+
         public static void Initialise()
         {
             _mutex = new Mutex();
@@ -93,6 +95,8 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceCommuni
 
             //Fetch number of devices           
             recover.Application.OpenComPort(portName);
+
+            IsOpen = true;
         }
 
         public static void WriteFirmware(byte[] hexData)

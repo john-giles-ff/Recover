@@ -15,7 +15,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
 {
     static class ServiceReport
     {
-        public static void Create()
+        public static void Create(bool encrypt = true)
         {
             var totalSamples = 0;
             foreach (var log in App.Logs)
@@ -106,31 +106,42 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
 
                 Application.Current.Dispatcher.Invoke(() =>
                 {
-                    var saveFileDialog = new Ookii.Dialogs.Wpf.VistaSaveFileDialog()
+                    if (encrypt)
                     {
-                        FileName = RecoverManager.SerialNumber,
-                        Filter = "RECOVER Service Pack (*.LFT_SVC)|*.LFT_SVC",
-                        AddExtension = true,
-                    };
-
-                    if (saveFileDialog.ShowDialog() != true)
-                    {
-                        Application.Current.Dispatcher.Invoke(() =>
+                        var saveFileDialog = new Ookii.Dialogs.Wpf.VistaSaveFileDialog()
                         {
-                            progressWindow.Text = Strings.ServicePackCreatingCancelled;
-                            progressWindow.IsCloseAllowed = true;
-                        });
+                            FileName = RecoverManager.SerialNumber,
+                            Filter = "RECOVER Service Pack (*.LFT_SVC)|*.LFT_SVC",
+                            AddExtension = true,
+                        };
 
-                        return;
+                        if (saveFileDialog.ShowDialog() != true)
+                        {
+                            Application.Current.Dispatcher.Invoke(() =>
+                            {
+                                progressWindow.Text = Strings.ServicePackCreatingCancelled;
+                                progressWindow.IsCloseAllowed = true;
+                            });
+
+                            return;
+                        }
+
+                        filename = saveFileDialog.FileName;
+
+                        if (Path.HasExtension(filename))
+                            filename = Path.ChangeExtension(filename, "LFT_SVC");
+                        else
+                            filename += ".LFT_SVC";
+                        success = true;
                     }
-
-                    filename = saveFileDialog.FileName;
-
-                    if (Path.HasExtension(filename))
-                        filename = Path.ChangeExtension(filename, "LFT_SVC");
                     else
-                        filename += ".LFT_SVC";
-                    success = true;
+                    {
+                        var saveDirectoryDialog = new Ookii.Dialogs.Wpf.VistaFolderBrowserDialog();
+                        if (saveDirectoryDialog.ShowDialog() != true)
+                            return;
+
+                        SaveDataToDirectory(data.ToArray(), saveDirectoryDialog.SelectedPath);
+                    }
                 });
 
                 if (!success)
@@ -163,7 +174,13 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
             if (saveDirectoryDialog.ShowDialog() != true)
                 return;
 
-            var bytes = File.ReadAllBytes(openFileDialog.FileName);            
+            var bytes = File.ReadAllBytes(openFileDialog.FileName);
+            SaveDataToDirectory(bytes, saveDirectoryDialog.SelectedPath);            
+        }
+
+
+        private static void SaveDataToDirectory(byte[] bytes, string directory)
+        {
             int index = 0;
             do
             {
@@ -178,7 +195,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
                 var xmlDoc = new XmlDocument();
                 xmlDoc.LoadXml(decryptedString);
                 var startTime = DateTime.Parse(xmlDoc["RecoverLog"]["StartTime"].FirstChild.Value);
-                var logFilename = Path.Combine(saveDirectoryDialog.SelectedPath, $"{startTime.ToString("yyyy-MM-dd-HH-mm-ss")}.XML");
+                var logFilename = Path.Combine(directory, $"{startTime:yyyy-MM-dd-HH-mm-ss}.XML");
 
                 File.WriteAllText(logFilename, decryptedString);
             }
