@@ -6204,8 +6204,8 @@
             "Pressed": "transparent\\transparent.png",
             "Released": "transparent\\transparent.png",
             "Alpha": 255,
-            "IconPressed": "expand.png",
-            "IconReleased": "expand.png",
+            "IconPressed": "Minimise.png",
+            "IconReleased": "maximise.png",
             "IconX": 20,
             "IconY": 20,
             "IconHeight": 20,
@@ -11260,37 +11260,57 @@
     "Skin": "Dark",
     "TouchGfxPath": "touchgfx",
     "UIPath": ".",
-    "ApplicationTemplate": {
-      "Name": "ETEM070001ZDH6",
-      "Version": "1.0.0",
-      "Description": "EDT ETEM070001ZDH6 Application Template",
-      "AvailableColorDepths": [
-        16
-      ],
-      "AvailableSections": [
-        "ExtFlashSection",
-        "IntFlashSection"
-      ],
-      "AvailableResolutions": [
-        {
-          "Width": 800,
-          "Height": 480
-        }
-      ],
-      "PhysicalButtons": [],
-      "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j10",
-      "PostGenerateCommand": "touchgfx update_project --project-file=target/IAR8.x/application.ewp && touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
-      "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j10",
-      "RunSimulatorCommand": "build\\bin\\simulator.exe",
-      "CompileTargetCommand": "make -f target/gcc/Makefile -j10",
-      "FlashTargetCommand": "make -f target/gcc/Makefile -j10 flash"
+    "ApplicationTemplateName": "ETEM070001ZDH6",
+    "ApplicationTemplateVersion": "1.0.0",
+    "ApplicationTemplateDescription": "EDT ETEM070001ZDH6 Application Template",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
     },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 800,
+        "Height": 480
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "Features": [
+          {
+            "Id": "RGB565",
+            "IsEnabled": true
+          },
+          {
+            "Id": "ARGB8888",
+            "IsEnabled": true
+          },
+          {
+            "Id": "A4",
+            "IsEnabled": true
+          }
+        ]
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j10",
+    "PostGenerateCommand": "touchgfx update_project --project-file=target/IAR8.x/application.ewp && touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j10",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommand": "make -f target/gcc/Makefile -j10",
+    "FlashTargetCommand": "make -f target/gcc/Makefile -j10 flash",
     "LandscapeSkinX": 0,
     "LandscapeSkinY": 0,
     "PortraitSkinX": 0,
     "PortraitSkinY": 0,
     "DisplayOrientation": "Landscape"
   },
-  "Version": "4.12.3",
+  "Version": "4.13.0",
   "CreatedBy": "4.9.3"
 }

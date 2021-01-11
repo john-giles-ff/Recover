@@ -9,7 +9,7 @@ RECOVER/simulator/msvs/.vs/
 RECOVER/screenshots/
 RECOVER/build/
 RECOVER/generated/
-RECOVER/touchgfx_backup1/
+RECOVER/touchgfx_backup*/
 
 Autoflash/bin/
 Autoflash/obj/
