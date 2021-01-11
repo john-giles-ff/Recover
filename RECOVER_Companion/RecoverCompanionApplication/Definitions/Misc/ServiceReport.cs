@@ -27,7 +27,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
                 Text = Strings.CreatingServicePack,
                 Maximum = totalSamples,
                 Value = 0
-            };            
+            };
 
             RecoverManager.OnSampleLoaded = (a, b) =>
             {
@@ -49,8 +49,8 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
                             var valueBefore = 0d;
                             Application.Current.Dispatcher.Invoke(() =>
                             {
-                                valueBefore = progressWindow.Value;                                
-                            });                            
+                                valueBefore = progressWindow.Value;
+                            });
 
                             //Only fetch is not previously fetched
                             if (log.Samples == null || !log.Samples.Any())
@@ -68,7 +68,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
                             break;
                         }
                         catch (Exception) { }
-                    } while (true);                    
+                    } while (true);
                 }
 
                 Application.Current.Dispatcher.Invoke(() =>
@@ -101,8 +101,8 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
 
                 //Ask for location to save
                 bool success = false;
-                var filename = string.Empty;
-                
+                var path = string.Empty;
+                bool dialogSuccess = false;
 
                 Application.Current.Dispatcher.Invoke(() =>
                 {
@@ -114,44 +114,60 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
                             Filter = "RECOVER Service Pack (*.LFT_SVC)|*.LFT_SVC",
                             AddExtension = true,
                         };
+                        dialogSuccess = saveFileDialog.ShowDialog() == true;
+                        path = saveFileDialog.FileName;
 
-                        if (saveFileDialog.ShowDialog() != true)
-                        {
-                            Application.Current.Dispatcher.Invoke(() =>
-                            {
-                                progressWindow.Text = Strings.ServicePackCreatingCancelled;
-                                progressWindow.IsCloseAllowed = true;
-                            });
-
-                            return;
-                        }
-
-                        filename = saveFileDialog.FileName;
-
-                        if (Path.HasExtension(filename))
-                            filename = Path.ChangeExtension(filename, "LFT_SVC");
+                        if (Path.HasExtension(path))
+                            path = Path.ChangeExtension(path, "LFT_SVC");
                         else
-                            filename += ".LFT_SVC";
-                        success = true;
+                            path += ".LFT_SVC";
                     }
                     else
                     {
                         var saveDirectoryDialog = new Ookii.Dialogs.Wpf.VistaFolderBrowserDialog();
-                        if (saveDirectoryDialog.ShowDialog() != true)
-                            return;
+                        dialogSuccess = saveDirectoryDialog.ShowDialog() == true;
+                        path = saveDirectoryDialog.SelectedPath;
 
-                        SaveDataToDirectory(data.ToArray(), saveDirectoryDialog.SelectedPath);
+
+                    }
+
+
+                    if (!dialogSuccess)
+                    {
+
+
+                        return;
                     }
                 });
 
-                if (!success)
+
+                //If dialog was not selected, send message and return
+                if (!dialogSuccess)
+                {
+                    Application.Current.Dispatcher.Invoke(() => {
+                        progressWindow.Text = Strings.ServicePackCreatingCancelled;
+                        progressWindow.IsCloseAllowed = true;
+                    });
                     return;
+                }
 
                 //Save
-                File.WriteAllBytes(filename, data.ToArray());
+                if (encrypt)
+                    File.WriteAllBytes(path, data.ToArray());
+                else
+                {
+                    SaveDataToDirectory(data.ToArray(), path);
+                    foreach (var log in App.Logs)
+                    {
+                        var logFilename = Path.Combine(path, $"{log.StartTime:yyyy-MM-dd-HH-mm-ss}.PDF");
+                        log.Export.Execute(logFilename);
+                    }
 
+                }
+
+                //Report finished
                 Application.Current.Dispatcher.Invoke(() =>
-                {                    
+                {
                     progressWindow.Text = Strings.ServicePackCreated;
                     progressWindow.IsCloseAllowed = true;
                 });

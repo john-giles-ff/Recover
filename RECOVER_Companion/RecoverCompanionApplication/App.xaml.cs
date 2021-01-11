@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
@@ -53,6 +54,14 @@ namespace FosterAndFreeman.RecoverCompanionApplication
             set
             {
                 _isAdvanced = value;                
+            }
+        }
+
+        public static string Version
+        {
+            get
+            {
+                return Assembly.GetExecutingAssembly().GetName().Version.ToString(3);
             }
         }
         
