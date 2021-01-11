@@ -38,9 +38,10 @@ namespace RecoverLogInspector
                     int peakPrecursorTemp = samples.Max(a => a.PrecursorTemperature);
                     int peakBaseTemp = samples.Where(a => a.Mode != SampleMode.SAMPLE_INITIALISE).Max(a => a.BaseTemperature);
 
-                    // Get peak samples
-                    var peakPrecursorSample = samples.FirstOrDefault(a => a.PrecursorTemperature == peakPrecursorTemp);
-                    var peakBaseSample = samples.Where(a => a.Mode != SampleMode.SAMPLE_INITIALISE).First(a => a.BaseTemperature == peakBaseTemp);
+                    // Get peak samples                    
+                    const int margin = 5;
+                    var peakPrecursorSample = samples.FirstOrDefault(a => InRange(a.PrecursorTemperature, peakPrecursorTemp - margin, peakPrecursorTemp + margin));
+                    var peakBaseSample = samples.Where(a => a.Mode != SampleMode.SAMPLE_INITIALISE).First(a => InRange(a.BaseTemperature, peakBaseTemp - margin, peakBaseTemp + margin));
 
                     // Get reference points
                     var firstPumpSample = samples.FirstOrDefault(a => a.Mode == SampleMode.SAMPLE_PUMPDOWN);
@@ -125,6 +126,11 @@ namespace RecoverLogInspector
         {
             double avg = values.Average();
             return Math.Sqrt(values.Average(v => (v - avg) * (v - avg)));
+        }
+
+        private bool InRange(int value, int min, int max)
+        {
+            return value >= min && value <= max;
         }
 
 
