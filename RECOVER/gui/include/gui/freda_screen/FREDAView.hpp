@@ -63,6 +63,7 @@ public:
 	virtual void Clear();		
 
 	//Production Tests	
+	virtual void SoakTest30();
 	virtual void SoakTest();
 	virtual void StopProductionTest();
 

@@ -233,6 +233,12 @@ void FREDAView::Clear()
 }
 
 
+void FREDAView::SoakTest30()
+{
+	LFT::Information.ResetTimer();
+	LFT::ProductionTests.QueSoakTest(30);
+}
+
 void FREDAView::SoakTest()
 {
 	LFT::Information.ResetTimer();
@@ -354,6 +360,17 @@ void FREDAView::handleTickEvent()
 	{
 		LFT::Information.AlwaysUpdateRTC = false;
 		IsBigClockVisible = false;
+	}
+	else if (SoakTestWindow.isVisible())
+	{
+		int extSwitchValue = LFT::Information.ExternalSwitchValue;
+
+		if (BtnStartSoakTest.isVisible() != extSwitchValue == 0)
+		{
+			BtnStartSoakTest.setVisible(extSwitchValue == 0);
+			BtnStartSoakTest30.setVisible(extSwitchValue == 0);
+			TxtFumePlug.setVisible(extSwitchValue == 1);
+		}
 	}
 
 

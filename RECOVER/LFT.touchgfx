@@ -4693,11 +4693,11 @@
                 },
                 "TextRotation": "0",
                 "Name": "BtnStartSoakTest",
-                "X": 310,
+                "X": 215,
                 "Y": 230,
                 "Width": 180,
                 "Height": 60,
-                "Visible": true,
+                "Visible": false,
                 "LockPosition": false,
                 "Draggable": false,
                 "Clickable": false,
@@ -4784,6 +4784,35 @@
                 "Width": 800,
                 "Height": 36,
                 "Visible": true,
+                "LockPosition": false,
+                "Draggable": false,
+                "Clickable": false,
+                "Fadeable": false,
+                "Moveable": false
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Pressed": "button_pressed.png",
+                "Released": "Button.png",
+                "Alpha": 255,
+                "TextId": "SingleUseId257",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0",
+                "Name": "BtnStartSoakTest30",
+                "X": 405,
+                "Y": 230,
+                "Width": 180,
+                "Height": 60,
+                "Visible": false,
                 "LockPosition": false,
                 "Draggable": false,
                 "Clickable": false,
@@ -4904,6 +4933,30 @@
             "Width": 800,
             "Height": 480,
             "Visible": false,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId258",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "TxtFumePlug",
+            "X": 298,
+            "Y": 244,
+            "Width": 205,
+            "Height": 32,
+            "Visible": true,
             "LockPosition": false,
             "Draggable": false,
             "Clickable": false,
@@ -5400,6 +5453,18 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "ToggleOpenDoor"
+            }
+          },
+          {
+            "InteractionName": "SoakTest30",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "BtnStartSoakTest30"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "SoakTest30"
             }
           }
         ],
@@ -11585,6 +11650,14 @@
       },
       {
         "TextEntryId": "SingleUseId256",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId257",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId258",
         "IsResource": false
       }
     ],

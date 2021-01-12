@@ -16,6 +16,7 @@ LFT_ProductionTests::LFT_ProductionTests(LFT_Information* lft_information, LFT_M
 	SoakTestCount.SetSemaphore(_information->xSemaphore);	
 	IsPumpdownTestQued.SetSemaphore(_information->xSemaphore);
 	IsSoakTestQued.SetSemaphore(_information->xSemaphore);	
+	NumberOfTests.SetSemaphore(_information->xSemaphore);
 	maxBaseCurrent.SetSemaphore(_information->xSemaphore);
 	maxPreCurrent.SetSemaphore(_information->xSemaphore);
 	LFT_ACTUAL_LENGTH.SetSemaphore(_information->xSemaphore);
@@ -131,9 +132,11 @@ void LFT_ProductionTests::GraphPumpdown()
 	_manual->SetBypassState(false);
 }
 
-void LFT_ProductionTests::QueSoakTest()
+
+void LFT_ProductionTests::QueSoakTest(int numberOfTests)
 {
 	IsSoakTestQued = true;
+	NumberOfTests = numberOfTests;
 }
 
 void LFT_ProductionTests::SoakTest()
@@ -145,6 +148,12 @@ void LFT_ProductionTests::SoakTest()
 	_isAborted = false;
 	while (!_isAborted)
 	{		
+		//Quit if maximum number of tests has been reached
+		if (NumberOfTests != -1 && SoakTestCount >= NumberOfTests)
+			break;
+
+
+
 		//Put lid down until switch triggered
 		_manual->LidDown();		
 		SoakTestStatus = 2;

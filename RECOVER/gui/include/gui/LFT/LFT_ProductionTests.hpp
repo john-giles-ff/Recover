@@ -35,7 +35,7 @@ public:
 	void GraphPumpdown();
 	ThreadSafe<STime> GraphPumpDownTime;
 
-	void QueSoakTest();
+	void QueSoakTest(int numberOfTests = -1);
 	void SoakTest();
 	ThreadSafe<int> SoakTestStatus;
 	ThreadSafe<int> SoakTestCount;
@@ -48,6 +48,7 @@ public:
 	
 	ThreadSafe<bool> IsPumpdownTestQued = false;
 	ThreadSafe<bool> IsSoakTestQued = false;
+	ThreadSafe<int> NumberOfTests = -1;
 	ThreadSafe<bool> IsEMCModeOn = false;
 
 	//Test Data
