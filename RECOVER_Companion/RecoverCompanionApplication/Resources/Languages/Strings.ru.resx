@@ -422,4 +422,7 @@
   <data name="ServicePackCreatingCancelled" xml:space="preserve">
     <value>Создание файла поддержки отменено!</value>
   </data>
+  <data name="ProgramDevice" xml:space="preserve">
+    <value>Программное устройство</value>
+  </data>
 </root>

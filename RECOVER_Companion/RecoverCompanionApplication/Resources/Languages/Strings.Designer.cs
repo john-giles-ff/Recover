@@ -702,6 +702,15 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Program Device.
+        /// </summary>
+        public static string ProgramDevice {
+            get {
+                return ResourceManager.GetString("ProgramDevice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Conditioning Time(Minutes):.
         /// </summary>
         public static string PumpdownMinutes {

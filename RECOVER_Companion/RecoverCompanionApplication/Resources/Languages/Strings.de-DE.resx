@@ -422,4 +422,7 @@ Dieser Vorgang kann ein paar Minuten dauern.</value>
   <data name="ServicePackCreatingCancelled" xml:space="preserve">
     <value>Erstellung des Service-Pakets abgebrochen!</value>
   </data>
+  <data name="ProgramDevice" xml:space="preserve">
+    <value>Gerät programmieren</value>
+  </data>
 </root>

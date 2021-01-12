@@ -422,4 +422,7 @@ L'operazione potrebbe richiedere alcuni minuti.</value>
   <data name="ServicePackCreatingCancelled" xml:space="preserve">
     <value>File di supporto annullato!</value>
   </data>
+  <data name="ProgramDevice" xml:space="preserve">
+    <value>Dispositivo di programma</value>
+  </data>
 </root>

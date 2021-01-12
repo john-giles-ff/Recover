@@ -422,4 +422,7 @@ This may take a few minutes.</value>
   <data name="ServicePackCreatingCancelled" xml:space="preserve">
     <value>Service Pack Creation Cancelled!</value>
   </data>
+  <data name="ProgramDevice" xml:space="preserve">
+    <value>Program Device</value>
+  </data>
 </root>

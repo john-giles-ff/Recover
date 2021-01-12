@@ -117,4 +117,307 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="InputPath" xml:space="preserve">
+    <value>来源:</value>
+  </data>
+  <data name="Firmware" xml:space="preserve">
+    <value>固件:</value>
+  </data>
+  <data name="Software" xml:space="preserve">
+    <value>软件:</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>进度:</value>
+  </data>
+  <data name="FinishedProgramming" xml:space="preserve">
+    <value>程序更新结束!</value>
+  </data>
+  <data name="Initialising" xml:space="preserve">
+    <value>正在初始化</value>
+  </data>
+  <data name="AttemptingConnection" xml:space="preserve">
+    <value>正在尝试建立连接</value>
+  </data>
+  <data name="FailedConnection" xml:space="preserve">
+    <value>连接失败: {0}</value>
+  </data>
+  <data name="ConnectionSuccesful" xml:space="preserve">
+    <value>连接成功</value>
+  </data>
+  <data name="UnableToEnumerateDevices" xml:space="preserve">
+    <value>无法列举设备</value>
+  </data>
+  <data name="UnableToFetchDevices" xml:space="preserve">
+    <value>无法获得设备</value>
+  </data>
+  <data name="NoDevicesFound" xml:space="preserve">
+    <value>无法找到设备</value>
+  </data>
+  <data name="UnableToOpenDevice" xml:space="preserve">
+    <value>无法打开设备</value>
+  </data>
+  <data name="AuditLogs" xml:space="preserve">
+    <value>工作日志</value>
+  </data>
+  <data name="UpdateSoftware" xml:space="preserve">
+    <value>升级软件</value>
+  </data>
+  <data name="FirmwareInititalise" xml:space="preserve">
+    <value>固件程序升级正在初始化</value>
+  </data>
+  <data name="FirmwareErasing" xml:space="preserve">
+    <value>正在擦除旧固件程序</value>
+  </data>
+  <data name="FirmwareUpdating" xml:space="preserve">
+    <value>正在升级新固件程序</value>
+  </data>
+  <data name="FirmwareFinished" xml:space="preserve">
+    <value>固件程序升级完毕</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Dismiss" xml:space="preserve">
+    <value>解除</value>
+  </data>
+  <data name="InvalidEraseStartedKey" xml:space="preserve">
+    <value>擦除开始密钥无效</value>
+  </data>
+  <data name="InvalidEraseFinishedKey" xml:space="preserve">
+    <value>擦除结束密钥无效</value>
+  </data>
+  <data name="InvalidReadReceipt" xml:space="preserve">
+    <value>读取收据无效</value>
+  </data>
+  <data name="NoDataToWrite" xml:space="preserve">
+    <value>未找到要写入文件的数据</value>
+  </data>
+  <data name="ConfirmProgram" xml:space="preserve">
+    <value>是否确定对当前连接设备进行编程?</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>开始时间: </value>
+  </data>
+  <data name="PumpdownMinutes" xml:space="preserve">
+    <value>熏显腔准备时间(分钟):</value>
+  </data>
+  <data name="HeatMinutes" xml:space="preserve">
+    <value>熏显时间(分钟):</value>
+  </data>
+  <data name="BaseHeaterDeviation" xml:space="preserve">
+    <value>阶段1加热器偏差检查:</value>
+  </data>
+  <data name="PrecursorHeaterDeviation" xml:space="preserve">
+    <value>阶段2加热器偏差检查:</value>
+  </data>
+  <data name="PressureDeviation" xml:space="preserve">
+    <value>气压偏差检查:</value>
+  </data>
+  <data name="TestSuccess" xml:space="preserve">
+    <value>成功</value>
+  </data>
+  <data name="TestFail" xml:space="preserve">
+    <value>失败</value>
+  </data>
+  <data name="LeakTest1Result" xml:space="preserve">
+    <value>泄漏测试1 结果:</value>
+  </data>
+  <data name="LeakTest2Result" xml:space="preserve">
+    <value>泄漏测试2 结果:</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>导出</value>
+  </data>
+  <data name="Pressure" xml:space="preserve">
+    <value>气压</value>
+  </data>
+  <data name="Base" xml:space="preserve">
+    <value>底座</value>
+  </data>
+  <data name="Precursor" xml:space="preserve">
+    <value>试剂</value>
+  </data>
+  <data name="FetchingLogHeaders" xml:space="preserve">
+    <value>正在获取日志文件头数据</value>
+  </data>
+  <data name="NoDataSelected" xml:space="preserve">
+    <value>未选中数据</value>
+  </data>
+  <data name="NoLogsFound" xml:space="preserve">
+    <value>未找到日志</value>
+  </data>
+  <data name="UnableToEnterPCMode" xml:space="preserve">
+    <value>RECOVER发现者主机无法进入计算机连接模式，请稍后重试。</value>
+  </data>
+  <data name="Stage" xml:space="preserve">
+    <value>阶段</value>
+  </data>
+  <data name="ChamberConditioning" xml:space="preserve">
+    <value>熏显腔工作条件准备中</value>
+  </data>
+  <data name="ChamberHeat" xml:space="preserve">
+    <value>正在熏显</value>
+  </data>
+  <data name="ChamberInitialisation" xml:space="preserve">
+    <value>正在初始化</value>
+  </data>
+  <data name="ChamberCooling" xml:space="preserve">
+    <value>正在冷却</value>
+  </data>
+  <data name="ChamberBreakSeal" xml:space="preserve">
+    <value>正在清洁</value>
+  </data>
+  <data name="PrecursorTarget" xml:space="preserve">
+    <value>试剂目标值</value>
+  </data>
+  <data name="BaseTarget" xml:space="preserve">
+    <value>底座目标值</value>
+  </data>
+  <data name="PressureTarget" xml:space="preserve">
+    <value>气压目标值</value>
+  </data>
+  <data name="ExportAll" xml:space="preserve">
+    <value>全部导出</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>高级</value>
+  </data>
+  <data name="UnableToGenerateReport" xml:space="preserve">
+    <value>无法生成报告</value>
+  </data>
+  <data name="ReportGenerated" xml:space="preserve">
+    <value>报告已生成</value>
+  </data>
+  <data name="ConfirmDeleteLog" xml:space="preserve">
+    <value>是否确认删除这条日志？</value>
+  </data>
+  <data name="SuccesfullyExportedAll" xml:space="preserve">
+    <value>已成功导出全部日志。</value>
+  </data>
+  <data name="EnterSerial" xml:space="preserve">
+    <value>输入主机序列号。</value>
+  </data>
+  <data name="InvalidSerialNumber" xml:space="preserve">
+    <value>输入的序列号无效。请重新输入有效的序列号。</value>
+  </data>
+  <data name="FirmwareVersion" xml:space="preserve">
+    <value>固件程序版本：</value>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>主机序列号：</value>
+  </data>
+  <data name="MetalType" xml:space="preserve">
+    <value>检材金属类型：</value>
+  </data>
+  <data name="ChamberType" xml:space="preserve">
+    <value>熏显腔规格：</value>
+  </data>
+  <data name="DevelopRType" xml:space="preserve">
+    <value>熏显试剂规格：</value>
+  </data>
+  <data name="LargeChamber" xml:space="preserve">
+    <value>大熏显腔</value>
+  </data>
+  <data name="SmallChamber" xml:space="preserve">
+    <value>小熏显腔</value>
+  </data>
+  <data name="CopperBased" xml:space="preserve">
+    <value>含铜金属</value>
+  </data>
+  <data name="SilverColoured" xml:space="preserve">
+    <value>银色金属</value>
+  </data>
+  <data name="DevelopR1" xml:space="preserve">
+    <value>DEVELOP-R1</value>
+  </data>
+  <data name="DevelopR2" xml:space="preserve">
+    <value>DEVELOP-R2</value>
+  </data>
+  <data name="DevelopR3" xml:space="preserve">
+    <value>DEVELOP-R3</value>
+  </data>
+  <data name="DevelopR4" xml:space="preserve">
+    <value>DEVELOP-R4</value>
+  </data>
+  <data name="SingleInstanceError" xml:space="preserve">
+    <value>RECOVER“发现者伙伴”应用程序已经在运行，不能重复打开。</value>
+  </data>
+  <data name="SelectLanguage" xml:space="preserve">
+    <value>选择语言</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>确认</value>
+  </data>
+  <data name="FileMode" xml:space="preserve">
+    <value>文件模式</value>
+  </data>
+  <data name="USBMode" xml:space="preserve">
+    <value>USB模式</value>
+  </data>
+  <data name="PrintingInProgress" xml:space="preserve">
+    <value>正在打印</value>
+  </data>
+  <data name="PrintingFinished" xml:space="preserve">
+    <value>打印结束</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>页</value>
+  </data>
+  <data name="SelectAuditLogstoPrint" xml:space="preserve">
+    <value>选择要打印的日志：</value>
+  </data>
+  <data name="CheckAll" xml:space="preserve">
+    <value>全部选择</value>
+  </data>
+  <data name="UncheckAll" xml:space="preserve">
+    <value>全部不选择</value>
+  </data>
+  <data name="SinglePageMode" xml:space="preserve">
+    <value>每条日志打印在单独页面上</value>
+  </data>
+  <data name="CaseReference" xml:space="preserve">
+    <value>编号:</value>
+  </data>
+  <data name="CaseOperator" xml:space="preserve">
+    <value>用户:</value>
+  </data>
+  <data name="EnterExtraInformation" xml:space="preserve">
+    <value>请在下方输入案件编号和操作员.</value>
+  </data>
+  <data name="ConfirmWriteExtraData" xml:space="preserve">
+    <value>警告: 这些修改无法撤销.</value>
+  </data>
+  <data name="ThisCannotBeUndone" xml:space="preserve">
+    <value>这些修改将永久有效且之后无法再编辑.</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>备注:</value>
+  </data>
+  <data name="UnableToOpenFileRightNow" xml:space="preserve">
+    <value>现在无法打开文件. 请稍后再试.</value>
+  </data>
+  <data name="CreateServicePack" xml:space="preserve">
+    <value>创建服务包</value>
+  </data>
+  <data name="CreatingServicePack" xml:space="preserve">
+    <value>正在创建服务包… 这可能需要几分钟.</value>
+  </data>
+  <data name="ServicePackCreated" xml:space="preserve">
+    <value>服务包创建完毕!</value>
+  </data>
+  <data name="ServicePackCreatingCancelled" xml:space="preserve">
+    <value>服务包创建已取消!</value>
+  </data>
+  <data name="ProgramDevice" xml:space="preserve">
+    <value>程序装置</value>
+  </data>
 </root>
