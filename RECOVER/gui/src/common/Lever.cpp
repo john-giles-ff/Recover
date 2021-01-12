@@ -57,7 +57,7 @@ void Lever::handleDragEvent(const DragEvent& evt)
 		return;
 
 	//Stop Animation if it's running
-	if (animation.isRunning())
+	if (animation.isAnimatedImageRunning())
 		animation.stopAnimation();
 	
 	//Get handle position
@@ -75,7 +75,7 @@ void Lever::handleTickEvent()
 	animationTimer++;
 	if (animationTimer == animationTimeout)
 		animation.startAnimation(false, true, false);
-	else if (animationTimer > animationTimeout && !animation.isRunning())
+	else if (animationTimer > animationTimeout && !animation.isAnimatedImageRunning())
 		animationTimer = 0;
 }
 
@@ -114,7 +114,7 @@ void Lever::SetAnimationAllowed(bool allowed)
 		mouseDown = false;
 	else
 	{
-		if (animation.isRunning())
+		if (animation.isAnimatedImageRunning())
 			animation.stopAnimation();
 		mouseDown = true;
 	}

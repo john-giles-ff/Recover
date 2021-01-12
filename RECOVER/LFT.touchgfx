@@ -4798,7 +4798,7 @@
             "Y": 0,
             "Width": 800,
             "Height": 480,
-            "Visible": false,
+            "Visible": true,
             "LockPosition": false,
             "Draggable": false,
             "Clickable": false,
