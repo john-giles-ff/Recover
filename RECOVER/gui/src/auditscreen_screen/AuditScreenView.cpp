@@ -40,6 +40,9 @@ void AuditScreenView::setupScreen()
 
 	BtnExport.setVisible(false);
 	BtnDeleteAll.setVisible(false);
+
+	_logsLoaded = false;
+
 	
 	//Russian text is on 2 lines!
 	if (Texts::getLanguage() == RU)
@@ -95,7 +98,7 @@ void AuditScreenView::handleTickEvent()
 			logs[i].SetResizedEvent(LogResizedCallback);						
 			LogList.add(logs[i]);
 			
-			logs[i].SetLoaded(true);			
+			logs[i].SetLoaded(true);
 			count++;
 		}
 				
