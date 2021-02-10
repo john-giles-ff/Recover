@@ -61,7 +61,7 @@ namespace RecoverLogInspector
         public int IndividualPeakBaseTemperatureHCL { get; set; }
         public int IndividualPeakBaseTemperatureAVG { get; set; }
         public int IndividualPeakBaseTemperatureMin { get; set; } = 30;
-        public int IndividualPeakBaseTemperatureMax { get; set; } = 50;
+        public int IndividualPeakBaseTemperatureMax { get; set; } = 50;        
 
 
         public int IndividualBaseTimeLCL { get; set; }
@@ -69,18 +69,22 @@ namespace RecoverLogInspector
         public int IndividualBaseTimeAVG { get; set; }
         public int IndividualBaseTimeMin { get; set; } = 500;
         public int IndividualBaseTimeMax { get; set; } = 2000;
+        public int IndividualBaseTimeTolerance { get; set; } = 2;
 
         public int IndividualPumpdownTimeLCL { get; set; }
         public int IndividualPumpdownTimeHCL { get; set; }
         public int IndividualPumpdownTimeAVG { get; set; }
         public int IndividualPumpdownTimeMin { get; set; } = 800;
-        public int IndividualPumpdownTimeMax { get; set; } = 1500;
+        public int IndividualPumpdownTimeMax { get; set; } = 1500;        
 
         public int IndividualPrecursorTimeLCL { get; set; }
         public int IndividualPrecursorTimeHCL { get; set; }
         public int IndividualPrecursorTimeAVG { get; set; }
         public int IndividualPrecursorTimeMin { get; set; } = 0;
         public int IndividualPrecursorTimeMax { get; set; } = 150;
+        public int IndividualPrecursorTolerance { get; set; } = 2;
+
+
 
 
         private static string PathLocation

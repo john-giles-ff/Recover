@@ -22,6 +22,8 @@ namespace RecoverLogInspector
             BaseTimes = new List<int>();
             BaseTemps = new List<int>();
 
+            var settings = SettingsManager.Load();
+
             foreach (var log in logs)
             {
                 // Skip failed logs
@@ -38,10 +40,12 @@ namespace RecoverLogInspector
                     int peakPrecursorTemp = samples.Max(a => a.PrecursorTemperature);
                     int peakBaseTemp = samples.Where(a => a.Mode != SampleMode.SAMPLE_INITIALISE).Max(a => a.BaseTemperature);
 
-                    // Get peak samples                    
-                    const int margin = 5;
-                    var peakPrecursorSample = samples.FirstOrDefault(a => InRange(a.PrecursorTemperature, peakPrecursorTemp - margin, peakPrecursorTemp + margin));
-                    var peakBaseSample = samples.Where(a => a.Mode != SampleMode.SAMPLE_INITIALISE).First(a => InRange(a.BaseTemperature, peakBaseTemp - margin, peakBaseTemp + margin));
+                    // Get peak samples
+                    var precursorTolerance = peakPrecursorTemp * (settings.IndividualPrecursorTolerance / 100.0f);
+                    var peakPrecursorSample = samples.FirstOrDefault(a => InRange(a.PrecursorTemperature, (int)(peakPrecursorTemp - precursorTolerance), (int)(peakPrecursorTemp + precursorTolerance)));
+
+                    var baseTolerance = peakBaseTemp * (settings.IndividualBaseTimeTolerance / 100.0f);
+                    var peakBaseSample = samples.Where(a => a.Mode != SampleMode.SAMPLE_INITIALISE).First(a => InRange(a.BaseTemperature, (int)(peakBaseTemp - baseTolerance), (int)(peakBaseTemp + baseTolerance)));
 
                     // Get reference points
                     var firstPumpSample = samples.FirstOrDefault(a => a.Mode == SampleMode.SAMPLE_PUMPDOWN);
