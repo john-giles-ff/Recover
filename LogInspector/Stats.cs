@@ -50,13 +50,18 @@ namespace RecoverLogInspector
                     // Get reference points
                     var firstPumpSample = samples.FirstOrDefault(a => a.Mode == SampleMode.SAMPLE_PUMPDOWN);
                     var firstHeatSample = samples.FirstOrDefault(a => a.Mode == SampleMode.SAMPLE_HEAT);
+                    var pumpTargetReachedSample = samples.FirstOrDefault(a => a.Pressure <= log.VacuumSetPoint || a == firstHeatSample);
 
                     //Check if null
-                    if (peakPrecursorSample == null || peakBaseSample == null || firstPumpSample == null || firstHeatSample == null)
+                    if (peakPrecursorSample == null || 
+                        peakBaseSample == null || 
+                        firstPumpSample == null || 
+                        firstHeatSample == null || 
+                        pumpTargetReachedSample == null)
                         continue;
 
                     // Get times                    
-                    int pumpdownTime = (firstHeatSample.SampleNumber - firstPumpSample.SampleNumber) * log.SampleRatePumpdown;
+                    int pumpdownTime = (pumpTargetReachedSample.SampleNumber - firstPumpSample.SampleNumber) * log.SampleRatePumpdown;
                     int precursorTime = (peakPrecursorSample.SampleNumber - firstHeatSample.SampleNumber) * log.SampleRateDevelop;
                     int baseTime = (peakBaseSample.SampleNumber - firstPumpSample.SampleNumber) * log.SampleRateDevelop;
 
@@ -145,6 +150,9 @@ namespace RecoverLogInspector
         /// <returns>Quartiles struct with calculated values</returns>
         private Quartiles GetQuartiles(List<int> Values)
         {
+            if (Values.Count() < 4)
+                return new Quartiles();
+
             var sorted = Values.OrderBy(value => value).ToArray();
 
             return new Quartiles
