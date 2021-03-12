@@ -67,6 +67,17 @@ void LFT_Auto::SetTimeout(int timeout1, int timeout2)
 	_model->SendInt("TIMEOUT45", timeout2);	
 }
 
+void LFT_Auto::SetSampleRate(int rate)
+{
+	//This value must be a multiple of 10
+
+	//If -1, then use default
+	if (rate == -1)
+		rate = 30;		
+
+	_model->SendInt("SAMPLERATE", rate);
+}
+
 void LFT_Auto::SetChamberSize(bool value)
 {
 	_information->ChamberState = value;
@@ -278,6 +289,7 @@ void LFT_Auto::SetSettings()
 	SetLeakMax();
 	SetStirTime();	
 	SetTimeout();
+	SetSampleRate();
 	SetUsePurgeFans(true);
 }
 
