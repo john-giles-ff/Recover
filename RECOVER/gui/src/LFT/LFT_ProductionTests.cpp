@@ -179,10 +179,11 @@ void LFT_ProductionTests::SoakTest()
 #endif
 
 		//Set Settings
-		_auto->SetSettings();		
+		_auto->SetSettings();				
 		_auto->SetChamberSize(false);
 		_auto->SetMetalType(false);
 		_auto->SetStirTime(1);				
+		_auto->SetSampleRate(10);
 
 		//Start Prechecks
 		_auto->StartPreChecks();
