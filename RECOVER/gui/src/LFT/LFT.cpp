@@ -24,7 +24,7 @@ void LFT::Initialise()
 		2400,
 		NULL,
 		3,
-		NULL);	
+		NULL);
 #else
 	LFTThreadProcess();
 
