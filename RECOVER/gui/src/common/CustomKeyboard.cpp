@@ -1,5 +1,8 @@
 #include <gui/common/CustomKeyboard.hpp>
 
+#include <touchgfx/Color.hpp>
+#include <touchgfx/Utils.hpp>
+
 CustomKeyboard::CustomKeyboard() : keyboard(),
     modeBtnTextArea1(),
 	modeBtnTextArea2(),
@@ -23,7 +26,7 @@ CustomKeyboard::CustomKeyboard() : keyboard(),
     keyboard.setKeyListener(keyPressed);
     keyboard.setPosition(0, 0, 560, 280);
     keyboard.setTextIndentation();
-    //Allocate the buffer associated with keyboard.
+    //Allocate the buffer associated with keyboard.    
     memset(buffer, 0, sizeof(buffer));
     keyboard.setBuffer(buffer, BUFFER_SIZE);
 
@@ -31,7 +34,7 @@ CustomKeyboard::CustomKeyboard() : keyboard(),
     firstCharacterEntry = true;
 
     modeBtnTextArea1.setPosition(10, 235, 75, 45);
-    modeBtnTextArea1.setColor(Color::getColorFrom24BitRGB(0xFF, 0xFF, 0xFF));
+    modeBtnTextArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(0xFF, 0xFF, 0xFF));
 	modeBtnTextArea2.setPosition(475, 235, 75, 45);
 	modeBtnTextArea2.setColor(Color::getColorFrom24BitRGB(0xFF, 0xFF, 0xFF));
 

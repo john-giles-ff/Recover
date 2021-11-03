@@ -180,9 +180,12 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceCommuni
             {
                 try
                 {
-                    var thread = new System.Threading.Thread(() => { recover.Bootloader.CatchStartup(15000); });
+                    var thread = new System.Threading.Thread(() => {
+                        Thread.Sleep(1000);
+                        recover.Application.GotoBootloader();                        
+                    });                    
                     thread.Start();
-                    recover.Application.GotoBootloader();
+                    recover.Bootloader.CatchStartup(15000);
                     thread.Join();
                     break;
                 }

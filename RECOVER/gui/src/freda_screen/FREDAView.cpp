@@ -365,7 +365,7 @@ void FREDAView::handleTickEvent()
 	{
 		int extSwitchValue = LFT::Information.ExternalSwitchValue;
 
-		if (BtnStartSoakTest.isVisible() != extSwitchValue == 0)
+		if (BtnStartSoakTest.isVisible() != (extSwitchValue == 0))
 		{
 			BtnStartSoakTest.setVisible(extSwitchValue == 0);
 			BtnStartSoakTest30.setVisible(extSwitchValue == 0);

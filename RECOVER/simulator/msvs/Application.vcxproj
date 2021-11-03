@@ -45,8 +45,6 @@
     <ClCompile Include="..\..\gui\src\freda_screen\FREDAView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\freda_screen\FREDAViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\common\Lever.cpp"/>
-    <ClCompile Include="..\..\gui\src\common\Unlock.cpp"/>
-    <ClCompile Include="..\..\gui\src\common\PatternCode.cpp"/>
     <ClCompile Include="..\..\gui\src\common\Pong.cpp"/>
     <ClCompile Include="..\..\gui\src\eggscreen_screen\EggScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\eggscreen_screen\EggScreenView.cpp"/>
@@ -114,6 +112,8 @@
     <ClCompile Include="..\..\generated\gui_generated\src\touchtestscreen_screen\TouchTestScreenViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\ViewDiagnostics.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\ViewDiagnosticsBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\common\PatternCode.cpp"/>
+    <ClCompile Include="..\..\gui\src\common\Unlock.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\assets\texts\texts.xlsx"/>
@@ -294,7 +294,6 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\freda_screen\FREDAViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\Lever.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\Unlock.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\common\PatternCode.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\Pong.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\eggscreen_screen\EggScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\eggscreen_screen\EggScreenView.hpp"/>
@@ -368,6 +367,7 @@
     <ClInclude Include="ProgressStages.h"/>
     <ClInclude Include="..\..\gui\include\gui\containers\ViewDiagnostics.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ViewDiagnosticsBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\common\PatternCode.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\touchgfx.rc"/>
