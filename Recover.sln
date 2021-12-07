@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29020.237
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RECOVER", "RECOVER\simulator\msvs\Application.vcxproj", "{3C47683C-0505-487F-A1FD-75B8490BF72C}"
 EndProject
@@ -26,6 +26,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PressureCurveLinearizing", "PressureCurveLinearizing\PressureCurveLinearizing.csproj", "{543FD0E9-447D-4247-849C-7D15B108B852}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserDecode", "UserDecode\UserDecode.csproj", "{104FB264-8ED5-4F23-A362-1FC775CF5E80}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{FF3B3A79-CE5B-4A88-A183-20BFE15E888E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecoverControl.Tests", "RecoverControl.Tests\RecoverControl.Tests.csproj", "{3FA27594-7D49-4E7F-BCE1-92699FFF0992}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecoverCompanionApplication.Tests", "RecoverCompanionApplication.Tests\RecoverCompanionApplication.Tests.csproj", "{95B3CF32-4814-46F6-B0E2-BA878F7B4288}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -178,6 +184,38 @@ Global
 		{104FB264-8ED5-4F23-A362-1FC775CF5E80}.Release|x64.Build.0 = Release|Any CPU
 		{104FB264-8ED5-4F23-A362-1FC775CF5E80}.Release|x86.ActiveCfg = Release|Any CPU
 		{104FB264-8ED5-4F23-A362-1FC775CF5E80}.Release|x86.Build.0 = Release|Any CPU
+		{3FA27594-7D49-4E7F-BCE1-92699FFF0992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FA27594-7D49-4E7F-BCE1-92699FFF0992}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FA27594-7D49-4E7F-BCE1-92699FFF0992}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{3FA27594-7D49-4E7F-BCE1-92699FFF0992}.Debug|ARM.Build.0 = Debug|Any CPU
+		{3FA27594-7D49-4E7F-BCE1-92699FFF0992}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3FA27594-7D49-4E7F-BCE1-92699FFF0992}.Debug|x64.Build.0 = Debug|Any CPU
+		{3FA27594-7D49-4E7F-BCE1-92699FFF0992}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3FA27594-7D49-4E7F-BCE1-92699FFF0992}.Debug|x86.Build.0 = Debug|Any CPU
+		{3FA27594-7D49-4E7F-BCE1-92699FFF0992}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FA27594-7D49-4E7F-BCE1-92699FFF0992}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FA27594-7D49-4E7F-BCE1-92699FFF0992}.Release|ARM.ActiveCfg = Release|Any CPU
+		{3FA27594-7D49-4E7F-BCE1-92699FFF0992}.Release|ARM.Build.0 = Release|Any CPU
+		{3FA27594-7D49-4E7F-BCE1-92699FFF0992}.Release|x64.ActiveCfg = Release|Any CPU
+		{3FA27594-7D49-4E7F-BCE1-92699FFF0992}.Release|x64.Build.0 = Release|Any CPU
+		{3FA27594-7D49-4E7F-BCE1-92699FFF0992}.Release|x86.ActiveCfg = Release|Any CPU
+		{3FA27594-7D49-4E7F-BCE1-92699FFF0992}.Release|x86.Build.0 = Release|Any CPU
+		{95B3CF32-4814-46F6-B0E2-BA878F7B4288}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95B3CF32-4814-46F6-B0E2-BA878F7B4288}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95B3CF32-4814-46F6-B0E2-BA878F7B4288}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{95B3CF32-4814-46F6-B0E2-BA878F7B4288}.Debug|ARM.Build.0 = Debug|Any CPU
+		{95B3CF32-4814-46F6-B0E2-BA878F7B4288}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{95B3CF32-4814-46F6-B0E2-BA878F7B4288}.Debug|x64.Build.0 = Debug|Any CPU
+		{95B3CF32-4814-46F6-B0E2-BA878F7B4288}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{95B3CF32-4814-46F6-B0E2-BA878F7B4288}.Debug|x86.Build.0 = Debug|Any CPU
+		{95B3CF32-4814-46F6-B0E2-BA878F7B4288}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95B3CF32-4814-46F6-B0E2-BA878F7B4288}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95B3CF32-4814-46F6-B0E2-BA878F7B4288}.Release|ARM.ActiveCfg = Release|Any CPU
+		{95B3CF32-4814-46F6-B0E2-BA878F7B4288}.Release|ARM.Build.0 = Release|Any CPU
+		{95B3CF32-4814-46F6-B0E2-BA878F7B4288}.Release|x64.ActiveCfg = Release|Any CPU
+		{95B3CF32-4814-46F6-B0E2-BA878F7B4288}.Release|x64.Build.0 = Release|Any CPU
+		{95B3CF32-4814-46F6-B0E2-BA878F7B4288}.Release|x86.ActiveCfg = Release|Any CPU
+		{95B3CF32-4814-46F6-B0E2-BA878F7B4288}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -192,9 +230,11 @@ Global
 		{0375E80C-A855-4B0A-8FE3-5D932A7992AC} = {406E6F52-0B2A-4F00-AA5A-0DABFB324090}
 		{543FD0E9-447D-4247-849C-7D15B108B852} = {406E6F52-0B2A-4F00-AA5A-0DABFB324090}
 		{104FB264-8ED5-4F23-A362-1FC775CF5E80} = {406E6F52-0B2A-4F00-AA5A-0DABFB324090}
+		{3FA27594-7D49-4E7F-BCE1-92699FFF0992} = {FF3B3A79-CE5B-4A88-A183-20BFE15E888E}
+		{95B3CF32-4814-46F6-B0E2-BA878F7B4288} = {FF3B3A79-CE5B-4A88-A183-20BFE15E888E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		RESX_NeutralResourcesLanguage = en-GB
 		SolutionGuid = {76082F13-96D6-401A-8352-03374E457385}
+		RESX_NeutralResourcesLanguage = en-GB
 	EndGlobalSection
 EndGlobal

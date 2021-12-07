@@ -163,12 +163,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceCommuni
                 }
 
                 _mutex.ReleaseMutex();
-
             }
-            
-
-
-
         }
 
         public static void WriteSoftware(byte[] hexData)
