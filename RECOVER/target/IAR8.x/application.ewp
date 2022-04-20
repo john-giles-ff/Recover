@@ -2194,6 +2194,9 @@
       <group>
         <name>texts</name>
         <file>
+          <name>$PROJ_DIR$/../../generated/texts/src/LanguageAr.cpp</name>
+        </file>
+        <file>
           <name>$PROJ_DIR$/../../generated/texts/src/LanguageDe.cpp</name>
         </file>
         <file>
@@ -2209,10 +2212,16 @@
           <name>$PROJ_DIR$/../../generated/texts/src/LanguageIt.cpp</name>
         </file>
         <file>
+          <name>$PROJ_DIR$/../../generated/texts/src/LanguagePl.cpp</name>
+        </file>
+        <file>
           <name>$PROJ_DIR$/../../generated/texts/src/LanguagePt.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$/../../generated/texts/src/LanguageRu.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/texts/src/LanguageUa.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$/../../generated/texts/src/LanguageZhs.cpp</name>
