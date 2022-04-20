@@ -171,7 +171,7 @@ typedef enum
 #ifndef I2Cx_TIMING  
 //#define I2Cx_TIMING                      ((uint32_t)0x40912732)  //ORIGINAL
 //#define I2Cx_TIMING                      ((uint32_t)0x00200CF9)  //WORKING
-#define I2Cx_TIMING                      ((uint32_t)0x00D0618F)  //MARTIN
+#define I2Cx_TIMING                      ((uint32_t)0x0040334B)  //MARTIN
 #endif /* DISCOVERY_I2Cx_TIMING */
 
 /** @addtogroup STM32746G_DISCOVERY_LOW_LEVEL_Exported_Functions

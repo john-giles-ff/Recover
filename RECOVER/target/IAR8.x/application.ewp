@@ -363,6 +363,7 @@
           <state>$PROJ_DIR$\..\bsp\source\vendor\ETEM070001ZDH6</state>
           <state>$PROJ_DIR$\..\os\FreeRTOS8.2.0\Source\include</state>
           <state>$PROJ_DIR$\..\os\FreeRTOS8.2.0\Source\portable\IAR\ST_CM7</state>
+          <state>$PROJ_DIR$/../../generated/videos/include</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -814,7 +815,6 @@
         </option>
         <option>
           <name>IlinkExtraOptions</name>
-          <state></state>
         </option>
         <option>
           <name>IlinkLowLevelInterfaceSlave</name>

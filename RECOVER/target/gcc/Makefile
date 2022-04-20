@@ -319,7 +319,7 @@ dependency_files := $(object_files:%.o=%.d)
 textconvert_script_path := $(touchgfx_path)/framework/tools/textconvert
 textconvert_executable := $(call find, $(textconvert_script_path), *.rb)
 
-text_database := $(asset_texts_input)/texts.xlsx
+text_database := $(asset_texts_input)/texts.xml
 
 libraries := touchgfx
 library_include_paths := $(touchgfx_path)/lib/core/$(platform)/gcc

@@ -114,6 +114,7 @@
     <ClCompile Include="..\..\generated\gui_generated\src\containers\ViewDiagnosticsBase.cpp"/>
     <ClCompile Include="..\..\gui\src\common\PatternCode.cpp"/>
     <ClCompile Include="..\..\gui\src\common\Unlock.cpp"/>
+    <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\assets\texts\texts.xlsx"/>
@@ -368,6 +369,9 @@
     <ClInclude Include="..\..\gui\include\gui\containers\ViewDiagnostics.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ViewDiagnosticsBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\PatternCode.hpp"/>
+    <ClInclude Include="..\..\generated\simulator\include\simulator\video\DirectFrameBufferVideoController.hpp"/>
+    <ClInclude Include="..\..\generated\simulator\include\simulator\video\MJPEGDecoder.hpp"/>
+    <ClInclude Include="..\..\generated\simulator\include\simulator\video\SoftwareMJPEGDecoder.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\touchgfx.rc"/>
@@ -384,14 +388,14 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props"/>
   <ImportGroup Label="ExtensionSettings">

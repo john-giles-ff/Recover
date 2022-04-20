@@ -1,0 +1,2540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.18.0">
+  <Texts>
+    <Text Id="ChamberConditioning" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Chamber Conditioning</Translation>
+      <Translation Language="ZHS" TypographyId="LargeZHS">熏显腔工作条件准备中</Translation>
+      <Translation Language="FR" TypographyId="MediumLarge">Conditionnement de la chambre</Translation>
+      <Translation Language="ES" TypographyId="MediumLarge">Acondicionamiento de la cámara</Translation>
+      <Translation Language="DE">Kammerkonditionierung</Translation>
+      <Translation Language="IT">Condizionamento camera</Translation>
+      <Translation Language="PT" TypographyId="MediumLarge">Condicionamento da câmara</Translation>
+      <Translation Language="RU">Подготовка камеры</Translation>
+    </Text>
+    <Text Id="ReadyToFume" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Ready to Fume</Translation>
+      <Translation Language="ZHS" TypographyId="LargeZHS">熏显腔工作条件已就绪</Translation>
+      <Translation Language="FR">Prêt pour la fumigation</Translation>
+      <Translation Language="ES" TypographyId="MediumLarge">Preparada para la fumigación</Translation>
+      <Translation Language="DE">Bedampfungsbereit</Translation>
+      <Translation Language="IT">Pronta per la fumigazione</Translation>
+      <Translation Language="PT" TypographyId="SMediumLarge">Pronto para a atuação dos vapores</Translation>
+      <Translation Language="RU">Готовность к обработке</Translation>
+    </Text>
+    <Text Id="FumingInProgress" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Fuming in Progress</Translation>
+      <Translation Language="ZHS" TypographyId="LargeZHS">熏显过程进行中</Translation>
+      <Translation Language="FR">Fumigation en cours</Translation>
+      <Translation Language="ES">Fumigación en curso</Translation>
+      <Translation Language="DE">Bedampfung läuft</Translation>
+      <Translation Language="IT">Fumigazione in corso</Translation>
+      <Translation Language="PT" TypographyId="SMediumLarge">Atuação dos vapores em andamento</Translation>
+      <Translation Language="RU">Выполняется обработка</Translation>
+    </Text>
+    <Text Id="PurgingChamber" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Purging Chamber</Translation>
+      <Translation Language="ZHS" TypographyId="LargeZHS">熏显腔清洁进行中</Translation>
+      <Translation Language="FR">Purge de la chambre</Translation>
+      <Translation Language="ES">Purga de la cámara</Translation>
+      <Translation Language="DE">Kammer wird gespült</Translation>
+      <Translation Language="IT">Spurgo camera</Translation>
+      <Translation Language="PT">Câmara de purga</Translation>
+      <Translation Language="RU">Продувка камеры</Translation>
+    </Text>
+    <Text Id="__SingleUse_5P61" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Are you sure that you want&#10;to abort the cycle?</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">是否确认终止当前工作过程?</Translation>
+      <Translation Language="FR">Voulez-vous vraiment abandonner le cycle ?</Translation>
+      <Translation Language="ES">¿Está seguro de querer&#10;abortar el ciclo?</Translation>
+      <Translation Language="DE">Möchten Sie den Zyklus&#10;wirklich abbrechen?</Translation>
+      <Translation Language="IT">Sei sicuro di voler annullare il ciclo?</Translation>
+      <Translation Language="PT">Tem a certeza de que deseja&#10;abortar o ciclo?</Translation>
+      <Translation Language="RU">Прервать цикл?</Translation>
+    </Text>
+    <Text Id="RemoveEvidence" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Remove Evidence</Translation>
+      <Translation Language="ZHS" TypographyId="LargeZHS">移除检材</Translation>
+      <Translation Language="FR" TypographyId="MediumLarge">Retirer l'élément de preuve</Translation>
+      <Translation Language="ES">Saque la prueba</Translation>
+      <Translation Language="DE">Beweismaterial entfernen</Translation>
+      <Translation Language="IT" TypographyId="MediumLarge">Rimuovere elemento di prova</Translation>
+      <Translation Language="PT">Retirar prova</Translation>
+      <Translation Language="RU">Удалить свидетельство</Translation>
+    </Text>
+    <Text Id="__SingleUse_AZY1" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">End Fuming</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">熏显过程结束</Translation>
+      <Translation Language="FR" TypographyId="Small">Mettre fin à &#10;la fumigation</Translation>
+      <Translation Language="ES" TypographyId="Small">Pare la fumigación</Translation>
+      <Translation Language="DE" TypographyId="Small">Bedampfung&#10;beenden</Translation>
+      <Translation Language="IT" TypographyId="Small">Termina fumigazione</Translation>
+      <Translation Language="PT" TypographyId="Small">Terminar a atuação &#10;dos vapores</Translation>
+      <Translation Language="RU" TypographyId="Small">Закончить&#10;обработку</Translation>
+    </Text>
+    <Text Id="__SingleUse_XKG0" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Do you want to stop the fuming process?</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">是否确认停止熏显过程?</Translation>
+      <Translation Language="FR">Voulez-vous arrêter le processus de fumigation ?</Translation>
+      <Translation Language="ES">¿Desea parar el proceso de fumigación?</Translation>
+      <Translation Language="DE">Möchten Sie den Bedampfungsprozess stoppen?</Translation>
+      <Translation Language="IT">Interrompere il processo di fumigazione?</Translation>
+      <Translation Language="PT">Deseja parar o processo de atuação dos vapores?</Translation>
+      <Translation Language="RU">Остановить процесс обработки?</Translation>
+    </Text>
+    <Text Id="__SingleUse_30XC" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Home</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">原位</Translation>
+      <Translation Language="FR">Accueil</Translation>
+      <Translation Language="ES">Inicio</Translation>
+      <Translation Language="DE">Start</Translation>
+      <Translation Language="IT">Home</Translation>
+      <Translation Language="PT">Página inicial</Translation>
+      <Translation Language="RU">Исходная</Translation>
+    </Text>
+    <Text Id="LidControl" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Lid Control</Translation>
+      <Translation Language="ZHS" TypographyId="LargeZHS">顶盖控制</Translation>
+      <Translation Language="FR">Contrôle du couvercle</Translation>
+      <Translation Language="ES">Control de la tapa</Translation>
+      <Translation Language="DE">Deckel-Steuerung</Translation>
+      <Translation Language="IT">Controllo del coperchio</Translation>
+      <Translation Language="PT">Controlo da tampa</Translation>
+      <Translation Language="RU">Управление крышкой</Translation>
+    </Text>
+    <Text Id="EnteredText" TypographyId="Display" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">&lt;placeholder&gt;</Translation>
+      <Translation Language="ZHS">&lt;placeholder&gt;</Translation>
+      <Translation Language="FR">&lt;placeholder&gt;</Translation>
+      <Translation Language="ES">&lt;placeholder&gt;</Translation>
+      <Translation Language="DE">&lt;placeholder&gt;</Translation>
+      <Translation Language="IT">&lt;placeholder&gt;</Translation>
+      <Translation Language="PT">&lt;placeholder&gt;</Translation>
+      <Translation Language="RU">&lt;placeholder&gt;</Translation>
+    </Text>
+    <Text Id="NumMode" TypographyId="Display" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">ABC</Translation>
+      <Translation Language="ZHS">ABC</Translation>
+      <Translation Language="FR">ABC</Translation>
+      <Translation Language="ES">ABC</Translation>
+      <Translation Language="DE">ABC</Translation>
+      <Translation Language="IT">ABC</Translation>
+      <Translation Language="PT">ABC</Translation>
+      <Translation Language="RU">ABC</Translation>
+    </Text>
+    <Text Id="AlphaMode" TypographyId="Display" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">123</Translation>
+      <Translation Language="ZHS">123</Translation>
+      <Translation Language="FR">123</Translation>
+      <Translation Language="ES">123</Translation>
+      <Translation Language="DE">123</Translation>
+      <Translation Language="IT">123</Translation>
+      <Translation Language="PT">123</Translation>
+      <Translation Language="RU">123</Translation>
+    </Text>
+    <Text Id="__SingleUse_5AWZ" TypographyId="Display" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="Wildcard" TypographyId="Display" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="EngineerMode" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Engineer Mode</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="DemoMode" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Demo Mode</Translation>
+      <Translation Language="ZHS">Demo Mode</Translation>
+      <Translation Language="FR">Demo Mode</Translation>
+      <Translation Language="ES">Demo Mode</Translation>
+      <Translation Language="DE">Demo Mode</Translation>
+      <Translation Language="IT">Demo Mode</Translation>
+      <Translation Language="PT">Demo Mode</Translation>
+      <Translation Language="RU">Demo Mode</Translation>
+    </Text>
+    <Text Id="__SingleUse_OR4L" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Custom</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_FQ1J" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Presets</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="Language_EN_GB" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">English (UK)</Translation>
+      <Translation Language="ZHS">English (UK)</Translation>
+      <Translation Language="FR">English (UK)</Translation>
+      <Translation Language="ES">English (UK)</Translation>
+      <Translation Language="DE">English (UK)</Translation>
+      <Translation Language="IT">English (UK)</Translation>
+      <Translation Language="PT">English (UK)</Translation>
+      <Translation Language="RU">English (UK)</Translation>
+    </Text>
+    <Text Id="__SingleUse_KB88" TypographyId="Small" Alignment="Right" Direction="LTR">
+      <Translation Language="GB">Build: &lt;value&gt;</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">编译版本: &lt;value&gt;</Translation>
+      <Translation Language="FR">Version : &lt;value&gt;</Translation>
+      <Translation Language="ES">Construcción: &lt;value&gt;</Translation>
+      <Translation Language="DE">Build: &lt;value&gt;</Translation>
+      <Translation Language="IT">Build: &lt;value&gt;</Translation>
+      <Translation Language="PT">Versão: &lt;value&gt;</Translation>
+      <Translation Language="RU">Версия: &lt;value&gt;</Translation>
+    </Text>
+    <Text Id="Language_ES_ES" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Español (ES)</Translation>
+      <Translation Language="ZHS">Español (ES)</Translation>
+      <Translation Language="FR">Español (ES)</Translation>
+      <Translation Language="ES">Español (ES)</Translation>
+      <Translation Language="DE">Español (ES)</Translation>
+      <Translation Language="IT">Español (ES)</Translation>
+      <Translation Language="PT">Español (ES)</Translation>
+      <Translation Language="RU">Español (ES)</Translation>
+    </Text>
+    <Text Id="Language_ZN_HANS" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB" TypographyId="DefaultZHS">简体中文</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">简体中文</Translation>
+      <Translation Language="FR" TypographyId="DefaultZHS">简体中文</Translation>
+      <Translation Language="ES" TypographyId="DefaultZHS">简体中文</Translation>
+      <Translation Language="DE" TypographyId="DefaultZHS">简体中文</Translation>
+      <Translation Language="IT" TypographyId="DefaultZHS">简体中文</Translation>
+      <Translation Language="PT" TypographyId="DefaultZHS">简体中文</Translation>
+      <Translation Language="RU" TypographyId="DefaultZHS">简体中文</Translation>
+    </Text>
+    <Text Id="Language_FR" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">French (FR)</Translation>
+      <Translation Language="ZHS">French (FR)</Translation>
+      <Translation Language="FR">French (FR)</Translation>
+      <Translation Language="ES">French (FR)</Translation>
+      <Translation Language="DE">French (FR)</Translation>
+      <Translation Language="IT">French (FR)</Translation>
+      <Translation Language="PT">French (FR)</Translation>
+      <Translation Language="RU">French (FR)</Translation>
+    </Text>
+    <Text Id="Language_RU" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Русский (RU)</Translation>
+      <Translation Language="ZHS">Русский (RU)</Translation>
+      <Translation Language="FR">Русский (RU)</Translation>
+      <Translation Language="ES">Русский (RU)</Translation>
+      <Translation Language="DE">Русский (RU)</Translation>
+      <Translation Language="IT">Русский (RU)</Translation>
+      <Translation Language="PT">Русский (RU)</Translation>
+      <Translation Language="RU">Русский (RU)</Translation>
+    </Text>
+    <Text Id="Language_DE" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Deutsch (DE)</Translation>
+      <Translation Language="ZHS">Deutsch (DE)</Translation>
+      <Translation Language="FR">Deutsch (DE)</Translation>
+      <Translation Language="ES">Deutsch (DE)</Translation>
+      <Translation Language="DE">Deutsch (DE)</Translation>
+      <Translation Language="IT">Deutsch (DE)</Translation>
+      <Translation Language="PT">Deutsch (DE)</Translation>
+      <Translation Language="RU">Deutsch (DE)</Translation>
+    </Text>
+    <Text Id="Language_IT" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Italiano (IT)</Translation>
+      <Translation Language="ZHS">Italiano (IT)</Translation>
+      <Translation Language="FR">Italiano (IT)</Translation>
+      <Translation Language="ES">Italiano (IT)</Translation>
+      <Translation Language="DE">Italiano (IT)</Translation>
+      <Translation Language="IT">Italiano (IT)</Translation>
+      <Translation Language="PT">Italiano (IT)</Translation>
+      <Translation Language="RU">Italiano (IT)</Translation>
+    </Text>
+    <Text Id="__SingleUse_VMLE" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Inlet Valve</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_QSUV" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Bypass Valve</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_4V2V" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Purge Valves</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_L34J" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Standby</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_GOX7" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Lid Down</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_0PEN" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Lid Up</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_UUWT" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Lid Stop</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_7PQW" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Pump</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_MHEQ" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Base Fan</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_OTVN" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Base Heater</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_PA43" TypographyId="MediumSmall" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Precursor Heater</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_ZIAL" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Stirring Fans</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="Yes" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Yes</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">是</Translation>
+      <Translation Language="FR">Oui</Translation>
+      <Translation Language="ES">Sí</Translation>
+      <Translation Language="DE">Ja</Translation>
+      <Translation Language="IT">Sì</Translation>
+      <Translation Language="PT">Sim</Translation>
+      <Translation Language="RU">Да</Translation>
+    </Text>
+    <Text Id="No" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">No</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">否</Translation>
+      <Translation Language="FR">Non</Translation>
+      <Translation Language="ES">No</Translation>
+      <Translation Language="DE">Nein</Translation>
+      <Translation Language="IT">No</Translation>
+      <Translation Language="PT">Não</Translation>
+      <Translation Language="RU">Нет</Translation>
+    </Text>
+    <Text Id="Initialising" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Initialising</Translation>
+      <Translation Language="ZHS" TypographyId="LargeZHS">正在初始化</Translation>
+      <Translation Language="FR">Initialisation</Translation>
+      <Translation Language="ES">Inicialización</Translation>
+      <Translation Language="DE" TypographyId="MediumLarge">Initialisierung wird ausgeführt</Translation>
+      <Translation Language="IT">Inizializzazione</Translation>
+      <Translation Language="PT">Inicialização</Translation>
+      <Translation Language="RU">Инициализация</Translation>
+    </Text>
+    <Text Id="__SingleUse_WSC6" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Timer</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">计时器</Translation>
+      <Translation Language="FR">Timer</Translation>
+      <Translation Language="ES">Timer</Translation>
+      <Translation Language="DE">Timer</Translation>
+      <Translation Language="IT">Timer</Translation>
+      <Translation Language="PT">Timer</Translation>
+      <Translation Language="RU">Timer</Translation>
+    </Text>
+    <Text Id="__SingleUse_OBIG" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Break Seal</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="Build" TypographyId="Display" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Build: &lt;value&gt;</Translation>
+      <Translation Language="ZHS"> &lt;value&gt;</Translation>
+      <Translation Language="FR"> &lt;value&gt;</Translation>
+      <Translation Language="ES"> &lt;value&gt;</Translation>
+      <Translation Language="DE"> &lt;value&gt;</Translation>
+      <Translation Language="IT"> &lt;value&gt;</Translation>
+      <Translation Language="PT"> &lt;value&gt;</Translation>
+      <Translation Language="RU"> &lt;value&gt;</Translation>
+    </Text>
+    <Text Id="BaseTemp" TypographyId="Display" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Base Temp: &lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="ZHS">&lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="FR">&lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="ES">&lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="DE">&lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="IT">&lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="PT">&lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="RU">&lt;value&gt;°/&lt;value&gt;°</Translation>
+    </Text>
+    <Text Id="PrecTemp" TypographyId="Display" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Prec Temp: &lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="ZHS">&lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="FR">&lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="ES">&lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="DE">&lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="IT">&lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="PT">&lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="RU">&lt;value&gt;°/&lt;value&gt;°</Translation>
+    </Text>
+    <Text Id="Pressure" TypographyId="Display" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Pressure: &lt;value&gt;</Translation>
+      <Translation Language="ZHS"> &lt;value&gt;</Translation>
+      <Translation Language="FR"> &lt;value&gt;</Translation>
+      <Translation Language="ES"> &lt;value&gt;</Translation>
+      <Translation Language="DE"> &lt;value&gt;</Translation>
+      <Translation Language="IT"> &lt;value&gt;</Translation>
+      <Translation Language="PT"> &lt;value&gt;</Translation>
+      <Translation Language="RU"> &lt;value&gt;</Translation>
+    </Text>
+    <Text Id="IntSwitch" TypographyId="Display" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Int. Switch: &lt;value&gt;|&lt;value&gt;</Translation>
+      <Translation Language="ZHS">&lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="FR">&lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="ES">&lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="DE">&lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="IT">&lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="PT">&lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="RU">&lt;value&gt;°/&lt;value&gt;°</Translation>
+    </Text>
+    <Text Id="ExtSwitch" TypographyId="Display" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Ext. Switch: &lt;value&gt;</Translation>
+      <Translation Language="ZHS"> &lt;value&gt;</Translation>
+      <Translation Language="FR"> &lt;value&gt;</Translation>
+      <Translation Language="ES"> &lt;value&gt;</Translation>
+      <Translation Language="DE"> &lt;value&gt;</Translation>
+      <Translation Language="IT"> &lt;value&gt;</Translation>
+      <Translation Language="PT"> &lt;value&gt;</Translation>
+      <Translation Language="RU"> &lt;value&gt;</Translation>
+    </Text>
+    <Text Id="Status" TypographyId="Display" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Status: &lt;value&gt;</Translation>
+      <Translation Language="ZHS"> &lt;value&gt;</Translation>
+      <Translation Language="FR"> &lt;value&gt;</Translation>
+      <Translation Language="ES"> &lt;value&gt;</Translation>
+      <Translation Language="DE"> &lt;value&gt;</Translation>
+      <Translation Language="IT"> &lt;value&gt;</Translation>
+      <Translation Language="PT"> &lt;value&gt;</Translation>
+      <Translation Language="RU"> &lt;value&gt;</Translation>
+    </Text>
+    <Text Id="Attempts" TypographyId="Display" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Attempts: &lt;value&gt;</Translation>
+      <Translation Language="ZHS"> &lt;value&gt;</Translation>
+      <Translation Language="FR"> &lt;value&gt;</Translation>
+      <Translation Language="ES"> &lt;value&gt;</Translation>
+      <Translation Language="DE"> &lt;value&gt;</Translation>
+      <Translation Language="IT"> &lt;value&gt;</Translation>
+      <Translation Language="PT"> &lt;value&gt;</Translation>
+      <Translation Language="RU"> &lt;value&gt;</Translation>
+    </Text>
+    <Text Id="ErrorCount" TypographyId="Display" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Error Count: &lt;value&gt;</Translation>
+      <Translation Language="ZHS"> &lt;value&gt;</Translation>
+      <Translation Language="FR"> &lt;value&gt;</Translation>
+      <Translation Language="ES"> &lt;value&gt;</Translation>
+      <Translation Language="DE"> &lt;value&gt;</Translation>
+      <Translation Language="IT"> &lt;value&gt;</Translation>
+      <Translation Language="PT"> &lt;value&gt;</Translation>
+      <Translation Language="RU"> &lt;value&gt;</Translation>
+    </Text>
+    <Text Id="LastError" TypographyId="Display" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Last Error: &lt;value&gt;</Translation>
+      <Translation Language="ZHS"> &lt;value&gt;</Translation>
+      <Translation Language="FR"> &lt;value&gt;</Translation>
+      <Translation Language="ES"> &lt;value&gt;</Translation>
+      <Translation Language="DE"> &lt;value&gt;</Translation>
+      <Translation Language="IT"> &lt;value&gt;</Translation>
+      <Translation Language="PT"> &lt;value&gt;</Translation>
+      <Translation Language="RU"> &lt;value&gt;</Translation>
+    </Text>
+    <Text Id="Timer" TypographyId="Display" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Timer: &lt;value&gt;</Translation>
+      <Translation Language="ZHS"> &lt;value&gt;</Translation>
+      <Translation Language="FR"> &lt;value&gt;</Translation>
+      <Translation Language="ES"> &lt;value&gt;</Translation>
+      <Translation Language="DE"> &lt;value&gt;</Translation>
+      <Translation Language="IT"> &lt;value&gt;</Translation>
+      <Translation Language="PT"> &lt;value&gt;</Translation>
+      <Translation Language="RU"> &lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_I7T5" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Dismiss</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">解除</Translation>
+      <Translation Language="FR">Rejeter</Translation>
+      <Translation Language="ES">Eliminar</Translation>
+      <Translation Language="DE">Schließen</Translation>
+      <Translation Language="IT">Chiudi</Translation>
+      <Translation Language="PT">Ignorar</Translation>
+      <Translation Language="RU">Отменить</Translation>
+    </Text>
+    <Text Id="Progress" TypographyId="Display" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Progress: &lt;value&gt;</Translation>
+      <Translation Language="ZHS"> &lt;value&gt;</Translation>
+      <Translation Language="FR">Progress: &lt;value&gt;</Translation>
+      <Translation Language="ES">Progress: &lt;value&gt;</Translation>
+      <Translation Language="DE">Progress: &lt;value&gt;</Translation>
+      <Translation Language="IT">Progress: &lt;value&gt;</Translation>
+      <Translation Language="PT">Progress: &lt;value&gt;</Translation>
+      <Translation Language="RU">Progress: &lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_6AXP" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Auto</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_EGIE" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Abort</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="Valves" TypographyId="Display" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Valves: &lt;value&gt;</Translation>
+      <Translation Language="ZHS"> &lt;value&gt;</Translation>
+      <Translation Language="FR">Valves: &lt;value&gt;</Translation>
+      <Translation Language="ES">Valves: &lt;value&gt;</Translation>
+      <Translation Language="DE">Valves: &lt;value&gt;</Translation>
+      <Translation Language="IT">Valves: &lt;value&gt;</Translation>
+      <Translation Language="PT">Valves: &lt;value&gt;</Translation>
+      <Translation Language="RU">Valves: &lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_YO4X" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Hide Data</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="Instruction_AddPrecursor" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Remove lid from DEVELOP vial and locate into chamber base.</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">将已打开瓶盖的熏显试剂瓶放入熏显腔底座固定位</Translation>
+      <Translation Language="FR">Retirer le bouchon du flacon de DEVELOP et placer dans la base de la chambre.</Translation>
+      <Translation Language="ES">Quite la tapa del vial de revelador DEVELOP y deposítelo en la base de la cámara.</Translation>
+      <Translation Language="DE">Deckel vom DEVELOP-Fläschchen entfernen und das Fläschchen auf den Boden der Kammer stellen.</Translation>
+      <Translation Language="IT">Rimuovi il coperchio dalla fiala DEVELOP e posizionarla nella base della camera.</Translation>
+      <Translation Language="PT">Retirar a tampa do tubo DEVELOP e posicionar na base da câmara.</Translation>
+      <Translation Language="RU">Снять крышку с ампулы DEVELOP и поместить на основание камеры.</Translation>
+    </Text>
+    <Text Id="Instruction_AddSample" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Position samples within evidence rack and lower into the chamber.</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">将放置好检材的物证固定架放入熏显腔中</Translation>
+      <Translation Language="FR">Placer les échantillons sur le trépied pour éléments de preuve et les descendre dans la chambre.</Translation>
+      <Translation Language="ES">Ponga las muestras en la bandeja para pruebas e introdúzcala en la cámara.</Translation>
+      <Translation Language="DE">Proben in das Beweismaterial-Gestell stellen und in die Kammer absenken.</Translation>
+      <Translation Language="IT">Posizionare i campioni all'interno del rack degli elementi di prova e calarlo nella camera.</Translation>
+      <Translation Language="PT">Posicionar as amostras na estante de provas e descê-las na câmara.</Translation>
+      <Translation Language="RU">Поместить образцы на держатель свидетельств и опустить в камеру.</Translation>
+    </Text>
+    <Text Id="Instruction_LowerLid" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Fully close chamber lid using touch panel controls.</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">通过触摸屏控制面板完全关闭熏显腔顶盖</Translation>
+      <Translation Language="FR">Bien fermer le couvercle de la chambre en utilisant les commandes de l'écran tactile.</Translation>
+      <Translation Language="ES">Cierre completamente la tapa de la cámara mediante los controles del panel táctil.</Translation>
+      <Translation Language="DE">Deckel der Kammer über die Steuerelemente auf dem Touchscreen vollständig schließen.</Translation>
+      <Translation Language="IT">Chiudere completamente il coperchio della camera usando i comandi del pannello a sfioramento.</Translation>
+      <Translation Language="PT">Fechar completamente a tampa da câmara utilizando os controlos do painel de toque.</Translation>
+      <Translation Language="RU">Полностью закрыть крышку камеры с использованием сенсорной панели.</Translation>
+    </Text>
+    <Text Id="Instruction_StartProcess" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Start the process by pressing the play icon.</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">点击"开始"图标启动熏显过程</Translation>
+      <Translation Language="FR">Démarrer le processus en appuyant sur l'icône de lecture.</Translation>
+      <Translation Language="ES">Pulse el icono de inicio para iniciar el proceso.</Translation>
+      <Translation Language="DE">Den Prozess durch Drücken auf das Wiedergabe-Symbol starten.</Translation>
+      <Translation Language="IT">Avviare il processo premendo l'icona di riproduzione (Play).</Translation>
+      <Translation Language="PT">Iniciar processo pressionando o ícone executar.</Translation>
+      <Translation Language="RU">Начать процесс нажатием значка «воспроизведение»</Translation>
+    </Text>
+    <Text Id="Instruction_GlassChamber" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Place development chamber into position.</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">将熏显腔玻璃侧壁就位放好</Translation>
+      <Translation Language="FR">Mettre la chambre de développement en position.</Translation>
+      <Translation Language="ES">Sitúe la cámara de revelado en posición.</Translation>
+      <Translation Language="DE">Entwicklungskammer in Position bringen.</Translation>
+      <Translation Language="IT">Porre la camera di sviluppo in posizione.</Translation>
+      <Translation Language="PT">Colocar a câmara de desenvolvimento em posição.</Translation>
+      <Translation Language="RU">Поместить камеру проявки в необходимое положение.</Translation>
+    </Text>
+    <Text Id="__SingleUse_2JR0" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="Instruction_SelectChamber" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Select correct development chamber size.</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">选择正确的显影室尺寸。</Translation>
+      <Translation Language="FR">Sélectionnez la taille correcte de la chambre de développement.</Translation>
+      <Translation Language="ES">Seleccione el tamaño correcto de la cámara de desarrollo.</Translation>
+      <Translation Language="DE">Wählen Sie die richtige Größe der Entwicklungskammer.</Translation>
+      <Translation Language="IT">Selezionare la dimensione della camera di sviluppo corretta.</Translation>
+      <Translation Language="PT">Selecione o tamanho correto da câmara de desenvolvimento.</Translation>
+      <Translation Language="RU">Выберите правильный размер камеры проявки.</Translation>
+    </Text>
+    <Text Id="__SingleUse_UKYL" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Test - Abort</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_UK7P" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Test - Next</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="ProductionTest_CheckChamberIsAtmos" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt; - Checking Chamber is at Atmosphere</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="ProductionTest_PumpDownStage1" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt; - Pumping Down Stage 1</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="ProductionTest_PumpDownStage2" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt; - Pumping Down Stage 2</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="ProductionTest_DisconnectPressureSensor" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt; - Disconnect the Pressure Sensor</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="ProductionTest_CheckingPressureSensor" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt; - Checking the Pressure Sensor</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="ProductionTest_ReconnectPressureSensor" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt; - Reconnect Pressure Sensor</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="ProductionTest_DisconnectAirFlowSignal" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt; - Disconnect Airflow Signal</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="ProductionTest_CheckingAirflowSignal" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt; - Checking Airflow Signal</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="ProductionTest_ReconnectAirflowSignal" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt; - Reconnect Airflow Signal</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="ProductionTest_DisconnectPressureSwitch" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt; - Disconnect Pressure Switch</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="ProductionTest_CheckingPressureSwitch" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt; - Checking Pressure Switch</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="ProductionTest_ReconnectPressureSwitch" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt; - Reconnect Pressure Switch</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_NTIL" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Clear</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_88HR" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Abort</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_90QP" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Actual Visible</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_MPYS" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Pumpdown Test</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_95WH" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Switch Data</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="GraphType_Pressure" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Pressure</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="GraphType_BaseHeat" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Base Temperature</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="GraphType_BasePower" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Base Power (%)</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="GraphType_PreHeat" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Precursor Temperature</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="GraphType_PrePower" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Precursor Power (%)</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_YOEE" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Start Test</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_TSV8" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Exit Graphs</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_JHLV" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Soak Test</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="Error_PSwitch2Leak" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">(Error: &lt;value&gt;) PSwitch 2 detected leak during run, was previously okay.</Translation>
+      <Translation Language="ZHS">(Error: &lt;value&gt;) PSwitch 2 detected leak during run, was previously okay.</Translation>
+      <Translation Language="FR">(Error: &lt;value&gt;) PSwitch 2 detected leak during run, was previously okay.</Translation>
+      <Translation Language="ES">(Error: &lt;value&gt;) PSwitch 2 detected leak during run, was previously okay.</Translation>
+      <Translation Language="DE">(Error: &lt;value&gt;) PSwitch 2 detected leak during run, was previously okay.</Translation>
+      <Translation Language="IT">(Error: &lt;value&gt;) PSwitch 2 detected leak during run, was previously okay.</Translation>
+      <Translation Language="PT">(Error: &lt;value&gt;) PSwitch 2 detected leak during run, was previously okay.</Translation>
+      <Translation Language="RU">(Error: &lt;value&gt;) PSwitch 2 detected leak during run, was previously okay.</Translation>
+    </Text>
+    <Text Id="Error_InitFail" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">(Error: &lt;value&gt;) Initialise Failed</Translation>
+      <Translation Language="ZHS">(Error: &lt;value&gt;) Initialise Failed</Translation>
+      <Translation Language="FR">(Error: &lt;value&gt;) Initialise Failed</Translation>
+      <Translation Language="ES">(Error: &lt;value&gt;) Initialise Failed</Translation>
+      <Translation Language="DE">(Error: &lt;value&gt;) Initialise Failed</Translation>
+      <Translation Language="IT">(Error: &lt;value&gt;) Initialise Failed</Translation>
+      <Translation Language="PT">(Error: &lt;value&gt;) Initialise Failed</Translation>
+      <Translation Language="RU">(Error: &lt;value&gt;) Initialise Failed</Translation>
+    </Text>
+    <Text Id="Error_VacuumFail" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">(Error: &lt;value&gt;) Vacuum was above minimum standard to run.</Translation>
+      <Translation Language="ZHS">(Error: &lt;value&gt;) Vacuum was above minimum standard to run.</Translation>
+      <Translation Language="FR">(Error: &lt;value&gt;) Vacuum was above minimum standard to run.</Translation>
+      <Translation Language="ES">(Error: &lt;value&gt;) Vacuum was above minimum standard to run.</Translation>
+      <Translation Language="DE">(Error: &lt;value&gt;) Vacuum was above minimum standard to run.</Translation>
+      <Translation Language="IT">(Error: &lt;value&gt;) Vacuum was above minimum standard to run.</Translation>
+      <Translation Language="PT">(Error: &lt;value&gt;) Vacuum was above minimum standard to run.</Translation>
+      <Translation Language="RU">(Error: &lt;value&gt;) Vacuum was above minimum standard to run.</Translation>
+    </Text>
+    <Text Id="__SingleUse_CICV" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">SOAK TESTING</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_87FZ" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Soak Test Count: &lt;value&gt;</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_HNYC" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Start Continous</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_3CNF" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Abort</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_VFMY" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Status: &lt;value&gt;</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_Y018" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Exit</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_OD1Q" TypographyId="Default" Alignment="Right" Direction="LTR">
+      <Translation Language="GB">Max Current: &lt;value&gt;A</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_NIH1" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Soak Test Total: &lt;value&gt;</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_O5ME" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">USB Mode</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">USB模式</Translation>
+      <Translation Language="FR">Mode USB</Translation>
+      <Translation Language="ES">Modo USB</Translation>
+      <Translation Language="DE">USB-Modus</Translation>
+      <Translation Language="IT">Modalità USB</Translation>
+      <Translation Language="PT">Modo USB</Translation>
+      <Translation Language="RU">Режим USB</Translation>
+    </Text>
+    <Text Id="__SingleUse_NDUC" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Advanced</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">先进的</Translation>
+      <Translation Language="FR">Avancé</Translation>
+      <Translation Language="ES">Avanzado</Translation>
+      <Translation Language="DE">Erweitert</Translation>
+      <Translation Language="IT">Avanzato</Translation>
+      <Translation Language="PT">Avançado</Translation>
+      <Translation Language="RU">Дополнительно</Translation>
+    </Text>
+    <Text Id="__SingleUse_06AL" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="Stage1HeaterDeviation" TypographyId="Small" Alignment="Right" Direction="LTR">
+      <Translation Language="GB">Stage 1 Heater Deviation:</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">阶段1加热器误差:</Translation>
+      <Translation Language="FR">Écart de réchauffeur Étape 1 :</Translation>
+      <Translation Language="ES">Desviación de calentador - Fase 1:</Translation>
+      <Translation Language="DE">Phase 1 - Heizungs-Abweichung:</Translation>
+      <Translation Language="IT">Fase 1 Deviazione del riscaldatore:</Translation>
+      <Translation Language="PT">Desvio do Aquecedor – Etapa 1:</Translation>
+      <Translation Language="RU">Отклонение нагревателя Этап 1:</Translation>
+    </Text>
+    <Text Id="ConditioningTime" TypographyId="Small" Alignment="Right" Direction="LTR">
+      <Translation Language="GB">Conditioning Time (Minutes):</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">准备时间(分钟):</Translation>
+      <Translation Language="FR">Temps de conditionnement (Minutes) :</Translation>
+      <Translation Language="ES">Tiempo de acondicionamiento (minutos):</Translation>
+      <Translation Language="DE">Konditionierzeit (Minuten):</Translation>
+      <Translation Language="IT">Tempo di condizionamento (minuti):</Translation>
+      <Translation Language="PT">Tempo de condicionamento (minutos):</Translation>
+      <Translation Language="RU">Продолжительность подготовки (минут):</Translation>
+    </Text>
+    <Text Id="LeakTest2Result" TypographyId="Small" Alignment="Right" Direction="LTR">
+      <Translation Language="GB">Leak Test 2 Result:</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">泄漏测试2 结果:</Translation>
+      <Translation Language="FR">Résultat du test d'étanchéité 2 :</Translation>
+      <Translation Language="ES">Resultado de ensayo de fugas 2:</Translation>
+      <Translation Language="DE">Lecktest 2 - Ergebnis:</Translation>
+      <Translation Language="IT">Risultato prova di tenuta 2:</Translation>
+      <Translation Language="PT">Resultado do ensaio de fugas 2:</Translation>
+      <Translation Language="RU">Результат теста утечки 2:</Translation>
+    </Text>
+    <Text Id="LeakTest1Result" TypographyId="Small" Alignment="Right" Direction="LTR">
+      <Translation Language="GB">Leak Test 1 Result:</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">泄漏测试1 结果:</Translation>
+      <Translation Language="FR">Résultat du test d'étanchéité 1 :</Translation>
+      <Translation Language="ES">Resultado de ensayo de fugas 1:</Translation>
+      <Translation Language="DE">Lecktest 1 - Ergebnis:</Translation>
+      <Translation Language="IT">Risultato prova di tenuta 1:</Translation>
+      <Translation Language="PT">Resultado do ensaio de fugas 1:</Translation>
+      <Translation Language="RU">Результат теста утечки 1:</Translation>
+    </Text>
+    <Text Id="PressureDeviation" TypographyId="Small" Alignment="Right" Direction="LTR">
+      <Translation Language="GB">Pressure Deviation:</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">气压误差:</Translation>
+      <Translation Language="FR">Écart de pression :</Translation>
+      <Translation Language="ES">Desviación de presión:</Translation>
+      <Translation Language="DE">Druckabweichung:</Translation>
+      <Translation Language="IT">Deviazione della pressione:</Translation>
+      <Translation Language="PT">Desvio da pressão:</Translation>
+      <Translation Language="RU">Отклонение давления:</Translation>
+    </Text>
+    <Text Id="Stage2HeaterDeviation" TypographyId="Small" Alignment="Right" Direction="LTR">
+      <Translation Language="GB">Stage 2 Heater Deviation:</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">阶段2加热器误差:</Translation>
+      <Translation Language="FR">Écart de réchauffeur Étape 2 :</Translation>
+      <Translation Language="ES">Desviación de calentador - Fase 2:</Translation>
+      <Translation Language="DE">Phase 2 - Heizungs-Abweichung:</Translation>
+      <Translation Language="IT">Fase 2 Deviazione del riscaldatore:</Translation>
+      <Translation Language="PT">Desvio do aquecedor – Etapa 2:</Translation>
+      <Translation Language="RU">Отклонение нагревателя Этап 2:</Translation>
+    </Text>
+    <Text Id="FumingTime" TypographyId="Small" Alignment="Right" Direction="LTR">
+      <Translation Language="GB">Fuming Time (Minutes):</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">熏显时间(分钟):</Translation>
+      <Translation Language="FR">Temps de fumigation (Minutes) :</Translation>
+      <Translation Language="ES">Tiempo de fumigación (minutos):</Translation>
+      <Translation Language="DE">Bedampfungszeit (Minuten):</Translation>
+      <Translation Language="IT">Tempo di fumigazione (minuti):</Translation>
+      <Translation Language="PT">Tempo de atuação dos vapores (minutos):</Translation>
+      <Translation Language="RU">Продолжительность обработки (минут):</Translation>
+    </Text>
+    <Text Id="__SingleUse_0CLR" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_EQND" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="Log_TestSuccess" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Success</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">成功</Translation>
+      <Translation Language="FR">Réussite</Translation>
+      <Translation Language="ES">Éxito</Translation>
+      <Translation Language="DE">Erfolg</Translation>
+      <Translation Language="IT">Riuscita</Translation>
+      <Translation Language="PT">Sucesso</Translation>
+      <Translation Language="RU">Успешно</Translation>
+    </Text>
+    <Text Id="Log_TestFail" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Fail</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">失败</Translation>
+      <Translation Language="FR">Échec</Translation>
+      <Translation Language="ES">Fallo</Translation>
+      <Translation Language="DE">Fehler</Translation>
+      <Translation Language="IT">Fallita</Translation>
+      <Translation Language="PT">Falha</Translation>
+      <Translation Language="RU">Ошибка</Translation>
+    </Text>
+    <Text Id="__SingleUse_5X7M" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Yes</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">是</Translation>
+      <Translation Language="FR">Oui</Translation>
+      <Translation Language="ES">Sí</Translation>
+      <Translation Language="DE">Ja</Translation>
+      <Translation Language="IT">Sì</Translation>
+      <Translation Language="PT">Sim</Translation>
+      <Translation Language="RU">Да</Translation>
+    </Text>
+    <Text Id="__SingleUse_QDG4" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">No</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">否</Translation>
+      <Translation Language="FR">Non</Translation>
+      <Translation Language="ES">No</Translation>
+      <Translation Language="DE">Nein</Translation>
+      <Translation Language="IT">No</Translation>
+      <Translation Language="PT">Não</Translation>
+      <Translation Language="RU">Нет</Translation>
+    </Text>
+    <Text Id="ConfirmDeleteLog" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Are you sure that you want to delete this log?</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">是否确定删除这条日志?</Translation>
+      <Translation Language="FR">Voulez-vous vraiment supprimer ce journal ?</Translation>
+      <Translation Language="ES">¿Está seguro de querer eliminar este registro?</Translation>
+      <Translation Language="DE">Möchten Sie dieses Protokoll wirklich löschen?</Translation>
+      <Translation Language="IT">Sei sicuro di voler eliminare questo registro?</Translation>
+      <Translation Language="PT">Tem a certeza de que deseja eliminar este registo?</Translation>
+      <Translation Language="RU">Удалить этот журнал?</Translation>
+    </Text>
+    <Text Id="__SingleUse_FYM8" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">No Logs Found</Translation>
+      <Translation Language="ZHS" TypographyId="LargeZHS">未发现任何日志</Translation>
+      <Translation Language="FR">Aucun journal trouvé</Translation>
+      <Translation Language="ES">No se ha encontrado &#10;ningún registro</Translation>
+      <Translation Language="DE">Keine Protokolle gefunden</Translation>
+      <Translation Language="IT">Nessun registro trovato</Translation>
+      <Translation Language="PT">Não foram encontrados&#10;registos</Translation>
+      <Translation Language="RU">Журналы не найдены</Translation>
+    </Text>
+    <Text Id="__SingleUse_F6X7" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Pressure</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_0J2R" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Precursor</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_UJ71" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Base</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_0QIM" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Run Count: &lt;value&gt;</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_2KM6" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Process is aborting&#10;Please Wait...</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">工作过程正在终止&#10;请等待…</Translation>
+      <Translation Language="FR" TypographyId="Small">Abandon du processus&#10;Veuillez patienter...</Translation>
+      <Translation Language="ES" TypographyId="Small">Procedimiento de aborto en curso&#10;Espere un momento...</Translation>
+      <Translation Language="DE" TypographyId="Small">Prozess wird abgebrochen&#10;Bitte warten ...</Translation>
+      <Translation Language="IT" TypographyId="Small">Annullamento del processo in corso&#10;Si prega di attendere...</Translation>
+      <Translation Language="PT" TypographyId="Small">Processo a ser abortado&#10;Por favor, espere....</Translation>
+      <Translation Language="RU" TypographyId="Small">Прерывание процесса&#10;Ожидайте...</Translation>
+    </Text>
+    <Text Id="Error_Generic" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">An Error has Occurred. </Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">发生错误</Translation>
+      <Translation Language="FR">Une erreur s'est produite</Translation>
+      <Translation Language="ES">Se ha producido un error. </Translation>
+      <Translation Language="DE">Es ist ein Fehler aufgetreten. </Translation>
+      <Translation Language="IT">Si è verificato un errore. </Translation>
+      <Translation Language="PT">Ocorreu um erro. </Translation>
+      <Translation Language="RU">Произошла ошибка. </Translation>
+    </Text>
+    <Text Id="__SingleUse_5D60" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="Error_Leak" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">There was a leak in the chamber. Please restart the process.</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">熏显腔有泄漏.请重新启动工作过程.</Translation>
+      <Translation Language="FR">La chambre présentait une fuite. Veuillez redémarrer le processus. </Translation>
+      <Translation Language="ES">Se ha producido una fuga en la cámara. Reinicie el proceso.</Translation>
+      <Translation Language="DE">In der Kammer war ein Leck. Starten Sie den Prozess erneut.</Translation>
+      <Translation Language="IT">Vi è stata una perdita nella camera. Si prega di riavviare il processo.</Translation>
+      <Translation Language="PT">A câmara tinha uma fuga. Por favor, reinicie o processo.</Translation>
+      <Translation Language="RU">Утечка в камере. Запустите процесс еще раз.</Translation>
+    </Text>
+    <Text Id="Error_Door" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Door Interlock Switch is not ready. Please make sure door is closed.</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">门联锁开关未就位.请确认门已关好.</Translation>
+      <Translation Language="FR">Le commutateur de verrouillage de la porte n'est pas prêt. Veuillez vérifier que la porte est fermée.</Translation>
+      <Translation Language="ES">El interruptor de enclavamiento de la puerta no está preparado. Verifique que la puerta está cerrada.</Translation>
+      <Translation Language="DE">Türverriegelungsschalter ist nicht bereit. Stellen Sie sicher, dass die Tür geschlossen ist.</Translation>
+      <Translation Language="IT">L’interruttore di interblocco sportello non è pronto. Si prega di verificare che lo sportello sia chiuso.</Translation>
+      <Translation Language="PT">Interruptor de interbloqueio da porta não está pronto. Por favor, certifique-se de que a porta está fechada.</Translation>
+      <Translation Language="RU">Замок блокировки двери не готов. Проверьте, закрыта ли дверь.</Translation>
+    </Text>
+    <Text Id="__SingleUse_8AXJ" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="Date_Jan" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Jan</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">1月</Translation>
+      <Translation Language="FR">Janv</Translation>
+      <Translation Language="ES">Ene</Translation>
+      <Translation Language="DE">Jan</Translation>
+      <Translation Language="IT">Gen</Translation>
+      <Translation Language="PT">Jan</Translation>
+      <Translation Language="RU">Янв</Translation>
+    </Text>
+    <Text Id="Date_Feb" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Feb</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">2月</Translation>
+      <Translation Language="FR">Fév</Translation>
+      <Translation Language="ES">Feb</Translation>
+      <Translation Language="DE">Feb</Translation>
+      <Translation Language="IT">Feb</Translation>
+      <Translation Language="PT">Fev</Translation>
+      <Translation Language="RU">Фев</Translation>
+    </Text>
+    <Text Id="Date_Mar" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Mar</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">3月</Translation>
+      <Translation Language="FR">Mars</Translation>
+      <Translation Language="ES">Mar</Translation>
+      <Translation Language="DE">Mär</Translation>
+      <Translation Language="IT">Mar</Translation>
+      <Translation Language="PT">Mar</Translation>
+      <Translation Language="RU">Мар</Translation>
+    </Text>
+    <Text Id="Date_Apr" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Apr</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">4月</Translation>
+      <Translation Language="FR">Avr</Translation>
+      <Translation Language="ES">Abr</Translation>
+      <Translation Language="DE">Apr</Translation>
+      <Translation Language="IT">Apr</Translation>
+      <Translation Language="PT">Abr</Translation>
+      <Translation Language="RU">Апр</Translation>
+    </Text>
+    <Text Id="Date_May" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">May</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">5月</Translation>
+      <Translation Language="FR">Mai</Translation>
+      <Translation Language="ES">May</Translation>
+      <Translation Language="DE">Mai</Translation>
+      <Translation Language="IT">Mag</Translation>
+      <Translation Language="PT">Maio</Translation>
+      <Translation Language="RU">Май</Translation>
+    </Text>
+    <Text Id="Date_Jun" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Jun</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">6月</Translation>
+      <Translation Language="FR">Juin</Translation>
+      <Translation Language="ES">Jun</Translation>
+      <Translation Language="DE">Jun</Translation>
+      <Translation Language="IT">Giu</Translation>
+      <Translation Language="PT">Jun</Translation>
+      <Translation Language="RU">Июн</Translation>
+    </Text>
+    <Text Id="Date_Jul" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Jul</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">7月</Translation>
+      <Translation Language="FR">Juil</Translation>
+      <Translation Language="ES">Jul</Translation>
+      <Translation Language="DE">Jul</Translation>
+      <Translation Language="IT">Lug</Translation>
+      <Translation Language="PT">Jul</Translation>
+      <Translation Language="RU">Июл</Translation>
+    </Text>
+    <Text Id="Date_Aug" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Aug</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">8月</Translation>
+      <Translation Language="FR">Août</Translation>
+      <Translation Language="ES">Ago</Translation>
+      <Translation Language="DE">Aug</Translation>
+      <Translation Language="IT">Ago</Translation>
+      <Translation Language="PT">Ago</Translation>
+      <Translation Language="RU">Авг</Translation>
+    </Text>
+    <Text Id="Date_Sep" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Sep</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">9月</Translation>
+      <Translation Language="FR">Sept</Translation>
+      <Translation Language="ES">Sep</Translation>
+      <Translation Language="DE">Sep</Translation>
+      <Translation Language="IT">Set</Translation>
+      <Translation Language="PT">Set</Translation>
+      <Translation Language="RU">Сен</Translation>
+    </Text>
+    <Text Id="Date_Oct" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Oct</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">10月</Translation>
+      <Translation Language="FR">Oct</Translation>
+      <Translation Language="ES">Oct</Translation>
+      <Translation Language="DE">Okt</Translation>
+      <Translation Language="IT">Ott</Translation>
+      <Translation Language="PT">Out</Translation>
+      <Translation Language="RU">Окт</Translation>
+    </Text>
+    <Text Id="Date_Nov" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Nov</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">11月</Translation>
+      <Translation Language="FR">Nov</Translation>
+      <Translation Language="ES">Nov</Translation>
+      <Translation Language="DE">Nov</Translation>
+      <Translation Language="IT">Nov</Translation>
+      <Translation Language="PT">Nov</Translation>
+      <Translation Language="RU">Ноя</Translation>
+    </Text>
+    <Text Id="Date_Dec" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Dec</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">12月</Translation>
+      <Translation Language="FR">Déc</Translation>
+      <Translation Language="ES">Dic</Translation>
+      <Translation Language="DE">Dez</Translation>
+      <Translation Language="IT">Dic</Translation>
+      <Translation Language="PT">Dez</Translation>
+      <Translation Language="RU">Дек</Translation>
+    </Text>
+    <Text Id="Log_TestSuccessValue" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Success(&lt;value&gt;%)</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">成功(&lt;value&gt;%)</Translation>
+      <Translation Language="FR">Réussite(&lt;value&gt;%)</Translation>
+      <Translation Language="ES">Éxito(&lt;value&gt;%)</Translation>
+      <Translation Language="DE">Erfolg (&lt;value&gt; %)</Translation>
+      <Translation Language="IT">Riuscito(&lt;value&gt;%)</Translation>
+      <Translation Language="PT">Sucesso (&lt;value&gt;%)</Translation>
+      <Translation Language="RU">Успешно (&lt;value&gt;%)</Translation>
+    </Text>
+    <Text Id="Log_TestFailValue" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Fail(&lt;value&gt;%)</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">失败(&lt;value&gt;%)</Translation>
+      <Translation Language="FR">Échec(&lt;value&gt;%)</Translation>
+      <Translation Language="ES">Fallo(&lt;value&gt;%)</Translation>
+      <Translation Language="DE">Fehler (&lt;value&gt; %)</Translation>
+      <Translation Language="IT">Fallito(&lt;value&gt;%)</Translation>
+      <Translation Language="PT">Falha (&lt;value&gt;%)</Translation>
+      <Translation Language="RU">Ошибка (&lt;value&gt;%)</Translation>
+    </Text>
+    <Text Id="__SingleUse_707B" TypographyId="Small" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Copper&#10;Based</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">铜材质的</Translation>
+      <Translation Language="FR">À base&#10;de cuivre</Translation>
+      <Translation Language="ES">Aleación de&#10;cobre</Translation>
+      <Translation Language="DE">Kupfer-&#10;basis</Translation>
+      <Translation Language="IT">A base &#10;di rame</Translation>
+      <Translation Language="PT">À base &#10;de Cobre&#10;</Translation>
+      <Translation Language="RU">На основе&#10;меди</Translation>
+    </Text>
+    <Text Id="__SingleUse_UBF3" TypographyId="Small" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Silver&#10;Coloured</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">银色的</Translation>
+      <Translation Language="FR">Couleur&#10;Argent</Translation>
+      <Translation Language="ES">Color&#10;plata</Translation>
+      <Translation Language="DE">Silber-&#10;farben</Translation>
+      <Translation Language="IT">Colorato &#10;argento</Translation>
+      <Translation Language="PT">Cor &#10;prateada&#10;</Translation>
+      <Translation Language="RU">Серебристого&#10;цвета</Translation>
+    </Text>
+    <Text Id="__SingleUse_ON14" TypographyId="Small" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Large&#10;Chamber</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">大&#10;熏显腔</Translation>
+      <Translation Language="FR">Grande&#10;chambre</Translation>
+      <Translation Language="ES">Cámara&#10;grande</Translation>
+      <Translation Language="DE">Große&#10;Kammer</Translation>
+      <Translation Language="IT">Camera &#10;grande</Translation>
+      <Translation Language="PT">Câmara &#10;grande&#10;</Translation>
+      <Translation Language="RU">Большая&#10;камера</Translation>
+    </Text>
+    <Text Id="__SingleUse_Y5TW" TypographyId="Small" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Small&#10;Chamber</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">小&#10;熏显腔</Translation>
+      <Translation Language="FR">Petite&#10;chambre</Translation>
+      <Translation Language="ES">Cámara&#10;pequeña</Translation>
+      <Translation Language="DE">Kleine&#10;Kammer</Translation>
+      <Translation Language="IT">Camera &#10;piccola</Translation>
+      <Translation Language="PT">Câmara &#10;pequena&#10;</Translation>
+      <Translation Language="RU">Малая&#10;камера</Translation>
+    </Text>
+    <Text Id="__SingleUse_ZGVA" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Format</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_44C4" TypographyId="Small" Alignment="Right" Direction="LTR">
+      <Translation Language="GB">Serial: &lt;value&gt;</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">序列号: &lt;value&gt;</Translation>
+      <Translation Language="FR">Série : &lt;value&gt;</Translation>
+      <Translation Language="ES">Serial: &lt;value&gt;</Translation>
+      <Translation Language="DE">Seriennummer: &lt;value&gt;</Translation>
+      <Translation Language="IT">Seriale: &lt;value&gt;</Translation>
+      <Translation Language="PT">Nº de série: &lt;value&gt;</Translation>
+      <Translation Language="RU">Серийный № &lt;value&gt;</Translation>
+    </Text>
+    <Text Id="FirmwareVersion" TypographyId="Small" Alignment="Right" Direction="LTR">
+      <Translation Language="GB">Firmware Version:</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">固件版本号:</Translation>
+      <Translation Language="FR">Version de micrologiciel :</Translation>
+      <Translation Language="ES">Versión de firmware:</Translation>
+      <Translation Language="DE">Firmware-Version:</Translation>
+      <Translation Language="IT">Versione firmware:</Translation>
+      <Translation Language="PT">Versão de firmware:</Translation>
+      <Translation Language="RU">Версия микропрограммы:</Translation>
+    </Text>
+    <Text Id="SerialNumber" TypographyId="Small" Alignment="Right" Direction="LTR">
+      <Translation Language="GB">Serial Number:</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">序列号:</Translation>
+      <Translation Language="FR">Numéro de série :</Translation>
+      <Translation Language="ES">Número de serie:</Translation>
+      <Translation Language="DE">Seriennummer:</Translation>
+      <Translation Language="IT">Numero di serie:</Translation>
+      <Translation Language="PT">Número de série:</Translation>
+      <Translation Language="RU">Серийный номер:</Translation>
+    </Text>
+    <Text Id="__SingleUse_MQCB" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_A69Z" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="Chamber_Large" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Large Chamber</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">大熏显腔</Translation>
+      <Translation Language="FR">Grande chambre</Translation>
+      <Translation Language="ES">Cámara grande</Translation>
+      <Translation Language="DE">Große Kammer</Translation>
+      <Translation Language="IT">Camera grande</Translation>
+      <Translation Language="PT">Câmara grande</Translation>
+      <Translation Language="RU">Большая камера</Translation>
+    </Text>
+    <Text Id="Metal_Copper" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Copper Based</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">铜材质的</Translation>
+      <Translation Language="FR">À base de cuivre</Translation>
+      <Translation Language="ES">Aleación de cobre</Translation>
+      <Translation Language="DE">Kupferbasis</Translation>
+      <Translation Language="IT">A base di rame</Translation>
+      <Translation Language="PT">À base de Cobre</Translation>
+      <Translation Language="RU">На основе меди</Translation>
+    </Text>
+    <Text Id="Chamber_Small" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Small Chamber</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">小熏显腔</Translation>
+      <Translation Language="FR">Petite chambre</Translation>
+      <Translation Language="ES">Cámara pequeña</Translation>
+      <Translation Language="DE">Kleine Kammer</Translation>
+      <Translation Language="IT">Camera piccola</Translation>
+      <Translation Language="PT">Câmara pequena</Translation>
+      <Translation Language="RU">Малая камера</Translation>
+    </Text>
+    <Text Id="Metal_Silver" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Silver Coloured</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">银色的</Translation>
+      <Translation Language="FR">Couleur Argent</Translation>
+      <Translation Language="ES">Color plata</Translation>
+      <Translation Language="DE">Silberfarben</Translation>
+      <Translation Language="IT">Colorato argento</Translation>
+      <Translation Language="PT">Cor prateada</Translation>
+      <Translation Language="RU">Серебристого цвета</Translation>
+    </Text>
+    <Text Id="DevelopR1" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">DEVELOP-R1</Translation>
+      <Translation Language="ZHS">DEVELOP-R1</Translation>
+      <Translation Language="FR">DEVELOP-R1</Translation>
+      <Translation Language="ES">DEVELOP-R1</Translation>
+      <Translation Language="DE">DEVELOP-R1</Translation>
+      <Translation Language="IT">DEVELOP-R1</Translation>
+      <Translation Language="PT">DEVELOP-R1</Translation>
+      <Translation Language="RU">DEVELOP-R1</Translation>
+    </Text>
+    <Text Id="DevelopR2" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">DEVELOP-R2</Translation>
+      <Translation Language="ZHS">DEVELOP-R2</Translation>
+      <Translation Language="FR">DEVELOP-R2</Translation>
+      <Translation Language="ES">DEVELOP-R2</Translation>
+      <Translation Language="DE">DEVELOP-R2</Translation>
+      <Translation Language="IT">DEVELOP-R2</Translation>
+      <Translation Language="PT">DEVELOP-R2</Translation>
+      <Translation Language="RU">DEVELOP-R2</Translation>
+    </Text>
+    <Text Id="DevelopR3" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">DEVELOP-R3</Translation>
+      <Translation Language="ZHS">DEVELOP-R3</Translation>
+      <Translation Language="FR">DEVELOP-R3</Translation>
+      <Translation Language="ES">DEVELOP-R3</Translation>
+      <Translation Language="DE">DEVELOP-R3</Translation>
+      <Translation Language="IT">DEVELOP-R3</Translation>
+      <Translation Language="PT">DEVELOP-R3</Translation>
+      <Translation Language="RU">DEVELOP-R3</Translation>
+    </Text>
+    <Text Id="SelectType" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Select Metal</Translation>
+      <Translation Language="ZHS" TypographyId="LargeZHS">选择金属</Translation>
+      <Translation Language="FR">Sélectionner le métal</Translation>
+      <Translation Language="ES">Seleccionar metal</Translation>
+      <Translation Language="DE">Metall auswählen</Translation>
+      <Translation Language="IT">Seleziona metallo</Translation>
+      <Translation Language="PT">Selecionar metal</Translation>
+      <Translation Language="RU">Выберите металл</Translation>
+    </Text>
+    <Text Id="SelectChamber" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Select Chamber</Translation>
+      <Translation Language="ZHS" TypographyId="LargeZHS">选择熏显腔</Translation>
+      <Translation Language="FR">Sélectionner la chambre</Translation>
+      <Translation Language="ES">Seleccionar cámara</Translation>
+      <Translation Language="DE">Kammer auswählen</Translation>
+      <Translation Language="IT">Seleziona camera</Translation>
+      <Translation Language="PT">Selecionar câmara</Translation>
+      <Translation Language="RU">Выберите камеру</Translation>
+    </Text>
+    <Text Id="DevelopR4" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">DEVELOP-R4</Translation>
+      <Translation Language="ZHS">DEVELOP-R4</Translation>
+      <Translation Language="FR">DEVELOP-R4</Translation>
+      <Translation Language="ES">DEVELOP-R4</Translation>
+      <Translation Language="DE">DEVELOP-R4</Translation>
+      <Translation Language="IT">DEVELOP-R4</Translation>
+      <Translation Language="PT">DEVELOP-R4</Translation>
+      <Translation Language="RU">DEVELOP-R4</Translation>
+    </Text>
+    <Text Id="__SingleUse_WSU4" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">A loss of power was detected.&#10;Attempt to continue? </Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">检测到断电.&#10;尝试继续?</Translation>
+      <Translation Language="FR">Une perte de courant a été détectée.&#10;Tenter de continuer ? </Translation>
+      <Translation Language="ES">Se ha detectado una pérdida de alimentación.&#10;¿Desea intentar continuar? </Translation>
+      <Translation Language="DE">Es wurde ein Leistungsverlust erkannt.&#10;Soll versucht werden, fortzufahren? </Translation>
+      <Translation Language="IT">È stata rilevata una perdita di potenza.&#10;Prova a continuare? </Translation>
+      <Translation Language="PT">Detetada perda de potência.&#10;Tentar continuar? </Translation>
+      <Translation Language="RU">Обнаружено отключение питания.&#10;Попытаться продолжить? </Translation>
+    </Text>
+    <Text Id="__SingleUse_M6HY" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Fumehood Airflow Error!&#10;Fix issue or cancel.</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">净气柜空气流量错误!&#10;解决问题或取消.</Translation>
+      <Translation Language="FR">Erreur de débit d'air dans la hotte aspirante !&#10;Corriger le problème ou annuler.</Translation>
+      <Translation Language="ES">¡Error de caudal de aire de la campana de humos!&#10;Resolver el problema o cancelar.</Translation>
+      <Translation Language="DE">Luftstrom-Fehler am Dunstabzug!&#10;Beheben Sie das Problem oder brechen Sie den Prozess ab.</Translation>
+      <Translation Language="IT">Errore nel flusso di aria di aspirazione fumi!&#10;Risolvere il problema o annullare.</Translation>
+      <Translation Language="PT">Erro do fluxo de ar da Hotte!&#10;Resolver o problema ou cancelar.</Translation>
+      <Translation Language="RU">Ошибка тяги вытяжки!&#10;Устраните неполадку или отмените операцию.</Translation>
+    </Text>
+    <Text Id="Cancel" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Cancel</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">取消</Translation>
+      <Translation Language="FR">Annuler</Translation>
+      <Translation Language="ES">Cancelar</Translation>
+      <Translation Language="DE">Abbrechen</Translation>
+      <Translation Language="IT">Annulla</Translation>
+      <Translation Language="PT">Cancelar</Translation>
+      <Translation Language="RU">Отмена</Translation>
+    </Text>
+    <Text Id="FumeIssueAllowCancel" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Fumehood Airflow Error&#10;Fix issue or cancel.</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">净气柜空气流量错误&#10;解决问题或取消.</Translation>
+      <Translation Language="FR">Erreur de débit d'air dans la hotte aspirante&#10;Corriger le problème ou annuler.</Translation>
+      <Translation Language="ES">Error de caudal de aire de la campana de humos&#10;Resolver el problema o cancelar.</Translation>
+      <Translation Language="DE">Luftstrom-Fehler am Dunstabzug&#10;Beheben Sie das Problem oder brechen Sie den Prozess ab.</Translation>
+      <Translation Language="IT">Errore nel flusso di aria di aspirazione fumi&#10;Risolvere il problema o annullare.</Translation>
+      <Translation Language="PT">Erro do fluxo de ar da Hotte&#10;Resolver o problema ou cancelar.</Translation>
+      <Translation Language="RU">Ошибка тяги вытяжки!&#10;Устраните неполадку&#10;или отмените операцию.</Translation>
+    </Text>
+    <Text Id="FumeIssue" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Fumehood Airflow Error&#10;Fix issue.</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">净气柜空气流量错误&#10;解决问题.</Translation>
+      <Translation Language="FR">Erreur de débit d'air dans la hotte aspirante&#10;Corriger le problème.</Translation>
+      <Translation Language="ES">Error de caudal de aire de la campana de humos&#10;Resolver el problema.</Translation>
+      <Translation Language="DE">Luftstrom-Fehler am Dunstabzug&#10;Beheben Sie das Problem.</Translation>
+      <Translation Language="IT">Errore nel flusso di aria di aspirazione fumi&#10;Risolvere il problema.</Translation>
+      <Translation Language="PT">Erro do fluxo de ar da Hotte&#10;Resolver o problema.</Translation>
+      <Translation Language="RU">Ошибка тяги вытяжки!&#10;Устраните неполадку.</Translation>
+    </Text>
+    <Text Id="MetalType" TypographyId="Small" Alignment="Right" Direction="LTR">
+      <Translation Language="GB">Metal Type:</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">金属类型:</Translation>
+      <Translation Language="FR">Type de métal :</Translation>
+      <Translation Language="ES">Tipo de metal:</Translation>
+      <Translation Language="DE">Metalltyp:</Translation>
+      <Translation Language="IT">Tipo di metallo:</Translation>
+      <Translation Language="PT">Tipo de metal:</Translation>
+      <Translation Language="RU">Тип металла:</Translation>
+    </Text>
+    <Text Id="ChamberType" TypographyId="Small" Alignment="Right" Direction="LTR">
+      <Translation Language="GB">Chamber Type:</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">熏显腔类型:</Translation>
+      <Translation Language="FR">Type de chambre :</Translation>
+      <Translation Language="ES">Tipo de cámara:</Translation>
+      <Translation Language="DE">Kammertyp:</Translation>
+      <Translation Language="IT">Tipo di camera:</Translation>
+      <Translation Language="PT">Tipo de câmara:</Translation>
+      <Translation Language="RU">Тип камеры:</Translation>
+    </Text>
+    <Text Id="DevelopRType" TypographyId="Small" Alignment="Right" Direction="LTR">
+      <Translation Language="GB">DEVELOP-R Type:</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">熏显试剂类型:</Translation>
+      <Translation Language="FR">Type de DEVELOP-R :</Translation>
+      <Translation Language="ES">Tipo de DEVELOP-R:</Translation>
+      <Translation Language="DE">DEVELOP-R-Typ:</Translation>
+      <Translation Language="IT">Tipo di DEVELOP-R:</Translation>
+      <Translation Language="PT">Tipo de DEVELOP-R:</Translation>
+      <Translation Language="RU">Тип DEVELOP-R:</Translation>
+    </Text>
+    <Text Id="DevelopR1Log" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">DEVELOP-R1</Translation>
+      <Translation Language="ZHS">DEVELOP-R1</Translation>
+      <Translation Language="FR">DEVELOP-R1</Translation>
+      <Translation Language="ES">DEVELOP-R1</Translation>
+      <Translation Language="DE">DEVELOP-R1</Translation>
+      <Translation Language="IT">DEVELOP-R1</Translation>
+      <Translation Language="PT">DEVELOP-R1</Translation>
+      <Translation Language="RU">DEVELOP-R1</Translation>
+    </Text>
+    <Text Id="DevelopR2Log" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">DEVELOP-R2</Translation>
+      <Translation Language="ZHS">DEVELOP-R2</Translation>
+      <Translation Language="FR">DEVELOP-R2</Translation>
+      <Translation Language="ES">DEVELOP-R2</Translation>
+      <Translation Language="DE">DEVELOP-R2</Translation>
+      <Translation Language="IT">DEVELOP-R2</Translation>
+      <Translation Language="PT">DEVELOP-R2</Translation>
+      <Translation Language="RU">DEVELOP-R2</Translation>
+    </Text>
+    <Text Id="DevelopR3Log" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">DEVELOP-R3</Translation>
+      <Translation Language="ZHS">DEVELOP-R3</Translation>
+      <Translation Language="FR">DEVELOP-R3</Translation>
+      <Translation Language="ES">DEVELOP-R3</Translation>
+      <Translation Language="DE">DEVELOP-R3</Translation>
+      <Translation Language="IT">DEVELOP-R3</Translation>
+      <Translation Language="PT">DEVELOP-R3</Translation>
+      <Translation Language="RU">DEVELOP-R3</Translation>
+    </Text>
+    <Text Id="DevelopR4Log" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">DEVELOP-R4</Translation>
+      <Translation Language="ZHS">DEVELOP-R4</Translation>
+      <Translation Language="FR">DEVELOP-R4</Translation>
+      <Translation Language="ES">DEVELOP-R4</Translation>
+      <Translation Language="DE">DEVELOP-R4</Translation>
+      <Translation Language="IT">DEVELOP-R4</Translation>
+      <Translation Language="PT">DEVELOP-R4</Translation>
+      <Translation Language="RU">DEVELOP-R4</Translation>
+    </Text>
+    <Text Id="__SingleUse_KP7O" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Fume hood MUST be active before continuing</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">必须先启动净气柜才能继续操作</Translation>
+      <Translation Language="FR">La hotte aspirante DOIT être active avant de poursuivre</Translation>
+      <Translation Language="ES">La campana de humos DEBE estar en marcha antes de continuar</Translation>
+      <Translation Language="DE">Dunstabzug MUSS aktiv sein, bevor fortgefahren wird</Translation>
+      <Translation Language="IT">La cappa di aspirazione deve essere attiva prima di continuare</Translation>
+      <Translation Language="PT">A hotte DEVE estar ativa antes de continuar</Translation>
+      <Translation Language="RU">Перед продолжением ВКЛЮЧИТЕ вытяжку</Translation>
+    </Text>
+    <Text Id="__SingleUse_TRHA" TypographyId="Small" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Current Filter Health - &lt;value&gt;%</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">当前空气滤芯寿命 - &lt;value&gt;%</Translation>
+      <Translation Language="FR">État actuel du filtre - &lt;value&gt;%</Translation>
+      <Translation Language="ES">Estado actual del filtro - &lt;value&gt;%</Translation>
+      <Translation Language="DE">Aktueller Filterzustand - &lt;value&gt; %</Translation>
+      <Translation Language="IT">Salute corrente del filtro - &lt;value&gt;%</Translation>
+      <Translation Language="PT">Estado atual do filtro – &lt;value&gt;%</Translation>
+      <Translation Language="RU">Текущее здоровье фильтра - &lt;value&gt;%</Translation>
+    </Text>
+    <Text Id="FumingVacuumFailiure" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Vacuum Failure&#10;Unable to continue fuming</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">抽真空故障&#10;无法继续熏显</Translation>
+      <Translation Language="FR">Défaillance de vide&#10;Impossible de poursuivre la fumigation</Translation>
+      <Translation Language="ES">Fallo de vacío&#10;La fumigación no puede continuar</Translation>
+      <Translation Language="DE">Vakuumfehler&#10;Bedampfung kann nicht fortgesetzt werden</Translation>
+      <Translation Language="IT">Guasto aspirazione&#10;Impossibile proseguire la fumigazione</Translation>
+      <Translation Language="PT">Falha do vácuo&#10;Não é possível continuar a atuação dos vapores</Translation>
+      <Translation Language="RU">Ошибка вакуумирования&#10;Невозможно продолжить обработку</Translation>
+    </Text>
+    <Text Id="__SingleUse_UJB2" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Lid Control</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">顶盖控制</Translation>
+      <Translation Language="FR" TypographyId="Small">Contrôle du couvercle</Translation>
+      <Translation Language="ES">Control de la tapa</Translation>
+      <Translation Language="DE">Deckel-Steuerung</Translation>
+      <Translation Language="IT" TypographyId="Small">Controllo del coperchio</Translation>
+      <Translation Language="PT">Controlo da tampa</Translation>
+      <Translation Language="RU" TypographyId="Small">Управление крышкой</Translation>
+    </Text>
+    <Text Id="ExportAll" TypographyId="Small" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Export All</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">导出全部日志</Translation>
+      <Translation Language="FR">Exporter Tout</Translation>
+      <Translation Language="ES">Exportar todo</Translation>
+      <Translation Language="DE">Alle exportieren</Translation>
+      <Translation Language="IT">Esporta tutto</Translation>
+      <Translation Language="PT">Exportar tudo</Translation>
+      <Translation Language="RU">Экспортировать &#10;все</Translation>
+    </Text>
+    <Text Id="LogsExporting" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Exporting Logs&#10;Please wait</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">正在导出日志&#10;请等待</Translation>
+      <Translation Language="FR">Export des journaux&#10;Veuillez patienter</Translation>
+      <Translation Language="ES">Exportación de registros en curso&#10;Espere un momento</Translation>
+      <Translation Language="DE">Protokolle werden exportiert&#10;Bitte warten</Translation>
+      <Translation Language="IT">Esportazione dei registri in corso&#10;Si prega di attendere</Translation>
+      <Translation Language="PT">A exportar registos&#10;Por favor, espere</Translation>
+      <Translation Language="RU">Экспорт журналов&#10;Подождите</Translation>
+    </Text>
+    <Text Id="LogsExportingFinished" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Exporting Complete.</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">导出完毕</Translation>
+      <Translation Language="FR">Export terminé</Translation>
+      <Translation Language="ES">Completada la exportación.</Translation>
+      <Translation Language="DE">Exportvorgang abgeschlossen.</Translation>
+      <Translation Language="IT">Esportazione completata.</Translation>
+      <Translation Language="PT">Exportação concluída.</Translation>
+      <Translation Language="RU">Экспорт выполнен.</Translation>
+    </Text>
+    <Text Id="LogsExportingError" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Error(&lt;value&gt;)&#10;An Error occurred whilst &#10;exporting the logs.</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">错误(&lt;value&gt;)&#10;导出日志过程中发生错误.</Translation>
+      <Translation Language="FR">Erreur(&lt;value&gt;)&#10;Une erreur s'est produite en &#10;exportant les journaux.</Translation>
+      <Translation Language="ES">Error(&lt;value&gt;)&#10;Se ha producido un error durante &#10;la exportación de registros.</Translation>
+      <Translation Language="DE">Fehler (&lt;value&gt;)&#10;Beim Exportieren der Protokolle &#10;ist ein Fehler aufgetreten.</Translation>
+      <Translation Language="IT">Errore(&lt;value&gt;)&#10;Si è verificato un errore durante l'esportazione dei registri.</Translation>
+      <Translation Language="PT">Erro (&lt;value&gt;)&#10;Ocorreu um erro durante &#10;a exportação dos registos.</Translation>
+      <Translation Language="RU">Ошибка (&lt;value&gt;)&#10;Возникла ошибка &#10;при экспорте журнала.</Translation>
+    </Text>
+    <Text Id="Instruction_SelectMetal" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Select metal type of evidence being processed.</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">选择要进行处理的检材的金属类型</Translation>
+      <Translation Language="FR">Sélectionner le type de métal de l'élément de preuve traité.</Translation>
+      <Translation Language="ES">Seleccione el tipo de metal de la prueba que se va a procesar.</Translation>
+      <Translation Language="DE">Wählen Sie den Metalltyp des Beweismaterials aus, das gerade verarbeitet wird.</Translation>
+      <Translation Language="IT">Selezionare il tipo di metallo dell’elemento di prova in corso di trattamento.</Translation>
+      <Translation Language="PT">Selecionar o tipo de metal da prova que está a ser processada.</Translation>
+      <Translation Language="RU">Выберите тип металла или свидетельства для обработки.</Translation>
+    </Text>
+    <Text Id="ResetFilter" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Reset Filter</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">重置空气滤芯寿命</Translation>
+      <Translation Language="FR">Réinitialiser le filtre</Translation>
+      <Translation Language="ES">Puesta a cero del filtro</Translation>
+      <Translation Language="DE">Filter zurücksetzen</Translation>
+      <Translation Language="IT">Resetta il filtro</Translation>
+      <Translation Language="PT">Restabelecer o filtro</Translation>
+      <Translation Language="RU">Сброс фильтра</Translation>
+    </Text>
+    <Text Id="ConfirmResetFilter" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Are you sure you want to reset the filter health?</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">是否确认重置空气滤芯寿命?</Translation>
+      <Translation Language="FR">Voulez-vous vraiment réinitialiser l'état du filtre ?</Translation>
+      <Translation Language="ES">¿Está seguro de querer poner a cero el estado del filtro?</Translation>
+      <Translation Language="DE">Möchten Sie den Filterzustand wirklich zurücksetzen?</Translation>
+      <Translation Language="IT">Resettare lo stato di salute del filtro?</Translation>
+      <Translation Language="PT">Tem a certeza de que deseja restabelecer o estado do filtro?</Translation>
+      <Translation Language="RU">Сбросить значение здоровья фильтра?</Translation>
+    </Text>
+    <Text Id="DemoModePaused" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Demo Mode&#10;Paused</Translation>
+      <Translation Language="ZHS">Demo Mode&#10;Paused</Translation>
+      <Translation Language="FR">Demo Mode&#10;Paused</Translation>
+      <Translation Language="ES">Demo Mode&#10;Paused</Translation>
+      <Translation Language="DE">Demo Mode&#10;Paused</Translation>
+      <Translation Language="IT">Demo Mode&#10;Paused</Translation>
+      <Translation Language="PT">Demo Mode&#10;Paused</Translation>
+      <Translation Language="RU">Demo Mode&#10;Paused</Translation>
+    </Text>
+    <Text Id="__SingleUse_OWOD" TypographyId="Small" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Unable to reach optimal pressure. &#10;If the problem persists a &#10;service may be required</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">无法达到最佳压力。&#10;如果问题仍然存在&#10;可能需要服务</Translation>
+      <Translation Language="FR">Impossible d’atteindre la pression optimale. &#10;Si le problème persiste un &#10;le service peut être requis</Translation>
+      <Translation Language="ES">No se puede alcanzar la presión óptima. &#10;Si el problema persiste un &#10;servicio puede ser requerido</Translation>
+      <Translation Language="DE">Optimaler Druck nicht erreicht. &#10;Wenn das Problem weiterhin besteht &#10;a Service kann erforderlich sein</Translation>
+      <Translation Language="IT">Impossibile raggiungere la pressione ottimale. &#10;Se il problema persiste a &#10;servizio può essere richiesto</Translation>
+      <Translation Language="PT">Incapaz de atingir a pressão ideal. &#10;Se o problema persistir &#10;serviço pode ser necessário </Translation>
+      <Translation Language="RU">Невозможно достичь оптимального давления. &#10;Если проблема сохраняется &#10;услуга может потребоваться</Translation>
+    </Text>
+    <Text Id="PumpdownVacuumFailiure" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Vacuum Failiure&#10;Unable to achieve sufficient vacuum</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">真空失效&#10;无法实现足够的真空</Translation>
+      <Translation Language="FR">Échec du vide.&#10;Impossible d'atteindre un vide suffisant</Translation>
+      <Translation Language="ES">Falla de vacío. &#10;Incapaz de lograr suficiente vacío</Translation>
+      <Translation Language="DE">Vakuumversagen. &#10;Es kann kein ausreichendes Vakuum erreicht werden</Translation>
+      <Translation Language="IT">Vacuum Failiure. &#10;Incapace di raggiungere un vuoto sufficiente</Translation>
+      <Translation Language="PT">Falha a vácuo. &#10;Incapaz de conseguir vácuo suficiente</Translation>
+      <Translation Language="RU">Вакуумный отказ. &#10;Невозможно достичь достаточного вакуума</Translation>
+    </Text>
+    <Text Id="Error_Timeout" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Process Timeout has occurred. Please try again later.</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">已发生进程超时。请稍后再试。</Translation>
+      <Translation Language="FR">Le processus a expiré. Veuillez réessayer plus tard.</Translation>
+      <Translation Language="ES">El tiempo de espera del proceso ha ocurrido. Por favor, inténtelo de nuevo más tarde.</Translation>
+      <Translation Language="DE">Prozess-Timeout ist aufgetreten. Bitte versuchen Sie es später erneut.</Translation>
+      <Translation Language="IT">Si è verificato un timeout del processo. Per favore riprova più tardi.</Translation>
+      <Translation Language="PT">O tempo limite do processo ocorreu. Por favor, tente novamente mais tarde.</Translation>
+      <Translation Language="RU">Тайм-аут процесса произошел. Пожалуйста, попробуйте позже.</Translation>
+    </Text>
+    <Text Id="Language_PT" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Português (PT)</Translation>
+      <Translation Language="ZHS">Português (PT)</Translation>
+      <Translation Language="FR">Português (PT)</Translation>
+      <Translation Language="ES">Português (PT)</Translation>
+      <Translation Language="DE">Português (PT)</Translation>
+      <Translation Language="IT">Português (PT)</Translation>
+      <Translation Language="PT">Português (PT)</Translation>
+      <Translation Language="RU">Português (PT)</Translation>
+    </Text>
+    <Text Id="__SingleUse_XCYD" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">EMC Mode</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_9D2R" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Big Clock</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="LargePlaceholder" TypographyId="XXL" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_LYK3" TypographyId="XXL" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">00:00:00</Translation>
+      <Translation Language="ZHS">00:00:00</Translation>
+      <Translation Language="FR">00:00:00</Translation>
+      <Translation Language="ES">00:00:00</Translation>
+      <Translation Language="DE">00:00:00</Translation>
+      <Translation Language="IT">00:00:00</Translation>
+      <Translation Language="PT">00:00:00</Translation>
+      <Translation Language="RU">00:00:00</Translation>
+    </Text>
+    <Text Id="__SingleUse_86ZP" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Exit</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_6XL5" TypographyId="Small" Alignment="Right" Direction="LTR">
+      <Translation Language="GB">Elapsed Time: &lt;value&gt; minutes</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">过去: &lt;value&gt; 分钟</Translation>
+      <Translation Language="FR">Écoulé: &lt;value&gt; minutes</Translation>
+      <Translation Language="ES">Transcurrido: &lt;value&gt; Minutos</Translation>
+      <Translation Language="DE">Abgelaufen: &lt;value&gt; Minuten</Translation>
+      <Translation Language="IT">Trascorso: &lt;value&gt; Minuti</Translation>
+      <Translation Language="PT">Tempo: &lt;value&gt; Minutos</Translation>
+      <Translation Language="RU">Прошедшее: &lt;value&gt; минут</Translation>
+    </Text>
+    <Text Id="__SingleUse_ICR0" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">0</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">0</Translation>
+      <Translation Language="FR">0</Translation>
+      <Translation Language="ES">0</Translation>
+      <Translation Language="DE">0</Translation>
+      <Translation Language="IT">0</Translation>
+      <Translation Language="PT">0</Translation>
+      <Translation Language="RU">0</Translation>
+    </Text>
+    <Text Id="DeleteAll" TypographyId="Small" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Delete All</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">删除所有</Translation>
+      <Translation Language="FR">Supprimer tout</Translation>
+      <Translation Language="ES">Eliminar todos</Translation>
+      <Translation Language="DE">Alles löschen</Translation>
+      <Translation Language="IT">Cancella tutto</Translation>
+      <Translation Language="PT">Excluir tudo</Translation>
+      <Translation Language="RU">Удалить все</Translation>
+    </Text>
+    <Text Id="ConfirmDeleteAllLogs" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Are you sure you want to delete all logs?</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">您确定要删除所有日志吗？</Translation>
+      <Translation Language="FR">Êtes-vous sûr de vouloir supprimer tous les journaux?</Translation>
+      <Translation Language="ES">¿Estás seguro de que quieres eliminar todos los registros?</Translation>
+      <Translation Language="DE">Möchten Sie wirklich alle Protokolle löschen?</Translation>
+      <Translation Language="IT">Sei sicuro di voler cancellare tutti i log?</Translation>
+      <Translation Language="PT">Tem certeza de que deseja excluir todos os registros?</Translation>
+      <Translation Language="RU">Вы уверены, что хотите удалить все журналы?</Translation>
+    </Text>
+    <Text Id="DateTimePlaceholder" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="DefaultWildcard" TypographyId="MediumLarge" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+      <Translation Language="ZHS" TypographyId="MediumSmallZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_5HL9" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Beep when chamber is ready to fume</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">当熏显腔工作条件已就绪时发出蜂鸣音</Translation>
+      <Translation Language="FR">Bip lorsque la chambre est prête pour la fumigation</Translation>
+      <Translation Language="ES">Señal sonora cuando la cámara está preparada para la fumigación</Translation>
+      <Translation Language="DE">Signalton geben, wenn Kammer bedampfungsbereit ist</Translation>
+      <Translation Language="IT">Segnale acustico attivato quando la camera è pronta per la fumigazione</Translation>
+      <Translation Language="PT">Aviso sonoro quando a câmara estiver pronta para a atuação dos vapores</Translation>
+      <Translation Language="RU">Сигнал готовности камеры к обработке</Translation>
+    </Text>
+    <Text Id="__SingleUse_ERGJ" TypographyId="Default" Alignment="Right" Direction="LTR">
+      <Translation Language="GB">Standby Option:</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">待机选项</Translation>
+      <Translation Language="FR">Option de veille:</Translation>
+      <Translation Language="ES">Opción de espera:</Translation>
+      <Translation Language="DE">Bereithalten:</Translation>
+      <Translation Language="IT">Opzione di attesa:</Translation>
+      <Translation Language="PT">Opção de espera:</Translation>
+      <Translation Language="RU">Вариант ожидания:</Translation>
+    </Text>
+    <Text Id="__SingleUse_HDZG" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Off</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">离</Translation>
+      <Translation Language="FR">De</Translation>
+      <Translation Language="ES" TypographyId="Small">Apagado</Translation>
+      <Translation Language="DE">Aus</Translation>
+      <Translation Language="IT" TypographyId="Small">Via</Translation>
+      <Translation Language="PT">Fora</Translation>
+      <Translation Language="RU" TypographyId="Default">от</Translation>
+    </Text>
+    <Text Id="__SingleUse_WQAR" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Clock</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">时钟</Translation>
+      <Translation Language="FR">L'horloge</Translation>
+      <Translation Language="ES">Reloj</Translation>
+      <Translation Language="DE">Uhr</Translation>
+      <Translation Language="IT">Orologio</Translation>
+      <Translation Language="PT">Relógio</Translation>
+      <Translation Language="RU">Часы</Translation>
+    </Text>
+    <Text Id="__SingleUse_JBZ6" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Standard</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">标准</Translation>
+      <Translation Language="FR">La norme</Translation>
+      <Translation Language="ES">Estándar</Translation>
+      <Translation Language="DE">Standard</Translation>
+      <Translation Language="IT">Standard</Translation>
+      <Translation Language="PT">Padrão</Translation>
+      <Translation Language="RU">стандарт</Translation>
+    </Text>
+    <Text Id="General" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">General</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">一般</Translation>
+      <Translation Language="FR">Commun</Translation>
+      <Translation Language="ES">General</Translation>
+      <Translation Language="DE">Verbreitet</Translation>
+      <Translation Language="IT">Generale</Translation>
+      <Translation Language="PT">Geral</Translation>
+      <Translation Language="RU">общий</Translation>
+    </Text>
+    <Text Id="Language" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Language</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">语言</Translation>
+      <Translation Language="FR">Langue</Translation>
+      <Translation Language="ES">Idioma</Translation>
+      <Translation Language="DE">Sprache</Translation>
+      <Translation Language="IT">Lingua</Translation>
+      <Translation Language="PT">Idioma</Translation>
+      <Translation Language="RU">Язык</Translation>
+    </Text>
+    <Text Id="Time" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Time</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">时间</Translation>
+      <Translation Language="FR">Temps</Translation>
+      <Translation Language="ES">Hora</Translation>
+      <Translation Language="DE">Zeit</Translation>
+      <Translation Language="IT">Tempo</Translation>
+      <Translation Language="PT">Tempo</Translation>
+      <Translation Language="RU">Время</Translation>
+    </Text>
+    <Text Id="ConfirmLogOverwrite" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Continuing will overwrite a previous log, are you sure you want to continue?</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">继续将覆盖以前的日志，您确定要继续吗？</Translation>
+      <Translation Language="FR">Continuer écrasera un journal précédent, êtes-vous certain de vouloir continuer?</Translation>
+      <Translation Language="ES">Continuar sobrescribirá un registro anterior, ¿está seguro de que desea continuar?</Translation>
+      <Translation Language="DE">Wenn Sie fortfahren, wird ein vorheriges Protokoll überschrieben. Sind Sie sicher, dass Sie fortfahren möchten?</Translation>
+      <Translation Language="IT">Continuando si sovrascriverà un registro precedente, sei sicuro di voler continuare?</Translation>
+      <Translation Language="PT">Continuar substituindo um log anterior, você tem certeza de que deseja continuar?</Translation>
+      <Translation Language="RU">Продолжение перезапишет предыдущий журнал. Вы уверены, что хотите продолжить?</Translation>
+    </Text>
+    <Text Id="__SingleUse_9H3S" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">1</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_68H9" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">4</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_1346" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">7</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_WBVG" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">0</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_0IC4" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_RAV5" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">2</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_GS2Q" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">5</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_X3VH" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">8</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_NV1X" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">3</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_O2CF" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">6</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_JHSN" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">9</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_I2UU" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Ok</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_431A" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Clock Config</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_94O8" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_W7LN" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Purge Valve 2</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="PowerLossDetected" TypographyId="Small" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">A loss of power was detected. System will attempt to continue.</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">检测到掉电。 系统将尝试继续。</Translation>
+      <Translation Language="FR">Une perte de puissance a été détectée. Le système tentera de continuer.</Translation>
+      <Translation Language="ES">Se detectó una pérdida de potencia. El sistema intentará continuar.</Translation>
+      <Translation Language="DE">Ein Stromausfall wurde erkannt. Das System versucht, fortzufahren.</Translation>
+      <Translation Language="IT">È stata rilevata una perdita di potenza. Il sistema tenterà di continuare.</Translation>
+      <Translation Language="PT">Uma perda de energia foi detectada. O sistema tentará continuar.</Translation>
+      <Translation Language="RU">Обнаружена потеря питания. Система попытается продолжить.</Translation>
+    </Text>
+    <Text Id="__SingleUse_G0M7" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Force Lid</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_IXTA" TypographyId="Default" Alignment="Right" Direction="LTR">
+      <Translation Language="GB">Elapsed: &lt;value&gt;</Translation>
+      <Translation Language="ZHS">&lt;value&gt;</Translation>
+      <Translation Language="FR">&lt;value&gt;</Translation>
+      <Translation Language="ES">&lt;value&gt;</Translation>
+      <Translation Language="DE">&lt;value&gt;</Translation>
+      <Translation Language="IT">&lt;value&gt;</Translation>
+      <Translation Language="PT">&lt;value&gt;</Translation>
+      <Translation Language="RU">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="Format" TypographyId="Default" Alignment="Right" Direction="LTR">
+      <Translation Language="GB">Format:</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">格式：</Translation>
+      <Translation Language="FR">Format:</Translation>
+      <Translation Language="ES">Formato:</Translation>
+      <Translation Language="DE">Format:</Translation>
+      <Translation Language="IT">Formato:</Translation>
+      <Translation Language="PT">Formato:</Translation>
+      <Translation Language="RU">Формат:</Translation>
+    </Text>
+    <Text Id="Confirm" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Confirm</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS"> 确认</Translation>
+      <Translation Language="FR">Confirmer</Translation>
+      <Translation Language="ES">Confirmar</Translation>
+      <Translation Language="DE">Bestätigen</Translation>
+      <Translation Language="IT">Confermare</Translation>
+      <Translation Language="PT">Confirme</Translation>
+      <Translation Language="RU">Подтверждение</Translation>
+    </Text>
+    <Text Id="Date" TypographyId="Default" Alignment="Right" Direction="LTR">
+      <Translation Language="GB">Date:</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">日期</Translation>
+      <Translation Language="FR">Date</Translation>
+      <Translation Language="ES">Fecha</Translation>
+      <Translation Language="DE">Datum</Translation>
+      <Translation Language="IT">Data</Translation>
+      <Translation Language="PT">Encontro</Translation>
+      <Translation Language="RU">Свидание</Translation>
+    </Text>
+    <Text Id="DateYMD" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Y/M/D</Translation>
+      <Translation Language="ZHS">Y/M/D</Translation>
+      <Translation Language="FR">A/M/J</Translation>
+      <Translation Language="ES">A/M/D</Translation>
+      <Translation Language="DE">J.M.T</Translation>
+      <Translation Language="IT">A/M/G</Translation>
+      <Translation Language="PT">A/M/D</Translation>
+      <Translation Language="RU">Г/М/Д</Translation>
+    </Text>
+    <Text Id="DateDMY" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">D/M/Y</Translation>
+      <Translation Language="ZHS">D/M/Y</Translation>
+      <Translation Language="FR">J/M/A</Translation>
+      <Translation Language="ES">D/M/A</Translation>
+      <Translation Language="DE">T.M.J</Translation>
+      <Translation Language="IT">G/M/A</Translation>
+      <Translation Language="PT">D/M/A</Translation>
+      <Translation Language="RU">Д/М/Г</Translation>
+    </Text>
+    <Text Id="DateMDY" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">M/D/Y</Translation>
+      <Translation Language="ZHS">M/D/Y</Translation>
+      <Translation Language="FR">M/J/A</Translation>
+      <Translation Language="ES">M/D/A</Translation>
+      <Translation Language="DE">M.T.J</Translation>
+      <Translation Language="IT">M/G/A</Translation>
+      <Translation Language="PT">M/D/A</Translation>
+      <Translation Language="RU">М/Д/Г</Translation>
+    </Text>
+    <Text Id="__SingleUse_K827" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Confirm</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">确认</Translation>
+      <Translation Language="FR">Confirmer</Translation>
+      <Translation Language="ES">Confirmar</Translation>
+      <Translation Language="DE">Bestätigen</Translation>
+      <Translation Language="IT">Confermare</Translation>
+      <Translation Language="PT">Confirme</Translation>
+      <Translation Language="RU">Подтверждение</Translation>
+    </Text>
+    <Text Id="__SingleUse_G6UK" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Start Tuning Cycle</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">开始调整</Translation>
+      <Translation Language="FR">Commencer le réglage</Translation>
+      <Translation Language="ES">Comience a sintonizar</Translation>
+      <Translation Language="DE">Starten Sie die Abstimmung</Translation>
+      <Translation Language="IT">Inizia la sintonizzazione</Translation>
+      <Translation Language="PT">Iniciar ajuste</Translation>
+      <Translation Language="RU">Начать настройку</Translation>
+    </Text>
+    <Text Id="Tuning" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Tuning</Translation>
+      <Translation Language="ZHS" TypographyId="LargeZHS">调音</Translation>
+      <Translation Language="FR">Réglage</Translation>
+      <Translation Language="ES">Sintonización</Translation>
+      <Translation Language="DE">Tuning</Translation>
+      <Translation Language="IT">Messa a punto</Translation>
+      <Translation Language="PT">Tuning</Translation>
+      <Translation Language="RU">настройка</Translation>
+    </Text>
+    <Text Id="Delta" TypographyId="Display" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Delta: &lt;&gt;</Translation>
+      <Translation Language="ZHS">Delta: &lt;&gt;</Translation>
+      <Translation Language="FR">Delta: &lt;&gt;</Translation>
+      <Translation Language="ES">Delta: &lt;&gt;</Translation>
+      <Translation Language="DE">Delta: &lt;&gt;</Translation>
+      <Translation Language="IT">Delta: &lt;&gt;</Translation>
+      <Translation Language="PT">Delta: &lt;&gt;</Translation>
+      <Translation Language="RU">Delta: &lt;&gt;</Translation>
+    </Text>
+    <Text Id="SingleUseId252" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">&lt;&gt;</Translation>
+      <Translation Language="ZHS">&lt;&gt;</Translation>
+      <Translation Language="FR">&lt;&gt;</Translation>
+      <Translation Language="ES">&lt;&gt;</Translation>
+      <Translation Language="DE">&lt;&gt;</Translation>
+      <Translation Language="IT">&lt;&gt;</Translation>
+      <Translation Language="PT">&lt;&gt;</Translation>
+      <Translation Language="RU">&lt;&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_SIWN" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;&gt;</Translation>
+      <Translation Language="ZHS">&lt;&gt;</Translation>
+      <Translation Language="FR">&lt;&gt;</Translation>
+      <Translation Language="ES">&lt;&gt;</Translation>
+      <Translation Language="DE">&lt;&gt;</Translation>
+      <Translation Language="IT">&lt;&gt;</Translation>
+      <Translation Language="PT">&lt;&gt;</Translation>
+      <Translation Language="RU">&lt;&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_8HV3" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">Enable Diagnostics</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">启用诊断</Translation>
+      <Translation Language="FR">Activer les diagnostics</Translation>
+      <Translation Language="ES">Habilitar diagnósticos</Translation>
+      <Translation Language="DE">Diagnose aktivieren</Translation>
+      <Translation Language="IT">Abilita diagnostica</Translation>
+      <Translation Language="PT">Ativar diagnóstico</Translation>
+      <Translation Language="RU">Включить диагностику</Translation>
+    </Text>
+    <Text Id="__SingleUse_BVHS" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">View Diagnostics</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">查看诊断</Translation>
+      <Translation Language="FR">Afficher les diagnostics</Translation>
+      <Translation Language="ES">Ver diagnósticos</Translation>
+      <Translation Language="DE">Diagnose anzeigen</Translation>
+      <Translation Language="IT">Visualizza diagnostica</Translation>
+      <Translation Language="PT">Exibir diagnóstico</Translation>
+      <Translation Language="RU">Посмотреть диагностику</Translation>
+    </Text>
+    <Text Id="Close" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Close</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">关</Translation>
+      <Translation Language="FR">Proche</Translation>
+      <Translation Language="ES">Cerrar</Translation>
+      <Translation Language="DE">Schließen</Translation>
+      <Translation Language="IT">Vicino</Translation>
+      <Translation Language="PT">Fechar</Translation>
+      <Translation Language="RU">близко</Translation>
+    </Text>
+    <Text Id="__SingleUse_G2BQ" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">No diagnostics&#10;found</Translation>
+      <Translation Language="ZHS" TypographyId="DefaultZHS">无诊断 发现</Translation>
+      <Translation Language="FR">Aucun diagnostic &#10;a trouvé</Translation>
+      <Translation Language="ES">Sin diagnóstico &#10;encontró</Translation>
+      <Translation Language="DE">Keine diagnose &#10;gefunden</Translation>
+      <Translation Language="IT">Nessuna diagnostica &#10;trovato</Translation>
+      <Translation Language="PT">Sem diagnóstico &#10;encontrado</Translation>
+      <Translation Language="RU">Нет диагностики &#10;нашел</Translation>
+    </Text>
+    <Text Id="__SingleUse_RY8S" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Start 30</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_4UFV" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Fume Override Plug</Translation>
+      <Translation Language="ZHS">-</Translation>
+      <Translation Language="FR">-</Translation>
+      <Translation Language="ES">-</Translation>
+      <Translation Language="DE">-</Translation>
+      <Translation Language="IT">-</Translation>
+      <Translation Language="PT">-</Translation>
+      <Translation Language="RU">-</Translation>
+    </Text>
+  </Texts>
+  <Typographies>
+    <Typography Id="Default" Font="segoeuisl.ttf" Size="24" Bpp="2" FallbackCharacter="?" WildcardCharacters="0,1,2,3,4,5,6,7,8,9" WildcardCharacterRanges="0x20-0x7E,0xA1-0xFF" />
+    <Typography Id="Large" Font="segoeuisl.ttf" Size="55" Bpp="4" FallbackCharacter="?" WildcardCharacters="0,1,2,3,4,5,6,7,8,9" WildcardCharacterRanges="0x20-0x7E,0xA1-0xFF" />
+    <Typography Id="Small" Font="segoeuisl.ttf" Size="20" Bpp="2" FallbackCharacter="?" WildcardCharacterRanges="0x20-0x7E,0xA1-0xFF" />
+    <Typography Id="XXL" Font="consola.ttf" Size="150" Bpp="2" FallbackCharacter="#" WildcardCharacters="0,1,2,3,4,5,6,7,8,9" />
+    <Typography Id="Display" Font="consola.ttf" Size="20" Bpp="2" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0x20-0x7E,0xA1-0xFF" />
+    <Typography Id="MediumSmall" Font="segoeuisl.ttf" Size="20" Bpp="2" FallbackCharacter="?" />
+    <Typography Id="DefaultZHS" Font="SourceHanSerifSC-Light.otf" Size="24" Bpp="2" FallbackCharacter="?" WildcardCharacterRanges="0x20-0x7E,0xA1-0xFF" />
+    <Typography Id="SmallZHS" Font="SourceHanSerifSC-Light.otf" Size="20" Bpp="2" FallbackCharacter="?" WildcardCharacterRanges="0x20-0x7E,0xA1-0xFF" />
+    <Typography Id="LargeZHS" Font="SourceHanSerifSC-Light.otf" Size="55" Bpp="2" FallbackCharacter="?" WildcardCharacterRanges="0x20-0x7E,0xA1-0xFF" />
+    <Typography Id="MediumSmallZHS" Font="SourceHanSerifSC-Light.otf" Size="20" Bpp="2" FallbackCharacter="?" WildcardCharacters="月" WildcardCharacterRanges="0x20-0x7E,0xA1-0xFF" />
+    <Typography Id="MediumLarge" Font="segoeuisl.ttf" Size="42" Bpp="2" FallbackCharacter="?" WildcardCharacters="0,1,2,3,4,5,6,7,8,9" WildcardCharacterRanges="0x20-0x7E,0xA1-0xFF,0x0400-0x04FF" />
+    <Typography Id="SMediumLarge" Font="segoeuisl.ttf" Size="38" Bpp="2" FallbackCharacter="?" />
+    <Typography Id="Keyboard" Font="consola.ttf" Size="20" Bpp="1" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0x20-0x7E,0xA1-0xFF" />
+  </Typographies>
+</TextDatabase>

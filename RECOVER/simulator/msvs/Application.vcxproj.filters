@@ -313,6 +313,24 @@
     <Filter Include="Source Files\gui\LFT\Definitions">
       <UniqueIdentifier>{0521e566-103d-4399-b9d3-23fe1020e9c2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\generated\simulator">
+      <UniqueIdentifier>6BC899F2-B129-6135-D519-CAD90171417D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\simulator">
+      <UniqueIdentifier>0A4DF408-8B10-935C-8F8D-7FC8D5D5B18C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\simulator\include">
+      <UniqueIdentifier>76BB96DC-6F75-3D61-4B87-CA4DF0C2D584</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\simulator\video">
+      <UniqueIdentifier>1DC677BE-F73C-0D17-FCAF-F79F1097C705</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\simulator\include\simulator">
+      <UniqueIdentifier>9946E245-280B-6FD8-1E54-1D36EE16DC7E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\simulator\include\simulator\video">
+      <UniqueIdentifier>A0A32E21-C305-EB84-3D29-2D3F8E2CC0FF</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -623,6 +641,9 @@
     </ClCompile>
     <ClCompile Include="..\..\gui\src\common\Unlock.cpp">
       <Filter>Source Files\gui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp">
+      <Filter>Source Files\generated\simulator\video</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1371,6 +1392,15 @@
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\common\PatternCode.hpp">
       <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\simulator\include\simulator\video\DirectFrameBufferVideoController.hpp">
+      <Filter>Header Files\generated\simulator\include\simulator\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\simulator\include\simulator\video\MJPEGDecoder.hpp">
+      <Filter>Header Files\generated\simulator\include\simulator\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\simulator\include\simulator\video\SoftwareMJPEGDecoder.hpp">
+      <Filter>Header Files\generated\simulator\include\simulator\video</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

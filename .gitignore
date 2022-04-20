@@ -49,3 +49,5 @@ PressureCurveLinearizing/obj/
 
 UserDecode/bin/
 UserDecode/obj/
+
+*_backup
