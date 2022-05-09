@@ -10,6 +10,9 @@
       <Translation Language="IT">Condizionamento camera</Translation>
       <Translation Language="PT" TypographyId="MediumLarge">Condicionamento da câmara</Translation>
       <Translation Language="RU">Подготовка камеры</Translation>
+      <Translation Language="AR">Chamber Conditioning</Translation>
+      <Translation Language="PL">Chamber Conditioning</Translation>
+      <Translation Language="UA">Chamber Conditioning</Translation>
     </Text>
     <Text Id="ReadyToFume" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Ready to Fume</Translation>
@@ -20,6 +23,9 @@
       <Translation Language="IT">Pronta per la fumigazione</Translation>
       <Translation Language="PT" TypographyId="SMediumLarge">Pronto para a atuação dos vapores</Translation>
       <Translation Language="RU">Готовность к обработке</Translation>
+      <Translation Language="AR">Ready to Fume</Translation>
+      <Translation Language="PL">Ready to Fume</Translation>
+      <Translation Language="UA">Ready to Fume</Translation>
     </Text>
     <Text Id="FumingInProgress" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Fuming in Progress</Translation>
@@ -30,6 +36,9 @@
       <Translation Language="IT">Fumigazione in corso</Translation>
       <Translation Language="PT" TypographyId="SMediumLarge">Atuação dos vapores em andamento</Translation>
       <Translation Language="RU">Выполняется обработка</Translation>
+      <Translation Language="AR">Fuming in Progress</Translation>
+      <Translation Language="PL">Fuming in Progress</Translation>
+      <Translation Language="UA">Fuming in Progress</Translation>
     </Text>
     <Text Id="PurgingChamber" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Purging Chamber</Translation>
@@ -40,6 +49,9 @@
       <Translation Language="IT">Spurgo camera</Translation>
       <Translation Language="PT">Câmara de purga</Translation>
       <Translation Language="RU">Продувка камеры</Translation>
+      <Translation Language="AR">Purging Chamber</Translation>
+      <Translation Language="PL">Purging Chamber</Translation>
+      <Translation Language="UA">Purging Chamber</Translation>
     </Text>
     <Text Id="__SingleUse_5P61" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Are you sure that you want&#10;to abort the cycle?</Translation>
@@ -50,6 +62,9 @@
       <Translation Language="IT">Sei sicuro di voler annullare il ciclo?</Translation>
       <Translation Language="PT">Tem a certeza de que deseja&#10;abortar o ciclo?</Translation>
       <Translation Language="RU">Прервать цикл?</Translation>
+      <Translation Language="AR">Are you sure that you want&#10;to abort the cycle?</Translation>
+      <Translation Language="PL">Are you sure that you want&#10;to abort the cycle?</Translation>
+      <Translation Language="UA">Are you sure that you want&#10;to abort the cycle?</Translation>
     </Text>
     <Text Id="RemoveEvidence" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Remove Evidence</Translation>
@@ -60,6 +75,9 @@
       <Translation Language="IT" TypographyId="MediumLarge">Rimuovere elemento di prova</Translation>
       <Translation Language="PT">Retirar prova</Translation>
       <Translation Language="RU">Удалить свидетельство</Translation>
+      <Translation Language="AR">Remove Evidence</Translation>
+      <Translation Language="PL">Remove Evidence</Translation>
+      <Translation Language="UA">Remove Evidence</Translation>
     </Text>
     <Text Id="__SingleUse_AZY1" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">End Fuming</Translation>
@@ -70,6 +88,9 @@
       <Translation Language="IT" TypographyId="Small">Termina fumigazione</Translation>
       <Translation Language="PT" TypographyId="Small">Terminar a atuação &#10;dos vapores</Translation>
       <Translation Language="RU" TypographyId="Small">Закончить&#10;обработку</Translation>
+      <Translation Language="AR">End Fuming</Translation>
+      <Translation Language="PL">End Fuming</Translation>
+      <Translation Language="UA">End Fuming</Translation>
     </Text>
     <Text Id="__SingleUse_XKG0" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Do you want to stop the fuming process?</Translation>
@@ -80,6 +101,9 @@
       <Translation Language="IT">Interrompere il processo di fumigazione?</Translation>
       <Translation Language="PT">Deseja parar o processo de atuação dos vapores?</Translation>
       <Translation Language="RU">Остановить процесс обработки?</Translation>
+      <Translation Language="AR">Do you want to stop the fuming process?</Translation>
+      <Translation Language="PL">Do you want to stop the fuming process?</Translation>
+      <Translation Language="UA">Do you want to stop the fuming process?</Translation>
     </Text>
     <Text Id="__SingleUse_30XC" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Home</Translation>
@@ -90,6 +114,9 @@
       <Translation Language="IT">Home</Translation>
       <Translation Language="PT">Página inicial</Translation>
       <Translation Language="RU">Исходная</Translation>
+      <Translation Language="AR">Home</Translation>
+      <Translation Language="PL">Home</Translation>
+      <Translation Language="UA">Home</Translation>
     </Text>
     <Text Id="LidControl" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Lid Control</Translation>
@@ -100,6 +127,9 @@
       <Translation Language="IT">Controllo del coperchio</Translation>
       <Translation Language="PT">Controlo da tampa</Translation>
       <Translation Language="RU">Управление крышкой</Translation>
+      <Translation Language="AR">Lid Control</Translation>
+      <Translation Language="PL">Lid Control</Translation>
+      <Translation Language="UA">Lid Control</Translation>
     </Text>
     <Text Id="EnteredText" TypographyId="Display" Alignment="Left" Direction="LTR">
       <Translation Language="GB">&lt;placeholder&gt;</Translation>
@@ -110,6 +140,9 @@
       <Translation Language="IT">&lt;placeholder&gt;</Translation>
       <Translation Language="PT">&lt;placeholder&gt;</Translation>
       <Translation Language="RU">&lt;placeholder&gt;</Translation>
+      <Translation Language="AR">&lt;placeholder&gt;</Translation>
+      <Translation Language="PL">&lt;placeholder&gt;</Translation>
+      <Translation Language="UA">&lt;placeholder&gt;</Translation>
     </Text>
     <Text Id="NumMode" TypographyId="Display" Alignment="Center" Direction="LTR">
       <Translation Language="GB">ABC</Translation>
@@ -120,6 +153,9 @@
       <Translation Language="IT">ABC</Translation>
       <Translation Language="PT">ABC</Translation>
       <Translation Language="RU">ABC</Translation>
+      <Translation Language="AR">ABC</Translation>
+      <Translation Language="PL">ABC</Translation>
+      <Translation Language="UA">ABC</Translation>
     </Text>
     <Text Id="AlphaMode" TypographyId="Display" Alignment="Center" Direction="LTR">
       <Translation Language="GB">123</Translation>
@@ -130,6 +166,9 @@
       <Translation Language="IT">123</Translation>
       <Translation Language="PT">123</Translation>
       <Translation Language="RU">123</Translation>
+      <Translation Language="AR">123</Translation>
+      <Translation Language="PL">123</Translation>
+      <Translation Language="UA">123</Translation>
     </Text>
     <Text Id="__SingleUse_5AWZ" TypographyId="Display" Alignment="Left" Direction="LTR">
       <Translation Language="GB">&lt;value&gt;</Translation>
@@ -140,6 +179,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">&lt;value&gt;</Translation>
+      <Translation Language="PL">&lt;value&gt;</Translation>
+      <Translation Language="UA">&lt;value&gt;</Translation>
     </Text>
     <Text Id="Wildcard" TypographyId="Display" Alignment="Center" Direction="LTR">
       <Translation Language="GB">&lt;value&gt;</Translation>
@@ -150,6 +192,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">&lt;value&gt;</Translation>
+      <Translation Language="PL">&lt;value&gt;</Translation>
+      <Translation Language="UA">&lt;value&gt;</Translation>
     </Text>
     <Text Id="EngineerMode" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Engineer Mode</Translation>
@@ -160,6 +205,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Engineer Mode</Translation>
+      <Translation Language="PL">Engineer Mode</Translation>
+      <Translation Language="UA">Engineer Mode</Translation>
     </Text>
     <Text Id="DemoMode" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Demo Mode</Translation>
@@ -170,6 +218,9 @@
       <Translation Language="IT">Demo Mode</Translation>
       <Translation Language="PT">Demo Mode</Translation>
       <Translation Language="RU">Demo Mode</Translation>
+      <Translation Language="AR">Demo Mode</Translation>
+      <Translation Language="PL">Demo Mode</Translation>
+      <Translation Language="UA">Demo Mode</Translation>
     </Text>
     <Text Id="__SingleUse_OR4L" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Custom</Translation>
@@ -180,6 +231,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Custom</Translation>
+      <Translation Language="PL">Custom</Translation>
+      <Translation Language="UA">Custom</Translation>
     </Text>
     <Text Id="__SingleUse_FQ1J" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Presets</Translation>
@@ -190,6 +244,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Presets</Translation>
+      <Translation Language="PL">Presets</Translation>
+      <Translation Language="UA">Presets</Translation>
     </Text>
     <Text Id="Language_EN_GB" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">English (UK)</Translation>
@@ -200,6 +257,9 @@
       <Translation Language="IT">English (UK)</Translation>
       <Translation Language="PT">English (UK)</Translation>
       <Translation Language="RU">English (UK)</Translation>
+      <Translation Language="AR">English (UK)</Translation>
+      <Translation Language="PL">English (UK)</Translation>
+      <Translation Language="UA">English (UK)</Translation>
     </Text>
     <Text Id="__SingleUse_KB88" TypographyId="Small" Alignment="Right" Direction="LTR">
       <Translation Language="GB">Build: &lt;value&gt;</Translation>
@@ -210,6 +270,9 @@
       <Translation Language="IT">Build: &lt;value&gt;</Translation>
       <Translation Language="PT">Versão: &lt;value&gt;</Translation>
       <Translation Language="RU">Версия: &lt;value&gt;</Translation>
+      <Translation Language="AR">Build: &lt;value&gt;</Translation>
+      <Translation Language="PL">Build: &lt;value&gt;</Translation>
+      <Translation Language="UA">Build: &lt;value&gt;</Translation>
     </Text>
     <Text Id="Language_ES_ES" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Español (ES)</Translation>
@@ -220,16 +283,22 @@
       <Translation Language="IT">Español (ES)</Translation>
       <Translation Language="PT">Español (ES)</Translation>
       <Translation Language="RU">Español (ES)</Translation>
+      <Translation Language="AR">Español (ES)</Translation>
+      <Translation Language="PL">Español (ES)</Translation>
+      <Translation Language="UA">Español (ES)</Translation>
     </Text>
-    <Text Id="Language_ZN_HANS" TypographyId="Default" Alignment="Center" Direction="LTR">
-      <Translation Language="GB" TypographyId="DefaultZHS">简体中文</Translation>
-      <Translation Language="ZHS" TypographyId="DefaultZHS">简体中文</Translation>
-      <Translation Language="FR" TypographyId="DefaultZHS">简体中文</Translation>
-      <Translation Language="ES" TypographyId="DefaultZHS">简体中文</Translation>
-      <Translation Language="DE" TypographyId="DefaultZHS">简体中文</Translation>
-      <Translation Language="IT" TypographyId="DefaultZHS">简体中文</Translation>
-      <Translation Language="PT" TypographyId="DefaultZHS">简体中文</Translation>
-      <Translation Language="RU" TypographyId="DefaultZHS">简体中文</Translation>
+    <Text Id="Language_ZN_HANS" TypographyId="DefaultZHS" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">简体中文</Translation>
+      <Translation Language="ZHS">简体中文</Translation>
+      <Translation Language="FR">简体中文</Translation>
+      <Translation Language="ES">简体中文</Translation>
+      <Translation Language="DE">简体中文</Translation>
+      <Translation Language="IT">简体中文</Translation>
+      <Translation Language="PT">简体中文</Translation>
+      <Translation Language="RU">简体中文</Translation>
+      <Translation Language="AR">简体中文</Translation>
+      <Translation Language="PL">简体中文</Translation>
+      <Translation Language="UA">简体中文</Translation>
     </Text>
     <Text Id="Language_FR" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">French (FR)</Translation>
@@ -240,6 +309,9 @@
       <Translation Language="IT">French (FR)</Translation>
       <Translation Language="PT">French (FR)</Translation>
       <Translation Language="RU">French (FR)</Translation>
+      <Translation Language="AR">French (FR)</Translation>
+      <Translation Language="PL">French (FR)</Translation>
+      <Translation Language="UA">French (FR)</Translation>
     </Text>
     <Text Id="Language_RU" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Русский (RU)</Translation>
@@ -250,6 +322,9 @@
       <Translation Language="IT">Русский (RU)</Translation>
       <Translation Language="PT">Русский (RU)</Translation>
       <Translation Language="RU">Русский (RU)</Translation>
+      <Translation Language="AR">Русский (RU)</Translation>
+      <Translation Language="PL">Русский (RU)</Translation>
+      <Translation Language="UA">Русский (RU)</Translation>
     </Text>
     <Text Id="Language_DE" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Deutsch (DE)</Translation>
@@ -260,6 +335,9 @@
       <Translation Language="IT">Deutsch (DE)</Translation>
       <Translation Language="PT">Deutsch (DE)</Translation>
       <Translation Language="RU">Deutsch (DE)</Translation>
+      <Translation Language="AR">Deutsch (DE)</Translation>
+      <Translation Language="PL">Deutsch (DE)</Translation>
+      <Translation Language="UA">Deutsch (DE)</Translation>
     </Text>
     <Text Id="Language_IT" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Italiano (IT)</Translation>
@@ -270,6 +348,48 @@
       <Translation Language="IT">Italiano (IT)</Translation>
       <Translation Language="PT">Italiano (IT)</Translation>
       <Translation Language="RU">Italiano (IT)</Translation>
+      <Translation Language="AR">Italiano (IT)</Translation>
+      <Translation Language="PL">Italiano (IT)</Translation>
+      <Translation Language="UA">Italiano (IT)</Translation>
+    </Text>
+    <Text Id="Language_AR" TypographyId="Default" Alignment="Center" Direction="RTL">
+      <Translation Language="GB">العربية (AR)</Translation>
+      <Translation Language="ZHS">العربية (AR)</Translation>
+      <Translation Language="FR">العربية (AR)</Translation>
+      <Translation Language="ES">العربية (AR)</Translation>
+      <Translation Language="DE">العربية (AR)</Translation>
+      <Translation Language="IT">العربية (AR)</Translation>
+      <Translation Language="PT">العربية (AR)</Translation>
+      <Translation Language="RU">العربية (AR)</Translation>
+      <Translation Language="AR">العربية (AR)</Translation>
+      <Translation Language="PL">العربية (AR)</Translation>
+      <Translation Language="UA">العربية (AR)</Translation>
+    </Text>
+    <Text Id="Language_PL" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Polski (PT)</Translation>
+      <Translation Language="ZHS">Polski (PT)</Translation>
+      <Translation Language="FR">Polski (PT)</Translation>
+      <Translation Language="ES">Polski (PT)</Translation>
+      <Translation Language="DE">Polski (PT)</Translation>
+      <Translation Language="IT">Polski (PT)</Translation>
+      <Translation Language="PT">Polski (PT)</Translation>
+      <Translation Language="RU">Polski (PT)</Translation>
+      <Translation Language="AR">Polski (PT)</Translation>
+      <Translation Language="PL">Polski (PT)</Translation>
+      <Translation Language="UA">Polski (PT)</Translation>
+    </Text>
+    <Text Id="Language_UA" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">українська (UA)</Translation>
+      <Translation Language="ZHS">українська (UA)</Translation>
+      <Translation Language="FR">українська (UA)</Translation>
+      <Translation Language="ES">українська (UA)</Translation>
+      <Translation Language="DE">українська (UA)</Translation>
+      <Translation Language="IT">українська (UA)</Translation>
+      <Translation Language="PT">українська (UA)</Translation>
+      <Translation Language="RU">українська (UA)</Translation>
+      <Translation Language="AR">українська (UA)</Translation>
+      <Translation Language="PL">українська (UA)</Translation>
+      <Translation Language="UA">українська (UA)</Translation>
     </Text>
     <Text Id="__SingleUse_VMLE" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Inlet Valve</Translation>
@@ -280,6 +400,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Inlet Valve</Translation>
+      <Translation Language="PL">Inlet Valve</Translation>
+      <Translation Language="UA">Inlet Valve</Translation>
     </Text>
     <Text Id="__SingleUse_QSUV" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Bypass Valve</Translation>
@@ -290,6 +413,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Bypass Valve</Translation>
+      <Translation Language="PL">Bypass Valve</Translation>
+      <Translation Language="UA">Bypass Valve</Translation>
     </Text>
     <Text Id="__SingleUse_4V2V" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Purge Valves</Translation>
@@ -300,6 +426,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Purge Valves</Translation>
+      <Translation Language="PL">Purge Valves</Translation>
+      <Translation Language="UA">Purge Valves</Translation>
     </Text>
     <Text Id="__SingleUse_L34J" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Standby</Translation>
@@ -310,6 +439,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Standby</Translation>
+      <Translation Language="PL">Standby</Translation>
+      <Translation Language="UA">Standby</Translation>
     </Text>
     <Text Id="__SingleUse_GOX7" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Lid Down</Translation>
@@ -320,6 +452,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Lid Down</Translation>
+      <Translation Language="PL">Lid Down</Translation>
+      <Translation Language="UA">Lid Down</Translation>
     </Text>
     <Text Id="__SingleUse_0PEN" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Lid Up</Translation>
@@ -330,6 +465,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Lid Up</Translation>
+      <Translation Language="PL">Lid Up</Translation>
+      <Translation Language="UA">Lid Up</Translation>
     </Text>
     <Text Id="__SingleUse_UUWT" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Lid Stop</Translation>
@@ -340,6 +478,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Lid Stop</Translation>
+      <Translation Language="PL">Lid Stop</Translation>
+      <Translation Language="UA">Lid Stop</Translation>
     </Text>
     <Text Id="__SingleUse_7PQW" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Pump</Translation>
@@ -350,6 +491,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Pump</Translation>
+      <Translation Language="PL">Pump</Translation>
+      <Translation Language="UA">Pump</Translation>
     </Text>
     <Text Id="__SingleUse_MHEQ" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Base Fan</Translation>
@@ -360,6 +504,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Base Fan</Translation>
+      <Translation Language="PL">Base Fan</Translation>
+      <Translation Language="UA">Base Fan</Translation>
     </Text>
     <Text Id="__SingleUse_OTVN" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Base Heater</Translation>
@@ -370,6 +517,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Base Heater</Translation>
+      <Translation Language="PL">Base Heater</Translation>
+      <Translation Language="UA">Base Heater</Translation>
     </Text>
     <Text Id="__SingleUse_PA43" TypographyId="MediumSmall" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Precursor Heater</Translation>
@@ -380,6 +530,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Precursor Heater</Translation>
+      <Translation Language="PL">Precursor Heater</Translation>
+      <Translation Language="UA">Precursor Heater</Translation>
     </Text>
     <Text Id="__SingleUse_ZIAL" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Stirring Fans</Translation>
@@ -390,6 +543,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Stirring Fans</Translation>
+      <Translation Language="PL">Stirring Fans</Translation>
+      <Translation Language="UA">Stirring Fans</Translation>
     </Text>
     <Text Id="Yes" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Yes</Translation>
@@ -400,6 +556,9 @@
       <Translation Language="IT">Sì</Translation>
       <Translation Language="PT">Sim</Translation>
       <Translation Language="RU">Да</Translation>
+      <Translation Language="AR">Yes</Translation>
+      <Translation Language="PL">Yes</Translation>
+      <Translation Language="UA">Yes</Translation>
     </Text>
     <Text Id="No" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">No</Translation>
@@ -410,6 +569,9 @@
       <Translation Language="IT">No</Translation>
       <Translation Language="PT">Não</Translation>
       <Translation Language="RU">Нет</Translation>
+      <Translation Language="AR">No</Translation>
+      <Translation Language="PL">No</Translation>
+      <Translation Language="UA">No</Translation>
     </Text>
     <Text Id="Initialising" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Initialising</Translation>
@@ -420,6 +582,9 @@
       <Translation Language="IT">Inizializzazione</Translation>
       <Translation Language="PT">Inicialização</Translation>
       <Translation Language="RU">Инициализация</Translation>
+      <Translation Language="AR">Initialising</Translation>
+      <Translation Language="PL">Initialising</Translation>
+      <Translation Language="UA">Initialising</Translation>
     </Text>
     <Text Id="__SingleUse_WSC6" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Timer</Translation>
@@ -430,6 +595,9 @@
       <Translation Language="IT">Timer</Translation>
       <Translation Language="PT">Timer</Translation>
       <Translation Language="RU">Timer</Translation>
+      <Translation Language="AR">Timer</Translation>
+      <Translation Language="PL">Timer</Translation>
+      <Translation Language="UA">Timer</Translation>
     </Text>
     <Text Id="__SingleUse_OBIG" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Break Seal</Translation>
@@ -440,6 +608,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Break Seal</Translation>
+      <Translation Language="PL">Break Seal</Translation>
+      <Translation Language="UA">Break Seal</Translation>
     </Text>
     <Text Id="Build" TypographyId="Display" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Build: &lt;value&gt;</Translation>
@@ -450,6 +621,9 @@
       <Translation Language="IT"> &lt;value&gt;</Translation>
       <Translation Language="PT"> &lt;value&gt;</Translation>
       <Translation Language="RU"> &lt;value&gt;</Translation>
+      <Translation Language="AR">Build: &lt;value&gt;</Translation>
+      <Translation Language="PL">Build: &lt;value&gt;</Translation>
+      <Translation Language="UA">Build: &lt;value&gt;</Translation>
     </Text>
     <Text Id="BaseTemp" TypographyId="Display" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Base Temp: &lt;value&gt;°/&lt;value&gt;°</Translation>
@@ -460,6 +634,9 @@
       <Translation Language="IT">&lt;value&gt;°/&lt;value&gt;°</Translation>
       <Translation Language="PT">&lt;value&gt;°/&lt;value&gt;°</Translation>
       <Translation Language="RU">&lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="AR">Base Temp: &lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="PL">Base Temp: &lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="UA">Base Temp: &lt;value&gt;°/&lt;value&gt;°</Translation>
     </Text>
     <Text Id="PrecTemp" TypographyId="Display" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Prec Temp: &lt;value&gt;°/&lt;value&gt;°</Translation>
@@ -470,6 +647,9 @@
       <Translation Language="IT">&lt;value&gt;°/&lt;value&gt;°</Translation>
       <Translation Language="PT">&lt;value&gt;°/&lt;value&gt;°</Translation>
       <Translation Language="RU">&lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="AR">Prec Temp: &lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="PL">Prec Temp: &lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="UA">Prec Temp: &lt;value&gt;°/&lt;value&gt;°</Translation>
     </Text>
     <Text Id="Pressure" TypographyId="Display" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Pressure: &lt;value&gt;</Translation>
@@ -480,6 +660,9 @@
       <Translation Language="IT"> &lt;value&gt;</Translation>
       <Translation Language="PT"> &lt;value&gt;</Translation>
       <Translation Language="RU"> &lt;value&gt;</Translation>
+      <Translation Language="AR">Pressure: &lt;value&gt;</Translation>
+      <Translation Language="PL">Pressure: &lt;value&gt;</Translation>
+      <Translation Language="UA">Pressure: &lt;value&gt;</Translation>
     </Text>
     <Text Id="IntSwitch" TypographyId="Display" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Int. Switch: &lt;value&gt;|&lt;value&gt;</Translation>
@@ -490,6 +673,9 @@
       <Translation Language="IT">&lt;value&gt;°/&lt;value&gt;°</Translation>
       <Translation Language="PT">&lt;value&gt;°/&lt;value&gt;°</Translation>
       <Translation Language="RU">&lt;value&gt;°/&lt;value&gt;°</Translation>
+      <Translation Language="AR">Int. Switch: &lt;value&gt;|&lt;value&gt;</Translation>
+      <Translation Language="PL">Int. Switch: &lt;value&gt;|&lt;value&gt;</Translation>
+      <Translation Language="UA">Int. Switch: &lt;value&gt;|&lt;value&gt;</Translation>
     </Text>
     <Text Id="ExtSwitch" TypographyId="Display" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Ext. Switch: &lt;value&gt;</Translation>
@@ -500,6 +686,9 @@
       <Translation Language="IT"> &lt;value&gt;</Translation>
       <Translation Language="PT"> &lt;value&gt;</Translation>
       <Translation Language="RU"> &lt;value&gt;</Translation>
+      <Translation Language="AR">Ext. Switch: &lt;value&gt;</Translation>
+      <Translation Language="PL">Ext. Switch: &lt;value&gt;</Translation>
+      <Translation Language="UA">Ext. Switch: &lt;value&gt;</Translation>
     </Text>
     <Text Id="Status" TypographyId="Display" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Status: &lt;value&gt;</Translation>
@@ -510,6 +699,9 @@
       <Translation Language="IT"> &lt;value&gt;</Translation>
       <Translation Language="PT"> &lt;value&gt;</Translation>
       <Translation Language="RU"> &lt;value&gt;</Translation>
+      <Translation Language="AR">Status: &lt;value&gt;</Translation>
+      <Translation Language="PL">Status: &lt;value&gt;</Translation>
+      <Translation Language="UA">Status: &lt;value&gt;</Translation>
     </Text>
     <Text Id="Attempts" TypographyId="Display" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Attempts: &lt;value&gt;</Translation>
@@ -520,6 +712,9 @@
       <Translation Language="IT"> &lt;value&gt;</Translation>
       <Translation Language="PT"> &lt;value&gt;</Translation>
       <Translation Language="RU"> &lt;value&gt;</Translation>
+      <Translation Language="AR">Attempts: &lt;value&gt;</Translation>
+      <Translation Language="PL">Attempts: &lt;value&gt;</Translation>
+      <Translation Language="UA">Attempts: &lt;value&gt;</Translation>
     </Text>
     <Text Id="ErrorCount" TypographyId="Display" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Error Count: &lt;value&gt;</Translation>
@@ -530,6 +725,9 @@
       <Translation Language="IT"> &lt;value&gt;</Translation>
       <Translation Language="PT"> &lt;value&gt;</Translation>
       <Translation Language="RU"> &lt;value&gt;</Translation>
+      <Translation Language="AR">Error Count: &lt;value&gt;</Translation>
+      <Translation Language="PL">Error Count: &lt;value&gt;</Translation>
+      <Translation Language="UA">Error Count: &lt;value&gt;</Translation>
     </Text>
     <Text Id="LastError" TypographyId="Display" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Last Error: &lt;value&gt;</Translation>
@@ -540,6 +738,9 @@
       <Translation Language="IT"> &lt;value&gt;</Translation>
       <Translation Language="PT"> &lt;value&gt;</Translation>
       <Translation Language="RU"> &lt;value&gt;</Translation>
+      <Translation Language="AR">Last Error: &lt;value&gt;</Translation>
+      <Translation Language="PL">Last Error: &lt;value&gt;</Translation>
+      <Translation Language="UA">Last Error: &lt;value&gt;</Translation>
     </Text>
     <Text Id="Timer" TypographyId="Display" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Timer: &lt;value&gt;</Translation>
@@ -550,6 +751,9 @@
       <Translation Language="IT"> &lt;value&gt;</Translation>
       <Translation Language="PT"> &lt;value&gt;</Translation>
       <Translation Language="RU"> &lt;value&gt;</Translation>
+      <Translation Language="AR">Timer: &lt;value&gt;</Translation>
+      <Translation Language="PL">Timer: &lt;value&gt;</Translation>
+      <Translation Language="UA">Timer: &lt;value&gt;</Translation>
     </Text>
     <Text Id="__SingleUse_I7T5" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Dismiss</Translation>
@@ -560,6 +764,9 @@
       <Translation Language="IT">Chiudi</Translation>
       <Translation Language="PT">Ignorar</Translation>
       <Translation Language="RU">Отменить</Translation>
+      <Translation Language="AR">Dismiss</Translation>
+      <Translation Language="PL">Dismiss</Translation>
+      <Translation Language="UA">Dismiss</Translation>
     </Text>
     <Text Id="Progress" TypographyId="Display" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Progress: &lt;value&gt;</Translation>
@@ -570,6 +777,9 @@
       <Translation Language="IT">Progress: &lt;value&gt;</Translation>
       <Translation Language="PT">Progress: &lt;value&gt;</Translation>
       <Translation Language="RU">Progress: &lt;value&gt;</Translation>
+      <Translation Language="AR">Progress: &lt;value&gt;</Translation>
+      <Translation Language="PL">Progress: &lt;value&gt;</Translation>
+      <Translation Language="UA">Progress: &lt;value&gt;</Translation>
     </Text>
     <Text Id="__SingleUse_6AXP" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Auto</Translation>
@@ -580,6 +790,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Auto</Translation>
+      <Translation Language="PL">Auto</Translation>
+      <Translation Language="UA">Auto</Translation>
     </Text>
     <Text Id="__SingleUse_EGIE" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Abort</Translation>
@@ -590,6 +803,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Abort</Translation>
+      <Translation Language="PL">Abort</Translation>
+      <Translation Language="UA">Abort</Translation>
     </Text>
     <Text Id="Valves" TypographyId="Display" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Valves: &lt;value&gt;</Translation>
@@ -600,6 +816,9 @@
       <Translation Language="IT">Valves: &lt;value&gt;</Translation>
       <Translation Language="PT">Valves: &lt;value&gt;</Translation>
       <Translation Language="RU">Valves: &lt;value&gt;</Translation>
+      <Translation Language="AR">Valves: &lt;value&gt;</Translation>
+      <Translation Language="PL">Valves: &lt;value&gt;</Translation>
+      <Translation Language="UA">Valves: &lt;value&gt;</Translation>
     </Text>
     <Text Id="__SingleUse_YO4X" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Hide Data</Translation>
@@ -610,6 +829,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Hide Data</Translation>
+      <Translation Language="PL">Hide Data</Translation>
+      <Translation Language="UA">Hide Data</Translation>
     </Text>
     <Text Id="Instruction_AddPrecursor" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Remove lid from DEVELOP vial and locate into chamber base.</Translation>
@@ -620,6 +842,9 @@
       <Translation Language="IT">Rimuovi il coperchio dalla fiala DEVELOP e posizionarla nella base della camera.</Translation>
       <Translation Language="PT">Retirar a tampa do tubo DEVELOP e posicionar na base da câmara.</Translation>
       <Translation Language="RU">Снять крышку с ампулы DEVELOP и поместить на основание камеры.</Translation>
+      <Translation Language="AR">Remove lid from DEVELOP vial and locate into chamber base.</Translation>
+      <Translation Language="PL">Remove lid from DEVELOP vial and locate into chamber base.</Translation>
+      <Translation Language="UA">Remove lid from DEVELOP vial and locate into chamber base.</Translation>
     </Text>
     <Text Id="Instruction_AddSample" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Position samples within evidence rack and lower into the chamber.</Translation>
@@ -630,6 +855,9 @@
       <Translation Language="IT">Posizionare i campioni all'interno del rack degli elementi di prova e calarlo nella camera.</Translation>
       <Translation Language="PT">Posicionar as amostras na estante de provas e descê-las na câmara.</Translation>
       <Translation Language="RU">Поместить образцы на держатель свидетельств и опустить в камеру.</Translation>
+      <Translation Language="AR">Position samples within evidence rack and lower into the chamber.</Translation>
+      <Translation Language="PL">Position samples within evidence rack and lower into the chamber.</Translation>
+      <Translation Language="UA">Position samples within evidence rack and lower into the chamber.</Translation>
     </Text>
     <Text Id="Instruction_LowerLid" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Fully close chamber lid using touch panel controls.</Translation>
@@ -640,6 +868,9 @@
       <Translation Language="IT">Chiudere completamente il coperchio della camera usando i comandi del pannello a sfioramento.</Translation>
       <Translation Language="PT">Fechar completamente a tampa da câmara utilizando os controlos do painel de toque.</Translation>
       <Translation Language="RU">Полностью закрыть крышку камеры с использованием сенсорной панели.</Translation>
+      <Translation Language="AR">Fully close chamber lid using touch panel controls.</Translation>
+      <Translation Language="PL">Fully close chamber lid using touch panel controls.</Translation>
+      <Translation Language="UA">Fully close chamber lid using touch panel controls.</Translation>
     </Text>
     <Text Id="Instruction_StartProcess" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Start the process by pressing the play icon.</Translation>
@@ -650,6 +881,9 @@
       <Translation Language="IT">Avviare il processo premendo l'icona di riproduzione (Play).</Translation>
       <Translation Language="PT">Iniciar processo pressionando o ícone executar.</Translation>
       <Translation Language="RU">Начать процесс нажатием значка «воспроизведение»</Translation>
+      <Translation Language="AR">Start the process by pressing the play icon.</Translation>
+      <Translation Language="PL">Start the process by pressing the play icon.</Translation>
+      <Translation Language="UA">Start the process by pressing the play icon.</Translation>
     </Text>
     <Text Id="Instruction_GlassChamber" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Place development chamber into position.</Translation>
@@ -660,6 +894,9 @@
       <Translation Language="IT">Porre la camera di sviluppo in posizione.</Translation>
       <Translation Language="PT">Colocar a câmara de desenvolvimento em posição.</Translation>
       <Translation Language="RU">Поместить камеру проявки в необходимое положение.</Translation>
+      <Translation Language="AR">Place development chamber into position.</Translation>
+      <Translation Language="PL">Place development chamber into position.</Translation>
+      <Translation Language="UA">Place development chamber into position.</Translation>
     </Text>
     <Text Id="__SingleUse_2JR0" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">&lt;value&gt;</Translation>
@@ -670,6 +907,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">&lt;value&gt;</Translation>
+      <Translation Language="PL">&lt;value&gt;</Translation>
+      <Translation Language="UA">&lt;value&gt;</Translation>
     </Text>
     <Text Id="Instruction_SelectChamber" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Select correct development chamber size.</Translation>
@@ -680,6 +920,9 @@
       <Translation Language="IT">Selezionare la dimensione della camera di sviluppo corretta.</Translation>
       <Translation Language="PT">Selecione o tamanho correto da câmara de desenvolvimento.</Translation>
       <Translation Language="RU">Выберите правильный размер камеры проявки.</Translation>
+      <Translation Language="AR">Select correct development chamber size.</Translation>
+      <Translation Language="PL">Select correct development chamber size.</Translation>
+      <Translation Language="UA">Select correct development chamber size.</Translation>
     </Text>
     <Text Id="__SingleUse_UKYL" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Test - Abort</Translation>
@@ -690,6 +933,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Test - Abort</Translation>
+      <Translation Language="PL">Test - Abort</Translation>
+      <Translation Language="UA">Test - Abort</Translation>
     </Text>
     <Text Id="__SingleUse_UK7P" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Test - Next</Translation>
@@ -700,6 +946,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Test - Next</Translation>
+      <Translation Language="PL">Test - Next</Translation>
+      <Translation Language="UA">Test - Next</Translation>
     </Text>
     <Text Id="ProductionTest_CheckChamberIsAtmos" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">&lt;value&gt; - Checking Chamber is at Atmosphere</Translation>
@@ -710,6 +959,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">&lt;value&gt; - Checking Chamber is at Atmosphere</Translation>
+      <Translation Language="PL">&lt;value&gt; - Checking Chamber is at Atmosphere</Translation>
+      <Translation Language="UA">&lt;value&gt; - Checking Chamber is at Atmosphere</Translation>
     </Text>
     <Text Id="ProductionTest_PumpDownStage1" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">&lt;value&gt; - Pumping Down Stage 1</Translation>
@@ -720,6 +972,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">&lt;value&gt; - Pumping Down Stage 1</Translation>
+      <Translation Language="PL">&lt;value&gt; - Pumping Down Stage 1</Translation>
+      <Translation Language="UA">&lt;value&gt; - Pumping Down Stage 1</Translation>
     </Text>
     <Text Id="ProductionTest_PumpDownStage2" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">&lt;value&gt; - Pumping Down Stage 2</Translation>
@@ -730,6 +985,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">&lt;value&gt; - Pumping Down Stage 2</Translation>
+      <Translation Language="PL">&lt;value&gt; - Pumping Down Stage 2</Translation>
+      <Translation Language="UA">&lt;value&gt; - Pumping Down Stage 2</Translation>
     </Text>
     <Text Id="ProductionTest_DisconnectPressureSensor" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">&lt;value&gt; - Disconnect the Pressure Sensor</Translation>
@@ -740,6 +998,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">&lt;value&gt; - Disconnect the Pressure Sensor</Translation>
+      <Translation Language="PL">&lt;value&gt; - Disconnect the Pressure Sensor</Translation>
+      <Translation Language="UA">&lt;value&gt; - Disconnect the Pressure Sensor</Translation>
     </Text>
     <Text Id="ProductionTest_CheckingPressureSensor" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">&lt;value&gt; - Checking the Pressure Sensor</Translation>
@@ -750,6 +1011,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">&lt;value&gt; - Checking the Pressure Sensor</Translation>
+      <Translation Language="PL">&lt;value&gt; - Checking the Pressure Sensor</Translation>
+      <Translation Language="UA">&lt;value&gt; - Checking the Pressure Sensor</Translation>
     </Text>
     <Text Id="ProductionTest_ReconnectPressureSensor" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">&lt;value&gt; - Reconnect Pressure Sensor</Translation>
@@ -760,6 +1024,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">&lt;value&gt; - Reconnect Pressure Sensor</Translation>
+      <Translation Language="PL">&lt;value&gt; - Reconnect Pressure Sensor</Translation>
+      <Translation Language="UA">&lt;value&gt; - Reconnect Pressure Sensor</Translation>
     </Text>
     <Text Id="ProductionTest_DisconnectAirFlowSignal" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">&lt;value&gt; - Disconnect Airflow Signal</Translation>
@@ -770,6 +1037,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">&lt;value&gt; - Disconnect Airflow Signal</Translation>
+      <Translation Language="PL">&lt;value&gt; - Disconnect Airflow Signal</Translation>
+      <Translation Language="UA">&lt;value&gt; - Disconnect Airflow Signal</Translation>
     </Text>
     <Text Id="ProductionTest_CheckingAirflowSignal" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">&lt;value&gt; - Checking Airflow Signal</Translation>
@@ -780,6 +1050,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">&lt;value&gt; - Checking Airflow Signal</Translation>
+      <Translation Language="PL">&lt;value&gt; - Checking Airflow Signal</Translation>
+      <Translation Language="UA">&lt;value&gt; - Checking Airflow Signal</Translation>
     </Text>
     <Text Id="ProductionTest_ReconnectAirflowSignal" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">&lt;value&gt; - Reconnect Airflow Signal</Translation>
@@ -790,6 +1063,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">&lt;value&gt; - Reconnect Airflow Signal</Translation>
+      <Translation Language="PL">&lt;value&gt; - Reconnect Airflow Signal</Translation>
+      <Translation Language="UA">&lt;value&gt; - Reconnect Airflow Signal</Translation>
     </Text>
     <Text Id="ProductionTest_DisconnectPressureSwitch" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">&lt;value&gt; - Disconnect Pressure Switch</Translation>
@@ -800,6 +1076,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">&lt;value&gt; - Disconnect Pressure Switch</Translation>
+      <Translation Language="PL">&lt;value&gt; - Disconnect Pressure Switch</Translation>
+      <Translation Language="UA">&lt;value&gt; - Disconnect Pressure Switch</Translation>
     </Text>
     <Text Id="ProductionTest_CheckingPressureSwitch" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">&lt;value&gt; - Checking Pressure Switch</Translation>
@@ -810,6 +1089,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">&lt;value&gt; - Checking Pressure Switch</Translation>
+      <Translation Language="PL">&lt;value&gt; - Checking Pressure Switch</Translation>
+      <Translation Language="UA">&lt;value&gt; - Checking Pressure Switch</Translation>
     </Text>
     <Text Id="ProductionTest_ReconnectPressureSwitch" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">&lt;value&gt; - Reconnect Pressure Switch</Translation>
@@ -820,6 +1102,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">&lt;value&gt; - Reconnect Pressure Switch</Translation>
+      <Translation Language="PL">&lt;value&gt; - Reconnect Pressure Switch</Translation>
+      <Translation Language="UA">&lt;value&gt; - Reconnect Pressure Switch</Translation>
     </Text>
     <Text Id="__SingleUse_NTIL" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Clear</Translation>
@@ -830,6 +1115,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Clear</Translation>
+      <Translation Language="PL">Clear</Translation>
+      <Translation Language="UA">Clear</Translation>
     </Text>
     <Text Id="__SingleUse_88HR" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Abort</Translation>
@@ -840,6 +1128,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Abort</Translation>
+      <Translation Language="PL">Abort</Translation>
+      <Translation Language="UA">Abort</Translation>
     </Text>
     <Text Id="__SingleUse_90QP" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Actual Visible</Translation>
@@ -850,6 +1141,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Actual Visible</Translation>
+      <Translation Language="PL">Actual Visible</Translation>
+      <Translation Language="UA">Actual Visible</Translation>
     </Text>
     <Text Id="__SingleUse_MPYS" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Pumpdown Test</Translation>
@@ -860,6 +1154,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Pumpdown Test</Translation>
+      <Translation Language="PL">Pumpdown Test</Translation>
+      <Translation Language="UA">Pumpdown Test</Translation>
     </Text>
     <Text Id="__SingleUse_95WH" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Switch Data</Translation>
@@ -870,6 +1167,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Switch Data</Translation>
+      <Translation Language="PL">Switch Data</Translation>
+      <Translation Language="UA">Switch Data</Translation>
     </Text>
     <Text Id="GraphType_Pressure" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Pressure</Translation>
@@ -880,6 +1180,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Pressure</Translation>
+      <Translation Language="PL">Pressure</Translation>
+      <Translation Language="UA">Pressure</Translation>
     </Text>
     <Text Id="GraphType_BaseHeat" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Base Temperature</Translation>
@@ -890,6 +1193,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Base Temperature</Translation>
+      <Translation Language="PL">Base Temperature</Translation>
+      <Translation Language="UA">Base Temperature</Translation>
     </Text>
     <Text Id="GraphType_BasePower" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Base Power (%)</Translation>
@@ -900,6 +1206,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Base Power (%)</Translation>
+      <Translation Language="PL">Base Power (%)</Translation>
+      <Translation Language="UA">Base Power (%)</Translation>
     </Text>
     <Text Id="GraphType_PreHeat" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Precursor Temperature</Translation>
@@ -910,6 +1219,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Precursor Temperature</Translation>
+      <Translation Language="PL">Precursor Temperature</Translation>
+      <Translation Language="UA">Precursor Temperature</Translation>
     </Text>
     <Text Id="GraphType_PrePower" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Precursor Power (%)</Translation>
@@ -920,6 +1232,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Precursor Power (%)</Translation>
+      <Translation Language="PL">Precursor Power (%)</Translation>
+      <Translation Language="UA">Precursor Power (%)</Translation>
     </Text>
     <Text Id="__SingleUse_YOEE" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Start Test</Translation>
@@ -930,6 +1245,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Start Test</Translation>
+      <Translation Language="PL">Start Test</Translation>
+      <Translation Language="UA">Start Test</Translation>
     </Text>
     <Text Id="__SingleUse_TSV8" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Exit Graphs</Translation>
@@ -940,6 +1258,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Exit Graphs</Translation>
+      <Translation Language="PL">Exit Graphs</Translation>
+      <Translation Language="UA">Exit Graphs</Translation>
     </Text>
     <Text Id="__SingleUse_JHLV" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Soak Test</Translation>
@@ -950,6 +1271,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Soak Test</Translation>
+      <Translation Language="PL">Soak Test</Translation>
+      <Translation Language="UA">Soak Test</Translation>
     </Text>
     <Text Id="Error_PSwitch2Leak" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">(Error: &lt;value&gt;) PSwitch 2 detected leak during run, was previously okay.</Translation>
@@ -960,6 +1284,9 @@
       <Translation Language="IT">(Error: &lt;value&gt;) PSwitch 2 detected leak during run, was previously okay.</Translation>
       <Translation Language="PT">(Error: &lt;value&gt;) PSwitch 2 detected leak during run, was previously okay.</Translation>
       <Translation Language="RU">(Error: &lt;value&gt;) PSwitch 2 detected leak during run, was previously okay.</Translation>
+      <Translation Language="AR">(Error: &lt;value&gt;) PSwitch 2 detected leak during run, was previously okay.</Translation>
+      <Translation Language="PL">(Error: &lt;value&gt;) PSwitch 2 detected leak during run, was previously okay.</Translation>
+      <Translation Language="UA">(Error: &lt;value&gt;) PSwitch 2 detected leak during run, was previously okay.</Translation>
     </Text>
     <Text Id="Error_InitFail" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">(Error: &lt;value&gt;) Initialise Failed</Translation>
@@ -970,6 +1297,9 @@
       <Translation Language="IT">(Error: &lt;value&gt;) Initialise Failed</Translation>
       <Translation Language="PT">(Error: &lt;value&gt;) Initialise Failed</Translation>
       <Translation Language="RU">(Error: &lt;value&gt;) Initialise Failed</Translation>
+      <Translation Language="AR">(Error: &lt;value&gt;) Initialise Failed</Translation>
+      <Translation Language="PL">(Error: &lt;value&gt;) Initialise Failed</Translation>
+      <Translation Language="UA">(Error: &lt;value&gt;) Initialise Failed</Translation>
     </Text>
     <Text Id="Error_VacuumFail" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">(Error: &lt;value&gt;) Vacuum was above minimum standard to run.</Translation>
@@ -980,6 +1310,9 @@
       <Translation Language="IT">(Error: &lt;value&gt;) Vacuum was above minimum standard to run.</Translation>
       <Translation Language="PT">(Error: &lt;value&gt;) Vacuum was above minimum standard to run.</Translation>
       <Translation Language="RU">(Error: &lt;value&gt;) Vacuum was above minimum standard to run.</Translation>
+      <Translation Language="AR">(Error: &lt;value&gt;) Vacuum was above minimum standard to run.</Translation>
+      <Translation Language="PL">(Error: &lt;value&gt;) Vacuum was above minimum standard to run.</Translation>
+      <Translation Language="UA">(Error: &lt;value&gt;) Vacuum was above minimum standard to run.</Translation>
     </Text>
     <Text Id="__SingleUse_CICV" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">SOAK TESTING</Translation>
@@ -990,6 +1323,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">SOAK TESTING</Translation>
+      <Translation Language="PL">SOAK TESTING</Translation>
+      <Translation Language="UA">SOAK TESTING</Translation>
     </Text>
     <Text Id="__SingleUse_87FZ" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Soak Test Count: &lt;value&gt;</Translation>
@@ -1000,6 +1336,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">Soak Test Count: &lt;value&gt;</Translation>
+      <Translation Language="PL">Soak Test Count: &lt;value&gt;</Translation>
+      <Translation Language="UA">Soak Test Count: &lt;value&gt;</Translation>
     </Text>
     <Text Id="__SingleUse_HNYC" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Start Continous</Translation>
@@ -1010,6 +1349,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Start Continous</Translation>
+      <Translation Language="PL">Start Continous</Translation>
+      <Translation Language="UA">Start Continous</Translation>
     </Text>
     <Text Id="__SingleUse_3CNF" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Abort</Translation>
@@ -1020,6 +1362,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Abort</Translation>
+      <Translation Language="PL">Abort</Translation>
+      <Translation Language="UA">Abort</Translation>
     </Text>
     <Text Id="__SingleUse_VFMY" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Status: &lt;value&gt;</Translation>
@@ -1030,6 +1375,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">Status: &lt;value&gt;</Translation>
+      <Translation Language="PL">Status: &lt;value&gt;</Translation>
+      <Translation Language="UA">Status: &lt;value&gt;</Translation>
     </Text>
     <Text Id="__SingleUse_Y018" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Exit</Translation>
@@ -1040,6 +1388,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Exit</Translation>
+      <Translation Language="PL">Exit</Translation>
+      <Translation Language="UA">Exit</Translation>
     </Text>
     <Text Id="__SingleUse_OD1Q" TypographyId="Default" Alignment="Right" Direction="LTR">
       <Translation Language="GB">Max Current: &lt;value&gt;A</Translation>
@@ -1050,6 +1401,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">Max Current: &lt;value&gt;A</Translation>
+      <Translation Language="PL">Max Current: &lt;value&gt;A</Translation>
+      <Translation Language="UA">Max Current: &lt;value&gt;A</Translation>
     </Text>
     <Text Id="__SingleUse_NIH1" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Soak Test Total: &lt;value&gt;</Translation>
@@ -1060,6 +1414,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">Soak Test Total: &lt;value&gt;</Translation>
+      <Translation Language="PL">Soak Test Total: &lt;value&gt;</Translation>
+      <Translation Language="UA">Soak Test Total: &lt;value&gt;</Translation>
     </Text>
     <Text Id="__SingleUse_O5ME" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">USB Mode</Translation>
@@ -1070,6 +1427,9 @@
       <Translation Language="IT">Modalità USB</Translation>
       <Translation Language="PT">Modo USB</Translation>
       <Translation Language="RU">Режим USB</Translation>
+      <Translation Language="AR">USB Mode</Translation>
+      <Translation Language="PL">USB Mode</Translation>
+      <Translation Language="UA">USB Mode</Translation>
     </Text>
     <Text Id="__SingleUse_NDUC" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Advanced</Translation>
@@ -1080,6 +1440,9 @@
       <Translation Language="IT">Avanzato</Translation>
       <Translation Language="PT">Avançado</Translation>
       <Translation Language="RU">Дополнительно</Translation>
+      <Translation Language="AR">Advanced</Translation>
+      <Translation Language="PL">Advanced</Translation>
+      <Translation Language="UA">Advanced</Translation>
     </Text>
     <Text Id="__SingleUse_06AL" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">&lt;value&gt;</Translation>
@@ -1090,6 +1453,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">&lt;value&gt;</Translation>
+      <Translation Language="PL">&lt;value&gt;</Translation>
+      <Translation Language="UA">&lt;value&gt;</Translation>
     </Text>
     <Text Id="Stage1HeaterDeviation" TypographyId="Small" Alignment="Right" Direction="LTR">
       <Translation Language="GB">Stage 1 Heater Deviation:</Translation>
@@ -1100,6 +1466,9 @@
       <Translation Language="IT">Fase 1 Deviazione del riscaldatore:</Translation>
       <Translation Language="PT">Desvio do Aquecedor – Etapa 1:</Translation>
       <Translation Language="RU">Отклонение нагревателя Этап 1:</Translation>
+      <Translation Language="AR">Stage 1 Heater Deviation:</Translation>
+      <Translation Language="PL">Stage 1 Heater Deviation:</Translation>
+      <Translation Language="UA">Stage 1 Heater Deviation:</Translation>
     </Text>
     <Text Id="ConditioningTime" TypographyId="Small" Alignment="Right" Direction="LTR">
       <Translation Language="GB">Conditioning Time (Minutes):</Translation>
@@ -1110,6 +1479,9 @@
       <Translation Language="IT">Tempo di condizionamento (minuti):</Translation>
       <Translation Language="PT">Tempo de condicionamento (minutos):</Translation>
       <Translation Language="RU">Продолжительность подготовки (минут):</Translation>
+      <Translation Language="AR">Conditioning Time (Minutes):</Translation>
+      <Translation Language="PL">Conditioning Time (Minutes):</Translation>
+      <Translation Language="UA">Conditioning Time (Minutes):</Translation>
     </Text>
     <Text Id="LeakTest2Result" TypographyId="Small" Alignment="Right" Direction="LTR">
       <Translation Language="GB">Leak Test 2 Result:</Translation>
@@ -1120,6 +1492,9 @@
       <Translation Language="IT">Risultato prova di tenuta 2:</Translation>
       <Translation Language="PT">Resultado do ensaio de fugas 2:</Translation>
       <Translation Language="RU">Результат теста утечки 2:</Translation>
+      <Translation Language="AR">Leak Test 2 Result:</Translation>
+      <Translation Language="PL">Leak Test 2 Result:</Translation>
+      <Translation Language="UA">Leak Test 2 Result:</Translation>
     </Text>
     <Text Id="LeakTest1Result" TypographyId="Small" Alignment="Right" Direction="LTR">
       <Translation Language="GB">Leak Test 1 Result:</Translation>
@@ -1130,6 +1505,9 @@
       <Translation Language="IT">Risultato prova di tenuta 1:</Translation>
       <Translation Language="PT">Resultado do ensaio de fugas 1:</Translation>
       <Translation Language="RU">Результат теста утечки 1:</Translation>
+      <Translation Language="AR">Leak Test 1 Result:</Translation>
+      <Translation Language="PL">Leak Test 1 Result:</Translation>
+      <Translation Language="UA">Leak Test 1 Result:</Translation>
     </Text>
     <Text Id="PressureDeviation" TypographyId="Small" Alignment="Right" Direction="LTR">
       <Translation Language="GB">Pressure Deviation:</Translation>
@@ -1140,6 +1518,9 @@
       <Translation Language="IT">Deviazione della pressione:</Translation>
       <Translation Language="PT">Desvio da pressão:</Translation>
       <Translation Language="RU">Отклонение давления:</Translation>
+      <Translation Language="AR">Pressure Deviation:</Translation>
+      <Translation Language="PL">Pressure Deviation:</Translation>
+      <Translation Language="UA">Pressure Deviation:</Translation>
     </Text>
     <Text Id="Stage2HeaterDeviation" TypographyId="Small" Alignment="Right" Direction="LTR">
       <Translation Language="GB">Stage 2 Heater Deviation:</Translation>
@@ -1150,6 +1531,9 @@
       <Translation Language="IT">Fase 2 Deviazione del riscaldatore:</Translation>
       <Translation Language="PT">Desvio do aquecedor – Etapa 2:</Translation>
       <Translation Language="RU">Отклонение нагревателя Этап 2:</Translation>
+      <Translation Language="AR">Stage 2 Heater Deviation:</Translation>
+      <Translation Language="PL">Stage 2 Heater Deviation:</Translation>
+      <Translation Language="UA">Stage 2 Heater Deviation:</Translation>
     </Text>
     <Text Id="FumingTime" TypographyId="Small" Alignment="Right" Direction="LTR">
       <Translation Language="GB">Fuming Time (Minutes):</Translation>
@@ -1160,6 +1544,9 @@
       <Translation Language="IT">Tempo di fumigazione (minuti):</Translation>
       <Translation Language="PT">Tempo de atuação dos vapores (minutos):</Translation>
       <Translation Language="RU">Продолжительность обработки (минут):</Translation>
+      <Translation Language="AR">Fuming Time (Minutes):</Translation>
+      <Translation Language="PL">Fuming Time (Minutes):</Translation>
+      <Translation Language="UA">Fuming Time (Minutes):</Translation>
     </Text>
     <Text Id="__SingleUse_0CLR" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">&lt;value&gt;</Translation>
@@ -1170,6 +1557,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">&lt;value&gt;</Translation>
+      <Translation Language="PL">&lt;value&gt;</Translation>
+      <Translation Language="UA">&lt;value&gt;</Translation>
     </Text>
     <Text Id="__SingleUse_EQND" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">&lt;value&gt;</Translation>
@@ -1180,6 +1570,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">&lt;value&gt;</Translation>
+      <Translation Language="PL">&lt;value&gt;</Translation>
+      <Translation Language="UA">&lt;value&gt;</Translation>
     </Text>
     <Text Id="Log_TestSuccess" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Success</Translation>
@@ -1190,6 +1583,9 @@
       <Translation Language="IT">Riuscita</Translation>
       <Translation Language="PT">Sucesso</Translation>
       <Translation Language="RU">Успешно</Translation>
+      <Translation Language="AR">Success</Translation>
+      <Translation Language="PL">Success</Translation>
+      <Translation Language="UA">Success</Translation>
     </Text>
     <Text Id="Log_TestFail" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Fail</Translation>
@@ -1200,6 +1596,9 @@
       <Translation Language="IT">Fallita</Translation>
       <Translation Language="PT">Falha</Translation>
       <Translation Language="RU">Ошибка</Translation>
+      <Translation Language="AR">Fail</Translation>
+      <Translation Language="PL">Fail</Translation>
+      <Translation Language="UA">Fail</Translation>
     </Text>
     <Text Id="__SingleUse_5X7M" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Yes</Translation>
@@ -1210,6 +1609,9 @@
       <Translation Language="IT">Sì</Translation>
       <Translation Language="PT">Sim</Translation>
       <Translation Language="RU">Да</Translation>
+      <Translation Language="AR">Yes</Translation>
+      <Translation Language="PL">Yes</Translation>
+      <Translation Language="UA">Yes</Translation>
     </Text>
     <Text Id="__SingleUse_QDG4" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">No</Translation>
@@ -1220,6 +1622,9 @@
       <Translation Language="IT">No</Translation>
       <Translation Language="PT">Não</Translation>
       <Translation Language="RU">Нет</Translation>
+      <Translation Language="AR">No</Translation>
+      <Translation Language="PL">No</Translation>
+      <Translation Language="UA">No</Translation>
     </Text>
     <Text Id="ConfirmDeleteLog" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Are you sure that you want to delete this log?</Translation>
@@ -1230,6 +1635,9 @@
       <Translation Language="IT">Sei sicuro di voler eliminare questo registro?</Translation>
       <Translation Language="PT">Tem a certeza de que deseja eliminar este registo?</Translation>
       <Translation Language="RU">Удалить этот журнал?</Translation>
+      <Translation Language="AR">Are you sure that you want to delete this log?</Translation>
+      <Translation Language="PL">Are you sure that you want to delete this log?</Translation>
+      <Translation Language="UA">Are you sure that you want to delete this log?</Translation>
     </Text>
     <Text Id="__SingleUse_FYM8" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">No Logs Found</Translation>
@@ -1240,6 +1648,9 @@
       <Translation Language="IT">Nessun registro trovato</Translation>
       <Translation Language="PT">Não foram encontrados&#10;registos</Translation>
       <Translation Language="RU">Журналы не найдены</Translation>
+      <Translation Language="AR">No Logs Found</Translation>
+      <Translation Language="PL">No Logs Found</Translation>
+      <Translation Language="UA">No Logs Found</Translation>
     </Text>
     <Text Id="__SingleUse_F6X7" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Pressure</Translation>
@@ -1250,6 +1661,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Pressure</Translation>
+      <Translation Language="PL">Pressure</Translation>
+      <Translation Language="UA">Pressure</Translation>
     </Text>
     <Text Id="__SingleUse_0J2R" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Precursor</Translation>
@@ -1260,6 +1674,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Precursor</Translation>
+      <Translation Language="PL">Precursor</Translation>
+      <Translation Language="UA">Precursor</Translation>
     </Text>
     <Text Id="__SingleUse_UJ71" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Base</Translation>
@@ -1270,6 +1687,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Base</Translation>
+      <Translation Language="PL">Base</Translation>
+      <Translation Language="UA">Base</Translation>
     </Text>
     <Text Id="__SingleUse_0QIM" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Run Count: &lt;value&gt;</Translation>
@@ -1280,6 +1700,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">Run Count: &lt;value&gt;</Translation>
+      <Translation Language="PL">Run Count: &lt;value&gt;</Translation>
+      <Translation Language="UA">Run Count: &lt;value&gt;</Translation>
     </Text>
     <Text Id="__SingleUse_2KM6" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Process is aborting&#10;Please Wait...</Translation>
@@ -1290,6 +1713,9 @@
       <Translation Language="IT" TypographyId="Small">Annullamento del processo in corso&#10;Si prega di attendere...</Translation>
       <Translation Language="PT" TypographyId="Small">Processo a ser abortado&#10;Por favor, espere....</Translation>
       <Translation Language="RU" TypographyId="Small">Прерывание процесса&#10;Ожидайте...</Translation>
+      <Translation Language="AR">Process is aborting&#10;Please Wait...</Translation>
+      <Translation Language="PL">Process is aborting&#10;Please Wait...</Translation>
+      <Translation Language="UA">Process is aborting&#10;Please Wait...</Translation>
     </Text>
     <Text Id="Error_Generic" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">An Error has Occurred. </Translation>
@@ -1300,6 +1726,9 @@
       <Translation Language="IT">Si è verificato un errore. </Translation>
       <Translation Language="PT">Ocorreu um erro. </Translation>
       <Translation Language="RU">Произошла ошибка. </Translation>
+      <Translation Language="AR">An Error has Occurred. </Translation>
+      <Translation Language="PL">An Error has Occurred. </Translation>
+      <Translation Language="UA">An Error has Occurred. </Translation>
     </Text>
     <Text Id="__SingleUse_5D60" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">&lt;value&gt;</Translation>
@@ -1310,6 +1739,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">&lt;value&gt;</Translation>
+      <Translation Language="PL">&lt;value&gt;</Translation>
+      <Translation Language="UA">&lt;value&gt;</Translation>
     </Text>
     <Text Id="Error_Leak" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">There was a leak in the chamber. Please restart the process.</Translation>
@@ -1320,6 +1752,9 @@
       <Translation Language="IT">Vi è stata una perdita nella camera. Si prega di riavviare il processo.</Translation>
       <Translation Language="PT">A câmara tinha uma fuga. Por favor, reinicie o processo.</Translation>
       <Translation Language="RU">Утечка в камере. Запустите процесс еще раз.</Translation>
+      <Translation Language="AR">There was a leak in the chamber. Please restart the process.</Translation>
+      <Translation Language="PL">There was a leak in the chamber. Please restart the process.</Translation>
+      <Translation Language="UA">There was a leak in the chamber. Please restart the process.</Translation>
     </Text>
     <Text Id="Error_Door" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Door Interlock Switch is not ready. Please make sure door is closed.</Translation>
@@ -1330,6 +1765,9 @@
       <Translation Language="IT">L’interruttore di interblocco sportello non è pronto. Si prega di verificare che lo sportello sia chiuso.</Translation>
       <Translation Language="PT">Interruptor de interbloqueio da porta não está pronto. Por favor, certifique-se de que a porta está fechada.</Translation>
       <Translation Language="RU">Замок блокировки двери не готов. Проверьте, закрыта ли дверь.</Translation>
+      <Translation Language="AR">Door Interlock Switch is not ready. Please make sure door is closed.</Translation>
+      <Translation Language="PL">Door Interlock Switch is not ready. Please make sure door is closed.</Translation>
+      <Translation Language="UA">Door Interlock Switch is not ready. Please make sure door is closed.</Translation>
     </Text>
     <Text Id="__SingleUse_8AXJ" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">&lt;value&gt;</Translation>
@@ -1340,6 +1778,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">&lt;value&gt;</Translation>
+      <Translation Language="PL">&lt;value&gt;</Translation>
+      <Translation Language="UA">&lt;value&gt;</Translation>
     </Text>
     <Text Id="Date_Jan" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Jan</Translation>
@@ -1350,6 +1791,9 @@
       <Translation Language="IT">Gen</Translation>
       <Translation Language="PT">Jan</Translation>
       <Translation Language="RU">Янв</Translation>
+      <Translation Language="AR">Jan</Translation>
+      <Translation Language="PL">Jan</Translation>
+      <Translation Language="UA">Jan</Translation>
     </Text>
     <Text Id="Date_Feb" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Feb</Translation>
@@ -1360,6 +1804,9 @@
       <Translation Language="IT">Feb</Translation>
       <Translation Language="PT">Fev</Translation>
       <Translation Language="RU">Фев</Translation>
+      <Translation Language="AR">Feb</Translation>
+      <Translation Language="PL">Feb</Translation>
+      <Translation Language="UA">Feb</Translation>
     </Text>
     <Text Id="Date_Mar" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Mar</Translation>
@@ -1370,6 +1817,9 @@
       <Translation Language="IT">Mar</Translation>
       <Translation Language="PT">Mar</Translation>
       <Translation Language="RU">Мар</Translation>
+      <Translation Language="AR">Mar</Translation>
+      <Translation Language="PL">Mar</Translation>
+      <Translation Language="UA">Mar</Translation>
     </Text>
     <Text Id="Date_Apr" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Apr</Translation>
@@ -1380,6 +1830,9 @@
       <Translation Language="IT">Apr</Translation>
       <Translation Language="PT">Abr</Translation>
       <Translation Language="RU">Апр</Translation>
+      <Translation Language="AR">Apr</Translation>
+      <Translation Language="PL">Apr</Translation>
+      <Translation Language="UA">Apr</Translation>
     </Text>
     <Text Id="Date_May" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">May</Translation>
@@ -1390,6 +1843,9 @@
       <Translation Language="IT">Mag</Translation>
       <Translation Language="PT">Maio</Translation>
       <Translation Language="RU">Май</Translation>
+      <Translation Language="AR">May</Translation>
+      <Translation Language="PL">May</Translation>
+      <Translation Language="UA">May</Translation>
     </Text>
     <Text Id="Date_Jun" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Jun</Translation>
@@ -1400,6 +1856,9 @@
       <Translation Language="IT">Giu</Translation>
       <Translation Language="PT">Jun</Translation>
       <Translation Language="RU">Июн</Translation>
+      <Translation Language="AR">Jun</Translation>
+      <Translation Language="PL">Jun</Translation>
+      <Translation Language="UA">Jun</Translation>
     </Text>
     <Text Id="Date_Jul" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Jul</Translation>
@@ -1410,6 +1869,9 @@
       <Translation Language="IT">Lug</Translation>
       <Translation Language="PT">Jul</Translation>
       <Translation Language="RU">Июл</Translation>
+      <Translation Language="AR">Jul</Translation>
+      <Translation Language="PL">Jul</Translation>
+      <Translation Language="UA">Jul</Translation>
     </Text>
     <Text Id="Date_Aug" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Aug</Translation>
@@ -1420,6 +1882,9 @@
       <Translation Language="IT">Ago</Translation>
       <Translation Language="PT">Ago</Translation>
       <Translation Language="RU">Авг</Translation>
+      <Translation Language="AR">Aug</Translation>
+      <Translation Language="PL">Aug</Translation>
+      <Translation Language="UA">Aug</Translation>
     </Text>
     <Text Id="Date_Sep" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Sep</Translation>
@@ -1430,6 +1895,9 @@
       <Translation Language="IT">Set</Translation>
       <Translation Language="PT">Set</Translation>
       <Translation Language="RU">Сен</Translation>
+      <Translation Language="AR">Sep</Translation>
+      <Translation Language="PL">Sep</Translation>
+      <Translation Language="UA">Sep</Translation>
     </Text>
     <Text Id="Date_Oct" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Oct</Translation>
@@ -1440,6 +1908,9 @@
       <Translation Language="IT">Ott</Translation>
       <Translation Language="PT">Out</Translation>
       <Translation Language="RU">Окт</Translation>
+      <Translation Language="AR">Oct</Translation>
+      <Translation Language="PL">Oct</Translation>
+      <Translation Language="UA">Oct</Translation>
     </Text>
     <Text Id="Date_Nov" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Nov</Translation>
@@ -1450,6 +1921,9 @@
       <Translation Language="IT">Nov</Translation>
       <Translation Language="PT">Nov</Translation>
       <Translation Language="RU">Ноя</Translation>
+      <Translation Language="AR">Nov</Translation>
+      <Translation Language="PL">Nov</Translation>
+      <Translation Language="UA">Nov</Translation>
     </Text>
     <Text Id="Date_Dec" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Dec</Translation>
@@ -1460,6 +1934,9 @@
       <Translation Language="IT">Dic</Translation>
       <Translation Language="PT">Dez</Translation>
       <Translation Language="RU">Дек</Translation>
+      <Translation Language="AR">Dec</Translation>
+      <Translation Language="PL">Dec</Translation>
+      <Translation Language="UA">Dec</Translation>
     </Text>
     <Text Id="Log_TestSuccessValue" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Success(&lt;value&gt;%)</Translation>
@@ -1470,6 +1947,9 @@
       <Translation Language="IT">Riuscito(&lt;value&gt;%)</Translation>
       <Translation Language="PT">Sucesso (&lt;value&gt;%)</Translation>
       <Translation Language="RU">Успешно (&lt;value&gt;%)</Translation>
+      <Translation Language="AR">Success(&lt;value&gt;%)</Translation>
+      <Translation Language="PL">Success(&lt;value&gt;%)</Translation>
+      <Translation Language="UA">Success(&lt;value&gt;%)</Translation>
     </Text>
     <Text Id="Log_TestFailValue" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Fail(&lt;value&gt;%)</Translation>
@@ -1480,6 +1960,9 @@
       <Translation Language="IT">Fallito(&lt;value&gt;%)</Translation>
       <Translation Language="PT">Falha (&lt;value&gt;%)</Translation>
       <Translation Language="RU">Ошибка (&lt;value&gt;%)</Translation>
+      <Translation Language="AR">Fail(&lt;value&gt;%)</Translation>
+      <Translation Language="PL">Fail(&lt;value&gt;%)</Translation>
+      <Translation Language="UA">Fail(&lt;value&gt;%)</Translation>
     </Text>
     <Text Id="__SingleUse_707B" TypographyId="Small" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Copper&#10;Based</Translation>
@@ -1490,6 +1973,9 @@
       <Translation Language="IT">A base &#10;di rame</Translation>
       <Translation Language="PT">À base &#10;de Cobre&#10;</Translation>
       <Translation Language="RU">На основе&#10;меди</Translation>
+      <Translation Language="AR">Copper&#10;Based</Translation>
+      <Translation Language="PL">Copper&#10;Based</Translation>
+      <Translation Language="UA">Copper&#10;Based</Translation>
     </Text>
     <Text Id="__SingleUse_UBF3" TypographyId="Small" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Silver&#10;Coloured</Translation>
@@ -1500,6 +1986,9 @@
       <Translation Language="IT">Colorato &#10;argento</Translation>
       <Translation Language="PT">Cor &#10;prateada&#10;</Translation>
       <Translation Language="RU">Серебристого&#10;цвета</Translation>
+      <Translation Language="AR">Silver&#10;Coloured</Translation>
+      <Translation Language="PL">Silver&#10;Coloured</Translation>
+      <Translation Language="UA">Silver&#10;Coloured</Translation>
     </Text>
     <Text Id="__SingleUse_ON14" TypographyId="Small" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Large&#10;Chamber</Translation>
@@ -1510,6 +1999,9 @@
       <Translation Language="IT">Camera &#10;grande</Translation>
       <Translation Language="PT">Câmara &#10;grande&#10;</Translation>
       <Translation Language="RU">Большая&#10;камера</Translation>
+      <Translation Language="AR">Large&#10;Chamber</Translation>
+      <Translation Language="PL">Large&#10;Chamber</Translation>
+      <Translation Language="UA">Large&#10;Chamber</Translation>
     </Text>
     <Text Id="__SingleUse_Y5TW" TypographyId="Small" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Small&#10;Chamber</Translation>
@@ -1520,6 +2012,9 @@
       <Translation Language="IT">Camera &#10;piccola</Translation>
       <Translation Language="PT">Câmara &#10;pequena&#10;</Translation>
       <Translation Language="RU">Малая&#10;камера</Translation>
+      <Translation Language="AR">Small&#10;Chamber</Translation>
+      <Translation Language="PL">Small&#10;Chamber</Translation>
+      <Translation Language="UA">Small&#10;Chamber</Translation>
     </Text>
     <Text Id="__SingleUse_ZGVA" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Format</Translation>
@@ -1530,6 +2025,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Format</Translation>
+      <Translation Language="PL">Format</Translation>
+      <Translation Language="UA">Format</Translation>
     </Text>
     <Text Id="__SingleUse_44C4" TypographyId="Small" Alignment="Right" Direction="LTR">
       <Translation Language="GB">Serial: &lt;value&gt;</Translation>
@@ -1540,6 +2038,9 @@
       <Translation Language="IT">Seriale: &lt;value&gt;</Translation>
       <Translation Language="PT">Nº de série: &lt;value&gt;</Translation>
       <Translation Language="RU">Серийный № &lt;value&gt;</Translation>
+      <Translation Language="AR">Serial: &lt;value&gt;</Translation>
+      <Translation Language="PL">Serial: &lt;value&gt;</Translation>
+      <Translation Language="UA">Serial: &lt;value&gt;</Translation>
     </Text>
     <Text Id="FirmwareVersion" TypographyId="Small" Alignment="Right" Direction="LTR">
       <Translation Language="GB">Firmware Version:</Translation>
@@ -1550,6 +2051,9 @@
       <Translation Language="IT">Versione firmware:</Translation>
       <Translation Language="PT">Versão de firmware:</Translation>
       <Translation Language="RU">Версия микропрограммы:</Translation>
+      <Translation Language="AR">Firmware Version:</Translation>
+      <Translation Language="PL">Firmware Version:</Translation>
+      <Translation Language="UA">Firmware Version:</Translation>
     </Text>
     <Text Id="SerialNumber" TypographyId="Small" Alignment="Right" Direction="LTR">
       <Translation Language="GB">Serial Number:</Translation>
@@ -1560,6 +2064,9 @@
       <Translation Language="IT">Numero di serie:</Translation>
       <Translation Language="PT">Número de série:</Translation>
       <Translation Language="RU">Серийный номер:</Translation>
+      <Translation Language="AR">Serial Number:</Translation>
+      <Translation Language="PL">Serial Number:</Translation>
+      <Translation Language="UA">Serial Number:</Translation>
     </Text>
     <Text Id="__SingleUse_MQCB" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">&lt;value&gt;</Translation>
@@ -1570,6 +2077,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">&lt;value&gt;</Translation>
+      <Translation Language="PL">&lt;value&gt;</Translation>
+      <Translation Language="UA">&lt;value&gt;</Translation>
     </Text>
     <Text Id="__SingleUse_A69Z" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">&lt;value&gt;</Translation>
@@ -1580,6 +2090,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">&lt;value&gt;</Translation>
+      <Translation Language="PL">&lt;value&gt;</Translation>
+      <Translation Language="UA">&lt;value&gt;</Translation>
     </Text>
     <Text Id="Chamber_Large" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Large Chamber</Translation>
@@ -1590,6 +2103,9 @@
       <Translation Language="IT">Camera grande</Translation>
       <Translation Language="PT">Câmara grande</Translation>
       <Translation Language="RU">Большая камера</Translation>
+      <Translation Language="AR">Large Chamber</Translation>
+      <Translation Language="PL">Large Chamber</Translation>
+      <Translation Language="UA">Large Chamber</Translation>
     </Text>
     <Text Id="Metal_Copper" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Copper Based</Translation>
@@ -1600,6 +2116,9 @@
       <Translation Language="IT">A base di rame</Translation>
       <Translation Language="PT">À base de Cobre</Translation>
       <Translation Language="RU">На основе меди</Translation>
+      <Translation Language="AR">Copper Based</Translation>
+      <Translation Language="PL">Copper Based</Translation>
+      <Translation Language="UA">Copper Based</Translation>
     </Text>
     <Text Id="Chamber_Small" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Small Chamber</Translation>
@@ -1610,6 +2129,9 @@
       <Translation Language="IT">Camera piccola</Translation>
       <Translation Language="PT">Câmara pequena</Translation>
       <Translation Language="RU">Малая камера</Translation>
+      <Translation Language="AR">Small Chamber</Translation>
+      <Translation Language="PL">Small Chamber</Translation>
+      <Translation Language="UA">Small Chamber</Translation>
     </Text>
     <Text Id="Metal_Silver" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Silver Coloured</Translation>
@@ -1620,6 +2142,9 @@
       <Translation Language="IT">Colorato argento</Translation>
       <Translation Language="PT">Cor prateada</Translation>
       <Translation Language="RU">Серебристого цвета</Translation>
+      <Translation Language="AR">Silver Coloured</Translation>
+      <Translation Language="PL">Silver Coloured</Translation>
+      <Translation Language="UA">Silver Coloured</Translation>
     </Text>
     <Text Id="DevelopR1" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">DEVELOP-R1</Translation>
@@ -1630,6 +2155,9 @@
       <Translation Language="IT">DEVELOP-R1</Translation>
       <Translation Language="PT">DEVELOP-R1</Translation>
       <Translation Language="RU">DEVELOP-R1</Translation>
+      <Translation Language="AR">DEVELOP-R1</Translation>
+      <Translation Language="PL">DEVELOP-R1</Translation>
+      <Translation Language="UA">DEVELOP-R1</Translation>
     </Text>
     <Text Id="DevelopR2" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">DEVELOP-R2</Translation>
@@ -1640,6 +2168,9 @@
       <Translation Language="IT">DEVELOP-R2</Translation>
       <Translation Language="PT">DEVELOP-R2</Translation>
       <Translation Language="RU">DEVELOP-R2</Translation>
+      <Translation Language="AR">DEVELOP-R2</Translation>
+      <Translation Language="PL">DEVELOP-R2</Translation>
+      <Translation Language="UA">DEVELOP-R2</Translation>
     </Text>
     <Text Id="DevelopR3" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">DEVELOP-R3</Translation>
@@ -1650,6 +2181,9 @@
       <Translation Language="IT">DEVELOP-R3</Translation>
       <Translation Language="PT">DEVELOP-R3</Translation>
       <Translation Language="RU">DEVELOP-R3</Translation>
+      <Translation Language="AR">DEVELOP-R3</Translation>
+      <Translation Language="PL">DEVELOP-R3</Translation>
+      <Translation Language="UA">DEVELOP-R3</Translation>
     </Text>
     <Text Id="SelectType" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Select Metal</Translation>
@@ -1660,6 +2194,9 @@
       <Translation Language="IT">Seleziona metallo</Translation>
       <Translation Language="PT">Selecionar metal</Translation>
       <Translation Language="RU">Выберите металл</Translation>
+      <Translation Language="AR">Select Metal</Translation>
+      <Translation Language="PL">Select Metal</Translation>
+      <Translation Language="UA">Select Metal</Translation>
     </Text>
     <Text Id="SelectChamber" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Select Chamber</Translation>
@@ -1670,6 +2207,9 @@
       <Translation Language="IT">Seleziona camera</Translation>
       <Translation Language="PT">Selecionar câmara</Translation>
       <Translation Language="RU">Выберите камеру</Translation>
+      <Translation Language="AR">Select Chamber</Translation>
+      <Translation Language="PL">Select Chamber</Translation>
+      <Translation Language="UA">Select Chamber</Translation>
     </Text>
     <Text Id="DevelopR4" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">DEVELOP-R4</Translation>
@@ -1680,6 +2220,9 @@
       <Translation Language="IT">DEVELOP-R4</Translation>
       <Translation Language="PT">DEVELOP-R4</Translation>
       <Translation Language="RU">DEVELOP-R4</Translation>
+      <Translation Language="AR">DEVELOP-R4</Translation>
+      <Translation Language="PL">DEVELOP-R4</Translation>
+      <Translation Language="UA">DEVELOP-R4</Translation>
     </Text>
     <Text Id="__SingleUse_WSU4" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">A loss of power was detected.&#10;Attempt to continue? </Translation>
@@ -1690,6 +2233,9 @@
       <Translation Language="IT">È stata rilevata una perdita di potenza.&#10;Prova a continuare? </Translation>
       <Translation Language="PT">Detetada perda de potência.&#10;Tentar continuar? </Translation>
       <Translation Language="RU">Обнаружено отключение питания.&#10;Попытаться продолжить? </Translation>
+      <Translation Language="AR">A loss of power was detected.&#10;Attempt to continue? </Translation>
+      <Translation Language="PL">A loss of power was detected.&#10;Attempt to continue? </Translation>
+      <Translation Language="UA">A loss of power was detected.&#10;Attempt to continue? </Translation>
     </Text>
     <Text Id="__SingleUse_M6HY" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Fumehood Airflow Error!&#10;Fix issue or cancel.</Translation>
@@ -1700,6 +2246,9 @@
       <Translation Language="IT">Errore nel flusso di aria di aspirazione fumi!&#10;Risolvere il problema o annullare.</Translation>
       <Translation Language="PT">Erro do fluxo de ar da Hotte!&#10;Resolver o problema ou cancelar.</Translation>
       <Translation Language="RU">Ошибка тяги вытяжки!&#10;Устраните неполадку или отмените операцию.</Translation>
+      <Translation Language="AR">Fumehood Airflow Error!&#10;Fix issue or cancel.</Translation>
+      <Translation Language="PL">Fumehood Airflow Error!&#10;Fix issue or cancel.</Translation>
+      <Translation Language="UA">Fumehood Airflow Error!&#10;Fix issue or cancel.</Translation>
     </Text>
     <Text Id="Cancel" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Cancel</Translation>
@@ -1710,6 +2259,9 @@
       <Translation Language="IT">Annulla</Translation>
       <Translation Language="PT">Cancelar</Translation>
       <Translation Language="RU">Отмена</Translation>
+      <Translation Language="AR">Cancel</Translation>
+      <Translation Language="PL">Cancel</Translation>
+      <Translation Language="UA">Cancel</Translation>
     </Text>
     <Text Id="FumeIssueAllowCancel" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Fumehood Airflow Error&#10;Fix issue or cancel.</Translation>
@@ -1720,6 +2272,9 @@
       <Translation Language="IT">Errore nel flusso di aria di aspirazione fumi&#10;Risolvere il problema o annullare.</Translation>
       <Translation Language="PT">Erro do fluxo de ar da Hotte&#10;Resolver o problema ou cancelar.</Translation>
       <Translation Language="RU">Ошибка тяги вытяжки!&#10;Устраните неполадку&#10;или отмените операцию.</Translation>
+      <Translation Language="AR">Fumehood Airflow Error&#10;Fix issue or cancel.</Translation>
+      <Translation Language="PL">Fumehood Airflow Error&#10;Fix issue or cancel.</Translation>
+      <Translation Language="UA">Fumehood Airflow Error&#10;Fix issue or cancel.</Translation>
     </Text>
     <Text Id="FumeIssue" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Fumehood Airflow Error&#10;Fix issue.</Translation>
@@ -1730,6 +2285,9 @@
       <Translation Language="IT">Errore nel flusso di aria di aspirazione fumi&#10;Risolvere il problema.</Translation>
       <Translation Language="PT">Erro do fluxo de ar da Hotte&#10;Resolver o problema.</Translation>
       <Translation Language="RU">Ошибка тяги вытяжки!&#10;Устраните неполадку.</Translation>
+      <Translation Language="AR">Fumehood Airflow Error&#10;Fix issue.</Translation>
+      <Translation Language="PL">Fumehood Airflow Error&#10;Fix issue.</Translation>
+      <Translation Language="UA">Fumehood Airflow Error&#10;Fix issue.</Translation>
     </Text>
     <Text Id="MetalType" TypographyId="Small" Alignment="Right" Direction="LTR">
       <Translation Language="GB">Metal Type:</Translation>
@@ -1740,6 +2298,9 @@
       <Translation Language="IT">Tipo di metallo:</Translation>
       <Translation Language="PT">Tipo de metal:</Translation>
       <Translation Language="RU">Тип металла:</Translation>
+      <Translation Language="AR">Metal Type:</Translation>
+      <Translation Language="PL">Metal Type:</Translation>
+      <Translation Language="UA">Metal Type:</Translation>
     </Text>
     <Text Id="ChamberType" TypographyId="Small" Alignment="Right" Direction="LTR">
       <Translation Language="GB">Chamber Type:</Translation>
@@ -1750,6 +2311,9 @@
       <Translation Language="IT">Tipo di camera:</Translation>
       <Translation Language="PT">Tipo de câmara:</Translation>
       <Translation Language="RU">Тип камеры:</Translation>
+      <Translation Language="AR">Chamber Type:</Translation>
+      <Translation Language="PL">Chamber Type:</Translation>
+      <Translation Language="UA">Chamber Type:</Translation>
     </Text>
     <Text Id="DevelopRType" TypographyId="Small" Alignment="Right" Direction="LTR">
       <Translation Language="GB">DEVELOP-R Type:</Translation>
@@ -1760,6 +2324,9 @@
       <Translation Language="IT">Tipo di DEVELOP-R:</Translation>
       <Translation Language="PT">Tipo de DEVELOP-R:</Translation>
       <Translation Language="RU">Тип DEVELOP-R:</Translation>
+      <Translation Language="AR">DEVELOP-R Type:</Translation>
+      <Translation Language="PL">DEVELOP-R Type:</Translation>
+      <Translation Language="UA">DEVELOP-R Type:</Translation>
     </Text>
     <Text Id="DevelopR1Log" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">DEVELOP-R1</Translation>
@@ -1770,6 +2337,9 @@
       <Translation Language="IT">DEVELOP-R1</Translation>
       <Translation Language="PT">DEVELOP-R1</Translation>
       <Translation Language="RU">DEVELOP-R1</Translation>
+      <Translation Language="AR">DEVELOP-R1</Translation>
+      <Translation Language="PL">DEVELOP-R1</Translation>
+      <Translation Language="UA">DEVELOP-R1</Translation>
     </Text>
     <Text Id="DevelopR2Log" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">DEVELOP-R2</Translation>
@@ -1780,6 +2350,9 @@
       <Translation Language="IT">DEVELOP-R2</Translation>
       <Translation Language="PT">DEVELOP-R2</Translation>
       <Translation Language="RU">DEVELOP-R2</Translation>
+      <Translation Language="AR">DEVELOP-R2</Translation>
+      <Translation Language="PL">DEVELOP-R2</Translation>
+      <Translation Language="UA">DEVELOP-R2</Translation>
     </Text>
     <Text Id="DevelopR3Log" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">DEVELOP-R3</Translation>
@@ -1790,6 +2363,9 @@
       <Translation Language="IT">DEVELOP-R3</Translation>
       <Translation Language="PT">DEVELOP-R3</Translation>
       <Translation Language="RU">DEVELOP-R3</Translation>
+      <Translation Language="AR">DEVELOP-R3</Translation>
+      <Translation Language="PL">DEVELOP-R3</Translation>
+      <Translation Language="UA">DEVELOP-R3</Translation>
     </Text>
     <Text Id="DevelopR4Log" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">DEVELOP-R4</Translation>
@@ -1800,6 +2376,9 @@
       <Translation Language="IT">DEVELOP-R4</Translation>
       <Translation Language="PT">DEVELOP-R4</Translation>
       <Translation Language="RU">DEVELOP-R4</Translation>
+      <Translation Language="AR">DEVELOP-R4</Translation>
+      <Translation Language="PL">DEVELOP-R4</Translation>
+      <Translation Language="UA">DEVELOP-R4</Translation>
     </Text>
     <Text Id="__SingleUse_KP7O" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Fume hood MUST be active before continuing</Translation>
@@ -1810,6 +2389,9 @@
       <Translation Language="IT">La cappa di aspirazione deve essere attiva prima di continuare</Translation>
       <Translation Language="PT">A hotte DEVE estar ativa antes de continuar</Translation>
       <Translation Language="RU">Перед продолжением ВКЛЮЧИТЕ вытяжку</Translation>
+      <Translation Language="AR">Fume hood MUST be active before continuing</Translation>
+      <Translation Language="PL">Fume hood MUST be active before continuing</Translation>
+      <Translation Language="UA">Fume hood MUST be active before continuing</Translation>
     </Text>
     <Text Id="__SingleUse_TRHA" TypographyId="Small" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Current Filter Health - &lt;value&gt;%</Translation>
@@ -1820,6 +2402,9 @@
       <Translation Language="IT">Salute corrente del filtro - &lt;value&gt;%</Translation>
       <Translation Language="PT">Estado atual do filtro – &lt;value&gt;%</Translation>
       <Translation Language="RU">Текущее здоровье фильтра - &lt;value&gt;%</Translation>
+      <Translation Language="AR">Current Filter Health - &lt;value&gt;%</Translation>
+      <Translation Language="PL">Current Filter Health - &lt;value&gt;%</Translation>
+      <Translation Language="UA">Current Filter Health - &lt;value&gt;%</Translation>
     </Text>
     <Text Id="FumingVacuumFailiure" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Vacuum Failure&#10;Unable to continue fuming</Translation>
@@ -1830,6 +2415,9 @@
       <Translation Language="IT">Guasto aspirazione&#10;Impossibile proseguire la fumigazione</Translation>
       <Translation Language="PT">Falha do vácuo&#10;Não é possível continuar a atuação dos vapores</Translation>
       <Translation Language="RU">Ошибка вакуумирования&#10;Невозможно продолжить обработку</Translation>
+      <Translation Language="AR">Vacuum Failure&#10;Unable to continue fuming</Translation>
+      <Translation Language="PL">Vacuum Failure&#10;Unable to continue fuming</Translation>
+      <Translation Language="UA">Vacuum Failure&#10;Unable to continue fuming</Translation>
     </Text>
     <Text Id="__SingleUse_UJB2" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Lid Control</Translation>
@@ -1840,6 +2428,9 @@
       <Translation Language="IT" TypographyId="Small">Controllo del coperchio</Translation>
       <Translation Language="PT">Controlo da tampa</Translation>
       <Translation Language="RU" TypographyId="Small">Управление крышкой</Translation>
+      <Translation Language="AR">Lid Control</Translation>
+      <Translation Language="PL">Lid Control</Translation>
+      <Translation Language="UA">Lid Control</Translation>
     </Text>
     <Text Id="ExportAll" TypographyId="Small" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Export All</Translation>
@@ -1850,6 +2441,9 @@
       <Translation Language="IT">Esporta tutto</Translation>
       <Translation Language="PT">Exportar tudo</Translation>
       <Translation Language="RU">Экспортировать &#10;все</Translation>
+      <Translation Language="AR">Export All</Translation>
+      <Translation Language="PL">Export All</Translation>
+      <Translation Language="UA">Export All</Translation>
     </Text>
     <Text Id="LogsExporting" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Exporting Logs&#10;Please wait</Translation>
@@ -1860,6 +2454,9 @@
       <Translation Language="IT">Esportazione dei registri in corso&#10;Si prega di attendere</Translation>
       <Translation Language="PT">A exportar registos&#10;Por favor, espere</Translation>
       <Translation Language="RU">Экспорт журналов&#10;Подождите</Translation>
+      <Translation Language="AR">Exporting Logs&#10;Please wait</Translation>
+      <Translation Language="PL">Exporting Logs&#10;Please wait</Translation>
+      <Translation Language="UA">Exporting Logs&#10;Please wait</Translation>
     </Text>
     <Text Id="LogsExportingFinished" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Exporting Complete.</Translation>
@@ -1870,6 +2467,9 @@
       <Translation Language="IT">Esportazione completata.</Translation>
       <Translation Language="PT">Exportação concluída.</Translation>
       <Translation Language="RU">Экспорт выполнен.</Translation>
+      <Translation Language="AR">Exporting Complete.</Translation>
+      <Translation Language="PL">Exporting Complete.</Translation>
+      <Translation Language="UA">Exporting Complete.</Translation>
     </Text>
     <Text Id="LogsExportingError" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Error(&lt;value&gt;)&#10;An Error occurred whilst &#10;exporting the logs.</Translation>
@@ -1880,6 +2480,9 @@
       <Translation Language="IT">Errore(&lt;value&gt;)&#10;Si è verificato un errore durante l'esportazione dei registri.</Translation>
       <Translation Language="PT">Erro (&lt;value&gt;)&#10;Ocorreu um erro durante &#10;a exportação dos registos.</Translation>
       <Translation Language="RU">Ошибка (&lt;value&gt;)&#10;Возникла ошибка &#10;при экспорте журнала.</Translation>
+      <Translation Language="AR">Error(&lt;value&gt;)&#10;An Error occurred whilst &#10;exporting the logs.</Translation>
+      <Translation Language="PL">Error(&lt;value&gt;)&#10;An Error occurred whilst &#10;exporting the logs.</Translation>
+      <Translation Language="UA">Error(&lt;value&gt;)&#10;An Error occurred whilst &#10;exporting the logs.</Translation>
     </Text>
     <Text Id="Instruction_SelectMetal" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Select metal type of evidence being processed.</Translation>
@@ -1890,6 +2493,9 @@
       <Translation Language="IT">Selezionare il tipo di metallo dell’elemento di prova in corso di trattamento.</Translation>
       <Translation Language="PT">Selecionar o tipo de metal da prova que está a ser processada.</Translation>
       <Translation Language="RU">Выберите тип металла или свидетельства для обработки.</Translation>
+      <Translation Language="AR">Select metal type of evidence being processed.</Translation>
+      <Translation Language="PL">Select metal type of evidence being processed.</Translation>
+      <Translation Language="UA">Select metal type of evidence being processed.</Translation>
     </Text>
     <Text Id="ResetFilter" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Reset Filter</Translation>
@@ -1900,6 +2506,9 @@
       <Translation Language="IT">Resetta il filtro</Translation>
       <Translation Language="PT">Restabelecer o filtro</Translation>
       <Translation Language="RU">Сброс фильтра</Translation>
+      <Translation Language="AR">Reset Filter</Translation>
+      <Translation Language="PL">Reset Filter</Translation>
+      <Translation Language="UA">Reset Filter</Translation>
     </Text>
     <Text Id="ConfirmResetFilter" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Are you sure you want to reset the filter health?</Translation>
@@ -1910,6 +2519,9 @@
       <Translation Language="IT">Resettare lo stato di salute del filtro?</Translation>
       <Translation Language="PT">Tem a certeza de que deseja restabelecer o estado do filtro?</Translation>
       <Translation Language="RU">Сбросить значение здоровья фильтра?</Translation>
+      <Translation Language="AR">Are you sure you want to reset the filter health?</Translation>
+      <Translation Language="PL">Are you sure you want to reset the filter health?</Translation>
+      <Translation Language="UA">Are you sure you want to reset the filter health?</Translation>
     </Text>
     <Text Id="DemoModePaused" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Demo Mode&#10;Paused</Translation>
@@ -1920,6 +2532,9 @@
       <Translation Language="IT">Demo Mode&#10;Paused</Translation>
       <Translation Language="PT">Demo Mode&#10;Paused</Translation>
       <Translation Language="RU">Demo Mode&#10;Paused</Translation>
+      <Translation Language="AR">Demo Mode&#10;Paused</Translation>
+      <Translation Language="PL">Demo Mode&#10;Paused</Translation>
+      <Translation Language="UA">Demo Mode&#10;Paused</Translation>
     </Text>
     <Text Id="__SingleUse_OWOD" TypographyId="Small" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Unable to reach optimal pressure. &#10;If the problem persists a &#10;service may be required</Translation>
@@ -1930,6 +2545,9 @@
       <Translation Language="IT">Impossibile raggiungere la pressione ottimale. &#10;Se il problema persiste a &#10;servizio può essere richiesto</Translation>
       <Translation Language="PT">Incapaz de atingir a pressão ideal. &#10;Se o problema persistir &#10;serviço pode ser necessário </Translation>
       <Translation Language="RU">Невозможно достичь оптимального давления. &#10;Если проблема сохраняется &#10;услуга может потребоваться</Translation>
+      <Translation Language="AR">Unable to reach optimal pressure. &#10;If the problem persists a &#10;service may be required</Translation>
+      <Translation Language="PL">Unable to reach optimal pressure. &#10;If the problem persists a &#10;service may be required</Translation>
+      <Translation Language="UA">Unable to reach optimal pressure. &#10;If the problem persists a &#10;service may be required</Translation>
     </Text>
     <Text Id="PumpdownVacuumFailiure" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Vacuum Failiure&#10;Unable to achieve sufficient vacuum</Translation>
@@ -1940,6 +2558,9 @@
       <Translation Language="IT">Vacuum Failiure. &#10;Incapace di raggiungere un vuoto sufficiente</Translation>
       <Translation Language="PT">Falha a vácuo. &#10;Incapaz de conseguir vácuo suficiente</Translation>
       <Translation Language="RU">Вакуумный отказ. &#10;Невозможно достичь достаточного вакуума</Translation>
+      <Translation Language="AR">Vacuum Failiure&#10;Unable to achieve sufficient vacuum</Translation>
+      <Translation Language="PL">Vacuum Failiure&#10;Unable to achieve sufficient vacuum</Translation>
+      <Translation Language="UA">Vacuum Failiure&#10;Unable to achieve sufficient vacuum</Translation>
     </Text>
     <Text Id="Error_Timeout" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Process Timeout has occurred. Please try again later.</Translation>
@@ -1950,6 +2571,9 @@
       <Translation Language="IT">Si è verificato un timeout del processo. Per favore riprova più tardi.</Translation>
       <Translation Language="PT">O tempo limite do processo ocorreu. Por favor, tente novamente mais tarde.</Translation>
       <Translation Language="RU">Тайм-аут процесса произошел. Пожалуйста, попробуйте позже.</Translation>
+      <Translation Language="AR">Process Timeout has occurred. Please try again later.</Translation>
+      <Translation Language="PL">Process Timeout has occurred. Please try again later.</Translation>
+      <Translation Language="UA">Process Timeout has occurred. Please try again later.</Translation>
     </Text>
     <Text Id="Language_PT" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Português (PT)</Translation>
@@ -1960,6 +2584,9 @@
       <Translation Language="IT">Português (PT)</Translation>
       <Translation Language="PT">Português (PT)</Translation>
       <Translation Language="RU">Português (PT)</Translation>
+      <Translation Language="AR">Português (PT)</Translation>
+      <Translation Language="PL">Português (PT)</Translation>
+      <Translation Language="UA">Português (PT)</Translation>
     </Text>
     <Text Id="__SingleUse_XCYD" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">EMC Mode</Translation>
@@ -1970,6 +2597,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">EMC Mode</Translation>
+      <Translation Language="PL">EMC Mode</Translation>
+      <Translation Language="UA">EMC Mode</Translation>
     </Text>
     <Text Id="__SingleUse_9D2R" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Big Clock</Translation>
@@ -1980,6 +2610,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Big Clock</Translation>
+      <Translation Language="PL">Big Clock</Translation>
+      <Translation Language="UA">Big Clock</Translation>
     </Text>
     <Text Id="LargePlaceholder" TypographyId="XXL" Alignment="Center" Direction="LTR">
       <Translation Language="GB">&lt;value&gt;</Translation>
@@ -1990,6 +2623,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">&lt;value&gt;</Translation>
+      <Translation Language="PL">&lt;value&gt;</Translation>
+      <Translation Language="UA">&lt;value&gt;</Translation>
     </Text>
     <Text Id="__SingleUse_LYK3" TypographyId="XXL" Alignment="Left" Direction="LTR">
       <Translation Language="GB">00:00:00</Translation>
@@ -2000,6 +2636,9 @@
       <Translation Language="IT">00:00:00</Translation>
       <Translation Language="PT">00:00:00</Translation>
       <Translation Language="RU">00:00:00</Translation>
+      <Translation Language="AR">00:00:00</Translation>
+      <Translation Language="PL">00:00:00</Translation>
+      <Translation Language="UA">00:00:00</Translation>
     </Text>
     <Text Id="__SingleUse_86ZP" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Exit</Translation>
@@ -2010,6 +2649,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Exit</Translation>
+      <Translation Language="PL">Exit</Translation>
+      <Translation Language="UA">Exit</Translation>
     </Text>
     <Text Id="__SingleUse_6XL5" TypographyId="Small" Alignment="Right" Direction="LTR">
       <Translation Language="GB">Elapsed Time: &lt;value&gt; minutes</Translation>
@@ -2020,6 +2662,9 @@
       <Translation Language="IT">Trascorso: &lt;value&gt; Minuti</Translation>
       <Translation Language="PT">Tempo: &lt;value&gt; Minutos</Translation>
       <Translation Language="RU">Прошедшее: &lt;value&gt; минут</Translation>
+      <Translation Language="AR">Elapsed Time: &lt;value&gt; minutes</Translation>
+      <Translation Language="PL">Elapsed Time: &lt;value&gt; minutes</Translation>
+      <Translation Language="UA">Elapsed Time: &lt;value&gt; minutes</Translation>
     </Text>
     <Text Id="__SingleUse_ICR0" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">0</Translation>
@@ -2030,6 +2675,9 @@
       <Translation Language="IT">0</Translation>
       <Translation Language="PT">0</Translation>
       <Translation Language="RU">0</Translation>
+      <Translation Language="AR">0</Translation>
+      <Translation Language="PL">0</Translation>
+      <Translation Language="UA">0</Translation>
     </Text>
     <Text Id="DeleteAll" TypographyId="Small" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Delete All</Translation>
@@ -2040,6 +2688,9 @@
       <Translation Language="IT">Cancella tutto</Translation>
       <Translation Language="PT">Excluir tudo</Translation>
       <Translation Language="RU">Удалить все</Translation>
+      <Translation Language="AR">Delete All</Translation>
+      <Translation Language="PL">Delete All</Translation>
+      <Translation Language="UA">Delete All</Translation>
     </Text>
     <Text Id="ConfirmDeleteAllLogs" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Are you sure you want to delete all logs?</Translation>
@@ -2050,6 +2701,9 @@
       <Translation Language="IT">Sei sicuro di voler cancellare tutti i log?</Translation>
       <Translation Language="PT">Tem certeza de que deseja excluir todos os registros?</Translation>
       <Translation Language="RU">Вы уверены, что хотите удалить все журналы?</Translation>
+      <Translation Language="AR">Are you sure you want to delete all logs?</Translation>
+      <Translation Language="PL">Are you sure you want to delete all logs?</Translation>
+      <Translation Language="UA">Are you sure you want to delete all logs?</Translation>
     </Text>
     <Text Id="DateTimePlaceholder" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">&lt;value&gt;</Translation>
@@ -2060,6 +2714,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">&lt;value&gt;</Translation>
+      <Translation Language="PL">&lt;value&gt;</Translation>
+      <Translation Language="UA">&lt;value&gt;</Translation>
     </Text>
     <Text Id="DefaultWildcard" TypographyId="MediumLarge" Alignment="Center" Direction="LTR">
       <Translation Language="GB">&lt;value&gt;</Translation>
@@ -2070,6 +2727,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">&lt;value&gt;</Translation>
+      <Translation Language="PL">&lt;value&gt;</Translation>
+      <Translation Language="UA">&lt;value&gt;</Translation>
     </Text>
     <Text Id="__SingleUse_5HL9" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Beep when chamber is ready to fume</Translation>
@@ -2080,6 +2740,9 @@
       <Translation Language="IT">Segnale acustico attivato quando la camera è pronta per la fumigazione</Translation>
       <Translation Language="PT">Aviso sonoro quando a câmara estiver pronta para a atuação dos vapores</Translation>
       <Translation Language="RU">Сигнал готовности камеры к обработке</Translation>
+      <Translation Language="AR">Beep when chamber is ready to fume</Translation>
+      <Translation Language="PL">Beep when chamber is ready to fume</Translation>
+      <Translation Language="UA">Beep when chamber is ready to fume</Translation>
     </Text>
     <Text Id="__SingleUse_ERGJ" TypographyId="Default" Alignment="Right" Direction="LTR">
       <Translation Language="GB">Standby Option:</Translation>
@@ -2090,6 +2753,9 @@
       <Translation Language="IT">Opzione di attesa:</Translation>
       <Translation Language="PT">Opção de espera:</Translation>
       <Translation Language="RU">Вариант ожидания:</Translation>
+      <Translation Language="AR">Standby Option:</Translation>
+      <Translation Language="PL">Standby Option:</Translation>
+      <Translation Language="UA">Standby Option:</Translation>
     </Text>
     <Text Id="__SingleUse_HDZG" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Off</Translation>
@@ -2100,6 +2766,9 @@
       <Translation Language="IT" TypographyId="Small">Via</Translation>
       <Translation Language="PT">Fora</Translation>
       <Translation Language="RU" TypographyId="Default">от</Translation>
+      <Translation Language="AR">Off</Translation>
+      <Translation Language="PL">Off</Translation>
+      <Translation Language="UA">Off</Translation>
     </Text>
     <Text Id="__SingleUse_WQAR" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Clock</Translation>
@@ -2110,6 +2779,9 @@
       <Translation Language="IT">Orologio</Translation>
       <Translation Language="PT">Relógio</Translation>
       <Translation Language="RU">Часы</Translation>
+      <Translation Language="AR">Clock</Translation>
+      <Translation Language="PL">Clock</Translation>
+      <Translation Language="UA">Clock</Translation>
     </Text>
     <Text Id="__SingleUse_JBZ6" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Standard</Translation>
@@ -2120,6 +2792,9 @@
       <Translation Language="IT">Standard</Translation>
       <Translation Language="PT">Padrão</Translation>
       <Translation Language="RU">стандарт</Translation>
+      <Translation Language="AR">Standard</Translation>
+      <Translation Language="PL">Standard</Translation>
+      <Translation Language="UA">Standard</Translation>
     </Text>
     <Text Id="General" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">General</Translation>
@@ -2130,6 +2805,9 @@
       <Translation Language="IT">Generale</Translation>
       <Translation Language="PT">Geral</Translation>
       <Translation Language="RU">общий</Translation>
+      <Translation Language="AR">General</Translation>
+      <Translation Language="PL">General</Translation>
+      <Translation Language="UA">General</Translation>
     </Text>
     <Text Id="Language" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Language</Translation>
@@ -2140,6 +2818,9 @@
       <Translation Language="IT">Lingua</Translation>
       <Translation Language="PT">Idioma</Translation>
       <Translation Language="RU">Язык</Translation>
+      <Translation Language="AR">Language</Translation>
+      <Translation Language="PL">Language</Translation>
+      <Translation Language="UA">Language</Translation>
     </Text>
     <Text Id="Time" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Time</Translation>
@@ -2150,6 +2831,9 @@
       <Translation Language="IT">Tempo</Translation>
       <Translation Language="PT">Tempo</Translation>
       <Translation Language="RU">Время</Translation>
+      <Translation Language="AR">Time</Translation>
+      <Translation Language="PL">Time</Translation>
+      <Translation Language="UA">Time</Translation>
     </Text>
     <Text Id="ConfirmLogOverwrite" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Continuing will overwrite a previous log, are you sure you want to continue?</Translation>
@@ -2160,6 +2844,9 @@
       <Translation Language="IT">Continuando si sovrascriverà un registro precedente, sei sicuro di voler continuare?</Translation>
       <Translation Language="PT">Continuar substituindo um log anterior, você tem certeza de que deseja continuar?</Translation>
       <Translation Language="RU">Продолжение перезапишет предыдущий журнал. Вы уверены, что хотите продолжить?</Translation>
+      <Translation Language="AR">Continuing will overwrite a previous log, are you sure you want to continue?</Translation>
+      <Translation Language="PL">Continuing will overwrite a previous log, are you sure you want to continue?</Translation>
+      <Translation Language="UA">Continuing will overwrite a previous log, are you sure you want to continue?</Translation>
     </Text>
     <Text Id="__SingleUse_9H3S" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">1</Translation>
@@ -2170,6 +2857,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">1</Translation>
+      <Translation Language="PL">1</Translation>
+      <Translation Language="UA">1</Translation>
     </Text>
     <Text Id="__SingleUse_68H9" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">4</Translation>
@@ -2180,6 +2870,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">4</Translation>
+      <Translation Language="PL">4</Translation>
+      <Translation Language="UA">4</Translation>
     </Text>
     <Text Id="__SingleUse_1346" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">7</Translation>
@@ -2190,6 +2883,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">7</Translation>
+      <Translation Language="PL">7</Translation>
+      <Translation Language="UA">7</Translation>
     </Text>
     <Text Id="__SingleUse_WBVG" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">0</Translation>
@@ -2200,6 +2896,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">0</Translation>
+      <Translation Language="PL">0</Translation>
+      <Translation Language="UA">0</Translation>
     </Text>
     <Text Id="__SingleUse_0IC4" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">&lt;</Translation>
@@ -2210,6 +2909,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">&lt;</Translation>
+      <Translation Language="PL">&lt;</Translation>
+      <Translation Language="UA">&lt;</Translation>
     </Text>
     <Text Id="__SingleUse_RAV5" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">2</Translation>
@@ -2220,6 +2922,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">2</Translation>
+      <Translation Language="PL">2</Translation>
+      <Translation Language="UA">2</Translation>
     </Text>
     <Text Id="__SingleUse_GS2Q" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">5</Translation>
@@ -2230,6 +2935,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">5</Translation>
+      <Translation Language="PL">5</Translation>
+      <Translation Language="UA">5</Translation>
     </Text>
     <Text Id="__SingleUse_X3VH" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">8</Translation>
@@ -2240,6 +2948,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">8</Translation>
+      <Translation Language="PL">8</Translation>
+      <Translation Language="UA">8</Translation>
     </Text>
     <Text Id="__SingleUse_NV1X" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">3</Translation>
@@ -2250,6 +2961,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">3</Translation>
+      <Translation Language="PL">3</Translation>
+      <Translation Language="UA">3</Translation>
     </Text>
     <Text Id="__SingleUse_O2CF" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">6</Translation>
@@ -2260,6 +2974,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">6</Translation>
+      <Translation Language="PL">6</Translation>
+      <Translation Language="UA">6</Translation>
     </Text>
     <Text Id="__SingleUse_JHSN" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">9</Translation>
@@ -2270,6 +2987,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">9</Translation>
+      <Translation Language="PL">9</Translation>
+      <Translation Language="UA">9</Translation>
     </Text>
     <Text Id="__SingleUse_I2UU" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Ok</Translation>
@@ -2280,6 +3000,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Ok</Translation>
+      <Translation Language="PL">Ok</Translation>
+      <Translation Language="UA">Ok</Translation>
     </Text>
     <Text Id="__SingleUse_431A" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Clock Config</Translation>
@@ -2290,6 +3013,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Clock Config</Translation>
+      <Translation Language="PL">Clock Config</Translation>
+      <Translation Language="UA">Clock Config</Translation>
     </Text>
     <Text Id="__SingleUse_94O8" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">&lt;value&gt;</Translation>
@@ -2300,6 +3026,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">&lt;value&gt;</Translation>
+      <Translation Language="PL">&lt;value&gt;</Translation>
+      <Translation Language="UA">&lt;value&gt;</Translation>
     </Text>
     <Text Id="__SingleUse_W7LN" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Purge Valve 2</Translation>
@@ -2310,6 +3039,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Purge Valve 2</Translation>
+      <Translation Language="PL">Purge Valve 2</Translation>
+      <Translation Language="UA">Purge Valve 2</Translation>
     </Text>
     <Text Id="PowerLossDetected" TypographyId="Small" Alignment="Center" Direction="LTR">
       <Translation Language="GB">A loss of power was detected. System will attempt to continue.</Translation>
@@ -2320,6 +3052,9 @@
       <Translation Language="IT">È stata rilevata una perdita di potenza. Il sistema tenterà di continuare.</Translation>
       <Translation Language="PT">Uma perda de energia foi detectada. O sistema tentará continuar.</Translation>
       <Translation Language="RU">Обнаружена потеря питания. Система попытается продолжить.</Translation>
+      <Translation Language="AR">A loss of power was detected. System will attempt to continue.</Translation>
+      <Translation Language="PL">A loss of power was detected. System will attempt to continue.</Translation>
+      <Translation Language="UA">A loss of power was detected. System will attempt to continue.</Translation>
     </Text>
     <Text Id="__SingleUse_G0M7" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Force Lid</Translation>
@@ -2330,6 +3065,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Force Lid</Translation>
+      <Translation Language="PL">Force Lid</Translation>
+      <Translation Language="UA">Force Lid</Translation>
     </Text>
     <Text Id="__SingleUse_IXTA" TypographyId="Default" Alignment="Right" Direction="LTR">
       <Translation Language="GB">Elapsed: &lt;value&gt;</Translation>
@@ -2340,6 +3078,9 @@
       <Translation Language="IT">&lt;value&gt;</Translation>
       <Translation Language="PT">&lt;value&gt;</Translation>
       <Translation Language="RU">&lt;value&gt;</Translation>
+      <Translation Language="AR">Elapsed: &lt;value&gt;</Translation>
+      <Translation Language="PL">Elapsed: &lt;value&gt;</Translation>
+      <Translation Language="UA">Elapsed: &lt;value&gt;</Translation>
     </Text>
     <Text Id="Format" TypographyId="Default" Alignment="Right" Direction="LTR">
       <Translation Language="GB">Format:</Translation>
@@ -2350,6 +3091,9 @@
       <Translation Language="IT">Formato:</Translation>
       <Translation Language="PT">Formato:</Translation>
       <Translation Language="RU">Формат:</Translation>
+      <Translation Language="AR">Format:</Translation>
+      <Translation Language="PL">Format:</Translation>
+      <Translation Language="UA">Format:</Translation>
     </Text>
     <Text Id="Confirm" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Confirm</Translation>
@@ -2360,6 +3104,9 @@
       <Translation Language="IT">Confermare</Translation>
       <Translation Language="PT">Confirme</Translation>
       <Translation Language="RU">Подтверждение</Translation>
+      <Translation Language="AR">Confirm</Translation>
+      <Translation Language="PL">Confirm</Translation>
+      <Translation Language="UA">Confirm</Translation>
     </Text>
     <Text Id="Date" TypographyId="Default" Alignment="Right" Direction="LTR">
       <Translation Language="GB">Date:</Translation>
@@ -2370,6 +3117,9 @@
       <Translation Language="IT">Data</Translation>
       <Translation Language="PT">Encontro</Translation>
       <Translation Language="RU">Свидание</Translation>
+      <Translation Language="AR">Date:</Translation>
+      <Translation Language="PL">Date:</Translation>
+      <Translation Language="UA">Date:</Translation>
     </Text>
     <Text Id="DateYMD" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Y/M/D</Translation>
@@ -2380,6 +3130,9 @@
       <Translation Language="IT">A/M/G</Translation>
       <Translation Language="PT">A/M/D</Translation>
       <Translation Language="RU">Г/М/Д</Translation>
+      <Translation Language="AR">Y/M/D</Translation>
+      <Translation Language="PL">Y/M/D</Translation>
+      <Translation Language="UA">Y/M/D</Translation>
     </Text>
     <Text Id="DateDMY" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">D/M/Y</Translation>
@@ -2390,6 +3143,9 @@
       <Translation Language="IT">G/M/A</Translation>
       <Translation Language="PT">D/M/A</Translation>
       <Translation Language="RU">Д/М/Г</Translation>
+      <Translation Language="AR">D/M/Y</Translation>
+      <Translation Language="PL">D/M/Y</Translation>
+      <Translation Language="UA">D/M/Y</Translation>
     </Text>
     <Text Id="DateMDY" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">M/D/Y</Translation>
@@ -2400,6 +3156,9 @@
       <Translation Language="IT">M/G/A</Translation>
       <Translation Language="PT">M/D/A</Translation>
       <Translation Language="RU">М/Д/Г</Translation>
+      <Translation Language="AR">M/D/Y</Translation>
+      <Translation Language="PL">M/D/Y</Translation>
+      <Translation Language="UA">M/D/Y</Translation>
     </Text>
     <Text Id="__SingleUse_K827" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Confirm</Translation>
@@ -2410,6 +3169,9 @@
       <Translation Language="IT">Confermare</Translation>
       <Translation Language="PT">Confirme</Translation>
       <Translation Language="RU">Подтверждение</Translation>
+      <Translation Language="AR">Confirm</Translation>
+      <Translation Language="PL">Confirm</Translation>
+      <Translation Language="UA">Confirm</Translation>
     </Text>
     <Text Id="__SingleUse_G6UK" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Start Tuning Cycle</Translation>
@@ -2420,6 +3182,9 @@
       <Translation Language="IT">Inizia la sintonizzazione</Translation>
       <Translation Language="PT">Iniciar ajuste</Translation>
       <Translation Language="RU">Начать настройку</Translation>
+      <Translation Language="AR">Start Tuning Cycle</Translation>
+      <Translation Language="PL">Start Tuning Cycle</Translation>
+      <Translation Language="UA">Start Tuning Cycle</Translation>
     </Text>
     <Text Id="Tuning" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Tuning</Translation>
@@ -2430,6 +3195,9 @@
       <Translation Language="IT">Messa a punto</Translation>
       <Translation Language="PT">Tuning</Translation>
       <Translation Language="RU">настройка</Translation>
+      <Translation Language="AR">Tuning</Translation>
+      <Translation Language="PL">Tuning</Translation>
+      <Translation Language="UA">Tuning</Translation>
     </Text>
     <Text Id="Delta" TypographyId="Display" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Delta: &lt;&gt;</Translation>
@@ -2440,6 +3208,9 @@
       <Translation Language="IT">Delta: &lt;&gt;</Translation>
       <Translation Language="PT">Delta: &lt;&gt;</Translation>
       <Translation Language="RU">Delta: &lt;&gt;</Translation>
+      <Translation Language="AR">Delta: &lt;&gt;</Translation>
+      <Translation Language="PL">Delta: &lt;&gt;</Translation>
+      <Translation Language="UA">Delta: &lt;&gt;</Translation>
     </Text>
     <Text Id="SingleUseId252" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">&lt;&gt;</Translation>
@@ -2450,6 +3221,9 @@
       <Translation Language="IT">&lt;&gt;</Translation>
       <Translation Language="PT">&lt;&gt;</Translation>
       <Translation Language="RU">&lt;&gt;</Translation>
+      <Translation Language="AR">&lt;&gt;</Translation>
+      <Translation Language="PL">&lt;&gt;</Translation>
+      <Translation Language="UA">&lt;&gt;</Translation>
     </Text>
     <Text Id="__SingleUse_SIWN" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">&lt;&gt;</Translation>
@@ -2460,6 +3234,9 @@
       <Translation Language="IT">&lt;&gt;</Translation>
       <Translation Language="PT">&lt;&gt;</Translation>
       <Translation Language="RU">&lt;&gt;</Translation>
+      <Translation Language="AR">&lt;&gt;</Translation>
+      <Translation Language="PL">&lt;&gt;</Translation>
+      <Translation Language="UA">&lt;&gt;</Translation>
     </Text>
     <Text Id="__SingleUse_8HV3" TypographyId="Small" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Enable Diagnostics</Translation>
@@ -2470,6 +3247,9 @@
       <Translation Language="IT">Abilita diagnostica</Translation>
       <Translation Language="PT">Ativar diagnóstico</Translation>
       <Translation Language="RU">Включить диагностику</Translation>
+      <Translation Language="AR">Enable Diagnostics</Translation>
+      <Translation Language="PL">Enable Diagnostics</Translation>
+      <Translation Language="UA">Enable Diagnostics</Translation>
     </Text>
     <Text Id="__SingleUse_BVHS" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">View Diagnostics</Translation>
@@ -2480,6 +3260,9 @@
       <Translation Language="IT">Visualizza diagnostica</Translation>
       <Translation Language="PT">Exibir diagnóstico</Translation>
       <Translation Language="RU">Посмотреть диагностику</Translation>
+      <Translation Language="AR">View Diagnostics</Translation>
+      <Translation Language="PL">View Diagnostics</Translation>
+      <Translation Language="UA">View Diagnostics</Translation>
     </Text>
     <Text Id="Close" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Close</Translation>
@@ -2490,6 +3273,9 @@
       <Translation Language="IT">Vicino</Translation>
       <Translation Language="PT">Fechar</Translation>
       <Translation Language="RU">близко</Translation>
+      <Translation Language="AR">Close</Translation>
+      <Translation Language="PL">Close</Translation>
+      <Translation Language="UA">Close</Translation>
     </Text>
     <Text Id="__SingleUse_G2BQ" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">No diagnostics&#10;found</Translation>
@@ -2500,6 +3286,9 @@
       <Translation Language="IT">Nessuna diagnostica &#10;trovato</Translation>
       <Translation Language="PT">Sem diagnóstico &#10;encontrado</Translation>
       <Translation Language="RU">Нет диагностики &#10;нашел</Translation>
+      <Translation Language="AR">No diagnostics&#10;found</Translation>
+      <Translation Language="PL">No diagnostics&#10;found</Translation>
+      <Translation Language="UA">No diagnostics&#10;found</Translation>
     </Text>
     <Text Id="__SingleUse_RY8S" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Start 30</Translation>
@@ -2510,6 +3299,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Start 30</Translation>
+      <Translation Language="PL">Start 30</Translation>
+      <Translation Language="UA">Start 30</Translation>
     </Text>
     <Text Id="__SingleUse_4UFV" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Fume Override Plug</Translation>
@@ -2520,6 +3312,9 @@
       <Translation Language="IT">-</Translation>
       <Translation Language="PT">-</Translation>
       <Translation Language="RU">-</Translation>
+      <Translation Language="AR">Fume Override Plug</Translation>
+      <Translation Language="PL">Fume Override Plug</Translation>
+      <Translation Language="UA">Fume Override Plug</Translation>
     </Text>
   </Texts>
   <Typographies>
