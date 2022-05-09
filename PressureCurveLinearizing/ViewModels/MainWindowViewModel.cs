@@ -8,6 +8,7 @@ using PressureCurveLinearizing.Definitions.WPF;
 using RecoverLogInspector;
 using System.Windows.Input;
 using PressureCurveLinearizing.Definitions.DeviceData;
+using LiveCharts.Defaults;
 
 namespace PressureCurveLinearizing.ViewModels
 {
@@ -39,8 +40,10 @@ namespace PressureCurveLinearizing.ViewModels
         private List<BindableLog> _bindableLogs = new List<BindableLog>();
 
         Section[] AverageSections;
-        Section[] MinimumSections;
+        Section[] MinimumSections;        
         private int _sectionCount = 10;
+
+        ObservablePoint[] _averageDeltaPressurePoints;
 
         public int SectionCount
         {
@@ -125,28 +128,39 @@ namespace PressureCurveLinearizing.ViewModels
                     if (string.IsNullOrWhiteSpace(path))
                         path = LogLocation;
                     else
-                        LogLocation = path;
-                    Logs.Clear();
+                        LogLocation = path;                    
                     BindableLogs.Clear();
                     GC.Collect();
 
+                    //Load logs (fetches every *.xml under the provided directory)
                     var files = System.IO.Directory.EnumerateFiles(path, "*.xml", System.IO.SearchOption.AllDirectories);
                     var newLogs = new List<RecoverLog>();
-                    var newBindableLogs = new List<BindableLog>();                    
+                    var newBindableLogs = new List<BindableLog>();
                     foreach (var file in files)
-                    {
-                        try
-                        {
-                            var log = RecoverLog.Deserialize(file);
-
-                            //Add Logs
-                            newLogs.Add(log);
-                            newBindableLogs.Add(new BindableLog(log, SectionCount));
-
-                        }
-                        catch (Exception ex) { Console.WriteLine(ex.Message); }
+                    {                                                
+                        //Attempt to load
+                        var bindableLog = BindableLog.Parse(RecoverLog.Deserialize(file), SectionCount);
+                        
+                        //On success add to list
+                        if (bindableLog != null)
+                            newBindableLogs.Add(bindableLog);
                     }
 
+                    //Get all delta as single object                    
+                    var allDeltasPressures = newBindableLogs.SelectMany(a => a.DeltaPressureValues).ToArray();
+
+                    //Fetch only the relevant delta values
+                    int xAvgValue = 500;                                                                //Used to create average between very distinct pressures
+                    _averageDeltaPressurePoints = allDeltasPressures
+                        .Where(a => a.X < 10_000)                                                       //Only looking at mTorr below 10,000
+                        .GroupBy(a => ((int)(a.X / xAvgValue)) * xAvgValue)                             //Group to floored mTorr by xAvgValue
+                        .Select(a => new ObservablePoint(a.Key, Math.Round(a.Average(b => b.Y))))       //Average of each xAvgValue to observable point
+                        .OrderByDescending(a => a.X)                                                    //Go down in mTorr
+                        .ToArray(); 
+
+
+
+                    //Sections for all logs
                     MinimumSections = new Section[SectionCount];
                     AverageSections = new Section[SectionCount];
                     for (int i = 0; i < SectionCount; i++)
@@ -163,14 +177,16 @@ namespace PressureCurveLinearizing.ViewModels
                             ValueEnd = Math.Round(newBindableLogs.Select(a => a.IndividualSections[i].ValueEnd).Average()),
                             ProgressRange = Math.Round(newBindableLogs.First().IndividualSections.First().ProgressRange)
                         };
-
                     }
 
+                    //Set averages for all logs onto individual log graphs
                     foreach (var log in newBindableLogs)
+                    {
                         log.SetGenericSections(MinimumSections, AverageSections);
+                        log.SetAvgDelta(_averageDeltaPressurePoints, 0.5f);
+                    }
 
-
-                    Logs = newLogs;
+                    
                     BindableLogs = newBindableLogs;
 
                 });
@@ -188,7 +204,14 @@ namespace PressureCurveLinearizing.ViewModels
                     if (dialog.ShowDialog() != true)
                         return;
 
-                    System.IO.File.WriteAllText(dialog.FileName, string.Join("\n", MinimumSections));
+                    var sectionData = string.Join("\n", MinimumSections);
+                    var averageData = string.Join("\n", _averageDeltaPressurePoints.Select(b => $"{b.X}, {b.Y}"));
+
+
+                    System.IO.File.WriteAllText(dialog.FileName, averageData);
+
+                    
+
                 });
             }        
         }
