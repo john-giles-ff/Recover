@@ -188,6 +188,7 @@ void LFT_Auto::QueAbort()
 }
 
 
+
 void LFT_Auto::Abort()
 {			
 	_model->SendCommand("HALT");
@@ -291,6 +292,7 @@ void LFT_Auto::SetSettings()
 	SetTimeout();
 	SetSampleRate();
 	SetUsePurgeFans(true);
+	_information->ClearPerformance();
 }
 
 void LFT_Auto::StartPreChecks()

@@ -373,7 +373,7 @@
           },
           {
             "Type": "ButtonWithIcon",
-            "Name": "BtnLowPressure",
+            "Name": "BtnSystemUnderperforming",
             "X": 560,
             "Width": 60,
             "Height": 60,
@@ -1218,7 +1218,7 @@
             "InteractionName": "ShowLowPressureErrorWindow",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "BtnLowPressure"
+              "TriggerComponent": "BtnSystemUnderperforming"
             },
             "Action": {
               "Type": "ActionCustom",

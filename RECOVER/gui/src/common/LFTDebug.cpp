@@ -95,6 +95,7 @@ LFTDebug::LFTDebug() :
 	TxtDelta.setTypedText(touchgfx::TypedText(T_DELTA));
 	TxtDeltaBuffer[0] = 0;
 	TxtDelta.setWildcard(TxtDeltaBuffer);
+	TxtDelta.setWideTextAction(touchgfx::WIDE_TEXT_CHARWRAP);
 	add(TxtDelta);
 
 }
@@ -222,7 +223,8 @@ void LFTDebug::SetValves(bool inlet, bool purge, bool bypass)
 	touchgfx::Unicode::snprintf(TxtValvesBuffer, GENERIC_BUFFER_SIZE, "%d|%d|%d", (int)inlet, (int)purge, (int)bypass);
 }
 
-void LFTDebug::SetDelta(int delta)
+void LFTDebug::SetDelta(int delta, int avgDelta, int minDelta)
 {
-	touchgfx::Unicode::snprintf(TxtDeltaBuffer, GENERIC_BUFFER_SIZE, "%d", delta);
+	touchgfx::Unicode::snprintf(TxtDeltaBuffer, GENERIC_BUFFER_SIZE, "%d|%d|%d", delta, avgDelta, minDelta);
+	TxtDelta.resizeHeightToCurrentText();
 }

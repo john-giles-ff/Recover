@@ -154,7 +154,7 @@ void LFT::LFTThreadProcess()
 		Information.ReadProgress();				
 	
 	//Check if next stage should be called
-	CheckForNextStage();	
+	CheckForNextStage();
 
 	//Check if a PC has requested PC Mode
 	CheckPCMode();
@@ -212,6 +212,9 @@ void LFT::Initialisation()
 	Information.RefreshValuesProgress = Information.RefreshValuesProgress + 1;
 
 	Information.ReadFilterCounter();
+	Information.RefreshValuesProgress = Information.RefreshValuesProgress + 1;
+
+	Information.ReadManifoldVersion();
 	Information.RefreshValuesProgress = Information.RefreshValuesProgress + 1;
 
 	Settings.ReadUsePurgeFans();
@@ -273,6 +276,7 @@ void LFT::CheckPCMode()
 		}
 	}
 }
+
 
 void LFT::CheckForNextStage()
 {

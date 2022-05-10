@@ -50,7 +50,7 @@ public:
 	void QueCool();
 	void QueAbort();
 
-	//Misc
+	//Misc	
 	void ClearErrors();
 	void DisableTimeout(bool state);
 
@@ -76,6 +76,9 @@ private:
 	LFT_Manual * _manual;
 	LFT_Settings * _settings;
 	LFT_AutoClean* _autoClean;
+
+
+
 };
 
 
