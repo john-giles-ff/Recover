@@ -253,6 +253,10 @@ namespace BCTestStrap
             int percent = 0;
             for (int i = 0; i < data.Length; i++)
             {
+                //Only send if starts with : 
+                if (!data[i].Trim().StartsWith(":"))
+                    continue;
+
                 //Send Data
                 recoverController.Application.SendCustom(Encoding.UTF8.GetBytes(data[i]));                
 
@@ -352,7 +356,7 @@ namespace BCTestStrap
                 }
                 while (!firmwareResponse.EndsWith("\n"));
 
-                Console.WriteLine(firmwareResponse);
+                Console.WriteLine($"{DateTime.Now}:\t{firmwareResponse}");
             }
 
             recoverController.Application.ExitTransparentMode();
