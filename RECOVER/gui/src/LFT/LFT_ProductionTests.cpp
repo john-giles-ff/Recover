@@ -183,7 +183,7 @@ void LFT_ProductionTests::SoakTest()
 		_auto->SetChamberSize(false);
 		_auto->SetMetalType(false);
 		_auto->SetStirTime(1);				
-		_auto->SetSampleRate(10);
+		_auto->SetSampleRate(10);		
 
 		//Start Prechecks
 		_auto->StartPreChecks();

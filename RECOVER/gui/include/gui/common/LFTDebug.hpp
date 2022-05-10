@@ -32,7 +32,7 @@ public:
 	void SetProgress(int value);		
 	void SetTimer(int hour, int minute, int second);
 	void SetValves(bool inlet, bool purge, bool bypass);
-	void SetDelta(int delta);
+	void SetDelta(int delta, int avgDelta, int minDelta);
 	
 private:		
 	touchgfx::colortype enabledColor;

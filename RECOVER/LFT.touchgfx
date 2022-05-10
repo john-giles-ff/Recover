@@ -1682,8 +1682,7 @@
             "InteractionName": "ShowLowPressureErrorWindow",
             "HasCompletedTrigger": false,
             "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "BtnLowPressure"
+              "Type": "TriggerClicked"
             },
             "Action": {
               "Type": "ActionCustom",

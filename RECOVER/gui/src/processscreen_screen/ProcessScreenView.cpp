@@ -38,7 +38,7 @@ void ProcessScreenView::setupScreen()
 	TxtConfirmFumehood.setVisible(false);
 
 	BtnExternal.setVisible(false);
-	BtnLowPressure.setVisible(false);
+	BtnSystemUnderperforming.setVisible(false);
 
 	//Setup Error Box
 	ErrorWindow.setXY(0, 0);
@@ -407,6 +407,23 @@ void ProcessScreenView::checkLFTValues()
 		}
 	}
 
+	//System underperforming
+	if (stage == LFT_STAGE_CHAMBER_CONDITIONING && LFT::Information.Pressure < 10.0f)
+	{
+		LFT::Information.CheckPerformance();
+		bool performance = LFT::Information.Performance();
+		if (!performance && !BtnSystemUnderperforming.isVisible())
+		{
+			BtnSystemUnderperforming.setVisible(true);
+			BtnSystemUnderperforming.invalidate();
+			RepositionErrors();
+
+
+			//TODO: Show message about how it's underperforming and give user option to dry
+		}
+	}
+
+
 	/* DEPRECIATED!
 	* This is kept here incase it needs to come back in the future. The error code is also kept but should never be shown
 	*
@@ -565,27 +582,27 @@ void ProcessScreenView::RepositionErrors()
 		binVal += 4;
 	if (BtnExternal.isVisible())
 		binVal += 2;
-	if (BtnLowPressure.isVisible())
+	if (BtnSystemUnderperforming.isVisible())
 		binVal += 1;	
 
 	//Organise soft errors
 	switch (binVal)
 	{
 	case 1:
-		BtnLowPressure.setX(highValue);
+		BtnSystemUnderperforming.setX(highValue);
 		break;
 	case 2:
 		BtnExternal.setX(highValue);
 		break;
 	case 3:
-		BtnLowPressure.setX(medValue);
+		BtnSystemUnderperforming.setX(medValue);
 		BtnExternal.setX(highValue);
 		break;
 	case 4:
 		BtnFilter.setX(highValue);
 		break;
 	case 5:
-		BtnLowPressure.setX(medValue);
+		BtnSystemUnderperforming.setX(medValue);
 		BtnFilter.setX(highValue);
 		break;
 	case 6:
@@ -593,7 +610,7 @@ void ProcessScreenView::RepositionErrors()
 		BtnFilter.setX(highValue);
 		break;
 	case 7:
-		BtnLowPressure.setX(lowValue);
+		BtnSystemUnderperforming.setX(lowValue);
 		BtnExternal.setX(medValue);
 		BtnFilter.setX(highValue);
 		break;
@@ -602,7 +619,7 @@ void ProcessScreenView::RepositionErrors()
 
 	BtnFilter.invalidate();
 	BtnExternal.invalidate();	
-	BtnLowPressure.invalidate();
+	BtnSystemUnderperforming.invalidate();
 }
 
 void ProcessScreenView::UpdateExternalSwitch(int state)
@@ -1344,7 +1361,7 @@ void ProcessScreenView::StartProcess(bool skipOverwriteCheck)
 
 		//Set Parameters then start
 		LFT::Auto.SetChamberSize(_chamberSelected);
-		LFT::Auto.SetMetalType(_typeSelected);		
+		LFT::Auto.SetMetalType(_typeSelected);
 		LFT::Auto.QuePrechecks();
 		UpdateStage();
 		tickCounter = 0;

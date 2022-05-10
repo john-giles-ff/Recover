@@ -16,6 +16,12 @@ constexpr int FILTER_BAD_BAND = 100;
 
 constexpr int UPDATE_INTERNAL_RTC_MAX = 120;
 
+enum class MANIFOLD_VERSION
+{
+	V1 = 0x01,
+	V2 = 0x02,
+};
+
 
 class LFT_Information
 {	
@@ -40,6 +46,7 @@ public:
 		Pressure.SetSemaphore(xSemaphore);
 		LidClosedState.SetSemaphore(xSemaphore);
 		ChamberState.SetSemaphore(xSemaphore);
+		ManifoldVersion.SetSemaphore(xSemaphore);
 		IsInformationCurrent.SetSemaphore(xSemaphore);
 		RtcTime.SetSemaphore(xSemaphore);
 		Time.SetSemaphore(xSemaphore);
@@ -104,6 +111,7 @@ public:
 	ThreadSafe<float> Pressure;
 	ThreadSafe<bool> LidClosedState;
 	ThreadSafe<bool> ChamberState;
+	ThreadSafe<MANIFOLD_VERSION> ManifoldVersion;
 
 	ThreadSafe<bool> IsInformationCurrent = true;
 
@@ -174,7 +182,7 @@ public:
 	const int DEFAULT_TIMEOUT1 = 30;
 	const int DEFAULT_TIMEOUT2 = 45;
 
-	const int LEAKRATE_MAX = 75;
+	const int LEAKRATE_MAX = 2400;
 
 	const int STIRRING_TIME = 10;
 
@@ -215,6 +223,7 @@ public:
 	void ReadRunCounter();
 	void ReadFilterCounter();
 	void ReadDelta();
+	void ReadManifoldVersion();
 
 	//Get Calculated Values
 	int GetFilterValue();
@@ -230,6 +239,15 @@ public:
 	void ReadTemperaturePower(float &voltage, float &current);
 
 	void SetRTC(int year, int month, int day, int hour, int minute, int second);
+
+	//Performance	
+	void ClearPerformance();
+	void CheckPerformance();
+	float ActualAverageDelta();
+	float AvgDeltaAtPressure(float pressure);
+	float MinDeltaAtPressure(float pressure);
+	bool Performance();
+	static constexpr float MIN_DELTA_FACTOR = 0.62f;
 
 
 	void ReadStandardValues(int stage);
@@ -254,6 +272,14 @@ private:
 	void DecodePower(String input, float &voltage, float &current);
 
 	int updateInternalRTCTicker = 0;	
+
+	//Performance
+	long long _lastPerfCheckTime = 0;
+	bool _performance = true;
+	static constexpr int DELTA_AVG_SIZE = 5;
+	int _deltaAvgs[DELTA_AVG_SIZE];
+	int _deltaAvgsCount = 0;
+	int _deltaAvgsIndex = 0;
 };
 
 
