@@ -62,6 +62,10 @@ public:
 	void StartCool();	
 	void Abort();
 
+	//Drying
+	void StartDrying(int min = -1);
+	int ReadDryingPercentage();
+
 	void AbortCleanup();	
 
 	void SetStage(int value);

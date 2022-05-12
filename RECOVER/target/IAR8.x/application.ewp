@@ -1075,6 +1075,9 @@
           <name>$PROJ_DIR$/../../generated/fonts/src/Font_segoeuisl_24_2bpp_0.cpp</name>
         </file>
         <file>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_segoeuisl_24_2bpp_31.cpp</name>
+        </file>
+        <file>
           <name>$PROJ_DIR$/../../generated/fonts/src/Font_segoeuisl_24_2bpp_4.cpp</name>
         </file>
         <file>
@@ -1085,6 +1088,9 @@
         </file>
         <file>
           <name>$PROJ_DIR$/../../generated/fonts/src/Font_segoeuisl_55_4bpp_0.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_segoeuisl_55_4bpp_4.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_20_2bpp_0.cpp</name>
@@ -1338,7 +1344,7 @@
             <name>$PROJ_DIR$/../../generated/gui_generated/src/containers/LogsExportingBase.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$/../../generated/gui_generated/src/containers/LowPressureMessageBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/containers/MoistureDetectedMessageBase.cpp</name>
           </file>
           <file>
             <name>$PROJ_DIR$/../../generated/gui_generated/src/containers/MsgBoxBase.cpp</name>
@@ -1822,6 +1828,9 @@
           <name>$PROJ_DIR$/../../generated/images/src/image_Previous.cpp</name>
         </file>
         <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_progressbackground_320x40.cpp</name>
+        </file>
+        <file>
           <name>$PROJ_DIR$/../../generated/images/src/image_RECOVER_empty_splash.cpp</name>
         </file>
         <file>
@@ -2114,6 +2123,9 @@
           <file>
             <name>$PROJ_DIR$/../../generated/images/src/States/image_LowPressureIcon.cpp</name>
           </file>
+          <file>
+            <name>$PROJ_DIR$/../../generated/images/src/States/image_water.cpp</name>
+          </file>
         </group>
         <group>
           <name>Transparent</name>
@@ -2344,7 +2356,7 @@
           <name>$PROJ_DIR$/../../gui/src/containers/LogsExporting.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$/../../gui/src/containers/LowPressureMessage.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/containers/MoistureDetectedMessage.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$/../../gui/src/containers/MsgBox.cpp</name>

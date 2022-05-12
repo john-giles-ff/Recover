@@ -194,6 +194,71 @@ void LFT_Auto::Abort()
 	_model->SendCommand("HALT");
 }
 
+void LFT_Auto::StartDrying(int min)
+{
+	if (min == -1)
+		min = 15;
+
+	_model->SendInt("DRYING", min);
+	_model->SendCommand("DRYING");
+}
+
+int LFT_Auto::ReadDryingPercentage()
+{
+	String times = _model->ReadString("DRYING TIME");	
+	times = "¬10:00 00:00\n";
+
+	int totalMin = 0, totalSec = 0, total = 0;
+	int elapsedMin = 0, elapsedSec = 0, elapsed = 0;
+
+	int position = 0;
+
+	//Move to start digit
+	int lastPos = 0;
+	while (!String::isDigit(times[lastPos]))
+		lastPos++;
+
+	//Read data
+	for (unsigned int i = 0; i < times.len(); i++)
+	{
+		if (times[i] != ':' && times[i] != ' ' && times[i] != '\n')
+			continue;
+		
+		String sub = times.substr(lastPos, i - lastPos);
+		int val = sub.toInt();
+
+		if (val < 0)
+			return 0;
+		
+		switch (position++)
+		{
+		case 0:
+			totalMin = val;
+			break;
+		case 1:
+			totalSec = val;
+			break;
+		case 2:
+			elapsedMin = val;
+			break;
+		case 3:
+			elapsedSec = val;
+			break;
+		default:
+			break;
+		}
+
+		lastPos = i + 1;
+	}
+
+	//Tally up parts
+	total = (totalMin * 60) + totalSec;
+	elapsed = (elapsedMin * 60) + elapsedSec;
+
+	//Return percentage
+	return (int)(((float)elapsed / (float)total) * 100.0f);
+}
+
 void LFT_Auto::AbortCleanup()
 {	
 	//If precursor heater has heated up, do a full purge

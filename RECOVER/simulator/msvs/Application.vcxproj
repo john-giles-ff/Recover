@@ -75,8 +75,6 @@
     <ClCompile Include="..\..\gui\src\common\LFTDebug.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\LogsExporting.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\LogsExportingBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\containers\LowPressureMessage.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\LowPressureMessageBase.cpp"/>
     <ClCompile Include="..\..\gui\src\mainscreen_screen\MainScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\mainscreen_screen\MainScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\mainscreen_screen\MainScreenViewBase.cpp"/>
@@ -116,6 +114,8 @@
     <ClCompile Include="..\..\generated\gui_generated\src\usbmode_screen\UsbModeViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\ViewDiagnostics.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\ViewDiagnosticsBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\MoistureDetectedMessage.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\MoistureDetectedMessageBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -322,8 +322,6 @@
     <ClInclude Include="..\..\gui\include\gui\common\LFTDebug.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\LogsExporting.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\LogsExportingBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\LowPressureMessage.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\LowPressureMessageBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\mainscreen_screen\MainScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\mainscreen_screen\MainScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\mainscreen_screen\MainScreenViewBase.hpp"/>
@@ -370,6 +368,8 @@
     <ClInclude Include="..\..\gui\include\gui\common\Utils.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\ViewDiagnostics.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ViewDiagnosticsBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\MoistureDetectedMessage.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\MoistureDetectedMessageBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

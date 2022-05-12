@@ -48,9 +48,9 @@ void ProcessScreenView::setupScreen()
 	FilterStateMessageWindow.setXY(0, 0);
 	FilterStateMessageWindow.setVisible(false);
 
-	//Setup Low Pressure Window
-	LowPressureWindow.setXY(0, 0);
-	LowPressureWindow.setVisible(false);
+	//Setup moisture Window
+	MoistureMessage.setXY(0, 0);
+	MoistureMessage.setVisible(false);
 
 	//Setup Powerloss Window
 	PowerLossWindow.setXY(0, 0);
@@ -105,7 +105,7 @@ void ProcessScreenView::setupScreen()
 	add(HintInstructions);
 	add(ConfirmLogOverwrite);
 	add(FilterStateMessageWindow);
-	add(LowPressureWindow);
+	add(MoistureMessage);
 	add(PowerLossWindow);
 	add(ExtSwitchErrorWindow);
 	add(InternalSwitchErrorWindow);
@@ -135,6 +135,7 @@ void ProcessScreenView::setupScreen()
 		LFT::Information.PowerlossDetected = false;
 		ShowPowerLossDetected();
 	}
+	
 }
 
 void ProcessScreenView::tearDownScreen()
@@ -1307,10 +1308,10 @@ void ProcessScreenView::ShowRunsRemaining()
 	FilterStateMessageWindow.invalidate();
 }
 
-void ProcessScreenView::ShowLowPressureErrorWindow()
+void ProcessScreenView::ShowMoistureDetectedWindow()
 {
-	LowPressureWindow.setVisible(true);
-	LowPressureWindow.invalidate();
+	MoistureMessage.setVisible(true);
+	MoistureMessage.invalidate();
 }
 
 void ProcessScreenView::ShowProcessSelectorChamber()

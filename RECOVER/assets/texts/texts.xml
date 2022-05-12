@@ -2537,7 +2537,7 @@
       <Translation Language="UA">Demo Mode&#10;Paused</Translation>
     </Text>
     <Text Id="__SingleUse_OWOD" TypographyId="Small" Alignment="Center" Direction="LTR">
-      <Translation Language="GB">Unable to reach optimal pressure. &#10;If the problem persists a &#10;service may be required</Translation>
+      <Translation Language="GB">Moisture detected in system. You may have to dry your exhibit before continuing with the process</Translation>
       <Translation Language="ZHS" TypographyId="SmallZHS">无法达到最佳压力。&#10;如果问题仍然存在&#10;可能需要服务</Translation>
       <Translation Language="FR">Impossible d’atteindre la pression optimale. &#10;Si le problème persiste un &#10;le service peut être requis</Translation>
       <Translation Language="ES">No se puede alcanzar la presión óptima. &#10;Si el problema persiste un &#10;servicio puede ser requerido</Translation>
@@ -3315,6 +3315,32 @@
       <Translation Language="AR">Fume Override Plug</Translation>
       <Translation Language="PL">Fume Override Plug</Translation>
       <Translation Language="UA">Fume Override Plug</Translation>
+    </Text>
+    <Text Id="__SingleUse_L7G0" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Attempt Drying</Translation>
+      <Translation Language="ZHS">New Text</Translation>
+      <Translation Language="FR">New Text</Translation>
+      <Translation Language="ES">New Text</Translation>
+      <Translation Language="DE">New Text</Translation>
+      <Translation Language="IT">New Text</Translation>
+      <Translation Language="PT">New Text</Translation>
+      <Translation Language="RU">New Text</Translation>
+      <Translation Language="AR">New Text</Translation>
+      <Translation Language="PL">New Text</Translation>
+      <Translation Language="UA">New Text</Translation>
+    </Text>
+    <Text Id="__SingleUse_5GS3" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Drying in progress</Translation>
+      <Translation Language="ZHS" TypographyId="SmallZHS">无法达到最佳压力。&#10;如果问题仍然存在&#10;可能需要服务</Translation>
+      <Translation Language="FR">Impossible d’atteindre la pression optimale. &#10;Si le problème persiste un &#10;le service peut être requis</Translation>
+      <Translation Language="ES">No se puede alcanzar la presión óptima. &#10;Si el problema persiste un &#10;servicio puede ser requerido</Translation>
+      <Translation Language="DE">Optimaler Druck nicht erreicht. &#10;Wenn das Problem weiterhin besteht &#10;a Service kann erforderlich sein</Translation>
+      <Translation Language="IT">Impossibile raggiungere la pressione ottimale. &#10;Se il problema persiste a &#10;servizio può essere richiesto</Translation>
+      <Translation Language="PT">Incapaz de atingir a pressão ideal. &#10;Se o problema persistir &#10;serviço pode ser necessário </Translation>
+      <Translation Language="RU">Невозможно достичь оптимального давления. &#10;Если проблема сохраняется &#10;услуга может потребоваться</Translation>
+      <Translation Language="AR">Unable to reach optimal pressure. &#10;If the problem persists a &#10;service may be required</Translation>
+      <Translation Language="PL">Unable to reach optimal pressure. &#10;If the problem persists a &#10;service may be required</Translation>
+      <Translation Language="UA">Unable to reach optimal pressure. &#10;If the problem persists a &#10;service may be required</Translation>
     </Text>
   </Texts>
   <Typographies>
