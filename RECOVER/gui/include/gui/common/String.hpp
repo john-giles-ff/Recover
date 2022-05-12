@@ -12,9 +12,9 @@ private:
 	static const int DATA_SIZE = 255;
     char data[DATA_SIZE];
     unsigned length;
-	bool isDigit(char input, bool allowDecimal = false, bool isFirstCharacter = false);
 
 public:    
+	static bool isDigit(char input, bool allowDecimal = false, bool isFirstCharacter = false);
     String ( );    
     String (char c);
 	String(const char* c, int length);    

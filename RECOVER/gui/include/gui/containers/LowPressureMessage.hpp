@@ -10,8 +10,6 @@ public:
     virtual ~LowPressureMessage() {}
 
     virtual void initialize();
-
-	virtual void Dismiss();
 protected:
 };
 

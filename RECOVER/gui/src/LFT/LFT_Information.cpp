@@ -283,6 +283,10 @@ void LFT_Information::ReadDelta()
 void LFT_Information::ReadManifoldVersion()
 {
 	ManifoldVersion = (MANIFOLD_VERSION)_model->ReadInt("VCONFIG");
+
+#ifdef SIMULATOR
+	ManifoldVersion = MANIFOLD_VERSION::V2;
+#endif
 }
 
 int LFT_Information::GetFilterValue()
@@ -512,7 +516,7 @@ void LFT_Information::ReadStandardValues(int stage)
 	//ReadRTC();		
 	ReadInlet();
 	ReadBypass();
-	ReadPurge();
+	ReadPurge();	
 	
 	if (stage == LFT_STAGE_CHAMBER_CONDITIONING)
 		ReadDelta();

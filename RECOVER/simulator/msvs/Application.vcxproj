@@ -81,6 +81,7 @@
     <ClCompile Include="..\..\gui\src\mainscreen_screen\MainScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\mainscreen_screen\MainScreenViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\model\Model.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\MoistureDetectedMessage.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\MsgBox.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\MsgBoxBase.cpp"/>
     <ClCompile Include="..\..\gui\src\common\graph_widget\PainterVerticalAlpha.cpp"/>
@@ -327,6 +328,7 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\mainscreen_screen\MainScreenViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\model\Model.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\MoistureDetectedMessage.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\MsgBox.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\MsgBoxBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\graph_widget\PainterVerticalAlpha.hpp"/>

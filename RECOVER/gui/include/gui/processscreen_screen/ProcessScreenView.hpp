@@ -20,7 +20,7 @@
 #include <gui\containers\ErrorBox.hpp>
 #include <gui/common/Unlock.hpp>
 #include <gui/common/Utils.hpp>
-#include <gui/containers/LowPressureMessage.hpp>
+#include <gui/containers/MoistureDetectedMessage.hpp>
 #include <ctgmath>
 #include <gui/containers/MsgBox.hpp>
 #include <gui/common/Cipher.hpp>
@@ -83,7 +83,7 @@ public:
 
 	virtual void ShowPowerLossDetected();
 	virtual void ShowRunsRemaining();
-	virtual void ShowLowPressureErrorWindow();
+	virtual void ShowMoistureDetectedWindow();
 	virtual void ShowProcessSelectorChamber();	
 	virtual void ShowProcessSelectorType();
 	virtual void StartProcess();
@@ -101,7 +101,7 @@ protected:
 	UsageInstructions HintInstructions;
 	AbortingWindow AbortInProcessWindow;
 	FilterStateMessage FilterStateMessageWindow;
-	LowPressureMessage LowPressureWindow;
+	MoistureDetectedMessage MoistureMessage;
 	ErrorBox PowerLossWindow;
 
 	MsgBox ConfirmLogOverwrite;

@@ -42,7 +42,7 @@ public:
 	ThreadSafe() 
 	{ 
 #ifdef SIMULATOR
-		_value = { 0 };
+		//_value = { 0 };
 		_xSemaphore = { 0 };
 #endif
 	}
