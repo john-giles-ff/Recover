@@ -206,7 +206,10 @@ void LFT_Auto::StartDrying(int min)
 int LFT_Auto::ReadDryingPercentage()
 {
 	String times = _model->ReadString("DRYING TIME");	
+
+#ifdef SIMULATOR
 	times = "¬10:00 00:00\n";
+#endif
 
 	int totalMin = 0, totalSec = 0, total = 0;
 	int elapsedMin = 0, elapsedSec = 0, elapsed = 0;
