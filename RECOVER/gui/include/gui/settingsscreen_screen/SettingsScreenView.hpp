@@ -11,9 +11,9 @@
 
 #include <gui/containers/ViewDiagnostics.hpp>
 
-constexpr int LANGUAGE_COUNT = 8;
+constexpr int LANGUAGE_COUNT = 9;
 
-constexpr int LANGUAGE_HEIGHT = 75;
+constexpr int LANGUAGE_HEIGHT = 60;
 constexpr int LANGUAGE_WIDTH = 390;
 
 enum Tab_t
@@ -68,6 +68,7 @@ protected:
 		TextRadioButton(TypedText(T_LANGUAGE_DE), DE),
 		TextRadioButton(TypedText(T_LANGUAGE_RU), RU),
 		TextRadioButton(TypedText(T_LANGUAGE_ZN_HANS), ZHS),
+		TextRadioButton(TypedText(T_LANGUAGE_RO), RO)
 	};
 
 private:
