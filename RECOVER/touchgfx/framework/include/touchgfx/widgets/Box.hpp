@@ -1,32 +1,25 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.15.0 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/widgets/Box.hpp
  *
  * Declares the touchgfx::Box class.
  */
-#ifndef BOX_HPP
-#define BOX_HPP
+#ifndef TOUCHGFX_BOX_HPP
+#define TOUCHGFX_BOX_HPP
 
-#include <touchgfx/Bitmap.hpp>
 #include <touchgfx/hal/Types.hpp>
-#include <touchgfx/lcd/LCD.hpp>
 #include <touchgfx/widgets/Widget.hpp>
-
-#include <touchgfx/widgets/Button.hpp>
 
 namespace touchgfx
 {
@@ -38,7 +31,7 @@ class Box : public Widget
 public:
     /** Construct a new Box with a default alpha value of 255 (solid) */
     Box()
-        : Widget(), alpha(255), color(0), reportAsSolid(false)
+        : Widget(), alpha(255), color(0)
     {
     }
 
@@ -52,7 +45,7 @@ public:
      */
     Box(uint16_t width, uint16_t height, colortype color, uint8_t alpha = 255)
         : Widget(),
-          alpha(alpha), color(color), reportAsSolid(false)
+          alpha(alpha), color(color)
     {
         rect.width = width;
         rect.height = height;
@@ -77,7 +70,7 @@ public:
      *
      * @return The current color of the box.
      *
-     * @see setColor, Color::getRedColor, Color::getGreenColor, Color::getRedColor
+     * @see setColor, Color::getRed, Color::getGreen, Color::getRed
      */
     FORCE_INLINE_FUNCTION colortype getColor() const
     {
@@ -85,24 +78,15 @@ public:
     }
 
     /**
-     * Sets the alpha value for the Box. The value can be from 255 (completely solid) to 0
-     * (completely transparent).
-     *
-     * @param  alpha The alpha value.
-     *
-     * @see getAlpha
+     * @copydoc Image::setAlpha
      */
-    void setAlpha(uint8_t alpha)
+    void setAlpha(uint8_t newAlpha)
     {
-        this->alpha = alpha;
+        alpha = newAlpha;
     }
 
     /**
-     * Returns the current alpha value.
-     *
-     * @return Gets the current alpha value of the Box.
-     *
-     * @see setAlpha
+     * @copydoc Image::getAlpha
      */
     FORCE_INLINE_FUNCTION uint8_t getAlpha() const
     {
@@ -111,44 +95,11 @@ public:
 
     virtual void draw(const Rect& area) const;
 
-    ///@cond
-    /**
-     * Override solid area for the Box.
-     *
-     * If this is set, getSolidRect() will report the widget as completely solid even if is
-     * (semi-)transparent. The use of forceReportAsSolid is deprecated and the same
-     * functionality can be achieved using the following SolidBox instead:
-     * @code
-     *      template <class T>
-     *      class Solid : public T
-     *      {
-     *      public:
-     *        virtual Rect getSolidRect() const
-     *        {
-     *           return Rect(0, 0, getWidth(), getHeight());
-     *        }
-     *      };
-     * @endcode
-     * This will allow the use of Solid<Box>, but this is still not recommended..
-     *
-     * @param  solid true if this Box should report as solid, even when not.
-     *
-     * @deprecated Breaks the invariant set in Drawable::getSolidRect().
-     */
-    TOUCHGFX_DEPRECATED(
-        "Breaks the invariant set in Drawable::getSolidRect().",
-        void forceReportAsSolid(bool solid))
-    {
-        reportAsSolid = solid;
-    }
-    ///@endcond
-
 protected:
-    uint8_t alpha;      ///< The alpha value used for this Box.
-    colortype color;    ///< The fill color for this Box
-    bool reportAsSolid; ///< @deprecated Used by forceReportAsSolid() which breaks TouchGFX invariant.
+    uint8_t alpha;   ///< The alpha value used for this Box.
+    colortype color; ///< The fill color for this Box
 };
 
 } // namespace touchgfx
 
-#endif // BOX_HPP
+#endif // TOUCHGFX_BOX_HPP

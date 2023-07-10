@@ -1,27 +1,26 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.15.0 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/containers/CacheableContainer.hpp
  *
  * Declares the touchgfx::CacheableContainer class.
  */
-#ifndef CACHEABLECONTAINER_HPP
-#define CACHEABLECONTAINER_HPP
+#ifndef TOUCHGFX_CACHEABLECONTAINER_HPP
+#define TOUCHGFX_CACHEABLECONTAINER_HPP
 
+#include <touchgfx/hal/Types.hpp>
 #include <touchgfx/Bitmap.hpp>
+#include <touchgfx/Drawable.hpp>
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/Image.hpp>
 
@@ -43,6 +42,8 @@ namespace touchgfx
 class CacheableContainer : public Container
 {
 public:
+    CacheableContainer();
+
     /**
      * Set the dynamic bitmap into which the container content will be rendered. The format
      * of the bitmap must be the same as the current LCD or the same as the auxiliary LCD
@@ -50,9 +51,18 @@ public:
      *
      * @param  bitmapId Id of the dynamic bitmap to serve as a render target.
      *
-     * @see updateCache, HAL::setAuxiliaryLCD
+     * @see updateCache, getCacheBitmap, HAL::setAuxiliaryLCD
      */
     void setCacheBitmap(BitmapId bitmapId);
+
+    /**
+     * Get the dynamic bitmap used by the CacheableContainer.
+     *
+     * @return the id of the assigned bitmap or BITMAP_INVALID if no bitmap has been assigned.
+     *
+     * @see setCacheBitmap
+     */
+    BitmapId getCacheBitmap() const;
 
     /**
      * Render the container into the attached dynamic bitmap.
@@ -91,11 +101,38 @@ public:
     virtual void invalidateRect(Rect& invalidatedArea) const;
 
     /**
+     * Set the solid area on the dynamic bitmap assigned to the CacheableContainer.
+     *
+     * @param [in] rect The rectangle of th CacheableContainer that is solid.
+     *
+     * @return true if the operation succeeds, false otherwise.
+     */
+    bool setSolidRect(const Rect& rect);
+
+    /**
      * Queries the CacheableContainer whether any child widget has been invalidated.
      *
      * @return True if a child widget has been invalidated and false otherwise.
      */
     bool isChildInvalidated() const;
+
+    /**
+     * @copydoc Image::setAlpha()
+     *
+     * @note The alpha is only applied when cached mode is enabled.
+     *
+     * @see enableCachedMode
+     */
+    void setAlpha(uint8_t newAlpha)
+    {
+        cachedImage.setAlpha(newAlpha);
+    }
+
+    /** @copydoc Image::getAlpha() */
+    uint8_t getAlpha() const
+    {
+        return cachedImage.getAlpha();
+    }
 
 protected:
     /// @cond
@@ -125,4 +162,4 @@ private:
 
 } // namespace touchgfx
 
-#endif // CACHEABLECONTAINER_HPP
+#endif // TOUCHGFX_CACHEABLECONTAINER_HPP

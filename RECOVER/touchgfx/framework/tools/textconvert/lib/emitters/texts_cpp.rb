@@ -1,21 +1,18 @@
-##############################################################################
-# This file is part of the TouchGFX 4.15.0 distribution.
+# Copyright (c) 2018(-2021) STMicroelectronics.
+# All rights reserved.
 #
-# <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-# All rights reserved.</center></h2>
+# This file is part of the TouchGFX 4.17.0 distribution.
 #
-# This software component is licensed by ST under Ultimate Liberty license
-# SLA0044, the "License"; You may not use this file except in compliance with
-# the License. You may obtain a copy of the License at:
-#                             www.st.com/SLA0044
+# This software is licensed under terms that can be found in the LICENSE file in
+# the root directory of this software component.
+# If no LICENSE file comes with this software, it is provided AS-IS.
 #
-##############################################################################
-
+###############################################################################/
 class TextsCpp < Template
-  def initialize(characters, text_entries, typographies, output_directory, remap_identical_texts, generate_binary_language_files)
+  def initialize(characters, text_entries, typographies, output_directory, remap_identical_texts, generate_binary_translations)
     @characters = characters         #one array of the needed strings in optimal order
     @remap_identical_texts = remap_identical_texts
-    @generate_binary_language_files = generate_binary_language_files
+    @generate_binary_translations = generate_binary_translations
     super(text_entries, typographies, output_directory)
     @cache = {}
   end
@@ -57,7 +54,7 @@ class TextsCpp < Template
     @remap_identical_texts=="yes"
   end
   def generate_binary_files?
-    @generate_binary_language_files=="yes"
+    @generate_binary_translations=="yes"
   end
   def countries
     text_entries.languages.map { |language| language.capitalize }

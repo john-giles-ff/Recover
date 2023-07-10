@@ -1,28 +1,30 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.15.0 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Application.hpp>
+#include <touchgfx/Callback.hpp>
+#include <touchgfx/EasingEquations.hpp>
 #include <touchgfx/widgets/AnimationTextureMapper.hpp>
+#include <touchgfx/widgets/TextureMapper.hpp>
 
 namespace touchgfx
 {
-AnimationTextureMapper::AnimationTextureMapper() :
-    TextureMapper(),
-    textureMapperAnimationStepCallback(0),
-    textureMapperAnimationEndedCallback(0),
-    animationCounter(0),
-    animationRunning(false)
+AnimationTextureMapper::AnimationTextureMapper()
+    : TextureMapper(),
+      textureMapperAnimationStepCallback(0),
+      textureMapperAnimationEndedCallback(0),
+      animationCounter(0),
+      animationRunning(false)
 {
     for (int i = 0; i < NUMBER_OF_ANIMATION_PARAMETERS; i++)
     {
@@ -66,6 +68,16 @@ void AnimationTextureMapper::startAnimation()
     animations[SCALE].animationStart = scale;
 
     animationRunning = true;
+
+    for (int i = 0; i < NUMBER_OF_ANIMATION_PARAMETERS; i++)
+    {
+        if (animations[i].animationActive && animations[i].animationDelay + animations[i].animationDuration > 0)
+        {
+            return; // Animation needs to run, return
+        }
+    }
+    // No active animations or all active animations have zero steps, execute now!
+    handleTickEvent();
 }
 
 void AnimationTextureMapper::cancelAnimationTextureMapperAnimation()
@@ -88,7 +100,10 @@ void AnimationTextureMapper::handleTickEvent()
 {
     if (animationRunning)
     {
-        AnimationState activeAnimation = ANIMATION_FINISHED;
+        bool newValuesAssigned = false;
+        bool activeAnimationExists = false;
+
+        animationCounter++;
 
         float newXAngle = xAngle;
         float newYAngle = yAngle;
@@ -102,16 +117,8 @@ void AnimationTextureMapper::handleTickEvent()
                 continue;
             }
 
-            if (animationCounter < animations[i].animationDelay && activeAnimation < ANIMATION_DELAYED)
+            if (animationCounter >= animations[i].animationDelay)
             {
-                activeAnimation = ANIMATION_DELAYED;
-            }
-
-            if ((animationCounter >= animations[i].animationDelay) &&
-                    (animationCounter <= (uint32_t)(animations[i].animationDelay + animations[i].animationDuration)))
-            {
-                activeAnimation = ANIMATION_RUNNING;
-
                 // Adjust the used animationCounter for the startup delay
                 uint32_t actualAnimationCounter = animationCounter - animations[i].animationDelay;
 
@@ -148,26 +155,35 @@ void AnimationTextureMapper::handleTickEvent()
                 default:
                     break;
                 }
+                newValuesAssigned = true;
+            }
+            if (animationCounter >= (uint32_t)(animations[i].animationDelay + animations[i].animationDuration))
+            {
+                animations[i].animationActive = false;
+            }
+            else
+            {
+                activeAnimationExists = true;
             }
         }
 
-        if (activeAnimation == ANIMATION_RUNNING)
+        if (newValuesAssigned)
         {
-            updateAngles(newXAngle, newYAngle, newZAngle);
-            setScale(newScale);
+            if (newXAngle != xAngle || newYAngle != yAngle || newZAngle != zAngle)
+            {
+                updateAngles(newXAngle, newYAngle, newZAngle);
+            }
+            if (newScale != scale)
+            {
+                updateScale(newScale);
+            }
 
             if (textureMapperAnimationStepCallback && textureMapperAnimationStepCallback->isValid())
             {
                 textureMapperAnimationStepCallback->execute(*this);
             }
-
-            animationCounter++;
         }
-        else if (activeAnimation == ANIMATION_DELAYED)
-        {
-            animationCounter++;
-        }
-        else
+        if (!activeAnimationExists)
         {
             // End of animation
             cancelAnimationTextureMapperAnimation();

@@ -2212,6 +2212,9 @@
           <name>$PROJ_DIR$/../../generated/texts/src/LanguagePt.cpp</name>
         </file>
         <file>
+          <name>$PROJ_DIR$/../../generated/texts/src/LanguageRo.cpp</name>
+        </file>
+        <file>
           <name>$PROJ_DIR$/../../generated/texts/src/LanguageRu.cpp</name>
         </file>
         <file>

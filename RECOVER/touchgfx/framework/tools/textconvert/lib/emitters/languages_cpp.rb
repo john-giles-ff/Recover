@@ -1,29 +1,26 @@
-##############################################################################
-# This file is part of the TouchGFX 4.15.0 distribution.
+# Copyright (c) 2018(-2021) STMicroelectronics.
+# All rights reserved.
 #
-# <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-# All rights reserved.</center></h2>
+# This file is part of the TouchGFX 4.17.0 distribution.
 #
-# This software component is licensed by ST under Ultimate Liberty license
-# SLA0044, the "License"; You may not use this file except in compliance with
-# the License. You may obtain a copy of the License at:
-#                             www.st.com/SLA0044
+# This software is licensed under terms that can be found in the LICENSE file in
+# the root directory of this software component.
+# If no LICENSE file comes with this software, it is provided AS-IS.
 #
-##############################################################################
-
+###############################################################################/
 require 'json'
 
 class LanguagesCpp
-  def initialize(string_indices, text_entries, output_directory, remap_identical_texts, generate_binary_language_files)
+  def initialize(string_indices, text_entries, output_directory, remap_identical_texts, generate_binary_translations)
     @string_indices = string_indices #dictionary of all string indices into the characters array
     @text_entries = text_entries
     @output_directory = output_directory
     @remap_identical_texts = remap_identical_texts
-    @generate_binary_language_files = generate_binary_language_files
+    @generate_binary_translations = generate_binary_translations
   end
   def run
     @text_entries.languages.each do |language|
-      LanguageXxCpp.new(@string_indices, @text_entries, @output_directory, @remap_identical_texts, @generate_binary_language_files, language).run
+      LanguageXxCpp.new(@string_indices, @text_entries, @output_directory, @remap_identical_texts, @generate_binary_translations, language).run
     end
 
     #remove any unused LanguageXX.cpp files
@@ -40,10 +37,10 @@ end
 class LanguageXxCpp < Template
   Presenter = Struct.new(:text_id, :int_array)
 
-  def initialize(string_indices, text_entries, output_directory, remap_identical_texts, generate_binary_language_files, language)
+  def initialize(string_indices, text_entries, output_directory, remap_identical_texts, generate_binary_translations, language)
     @string_indices = string_indices #dictionary of all string indices into the characters array
     @remap_identical_texts = remap_identical_texts
-    @generate_binary_language_files = generate_binary_language_files
+    @generate_binary_translations = generate_binary_translations
     @language = language
     super(text_entries, [], output_directory)
     @cache = {}
@@ -104,7 +101,7 @@ class LanguageXxCpp < Template
   end
 
   def generate_binary_files?
-    @generate_binary_language_files=="yes"
+    @generate_binary_translations=="yes"
   end
 
   def language

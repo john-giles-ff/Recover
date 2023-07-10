@@ -249,7 +249,7 @@ void touchgfx_init()
     hal.setFrameRefreshStrategy(HAL::REFRESH_STRATEGY_OPTIM_SINGLE_BUFFER_TFT_CTRL);
 #else
     //setup for double buffering.
-    hal.setFrameBufferStartAddress((uint16_t*)frameBuf0);
+    hal.setFrameBufferStartAddresses((void*)frameBuf0, (void*)0, (void*)0);
 #endif
 #elif USE_BPP==24
 #ifdef  SINGLE_FRAME_BUFFER_INTERNAL

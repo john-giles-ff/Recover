@@ -1,16 +1,13 @@
-##############################################################################
-# This file is part of the TouchGFX 4.15.0 distribution.
+# Copyright (c) 2018(-2021) STMicroelectronics.
+# All rights reserved.
 #
-# <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-# All rights reserved.</center></h2>
+# This file is part of the TouchGFX 4.17.0 distribution.
 #
-# This software component is licensed by ST under Ultimate Liberty license
-# SLA0044, the "License"; You may not use this file except in compliance with
-# the License. You may obtain a copy of the License at:
-#                             www.st.com/SLA0044
+# This software is licensed under terms that can be found in the LICENSE file in
+# the root directory of this software component.
+# If no LICENSE file comes with this software, it is provided AS-IS.
 #
-##############################################################################
-
+###############################################################################/
 require 'lib/file_io'
 require 'lib/emitters/template'
 require 'lib/emitters/text_keys_and_languages_hpp'
@@ -33,7 +30,7 @@ require 'lib/emitters/typed_text_database_hpp'
 require 'lib/emitters/typed_text_database_cpp'
 
 class Outputter
-  def initialize(string_indices, characters, text_entries, typographies, localization_output_directory, fonts_output_directory, font_asset_path, data_format, remap_identical_texts, generate_binary_language_files, generate_binary_font_files, generate_font_format)
+  def initialize(string_indices, characters, text_entries, typographies, localization_output_directory, fonts_output_directory, font_asset_path, data_format, remap_identical_texts, generate_binary_translations, generate_binary_fonts, generate_font_format)
     @string_indices = string_indices #dictionary of all string indices into the characters array
     @characters = characters         #one array of the needed strings in optimal order
     @text_entries = text_entries
@@ -43,8 +40,8 @@ class Outputter
     @font_asset_path = font_asset_path
     @data_format = data_format
     @remap_identical_texts = remap_identical_texts
-    @generate_binary_language_files = generate_binary_language_files
-    @generate_binary_font_files = generate_binary_font_files
+    @generate_binary_translations = generate_binary_translations
+    @generate_binary_fonts = generate_binary_fonts
     @generate_font_format = generate_font_format
   end
 
@@ -69,18 +66,18 @@ class Outputter
       TypedTextDatabaseHpp].each { |template| template.new(@text_entries, @typographies, @localization_output_directory).run }
 
     #puts "Running Outputter3, #{Time.now.strftime("%H:%M:%S:%L")}"
-    TypedTextDatabaseCpp.new(@text_entries, @typographies, @localization_output_directory, @generate_binary_language_files, @generate_font_format).run
+    TypedTextDatabaseCpp.new(@text_entries, @typographies, @localization_output_directory, @generate_binary_translations, @generate_font_format).run
 
     #puts "Running Outputter4, #{Time.now.strftime("%H:%M:%S:%L")}"
-    TextsCpp.new(@characters, @text_entries, @typographies, @localization_output_directory, @remap_identical_texts, @generate_binary_language_files).run
+    TextsCpp.new(@characters, @text_entries, @typographies, @localization_output_directory, @remap_identical_texts, @generate_binary_translations).run
 
     #puts "Running Outputter5, #{Time.now.strftime("%H:%M:%S:%L")}"
-    LanguagesCpp.new(@string_indices, @text_entries, @localization_output_directory, @remap_identical_texts, @generate_binary_language_files).run
+    LanguagesCpp.new(@string_indices, @text_entries, @localization_output_directory, @remap_identical_texts, @generate_binary_translations).run
 
     #puts "Running Outputter6, #{Time.now.strftime("%H:%M:%S:%L")}"
-    FontsCpp.new(@text_entries, @typographies, @fonts_output_directory, @font_asset_path, @data_format, @generate_binary_font_files, @generate_font_format).run
+    FontsCpp.new(@text_entries, @typographies, @fonts_output_directory, @font_asset_path, @data_format, @generate_binary_fonts, @generate_font_format).run
 
-    if @generate_binary_language_files.downcase == 'yes'
+    if @generate_binary_translations.downcase == 'yes'
       #puts "Running Outputter7, #{Time.now.strftime("%H:%M:%S:%L")}"
       [ LanguagesBin ].each { |template| template.new(@text_entries, @typographies, @localization_output_directory).run }
     end

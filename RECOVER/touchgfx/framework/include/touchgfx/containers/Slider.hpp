@@ -1,27 +1,29 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.15.0 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/containers/Slider.hpp
  *
  * Declares the touchgfx::Slider class.
  */
-#ifndef SLIDER_HPP
-#define SLIDER_HPP
+#ifndef TOUCHGFX_SLIDER_HPP
+#define TOUCHGFX_SLIDER_HPP
 
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Bitmap.hpp>
+#include <touchgfx/Callback.hpp>
 #include <touchgfx/containers/Container.hpp>
+#include <touchgfx/events/ClickEvent.hpp>
+#include <touchgfx/events/DragEvent.hpp>
 #include <touchgfx/widgets/Image.hpp>
 
 namespace touchgfx
@@ -177,7 +179,7 @@ public:
      */
     virtual uint16_t getIndicatorMin() const
     {
-        return indicatorMaxPosition;
+        return indicatorMinPosition;
     }
 
     /**
@@ -273,6 +275,10 @@ public:
         return currentValue;
     }
 
+    virtual void handleClickEvent(const ClickEvent& event);
+
+    virtual void handleDragEvent(const DragEvent& event);
+
 protected:
     /** Values that represent slider orientations. */
     enum SliderOrientation
@@ -299,10 +305,6 @@ protected:
     GenericCallback<const Slider&, int>* startValueCallback; ///< The start value callback (called  when an interaction with the indicator is initiated)
     GenericCallback<const Slider&, int>* stopValueCallback;  ///< The stop value callback (called when an interaction with the indicator ends)
     GenericCallback<const Slider&, int>* newValueCallback;   ///< The new value callback (called when the indicator is moved)
-
-    virtual void handleClickEvent(const ClickEvent& evt);
-
-    virtual void handleDragEvent(const DragEvent& evt);
 
     /**
      * Updates the indicator position described by position. Calls the
@@ -358,4 +360,4 @@ protected:
 
 } // namespace touchgfx
 
-#endif // SLIDER_HPP
+#endif // TOUCHGFX_SLIDER_HPP

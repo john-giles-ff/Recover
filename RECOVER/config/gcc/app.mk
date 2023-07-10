@@ -26,6 +26,6 @@ text_data_format := A4
 # are mapped to the same memory region to save internal flash memory
 remap_identical_texts := yes
 # Location of the TouchGFX Environment
-touchgfx_env := F:/TouchGFX/4.15.0/env
+touchgfx_env := ../../../../../../../TouchGFX/4.17.0/env
 
 text_converter_options := remap A4 BPP16

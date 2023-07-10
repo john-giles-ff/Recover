@@ -1,31 +1,28 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.15.0 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/Application.hpp
  *
  * Declares the application class.
  */
-#ifndef APPLICATION_HPP
-#define APPLICATION_HPP
+#ifndef TOUCHGFX_APPLICATION_HPP
+#define TOUCHGFX_APPLICATION_HPP
 
+#include <touchgfx/hal/Types.hpp>
 #include <touchgfx/UIEventListener.hpp>
 #include <touchgfx/events/ClickEvent.hpp>
 #include <touchgfx/events/DragEvent.hpp>
 #include <touchgfx/events/GestureEvent.hpp>
-#include <touchgfx/hal/Types.hpp>
 #include <touchgfx/lcd/LCD.hpp>
 
 namespace touchgfx
@@ -89,13 +86,11 @@ public:
     virtual void requestRedraw(Rect& rect)
     {
         redraw = rect;
-    };
+    }
 
     /**
      * Initiate a draw operation of the entire screen. Standard implementation is to
      * delegate draw request to the current Screen.
-     *
-     * @deprecated Use draw(Rect&)
      */
     virtual void draw();
 
@@ -116,25 +111,25 @@ public:
      * screen. Called by the framework when a click is detected by some platform specific
      * means.
      *
-     * @param evt The ClickEvent.
+     * @param event The ClickEvent.
      */
-    virtual void handleClickEvent(const ClickEvent& evt);
+    virtual void handleClickEvent(const ClickEvent& event);
 
     /**
      * Handle drag events. Called by the framework when a drag is detected by some platform
      * specific means. Standard implementation is to delegate drag event to current screen.
      *
-     * @param evt The drag event, expressed in absolute coordinates.
+     * @param event The drag event, expressed in absolute coordinates.
      */
-    virtual void handleDragEvent(const DragEvent& evt);
+    virtual void handleDragEvent(const DragEvent& event);
 
     /**
      * Handle gestures. Called by the framework when a gesture is detected by some platform
      * specific means. Standard implementation is to delegate drag event to current screen.
      *
-     * @param evt The gesture event.
+     * @param event The gesture event.
      */
-    virtual void handleGestureEvent(const GestureEvent& evt);
+    virtual void handleGestureEvent(const GestureEvent& event);
 
     /**
      * Handle tick. Standard implementation is to delegate tick to the widgets that have
@@ -157,7 +152,7 @@ public:
     virtual void handlePendingScreenTransition();
 
     /**
-     * This functions allows for deferring draw operations to a later time. If active, calls
+     * This function allows for deferring draw operations to a later time. If active, calls
      * to draw will simply note that the specified area is dirty, but not perform any actual
      * drawing. When disabling the draw cache, the dirty area will be flushed (drawn)
      * immediately.
@@ -167,6 +162,15 @@ public:
      *                     drawn immediately.
      */
     virtual void cacheDrawOperations(bool enableCache);
+
+    /**
+     * This function copies the parts that were updated in the
+     * previous frame (in the tft buffer) to the active framebuffer
+     * (client buffer).
+     *
+     * This function only copies pixels in double buffering mode.
+     */
+    void copyInvalidatedAreasFromTFTToClientBuffer();
 
     /**
      * Adds a widget to the list of widgets receiving ticks every frame (typically
@@ -271,10 +275,11 @@ protected:
     /** Protected constructor. */
     Application();
 
+    typedef Vector<Rect, 8> RectVector_t;              ///< Type to ensure the same number of rects are in the Vector
     Vector<Drawable*, MAX_TIMER_WIDGETS> timerWidgets; ///< List of widgets that receive timer ticks.
     uint8_t timerWidgetCounter[MAX_TIMER_WIDGETS];     ///< A counter for each potentially registered timer widget. Increase when registering for timer events, decrease when unregistering.
-    Vector<Rect, 8> cachedDirtyAreas;                  ///< When draw caching is enabled, these rects keeps track of the dirty screen area.
-    Vector<Rect, 8> lastRects;                         ///< The dirty areas from last frame that needs to be redrawn because we have swapped frame buffers.
+    RectVector_t cachedDirtyAreas;                     ///< When draw caching is enabled, these rects keeps track of the dirty screen area.
+    RectVector_t lastRects;                            ///< The dirty areas from last frame that needs to be redrawn because we have swapped frame buffers.
     Rect redraw;                                       ///< Rect describing application requested invalidate area
     bool drawCacheEnabled;                             ///< True when draw caching is active.
     bool transitionHandled;                            ///< True if the transition is done and Screen::afterTransition has been called.
@@ -287,4 +292,4 @@ protected:
 
 } // namespace touchgfx
 
-#endif // APPLICATION_HPP
+#endif // TOUCHGFX_APPLICATION_HPP

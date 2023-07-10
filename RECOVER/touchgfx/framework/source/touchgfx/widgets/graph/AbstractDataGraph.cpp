@@ -1,18 +1,22 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.15.0 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Callback.hpp>
+#include <touchgfx/Drawable.hpp>
+#include <touchgfx/containers/Container.hpp>
+#include <touchgfx/events/ClickEvent.hpp>
+#include <touchgfx/events/DragEvent.hpp>
+#include <touchgfx/widgets/canvas/CWRUtil.hpp>
 #include <touchgfx/widgets/graph/AbstractDataGraph.hpp>
 #include <touchgfx/widgets/graph/GraphElements.hpp>
 #include <touchgfx/widgets/graph/GraphLabels.hpp>
@@ -20,8 +24,11 @@
 namespace touchgfx
 {
 AbstractDataGraph::AbstractDataGraph(int16_t capacity)
-    : dataScale(1), alpha(255), topPadding(0), leftPadding(0), rightPadding(0), bottomPadding(0),
-      maxCapacity(capacity), usedCapacity(0), gapBeforeIndex(0), clickAction()
+    : Container(),
+      dataScale(1), alpha(255),
+      graphArea(), leftArea(), rightArea(), topArea(), bottomArea(),
+      topPadding(0), leftPadding(0), rightPadding(0), bottomPadding(0),
+      maxCapacity(capacity), usedCapacity(0), gapBeforeIndex(0), clickAction(0), dragAction(0)
 {
     add(graphArea);
     add(topArea);
@@ -121,7 +128,7 @@ int16_t AbstractDataGraph::getGraphAreaPaddingLeft() const
     return leftPadding;
 }
 
-int16_t AbstractDataGraph::getGraphAeraPaddingRight() const
+int16_t AbstractDataGraph::getGraphAreaPaddingRight() const
 {
     return rightPadding;
 }
@@ -453,7 +460,8 @@ int AbstractDataGraph::getXAxisOffsetScaled() const
 }
 
 AbstractDataGraphWithY::AbstractDataGraphWithY(int16_t capacity, int* values)
-    : AbstractDataGraph(capacity), yValues(values), dataCounter(0), xOffset(0), xScale(1)
+    : AbstractDataGraph(capacity), yValues(values), dataCounter(0), xOffset(0), xScale(1),
+      graphRangeMinX(0), graphRangeMaxX(0), graphRangeMinY(0), graphRangeMaxY(0)
 {
     assert(capacity > 0);
     setGraphRangeX(0, capacity - 1);
@@ -738,7 +746,8 @@ CWRUtil::Q5 AbstractDataGraphWithY::valueToScreenXQ5(int x) const
 
 CWRUtil::Q5 AbstractDataGraphWithY::valueToScreenYQ5(int y) const
 {
-    return CWRUtil::toQ5(getGraphAreaHeight() + topPadding - 1) - CWRUtil::muldiv_toQ5(y - graphRangeMinY, getGraphAreaHeight() - 1, graphRangeMaxY - graphRangeMinY);
+    const int16_t graphAreaHeight = getGraphAreaHeight();
+    return CWRUtil::toQ5(graphAreaHeight + topPadding - 1) - CWRUtil::muldiv_toQ5(y - graphRangeMinY, graphAreaHeight - 1, graphRangeMaxY - graphRangeMinY);
 }
 
 CWRUtil::Q5 AbstractDataGraphWithY::indexToScreenXQ5(int16_t index) const

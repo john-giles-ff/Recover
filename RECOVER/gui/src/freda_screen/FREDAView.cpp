@@ -1,6 +1,5 @@
 #include <gui/freda_screen/FREDAView.hpp>
 
-
 void FREDAView::setupScreen()
 {	
 	//Language should always be english in the engineer mode
@@ -365,14 +364,13 @@ void FREDAView::handleTickEvent()
 	{
 		int extSwitchValue = LFT::Information.ExternalSwitchValue;
 
-		if (BtnStartSoakTest.isVisible() != extSwitchValue == 0)
+		if (BtnStartSoakTest.isVisible() != (extSwitchValue == 0))
 		{
 			BtnStartSoakTest.setVisible(extSwitchValue == 0);
 			BtnStartSoakTest30.setVisible(extSwitchValue == 0);
 			TxtFumePlug.setVisible(extSwitchValue == 1);
 		}
-	}
-
+	}	
 
 
 	//Update Graph Values

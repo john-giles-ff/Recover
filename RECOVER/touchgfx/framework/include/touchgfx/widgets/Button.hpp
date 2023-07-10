@@ -1,26 +1,24 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.15.0 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/widgets/Button.hpp
  *
  * Declares the touchgfx::Button class.
  */
-#ifndef BUTTON_HPP
-#define BUTTON_HPP
+#ifndef TOUCHGFX_BUTTON_HPP
+#define TOUCHGFX_BUTTON_HPP
 
+#include <touchgfx/hal/Types.hpp>
 #include <touchgfx/Bitmap.hpp>
 #include <touchgfx/widgets/AbstractButton.hpp>
 
@@ -45,14 +43,14 @@ public:
      * and one bitmap for the pressed state. The images are expected to be of the same
      * dimensions, and the Button is resized to the dimensions of the pressed Bitmap.
      *
-     * @param  bmpReleased Bitmap to use when button is released.
-     * @param  bmpPressed  Bitmap to use when button is pressed.
+     * @param  bitmapReleased Bitmap to use when button is released.
+     * @param  bitmapPressed  Bitmap to use when button is pressed.
      *
      * @note It is assumed that the dimensions of the bitmaps are the same. Unexpected (visual)
      *       behavior may be observed if the bitmaps are of different sizes.
      * @note The user code must call invalidate() in order to update the button on the display.
      */
-    virtual void setBitmaps(const Bitmap& bmpReleased, const Bitmap& bmpPressed);
+    virtual void setBitmaps(const Bitmap& bitmapReleased, const Bitmap& bitmapPressed);
 
     virtual Rect getSolidRect() const;
 
@@ -91,4 +89,4 @@ protected:
 
 } // namespace touchgfx
 
-#endif // BUTTON_HPP
+#endif // TOUCHGFX_BUTTON_HPP

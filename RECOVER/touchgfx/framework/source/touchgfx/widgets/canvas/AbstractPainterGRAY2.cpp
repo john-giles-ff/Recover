@@ -1,21 +1,19 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.15.0 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
-#include <platform/driver/lcd/LCD2bpp.hpp>
-#include <touchgfx/Color.hpp>
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/lcd/LCD.hpp>
 #include <touchgfx/widgets/canvas/AbstractPainterGRAY2.hpp>
+#include <platform/driver/lcd/LCD2bpp.hpp>
 
 namespace touchgfx
 {
@@ -36,8 +34,7 @@ void AbstractPainterGRAY2::render(uint8_t* ptr,
             uint8_t gray, alpha;
             if (renderNext(gray, alpha))
             {
-                uint8_t combinedAlpha = LCD::div255((*covers) * LCD::div255(alpha * widgetAlpha));
-                covers++;
+                const uint8_t combinedAlpha = LCD::div255((*covers) * LCD::div255(alpha * widgetAlpha));
 
                 if (combinedAlpha == 0xFF) // max alpha=0xFF on "*covers" and max alpha=0xFF on "widgetAlpha"
                 {
@@ -46,19 +43,20 @@ void AbstractPainterGRAY2::render(uint8_t* ptr,
                 }
                 else
                 {
-                    uint8_t p_gray = LCD2getPixel(ptr, x) * 0x55;
-                    uint8_t ialpha = 0xFF - combinedAlpha;
+                    const uint8_t p_gray = LCD2bpp::getPixel(ptr, x) * 0x55;
+                    const uint8_t ialpha = 0xFF - combinedAlpha;
                     renderPixel(ptr, x, LCD::div255((gray * combinedAlpha + p_gray * ialpha) * 0x55) >> 6);
                 }
             }
-            currentX++;
+            covers++;
             x++;
+            currentX++;
         } while (--count != 0);
     }
 }
 
 void AbstractPainterGRAY2::renderPixel(uint8_t* p, uint16_t offset, uint8_t gray)
 {
-    LCD2setPixel(p, offset, gray);
+    LCD2bpp::setPixel(p, offset, gray);
 }
 } // namespace touchgfx

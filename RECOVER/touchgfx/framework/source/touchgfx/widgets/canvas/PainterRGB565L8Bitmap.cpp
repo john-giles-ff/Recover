@@ -1,18 +1,20 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.15.0 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Bitmap.hpp>
+#include <touchgfx/lcd/LCD.hpp>
+#include <touchgfx/transforms/DisplayTransformation.hpp>
+#include <touchgfx/widgets/canvas/AbstractPainterRGB565.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565L8Bitmap.hpp>
 
 namespace touchgfx
@@ -42,16 +44,16 @@ void PainterRGB565L8Bitmap::render(uint8_t* ptr, int x, int xAdjust, int y, unsi
         count = bitmapRectToFrameBuffer.width - currentX;
     }
 
-    uint8_t totalAlpha = LCD::div255(widgetAlpha * painterAlpha);
+    const uint16_t* const p_lineend = p + count;
     if ((Bitmap::ClutFormat)((const uint16_t*)bitmapExtraPointer)[-2] == Bitmap::CLUT_FORMAT_L8_RGB565)
     {
         const uint8_t* src = bitmapPointer;
-        if (totalAlpha == 0xFF)
+        if (widgetAlpha == 0xFF)
         {
             do
             {
                 //use alpha from covers directly
-                uint8_t alpha = *covers++;
+                const uint8_t alpha = *covers++;
                 if (alpha == 0xFF)
                 {
                     // Solid pixel
@@ -64,34 +66,31 @@ void PainterRGB565L8Bitmap::render(uint8_t* ptr, int x, int xAdjust, int y, unsi
                 }
                 p++;
                 src++;
-            } while (--count != 0);
+            } while (p < p_lineend);
         }
         else
         {
             do
             {
-                uint8_t alpha = LCD::div255((*covers) * totalAlpha);
-                covers++;
-
+                const uint8_t alpha = LCD::div255((*covers++) * widgetAlpha);
                 *p = mixColors(((const uint16_t*)bitmapExtraPointer)[*src], *p, alpha);
-
                 p++;
                 src++;
-            } while (--count != 0);
+            } while (p < p_lineend);
         }
     }
     else if ((Bitmap::ClutFormat)((const uint16_t*)bitmapExtraPointer)[-2] == Bitmap::CLUT_FORMAT_L8_RGB888)
     {
-        if (totalAlpha == 0xFF)
+        if (widgetAlpha == 0xFF)
         {
             do
             {
                 const uint8_t* src = &bitmapExtraPointer[*bitmapPointer++ * 3];
                 // Use alpha from covers directly
-                uint8_t alpha = *covers++;
-                uint8_t blue = *src++;
-                uint8_t green = *src++;
-                uint8_t red = *src;
+                const uint8_t alpha = *covers++;
+                const uint8_t blue = *src++;
+                const uint8_t green = *src++;
+                const uint8_t red = *src;
                 if (alpha == 0xFF)
                 {
                     // Solid pixel
@@ -99,8 +98,8 @@ void PainterRGB565L8Bitmap::render(uint8_t* ptr, int x, int xAdjust, int y, unsi
                 }
                 else
                 {
-                    uint8_t ialpha = 0xFF - alpha;
-                    uint16_t bufpix = *p;
+                    const uint8_t ialpha = 0xFF - alpha;
+                    const uint16_t bufpix = *p;
                     uint8_t fbr = (bufpix & RMASK) >> 11;
                     uint8_t fbg = (bufpix & GMASK) >> 5;
                     uint8_t fbb = bufpix & BMASK;
@@ -109,20 +108,19 @@ void PainterRGB565L8Bitmap::render(uint8_t* ptr, int x, int xAdjust, int y, unsi
                     fbb = (fbb * 527 + 23) >> 6;
                     *p++ = ((LCD::div255(red * alpha + fbr * ialpha) << 8) & RMASK) | ((LCD::div255(green * alpha + fbg * ialpha) << 3) & GMASK) | ((LCD::div255(blue * alpha + fbb * ialpha) >> 3) & BMASK);
                 }
-            } while (--count != 0);
+            } while (p < p_lineend);
         }
         else
         {
             do
             {
                 const uint8_t* src = &bitmapExtraPointer[*bitmapPointer++ * 3];
-                uint8_t blue = *src++;
-                uint8_t green = *src++;
-                uint8_t red = *src;
-                uint8_t alpha = LCD::div255((*covers) * totalAlpha);
-                uint8_t ialpha = 0xFF - alpha;
-                covers++;
-                uint16_t bufpix = *p;
+                const uint8_t blue = *src++;
+                const uint8_t green = *src++;
+                const uint8_t red = *src;
+                const uint8_t alpha = LCD::div255((*covers++) * widgetAlpha);
+                const uint8_t ialpha = 0xFF - alpha;
+                const uint16_t bufpix = *p;
                 uint8_t fbr = (bufpix & RMASK) >> 11;
                 uint8_t fbg = (bufpix & GMASK) >> 5;
                 uint8_t fbb = bufpix & BMASK;
@@ -130,20 +128,19 @@ void PainterRGB565L8Bitmap::render(uint8_t* ptr, int x, int xAdjust, int y, unsi
                 fbg = (fbg * 259 + 33) >> 6;
                 fbb = (fbb * 527 + 23) >> 6;
                 *p++ = ((LCD::div255(red * alpha + fbr * ialpha) << 8) & RMASK) | ((LCD::div255(green * alpha + fbg * ialpha) << 3) & GMASK) | ((LCD::div255(blue * alpha + fbb * ialpha) >> 3) & BMASK);
-            } while (--count != 0);
+            } while (p < p_lineend);
         }
     }
     else // Bitmap::CLUT_FORMAT_L8_ARGB8888
     {
         const uint8_t* src = bitmapPointer;
-        if (totalAlpha == 0xFF)
+        if (widgetAlpha == 0xFF)
         {
             do
             {
-                uint32_t newpix = ((const uint32_t*)bitmapExtraPointer)[*src];
-                uint8_t srcAlpha = newpix >> 24;
-                uint8_t alpha = LCD::div255((*covers) * srcAlpha);
-                covers++;
+                const uint32_t newpix = ((const uint32_t*)bitmapExtraPointer)[*src];
+                const uint8_t srcAlpha = newpix >> 24;
+                const uint8_t alpha = LCD::div255((*covers++) * srcAlpha);
                 if (alpha == 0xFF)
                 {
                     // Solid pixel
@@ -156,16 +153,15 @@ void PainterRGB565L8Bitmap::render(uint8_t* ptr, int x, int xAdjust, int y, unsi
                 }
                 p++;
                 src++;
-            } while (--count != 0);
+            } while (p < p_lineend);
         }
         else
         {
             do
             {
-                uint32_t newpix = ((const uint32_t*)bitmapExtraPointer)[*src];
-                uint8_t srcAlpha = newpix >> 24;
-                uint8_t alpha = LCD::div255((*covers) * LCD::div255(srcAlpha * totalAlpha));
-                covers++;
+                const uint32_t newpix = ((const uint32_t*)bitmapExtraPointer)[*src];
+                const uint8_t srcAlpha = newpix >> 24;
+                const uint8_t alpha = LCD::div255((*covers++) * LCD::div255(srcAlpha * widgetAlpha));
                 if (alpha)
                 {
                     // Non-Transparent pixel
@@ -173,7 +169,7 @@ void PainterRGB565L8Bitmap::render(uint8_t* ptr, int x, int xAdjust, int y, unsi
                 }
                 p++;
                 src++;
-            } while (--count != 0);
+            } while (p < p_lineend);
         }
     }
 }
@@ -256,8 +252,6 @@ bool PainterRGB565L8Bitmap::renderNext(uint8_t& red, uint8_t& green, uint8_t& bl
         blue = argb8888 & 0xF8;
         blue |= (blue >> 5); // To get full range 0-0xFF, not just 0-0xF8
     }
-    // Apply given alpha from setAlpha()
-    alpha = LCD::div255(alpha * painterAlpha);
     return true;
 }
 } // namespace touchgfx

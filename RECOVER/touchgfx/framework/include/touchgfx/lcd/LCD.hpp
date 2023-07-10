@@ -1,17 +1,14 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.15.0 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/lcd/LCD.hpp
@@ -24,24 +21,24 @@
  *
  * @see touchgfx::LCD, touchgfx::DebugPrinter
  */
-#ifndef LCD_HPP
-#define LCD_HPP
+#ifndef TOUCHGFX_LCD_HPP
+#define TOUCHGFX_LCD_HPP
 
-#include <stdarg.h>
+// LCD is defined in some CubeFW C header file. We have to undef to be able to create the LCD class
+#ifdef LCD
+#undef LCD
+#endif
+
+#include <touchgfx/hal/Types.hpp>
 #include <touchgfx/Bitmap.hpp>
 #include <touchgfx/Font.hpp>
 #include <touchgfx/TextProvider.hpp>
 #include <touchgfx/TextureMapTypes.hpp>
 #include <touchgfx/Unicode.hpp>
-#include <touchgfx/Utils.hpp>
-#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/lcd/DebugPrinter.hpp>
 
 namespace touchgfx
 {
-struct Gradients;
-struct Edge;
-#undef LCD
-
 /**
  * This class contains the various low-level drawing routines for drawing bitmaps, texts and
  * rectangles/boxes. Normally, these draw operations are called from widgets, which also
@@ -56,6 +53,12 @@ struct Edge;
 class LCD
 {
 public:
+    /** Initializes a new instance of the LCD class. */
+    LCD()
+        : textureMapperClass(0)
+    {
+    }
+
     /** Finalizes an instance of the LCD class. */
     virtual ~LCD()
     {
@@ -170,89 +173,32 @@ public:
     /**
      * Draws a filled rectangle in the framebuffer in the specified color and opacity. By
      * default the rectangle will be drawn as a solid box. The rectangle can be drawn with
-     * transparancy by specifying alpha from 0=invisible to 255=solid.
+     * transparency by specifying alpha from 0=invisible to 255=solid.
      *
      * @param  rect  The rectangle to draw in absolute display coordinates.
      * @param  color The rectangle color.
      * @param  alpha (Optional) The rectangle opacity, from 0=invisible to 255=solid.
+     *
+     * @see fillBuffer
      */
     virtual void fillRect(const Rect& rect, colortype color, uint8_t alpha = 255) = 0;
 
-    ///@cond
     /**
-     * Draws a horizontal line with the specified color and opacity. By default the line
-     * will be drawn as a solid line. The line can be drawn with transparency by specifying
-     * alpha from 0=invisible to 255=solid.
+     * Draws a filled rectangle in destination memory using the specified color and opacity. The
+     * destination memory must have the same format as the display framebuffer. By default the
+     * rectangle will be drawn as a solid box. The rectangle can be drawn with transparency by
+     * specifying alpha from 0=invisible to 255=solid.
      *
-     * @param  x         The x coordinate of the starting point in absolute display
-     *                   coordinates.
-     * @param  y         The y coordinate of the starting point in absolute display
-     *                   coordinates.
-     * @param  width     The length of the line.
-     * @param  lineWidth The width of the line.
-     * @param  color     The color to use.
-     * @param  alpha     (Optional) The rectangle opacity, from 0=invisible to 255=solid.
+     * @param [in]  destination The start of the memory area to fill.
+     * @param       pixelStride The pixel stride, i.e. number of pixels in a row.
+     * @param       rect        The rectangle to fill absolute coordinates.
+     * @param       color       The rectangle color.
+     * @param       alpha       The rectangle opacity, from 0=invisible to 255=solid.
      *
-     * @deprecated Use LCD::fillRect().
+     * @note    The pixelStride is rounded up to nearest whole bytes for displays with more than one
+     *          pixel per byte (LCD1bpp, LCD2bpp and LCD4bpp)
      */
-    TOUCHGFX_DEPRECATED(
-        "Use LCD::fillRect().",
-        void drawHorizontalLine(int16_t x, int16_t y, uint16_t width, uint16_t lineWidth, colortype color, uint8_t alpha = 255));
-    ///@endcond
-
-    ///@cond
-    /**
-     * Draws a vertical line with the specified color and opacity. By default the line will
-     * be drawn as a solid line. The line can be drawn with transparency by specifying alpha
-     * from 0=invisible to 255=solid.
-     *
-     * @param  x         The x coordinate of the starting point in absolute display
-     *                   coordinates.
-     * @param  y         The y coordinate of the starting point in absolute display
-     *                   coordinates.
-     * @param  height    The length of the line.
-     * @param  lineWidth The width of the line.
-     * @param  color     The color to use.
-     * @param  alpha     (Optional) The rectangle opacity, from 0=invisible to 255=solid.
-     *
-     * @deprecated Use LCD::fillRect().
-     */
-    TOUCHGFX_DEPRECATED(
-        "Use LCD::fillRect().",
-        void drawVerticalLine(int16_t x, int16_t y, uint16_t height, uint16_t lineWidth, colortype color, uint8_t alpha = 255));
-    ///@endcond
-
-    ///@cond
-    /**
-     * Draws a rectangle using the specified line color and opacity. This is the same as
-     * calling drawBorder with a line width of 1.
-     *
-     * @param  rect  The rectangle to draw in absolute display coordinates.
-     * @param  color The color to use.
-     * @param  alpha (Optional) The rectangle opacity, from 0=invisible to 255=solid.
-     *
-     * @deprecated Use 4 calls to LCD::fillRect().
-     */
-    TOUCHGFX_DEPRECATED(
-        "Use 4 calls to LCD::fillRect().",
-        void drawRect(const Rect& rect, colortype color, uint8_t alpha = 255));
-    ///@endcond
-
-    ///@cond
-    /**
-     * Draws a rectangle width the specified line width, color and opacity.
-     *
-     * @param  rect      The rectangle x, y, width, height in absolute coordinates.
-     * @param  lineWidth The width of the line.
-     * @param  color     The color to use.
-     * @param  alpha     (Optional) The rectangle opacity, from 0=invisible to 255=solid.
-     *
-     * @deprecated Use four calls to LCD::fillRect().
-     */
-    TOUCHGFX_DEPRECATED(
-        "Use four calls to LCD::fillRect().",
-        void drawBorder(const Rect& rect, uint16_t lineWidth, colortype color, uint8_t alpha = 255));
-    ///@endcond
+    virtual void fillBuffer(uint8_t* const destination, uint16_t pixelStride, const Rect& rect, const colortype color, const uint8_t alpha) = 0;
 
     /** The visual elements when writing a string. */
     struct StringVisuals
@@ -290,16 +236,8 @@ public:
          *                        TextArea.
          */
         StringVisuals(const Font* font, colortype color, uint8_t alpha, Alignment alignment, int16_t linespace, TextRotation rotation, TextDirection textDirection, uint8_t indentation, WideTextAction wideTextAction = WIDE_TEXT_NONE)
+            : font(font), alignment(alignment), textDirection(textDirection), rotation(rotation), color(color), linespace(linespace), alpha(alpha), indentation(indentation), wideTextAction(wideTextAction)
         {
-            this->font = font;
-            this->color = color;
-            this->alpha = alpha;
-            this->alignment = alignment;
-            this->textDirection = textDirection;
-            this->rotation = rotation;
-            this->linespace = linespace;
-            this->indentation = indentation;
-            this->wideTextAction = wideTextAction;
         }
     };
 
@@ -348,53 +286,6 @@ public:
     virtual uint16_t framebufferStride() const = 0;
 
     /**
-     * Generates a color representation to be used on the LCD, based on 24 bit RGB values.
-     * Depending on your chosen color bit depth, the color will be interpreted internally as
-     * either a 16 bit or 24 bit color value. This function can be safely used regardless of
-     * whether your application is configured for 16 or 24 bit colors.
-     *
-     * @param  red   Value of the red part (0-255).
-     * @param  green Value of the green part (0-255).
-     * @param  blue  Value of the blue part (0-255).
-     *
-     * @return The color representation depending on LCD color format.
-     */
-    virtual colortype getColorFrom24BitRGB(uint8_t red, uint8_t green, uint8_t blue) const = 0;
-
-    /**
-     * Gets the red color part of a color. As this function must work for all color depths,
-     * it can be somewhat slow if used in speed critical sections. Consider finding the
-     * color in another way, if possible.
-     *
-     * @param  color The color value.
-     *
-     * @return The red part of the color.
-     */
-    virtual uint8_t getRedColor(colortype color) const = 0;
-
-    /**
-     * Gets the green color part of a color. As this function must work for all color depths,
-     * it can be somewhat slow if used in speed critical sections. Consider finding the
-     * color in another way, if possible.
-     *
-     * @param  color The 16 bit color value.
-     *
-     * @return The green part of the color.
-     */
-    virtual uint8_t getGreenColor(colortype color) const = 0;
-
-    /**
-     * Gets the blue color part of a color. As this function must work for all color depths,
-     * it can be somewhat slow if used in speed critical sections. Consider finding the
-     * color in another way, if possible.
-     *
-     * @param  color The 16 bit color value.
-     *
-     * @return The blue part of the color.
-     */
-    virtual uint8_t getBlueColor(colortype color) const = 0;
-
-    /**
      * Sets default color as used by alpha level only bitmap formats, e.g. A4. The default
      * color, if no color is set, is black.
      *
@@ -402,7 +293,7 @@ public:
      *
      * @see getDefaultColor
      */
-    void setDefaultColor(colortype color)
+    virtual void setDefaultColor(colortype color)
     {
         defaultColor = color;
     }
@@ -439,14 +330,43 @@ public:
      * @param  subDivisionSize   (Optional) the size of the subdivisions of the scan line.
      *                           Default is 12.
      */
-    void drawTextureMapTriangle(const DrawingSurface& dest,
-                                const Point3D* vertices,
-                                const TextureSurface& texture,
-                                const Rect& absoluteRect,
-                                const Rect& dirtyAreaAbsolute,
-                                RenderingVariant renderVariant,
-                                uint8_t alpha = 255,
-                                uint16_t subDivisionSize = 12);
+    virtual void drawTextureMapTriangle(const DrawingSurface& dest,
+                                        const Point3D* vertices,
+                                        const TextureSurface& texture,
+                                        const Rect& absoluteRect,
+                                        const Rect& dirtyAreaAbsolute,
+                                        RenderingVariant renderVariant,
+                                        uint8_t alpha = 255,
+                                        uint16_t subDivisionSize = 12);
+
+    /**
+     * Texture map quad. Draw a perspective correct texture mapped quad. The
+     * vertices describes the surface, the x,y,z coordinates and the u,v coordinates of the
+     * texture. The texture contains the image data to be drawn The quad line will be
+     * placed and clipped using the absolute and dirty rectangles The alpha will determine
+     * how the quad should be alpha blended. The subDivisionSize will determine the size
+     * of the piecewise affine texture mapped portions of the quad.
+     *
+     * @param  dest              The description of where the texture is drawn - can be used
+     *                           to issue a draw off screen.
+     * @param  vertices          The vertices of the quad.
+     * @param  texture           The texture.
+     * @param  absoluteRect      The containing rectangle in absolute coordinates.
+     * @param  dirtyAreaAbsolute The dirty area in absolute coordinates.
+     * @param  renderVariant     The render variant - includes the algorithm and the pixel
+     *                           format.
+     * @param  alpha             (Optional) the alpha. Default is 255 (solid).
+     * @param  subDivisionSize   (Optional) the size of the subdivisions of the scan line.
+     *                           Default is 12.
+     */
+    virtual void drawTextureMapQuad(const DrawingSurface& dest,
+                                    const Point3D* vertices,
+                                    const TextureSurface& texture,
+                                    const Rect& absoluteRect,
+                                    const Rect& dirtyAreaAbsolute,
+                                    RenderingVariant renderVariant,
+                                    uint8_t alpha = 255,
+                                    uint16_t subDivisionSize = 12);
 
     /**
      * Approximates an integer division of a 16bit value by 255. Divides numerator num (e.g.
@@ -523,15 +443,13 @@ protected:
          * @param  dest           Destination drawing surface.
          * @param  destX          Destination x coordinate.
          * @param  destY          Destination y coordinate.
-         * @param  bitmapWidth    Width of the bitmap.
-         * @param  bitmapHeight   Height of the bitmap.
          * @param  texture        The texture.
          * @param  alpha          The global alpha.
          * @param  dOneOverZdXAff 1/ZdX affine.
          * @param  dUOverZdXAff   U/ZdX affine.
          * @param  dVOverZdXAff   V/ZdX affine.
          */
-        virtual void drawTextureMapScanLineSubdivisions(int subdivisions, const int widthModLength, int pixelsToDraw, const int affineLength, float oneOverZRight, float UOverZRight, float VOverZRight, fixed16_16 U, fixed16_16 V, fixed16_16 deltaU, fixed16_16 deltaV, float ULeft, float VLeft, float URight, float VRight, float ZRight, const DrawingSurface& dest, const int destX, const int destY, const int16_t bitmapWidth, const int16_t bitmapHeight, const TextureSurface& texture, uint8_t alpha, const float dOneOverZdXAff, const float dUOverZdXAff, const float dVOverZdXAff) = 0;
+        virtual void drawTextureMapScanLineSubdivisions(int subdivisions, const int widthModLength, int pixelsToDraw, const int affineLength, float oneOverZRight, float UOverZRight, float VOverZRight, fixed16_16 U, fixed16_16 V, fixed16_16 deltaU, fixed16_16 deltaV, float ULeft, float VLeft, float URight, float VRight, float ZRight, const DrawingSurface& dest, const int destX, const int destY, const TextureSurface& texture, uint8_t alpha, const float dOneOverZdXAff, const float dUOverZdXAff, const float dVOverZdXAff) = 0;
 
     protected:
         static const fixed16_16 half = 0x8000; ///< 1/2 in fixed16_16 format
@@ -613,7 +531,7 @@ protected:
          */
         FORCE_INLINE_FUNCTION bool is2Inside(int value, int limit)
         {
-            return (value >= 0 && value + 1 < limit);
+            return is1Inside(value, limit - 1);
         }
 
         /**
@@ -641,7 +559,7 @@ protected:
          */
         FORCE_INLINE_FUNCTION bool is2PartiallyInside(int value, int limit)
         {
-            return (value >= -1 && value < limit);
+            return is1Inside(value + 1, limit + 1);
         }
 
         /**
@@ -842,11 +760,8 @@ protected:
      */
     static uint16_t getNumLines(TextProvider& textProvider, WideTextAction wideTextAction, TextDirection textDirection, const Font* font, int16_t width);
 
-    /** A font. */
     friend class Font;
-    /** A text area. */
     friend class TextArea;
-    /** A text area with wildcard base. */
     friend class TextAreaWithWildcardBase;
 
     /**
@@ -1000,129 +915,6 @@ private:
     };
 };
 
-/**
- * The class DebugPrinter defines the interface for printing debug messages on top of the
- * framebuffer.
- */
-class DebugPrinter
-{
-public:
-    /** Initializes a new instance of the DebugPrinter class. */
-    DebugPrinter()
-        : debugString(0), debugRegion(Rect(0, 0, 0, 0)), debugForegroundColor(colortype(0xffffffff)), debugScale(1)
-    {
-    }
-
-    /** Finalizes an instance of the DebugPrinter class. */
-    virtual ~DebugPrinter()
-    {
-    }
-
-    /**
-     * Sets the debug string to be displayed on top of the framebuffer.
-     *
-     * @param [in] string The string to be displayed.
-     */
-    void setString(const char* string)
-    {
-        debugString = string;
-    }
-
-    /**
-     * Sets the position onscreen where the debug string will be displayed.
-     *
-     * @param [in] x The coordinate of the region where the debug string is displayed.
-     * @param [in] y The coordinate of the region where the debug string is displayed.
-     * @param [in] w The width of the region where the debug string is displayed.
-     * @param [in] h The height of the region where the debug string is displayed.
-     */
-    void setPosition(uint16_t x, uint16_t y, uint16_t w, uint16_t h)
-    {
-        debugRegion = Rect(x, y, w, h);
-    }
-
-    /**
-     * Sets the font scale of the debug string.
-     *
-     * @param [in] scale The font scale of the debug string.
-     */
-    void setScale(uint8_t scale)
-    {
-        if (!scale)
-        {
-            scale = 1;
-        }
-
-        debugScale = scale;
-    }
-
-    /**
-     * Sets the foreground color of the debug string.
-     *
-     * @param [in] fg The foreground color of the debug string.
-     */
-    void setColor(colortype fg)
-    {
-        debugForegroundColor = fg;
-    }
-
-    /**
-     * Draws the debug string on top of the framebuffer content.
-     *
-     * @param [in] rect The rect to draw inside.
-     */
-    virtual void draw(const Rect& rect) const = 0;
-
-    /**
-     * Returns the region where the debug string is displayed.
-     *
-     * @return Rect The debug string region.
-     */
-    const Rect& getRegion() const
-    {
-        return debugRegion;
-    }
-
-protected:
-    /**
-     * Gets a glyph (15 bits) arranged with 3 bits wide, 5 bits high in a single uint16_t
-     * value.
-     *
-     * @param  c The character to get a glyph for.
-     *
-     * @return The glyph.
-     */
-    uint16_t getGlyph(uint8_t c) const
-    {
-        static const uint16_t builtin_debug_font[] =
-        {
-            000000, 022202, 055000, 057575, 026532, 051245, 025253, 022000,
-            012221, 042224, 005250, 002720, 000024, 000700, 000002, 011244,
-            025752, 026222, 061247, 061216, 045571, 074616, 034652, 071222,
-            025252, 025312, 002020, 002024, 012421, 007070, 042124, 061202,
-            025543, 025755, 065656, 034443, 065556, 074647, 074644, 034553,
-            055755, 072227, 011152, 055655, 044447, 057555, 015754, 025552,
-            065644, 025573, 065655, 034216, 072222, 055557, 055522, 055575,
-            055255, 055222, 071247, 032223, 044211, 062226, 025000, 000007,
-            042000, 003553, 046556, 003443, 013553, 002743, 012722, 002716,
-            046555, 020627, 010316, 045655, 062227, 006777, 006555, 002552,
-            006564, 003531, 006544, 003636, 022721, 005553, 005522, 005575,
-            005255, 005316, 007247, 032623, 022222, 062326, 063000, 077777
-        };
-
-        if (c < ' ' || c > '~')
-        {
-            c = 0x7F;
-        }
-        return builtin_debug_font[c - ' '];
-    }
-
-    const char* debugString;        ///< Debug string to be displayed onscreen.
-    Rect debugRegion;               ///< Region onscreen where the debug message is displayed.
-    colortype debugForegroundColor; ///< Font color to use when displaying the debug string.
-    uint8_t debugScale;             ///< Font scaling factor to use when displaying the debug string.
-};
-
 } // namespace touchgfx
 
-#endif // LCD_HPP
+#endif // TOUCHGFX_LCD_HPP

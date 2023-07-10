@@ -1,36 +1,43 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.15.0 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
+#include <touchgfx/Application.hpp>
+#include <touchgfx/Bitmap.hpp>
+#include <touchgfx/Callback.hpp>
+#include <touchgfx/EasingEquations.hpp>
+#include <touchgfx/containers/Container.hpp>
 #include <touchgfx/containers/SlideMenu.hpp>
+#include <touchgfx/mixins/MoveAnimator.hpp>
+#include <touchgfx/widgets/AbstractButton.hpp>
 
 namespace touchgfx
 {
-SlideMenu::SlideMenu() :
-    Container(),
-    onStateChangeButtonClicked(this, &SlideMenu::stateChangeButtonClickedHandler),
-    animationEndedCallback(this, &SlideMenu::animationEndedHandler),
-    stateChangedCallback(0),
-    stateChangedAnimationEndedCallback(0),
-    currentState(COLLAPSED),
-    expandDirection(EAST),
-    animationEquation(EasingEquations::cubicEaseInOut),
-    visiblePixelsWhenCollapsed(0),
-    hiddenPixelsWhenExpanded(0),
-    expandedStateTimeout(200),
-    expandedStateTimer(0),
-    animationDuration(10)
+SlideMenu::SlideMenu()
+    : Container(),
+      menuContainer(),
+      stateChangeButton(),
+      background(),
+      onStateChangeButtonClicked(this, &SlideMenu::stateChangeButtonClickedHandler),
+      animationEndedCallback(this, &SlideMenu::animationEndedHandler),
+      stateChangedCallback(0),
+      stateChangedAnimationEndedCallback(0),
+      currentState(COLLAPSED),
+      expandDirection(EAST),
+      animationEquation(EasingEquations::cubicEaseInOut),
+      visiblePixelsWhenCollapsed(0),
+      hiddenPixelsWhenExpanded(0),
+      expandedStateTimeout(200),
+      expandedStateTimer(0),
+      animationDuration(10)
 {
     Application::getInstance()->registerTimerWidget(this);
 
@@ -44,7 +51,7 @@ SlideMenu::SlideMenu() :
 
 SlideMenu::~SlideMenu()
 {
-    Application::getInstance()->unregisterTimerWidget(this); //lint !e1551
+    Application::getInstance()->unregisterTimerWidget(this);
 }
 
 void SlideMenu::setup(ExpandDirection newExpandDirection, const Bitmap& backgroundBMP, const Bitmap& stateChangeButtonBMP, const Bitmap& stateChangeButtonPressedBMP)
@@ -56,7 +63,7 @@ void SlideMenu::setup(ExpandDirection newExpandDirection, const Bitmap& backgrou
 
     switch (newExpandDirection)
     {
-    case touchgfx::SlideMenu::SOUTH:
+    case SOUTH:
         backgroundX = 0;
         backgroundY = 0;
         buttonX = (backgroundBMP.getWidth() - stateChangeButtonBMP.getWidth()) / 2;
@@ -64,7 +71,7 @@ void SlideMenu::setup(ExpandDirection newExpandDirection, const Bitmap& backgrou
 
         setVisiblePixelsWhenCollapsed(stateChangeButtonBMP.getHeight());
         break;
-    case touchgfx::SlideMenu::NORTH:
+    case NORTH:
         backgroundX = 0;
         backgroundY = stateChangeButtonBMP.getHeight();
         buttonX = (backgroundBMP.getWidth() - stateChangeButtonBMP.getWidth()) / 2;
@@ -72,7 +79,7 @@ void SlideMenu::setup(ExpandDirection newExpandDirection, const Bitmap& backgrou
 
         setVisiblePixelsWhenCollapsed(stateChangeButtonBMP.getHeight());
         break;
-    case touchgfx::SlideMenu::EAST:
+    case EAST:
         backgroundX = 0;
         backgroundY = 0;
         buttonX = backgroundBMP.getWidth();
@@ -80,7 +87,7 @@ void SlideMenu::setup(ExpandDirection newExpandDirection, const Bitmap& backgrou
 
         setVisiblePixelsWhenCollapsed(stateChangeButtonBMP.getWidth());
         break;
-    case touchgfx::SlideMenu::WEST:
+    case WEST:
         backgroundX = stateChangeButtonBMP.getWidth();
         backgroundY = 0;
         buttonX = 0;
@@ -108,8 +115,7 @@ void SlideMenu::setup(ExpandDirection newExpandDirection, const Bitmap& backgrou
     menuContainer.setWidth(boundingRect.right());
     menuContainer.setHeight(boundingRect.bottom());
 
-    setWidth(menuContainer.getWidth());
-    setHeight(menuContainer.getHeight());
+    setWidthHeight(menuContainer);
 
     setExpandDirection(expandDirection);
     setState(currentState);
@@ -134,8 +140,7 @@ void SlideMenu::setup(ExpandDirection newExpandDirection, const Bitmap& backgrou
     menuContainer.setWidth(boundingRect.right());
     menuContainer.setHeight(boundingRect.bottom());
 
-    setWidth(menuContainer.getWidth());
-    setHeight(menuContainer.getHeight());
+    setWidthHeight(menuContainer);
 
     setExpandDirection(expandDirection);
     setState(currentState);
@@ -150,7 +155,7 @@ void SlideMenu::setExpandDirection(ExpandDirection newExpandDirection)
     setState(currentState);
 }
 
-touchgfx::SlideMenu::ExpandDirection SlideMenu::getExpandDirection() const
+SlideMenu::ExpandDirection SlideMenu::getExpandDirection() const
 {
     return expandDirection;
 }
@@ -204,7 +209,7 @@ void SlideMenu::setAnimationEasingEquation(EasingEquation animationEasingEquatio
     animationEquation = animationEasingEquation;
 }
 
-touchgfx::EasingEquation SlideMenu::getAnimationEasingEquation() const
+EasingEquation SlideMenu::getAnimationEasingEquation() const
 {
     return animationEquation;
 }
@@ -246,7 +251,7 @@ void SlideMenu::animateToState(State newState)
     }
 }
 
-touchgfx::SlideMenu::State SlideMenu::getState()
+SlideMenu::State SlideMenu::getState()
 {
     return currentState;
 }
@@ -281,12 +286,12 @@ int16_t SlideMenu::getStateChangeButtonY() const
     return stateChangeButton.getY();
 }
 
-void SlideMenu::setStateChangedCallback(GenericCallback< const SlideMenu& >& callback)
+void SlideMenu::setStateChangedCallback(GenericCallback<const SlideMenu&>& callback)
 {
     stateChangedCallback = &callback;
 }
 
-void SlideMenu::setStateChangedAnimationEndedCallback(GenericCallback< const SlideMenu& >& callback)
+void SlideMenu::setStateChangedAnimationEndedCallback(GenericCallback<const SlideMenu&>& callback)
 {
     stateChangedAnimationEndedCallback = &callback;
 }
@@ -346,12 +351,12 @@ int16_t SlideMenu::getCollapsedXCoordinate()
 {
     switch (expandDirection)
     {
-    case touchgfx::SlideMenu::EAST:
+    case EAST:
         return -menuContainer.getWidth() + visiblePixelsWhenCollapsed;
-    case touchgfx::SlideMenu::WEST:
+    case WEST:
         return getWidth() - visiblePixelsWhenCollapsed;
-    case touchgfx::SlideMenu::SOUTH:
-    case touchgfx::SlideMenu::NORTH:
+    case SOUTH:
+    case NORTH:
     default:
         return 0;
     }
@@ -361,12 +366,12 @@ int16_t SlideMenu::getCollapsedYCoordinate()
 {
     switch (expandDirection)
     {
-    case touchgfx::SlideMenu::SOUTH:
+    case SOUTH:
         return -menuContainer.getHeight() + visiblePixelsWhenCollapsed;
-    case touchgfx::SlideMenu::NORTH:
+    case NORTH:
         return getHeight() - visiblePixelsWhenCollapsed;
-    case touchgfx::SlideMenu::EAST:
-    case touchgfx::SlideMenu::WEST:
+    case EAST:
+    case WEST:
     default:
         return 0;
     }
@@ -376,12 +381,12 @@ int16_t SlideMenu::getExpandedXCoordinate()
 {
     switch (expandDirection)
     {
-    case touchgfx::SlideMenu::EAST:
+    case EAST:
         return -hiddenPixelsWhenExpanded;
-    case touchgfx::SlideMenu::WEST:
+    case WEST:
         return hiddenPixelsWhenExpanded;
-    case touchgfx::SlideMenu::SOUTH:
-    case touchgfx::SlideMenu::NORTH:
+    case SOUTH:
+    case NORTH:
     default:
         return 0;
     }
@@ -391,12 +396,12 @@ int16_t SlideMenu::getExpandedYCoordinate()
 {
     switch (expandDirection)
     {
-    case touchgfx::SlideMenu::SOUTH:
+    case SOUTH:
         return -hiddenPixelsWhenExpanded;
-    case touchgfx::SlideMenu::NORTH:
+    case NORTH:
         return hiddenPixelsWhenExpanded;
-    case touchgfx::SlideMenu::EAST:
-    case touchgfx::SlideMenu::WEST:
+    case EAST:
+    case WEST:
     default:
         return 0;
     }

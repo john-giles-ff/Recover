@@ -1,33 +1,40 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.15.0 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Bitmap.hpp>
+#include <touchgfx/Drawable.hpp>
+#include <touchgfx/containers/Container.hpp>
 #include <touchgfx/containers/Slider.hpp>
+#include <touchgfx/events/ClickEvent.hpp>
+#include <touchgfx/events/DragEvent.hpp>
 
 namespace touchgfx
 {
-Slider::Slider() :
-    Container(),
-    sliderOrientation(HORIZONTAL),
-    currentValue(0),
-    valueRangeMin(0),
-    valueRangeMax(1),
-    indicatorMinPosition(0),
-    indicatorMaxPosition(1),
-    startValueCallback(0),
-    stopValueCallback(0),
-    newValueCallback(0)
+Slider::Slider()
+    : Container(),
+      sliderOrientation(HORIZONTAL),
+      currentValue(0),
+      valueRangeMin(0),
+      valueRangeMax(1),
+      background(),
+      backgroundSelected(),
+      indicator(),
+      backgroundSelectedViewPort(),
+      indicatorMinPosition(0),
+      indicatorMaxPosition(1),
+      startValueCallback(0),
+      stopValueCallback(0),
+      newValueCallback(0)
 {
     setTouchable(true);
 
@@ -53,8 +60,7 @@ void Slider::setBitmaps(const Bitmap& sliderBackground, const Bitmap& sliderBack
     background.setBitmap(sliderBackground);
     backgroundSelected.setBitmap(sliderBackgroundSelected);
     indicator.setBitmap(indicatorBitmap);
-    backgroundSelectedViewPort.setWidth(backgroundSelected.getWidth());
-    backgroundSelectedViewPort.setHeight(backgroundSelected.getHeight());
+    backgroundSelectedViewPort.setWidthHeight(backgroundSelected);
 }
 
 void Slider::setBitmaps(const BitmapId sliderBackground, const BitmapId sliderBackgroundSelected, const BitmapId indicatorBitmap)
@@ -84,8 +90,7 @@ void Slider::setupHorizontalSlider(uint16_t backgroundX, uint16_t backgroundY, u
     indicatorMinPosition = indicatorMinX;
     indicatorMaxPosition = indicatorMaxX;
 
-    setWidth(newWidth);
-    setHeight(newHeight);
+    setWidthHeight(newWidth, newHeight);
 
     setValue(currentValue);
 }
@@ -111,8 +116,7 @@ void Slider::setupVerticalSlider(uint16_t backgroundX, uint16_t backgroundY, uin
     indicatorMinPosition = indicatorMinY;
     indicatorMaxPosition = indicatorMaxY;
 
-    setWidth(newWidth);
-    setHeight(newHeight);
+    setWidthHeight(newWidth, newHeight);
 
     setValue(currentValue);
 }
@@ -122,48 +126,49 @@ void Slider::setValue(int value)
     updateIndicatorPosition(valueToPosition(value));
 }
 
-void Slider::handleClickEvent(const ClickEvent& evt)
+void Slider::handleClickEvent(const ClickEvent& event)
 {
-    if ((evt.getType() == ClickEvent::PRESSED) || (evt.getType() == ClickEvent::RELEASED))
+    if ((event.getType() == ClickEvent::PRESSED) || (event.getType() == ClickEvent::RELEASED))
     {
         // Communicate the start value if a listener is registered
-        if ((evt.getType() == ClickEvent::PRESSED) && (startValueCallback != 0) && startValueCallback->isValid())
+        if ((event.getType() == ClickEvent::PRESSED) && (startValueCallback != 0) && startValueCallback->isValid())
         {
             startValueCallback->execute(*this, currentValue);
         }
 
         if (sliderOrientation == HORIZONTAL)
         {
-            updateIndicatorPosition(evt.getX() - getIndicatorRadius());
+            updateIndicatorPosition(event.getX() - getIndicatorRadius());
         }
         else
         {
-            updateIndicatorPosition(evt.getY() - getIndicatorRadius());
+            updateIndicatorPosition(event.getY() - getIndicatorRadius());
         }
 
         // Communicate the stop value if a listener is registered
-        if ((evt.getType() == ClickEvent::RELEASED) && (stopValueCallback != 0) && stopValueCallback->isValid())
+        if ((event.getType() == ClickEvent::RELEASED) && (stopValueCallback != 0) && stopValueCallback->isValid())
         {
             stopValueCallback->execute(*this, currentValue);
         }
     }
 }
 
-void Slider::handleDragEvent(const DragEvent& evt)
+void Slider::handleDragEvent(const DragEvent& event)
 {
     if (sliderOrientation == HORIZONTAL)
     {
-        updateIndicatorPosition(evt.getNewX() - getIndicatorRadius());
+        updateIndicatorPosition(event.getNewX() - getIndicatorRadius());
     }
     else
     {
-        updateIndicatorPosition(evt.getNewY() - getIndicatorRadius());
+        updateIndicatorPosition(event.getNewY() - getIndicatorRadius());
     }
 }
 
 int16_t Slider::valueToPosition(int value) const
 {
-    value = MAX(MIN(valueRangeMax, value), valueRangeMin);
+    value = MIN(valueRangeMax, value);
+    value = MAX(value, valueRangeMin);
 
     int coordinateOffset = ((value - valueRangeMin) * (getIndicatorPositionRangeSize() + 1)) / getValueRangeSize();
 
@@ -212,7 +217,8 @@ int Slider::positionToValue(int16_t position) const
 void Slider::updateIndicatorPosition(int16_t position)
 {
     // Cut off positions outside the slider area
-    position = MIN(MAX(position, indicatorMinPosition), indicatorMaxPosition);
+    position = MAX(position, indicatorMinPosition);
+    position = MIN(position, indicatorMaxPosition);
 
     if (sliderOrientation == HORIZONTAL)
     {

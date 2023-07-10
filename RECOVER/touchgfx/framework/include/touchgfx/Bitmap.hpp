@@ -1,27 +1,23 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.15.0 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/Bitmap.hpp
  *
  * Declares the touchgfx::Bitmap class.
  */
-#ifndef BITMAP_HPP
-#define BITMAP_HPP
+#ifndef TOUCHGFX_BITMAP_HPP
+#define TOUCHGFX_BITMAP_HPP
 
-#include <cassert>
 #include <touchgfx/hal/Types.hpp>
 
 #if defined(__ARMCC_VERSION) && (__ARMCC_VERSION < 6000000)
@@ -71,7 +67,8 @@ public:
         RGBA2222, ///< 8-bit color
         BGRA2222, ///< 8-bit color
         L8,       ///< 8-bit indexed color
-        A4        ///< 4-bit alpha level
+        A4,       ///< 4-bit alpha level
+        CUSTOM    ///< Non-standard platform specific format
     };
 
     /** Data of a bitmap. */
@@ -102,12 +99,13 @@ public:
     /** Data of a dynamic Bitmap. */
     struct DynamicBitmapData
     {
-        Rect solid;         ///< The solidRect of this Bitmap
-        uint16_t width;     ///< The width of the Bitmap
-        uint16_t height;    ///< The height of the Bitmap
-        uint8_t format : 5; ///< Determine the format of the data
-        uint8_t inuse : 1;  ///< Zero if not in use
-        uint8_t extra : 2;  ///< Extra data field, depending on format
+        Rect solid;              ///< The solidRect of this Bitmap
+        uint16_t width;          ///< The width of the Bitmap
+        uint16_t height;         ///< The height of the Bitmap
+        uint8_t format : 5;      ///< Determine the format of the data
+        uint8_t inuse : 1;       ///< Zero if not in use
+        uint8_t extra : 2;       ///< Extra data field, dependent on format
+        uint8_t customSubformat; ///< Custom format specifier (or L8 palette length)
     };
 
     /** Cache bookkeeping. */
@@ -122,7 +120,7 @@ public:
      *
      * @param  id (Optional) The unique bitmap identifier.
      */
-    explicit Bitmap(const BitmapId id = BITMAP_INVALID)
+    Bitmap(const BitmapId id = BITMAP_INVALID)
         : bitmapId(id)
     {
     }
@@ -139,6 +137,16 @@ public:
     }
 
     /**
+     * Gets the id of this Bitmap.
+     *
+     * @return The id of this Bitmap.
+     */
+    operator BitmapId() const
+    {
+        return getId();
+    }
+
+    /**
      * Gets a pointer to the Bitmap data.
      *
      * @return A pointer to the raw Bitmap data.
@@ -146,24 +154,6 @@ public:
      * @note If this Bitmap is cached, it will return the cached version of Bitmap data.
      */
     const uint8_t* getData() const;
-
-    ///@cond
-    /**
-     * Gets a pointer to the alpha/extra data.
-     *
-     * @return A pointer to the extra data
-     *
-     * @see getExtraData
-     *
-     * @note If this Bitmap is cached, it will return the cached version of alpha data for this
-     *       Bitmap.
-     *
-     * @deprecated Use Bitmap::getExtraData().
-     */
-    TOUCHGFX_DEPRECATED(
-        "Use Bitmap::getExtraData().",
-        const uint8_t* getAlphaData() const);
-    ///@endcond
 
     /**
      * Gets a pointer to the extra (alpha) data, if present in the Bitmap. For images stored
@@ -325,30 +315,132 @@ public:
     static void clearCache();
 
     /**
-     * Create a dynamic Bitmap. The clutFormat parameter is ignored for bitmaps not in L8
-     * format. Creation of a new dynamic bitmap may cause existing dynamic bitmaps to be
-     * moved in memory. Do not rely on bitmap memory addresses of dynamic bitmaps obtained
-     * from dynamicBitmapGetAddress() to be valid across calls to dynamicBitmapCreate().
+     * Create a dynamic Bitmap. The clutFormat parameter is ignored for bitmaps not in L8 format
+     * (consider using dynamicBitmapCreateL8 instead). Creation of a new dynamic bitmap may cause
+     * existing dynamic bitmaps to be moved in memory. Do not rely on bitmap memory addresses of
+     * dynamic bitmaps obtained from dynamicBitmapGetAddress() to be valid across calls to
+     * dynamicBitmapCreate().
      *
-     * @param  width      Width of the Bitmap.
-     * @param  height     Height of the Bitmap.
-     * @param  format     Bitmap format of the Bitmap.
-     * @param  clutFormat (Optional) Color lookup table format of the Bitmap.
+     * @param   width       Width of the Bitmap.
+     * @param   height      Height of the Bitmap.
+     * @param   format      Bitmap format of the Bitmap.
+     * @param   clutFormat  (Optional) Color LookUp Table format of the Bitmap (only used if format
+     *                      is Bitmap::L8).
      *
-     * @return BitmapId of the new Bitmap or #BITMAP_INVALID if cache memory is full.
+     * @return  BitmapId of the new Bitmap or #BITMAP_INVALID if cache memory is full.
      *
-     * @see DynamicBitmapData
+     * @see DynamicBitmapData, dynamicBitmapCreateL8, dynamicBitmapCreateCopy
      */
     static BitmapId dynamicBitmapCreate(const uint16_t width, const uint16_t height, BitmapFormat format, ClutFormat clutFormat = CLUT_FORMAT_L8_ARGB8888);
 
     /**
-     * Delete a dynamic Bitmap.
+     * Create a dynamic Bitmap as a copy of an existing bitmap.
+     *
+     * @param   id  The ID of the bitmap to copy.
+     *
+     * @return  BitmapId of the new Bitmap or #BITMAP_INVALID if cache memory is full.
+     *
+     * @see dynamicBitmapCreate
+     */
+    static BitmapId dynamicBitmapCreateCopy(const BitmapId id);
+
+    /**
+     * Create a dynamic L8 Bitmap. Creation of a new dynamic bitmap may cause existing dynamic
+     * bitmaps to be moved in memory. Do not rely on bitmap memory addresses of dynamic bitmaps
+     * obtained from dynamicBitmapGetAddress() to be valid across calls to dynamicBitmapCreate().
+     *
+     * @param   width       Width of the Bitmap.
+     * @param   height      Height of the Bitmap.
+     * @param   clutFormat  Color LookUp Table format of the L8 Bitmap.
+     * @param   clutSize    (Optional) Color LookUp Table palette size (default=256).
+     *
+     * @return  BitmapId of the new Bitmap or #BITMAP_INVALID if cache memory is full.
+     *
+     * @see DynamicBitmapData, dynamicBitmapCreate
+     */
+    static BitmapId dynamicBitmapCreateL8(const uint16_t width, const uint16_t height, ClutFormat clutFormat, uint16_t clutSize = 256);
+
+    /**
+     * Create a dynamic bitmap in custom format. size number of bytes
+     * is reserved in the dynamic bitmap cache. A more specific format
+     * can be given in the customSubformat parameter for use when
+     * handling more than one CUSTOM format. Set the solid rect if
+     * applicable.
+     *
+     * @param width           Width of the bitmap.
+     * @param height          Height of the bitmap.
+     * @param customSubformat Custom format specifier
+     * @param size            Size in bytes of the dynamic bitmap
+     *
+     * @return BitmapId of the new bitmap or BITMAP_INVALID if cache memory is full.
+     *
+     * @note Creation of a new dynamic bitmap may cause existing dynamic bitmaps to be moved in
+     *       memory. Do not rely on bitmap memory addresses of dynamic bitmaps obtained from
+     *       dynamicBitmapGetAddress() to be valid across calls to dynamicBitmapCreateCustom() .
+     *
+     * @see dynamicBitmapGetAddress, dynamicBitmapCreate, dynamicBitmapSetSolidRect
+     */
+    static BitmapId dynamicBitmapCreateCustom(const uint16_t width, const uint16_t height, uint8_t customSubformat, uint32_t size);
+
+    /**
+     * Create a dynamic bitmap without reserving memory in the dynamic
+     * bitmap cache. The pixels must be already available in the
+     * memory, e.g. in flash. No copying is performed.
+     *
+     * @param width           Width of the bitmap.
+     * @param height          Height of the bitmap.
+     * @param pixels          Pointer to the bitmap pixels.
+     * @param format          Bitmap format of the bitmap.
+     * @param customSubformat Custom format specifier
+     *
+     * @return BitmapId of the new bitmap or BITMAP_INVALID if not possible.
+     *
+     * @see dynamicBitmapGetAddress, dynamicBitmapCreate, dynamicBitmapSetSolidRect
+     */
+    static BitmapId dynamicBitmapCreateExternal(const uint16_t width, const uint16_t height, const void* pixels, BitmapFormat format, uint8_t customSubformat = 0);
+
+    /**
+     * Fill a dynamic Bitmap with a color. If alpha is less than 255, the color will be blended onto
+     * the existing data in the dynamic bitmap.
+     *
+     * @param   id      The ID of the dynamic bitmap to fill.
+     * @param   color   The color.
+     * @param   alpha   (Optional) The alpha (default is 255, i.e. solid).
+     *
+     * @see dynamicBitmapCreateCopy, dynamicBitmapFillRect
+     */
+    static void dynamicBitmapFill(const BitmapId id, const colortype color, const uint8_t alpha = 255);
+
+    /**
+     * Fill parts of a dynamic Bitmap with a color. If alpha is less than 255, the color will be
+     * blended onto the existing data in the dynamic bitmap.
+     *
+     * @param   id      The ID of the dynamic bitmap to fill.
+     * @param   rect    The rectangle to fill.
+     * @param   color   The color.
+     * @param   alpha   (Optional) The alpha (default is 255, i.e. solid).
+     *
+     * @see dynamicBitmapCreateCopy, dynamicBitmapFill
+     */
+    static void dynamicBitmapFillRect(const BitmapId id, const Rect& rect, const colortype color, const uint8_t alpha = 255);
+
+    /**
+     * Delete a dynamic bitmap.
      *
      * @param  id The BitmapId of the dynamic Bitmap.
      *
      * @return true if it succeeds, false if it fails.
      */
     static bool dynamicBitmapDelete(BitmapId id);
+
+    /**
+     * Check if a given bitmap id is the id of a dynamic bitmap.
+     *
+     * @param  id The BitmapId of the dynamic Bitmap.
+     *
+     * @return true if the bitmap is dynamic, false otherwise.
+     */
+    static bool isDynamicBitmap(BitmapId id);
 
     /**
      * Get the address of the dynamic Bitmap data. It is important that the address of a
@@ -393,46 +485,18 @@ public:
 
     ///@cond
     /**
-     * Returns the number of dynamic bitmaps created.
+     * Gets the subformat of the dynamic bitmap. Zero is returned if
+     * the subformat was not set.
      *
+     * @return the subformat
+     */
+    static uint8_t dynamicBitmapGetCustomSubformat(BitmapId id);
+
+    /**
      * @return The number of dynamic bitmaps.
      */
     static uint32_t dynamicBitmapGetNumberOfBitmaps();
-
-    /**
-     * Equality operator.
-     *
-     * @param  other The bitmap to compare with.
-     *
-     * @return True if this bitmap has the same id as the other bitmap.
-     *
-     * @deprecated Simply compare the BitmapId of the bitmaps using Bitmap::getId().
-     */
-    TOUCHGFX_DEPRECATED(
-        "Simply compare the BitmapId of the bitmaps using Bitmap::getId().",
-        bool operator==(const Bitmap& other) const)
-    {
-        return bitmapId == other.bitmapId;
-    }
-    ///@endcond
-
-    ///@cond
-    /**
-     * Inequality operator.
-     *
-     * @param  other The bitmap to compare with.
-     *
-     * @return True if this bitmap has a different id than the other bitmap.
-     *
-     * @deprecated Simply compare the BitmapId of the bitmaps using Bitmap::getId().
-     */
-    TOUCHGFX_DEPRECATED(
-        "Simply compare the BitmapId of the bitmaps using Bitmap::getId().",
-        bool operator!=(const Bitmap& other) const)
-    {
-        return bitmapId != other.bitmapId;
-    }
-    ///@endcond
+    /// @endcond
 
     /**
      * Register a memory region in which Bitmap data can be cached.
@@ -470,8 +534,12 @@ public:
 
 private:
     static uint32_t getSizeOfBitmap(BitmapId id);
-
+    static uint32_t getSizeOfBitmapData(BitmapId id);
+    static uint32_t getSizeOfBitmapExtraData(BitmapId id);
+    static bool cacheInternal(BitmapId id, uint32_t size);
+    static bool isCustomDynamicBitmap(BitmapId id);
     static bool copyBitmapToCache(BitmapId id, uint8_t* const dst);
+    static uint32_t firstFreeDynamicBitmapId();
 
     BitmapId bitmapId;
     static const BitmapData* bitmaps;
@@ -489,4 +557,4 @@ private:
 
 } // namespace touchgfx
 
-#endif // BITMAP_HPP
+#endif // TOUCHGFX_BITMAP_HPP

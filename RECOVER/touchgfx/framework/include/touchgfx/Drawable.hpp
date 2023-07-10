@@ -1,33 +1,28 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.15.0 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/Drawable.hpp
  *
  * Declares the touchgfx::Drawable class.
  */
-#ifndef DRAWABLE_HPP
-#define DRAWABLE_HPP
+#ifndef TOUCHGFX_DRAWABLE_HPP
+#define TOUCHGFX_DRAWABLE_HPP
 
-#include <touchgfx/Application.hpp>
-#include <touchgfx/Callback.hpp>
-#include <touchgfx/Utils.hpp>
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Bitmap.hpp>
 #include <touchgfx/events/ClickEvent.hpp>
 #include <touchgfx/events/DragEvent.hpp>
 #include <touchgfx/events/GestureEvent.hpp>
-#include <touchgfx/hal/Types.hpp>
 
 namespace touchgfx
 {
@@ -51,10 +46,13 @@ class Drawable
 public:
     /** Initializes a new instance of the Drawable class. */
     Drawable()
-        : rect(0, 0, 0, 0),
+        : rect(),
+          cachedVisibleRect(),
           parent(0),
           nextSibling(0),
           nextDrawChainElement(0),
+          cachedAbsX(0),
+          cachedAbsY(0),
           touchable(false),
           visible(true)
     {
@@ -123,6 +121,17 @@ public:
     Drawable* getNextSibling()
     {
         return nextSibling;
+    }
+
+    /**
+     * Function for obtaining the first child of this drawable if any.
+     *
+     * @return A pointer on the first child drawable if any.
+     * @see Container::getFirstChild
+     */
+    virtual Drawable* getFirstChild()
+    {
+        return 0;
     }
 
     /**
@@ -204,11 +213,10 @@ public:
      *
      * @note For most Drawable widgets, changing this does normally not automatically yield a redraw.
      */
-    virtual void setPosition(int16_t x, int16_t y, int16_t width, int16_t height)
+    void setPosition(int16_t x, int16_t y, int16_t width, int16_t height)
     {
         setXY(x, y);
-        setWidth(width);
-        setHeight(height);
+        setWidthHeight(width, height);
     }
 
     /**
@@ -286,7 +294,7 @@ public:
      *
      * @note For most Drawable widgets, changing this does normally not automatically yield a redraw.
      */
-    virtual void setXY(int16_t x, int16_t y)
+    void setXY(int16_t x, int16_t y)
     {
         setX(x);
         setY(y);
@@ -327,31 +335,111 @@ public:
 
     /**
      * Defines the event handler interface for ClickEvents. The default implementation
-     * ignores the event. The event is only received if the Drawable is touchable and visible.
+     * ignores the event. The event is only received if the Drawable is touchable and
+     * visible.
      *
-     * @param  evt The ClickEvent received from the HAL.
+     * @param  event The ClickEvent received from the HAL.
      */
-    virtual void handleClickEvent(const ClickEvent& evt)
+    virtual void handleClickEvent(const ClickEvent& event)
     {
     }
 
     /**
      * Defines the event handler interface for GestureEvents. The default implementation
-     * ignores the event. The event is only received if the Drawable is touchable and visible.
+     * ignores the event. The event is only received if the Drawable is touchable and
+     * visible.
      *
-     * @param  evt The GestureEvent received from the HAL.
+     * @param  event The GestureEvent received from the HAL.
      */
-    virtual void handleGestureEvent(const GestureEvent& evt)
+    virtual void handleGestureEvent(const GestureEvent& event)
     {
     }
 
     /**
-     * Defines the event handler interface for DragEvents. The default implementation
-     * ignores the event. The event is only received if the drawable is touchable and visible.
+     * Sets the dimensions (width and height) of the Drawable without changing the x and y
+     * coordinates).
      *
-     * @param  evt The DragEvent received from the HAL.
+     * @param  width  The width.
+     * @param  height The height.
      */
-    virtual void handleDragEvent(const DragEvent& evt)
+    void setWidthHeight(int16_t width, int16_t height)
+    {
+        setWidth(width);
+        setHeight(height);
+    }
+
+    /**
+     * Sets the position of the Drawable to the same as the given Drawable. This will copy
+     * the x, y, width and height.
+     *
+     * @param  drawable The drawable.
+     *
+     * @see setPosition(int16_t,int16_t,int16_t,int16_t)
+     */
+    void setPosition(const Drawable& drawable)
+    {
+        setPosition(drawable.getX(), drawable.getY(), drawable.getWidth(), drawable.getHeight());
+    }
+
+    /**
+     * Sets the x and y coordinates of this Drawable.
+     *
+     * @param  drawable The Drawable to copy the x and y coordinates from.
+     *
+     * @see setXY(int16_t,int16_t)
+     */
+    void setXY(const Drawable& drawable)
+    {
+        setXY(drawable.getX(), drawable.getY());
+    }
+
+    /**
+     * Sets the dimensions (width and height) of the Drawable without changing the x and y
+     * coordinates).
+     *
+     * @param  drawable The Drawable to copy the width and height from.
+     *
+     * @see setWidthHeight(int16_t,int16_t)
+     */
+    void setWidthHeight(const Drawable& drawable)
+    {
+        setWidthHeight(drawable.getWidth(), drawable.getHeight());
+    }
+
+    /**
+     * Sets the dimensions (width and height) of the Drawable without changing the x and y
+     * coordinates).
+     *
+     * @param  bitmap The Bitmap to copy the width and height from.
+     *
+     * @see setWidthHeight(int16_t,int16_t)
+     */
+    void setWidthHeight(const Bitmap& bitmap)
+    {
+        setWidthHeight(bitmap.getWidth(), bitmap.getHeight());
+    }
+
+    /**
+     * Sets the dimensions (width and height) of the Drawable without changing the x and y
+     * coordinates).
+     *
+     * @param  rect The Rect to copy the width and height from.
+     *
+     * @see setWidthHeight(int16_t,int16_t)
+     */
+    void setWidthHeight(const Rect& rect)
+    {
+        setWidthHeight(rect.width, rect.height);
+    }
+
+    /**
+     * Defines the event handler interface for DragEvents. The default implementation
+     * ignores the event. The event is only received if the drawable is touchable and
+     * visible.
+     *
+     * @param  event The DragEvent received from the HAL.
+     */
+    virtual void handleDragEvent(const DragEvent& event)
     {
     }
 
@@ -577,4 +665,4 @@ protected:
 
 } // namespace touchgfx
 
-#endif // DRAWABLE_HPP
+#endif // TOUCHGFX_DRAWABLE_HPP

@@ -1,19 +1,17 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.15.0 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
-#include <touchgfx/Color.hpp>
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/lcd/LCD.hpp>
 #include <touchgfx/widgets/canvas/AbstractPainterARGB8888.hpp>
 
 namespace touchgfx
@@ -25,7 +23,8 @@ void AbstractPainterARGB8888::render(uint8_t* ptr,
                                      unsigned count,
                                      const uint8_t* covers)
 {
-    uint8_t* p = ptr + ((x + xAdjust) * 4);
+    uint8_t* p = ptr + (x + xAdjust) * 4;
+    const uint8_t* const p_lineend = p + 4 * count;
 
     currentX = x + areaOffsetX;
     currentY = y + areaOffsetY;
@@ -36,8 +35,7 @@ void AbstractPainterARGB8888::render(uint8_t* ptr,
             uint8_t red, green, blue, alpha;
             if (renderNext(red, green, blue, alpha))
             {
-                uint8_t combinedAlpha = LCD::div255((*covers) * LCD::div255(alpha * widgetAlpha));
-                covers++;
+                const uint8_t combinedAlpha = LCD::div255((*covers) * LCD::div255(alpha * widgetAlpha));
 
                 if (combinedAlpha == 0xFF) // max alpha=0xFF on "*covers" and max alpha=0xFF on "widgetAlpha"
                 {
@@ -46,11 +44,11 @@ void AbstractPainterARGB8888::render(uint8_t* ptr,
                 }
                 else
                 {
-                    uint8_t ialpha = 0xFF - combinedAlpha;
-                    uint8_t p_blue = p[0];
-                    uint8_t p_green = p[1];
-                    uint8_t p_red = p[2];
-                    uint8_t p_alpha = p[3];
+                    const uint8_t ialpha = 0xFF - combinedAlpha;
+                    const uint8_t p_blue = p[0];
+                    const uint8_t p_green = p[1];
+                    const uint8_t p_red = p[2];
+                    const uint8_t p_alpha = p[3];
                     renderPixel(reinterpret_cast<uint16_t*>(p),
                                 LCD::div255(red * combinedAlpha + p_red * ialpha),
                                 LCD::div255(green * combinedAlpha + p_green * ialpha),
@@ -58,9 +56,10 @@ void AbstractPainterARGB8888::render(uint8_t* ptr,
                                 p_alpha + combinedAlpha - LCD::div255(p_alpha * combinedAlpha));
                 }
             }
+            covers++;
             p += 4;
             currentX++;
-        } while (--count != 0);
+        } while (p < p_lineend);
     }
 }
 

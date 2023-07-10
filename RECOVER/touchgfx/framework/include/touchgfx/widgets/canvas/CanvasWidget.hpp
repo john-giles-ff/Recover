@@ -1,33 +1,26 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.15.0 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/widgets/canvas/CanvasWidget.hpp
  *
  * Declares the touchgfx::CanvasWidget class.
  */
-#ifndef CANVASWIDGET_HPP
-#define CANVASWIDGET_HPP
+#ifndef TOUCHGFX_CANVASWIDGET_HPP
+#define TOUCHGFX_CANVASWIDGET_HPP
 
-#include <touchgfx/Bitmap.hpp>
-#include <touchgfx/canvas_widget_renderer/Rasterizer.hpp>
-#include <touchgfx/hal/HAL.hpp>
-#include <touchgfx/transforms/DisplayTransformation.hpp>
+#include <touchgfx/hal/Types.hpp>
 #include <touchgfx/widgets/Widget.hpp>
 #include <touchgfx/widgets/canvas/AbstractPainter.hpp>
-#include <touchgfx/widgets/canvas/CWRUtil.hpp>
 
 namespace touchgfx
 {
@@ -63,30 +56,13 @@ public:
      */
     virtual AbstractPainter& getPainter() const;
 
-    /**
-     * Sets the alpha value for the CanvasWidget. The value can be from 255 (completely solid)
-     * to 0 (completely transparent).
-     *
-     * @param  newAlpha The alpha value.
-     *
-     * @see getAlpha
-     *
-     * @note The painter set with setPainter() can also have an alpha value. The alpha value of
-     *       the painter and the alpha value of the CanvasWidget are combined to a single alpha
-     *       value.
-     */
+    /** @copydoc Image::setAlpha */
     virtual void setAlpha(uint8_t newAlpha)
     {
         alpha = newAlpha;
     }
 
-    /**
-     * Returns the current alpha value.
-     *
-     * @return Gets the current alpha value of the Box.
-     *
-     * @see setAlpha
-     */
+    /** @copydoc Image::getAlpha() */
     virtual uint8_t getAlpha() const
     {
         return alpha;
@@ -149,6 +125,16 @@ public:
     virtual Rect getSolidRect() const;
 
     /**
+     * Resets the maximum render lines. The maximum render lines is decreates if the
+     * rendering buffer is found to be too small to render a complex outline. This is done
+     * to speed up subsequent draws by not having to draw the outline in vain (as was done
+     * previously) to force the outline to be drawn in smaller blocks. The
+     * resetMaxRenderLines() will try to render the entire outline in one go on the next
+     * call to draw().
+     */
+    void resetMaxRenderLines();
+
+    /**
      * Draw canvas widget for the given invalidated area. Similar to draw(), but might be
      * invoked several times with increasingly smaller areas to due to memory constraints
      * from the underlying CanvasWidgetRenderer.
@@ -169,4 +155,4 @@ private:
 
 } // namespace touchgfx
 
-#endif // CANVASWIDGET_HPP
+#endif // TOUCHGFX_CANVASWIDGET_HPP

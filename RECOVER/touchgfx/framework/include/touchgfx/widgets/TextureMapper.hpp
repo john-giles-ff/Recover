@@ -1,27 +1,24 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.15.0 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/widgets/TextureMapper.hpp
  *
  * Declares the touchgfx::TextureMapper class.
  */
-#ifndef TEXTUREMAPPER_HPP
-#define TEXTUREMAPPER_HPP
+#ifndef TOUCHGFX_TEXTUREMAPPER_HPP
+#define TOUCHGFX_TEXTUREMAPPER_HPP
 
-#include <math.h> //lint !e829
+#include <touchgfx/hal/Types.hpp>
 #include <touchgfx/Bitmap.hpp>
 #include <touchgfx/widgets/Image.hpp>
 
@@ -46,7 +43,7 @@ namespace touchgfx
  *       inflicts the computation and should be considered.
  * @note This widget does not support 1 bit per pixel color depth.
  */
-class TextureMapper : public Widget
+class TextureMapper : public Image
 {
 public:
     /**
@@ -61,26 +58,26 @@ public:
         BILINEAR_INTERPOLATION ///< Slower but better image quality. Good for static representation of a scaled image.
     };
 
-    TextureMapper();
+    /**
+     * Constructs a new TextureMapper with a default alpha value of 255 (solid) and a
+     * default Bitmap (undefined) if none is specified. If a Bitmap is passed to the
+     * constructor, the width and height of this widget is set to those of the bitmap.
+     *
+     * @param  bitmap (Optional) The bitmap to display.
+     *
+     * @see setBitmap
+     */
+    TextureMapper(const Bitmap& bitmap = Bitmap());
 
     /**
-     * Sets the bitmap for this TextureMapper and updates the width and height of this widget to
-     * match those of the Bitmap.
+     * Sets the bitmap for this TextureMapper and updates the width and height of this
+     * widget to match those of the Bitmap.
      *
-     * @param  bmp The bitmap instance.
+     * @param  bitmap The bitmap instance.
+     *
      * @note The user code must call invalidate() in order to update the image on the display.
      */
-    virtual void setBitmap(const Bitmap& bmp);
-
-    /**
-     * Gets the Bitmap currently assigned to the TextureMapper widget.
-     *
-     * @return The current Bitmap of the widget.
-     */
-    Bitmap getBitmap() const
-    {
-        return bitmap;
-    }
+    virtual void setBitmap(const Bitmap& bitmap);
 
     virtual void draw(const Rect& invalidatedArea) const;
 
@@ -107,67 +104,106 @@ public:
     }
 
     /**
-     * @copydoc Image::setAlpha
+     * Sets the angles of the image.
+     *
+     * @param  newXAngle The new x Angle.
+     * @param  newYAngle The new y Angle.
+     * @param  newZAngle The new x Angle.
+     *
+     * @see updateAngles, getXAngle, getYAngle, getZAngle
+     *
+     * @note The area covered by the image before/after changing the angles is NOT invalidated.
      */
-    void setAlpha(uint8_t newAlpha)
+    virtual void setAngles(float newXAngle, float newYAngle, float newZAngle);
+
+    /**
+     * Sets the x angle.
+     *
+     * @param  newXAngle The new x angle.
+     *
+     * @see setAngles, updateXAngle, getXAngle
+     *
+     * @note The area covered by the image before/after changing the angle is NOT invalidated.
+     */
+    virtual void setXAngle(float newXAngle)
     {
-        alpha = newAlpha;
+        setAngles(newXAngle, yAngle, zAngle);
     }
 
     /**
-     * @copydoc Image::getAlpha
+     * Sets the y angle.
+     *
+     * @param  newYAngle The new y angle.
+     *
+     * @see setAngles, updateYAngle, getYAngle
+     *
+     * @note The area covered by the image before/after changing the angle is NOT invalidated.
      */
-    uint8_t getAlpha() const
+    virtual void setYAngle(float newYAngle)
     {
-        return alpha;
+        setAngles(xAngle, newYAngle, zAngle);
+    }
+
+    /**
+     * Sets the z angle.
+     *
+     * @param  newZAngle The new z angle.
+     *
+     * @see setAngles, updateZAngle, getZAngle
+     *
+     * @note The area covered by the image before/after changing the angle is NOT invalidated.
+     */
+    virtual void setZAngle(float newZAngle)
+    {
+        setAngles(xAngle, yAngle, newZAngle);
     }
 
     /**
      * Updates the angles of the image. The area covered by the image before and after
      * changing the angles is invalidated, which is the smallest required rectangle.
      *
-     * @param  xAngle The new x Angle.
-     * @param  yAngle The new y Angle.
-     * @param  zAngle The new x Angle.
+     * @param  newXAngle The new x Angle.
+     * @param  newYAngle The new y Angle.
+     * @param  newZAngle The new x Angle.
      *
-     * @see updateXAngle, updateYAngle, updateZAngle, getXAngle, getYAngle, getZAngle
+     * @see setAngles, updateXAngle, updateYAngle, updateZAngle, getXAngle, getYAngle, getZAngle
      */
-    virtual void updateAngles(float xAngle, float yAngle, float zAngle);
+    virtual void updateAngles(float newXAngle, float newYAngle, float newZAngle);
 
     /**
-     * Updates the x angle given by xAngle.
+     * Updates the x angle.
      *
-     * @param  xAngle The new x angle.
+     * @param  newXAngle The new x angle.
      *
      * @see updateAngles, getXAngle
      */
-    virtual void updateXAngle(float xAngle)
+    virtual void updateXAngle(float newXAngle)
     {
-        updateAngles(xAngle, yAngle, zAngle);
+        updateAngles(newXAngle, yAngle, zAngle);
     }
 
     /**
-     * Updates the y angle given by yAngle.
+     * Updates the y angle.
      *
-     * @param  yAngle The new y angle.
+     * @param  newYAngle The new y angle.
      *
      * @see updateAngles, getYAngle
      */
-    virtual void updateYAngle(float yAngle)
+    virtual void updateYAngle(float newYAngle)
     {
-        updateAngles(xAngle, yAngle, zAngle);
+        updateAngles(xAngle, newYAngle, zAngle);
     }
 
     /**
-     * Updates the z angle given by zAngle.
+     * Updates the z angle.
      *
-     * @param  zAngle The new z angle.
+     * @param  newZAngle The new z angle.
      *
      * @see updateAngles, getZAngle
      */
-    virtual void updateZAngle(float zAngle)
+    virtual void updateZAngle(float newZAngle)
     {
-        updateAngles(xAngle, yAngle, zAngle);
+        updateAngles(xAngle, yAngle, newZAngle);
     }
 
     /**
@@ -209,11 +245,21 @@ public:
     /**
      * Sets the scale of the image.
      *
-     * @param  scale The new scale value.
+     * @param  newScale The new scale value.
      *
-     * @see getScale
+     * @see updateScale, getScale
      */
-    virtual void setScale(float scale);
+    virtual void setScale(float newScale);
+
+    /**
+     * Updates the scale of the image. This implies invalidating the area covered by the texture
+     * mapper.
+     *
+     * @param  newScale The new scale value.
+     *
+     * @see setScale, getScale
+     */
+    virtual void updateScale(float newScale);
 
     /**
      * Gets the scale of the image.
@@ -563,10 +609,9 @@ protected:
     Rect getBoundingRect() const;
 
     /**
-     * The TextureMapper will draw the transformed bitmap by drawing two triangles. One
-     * triangle is created from the points 0,1,2 and the other triangle from the points
-     * 1,2,3. The triangle is drawn using the x,y,z values from each point along with
-     * the u,v coordinates in the bitmap associated with each point.
+     * The TextureMapper will draw the transformed bitmap by drawing one transformed quad.
+     * The quad is drawn from the points 0,1,2,3 using the x,y,z values from each point along
+     * with the u,v coordinates in the bitmap associated with each point.
      *
      * @param      invalidatedArea The invalidated area.
      * @param [in] fb              The framebuffer.
@@ -576,7 +621,7 @@ protected:
      * @param      triangleUs      The triangle us.
      * @param      triangleVs      The triangle vs.
      */
-    void drawTriangle(const Rect& invalidatedArea, uint16_t* fb, const float* triangleXs, const float* triangleYs, const float* triangleZs, const float* triangleUs, const float* triangleVs) const;
+    void drawQuad(const Rect& invalidatedArea, uint16_t* fb, const float* triangleXs, const float* triangleYs, const float* triangleZs, const float* triangleUs, const float* triangleVs) const;
 
     /**
      * Returns the rendering variant based on the bitmap format, alpha value and rendering
@@ -587,8 +632,6 @@ protected:
     RenderingVariant lookupRenderVariant() const;
 
     RenderingAlgorithm currentRenderingAlgorithm; ///< The current rendering algorithm.
-    Bitmap bitmap;                                ///< The bitmap to render.
-    uint8_t alpha;                                ///< An alpha value that is applied to the entire image.
 
     static const int MINIMAL_CAMERA_DISTANCE = 1; ///< The minimal camera distance
 
@@ -626,4 +669,4 @@ protected:
 
 } // namespace touchgfx
 
-#endif // TEXTUREMAPPER_HPP
+#endif // TOUCHGFX_TEXTUREMAPPER_HPP

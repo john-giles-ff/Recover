@@ -1,4 +1,6 @@
 #include <gui/common/CustomKeyboard.hpp>
+#include <touchgfx/Color.hpp>
+
 
 CustomKeyboard::CustomKeyboard() : keyboard(),
     modeBtnTextArea1(),
@@ -24,16 +26,16 @@ CustomKeyboard::CustomKeyboard() : keyboard(),
     keyboard.setPosition(0, 0, 560, 280);
     keyboard.setTextIndentation();
     //Allocate the buffer associated with keyboard.
-    memset(buffer, 0, sizeof(buffer));
+    buffer[0] = 0x0;
     keyboard.setBuffer(buffer, BUFFER_SIZE);
 
     uppercaseKeys = true;
     firstCharacterEntry = true;
 
     modeBtnTextArea1.setPosition(10, 235, 75, 45);
-    modeBtnTextArea1.setColor(Color::getColorFrom24BitRGB(0xFF, 0xFF, 0xFF));
+    modeBtnTextArea1.setColor(Color::getColorFromRGB(0xFF, 0xFF, 0xFF));
 	modeBtnTextArea2.setPosition(475, 235, 75, 45);
-	modeBtnTextArea2.setColor(Color::getColorFrom24BitRGB(0xFF, 0xFF, 0xFF));
+	modeBtnTextArea2.setColor(Color::getColorFromRGB(0xFF, 0xFF, 0xFF));
 
     setKeyMappingList();
 	

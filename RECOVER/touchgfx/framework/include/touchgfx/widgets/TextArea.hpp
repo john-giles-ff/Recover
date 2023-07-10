@@ -1,32 +1,27 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.15.0 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/widgets/TextArea.hpp
  *
  * Declares the touchgfx::TextArea class.
  */
-#ifndef TEXTAREA_HPP
-#define TEXTAREA_HPP
+#ifndef TOUCHGFX_TEXTAREA_HPP
+#define TOUCHGFX_TEXTAREA_HPP
 
+#include <touchgfx/hal/Types.hpp>
 #include <touchgfx/Font.hpp>
-#include <touchgfx/FontManager.hpp>
 #include <touchgfx/TypedText.hpp>
 #include <touchgfx/Unicode.hpp>
-#include <touchgfx/hal/Types.hpp>
-#include <touchgfx/lcd/LCD.hpp>
 #include <touchgfx/widgets/Widget.hpp>
 
 namespace touchgfx
@@ -218,7 +213,7 @@ public:
      *
      * @see resizeToCurrentText
      */
-    void setTypedText(TypedText t);
+    void setTypedText(const TypedText& t);
 
     /**
      * Gets the TypedText of the text area.
@@ -295,14 +290,28 @@ public:
      * for the current selected language. This is especially useful for texts with WordWrap
      * enabled.
      *
-     * @see resizeToCurrentText, setWideTextAction, setRotation
+     * @see resizeToCurrentText, setWideTextAction, setRotation,
+     *      resizeHeightToCurrentTextWithRotation
      *
      * @note If the current text rotation is either 90 or 270 degrees, the width of the text area
      *       will be set and not the height, as the text is rotated.
-     * @note If the current text is rotated e.g. 90 degrees, the x coordinate is not updated,
-     *       which means that the text will be repositioned on the display.
+     * @note If the current text is rotated, the x/y coordinate is not updated, which means that
+     *       the text will be repositioned on the display.
      */
     void resizeHeightToCurrentText();
+
+    /**
+     * Sets the height of the TextArea to match the height of the current associated text
+     * for the current selected language. This is especially useful for texts with WordWrap
+     * enabled.
+     *
+     * @see resizeToCurrentText, setWideTextAction, setRotation, resizeHeightToCurrentText
+     *
+     * @note If the current text rotation is either 90 or 270 degrees, the width of the text area
+     *       will be set and not the height, as the text is rotated. Also, the x or y
+     *       coordinates will be updated.
+     */
+    void resizeHeightToCurrentTextWithRotation();
 
     /**
      * Defines what to do if a line of text is wider than the text area. Default action is
@@ -356,7 +365,6 @@ protected:
     TextRotation rotation;         ///< The text rotation to use in steps of 90 degrees.
     WideTextAction wideTextAction; ///< What to do if the lines of text are wider than the text area.
 };
-
 } // namespace touchgfx
 
-#endif // TEXTAREA_HPP
+#endif // TOUCHGFX_TEXTAREA_HPP
