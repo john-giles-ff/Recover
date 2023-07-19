@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" ToolsVersion="15.0">
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" ToolsVersion="12.0">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -15,61 +15,6 @@
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\hal\simulator\sdl2\HALSDL2.cpp"/>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\hal\simulator\sdl2\HALSDL2_icon.cpp"/>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\hal\simulator\sdl2\OSWrappers.cpp"/>
-<<<<<<< HEAD
-    <ClCompile Include="..\..\gui\src\common\CustomKeyboard.cpp"/>
-    <ClCompile Include="..\..\gui\src\common\String.cpp"/>
-    <ClCompile Include="..\..\gui\src\common\TextRadioButton.cpp"/>
-    <ClCompile Include="..\..\gui\src\LFT\Definitions\ProgressStages.cpp"/>
-    <ClCompile Include="..\..\gui\src\LFT\LFT_AutoClean.cpp"/>
-    <ClCompile Include="..\main.cpp"/>
-    <ClCompile Include="..\..\gui\src\common\FrontendApplication.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\common\FrontendApplicationBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\model\Model.cpp"/>
-    <ClCompile Include="..\..\gui\src\mainscreen_screen\MainScreenPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\mainscreen_screen\MainScreenView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\mainscreen_screen\MainScreenViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\idlescreen_screen\IdleScreenPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\idlescreen_screen\IdleScreenView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\idlescreen_screen\IdleScreenViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\processscreen_screen\ProcessScreenPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\processscreen_screen\ProcessScreenView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\processscreen_screen\ProcessScreenViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\settingsscreen_screen\SettingsScreenPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\settingsscreen_screen\SettingsScreenView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\settingsscreen_screen\SettingsScreenViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\auditscreen_screen\AuditScreenPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\auditscreen_screen\AuditScreenView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\auditscreen_screen\AuditScreenViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\containers\AuditLog.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\AuditLogBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\freda_screen\FREDAPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\freda_screen\FREDAView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\freda_screen\FREDAViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\common\Lever.cpp"/>
-    <ClCompile Include="..\..\gui\src\common\Unlock.cpp"/>
-    <ClCompile Include="..\..\gui\src\common\PatternCode.cpp"/>
-    <ClCompile Include="..\..\gui\src\common\Pong.cpp"/>
-    <ClCompile Include="..\..\gui\src\eggscreen_screen\EggScreenPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\eggscreen_screen\EggScreenView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\eggscreen_screen\EggScreenViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\common\date.cpp"/>
-    <ClCompile Include="..\..\gui\src\common\LFTDebug.cpp"/>
-    <ClCompile Include="..\..\gui\src\containers\Background.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\BackgroundBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\containers\ErrorBox.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\ErrorBoxBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\common\ProgressBar.cpp"/>
-    <ClCompile Include="..\..\gui\src\containers\DeadSpaceAnimation.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\DeadSpaceAnimationBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\containers\UsageInstructions.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\UsageInstructionsBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\LFT\LFT.cpp"/>
-    <ClCompile Include="..\..\gui\src\LFT\LFT_Auto.cpp"/>
-    <ClCompile Include="..\..\gui\src\LFT\LFT_Information.cpp"/>
-    <ClCompile Include="..\..\gui\src\LFT\LFT_Manual.cpp"/>
-    <ClCompile Include="..\..\gui\src\LFT\LFT_ProductionTests.cpp"/>
-    <ClCompile Include="..\..\gui\src\common\graph_widget\AbstractGraph.cpp"/>
-=======
     <ClCompile Include="$(ApplicationRoot)\simulator\main.cpp"/>
     <ClCompile Include="$(ApplicationRoot)\generated\simulator\src\mainBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\AbortingWindow.cpp"/>
@@ -104,38 +49,10 @@
     <ClCompile Include="..\..\generated\gui_generated\src\freda_screen\FREDAViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\common\FrontendApplication.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\common\FrontendApplicationBase.cpp"/>
->>>>>>> aecb186 (Started implementing moisture detection)
     <ClCompile Include="..\..\gui\src\common\graph_widget\Graph.cpp"/>
     <ClCompile Include="..\..\gui\src\common\graph_widget\GraphBelow.cpp"/>
     <ClCompile Include="..\..\gui\src\common\graph_widget\GraphDots.cpp"/>
     <ClCompile Include="..\..\gui\src\common\graph_widget\GraphLine.cpp"/>
-<<<<<<< HEAD
-    <ClCompile Include="..\..\gui\src\common\graph_widget\PainterVerticalAlpha.cpp"/>
-    <ClCompile Include="..\..\gui\src\containers\EngineerOverlay.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\EngineerOverlayBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\LFT\LFT_Settings.cpp"/>
-    <ClCompile Include="..\..\gui\src\usbmode_screen\UsbModePresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\usbmode_screen\UsbModeView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\usbmode_screen\UsbModeViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\LFT\LFT_Logs.cpp"/>
-    <ClCompile Include="..\..\gui\src\containers\MsgBox.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\MsgBoxBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\graphscreen_screen\GraphScreenPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\graphscreen_screen\GraphScreenView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\graphscreen_screen\GraphScreenViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\containers\AbortingWindow.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\AbortingWindowBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\common\ProductionTestStep.cpp"/>
-    <ClCompile Include="..\..\gui\src\powerlossrecoveryscreen_screen\PowerlossRecoveryScreenPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\powerlossrecoveryscreen_screen\PowerlossRecoveryScreenView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\powerlossrecoveryscreen_screen\PowerlossRecoveryScreenViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\containers\ExternalSwitchErrorWindow.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\ExternalSwitchErrorWindowBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\containers\FilterStateMessage.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\FilterStateMessageBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\containers\InternalSwitchError.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\InternalSwitchErrorBase.cpp"/>
-=======
     <ClCompile Include="..\..\gui\src\graphscreen_screen\GraphScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\graphscreen_screen\GraphScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\graphscreen_screen\GraphScreenViewBase.cpp"/>
@@ -156,19 +73,10 @@
     <ClCompile Include="..\..\gui\src\LFT\LFT_ProductionTests.cpp"/>
     <ClCompile Include="..\..\gui\src\LFT\LFT_Settings.cpp"/>
     <ClCompile Include="..\..\gui\src\common\LFTDebug.cpp"/>
->>>>>>> aecb186 (Started implementing moisture detection)
     <ClCompile Include="..\..\gui\src\containers\LogsExporting.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\LogsExportingBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\LowPressureMessage.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\LowPressureMessageBase.cpp"/>
-<<<<<<< HEAD
-    <ClCompile Include="..\..\gui\src\containers\DatePicker.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\DatePickerBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\containers\Tab.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\TabBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\containers\Keypad.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\KeypadBase.cpp"/>
-=======
     <ClCompile Include="..\..\gui\src\mainscreen_screen\MainScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\mainscreen_screen\MainScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\mainscreen_screen\MainScreenViewBase.cpp"/>
@@ -190,39 +98,27 @@
     <ClCompile Include="..\..\gui\src\settingsscreen_screen\SettingsScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\settingsscreen_screen\SettingsScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\settingsscreen_screen\SettingsScreenViewBase.cpp"/>
-    <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp"/>
     <ClCompile Include="..\..\gui\src\common\String.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\Tab.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\TabBase.cpp"/>
     <ClCompile Include="..\..\gui\src\common\TextRadioButton.cpp"/>
->>>>>>> aecb186 (Started implementing moisture detection)
     <ClCompile Include="..\..\gui\src\containers\TouchTest.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\TouchTestBase.cpp"/>
     <ClCompile Include="..\..\gui\src\touchtestscreen_screen\TouchTestScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\touchtestscreen_screen\TouchTestScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\touchtestscreen_screen\TouchTestScreenViewBase.cpp"/>
-<<<<<<< HEAD
-=======
     <ClCompile Include="..\..\gui\src\common\Unlock.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\UsageInstructions.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\UsageInstructionsBase.cpp"/>
     <ClCompile Include="..\..\gui\src\usbmode_screen\UsbModePresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\usbmode_screen\UsbModeView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\usbmode_screen\UsbModeViewBase.cpp"/>
->>>>>>> aecb186 (Started implementing moisture detection)
     <ClCompile Include="..\..\gui\src\containers\ViewDiagnostics.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\ViewDiagnosticsBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <None Include="..\..\assets\texts\texts.xlsx"/>
-    <None Include="..\..\config\msvs\Application.props">
-      <SubType>Designer</SubType>
-    </None>
-=======
-    <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
+    <None Include="$(ApplicationRoot)\assets\texts\texts.xlsx"/>
     <None Include="$(ApplicationRoot)\config\msvs\Application.props"/>
->>>>>>> aecb186 (Started implementing moisture detection)
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(TouchGFXReleasePath)\framework\include\common\AbstractPartition.hpp"/>
@@ -358,11 +254,6 @@
     <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\ToggleButton.hpp"/>
     <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\TouchArea.hpp"/>
     <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\Widget.hpp"/>
-<<<<<<< HEAD
-    <ClInclude Include="..\..\gui\include\gui\common\Build.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\common\Cipher.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\common\CustomKeyboard.hpp"/>
-=======
     <ClInclude Include="$(ApplicationRoot)\generated\simulator\include\simulator\mainBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\AbortingWindow.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\AbortingWindowBase.hpp"/>
@@ -382,7 +273,6 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\DatePickerBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\DeadSpaceAnimation.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\DeadSpaceAnimationBase.hpp"/>
-    <ClInclude Include="..\..\generated\simulator\include\simulator\video\DirectFrameBufferVideoController.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\eggscreen_screen\EggScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\eggscreen_screen\EggScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\eggscreen_screen\EggScreenViewBase.hpp"/>
@@ -397,110 +287,10 @@
     <ClInclude Include="..\..\gui\include\gui\freda_screen\FREDAPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\freda_screen\FREDAView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\freda_screen\FREDAViewBase.hpp"/>
->>>>>>> aecb186 (Started implementing moisture detection)
     <ClInclude Include="..\..\gui\include\gui\common\FrontendApplication.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendApplicationBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\FrontendHeap.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendHeapBase.hpp"/>
-<<<<<<< HEAD
-    <ClInclude Include="..\..\gui\include\gui\common\KeyboardKeyMapping.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\common\KeyboardLayout.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\common\String.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\common\TextRadioButton.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\common\Utils.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\LFT\Definitions\ProgressStages.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\LFT\LFT_AutoClean.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\model\Model.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\mainscreen_screen\MainScreenPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\mainscreen_screen\MainScreenView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\mainscreen_screen\MainScreenViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\idlescreen_screen\IdleScreenPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\idlescreen_screen\IdleScreenView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\idlescreen_screen\IdleScreenViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\processscreen_screen\ProcessScreenPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\processscreen_screen\ProcessScreenView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\processscreen_screen\ProcessScreenViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\settingsscreen_screen\SettingsScreenPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\settingsscreen_screen\SettingsScreenView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\settingsscreen_screen\SettingsScreenViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\auditscreen_screen\AuditScreenPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\auditscreen_screen\AuditScreenView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\auditscreen_screen\AuditScreenViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\AuditLog.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\AuditLogBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\freda_screen\FREDAPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\freda_screen\FREDAView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\freda_screen\FREDAViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\common\Lever.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\common\Unlock.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\common\PatternCode.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\common\Pong.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\eggscreen_screen\EggScreenPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\eggscreen_screen\EggScreenView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\eggscreen_screen\EggScreenViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\common\date.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\common\LFTDebug.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\Background.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\BackgroundBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\ErrorBox.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ErrorBoxBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\common\ProgressBar.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\DeadSpaceAnimation.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\DeadSpaceAnimationBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\UsageInstructions.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\UsageInstructionsBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\LFT\LFT.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\LFT\LFT_Auto.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\LFT\LFT_Information.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\LFT\LFT_Manual.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\LFT\LFT_ProductionTests.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\common\graph_widget\AbstractGraph.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\common\graph_widget\Graph.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\common\graph_widget\GraphBelow.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\common\graph_widget\GraphDots.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\common\graph_widget\GraphLine.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\common\graph_widget\PainterVerticalAlpha.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\LFT\LFT_TestValues.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\EngineerOverlay.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\EngineerOverlayBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\LFT\LFT_Settings.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\usbmode_screen\UsbModePresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\usbmode_screen\UsbModeView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usbmode_screen\UsbModeViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\LFT\LFT_Logs.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\MsgBox.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\MsgBoxBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\graphscreen_screen\GraphScreenPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\graphscreen_screen\GraphScreenView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\graphscreen_screen\GraphScreenViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\AbortingWindow.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\AbortingWindowBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\common\ProductionTestStep.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\powerlossrecoveryscreen_screen\PowerlossRecoveryScreenPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\powerlossrecoveryscreen_screen\PowerlossRecoveryScreenView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\powerlossrecoveryscreen_screen\PowerlossRecoveryScreenViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\ExternalSwitchErrorWindow.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ExternalSwitchErrorWindowBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\FilterStateMessage.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\FilterStateMessageBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\InternalSwitchError.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\InternalSwitchErrorBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\common\ThreadSafe.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\LFT\Definitions\RecoverLog.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\LogsExporting.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\LogsExportingBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\LFT\Definitions\Stages.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\LowPressureMessage.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\LowPressureMessageBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\DatePicker.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\DatePickerBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\Tab.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\TabBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\Keypad.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\KeypadBase.hpp"/>
-=======
     <ClInclude Include="..\..\gui\include\gui\common\graph_widget\Graph.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\graph_widget\GraphBelow.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\graph_widget\GraphDots.hpp"/>
@@ -535,7 +325,6 @@
     <ClInclude Include="..\..\gui\include\gui\mainscreen_screen\MainScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\mainscreen_screen\MainScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\mainscreen_screen\MainScreenViewBase.hpp"/>
-    <ClInclude Include="..\..\generated\simulator\include\simulator\video\MJPEGDecoder.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\model\Model.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\MsgBox.hpp"/>
@@ -557,23 +346,17 @@
     <ClInclude Include="..\..\gui\include\gui\settingsscreen_screen\SettingsScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\settingsscreen_screen\SettingsScreenViewBase.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp"/>
-    <ClInclude Include="..\..\generated\simulator\include\simulator\video\SoftwareMJPEGDecoder.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\LFT\Definitions\Stages.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\String.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\Tab.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\TabBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\TextRadioButton.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\ThreadSafe.hpp"/>
->>>>>>> aecb186 (Started implementing moisture detection)
     <ClInclude Include="..\..\gui\include\gui\containers\TouchTest.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\TouchTestBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\touchtestscreen_screen\TouchTestScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\touchtestscreen_screen\TouchTestScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\touchtestscreen_screen\TouchTestScreenViewBase.hpp"/>
-<<<<<<< HEAD
-    <ClInclude Include="..\..\touchgfx\framework\include\touchgfx\widgets\BoxWithBorder.hpp"/>
-    <ClInclude Include="ProgressStages.h"/>
-=======
     <ClInclude Include="..\..\gui\include\gui\common\Unlock.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\UsageInstructions.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\UsageInstructionsBase.hpp"/>
@@ -581,37 +364,29 @@
     <ClInclude Include="..\..\gui\include\gui\usbmode_screen\UsbModeView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usbmode_screen\UsbModeViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\Utils.hpp"/>
->>>>>>> aecb186 (Started implementing moisture detection)
     <ClInclude Include="..\..\gui\include\gui\containers\ViewDiagnostics.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ViewDiagnosticsBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <ResourceCompile Include="..\touchgfx.rc"/>
-=======
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>
->>>>>>> aecb186 (Started implementing moisture detection)
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3C47683C-0505-487F-A1FD-75B8490BF72C}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Application</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>RECOVER</ProjectName>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props"/>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props"/>
   <ImportGroup Label="ExtensionSettings">
@@ -619,31 +394,23 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform"/>
     <Import Project="..\..\config\msvs\Application.props"/>
-<<<<<<< HEAD
-    <Import Project="touchgfx_sdl2.props"/>
-=======
     <Import Project="..\..\generated\simulator\msvs\touchgfx_sdl2.props"/>
->>>>>>> aecb186 (Started implementing moisture detection)
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform"/>
     <Import Project="..\..\config\msvs\Application.props"/>
-<<<<<<< HEAD
-    <Import Project="touchgfx_sdl2.props"/>
-=======
     <Import Project="..\..\generated\simulator\msvs\touchgfx_sdl2.props"/>
->>>>>>> aecb186 (Started implementing moisture detection)
   </ImportGroup>
   <PropertyGroup Label="UserMacros"/>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\..\build\$(Configuration)\bin\</OutDir>
-    <IntDir>..\..\build\$(Configuration)\obj\</IntDir>
+    <OutDir>$(ApplicationRoot)\build\$(Configuration)\bin\</OutDir>
+    <IntDir>$(ApplicationRoot)\build\$(Configuration)\obj\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\..\build\$(Configuration)\bin\</OutDir>
-    <IntDir>..\..\build\$(Configuration)\obj\</IntDir>
+    <OutDir>$(ApplicationRoot)\build\$(Configuration)\bin\</OutDir>
+    <IntDir>$(ApplicationRoot)\build\$(Configuration)\obj\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -662,21 +429,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <TreatLinkerWarningAsErrors>true</TreatLinkerWarningAsErrors>
       <DisableSpecificWarnings/>
-<<<<<<< HEAD
-      <AdditionalOptions>/ignore:4099 %(AdditionalOptions)</AdditionalOptions>
-=======
       <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
->>>>>>> aecb186 (Started implementing moisture detection)
     </Link>
-    <PostBuildEvent>
-      <Command>copy $(TouchGFXReleasePath)\lib\sdl2\win32\SDL2.dll $(OutDir)
-copy $(TouchGFXReleasePath)\lib\sdl2\win32\SDL2_image.dll $(OutDir)
-copy $(TouchGFXReleasePath)\lib\sdl2\win32\libpng16-16.dll $(OutDir)
-copy $(TouchGFXReleasePath)\lib\sdl2\win32\zlib1.dll $(OutDir)
-if exist ..\landscape.png copy /y ..\landscape.png $(OutDir)
-if exist ..\portrait.png copy /y ..\portrait.png $(OutDir)
-</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -696,22 +450,9 @@ if exist ..\portrait.png copy /y ..\portrait.png $(OutDir)
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
-    <PostBuildEvent>
-      <Command>copy $(TouchGFXReleasePath)\lib\sdl2\win32\SDL2.dll $(OutDir)
-copy $(TouchGFXReleasePath)\lib\sdl2\win32\SDL2_image.dll $(OutDir)
-copy $(TouchGFXReleasePath)\lib\sdl2\win32\libpng16-16.dll $(OutDir)
-copy $(TouchGFXReleasePath)\lib\sdl2\win32\zlib1.dll $(OutDir)
-if exist ..\landscape.png copy /y ..\landscape.png $(OutDir)
-if exist ..\portrait.png copy /y ..\portrait.png $(OutDir)
-</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets"/>
   <ImportGroup Label="ExtensionTargets">
-<<<<<<< HEAD
-    <Import Project="touchgfx_prebuild.targets"/>
-=======
     <Import Project="$(ApplicationRoot)\generated\simulator\msvs\touchgfx_prebuild.targets"/>
->>>>>>> aecb186 (Started implementing moisture detection)
   </ImportGroup>
 </Project>
