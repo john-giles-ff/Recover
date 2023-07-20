@@ -1075,6 +1075,9 @@
           <name>$PROJ_DIR$/../../generated/fonts/src/Font_segoeuisl_24_2bpp_0.cpp</name>
         </file>
         <file>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_segoeuisl_24_2bpp_31.cpp</name>
+        </file>
+        <file>
           <name>$PROJ_DIR$/../../generated/fonts/src/Font_segoeuisl_24_2bpp_4.cpp</name>
         </file>
         <file>
@@ -2200,6 +2203,9 @@
       <group>
         <name>texts</name>
         <file>
+          <name>$PROJ_DIR$/../../generated/texts/src/LanguageAr.cpp</name>
+        </file>
+        <file>
           <name>$PROJ_DIR$/../../generated/texts/src/LanguageDe.cpp</name>
         </file>
         <file>
@@ -2215,6 +2221,9 @@
           <name>$PROJ_DIR$/../../generated/texts/src/LanguageIt.cpp</name>
         </file>
         <file>
+          <name>$PROJ_DIR$/../../generated/texts/src/LanguagePl.cpp</name>
+        </file>
+        <file>
           <name>$PROJ_DIR$/../../generated/texts/src/LanguagePt.cpp</name>
         </file>
         <file>
@@ -2222,6 +2231,9 @@
         </file>
         <file>
           <name>$PROJ_DIR$/../../generated/texts/src/LanguageRu.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/texts/src/LanguageUa.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$/../../generated/texts/src/LanguageZhs.cpp</name>
