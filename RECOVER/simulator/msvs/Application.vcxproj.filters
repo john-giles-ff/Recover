@@ -516,12 +516,6 @@
     <ClCompile Include="..\..\generated\gui_generated\src\containers\LogsExportingBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\LowPressureMessage.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\LowPressureMessageBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gui\src\mainscreen_screen\MainScreenPresenter.cpp">
       <Filter>Source Files\gui\mainscreen_screen</Filter>
     </ClCompile>
@@ -533,9 +527,6 @@
     </ClCompile>
     <ClCompile Include="..\..\gui\src\model\Model.cpp">
       <Filter>Source Files\gui\model</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\MoistureDetectedMessage.cpp">
-      <Filter>Source Files\gui\containers</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\containers\MsgBox.cpp">
       <Filter>Source Files\gui\containers</Filter>
@@ -637,6 +628,12 @@
       <Filter>Source Files\gui\containers</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\ViewDiagnosticsBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\MoistureDetectedMessage.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\MoistureDetectedMessageBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1246,12 +1243,6 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\LogsExportingBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\LowPressureMessage.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\LowPressureMessageBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\mainscreen_screen\MainScreenPresenter.hpp">
       <Filter>Header Files\gui\mainscreen_screen</Filter>
     </ClInclude>
@@ -1266,9 +1257,6 @@
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp">
       <Filter>Header Files\gui\model</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\MoistureDetectedMessage.hpp">
-      <Filter>Header Files\gui\containers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\containers\MsgBox.hpp">
       <Filter>Header Files\gui\containers</Filter>
@@ -1385,6 +1373,12 @@
       <Filter>Header Files\gui\containers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ViewDiagnosticsBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\MoistureDetectedMessage.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\MoistureDetectedMessageBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
   </ItemGroup>

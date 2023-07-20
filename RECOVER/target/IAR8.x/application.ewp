@@ -1338,7 +1338,7 @@
             <name>$PROJ_DIR$/../../generated/gui_generated/src/containers/LogsExportingBase.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$/../../generated/gui_generated/src/containers/LowPressureMessageBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/containers/MoistureDetectedMessageBase.cpp</name>
           </file>
           <file>
             <name>$PROJ_DIR$/../../generated/gui_generated/src/containers/MsgBoxBase.cpp</name>
@@ -2342,9 +2342,6 @@
         </file>
         <file>
           <name>$PROJ_DIR$/../../gui/src/containers/LogsExporting.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../gui/src/containers/LowPressureMessage.cpp</name>
         </file>
         <file>
           <name>$PROJ_DIR$/../../gui/src/containers/MoistureDetectedMessage.cpp</name>

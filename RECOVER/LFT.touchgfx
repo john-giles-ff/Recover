@@ -546,14 +546,14 @@
             "Type": "ButtonWithIcon",
             "Pressed": "transparent\\transparent.png",
             "Released": "transparent\\transparent.png",
-            "Alpha": 0,
+            "Alpha": 255,
             "IconPressed": "States\\water.png",
             "IconReleased": "States\\water.png",
             "IconX": 14,
             "IconY": 14,
             "IconHeight": 32,
             "IconWidth": 32,
-            "Name": "BtnLowPressure",
+            "Name": "BtnSystemUnderperforming",
             "X": 560,
             "Y": 0,
             "Width": 60,
@@ -8360,289 +8360,6 @@
               "Green": 0,
               "Blue": 0
             },
-            "Alpha": 150,
-            "Name": "box1",
-            "X": 0,
-            "Y": 0,
-            "Width": 800,
-            "Height": 480,
-            "Visible": true,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": true,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "BoxWithBorder",
-            "Color": {
-              "Red": 0,
-              "Green": 0,
-              "Blue": 0
-            },
-            "BorderColor": {
-              "Red": 255,
-              "Green": 174,
-              "Blue": 0
-            },
-            "BorderSize": 2,
-            "Alpha": 255,
-            "Name": "boxWithBorder1",
-            "X": 197,
-            "Y": 115,
-            "Width": 406,
-            "Height": 250,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Components": [
-              {
-                "Type": "FlexButton",
-                "Alpha": 0,
-                "ButtonTrigger": {
-                  "Type": "ClickButtonTrigger"
-                },
-                "ButtonStyles": [
-                  {
-                    "Type": "TextButtonStyle",
-                    "X": 0,
-                    "Y": 5,
-                    "TextId": "SingleUseId259",
-                    "TextRotation": "0",
-                    "ColorReleased": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "ColorPressed": {
-                      "Red": 10,
-                      "Green": 10,
-                      "Blue": 10
-                    }
-                  },
-                  {
-                    "Type": "BoxWithBorderButtonStyle",
-                    "X": 0,
-                    "Y": 0,
-                    "Width": 366,
-                    "Height": 47,
-                    "LockToFlexButtonSize": true,
-                    "BorderSize": 2,
-                    "ColorReleased": {
-                      "Red": 0,
-                      "Green": 0,
-                      "Blue": 0
-                    },
-                    "ColorPressed": {
-                      "Red": 46,
-                      "Green": 172,
-                      "Blue": 98
-                    },
-                    "ColorBorderReleased": {
-                      "Red": 46,
-                      "Green": 172,
-                      "Blue": 98
-                    },
-                    "ColorBorderPressed": {
-                      "Red": 46,
-                      "Green": 172,
-                      "Blue": 98
-                    }
-                  }
-                ],
-                "Name": "BtnStartDrying",
-                "X": 20,
-                "Y": 183,
-                "Width": 366,
-                "Height": 47,
-                "Visible": false,
-                "LockPosition": false,
-                "Draggable": false,
-                "Clickable": false,
-                "Fadeable": false,
-                "Moveable": false
-              },
-              {
-                "Type": "TextArea",
-                "TextId": "SingleUseId260",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
-                },
-                "Alpha": 0,
-                "AutoSize": false,
-                "LineSpacing": 0,
-                "Name": "txtMessage",
-                "X": 20,
-                "Y": 50,
-                "Width": 366,
-                "Height": 133,
-                "Visible": false,
-                "LockPosition": false,
-                "Draggable": false,
-                "Clickable": false,
-                "Fadeable": false,
-                "Moveable": false
-              },
-              {
-                "Type": "ButtonWithIcon",
-                "Pressed": "transparent\\transparent.png",
-                "Released": "transparent\\transparent.png",
-                "Alpha": 0,
-                "IconPressed": "x.png",
-                "IconReleased": "x.png",
-                "IconX": 14,
-                "IconY": 14,
-                "IconHeight": 32,
-                "IconWidth": 32,
-                "Name": "BtnExit",
-                "X": 356,
-                "Y": -10,
-                "Width": 60,
-                "Height": 60,
-                "Visible": false,
-                "LockPosition": false,
-                "Draggable": false,
-                "Clickable": false,
-                "Fadeable": false,
-                "Moveable": false
-              }
-            ],
-            "Type": "Container",
-            "IsCacheableContainer": false,
-            "Name": "conStart",
-            "X": 197,
-            "Y": 115,
-            "Width": 406,
-            "Height": 250,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Components": [
-              {
-                "Type": "TextArea",
-                "TextId": "SingleUseId261",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
-                },
-                "Alpha": 0,
-                "AutoSize": false,
-                "LineSpacing": 0,
-                "Name": "txtDrying",
-                "X": 20,
-                "Y": 10,
-                "Width": 366,
-                "Height": 160,
-                "Visible": false,
-                "LockPosition": false,
-                "Draggable": false,
-                "Clickable": false,
-                "Fadeable": false,
-                "Moveable": false
-              },
-              {
-                "Type": "BoxProgress",
-                "Color": {
-                  "Red": 46,
-                  "Green": 172,
-                  "Blue": 98
-                },
-                "Direction": "Right",
-                "Alpha": 0,
-                "FileNameBackground": "progressbackground_320x40.png",
-                "IndicatorPositionX": 5,
-                "IndicatorPositionY": 5,
-                "IndicatorPositionWidth": 310,
-                "IndicatorPositionHeight": 30,
-                "ProgressRangeMin": 0,
-                "ProgressRangeMax": 100,
-                "ProgressRangeSteps": 0,
-                "ProgressRangeStepsMin": 0,
-                "ProgressInitialValue": 0,
-                "Name": "pbrDrying",
-                "X": 43,
-                "Y": 190,
-                "Width": 320,
-                "Height": 40,
-                "Visible": false,
-                "LockPosition": false,
-                "Draggable": false,
-                "Clickable": false,
-                "Fadeable": false,
-                "Moveable": false
-              }
-            ],
-            "Type": "Container",
-            "IsCacheableContainer": false,
-            "Name": "conDrying",
-            "X": 197,
-            "Y": 115,
-            "Width": 406,
-            "Height": 250,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          }
-        ],
-        "Interactions": [
-          {
-            "InteractionName": "Dismiss",
-            "HasCompletedTrigger": false,
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "BtnExit"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "Dismiss"
-            }
-          },
-          {
-            "InteractionName": "StartDrying",
-            "HasCompletedTrigger": false,
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "BtnStartDrying"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "StartDrying"
-            }
-          }
-        ],
-        "Name": "LowPressureMessage",
-        "X": 0,
-        "Y": 0,
-        "Width": 800,
-        "Height": 480
-      },
-      {
-        "Components": [
-          {
-            "Type": "Box",
-            "Color": {
-              "Red": 0,
-              "Green": 0,
-              "Blue": 0
-            },
             "Alpha": 255,
             "Name": "box1",
             "X": 0,
@@ -9447,6 +9164,289 @@
         "Y": 0,
         "Width": 740,
         "Height": 305
+      },
+      {
+        "Components": [
+          {
+            "Type": "Box",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 150,
+            "Name": "box1",
+            "X": 0,
+            "Y": 0,
+            "Width": 800,
+            "Height": 480,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": true,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderColor": {
+              "Red": 255,
+              "Green": 174,
+              "Blue": 0
+            },
+            "BorderSize": 2,
+            "Alpha": 255,
+            "Name": "boxWithBorder1",
+            "X": 197,
+            "Y": 115,
+            "Width": 406,
+            "Height": 250,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Components": [
+              {
+                "Type": "FlexButton",
+                "Alpha": 255,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "X": 0,
+                    "Y": 5,
+                    "TextId": "SingleUseId259",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "ColorPressed": {
+                      "Red": 10,
+                      "Green": 10,
+                      "Blue": 10
+                    }
+                  },
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "X": 0,
+                    "Y": 0,
+                    "Width": 366,
+                    "Height": 47,
+                    "LockToFlexButtonSize": true,
+                    "BorderSize": 2,
+                    "ColorReleased": {
+                      "Red": 0,
+                      "Green": 0,
+                      "Blue": 0
+                    },
+                    "ColorPressed": {
+                      "Red": 46,
+                      "Green": 172,
+                      "Blue": 98
+                    },
+                    "ColorBorderReleased": {
+                      "Red": 46,
+                      "Green": 172,
+                      "Blue": 98
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 46,
+                      "Green": 172,
+                      "Blue": 98
+                    }
+                  }
+                ],
+                "Name": "BtnStartDrying",
+                "X": 20,
+                "Y": 183,
+                "Width": 366,
+                "Height": 47,
+                "Visible": true,
+                "LockPosition": false,
+                "Draggable": false,
+                "Clickable": false,
+                "Fadeable": false,
+                "Moveable": false
+              },
+              {
+                "Type": "TextArea",
+                "TextId": "SingleUseId260",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Alpha": 255,
+                "AutoSize": false,
+                "LineSpacing": 0,
+                "Name": "txtMessage",
+                "X": 20,
+                "Y": 50,
+                "Width": 366,
+                "Height": 133,
+                "Visible": true,
+                "LockPosition": false,
+                "Draggable": false,
+                "Clickable": false,
+                "Fadeable": false,
+                "Moveable": false
+              },
+              {
+                "Type": "ButtonWithIcon",
+                "Pressed": "transparent\\transparent.png",
+                "Released": "transparent\\transparent.png",
+                "Alpha": 255,
+                "IconPressed": "x.png",
+                "IconReleased": "x.png",
+                "IconX": 14,
+                "IconY": 14,
+                "IconHeight": 32,
+                "IconWidth": 32,
+                "Name": "BtnExit",
+                "X": 356,
+                "Y": -10,
+                "Width": 60,
+                "Height": 60,
+                "Visible": true,
+                "LockPosition": false,
+                "Draggable": false,
+                "Clickable": false,
+                "Fadeable": false,
+                "Moveable": false
+              }
+            ],
+            "Type": "Container",
+            "IsCacheableContainer": false,
+            "Name": "conStart",
+            "X": 197,
+            "Y": 115,
+            "Width": 406,
+            "Height": 250,
+            "Visible": false,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Components": [
+              {
+                "Type": "TextArea",
+                "TextId": "SingleUseId261",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Alpha": 255,
+                "AutoSize": false,
+                "LineSpacing": 0,
+                "Name": "txtDrying",
+                "X": 20,
+                "Y": 10,
+                "Width": 366,
+                "Height": 160,
+                "Visible": true,
+                "LockPosition": false,
+                "Draggable": false,
+                "Clickable": false,
+                "Fadeable": false,
+                "Moveable": false
+              },
+              {
+                "Type": "BoxProgress",
+                "Color": {
+                  "Red": 46,
+                  "Green": 172,
+                  "Blue": 98
+                },
+                "Direction": "Right",
+                "Alpha": 255,
+                "FileNameBackground": "progressbackground_320x40.png",
+                "IndicatorPositionX": 5,
+                "IndicatorPositionY": 5,
+                "IndicatorPositionWidth": 310,
+                "IndicatorPositionHeight": 30,
+                "ProgressRangeMin": 0,
+                "ProgressRangeMax": 100,
+                "ProgressRangeSteps": 0,
+                "ProgressRangeStepsMin": 0,
+                "ProgressInitialValue": 0,
+                "Name": "pbrDrying",
+                "X": 43,
+                "Y": 190,
+                "Width": 320,
+                "Height": 40,
+                "Visible": true,
+                "LockPosition": false,
+                "Draggable": false,
+                "Clickable": false,
+                "Fadeable": false,
+                "Moveable": false
+              }
+            ],
+            "Type": "Container",
+            "IsCacheableContainer": false,
+            "Name": "conDrying",
+            "X": 197,
+            "Y": 115,
+            "Width": 406,
+            "Height": 250,
+            "Visible": false,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Dismiss",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "BtnExit"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "Dismiss"
+            }
+          },
+          {
+            "InteractionName": "StartDrying",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "BtnStartDrying"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "StartDrying"
+            }
+          }
+        ],
+        "Name": "MoistureDetectedMessage",
+        "X": 0,
+        "Y": 0,
+        "Width": 800,
+        "Height": 480
       },
       {
         "Components": [
