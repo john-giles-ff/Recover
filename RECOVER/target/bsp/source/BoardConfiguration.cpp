@@ -99,6 +99,8 @@ static uint32_t frameBuf0 = (uint32_t)& frameBuffer[0];
 #else
 // Use SDRAM for frame buffers
 static uint32_t frameBuf0 = (uint32_t)(0xC0000000);
+static uint32_t frameBuf1 = (uint32_t)(frameBuf0+TFT_WIDTH*TFT_HEIGHT*3);
+
 #endif
 namespace touchgfx
 {
@@ -249,7 +251,7 @@ void touchgfx_init()
     hal.setFrameRefreshStrategy(HAL::REFRESH_STRATEGY_OPTIM_SINGLE_BUFFER_TFT_CTRL);
 #else
     //setup for double buffering.
-    hal.setFrameBufferStartAddresses((void*)frameBuf0, (void*)0, (void*)0);
+    hal.setFrameBufferStartAddresses((void*)frameBuf0, (void*)frameBuf1, (void*)0);
 #endif
 #elif USE_BPP==24
 #ifdef  SINGLE_FRAME_BUFFER_INTERNAL
