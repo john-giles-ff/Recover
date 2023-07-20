@@ -1,53 +1,49 @@
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
+
 /**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.12.3 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+ * @file touchgfx/containers/ListLayout.hpp
+ *
+ * Declares the touchgfx::ListLayout class.
+ */
+#ifndef TOUCHGFX_LISTLAYOUT_HPP
+#define TOUCHGFX_LISTLAYOUT_HPP
 
-#ifndef LISTLAYOUT_HPP
-#define LISTLAYOUT_HPP
-
-#include <touchgfx/containers/Container.hpp>
-#include <assert.h>
 #include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Drawable.hpp>
+#include <touchgfx/containers/Container.hpp>
 
 namespace touchgfx
 {
 /**
- * @class ListLayout ListLayout.hpp touchgfx/containers/ListLayout.hpp
+ * This class provides a layout mechanism for arranging Drawable instances adjacent in the
+ * specified Direction. The first element in the ListLayout is positioned in the
+ * ListLayout origin (0,0). The dimensions of this class is automatically expanded to
+ * cover the area of the added Drawable instances, which may grow larger than the
+ * dimensions of the physical screen. Place the ListLayout inside e.g. a
+ * ScrollableContainer to allow all the children to be viewed.
  *
- * @brief This class provides a layout mechanism for arranging Drawable instances adjacently in the
- *        specified Direction.
- *
- *        This class provides a layout mechanism for arranging Drawable instances adjacently in
- *        the specified Direction.  The first element in the ListLayout is positioned in the
- *        ListLayout origin (0,0). The dimension of this class is automatically expanded to
- *        cover the area of the added Drawable instances.
- *
- * @see Container
+ * @see ScrollableContainer
  */
 class ListLayout : public Container
 {
 public:
-
     /**
-     * @fn ListLayout::ListLayout(const Direction d = SOUTH)
+     * Initializes a new instance of the ListLayout class.
      *
-     * @brief Constructor.
+     * @param  d (Optional) The direction to place the elements. ::SOUTH (Default)
+     *           places the elements vertically, ::EAST places the elements horizontally.
      *
-     *        Constructor. Constructs a ListLayout instance that arranges the added elements in
-     *        the specified Direction.
-     *
-     * @param d The direction to grow in when adding children.
+     * @see setDirection
      */
     ListLayout(const Direction d = SOUTH)
         : Container(), direction(d), offset(0)
@@ -56,38 +52,21 @@ public:
     }
 
     /**
-     * @fn virtual ListLayout::~ListLayout()
+     * Sets the direction of the ListLayout. If elements have already been added to the
+     * ListLayout, these elements will be repositioned to adhere to the new direction.
      *
-     * @brief Destructor.
+     * @param  d The new Direction to grow in when added children (either ::SOUTH or ::EAST).
      *
-     *        Destructor.
-     */
-    virtual ~ListLayout() { }
-
-    /**
-     * @fn virtual void ListLayout::setDirection(const Direction d);
-     *
-     * @brief Sets the direction of the ListLayout.
-     *
-     *        Sets the direction of the ListLayout. If elements have already been added to the
-     *        ListLayout, these elements will be repositioned to adhere to the new direction.
-     *
-     * @param d The new Direction to grow in when added children (either SOUTH or EAST).
-     *
-     * @see getDirection()
+     * @see getDirection
      */
     virtual void setDirection(const Direction d);
 
     /**
-     * @fn virtual Direction ListLayout::getDirection() const
+     * Gets the direction of the ListLayout.
      *
-     * @brief Gets the direction of the ListLayout.
+     * @return The current direction to grow in when added children (either ::SOUTH or ::EAST).
      *
-     *        Gets the direction of the ListLayout.
-     *
-     * @return The current direction to grow in when added children (either SOUTH or EAST).
-     *
-     * @see setDirection()
+     * @see setDirection
      */
     virtual Direction getDirection() const
     {
@@ -95,63 +74,26 @@ public:
     }
 
     /**
-     * @fn virtual void ListLayout::add(Drawable& d);
-     *
-     * @brief Adds a Drawable instance to the end of the list.
-     *
-     *        Adds a Drawable instance to the end of the list. The Drawable dimensions shall be
-     *        set prior to addition.
+     * Adds a Drawable instance to the end of the list. The Drawable dimensions shall be set
+     * prior to addition. The coordinates of the Drawable will be updated to reflect the
+     * position in the ListLayout.
      *
      * @param [in] d The Drawable to add.
      */
     virtual void add(Drawable& d);
 
     /**
-     * @fn virtual void ListLayout::remove(Drawable& d);
-     *
-     * @brief Removes a Drawable.
-     *
-     *        Removes a Drawable. Safe to call even if drawable has not been added.
+     * Removes a Drawable. Safe to call even if drawable has not been added. Other Drawable
+     * elements in the ListLayout are repositioned and the size of the ListLayout is
+     * adjusted.
      *
      * @param [in] d The drawable to remove.
      */
     virtual void remove(Drawable& d);
 
-    /**
-     * @fn virtual void ListLayout::insert(Drawable* previousElement, Drawable& d);
-     *
-     * @brief Inserts a Drawable.
-     *
-     *        Inserts a Drawable.
-     *
-     * @param [in] previousElement The element to insert the new element after.
-     * @param [in] d               The element to insert.
-     */
-    virtual void insert(Drawable* previousElement, Drawable& d);
+    virtual void insert(Drawable* previous, Drawable& d);
 
-    /**
-     * @fn virtual void ListLayout::removeAll();
-     *
-     * @brief Removes all children.
-     *
-     *        Removes all children by resetting their parent and sibling pointers. In addition, the
-     *        geometry is reset and any parent is signaled of the change.
-     */
     virtual void removeAll();
-
-    /**
-     * @fn virtual uint16_t ListLayout::getType() const
-     *
-     * @brief For GUI testing only.
-     *
-     *        For GUI testing only. Returns type of this drawable.
-     *
-     * @return TYPE_LISTLAYOUT.
-     */
-    virtual uint16_t getType() const
-    {
-        return (uint16_t)TYPE_LISTLAYOUT;
-    }
 
 private:
     void internalAddElementAt(Drawable& d, int16_t coord);
@@ -160,5 +102,7 @@ private:
     Direction direction;
     int16_t offset;
 };
+
 } // namespace touchgfx
-#endif // LISTLAYOUT_HPP
+
+#endif // TOUCHGFX_LISTLAYOUT_HPP

@@ -39,7 +39,7 @@ void LFT_Information::UpdateLFTDebug(LFTDebug * control)
 	control->SetProgress(Progress);	
 	control->SetTimer(differenceTimeData.GetHour(), differenceTimeData.GetMinute(), differenceTimeData.GetSecond());	
 	control->SetValves(InletState, PurgeState, BypassState);
-	control->SetDelta(Delta);
+	control->SetDelta(Delta, (int)ActualAverageDelta(), (int)MinDeltaAtPressure(Pressure));
 }
 
 void LFT_Information::SetClockFrequency(long value)
@@ -280,6 +280,15 @@ void LFT_Information::ReadDelta()
 	Delta = _model->ReadInt("DELTA");
 }
 
+void LFT_Information::ReadManifoldVersion()
+{
+	ManifoldVersion = (MANIFOLD_VERSION)_model->ReadInt("VCONFIG");
+
+#ifdef SIMULATOR
+	ManifoldVersion = MANIFOLD_VERSION::V2;
+#endif
+}
+
 int LFT_Information::GetFilterValue()
 {
 	int counter = FilterCounter;
@@ -359,6 +368,141 @@ void LFT_Information::SetRTC(int year, int month, int day, int hour, int minute,
 	_model->SetRTC(year, month, day, hour, minute, second);	
 }
 
+void LFT_Information::ClearPerformance()
+{
+	_performance = true;
+	_deltaAvgsIndex = 0;
+	_deltaAvgsCount = 0;
+
+	for (int i = 0; i < DELTA_AVG_SIZE; i++)
+		_deltaAvgs[i] = 0x0;
+}
+
+void LFT_Information::CheckPerformance()
+{
+	//If already flagged as underperforming don't bother checking again
+	if (!_performance)
+		return;
+
+	//Check delta is valid
+	int delta = Delta;
+	if (delta < 0)
+		return;
+
+	//if not in correct range don't bother checking
+	float pressure = Pressure;
+	if (pressure > 10.0f)
+		return;
+	
+
+	//Check if its been 10 seconds since we last checked
+	long long time = GetCurrentTime().getRaw();
+	if (time - _lastPerfCheckTime < 10)
+		return;
+
+	//Add current delta to average delta array and update tracker values
+	_deltaAvgs[_deltaAvgsIndex] = delta;
+
+	_deltaAvgsIndex++;
+	_deltaAvgsCount++;
+	_deltaAvgsIndex %= DELTA_AVG_SIZE;
+	_deltaAvgsCount = MIN(_deltaAvgsCount, DELTA_AVG_SIZE);
+	
+	//Fetch current average delta and minimum delta at current pressure
+	float deltaAvg = ActualAverageDelta();
+	float minDelta = MinDeltaAtPressure(pressure);
+
+	//See if we're performing
+	_performance = deltaAvg > minDelta;
+
+	//Update time so we don't do this too often
+	_lastPerfCheckTime = time;
+}
+
+float LFT_Information::ActualAverageDelta()
+{
+	if (_deltaAvgsCount == 0)
+		return -1;
+
+	//Calculate average
+	float sum = 0.0f;
+	for (int i = 0; i < _deltaAvgsCount; i++)
+		sum += _deltaAvgs[i];
+	return sum / _deltaAvgsCount;
+}
+
+float LFT_Information::AvgDeltaAtPressure(float pressure)
+{
+	struct AvgPoint {
+		float Pressure;
+		float Delta;
+
+		AvgPoint(float pressure, float delta) {
+			Pressure = pressure;
+			Delta = delta;
+		}
+	};
+
+	AvgPoint avgPoints[]{
+		AvgPoint(9.5f, 1080),
+		AvgPoint(9.0f, 1023),
+		AvgPoint(8.5f, 920),
+		AvgPoint(8.0f, 825),
+		AvgPoint(7.5f, 755),
+		AvgPoint(7.0f, 673),
+		AvgPoint(6.5f, 591),
+		AvgPoint(6.0f, 516),
+		AvgPoint(5.5f, 445),
+		AvgPoint(5.0f, 376),
+		AvgPoint(4.5f, 318),
+		AvgPoint(4.0f, 263),
+		AvgPoint(3.5f, 209),
+		AvgPoint(3.0f, 161),
+		AvgPoint(2.5f, 118),
+		AvgPoint(2.0f, 82),
+		AvgPoint(1.5f, 51),
+		AvgPoint(1.0f, 27),
+		AvgPoint(0.5f, 13),
+	};
+
+	//If too high a pressure
+	if (pressure > avgPoints[0].Pressure)
+		return -1.0f;
+
+	for (int i = 1; i < 19; i++)
+	{
+		//Check if pressure is between this and pressure item
+		if (avgPoints[i].Pressure > pressure)
+			continue;
+
+		//Fetch min + max
+		AvgPoint smallPoint = avgPoints[i - 1];
+		AvgPoint largePoint = avgPoints[i];
+
+		//Find percentage between relevant points
+		float pressureDistance = abs(largePoint.Pressure - smallPoint.Pressure);
+		float pressurePercentage = abs(pressure - smallPoint.Pressure) / pressureDistance;
+
+		//Get value
+		float deltaDistance = abs(largePoint.Delta - smallPoint.Delta);
+		return smallPoint.Delta - (pressurePercentage * deltaDistance);
+	}
+
+	//If too low a pressure
+	return -1.0f;
+}
+
+float LFT_Information::MinDeltaAtPressure(float pressure)
+{
+	float avg = AvgDeltaAtPressure(pressure) * MIN_DELTA_FACTOR;
+	return avg > 0 ? avg * MIN_DELTA_FACTOR : -1;
+}
+
+bool LFT_Information::Performance()
+{
+	return _performance;
+}
+
 void LFT_Information::ReadStandardValues(int stage)
 {
 	ReadBaseTemperature();
@@ -372,11 +516,8 @@ void LFT_Information::ReadStandardValues(int stage)
 	//ReadRTC();		
 	ReadInlet();
 	ReadBypass();
-	ReadPurge();
-
-	if (stage == LFT_STAGE_FUMING)
-		ReadTime();
-
+	ReadPurge();	
+	
 	if (stage == LFT_STAGE_CHAMBER_CONDITIONING)
 		ReadDelta();
 	

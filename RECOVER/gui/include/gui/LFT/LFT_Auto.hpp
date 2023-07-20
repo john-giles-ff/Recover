@@ -31,7 +31,8 @@ public:
 	void SetVac(int mTorr = -1);
 	void SetVacMax(int mTorr = -1);
 	void SetLeakMax(int mTorrPer10s = -1);
-	void SetTimeout(int minutes = -1);
+	void SetTimeout(int minute30 = -1, int minute45 = -1);
+	void SetSampleRate(int rate = -1);
 	void SetChamberSize(bool value);	
 	void SetMetalType(bool value);
 	void SetChamberBeepReady(bool value);
@@ -49,7 +50,7 @@ public:
 	void QueCool();
 	void QueAbort();
 
-	//Misc
+	//Misc	
 	void ClearErrors();
 	void DisableTimeout(bool state);
 
@@ -60,6 +61,10 @@ public:
 	void StartFuming();
 	void StartCool();	
 	void Abort();
+
+	//Drying
+	void StartDrying(int min = -1);
+	int ReadDryingPercentage();
 
 	void AbortCleanup();	
 
@@ -75,6 +80,9 @@ private:
 	LFT_Manual * _manual;
 	LFT_Settings * _settings;
 	LFT_AutoClean* _autoClean;
+
+
+
 };
 
 

@@ -1,46 +1,30 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.12.3 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Bitmap.hpp>
+#include <touchgfx/lcd/LCD.hpp>
+#include <touchgfx/transforms/DisplayTransformation.hpp>
 #include <touchgfx/widgets/canvas/PainterGRAY4Bitmap.hpp>
 #include <platform/driver/lcd/LCD4bpp.hpp>
 
 namespace touchgfx
 {
-PainterGRAY4Bitmap::PainterGRAY4Bitmap(const Bitmap& bmp, uint8_t alpha) :
-    AbstractPainterGRAY4(), bitmapGRAY4Pointer(0), bitmapAlphaPointer(0)
-{
-    setBitmap(bmp);
-    setAlpha(alpha);
-}
-
 void PainterGRAY4Bitmap::setBitmap(const Bitmap& bmp)
 {
     bitmap = bmp;
     assert((bitmap.getId() == BITMAP_INVALID || bitmap.getFormat() == Bitmap::GRAY4) && "The chosen painter only works with GRAY4 bitmaps");
     bitmapRectToFrameBuffer = bitmap.getRect();
     DisplayTransformation::transformDisplayToFrameBuffer(bitmapRectToFrameBuffer);
-}
-
-void PainterGRAY4Bitmap::setAlpha(uint8_t alpha)
-{
-    painterAlpha = alpha;
-}
-
-uint8_t PainterGRAY4Bitmap::getAlpha() const
-{
-    return painterAlpha;
 }
 
 void PainterGRAY4Bitmap::render(uint8_t* ptr, int x, int xAdjust, int y, unsigned count, const uint8_t* covers)
@@ -59,92 +43,83 @@ void PainterGRAY4Bitmap::render(uint8_t* ptr, int x, int xAdjust, int y, unsigne
         count = bitmapRectToFrameBuffer.width - currentX;
     }
 
-    uint8_t totalAlpha = LCD::div255(widgetAlpha * painterAlpha);
     // Get alpha data (GRAY4 format)
     if (bitmapAlphaPointer)
     {
-        if (totalAlpha == 0xFF)
+        if (widgetAlpha == 0xFF)
         {
             do
             {
-                uint8_t gray = LCD4getPixel(bitmapGRAY4Pointer, currentX);
-                uint8_t alpha = LCD::div255((*covers) * (LCD4getPixel(bitmapAlphaPointer, currentX) * 0x11));
-                covers++;
+                const uint8_t gray = LCD4bpp::getPixel(bitmapGRAY4Pointer, currentX);
+                const uint8_t alpha = LCD::div255((*covers++) * (LCD4bpp::getPixel(bitmapAlphaPointer, currentX) * 0x11));
 
                 if (alpha == 0xFF)
                 {
                     // Render a solid pixel
-                    LCD4setPixel(ptr, x, gray);
+                    LCD4bpp::setPixel(ptr, x, gray);
                 }
                 else
                 {
-                    uint8_t ialpha = 0xFF - alpha;
-                    uint8_t p_gray = LCD4getPixel(ptr, x);
-                    LCD4setPixel(ptr, x, LCD::div255((gray * alpha + p_gray * ialpha) * 0x11) >> 4);
+                    const uint8_t ialpha = 0xFF - alpha;
+                    const uint8_t p_gray = LCD4bpp::getPixel(ptr, x);
+                    LCD4bpp::setPixel(ptr, x, LCD::div255((gray * alpha + p_gray * ialpha) * 0x11) >> 4);
                 }
                 currentX++;
                 x++;
-            }
-            while (--count != 0);
+            } while (--count != 0);
         }
         else
         {
             do
             {
-                uint8_t gray = LCD4getPixel(bitmapGRAY4Pointer, currentX);
-                uint8_t alpha = LCD::div255((*covers) * LCD::div255(totalAlpha * (LCD4getPixel(bitmapAlphaPointer, currentX) * 0x11)));
-                uint8_t ialpha = 0xFF - alpha;
-                covers++;
+                const uint8_t gray = LCD4bpp::getPixel(bitmapGRAY4Pointer, currentX);
+                const uint8_t alpha = LCD::div255((*covers++) * LCD::div255(widgetAlpha * (LCD4bpp::getPixel(bitmapAlphaPointer, currentX) * 0x11)));
+                const uint8_t ialpha = 0xFF - alpha;
 
-                uint8_t p_gray = LCD4getPixel(ptr, x);
-                LCD4setPixel(ptr, x, LCD::div255((gray * alpha + p_gray * ialpha) * 0x11) >> 4);
+                const uint8_t p_gray = LCD4bpp::getPixel(ptr, x);
+                LCD4bpp::setPixel(ptr, x, LCD::div255((gray * alpha + p_gray * ialpha) * 0x11) >> 4);
                 currentX++;
                 x++;
-            }
-            while (--count != 0);
+            } while (--count != 0);
         }
     }
     else
     {
-        if (totalAlpha == 255)
+        if (widgetAlpha == 0xFF)
         {
             do
             {
-                uint8_t gray = LCD4getPixel(bitmapGRAY4Pointer, currentX);
-                uint8_t alpha = (*covers);
-                covers++;
+                const uint8_t gray = LCD4bpp::getPixel(bitmapGRAY4Pointer, currentX);
+                const uint8_t alpha = *covers++;
 
                 if (alpha == 0xFF)
                 {
                     // Render a solid pixel
-                    LCD4setPixel(ptr, x, gray);
+                    LCD4bpp::setPixel(ptr, x, gray);
                 }
                 else
                 {
-                    uint8_t ialpha = 0xFF - alpha;
-                    uint8_t p_gray = LCD4getPixel(ptr, x);
-                    LCD4setPixel(ptr, x, LCD::div255((gray * alpha + p_gray * ialpha) * 0x11) >> 4);
+                    const uint8_t ialpha = 0xFF - alpha;
+                    const uint8_t p_gray = LCD4bpp::getPixel(ptr, x);
+                    LCD4bpp::setPixel(ptr, x, LCD::div255((gray * alpha + p_gray * ialpha) * 0x11) >> 4);
                 }
                 currentX++;
                 x++;
-            }
-            while (--count != 0);
+            } while (--count != 0);
         }
         else
         {
             do
             {
-                uint8_t gray = LCD4getPixel(bitmapGRAY4Pointer, currentX);
-                uint8_t alpha = LCD::div255((*covers) * totalAlpha);
-                uint8_t ialpha = 0xFF - alpha;
-                covers++;
+                const uint8_t gray = LCD4bpp::getPixel(bitmapGRAY4Pointer, currentX);
+                const uint8_t alpha = LCD::div255((*covers++) * widgetAlpha);
+                const uint8_t ialpha = 0xFF - alpha;
 
-                uint8_t p_gray = LCD4getPixel(ptr, x);
-                LCD4setPixel(ptr, x, LCD::div255((gray * alpha + p_gray * ialpha) * 0x11) >> 4);
+                const uint8_t p_gray = LCD4bpp::getPixel(ptr, x);
+                LCD4bpp::setPixel(ptr, x, LCD::div255((gray * alpha + p_gray * ialpha) * 0x11) >> 4);
                 currentX++;
                 x++;
-            }
-            while (--count != 0);
+            } while (--count != 0);
         }
     }
 }
@@ -159,8 +134,7 @@ bool PainterGRAY4Bitmap::renderInit()
         return false;
     }
 
-    if ((currentX >= bitmapRectToFrameBuffer.width) ||
-            (currentY >= bitmapRectToFrameBuffer.height))
+    if ((currentX >= bitmapRectToFrameBuffer.width) || (currentY >= bitmapRectToFrameBuffer.height))
     {
         // Outside bitmap area, do not draw anything
         return false;
@@ -194,19 +168,18 @@ bool PainterGRAY4Bitmap::renderNext(uint8_t& gray, uint8_t& alpha)
 
     if (bitmapGRAY4Pointer != 0)
     {
-        gray = LCD4getPixel(bitmapGRAY4Pointer, currentX);
+        gray = LCD4bpp::getPixel(bitmapGRAY4Pointer, currentX);
         if (bitmapAlphaPointer)
         {
-            alpha = LCD4getPixel(bitmapAlphaPointer, currentX);
+            alpha = LCD4bpp::getPixel(bitmapAlphaPointer, currentX);
             alpha |= alpha << 4; // Upscale from 0-15 to 0-255
         }
         else
         {
             alpha = 0xFF; // No alpha per pixel in the image, it is solid
         }
+        return true;
     }
-    // Apply given alpha from setAlpha()
-    alpha = LCD::div255(alpha * painterAlpha);
-    return true;
+    return false;
 }
 } // namespace touchgfx

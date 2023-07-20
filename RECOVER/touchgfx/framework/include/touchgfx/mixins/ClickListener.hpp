@@ -1,70 +1,50 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.12.3 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
-#ifndef CLICKLISTENER_HPP
-#define CLICKLISTENER_HPP
+/**
+ * @file touchgfx/mixins/ClickListener.hpp
+ *
+ * Declares the touchgfx::ClickListener class.
+ */
+#ifndef TOUCHGFX_CLICKLISTENER_HPP
+#define TOUCHGFX_CLICKLISTENER_HPP
 
 #include <touchgfx/Callback.hpp>
+#include <touchgfx/events/ClickEvent.hpp>
 
 namespace touchgfx
 {
 /**
- * @class ClickListener ClickListener.hpp touchgfx/mixins/ClickListener.hpp
- *
- * @brief Mix-in class that extends a class with a click action event.
- *
- *        Mix-in class that extends a class with a click action event that is called when the
- *        class receives a click event.
+ * Mix-in class that extends a class with a click action event that is called when the class
+ * receives a click event.
  *
  * @tparam T specifies the type to extend with the ClickListener behavior.
  */
-template<class T>
+template <class T>
 class ClickListener : public T
 {
 public:
-
-    /**
-     * @fn ClickListener::ClickListener()
-     *
-     * @brief Default constructor.
-     *
-     *        Default constructor.
-     */
-    ClickListener() : T(), clickAction(0)
+    /** Initializes a new instance of the ClickListener class. Make the object touchable. */
+    ClickListener()
+        : T(), clickAction(0)
     {
         T::setTouchable(true);
     }
 
     /**
-     * @fn virtual ClickListener::~ClickListener()
+     * Ensures that the clickEvent is propagated to the super class T and to the clickAction
+     * listener.
      *
-     * @brief Destructor.
-     */
-    virtual ~ClickListener() { }
-
-    /**
-     * @fn virtual void ClickListener::handleClickEvent(const ClickEvent& event)
-     *
-     * @brief Ensures that the clickEvent is propagated to the super class.
-     *
-     *         Ensures that the clickEvent is propagated to the super class T and to the
-     *         clickAction listener.
-     *
-     * @param event Information about the click.
-     *
-     * @see Drawable::handleClickEvent()
+     * @param  event Information about the click.
      */
     virtual void handleClickEvent(const ClickEvent& event)
     {
@@ -76,24 +56,19 @@ public:
     }
 
     /**
-     * @fn void ClickListener::setClickAction(GenericCallback< const T&, const ClickEvent& >& callback)
+     * Associates an action to be performed when the class T is clicked.
      *
-     * @brief Associates an action to be performed when the class T is clicked.
-     *
-     *        Associates an action to be performed when the class T is clicked.
-     *
-     * @param callback The callback to be executed. The callback will be given a reference to T.
-     *
-     * @see GenericCallback
+     * @param  callback The callback to be executed. The callback will be given a reference
+     *                  to T.
      */
-    void setClickAction(GenericCallback< const T&, const ClickEvent& >& callback)
+    void setClickAction(GenericCallback<const T&, const ClickEvent&>& callback)
     {
         clickAction = &callback;
     }
 
 protected:
-    GenericCallback<const T&, const ClickEvent&>* clickAction;  ///< The callback to be executed when T is clicked
+    GenericCallback<const T&, const ClickEvent&>* clickAction; ///< The callback to be executed when T is clicked
 };
 } //namespace touchgfx
 
-#endif // CLICKLISTENER_HPP
+#endif // TOUCHGFX_CLICKLISTENER_HPP

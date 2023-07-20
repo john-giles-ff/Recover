@@ -1,21 +1,24 @@
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
+
 /**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.12.3 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+ * @file touchgfx/mixins/MoveAnimator.hpp
+ *
+ * Declares the touchgfx::MoveAnimator class.
+ */
+#ifndef TOUCHGFX_MOVEANIMATOR_HPP
+#define TOUCHGFX_MOVEANIMATOR_HPP
 
-#ifndef MOVEANIMATOR_HPP
-#define MOVEANIMATOR_HPP
-
+#include <touchgfx/hal/Types.hpp>
 #include <touchgfx/Application.hpp>
 #include <touchgfx/Callback.hpp>
 #include <touchgfx/EasingEquations.hpp>
@@ -23,75 +26,50 @@
 namespace touchgfx
 {
 /**
- * @class MoveAnimator MoveAnimator.hpp touchgfx/mixins/MoveAnimator.hpp
+ * A MoveAnimator makes the template class T able to animate a movement from its current
+ * position to a specified end position. The speed of the movement in both the X and Y
+ * direction can be controlled by supplying EasingEquations. The MoveAnimator performs a
+ * callback when the animation has finished.
  *
- * @brief A MoveAnimator makes the template class T able to animate a movement.
- *
- *        A MoveAnimator makes the template class T able to animate a movement from its current
- *        position to a specified end position. The movement in both the X and Y direction can
- *        be described by supplying EasingEquations. The MoveAnimator performs a callback when
- *        the animation has finished.
- *
- *        This mixin can be used on any Drawable.
- *
- * @tparam T Specifies the type should have the move animation capability.
+ * This mixin can be used on any Drawable.
  */
-template<class T>
+template <class T>
 class MoveAnimator : public T
 {
 public:
-
-    /**
-     * @fn MoveAnimator::MoveAnimator()
-     *
-     * @brief Default constructor.
-     *
-     *        Default constructor. Creates and initialize the MoveAnimator.
-     */
-    MoveAnimator() :
-        T(),
-        moveAnimationRunning(false),
-        moveAnimationCounter(0),
-        moveAnimationDelay(0),
-        moveAnimationEndedCallback(0)
+    MoveAnimator()
+        : T(),
+          moveAnimationRunning(false),
+          moveAnimationCounter(0),
+          moveAnimationDelay(0),
+          moveAnimationDuration(0),
+          moveAnimationStartX(0),
+          moveAnimationStartY(0),
+          moveAnimationEndX(0),
+          moveAnimationEndY(0),
+          moveAnimationXEquation(),
+          moveAnimationYEquation(),
+          moveAnimationEndedCallback(0)
     {
     }
 
     /**
-     * @fn virtual MoveAnimator::~MoveAnimator()
+     * Associates an action to be performed when the animation ends.
      *
-     * @brief Destructor.
+     * @param  callback The callback to be executed. The callback will be given a reference
+     *                  to the MoveAnimator.
      *
-     *        Destructor. Destroys the MoveAnimator.
+     * @see clearMoveAnimationEndedAction
      */
-    virtual ~MoveAnimator()
-    {
-    }
-
-    /**
-     * @fn void MoveAnimator::setMoveAnimationEndedAction(GenericCallback<const MoveAnimator<T>& >& callback)
-     *
-     * @brief Associates an action to be performed when the animation ends.
-     *
-     *        Associates an action to be performed when the animation ends.
-     *
-     * @param callback The callback to be executed. The callback will be given a reference to
-     *                 the MoveAnimator.
-     *
-     * @see GenericCallback
-     */
-    void setMoveAnimationEndedAction(GenericCallback<const MoveAnimator<T>& >& callback)
+    void setMoveAnimationEndedAction(GenericCallback<const MoveAnimator<T>&>& callback)
     {
         moveAnimationEndedCallback = &callback;
     }
 
     /**
-     * @fn void MoveAnimator::clearMoveAnimationEndedAction()
-     *
-     * @brief Clears the move animation ended action previously set by setMoveAnimationEndedAction.
-     *
-     *        Clears the move animation ended action previously set by
-     *        setMoveAnimationEndedAction.
+     * Clears the move animation ended action previously set by setMoveAnimationEndedAction.
+     * The effect is that any action set using setMoveAnimationEndedAction() will not be
+     * executed.
      *
      * @see setMoveAnimationEndedAction
      */
@@ -101,13 +79,11 @@ public:
     }
 
     /**
-     * @fn virtual void MoveAnimator::setMoveAnimationDelay(uint16_t delay)
+     * Sets a delay on animations done by the MoveAnimator.
      *
-     * @brief Sets a delay on animations done by the MoveAnimator.
+     * @param  delay The delay in ticks.
      *
-     *        Sets a delay on animations done by the MoveAnimator.
-     *
-     * @param delay The delay in ticks.
+     * @see getMoveAnimationDelay
      */
     virtual void setMoveAnimationDelay(uint16_t delay)
     {
@@ -115,13 +91,11 @@ public:
     }
 
     /**
-     * @fn virtual uint16_t MoveAnimator::getMoveAnimationDelay() const
-     *
-     * @brief Gets the current animation delay.
-     *
-     *        Gets the current animation delay.
+     * Gets the current animation delay.
      *
      * @return The current animation delay.
+     *
+     * @see setMoveAnimationDelay
      */
     virtual uint16_t getMoveAnimationDelay() const
     {
@@ -129,54 +103,30 @@ public:
     }
 
     /**
-     * @fn virtual bool MoveAnimator::isRunning() const
-     *
-     * @brief Gets whether or not the move animation is running.
-     *
-     *        Gets whether or not the move animation is running.
-     *
-     * @return true if the move animation is running.
-     * @deprecated use isMoveAnimationRunning()
-     */
-    virtual bool isRunning() const
-    {
-        return isMoveAnimationRunning();
-    }
-
-    /**
-     * @fn virtual bool MoveAnimator::isMoveAnimationRunning() const
-     *
-     * @brief Gets whether or not the move animation is running.
-     *
-     *        Gets whether or not the move animation is running.
+     * Gets whether or not the move animation is running.
      *
      * @return true if the move animation is running.
      */
-    virtual bool isMoveAnimationRunning() const
+    bool isMoveAnimationRunning() const
     {
         return moveAnimationRunning;
     }
 
     /**
-     * @fn void MoveAnimator::startMoveAnimation(int16_t endX, int16_t endY, uint16_t duration, EasingEquation xProgressionEquation = &EasingEquations::linearEaseNone, EasingEquation yProgressionEquation = &EasingEquations::linearEaseNone)
+     * Starts the move animation from the current position to the specified end position.
+     * The development of the position (X, Y) during the animation is described by the
+     * supplied EasingEquations. If no easing equation is given, the movement is performed
+     * linear.
      *
-     * @brief Starts the move animation.
-     *
-     *        Starts the move animation from the current position to the specified end
-     *        position. The development of the position (X, Y) during the animation is
-     *        described by the supplied EasingEquations.
-     *
-     * @param endX                 The X position of T at animation end. Relative to the
-     *                             container or view that holds T.
-     * @param endY                 The Y position of T at animation end. Relative to the
-     *                             container or view that holds T.
-     * @param duration             The duration of the animation measured in ticks.
-     * @param xProgressionEquation The equation that describes the development of the X position
-     *                             during the animation. Default =
-     *                             EasingEquations::linearEaseNone.
-     * @param yProgressionEquation The equation that describes the development of the Y position
-     *                             during the animation. Default =
-     *                             EasingEquations::linearEaseNone.
+     * @param  endX                 The X position at animation end.
+     * @param  endY                 The Y position at animation end.
+     * @param  duration             The duration of the animation measured in ticks.
+     * @param  xProgressionEquation (Optional) The equation that describes the development of the
+     *                              X position during the animation. Default is
+     *                              EasingEquations::linearEaseNone.
+     * @param  yProgressionEquation (Optional) The equation that describes the development of the
+     *                              Y position during the animation. Default is
+     *                              EasingEquations::linearEaseNone.
      */
     void startMoveAnimation(int16_t endX, int16_t endY, uint16_t duration, EasingEquation xProgressionEquation = &EasingEquations::linearEaseNone, EasingEquation yProgressionEquation = &EasingEquations::linearEaseNone)
     {
@@ -203,11 +153,8 @@ public:
     }
 
     /**
-     * @fn void MoveAnimator::cancelMoveAnimation()
-     *
-     * @brief Cancel move animation.
-     *
-     *        Cancel move animation.
+     * Cancel move animation and leave the Drawable in its current position. If the
+     * animation is not running, nothing is done.
      */
     void cancelMoveAnimation()
     {
@@ -218,14 +165,7 @@ public:
         }
     }
 
-protected:
-    /**
-     * @fn virtual void MoveAnimator::handleTickEvent()
-     *
-     * @brief The tick handler that handles the actual animation steps.
-     *
-     *        The tick handler that handles the actual animation steps.
-     */
+    /** The tick handler that handles the actual animation steps. */
     virtual void handleTickEvent()
     {
         T::handleTickEvent();
@@ -233,36 +173,24 @@ protected:
         nextMoveAnimationStep();
     }
 
-    /**
-     * @fn void MoveAnimator::nextMoveAnimationStep()
-     *
-     * @brief Execute next step in move animation.
-     *
-     *        Execute next step in move animation and stop the timer if necessary.
-     */
+protected:
+    /** Execute next step in move animation and stop the timer if the animation has finished. */
     void nextMoveAnimationStep()
     {
         if (moveAnimationRunning)
         {
-            if (moveAnimationCounter < moveAnimationDelay)
+            moveAnimationCounter++;
+            if (moveAnimationCounter >= moveAnimationDelay)
             {
-                // Just wait for the delay time to pass
-                moveAnimationCounter++;
-            }
-            else
-            {
-                if (moveAnimationCounter <= (uint32_t)(moveAnimationDelay + moveAnimationDuration))
-                {
-                    // Adjust the used animationCounter for the startup delay
-                    uint32_t actualAnimationCounter = moveAnimationCounter - moveAnimationDelay;
+                // Adjust the used animationCounter for the startup delay
+                uint32_t actualAnimationCounter = moveAnimationCounter - moveAnimationDelay;
 
-                    int16_t deltaX = moveAnimationXEquation(actualAnimationCounter, 0, moveAnimationEndX - moveAnimationStartX, moveAnimationDuration);
-                    int16_t deltaY = moveAnimationYEquation(actualAnimationCounter, 0, moveAnimationEndY - moveAnimationStartY, moveAnimationDuration);
+                int16_t deltaX = moveAnimationXEquation(actualAnimationCounter, 0, moveAnimationEndX - moveAnimationStartX, moveAnimationDuration);
+                int16_t deltaY = moveAnimationYEquation(actualAnimationCounter, 0, moveAnimationEndY - moveAnimationStartY, moveAnimationDuration);
 
-                    T::moveTo(moveAnimationStartX + deltaX, moveAnimationStartY + deltaY);
-                    moveAnimationCounter++;
-                }
-                if (moveAnimationCounter > (uint32_t)(moveAnimationDelay + moveAnimationDuration))
+                T::moveTo(moveAnimationStartX + deltaX, moveAnimationStartY + deltaY);
+
+                if (moveAnimationCounter >= (uint32_t)(moveAnimationDelay + moveAnimationDuration))
                 {
                     // End of animation
                     moveAnimationRunning = false;
@@ -278,19 +206,19 @@ protected:
         }
     }
 
-protected:
-    bool           moveAnimationRunning;   ///< Boolean that is true if the animation is running
-    uint16_t       moveAnimationCounter;   ///< Counter that is equal to the current step in the animation
-    uint16_t       moveAnimationDelay;     ///< A delay that is applied before animation start. Expressed in ticks.
-    uint16_t       moveAnimationDuration;  ///< The complete duration of the animation. Expressed in ticks.
-    int16_t        moveAnimationStartX;    ///< The X value at the beginning of the animation.
-    int16_t        moveAnimationStartY;    ///< The Y value at the beginning of the animation.
-    int16_t        moveAnimationEndX;      ///< The X value at the end of the animation.
-    int16_t        moveAnimationEndY;      ///< The Y value at the end of the animation.
+    bool moveAnimationRunning;             ///< True if the animation is running
+    uint16_t moveAnimationCounter;         ///< Counter that is equal to the current step in the animation
+    uint16_t moveAnimationDelay;           ///< The delay applied before animation start. Expressed in ticks.
+    uint16_t moveAnimationDuration;        ///< The complete duration of the actual animation. Expressed in ticks.
+    int16_t moveAnimationStartX;           ///< The X value at the beginning of the animation.
+    int16_t moveAnimationStartY;           ///< The Y value at the beginning of the animation.
+    int16_t moveAnimationEndX;             ///< The X value at the end of the animation.
+    int16_t moveAnimationEndY;             ///< The Y value at the end of the animation.
     EasingEquation moveAnimationXEquation; ///< EasingEquation expressing the development of the X value during the animation.
     EasingEquation moveAnimationYEquation; ///< EasingEquation expressing the development of the Y value during the animation.
 
-    GenericCallback<const MoveAnimator<T>& >* moveAnimationEndedCallback; ///< Animation ended Callback.
+    GenericCallback<const MoveAnimator<T>&>* moveAnimationEndedCallback; ///< Animation ended Callback.
 };
 } //namespace touchgfx
-#endif // MOVEANIMATOR_HPP
+
+#endif // TOUCHGFX_MOVEANIMATOR_HPP

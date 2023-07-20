@@ -116,10 +116,12 @@ void OTG_FS_IRQHandlerEx(void)
 {	
 	
 	//Device Interrupt handler
-	HAL_PCD_IRQHandler(&hpcd_USB_OTG_FS);
+	if (MX_DEVICE_ENABLED() == 1)
+		HAL_PCD_IRQHandler(&hpcd_USB_OTG_FS);
 	
 	//Host Interrupt handler
-	HAL_HCD_IRQHandler(&hhcd_USB_OTG_FS); 
+	if (MX_HOST_ENABLED() == 1)
+		HAL_HCD_IRQHandler(&hhcd_USB_OTG_FS); 
 }
 
 void UART_IRQHandlerEx(void)

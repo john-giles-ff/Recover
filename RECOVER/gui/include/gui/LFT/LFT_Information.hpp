@@ -16,12 +16,20 @@ constexpr int FILTER_BAD_BAND = 100;
 
 constexpr int UPDATE_INTERNAL_RTC_MAX = 120;
 
+enum class MANIFOLD_VERSION
+{
+	V1 = 0x01,
+	V2 = 0x02,
+};
+
+
 class LFT_Information
 {	
 
 public:	
-	LFT_Information() {
-		_model = { 0 };		
+	LFT_Information() :
+		_model(0)
+	{		
 #ifndef SIMULATOR
 		/* Create a mutex type semaphore. */
 		xSemaphore = xSemaphoreCreateMutex();		
@@ -38,6 +46,7 @@ public:
 		Pressure.SetSemaphore(xSemaphore);
 		LidClosedState.SetSemaphore(xSemaphore);
 		ChamberState.SetSemaphore(xSemaphore);
+		ManifoldVersion.SetSemaphore(xSemaphore);
 		IsInformationCurrent.SetSemaphore(xSemaphore);
 		RtcTime.SetSemaphore(xSemaphore);
 		Time.SetSemaphore(xSemaphore);
@@ -77,15 +86,14 @@ public:
 		AlwaysUpdateRTC.SetSemaphore(xSemaphore);
 		DoorOpenState.SetSemaphore(xSemaphore);
 		PowerlossDetected.SetSemaphore(xSemaphore);
+		FumingStartTime.SetSemaphore(xSemaphore);
 		ConditioningStartTime.SetSemaphore(xSemaphore);
 		UserCipherMode.SetSemaphore(xSemaphore);
 }
 
 
 	void SetModel(Model* model);
-//#ifndef  SIMULATOR
 	SemaphoreHandle_t xSemaphore;
-//#endif // ! SIMULATOR
 
 
 
@@ -103,13 +111,15 @@ public:
 	ThreadSafe<float> Pressure;
 	ThreadSafe<bool> LidClosedState;
 	ThreadSafe<bool> ChamberState;
+	ThreadSafe<MANIFOLD_VERSION> ManifoldVersion;
 
 	ThreadSafe<bool> IsInformationCurrent = true;
 
-	ThreadSafe<DateTime> RtcTime;
-	ThreadSafe<DateTime> Time;
+	ThreadSafe<DateTime> RtcTime;		
+	ThreadSafe<DateTime> Time; //Use onboard clock for keeping track of fuming time instead of firmware
 	ThreadSafe<DateTime> TimerStart;
 	ThreadSafe<DateTime> Uptime;
+	ThreadSafe<DateTime> FumingStartTime;
 	ThreadSafe<DateTime> ConditioningStartTime;
 
 	//Current Values
@@ -169,9 +179,10 @@ public:
 	const int DELTA_MIN = 1;
 	const float DELTA_STOPPED_ACCEPTABLE_MAX = 1.0f;		
 
-	const int DEFAULT_TIMEOUT = 30;
+	const int DEFAULT_TIMEOUT1 = 30;
+	const int DEFAULT_TIMEOUT2 = 45;
 
-	const int LEAKRATE_MAX = 75;
+	const int LEAKRATE_MAX = 2400;
 
 	const int STIRRING_TIME = 10;
 
@@ -188,8 +199,8 @@ public:
 	void ReadPreTemperature();
 	void ReadPrePowerPercentage();
 	void ReadPressure();
-	void ReadRTC();
-	void ReadTime();
+	void ReadRTC();	
+	void ReadTime(); //Use onboard clock for keeping track of fuming time instead of firmware
 	void ReadUptime();
 	void ReadProgress(int& output);
 	void ReadProgress();
@@ -212,6 +223,7 @@ public:
 	void ReadRunCounter();
 	void ReadFilterCounter();
 	void ReadDelta();
+	void ReadManifoldVersion();
 
 	//Get Calculated Values
 	int GetFilterValue();
@@ -227,6 +239,15 @@ public:
 	void ReadTemperaturePower(float &voltage, float &current);
 
 	void SetRTC(int year, int month, int day, int hour, int minute, int second);
+
+	//Performance	
+	void ClearPerformance();
+	void CheckPerformance();
+	float ActualAverageDelta();
+	float AvgDeltaAtPressure(float pressure);
+	float MinDeltaAtPressure(float pressure);
+	bool Performance();
+	static constexpr float MIN_DELTA_FACTOR = 0.62f;
 
 
 	void ReadStandardValues(int stage);
@@ -251,6 +272,14 @@ private:
 	void DecodePower(String input, float &voltage, float &current);
 
 	int updateInternalRTCTicker = 0;	
+
+	//Performance
+	long long _lastPerfCheckTime = 0;
+	bool _performance = true;
+	static constexpr int DELTA_AVG_SIZE = 5;
+	int _deltaAvgs[DELTA_AVG_SIZE];
+	int _deltaAvgsCount = 0;
+	int _deltaAvgsIndex = 0;
 };
 
 

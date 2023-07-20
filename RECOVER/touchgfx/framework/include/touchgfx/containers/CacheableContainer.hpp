@@ -1,173 +1,157 @@
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
+
 /**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.12.3 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+ * @file touchgfx/containers/CacheableContainer.hpp
+ *
+ * Declares the touchgfx::CacheableContainer class.
+ */
+#ifndef TOUCHGFX_CACHEABLECONTAINER_HPP
+#define TOUCHGFX_CACHEABLECONTAINER_HPP
 
-#ifndef CACHEABLECONTAINER_HPP
-#define CACHEABLECONTAINER_HPP
-
+#include <touchgfx/hal/Types.hpp>
 #include <touchgfx/Bitmap.hpp>
-#include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/Drawable.hpp>
 #include <touchgfx/containers/Container.hpp>
+#include <touchgfx/widgets/Image.hpp>
 
 namespace touchgfx
 {
 /**
- * @class CacheableContainer CacheableContainer.hpp touchgfx/containers/CacheableContainer.hpp
+ * A CacheableContainer can be seen as a regular Container, i.e. a Drawable that can have child
+ * nodes. The z-order of children is determined by the order in which Drawables are
+ * added to the container - the Drawable added last will be front-most on the screen.
  *
- * @brief A CacheableContainer is a Container that can have its drawing redirected into a Bitmap.
+ * The important difference is that a CacheableContainer can also render its content to
+ * a dynamic bitmap which can then be used as a texture in subsequent drawing operations,
+ * either as a simple Image or in a TextureMapper. If the bitmap format of the dynamic
+ * bitmap differs from the format of the current LCD, the LCD from drawing the bitmap
+ * must be setup using HAL::setAuxiliaryLCD().
  *
- *        A CacheableContainer is a Drawable that can have child nodes. The z-order of children is
- *        determined by the order in which Drawables are added to the container - the Drawable
- *        added last will be front-most on the screen. A CacheableContainer can also render its
- *        content to a dynamic bitmap that could be used as a texture in subsequent drawing operations.
- *
- * @see Container
- * @see Bitmap
+ * @see Container, Bitmap, Image, TextureMapper
  */
 class CacheableContainer : public Container
 {
 public:
+    CacheableContainer();
 
     /**
-     * @fn CacheableContainer::CacheableContainer()
+     * Set the dynamic bitmap into which the container content will be rendered. The format
+     * of the bitmap must be the same as the current LCD or the same as the auxiliary LCD
+     * setup using HAL::setAuxiliaryLCD.
      *
-     * @brief Default constructor.
+     * @param  bitmapId Id of the dynamic bitmap to serve as a render target.
      *
-     *        Default constructor.
-     */
-    CacheableContainer() : Container()
-    {
-    }
-
-    /**
-     * @fn virtual CacheableContainer::~CacheableContainer()
-     *
-     * @brief Destructor.
-     *
-     *        Destructor.
-     */
-    virtual ~CacheableContainer() { }
-
-    /**
-     * @fn void CacheableContainer::setCacheBitmap(BitmapId bitmapId);
-     *
-     * @brief Set the dynamic bitmap into which the container content will be rendered.
-     *
-     *        Set the dynamic bitmap into which the container content will be rendered.
-     *
-     * @param bitmapId Id of the dynamic bitmap to serve as a render target.
+     * @see updateCache, getCacheBitmap, HAL::setAuxiliaryLCD
      */
     void setCacheBitmap(BitmapId bitmapId);
 
     /**
-     * @fn void CacheableContainer::updateCache();
+     * Get the dynamic bitmap used by the CacheableContainer.
      *
-     * @brief Render the container into the attached dynamic bitmap.
+     * @return the id of the assigned bitmap or BITMAP_INVALID if no bitmap has been assigned.
      *
-     *        Render the container into the attached dynamic bitmap.
+     * @see setCacheBitmap
+     */
+    BitmapId getCacheBitmap() const;
+
+    /**
+     * Render the container into the attached dynamic bitmap.
      *
+     * @see setCacheBitmap
      */
     void updateCache();
 
     /**
-     * @fn void CacheableContainer::updateCache(const Rect& rect);
+     * Render the container into the attached dynamic bitmap. Only the specified Rect region
+     * is updated.
      *
-     * @brief Render the container into the attached dynamic bitmap.
+     * @param  rect Region to update.
      *
-     *        Render the container into the attached dynamic bitmap. Only the specified Rect region is updated.
-     *
-     * @param rect Region to update.
+     * @see setCacheBitmap
      */
     void updateCache(const Rect& rect);
 
     /**
-     * @fn void CacheableContainer::enableCachedMode(bool enable);
+     * Toggle cached mode on and off. The CacheableContainer behaves just like a regular
+     * Container when cached mode is turned off.
      *
-     * @brief Toggle cached mode on and off.
-     *
-     *        Toggle cached mode on and off. The cacheable container behaves as a regular container when cached mode is off.
-     *
-     * @param enable Enable or disable cached mode.
+     * @param  enable Enable or disable cached mode.
      */
     void enableCachedMode(bool enable);
 
     /**
-     * @fn virtual void CacheableContainer::invalidateRect(Rect& invalidatedArea) const;
-     *
-     * @brief Request that a subregion of this drawable is redrawn.
-     *
-     *        Request that a subregion of this drawable is redrawn. Will recursively traverse
-     *        the tree towards the root, and once reached, issue a draw operation. When this
-     *        function returns, the specified invalidated area has been redrawn for all
-     *        appropriate Drawables covering the region.
+     * Request that a subregion of this drawable is redrawn. Will recursively traverse the
+     * children. When this function returns, the specified invalidated area has been redrawn
+     * for all appropriate Drawables covering the region.
      *
      * @param [in] invalidatedArea The area of this drawable to redraw expressed in coordinates
-     *                             relative to its parent (e.g. to request a complete redraw,
-     *                             invalidatedArea will be (0, 0, width, height).
+     *                             relative to its parent (e.g. to request a complete
+     *                             redraw, invalidatedArea will be (0, 0, width, height).
      */
     virtual void invalidateRect(Rect& invalidatedArea) const;
 
     /**
-     * @fn void CacheableContainer::isChildInvalidated() const;
+     * Set the solid area on the dynamic bitmap assigned to the CacheableContainer.
      *
-     * @brief Queries the CacheableContainer whether any child widget has been invalidated.
+     * @param [in] rect The rectangle of th CacheableContainer that is solid.
      *
-     *        Queries the CacheableContainer whether any child widget has been invalidated.
+     * @return true if the operation succeeds, false otherwise.
+     */
+    bool setSolidRect(const Rect& rect);
+
+    /**
+     * Queries the CacheableContainer whether any child widget has been invalidated.
      *
      * @return True if a child widget has been invalidated and false otherwise.
      */
     bool isChildInvalidated() const;
 
+    /**
+     * @copydoc Image::setAlpha()
+     *
+     * @note The alpha is only applied when cached mode is enabled.
+     *
+     * @see enableCachedMode
+     */
+    void setAlpha(uint8_t newAlpha)
+    {
+        cachedImage.setAlpha(newAlpha);
+    }
+
+    /** @copydoc Image::getAlpha() */
+    uint8_t getAlpha() const
+    {
+        return cachedImage.getAlpha();
+    }
+
 protected:
+    /// @cond
     virtual void setupDrawChain(const Rect& invalidatedArea, Drawable** nextPreviousElement);
 
     /**
-     * @class CachedImage CacheableContainer.hpp touchgfx/containers/CacheableContainer.hpp
+     * A CachedImage is a specialized Image object that exposes the setupDrawChain() method.
      *
-     * @brief A CachedImage is a specialized Image object that exposes the setupDrawChain() method.
-     *
-     *        A CachedImage is a specialized Image object that exposes the setupDrawChain() method.
-     *
-     * @see CacheableContainer
-     * @see Image
+     * @see CacheableContainer, Image
      */
     class CachedImage : public Image
     {
     public:
-        /**
-         * @fn CachedImage::CachedImage()
-         *
-         * @brief Default constructor.
-         *
-         *        Default constructor.
-         */
-        CachedImage() { }
-
-        /**
-         * @fn virtual CachedImage::~CachedImage()
-         *
-         * @brief Destructor.
-         *
-         *        Destructor.
-         */
-        virtual ~CachedImage() { }
-
-        void setupDrawChain(const Rect& invalidatedArea, Drawable** nextPreviousElement)
+        virtual void setupDrawChain(const Rect& invalidatedArea, Drawable** nextPreviousElement)
         {
             Drawable::setupDrawChain(invalidatedArea, nextPreviousElement);
         }
     };
+    /// @endcond
 
 private:
     BitmapId cachedBitmapId;  ///< The BitmapId of the dynamic bitmap attached to the CacheableContainer
@@ -175,5 +159,7 @@ private:
     bool isCachedMode;        ///< Cached mode whether enabled or disabled
     bool childWasInvalidated; ///< A child widget has been invalidated. The flag is meaningful when isCachedMode is true.
 };
+
 } // namespace touchgfx
-#endif // CACHEABLECONTAINER_HPP
+
+#endif // TOUCHGFX_CACHEABLECONTAINER_HPP

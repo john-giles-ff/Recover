@@ -99,6 +99,8 @@ static uint32_t frameBuf0 = (uint32_t)& frameBuffer[0];
 #else
 // Use SDRAM for frame buffers
 static uint32_t frameBuf0 = (uint32_t)(0xC0000000);
+static uint32_t frameBuf1 = (uint32_t)(frameBuf0+TFT_WIDTH*TFT_HEIGHT*3);
+
 #endif
 namespace touchgfx
 {
@@ -232,7 +234,7 @@ LCD24bpp display;
 #endif
 
 void touchgfx_init()
-{
+{	
     HAL& hal = touchgfx_generic_init<STM32F7HAL>(dma, display, tc, 800, 480, 0, 0);
     os_inited = true;
 
@@ -249,7 +251,7 @@ void touchgfx_init()
     hal.setFrameRefreshStrategy(HAL::REFRESH_STRATEGY_OPTIM_SINGLE_BUFFER_TFT_CTRL);
 #else
     //setup for double buffering.
-    hal.setFrameBufferStartAddress((uint16_t*)frameBuf0);
+    hal.setFrameBufferStartAddresses((void*)frameBuf0, (void*)frameBuf1, (void*)0);
 #endif
 #elif USE_BPP==24
 #ifdef  SINGLE_FRAME_BUFFER_INTERNAL
@@ -275,6 +277,7 @@ void touchgfx_init()
     //Set MCU instrumentation and Load calculation
     hal.setMCUInstrumentation(&mcuInstr);
     hal.enableMCULoadCalculation(false);
+			
 }
 }
 

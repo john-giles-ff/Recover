@@ -106,9 +106,16 @@ namespace RecoverLogInspector
         {
             RecoverLog result;
 
-            var bytes = System.IO.File.ReadAllBytes(path);
+            //Load data
+            var data = File.ReadAllText(path);
 
+            //Sanitise data
+            data = data.Replace("<?xml version=\"1.0\" encoding=\"utf-16\"?>", "<?xml version=\"1.0\"?>");
 
+            //Convert to bytes
+            var bytes =  Encoding.UTF8.GetBytes(data);            
+
+            //Deserialize
             var serializer = new XmlSerializer(typeof(RecoverLog));
             using (var filestream = new MemoryStream(bytes))
             {

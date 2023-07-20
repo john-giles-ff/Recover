@@ -345,14 +345,14 @@
         </option>
         <option>
           <name>CCIncludePath2</name>
-          <state>$PROJ_DIR$\..\..\gui\include</state>
+          <state>$PROJ_DIR$/../../gui/include</state>
           <state>$PROJ_DIR$\..\..\target\include</state>
           <state>$PROJ_DIR$\..\..\platform\os</state>
-          <state>$PROJ_DIR$\..\..\generated\fonts\include</state>
-          <state>$PROJ_DIR$\..\..\generated\images\include</state>
-          <state>$PROJ_DIR$\..\..\generated\texts\include</state>
-          <state>$PROJ_DIR$\..\..\generated\gui_generated\include</state>
-          <state>$PROJ_DIR$\..\..\touchgfx\framework\include</state>
+          <state>$PROJ_DIR$/../../generated/fonts/include</state>
+          <state>$PROJ_DIR$/../../generated/images/include</state>
+          <state>$PROJ_DIR$/../../generated/texts/include</state>
+          <state>$PROJ_DIR$/../../generated/gui_generated/include</state>
+          <state>$PROJ_DIR$/../../touchgfx/framework/include</state>
           <state>$PROJ_DIR$\..\bsp\include\platform\core\arm\cortex-m\CMSIS</state>
           <state>$PROJ_DIR$\..\bsp\include\platform\stm32f7xx</state>
           <state>$PROJ_DIR$\..\bsp\include\platform\stm32f7xx\CMSIS</state>
@@ -826,7 +826,7 @@
         </option>
         <option>
           <name>IlinkAdditionalLibs</name>
-          <state>$PROJ_DIR$\..\..\touchgfx\lib\core\cortex_m7\IAR8.x\touchgfx_core.a</state>
+          <state>$PROJ_DIR$/../../touchgfx/lib/core/cortex_m7/IAR8.x/touchgfx_core.a</state>
         </option>
         <option>
           <name>IlinkOverrideProgramEntryLabel</name>
@@ -1045,241 +1045,247 @@
       <group>
         <name>fonts</name>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\ApplicationFontProvider.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/ApplicationFontProvider.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\CachedFont.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/CachedFont.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_consola_150_2bpp_0.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_consola_150_2bpp_0.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_consola_20_1bpp_0.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_consola_20_1bpp_0.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_consola_20_1bpp_4.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_consola_20_1bpp_4.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_consola_20_2bpp_0.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_consola_20_2bpp_0.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_consola_20_2bpp_4.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_consola_20_2bpp_4.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_segoeuisl_20_2bpp_0.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_segoeuisl_20_2bpp_0.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_segoeuisl_20_2bpp_4.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_segoeuisl_20_2bpp_4.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_segoeuisl_24_2bpp_0.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_segoeuisl_24_2bpp_0.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_segoeuisl_24_2bpp_4.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_segoeuisl_24_2bpp_31.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_segoeuisl_38_2bpp_0.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_segoeuisl_24_2bpp_4.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_segoeuisl_42_2bpp_0.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_segoeuisl_38_2bpp_0.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_segoeuisl_55_4bpp_0.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_segoeuisl_42_2bpp_0.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_0.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_segoeuisl_55_4bpp_0.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_10.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_20_2bpp_0.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_11.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_20_2bpp_10.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_12.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_20_2bpp_11.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_13.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_20_2bpp_12.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_14.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_20_2bpp_13.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_15.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_20_2bpp_14.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_16.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_20_2bpp_15.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_17.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_20_2bpp_16.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_18.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_20_2bpp_17.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_19.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_20_2bpp_18.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_31.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_20_2bpp_19.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_6.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_20_2bpp_31.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_20_2bpp_9.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_20_2bpp_6.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_0.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_20_2bpp_9.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_10.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_24_2bpp_0.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_11.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_24_2bpp_10.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_12.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_24_2bpp_11.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_13.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_24_2bpp_12.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_14.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_24_2bpp_13.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_15.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_24_2bpp_14.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_16.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_24_2bpp_15.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_17.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_24_2bpp_16.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_18.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_24_2bpp_17.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_19.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_24_2bpp_18.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_31.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_24_2bpp_19.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_4.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_24_2bpp_31.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_6.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_24_2bpp_4.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_24_2bpp_9.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_24_2bpp_6.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_55_2bpp_0.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_24_2bpp_9.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_55_2bpp_10.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_55_2bpp_0.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_55_2bpp_11.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_55_2bpp_10.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_55_2bpp_12.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_55_2bpp_11.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_55_2bpp_13.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_55_2bpp_12.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_55_2bpp_14.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_55_2bpp_13.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_55_2bpp_15.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_55_2bpp_14.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_55_2bpp_16.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_55_2bpp_15.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_55_2bpp_17.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_55_2bpp_16.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_55_2bpp_18.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_55_2bpp_17.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_55_2bpp_19.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_55_2bpp_18.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Font_SourceHanSerifSC_Light_otf_55_2bpp_9.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_55_2bpp_19.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\FontCache.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Font_SourceHanSerifSC_Light_otf_55_2bpp_9.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\GeneratedFont.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/FontCache.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_consola_150_2bpp.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/GeneratedFont.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_consola_20_1bpp.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Kerning_consola_150_2bpp.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_consola_20_2bpp.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Kerning_consola_20_1bpp.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_segoeuisl_20_2bpp.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Kerning_consola_20_2bpp.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_segoeuisl_24_2bpp.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Kerning_segoeuisl_20_2bpp.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_segoeuisl_38_2bpp.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Kerning_segoeuisl_24_2bpp.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_segoeuisl_42_2bpp.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Kerning_segoeuisl_38_2bpp.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_segoeuisl_55_4bpp.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Kerning_segoeuisl_42_2bpp.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_SourceHanSerifSC_Light_otf_20_2bpp.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Kerning_segoeuisl_55_4bpp.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_SourceHanSerifSC_Light_otf_24_2bpp.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Kerning_SourceHanSerifSC_Light_otf_20_2bpp.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Kerning_SourceHanSerifSC_Light_otf_55_2bpp.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Kerning_SourceHanSerifSC_Light_otf_24_2bpp.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_consola_150_2bpp.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Kerning_SourceHanSerifSC_Light_otf_55_2bpp.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_consola_20_1bpp.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Table_consola_150_2bpp.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_consola_20_2bpp.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Table_consola_20_1bpp.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_segoeuisl_20_2bpp.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Table_consola_20_2bpp.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_segoeuisl_24_2bpp.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Table_segoeuisl_20_2bpp.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_segoeuisl_38_2bpp.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Table_segoeuisl_24_2bpp.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_segoeuisl_42_2bpp.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Table_segoeuisl_38_2bpp.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_segoeuisl_55_4bpp.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Table_segoeuisl_42_2bpp.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_SourceHanSerifSC_Light_otf_20_2bpp.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Table_segoeuisl_55_4bpp.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_SourceHanSerifSC_Light_otf_24_2bpp.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Table_SourceHanSerifSC_Light_otf_20_2bpp.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\fonts\src\Table_SourceHanSerifSC_Light_otf_55_2bpp.cpp</name>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Table_SourceHanSerifSC_Light_otf_24_2bpp.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/fonts/src/Table_SourceHanSerifSC_Light_otf_55_2bpp.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/fonts/src/UnmappedDataFont.cpp</name>
         </file>
       </group>
       <group>
@@ -1287,935 +1293,956 @@
         <group>
           <name>auditscreen_screen</name>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\auditscreen_screen\AuditScreenViewBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/auditscreen_screen/AuditScreenViewBase.cpp</name>
           </file>
         </group>
         <group>
           <name>common</name>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\common\FrontendApplicationBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/common/FrontendApplicationBase.cpp</name>
           </file>
         </group>
         <group>
           <name>containers</name>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\containers\AbortingWindowBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/containers/AbortingWindowBase.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\containers\AuditLogBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/containers/AuditLogBase.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\containers\BackgroundBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/containers/BackgroundBase.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\containers\DatePickerBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/containers/DatePickerBase.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\containers\DeadSpaceAnimationBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/containers/DeadSpaceAnimationBase.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\containers\EngineerOverlayBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/containers/EngineerOverlayBase.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\containers\ErrorBoxBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/containers/ErrorBoxBase.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\containers\ExternalSwitchErrorWindowBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/containers/ExternalSwitchErrorWindowBase.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\containers\FilterStateMessageBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/containers/FilterStateMessageBase.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\containers\InternalSwitchErrorBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/containers/InternalSwitchErrorBase.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\containers\KeypadBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/containers/KeypadBase.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\containers\LogsExportingBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/containers/LogsExportingBase.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\containers\LowPressureMessageBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/containers/MoistureDetectedMessageBase.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\containers\MsgBoxBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/containers/MsgBoxBase.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\containers\TabBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/containers/TabBase.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\containers\TouchTestBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/containers/TouchTestBase.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\containers\UsageInstructionsBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/containers/UsageInstructionsBase.cpp</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/containers/ViewDiagnosticsBase.cpp</name>
           </file>
         </group>
         <group>
           <name>eggscreen_screen</name>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\eggscreen_screen\EggScreenViewBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/eggscreen_screen/EggScreenViewBase.cpp</name>
           </file>
         </group>
         <group>
           <name>freda_screen</name>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\freda_screen\FREDAViewBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/freda_screen/FREDAViewBase.cpp</name>
           </file>
         </group>
         <group>
           <name>graphscreen_screen</name>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\graphscreen_screen\GraphScreenViewBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/graphscreen_screen/GraphScreenViewBase.cpp</name>
           </file>
         </group>
         <group>
           <name>idlescreen_screen</name>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\idlescreen_screen\IdleScreenViewBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/idlescreen_screen/IdleScreenViewBase.cpp</name>
           </file>
         </group>
         <group>
           <name>mainscreen_screen</name>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\mainscreen_screen\MainScreenViewBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/mainscreen_screen/MainScreenViewBase.cpp</name>
           </file>
         </group>
         <group>
           <name>powerlossrecoveryscreen_screen</name>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\powerlossrecoveryscreen_screen\PowerlossRecoveryScreenViewBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/powerlossrecoveryscreen_screen/PowerlossRecoveryScreenViewBase.cpp</name>
           </file>
         </group>
         <group>
           <name>processscreen_screen</name>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\processscreen_screen\ProcessScreenViewBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/processscreen_screen/ProcessScreenViewBase.cpp</name>
           </file>
         </group>
         <group>
           <name>settingsscreen_screen</name>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\settingsscreen_screen\SettingsScreenViewBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/settingsscreen_screen/SettingsScreenViewBase.cpp</name>
           </file>
         </group>
         <group>
           <name>touchtestscreen_screen</name>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\touchtestscreen_screen\TouchTestScreenViewBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/touchtestscreen_screen/TouchTestScreenViewBase.cpp</name>
           </file>
         </group>
         <group>
           <name>usbmode_screen</name>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\gui_generated\src\usbmode_screen\UsbModeViewBase.cpp</name>
+            <name>$PROJ_DIR$/../../generated/gui_generated/src/usbmode_screen/UsbModeViewBase.cpp</name>
           </file>
         </group>
       </group>
       <group>
         <name>images</name>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\abort.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\AnimationBackground.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\Audit-log.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\back.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\BitmapDatabase.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\Button.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\Button_pressed.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\Button_Red.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\Check_checked.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\Check_unchecked.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\ClockIcon.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\Complete.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\Copper.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\DefaultIdleIcon.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\Down.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\ErrorButton.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\ErrorIcon.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\expand.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\Failed.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\FF_Logo.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\Finger_tap.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\finger_vertical_swipe.cpp</name>
+          <name>$PROJ_DIR$/../../generated/images/src/BitmapDatabase.cpp</name>
         </file>
         <group>
           <name>FumeAnimation</name>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0000.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0000.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0001.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0001.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0002.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0002.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0003.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0003.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0004.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0004.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0005.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0005.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0006.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0006.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0007.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0007.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0008.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0008.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0009.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0009.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0010.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0010.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0011.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0011.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0012.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0012.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0013.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0013.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0014.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0014.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0015.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0015.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0016.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0016.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0017.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0017.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0018.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0018.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0019.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0019.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0020.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0020.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0021.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0021.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0022.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0022.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0023.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0023.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0024.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0024.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0025.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0025.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0026.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0026.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0027.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0027.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0028.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0028.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0029.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0029.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0030.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0030.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0031.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0031.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0032.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0032.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0033.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0033.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0034.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0034.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0035.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0035.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0036.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0036.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0037.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0037.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0038.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0038.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0039.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0039.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0040.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0040.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0041.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0041.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0042.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0042.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0043.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0043.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0044.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0044.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0045.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0045.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0046.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0046.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0047.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0047.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0048.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0048.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0049.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0049.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0050.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0050.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0051.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0051.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0052.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0052.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0053.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0053.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0054.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0054.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0055.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0055.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0056.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0056.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0057.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0057.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0058.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0058.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0059.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0059.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0060.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0060.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0061.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0061.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0062.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0062.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0063.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0063.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0064.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0064.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0065.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0065.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0066.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0066.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0067.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0067.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0068.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0068.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0069.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0069.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0070.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0070.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0071.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0071.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0072.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0072.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0073.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0073.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0074.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0074.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0075.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0075.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0076.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0076.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0077.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0077.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0078.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0078.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0079.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0079.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0080.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0080.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0081.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0081.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0082.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0082.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0083.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0083.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0084.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0084.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0085.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0085.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0086.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0086.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0087.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0087.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0088.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0088.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0089.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0089.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0090.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0090.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0091.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0091.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0092.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0092.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0093.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0093.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0094.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0094.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0095.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0095.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0096.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0096.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0097.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0097.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0098.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0098.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0099.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0099.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0100.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0100.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0101.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0101.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0102.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0102.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\FumeAnimation\Fume0103.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/FumeAnimation/image_Fume0103.cpp</name>
           </file>
         </group>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\Information.cpp</name>
+          <name>$PROJ_DIR$/../../generated/images/src/image_abort.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_AnimationBackground.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_Audit-log.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_back.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_Button.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_Button_pressed.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_Button_Red.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_Check_checked.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_Check_unchecked.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_ClockIcon.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_Complete.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_Copper.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_DefaultIdleIcon.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_Down.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_ErrorButton.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_ErrorIcon.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_Failed.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_FF_Logo.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_Finger_tap.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_finger_vertical_swipe.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_Information.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_LargeChamber.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_maximise.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_MessageBackground.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_Minimise.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_Next.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_power.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_Previous.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_progressbackground_320x40.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_RECOVER_empty_splash.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_Recover_Logo.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_RECOVER_splash.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_ScreenOffIdleIcon.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_Settings.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_Silver.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_SmallChamber.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_start.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_start_disabled.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_TipIcon.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_trash.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_trash_clicked.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_Up.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_USB_Icon.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_wide_slider_handle.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/images/src/image_X.cpp</name>
         </file>
         <group>
           <name>InitialiseAnimation</name>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\InitialiseAnimation\Initialise0000.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/InitialiseAnimation/image_Initialise0000.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\InitialiseAnimation\Initialise0001.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/InitialiseAnimation/image_Initialise0001.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\InitialiseAnimation\Initialise0002.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/InitialiseAnimation/image_Initialise0002.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\InitialiseAnimation\Initialise0003.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/InitialiseAnimation/image_Initialise0003.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\InitialiseAnimation\Initialise0004.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/InitialiseAnimation/image_Initialise0004.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\InitialiseAnimation\Initialise0005.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/InitialiseAnimation/image_Initialise0005.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\InitialiseAnimation\Initialise0006.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/InitialiseAnimation/image_Initialise0006.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\InitialiseAnimation\Initialise0007.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/InitialiseAnimation/image_Initialise0007.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\InitialiseAnimation\Initialise0008.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/InitialiseAnimation/image_Initialise0008.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\InitialiseAnimation\Initialise0009.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/InitialiseAnimation/image_Initialise0009.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\InitialiseAnimation\Initialise0010.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/InitialiseAnimation/image_Initialise0010.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\InitialiseAnimation\Initialise0011.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/InitialiseAnimation/image_Initialise0011.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\InitialiseAnimation\Initialise0012.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/InitialiseAnimation/image_Initialise0012.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\InitialiseAnimation\Initialise0013.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/InitialiseAnimation/image_Initialise0013.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\InitialiseAnimation\Initialise0014.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/InitialiseAnimation/image_Initialise0014.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\InitialiseAnimation\Initialise0015.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/InitialiseAnimation/image_Initialise0015.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\InitialiseAnimation\Initialise0016.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/InitialiseAnimation/image_Initialise0016.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\InitialiseAnimation\Initialise0017.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/InitialiseAnimation/image_Initialise0017.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\InitialiseAnimation\Initialise0018.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/InitialiseAnimation/image_Initialise0018.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\InitialiseAnimation\Initialise0019.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/InitialiseAnimation/image_Initialise0019.cpp</name>
           </file>
         </group>
         <group>
           <name>Instructions</name>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\Instructions\Instruction_AddGlass.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/Instructions/image_Instruction_AddGlass.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\Instructions\Instruction_LidClosed.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/Instructions/image_Instruction_LidClosed.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\Instructions\Instruction_Precursor.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/Instructions/image_Instruction_Precursor.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\Instructions\Instruction_Sample.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/Instructions/image_Instruction_Sample.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\Instructions\Instruction_SelectChamber.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/Instructions/image_Instruction_SelectChamber.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\Instructions\Instruction_SelectMetal.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/Instructions/image_Instruction_SelectMetal.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\Instructions\Instruction_StartButton.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/Instructions/image_Instruction_StartButton.cpp</name>
           </file>
         </group>
         <group>
           <name>Keyboard</name>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\Keyboard\keyboard_background.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/Keyboard/image_keyboard_background.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\Keyboard\keyboard_key_delete_highlighted.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/Keyboard/image_keyboard_key_delete_highlighted.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\Keyboard\keyboard_key_enter_highlighted.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/Keyboard/image_keyboard_key_enter_highlighted.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\Keyboard\keyboard_key_highlighted.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/Keyboard/image_keyboard_key_highlighted.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\Keyboard\keyboard_key_num_highlighted.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/Keyboard/image_keyboard_key_num_highlighted.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\Keyboard\keyboard_key_shift_highlighted.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/Keyboard/image_keyboard_key_shift_highlighted.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\Keyboard\keyboard_space_highlighted.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/Keyboard/image_keyboard_space_highlighted.cpp</name>
           </file>
         </group>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\LargeChamber.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\MessageBackground.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\Minimise.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\Next.cpp</name>
-        </file>
         <group>
           <name>PatternLock</name>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\PatternLock\PatternBackground.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/PatternLock/image_PatternBackground.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\PatternLock\Point.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/PatternLock/image_Point.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\PatternLock\Point_selected.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/PatternLock/image_Point_selected.cpp</name>
           </file>
         </group>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\power.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\Previous.cpp</name>
-        </file>
         <group>
           <name>PumpAnimation</name>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\PumpAnimation\Pump0000.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/PumpAnimation/image_Pump0000.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\PumpAnimation\Pump0001.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/PumpAnimation/image_Pump0001.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\PumpAnimation\Pump0002.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/PumpAnimation/image_Pump0002.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\PumpAnimation\Pump0003.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/PumpAnimation/image_Pump0003.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\PumpAnimation\Pump0004.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/PumpAnimation/image_Pump0004.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\PumpAnimation\Pump0005.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/PumpAnimation/image_Pump0005.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\PumpAnimation\Pump0006.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/PumpAnimation/image_Pump0006.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\PumpAnimation\Pump0007.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/PumpAnimation/image_Pump0007.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\PumpAnimation\Pump0008.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/PumpAnimation/image_Pump0008.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\PumpAnimation\Pump0009.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/PumpAnimation/image_Pump0009.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\PumpAnimation\Pump0010.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/PumpAnimation/image_Pump0010.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\PumpAnimation\Pump0011.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/PumpAnimation/image_Pump0011.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\PumpAnimation\Pump0012.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/PumpAnimation/image_Pump0012.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\PumpAnimation\Pump0013.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/PumpAnimation/image_Pump0013.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\PumpAnimation\Pump0014.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/PumpAnimation/image_Pump0014.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\PumpAnimation\Pump0015.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/PumpAnimation/image_Pump0015.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\PumpAnimation\Pump0016.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/PumpAnimation/image_Pump0016.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\PumpAnimation\Pump0017.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/PumpAnimation/image_Pump0017.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\PumpAnimation\Pump0018.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/PumpAnimation/image_Pump0018.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\PumpAnimation\Pump0019.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/PumpAnimation/image_Pump0019.cpp</name>
           </file>
         </group>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\RECOVER_empty_splash.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\Recover_Logo.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\RECOVER_splash.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\ScreenOffIdleIcon.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\Settings.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\Silver.cpp</name>
-        </file>
         <group>
           <name>SliderAnimation</name>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\SliderAnimation\SliderAnimation.0000.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/SliderAnimation/image_SliderAnimation.0000.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\SliderAnimation\SliderAnimation.0002.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/SliderAnimation/image_SliderAnimation.0002.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\SliderAnimation\SliderAnimation.0004.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/SliderAnimation/image_SliderAnimation.0004.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\SliderAnimation\SliderAnimation.0006.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/SliderAnimation/image_SliderAnimation.0006.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\SliderAnimation\SliderAnimation.0008.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/SliderAnimation/image_SliderAnimation.0008.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\SliderAnimation\SliderAnimation.0010.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/SliderAnimation/image_SliderAnimation.0010.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\SliderAnimation\SliderAnimation.0012.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/SliderAnimation/image_SliderAnimation.0012.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\SliderAnimation\SliderAnimation.0014.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/SliderAnimation/image_SliderAnimation.0014.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\SliderAnimation\SliderAnimation.0016.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/SliderAnimation/image_SliderAnimation.0016.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\SliderAnimation\SliderAnimation.0018.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/SliderAnimation/image_SliderAnimation.0018.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\SliderAnimation\SliderAnimation.0020.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/SliderAnimation/image_SliderAnimation.0020.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\SliderAnimation\SliderAnimation.0022.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/SliderAnimation/image_SliderAnimation.0022.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\SliderAnimation\SliderAnimation.0024.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/SliderAnimation/image_SliderAnimation.0024.cpp</name>
           </file>
         </group>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\SmallChamber.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\start.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\start_disabled.cpp</name>
-        </file>
         <group>
           <name>States</name>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\States\fan_bad.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/States/image_fan_bad.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\States\filter_bad.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/States/image_filter_bad.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\States\filter_good.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/States/image_filter_good.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\States\filter_medium.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/States/image_filter_medium.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\States\LowPressureIcon.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/States/image_LowPressureIcon.cpp</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$/../../generated/images/src/States/image_water.cpp</name>
           </file>
         </group>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\TipIcon.cpp</name>
-        </file>
         <group>
           <name>Transparent</name>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\Transparent\Transparent.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/Transparent/image_Transparent.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\Transparent\Transparent_125x250.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/Transparent/image_Transparent_125x250.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\Transparent\Transparent_250x250.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/Transparent/image_Transparent_250x250.cpp</name>
           </file>
         </group>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\trash.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\trash_clicked.cpp</name>
-        </file>
         <group>
           <name>TuningAnimation</name>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\TuningAnimation\Tuning0000.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/TuningAnimation/image_Tuning0000.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\TuningAnimation\Tuning0001.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/TuningAnimation/image_Tuning0001.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\TuningAnimation\Tuning0002.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/TuningAnimation/image_Tuning0002.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\TuningAnimation\Tuning0003.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/TuningAnimation/image_Tuning0003.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\TuningAnimation\Tuning0004.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/TuningAnimation/image_Tuning0004.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\TuningAnimation\Tuning0005.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/TuningAnimation/image_Tuning0005.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\TuningAnimation\Tuning0006.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/TuningAnimation/image_Tuning0006.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\TuningAnimation\Tuning0007.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/TuningAnimation/image_Tuning0007.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\TuningAnimation\Tuning0008.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/TuningAnimation/image_Tuning0008.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\TuningAnimation\Tuning0009.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/TuningAnimation/image_Tuning0009.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\TuningAnimation\Tuning0010.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/TuningAnimation/image_Tuning0010.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\TuningAnimation\Tuning0011.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/TuningAnimation/image_Tuning0011.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\TuningAnimation\Tuning0012.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/TuningAnimation/image_Tuning0012.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\TuningAnimation\Tuning0013.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/TuningAnimation/image_Tuning0013.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\TuningAnimation\Tuning0014.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/TuningAnimation/image_Tuning0014.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\TuningAnimation\Tuning0015.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/TuningAnimation/image_Tuning0015.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\TuningAnimation\Tuning0016.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/TuningAnimation/image_Tuning0016.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\TuningAnimation\Tuning0017.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/TuningAnimation/image_Tuning0017.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\TuningAnimation\Tuning0018.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/TuningAnimation/image_Tuning0018.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\generated\images\src\TuningAnimation\Tuning0019.cpp</name>
+            <name>$PROJ_DIR$/../../generated/images/src/TuningAnimation/image_Tuning0019.cpp</name>
           </file>
         </group>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\Up.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\USB_Icon.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\wide_slider_handle.cpp</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\generated\images\src\X.cpp</name>
-        </file>
       </group>
       <group>
         <name>texts</name>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\texts\src\LanguageDe.cpp</name>
+          <name>$PROJ_DIR$/../../generated/texts/src/LanguageAr.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\texts\src\LanguageEs.cpp</name>
+          <name>$PROJ_DIR$/../../generated/texts/src/LanguageDe.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\texts\src\LanguageFr.cpp</name>
+          <name>$PROJ_DIR$/../../generated/texts/src/LanguageEs.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\texts\src\LanguageGb.cpp</name>
+          <name>$PROJ_DIR$/../../generated/texts/src/LanguageFr.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\texts\src\LanguageIt.cpp</name>
+          <name>$PROJ_DIR$/../../generated/texts/src/LanguageGb.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\texts\src\LanguagePt.cpp</name>
+          <name>$PROJ_DIR$/../../generated/texts/src/LanguageIt.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\texts\src\LanguageRu.cpp</name>
+          <name>$PROJ_DIR$/../../generated/texts/src/LanguagePl.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\texts\src\LanguageZhs.cpp</name>
+          <name>$PROJ_DIR$/../../generated/texts/src/LanguagePt.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\texts\src\Texts.cpp</name>
+          <name>$PROJ_DIR$/../../generated/texts/src/LanguageRo.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\generated\texts\src\TypedTextDatabase.cpp</name>
+          <name>$PROJ_DIR$/../../generated/texts/src/LanguageRu.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/texts/src/LanguageUa.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/texts/src/LanguageZhs.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/texts/src/Texts.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../generated/texts/src/TypedTextDatabase.cpp</name>
         </file>
       </group>
     </group>
@@ -2224,160 +2251,163 @@
       <group>
         <name>auditscreen_screen</name>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\auditscreen_screen\AuditScreenPresenter.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/auditscreen_screen/AuditScreenPresenter.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\auditscreen_screen\AuditScreenView.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/auditscreen_screen/AuditScreenView.cpp</name>
         </file>
       </group>
       <group>
         <name>common</name>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\common\CustomKeyboard.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/common/CustomKeyboard.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\common\date.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/common/date.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\common\FrontendApplication.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/common/FrontendApplication.cpp</name>
         </file>
         <group>
           <name>graph_widget</name>
           <file>
-            <name>$PROJ_DIR$\..\..\gui\src\common\graph_widget\AbstractGraph.cpp</name>
+            <name>$PROJ_DIR$/../../gui/src/common/graph_widget/AbstractGraph.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\gui\src\common\graph_widget\Graph.cpp</name>
+            <name>$PROJ_DIR$/../../gui/src/common/graph_widget/Graph.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\gui\src\common\graph_widget\GraphBelow.cpp</name>
+            <name>$PROJ_DIR$/../../gui/src/common/graph_widget/GraphBelow.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\gui\src\common\graph_widget\GraphDots.cpp</name>
+            <name>$PROJ_DIR$/../../gui/src/common/graph_widget/GraphDots.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\gui\src\common\graph_widget\GraphLine.cpp</name>
+            <name>$PROJ_DIR$/../../gui/src/common/graph_widget/GraphLine.cpp</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\..\gui\src\common\graph_widget\PainterVerticalAlpha.cpp</name>
+            <name>$PROJ_DIR$/../../gui/src/common/graph_widget/PainterVerticalAlpha.cpp</name>
           </file>
         </group>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\common\Lever.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/common/Lever.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\common\LFTDebug.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/common/LFTDebug.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\common\PatternCode.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/common/PatternCode.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\common\Pong.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/common/Pong.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\common\ProductionTestStep.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/common/ProductionTestStep.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\common\ProgressBar.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/common/ProgressBar.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\common\String.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/common/String.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\common\TextRadioButton.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/common/TextRadioButton.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\common\Unlock.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/common/Unlock.cpp</name>
         </file>
       </group>
       <group>
         <name>containers</name>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\containers\AbortingWindow.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/containers/AbortingWindow.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\containers\AuditLog.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/containers/AuditLog.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\containers\Background.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/containers/Background.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\containers\DatePicker.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/containers/DatePicker.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\containers\DeadSpaceAnimation.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/containers/DeadSpaceAnimation.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\containers\EngineerOverlay.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/containers/EngineerOverlay.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\containers\ErrorBox.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/containers/ErrorBox.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\containers\ExternalSwitchErrorWindow.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/containers/ExternalSwitchErrorWindow.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\containers\FilterStateMessage.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/containers/FilterStateMessage.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\containers\InternalSwitchError.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/containers/InternalSwitchError.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\containers\Keypad.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/containers/Keypad.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\containers\LogsExporting.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/containers/LogsExporting.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\containers\LowPressureMessage.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/containers/MoistureDetectedMessage.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\containers\MsgBox.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/containers/MsgBox.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\containers\Tab.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/containers/Tab.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\containers\TouchTest.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/containers/TouchTest.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\containers\UsageInstructions.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/containers/UsageInstructions.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../gui/src/containers/ViewDiagnostics.cpp</name>
         </file>
       </group>
       <group>
         <name>eggscreen_screen</name>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\eggscreen_screen\EggScreenPresenter.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/eggscreen_screen/EggScreenPresenter.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\eggscreen_screen\EggScreenView.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/eggscreen_screen/EggScreenView.cpp</name>
         </file>
       </group>
       <group>
         <name>freda_screen</name>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\freda_screen\FREDAPresenter.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/freda_screen/FREDAPresenter.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\freda_screen\FREDAView.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/freda_screen/FREDAView.cpp</name>
         </file>
       </group>
       <group>
         <name>graphscreen_screen</name>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\graphscreen_screen\GraphScreenPresenter.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/graphscreen_screen/GraphScreenPresenter.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\graphscreen_screen\GraphScreenView.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/graphscreen_screen/GraphScreenView.cpp</name>
         </file>
       </group>
       <group>
         <name>idlescreen_screen</name>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\idlescreen_screen\IdleScreenPresenter.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/idlescreen_screen/IdleScreenPresenter.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\idlescreen_screen\IdleScreenView.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/idlescreen_screen/IdleScreenView.cpp</name>
         </file>
       </group>
       <group>
@@ -2385,92 +2415,92 @@
         <group>
           <name>Definitions</name>
           <file>
-            <name>$PROJ_DIR$\..\..\gui\src\LFT\Definitions\ProgressStages.cpp</name>
+            <name>$PROJ_DIR$/../../gui/src/LFT/Definitions/ProgressStages.cpp</name>
           </file>
         </group>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\LFT\LFT.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/LFT/LFT.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\LFT\LFT_Auto.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/LFT/LFT_Auto.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\LFT\LFT_AutoClean.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/LFT/LFT_AutoClean.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\LFT\LFT_Information.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/LFT/LFT_Information.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\LFT\LFT_Logs.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/LFT/LFT_Logs.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\LFT\LFT_Manual.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/LFT/LFT_Manual.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\LFT\LFT_ProductionTests.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/LFT/LFT_ProductionTests.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\LFT\LFT_Settings.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/LFT/LFT_Settings.cpp</name>
         </file>
       </group>
       <group>
         <name>mainscreen_screen</name>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\mainscreen_screen\MainScreenPresenter.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/mainscreen_screen/MainScreenPresenter.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\mainscreen_screen\MainScreenView.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/mainscreen_screen/MainScreenView.cpp</name>
         </file>
       </group>
       <group>
         <name>model</name>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\model\Model.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/model/Model.cpp</name>
         </file>
       </group>
       <group>
         <name>powerlossrecoveryscreen_screen</name>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\powerlossrecoveryscreen_screen\PowerlossRecoveryScreenPresenter.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/powerlossrecoveryscreen_screen/PowerlossRecoveryScreenPresenter.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\powerlossrecoveryscreen_screen\PowerlossRecoveryScreenView.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/powerlossrecoveryscreen_screen/PowerlossRecoveryScreenView.cpp</name>
         </file>
       </group>
       <group>
         <name>processscreen_screen</name>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\processscreen_screen\ProcessScreenPresenter.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/processscreen_screen/ProcessScreenPresenter.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\processscreen_screen\ProcessScreenView.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/processscreen_screen/ProcessScreenView.cpp</name>
         </file>
       </group>
       <group>
         <name>settingsscreen_screen</name>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\settingsscreen_screen\SettingsScreenPresenter.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/settingsscreen_screen/SettingsScreenPresenter.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\settingsscreen_screen\SettingsScreenView.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/settingsscreen_screen/SettingsScreenView.cpp</name>
         </file>
       </group>
       <group>
         <name>touchtestscreen_screen</name>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\touchtestscreen_screen\TouchTestScreenPresenter.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/touchtestscreen_screen/TouchTestScreenPresenter.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\touchtestscreen_screen\TouchTestScreenView.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/touchtestscreen_screen/TouchTestScreenView.cpp</name>
         </file>
       </group>
       <group>
         <name>usbmode_screen</name>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\usbmode_screen\UsbModePresenter.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/usbmode_screen/UsbModePresenter.cpp</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\gui\src\usbmode_screen\UsbModeView.cpp</name>
+          <name>$PROJ_DIR$/../../gui/src/usbmode_screen/UsbModeView.cpp</name>
         </file>
       </group>
     </group>

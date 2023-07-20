@@ -58,7 +58,7 @@ private:
 	static void Initialisation();
 	static bool _initalised;
 
-	static void CheckPCMode();
+	static void CheckPCMode();	
 	static void CheckForNextStage();
 	static void GotoNextStage();	
 

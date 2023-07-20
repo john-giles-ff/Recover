@@ -49,6 +49,8 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceCommuni
         public static EventHandler<SampleLoadedArgument> OnSampleLoaded;
         public static AutoResetEvent SampleFinishedEvent;
 
+        public static bool IsOpen = false;
+
         public static void Initialise()
         {
             _mutex = new Mutex();
@@ -93,6 +95,8 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceCommuni
 
             //Fetch number of devices           
             recover.Application.OpenComPort(portName);
+
+            IsOpen = true;
         }
 
         public static void WriteFirmware(byte[] hexData)
@@ -159,12 +163,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceCommuni
                 }
 
                 _mutex.ReleaseMutex();
-
             }
-            
-
-
-
         }
 
         public static void WriteSoftware(byte[] hexData)
@@ -176,9 +175,12 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceCommuni
             {
                 try
                 {
-                    var thread = new System.Threading.Thread(() => { recover.Bootloader.CatchStartup(15000); });
+                    var thread = new System.Threading.Thread(() => {
+                        Thread.Sleep(1000);
+                        recover.Application.GotoBootloader();                        
+                    });                    
                     thread.Start();
-                    recover.Application.GotoBootloader();
+                    recover.Bootloader.CatchStartup(15000);
                     thread.Join();
                     break;
                 }

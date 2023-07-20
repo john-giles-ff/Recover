@@ -1,5 +1,12 @@
 #include <gui/LFT/LFT_Manual.hpp>
 
+LFT_Manual::LFT_Manual(LFT_Information* information) :
+	_model(0),
+	_information(information)
+{	
+}
+
+
 void LFT_Manual::SetStandbyState(bool state)
 {	
 	_information->StandbyMode = state;
@@ -120,11 +127,6 @@ void LFT_Manual::ForceLidUp()
 void LFT_Manual::ForceLidStop()
 {
 	_model->SendCommand("M0");
-}
-
-LFT_Manual::LFT_Manual(LFT_Information * information)
-{
-	_information = information;
 }
 
 void LFT_Manual::SetModel(Model * model)

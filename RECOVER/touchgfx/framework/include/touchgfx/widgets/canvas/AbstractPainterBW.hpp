@@ -1,35 +1,33 @@
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
+
 /**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.12.3 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+ * @file touchgfx/widgets/canvas/AbstractPainterBW.hpp
+ *
+ * Declares the touchgfx::AbstractPainterBW class.
+ */
+#ifndef TOUCHGFX_ABSTRACTPAINTERBW_HPP
+#define TOUCHGFX_ABSTRACTPAINTERBW_HPP
 
-#ifndef ABSTRACTPAINTERBW_HPP
-#define ABSTRACTPAINTERBW_HPP
-
-#include <assert.h>
-#include <touchgfx/widgets/canvas/AbstractPainter.hpp>
-#include <touchgfx/hal/HAL.hpp>
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Bitmap.hpp>
 #include <touchgfx/lcd/LCD.hpp>
+#include <touchgfx/widgets/canvas/AbstractPainter.hpp>
 
 namespace touchgfx
 {
 /**
- * @class AbstractPainterBW AbstractPainterBW.hpp touchgfx/widgets/canvas/AbstractPainterBW.hpp
- *
- * @brief A Painter that will paint using a color on a LCD1bpp display.
- *
- *        AbstractPainterBW is used for drawing one 1bpp displays. The color is either on or
- *        off No transparency is supported.
+ * The AbstractPainterBW class is an abstract class for creating a painter to draw on a BW
+ * display using CanvasWidgetRenderer. Pixels are either set or removed.
  *
  * @see AbstractPainter
  */
@@ -37,23 +35,16 @@ class AbstractPainterBW : public AbstractPainter
 {
 public:
     AbstractPainterBW()
+        : AbstractPainter(), currentX(0), currentY(0)
     {
         assert(compatibleFramebuffer(Bitmap::BW) && "The chosen painter only works with BW displays");
     }
-
-    virtual ~AbstractPainterBW() {}
 
     virtual void render(uint8_t* ptr, int x, int xAdjust, int y, unsigned count, const uint8_t* covers);
 
 protected:
     /**
-     * @fn virtual bool AbstractPainterBW::renderInit()
-     *
-     * @brief Initialize rendering of a single scan line of pixels for the render.
-     *
-     *        Initialize rendering of a single scan line of pixels for the render.
-     *
-     * @return true if it succeeds, false if it fails.
+     * @copydoc AbstractPainterABGR2222::renderInit()
      */
     virtual bool renderInit()
     {
@@ -61,13 +52,9 @@ protected:
     }
 
     /**
-     * @fn virtual bool AbstractPainterBW::renderNext(uint8_t& color) = 0;
+     * Get the color of the next pixel in the scan line to blend into the framebuffer.
      *
-     * @brief Get the color of the next pixel in the scan line.
-     *
-     *        Get the color of the next pixel in the scan line.
-     *
-     * @param [out] color Color of the pixel, 0 or 1.
+     * @param [out] color The color (0 or 1).
      *
      * @return true if the pixel should be painted, false otherwise.
      */
@@ -75,7 +62,8 @@ protected:
 
     uint16_t currentX; ///< Current x coordinate relative to the widget
     uint16_t currentY; ///< Current y coordinate relative to the widget
-}; // class AbstractPainterBW
+};
+
 } // namespace touchgfx
 
-#endif // ABSTRACTPAINTERBW_HPP
+#endif // TOUCHGFX_ABSTRACTPAINTERBW_HPP

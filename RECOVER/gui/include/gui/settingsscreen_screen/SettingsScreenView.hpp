@@ -9,9 +9,11 @@
 #include <gui\containers\Keypad.hpp>
 #include <gui\common\Build.hpp>
 
-constexpr int LANGUAGE_COUNT = 8;
+#include <gui/containers/ViewDiagnostics.hpp>
 
-constexpr int LANGUAGE_HEIGHT = 75;
+constexpr int LANGUAGE_COUNT = 12;
+
+constexpr int LANGUAGE_HEIGHT = 50;
 constexpr int LANGUAGE_WIDTH = 390;
 
 enum Tab_t
@@ -39,6 +41,9 @@ public:
 	virtual void StartAutoClean();
 
 	virtual void ToggleChamberReadyBeep();			
+	virtual void ToggleCipherEnabled();
+
+	virtual void OpenViewDiagnostics();
 protected:
 
 	touchgfx::Callback<SettingsScreenView, const TextRadioButton&, void> LanguageClickedCallback;
@@ -63,6 +68,11 @@ protected:
 		TextRadioButton(TypedText(T_LANGUAGE_DE), DE),
 		TextRadioButton(TypedText(T_LANGUAGE_RU), RU),
 		TextRadioButton(TypedText(T_LANGUAGE_ZN_HANS), ZHS),
+		TextRadioButton(TypedText(T_LANGUAGE_RO), RO),
+		TextRadioButton(TypedText(T_LANGUAGE_AR), AR),
+		TextRadioButton(TypedText(T_LANGUAGE_PL), PL),
+		TextRadioButton(TypedText(T_LANGUAGE_UA), UA)
+
 	};
 
 private:
@@ -72,6 +82,8 @@ private:
 
 	void UpdateToCurrentTab();
 	void UpdateToSelectedIdleMode();
+
+	ViewDiagnostics ViewDiagnosticsWindow;
 
 	
 };

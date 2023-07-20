@@ -1,24 +1,46 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.12.3 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Bitmap.hpp>
+#include <touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp>
+#include <touchgfx/canvas_widget_renderer/Rasterizer.hpp>
+#include <touchgfx/hal/HAL.hpp>
+#include <touchgfx/transforms/DisplayTransformation.hpp>
+#include <touchgfx/widgets/canvas/CWRUtil.hpp>
 #include <touchgfx/widgets/canvas/Canvas.hpp>
+#include <touchgfx/widgets/canvas/CanvasWidget.hpp>
 
 namespace touchgfx
 {
-Canvas::Canvas(const CanvasWidget* _widget, const Rect& invalidatedArea) : widget(_widget),
-    enoughMemory(false), penUp(true), penHasBeenDown(false), previousOutside(0), penDownOutside(0)
+Canvas::Canvas(const CanvasWidget* _widget, const Rect& invalidatedArea)
+    : widget(_widget),
+      invalidatedAreaX(0),
+      invalidatedAreaY(0),
+      invalidatedAreaWidth(0),
+      invalidatedAreaHeight(0),
+      rbuf(),
+      ras(),
+      offsetX(0),
+      offsetY(0),
+      enoughMemory(false),
+      penUp(true),
+      penHasBeenDown(false),
+      previousX(0),
+      previousY(0),
+      previousOutside(0),
+      penDownOutside(0),
+      initialX(0),
+      initialY(0)
 {
     assert(CanvasWidgetRenderer::hasBuffer() && "No buffer allocated for CanvasWidgetRenderer drawing");
     assert(Rasterizer::POLY_BASE_SHIFT == 5 && "CanvasWidget assumes Q5 but Rasterizer uses a different setting");
@@ -30,8 +52,8 @@ Canvas::Canvas(const CanvasWidget* _widget, const Rect& invalidatedArea) : widge
     Rect dirtyAreaAbsolute = dirtyArea;
     widget->translateRectToAbsolute(dirtyAreaAbsolute);
 
-    // Transform rects to match frame buffer coordinates
-    // This is needed if the display is rotated compared to the frame buffer
+    // Transform rects to match framebuffer coordinates
+    // This is needed if the display is rotated compared to the framebuffer
     DisplayTransformation::transformDisplayToFrameBuffer(dirtyArea, widget->getRect());
     DisplayTransformation::transformDisplayToFrameBuffer(dirtyAreaAbsolute);
 
@@ -81,6 +103,8 @@ Canvas::Canvas(const CanvasWidget* _widget, const Rect& invalidatedArea) : widge
         buf += dirtyAreaAbsolute.x * 4 + dirtyAreaAbsolute.y * stride;
         break;
     case Bitmap::BW_RLE:
+    case Bitmap::A4:
+    case Bitmap::CUSTOM:
         assert(0 && "Unsupported bit depth");
         break;
     }
@@ -90,7 +114,7 @@ Canvas::Canvas(const CanvasWidget* _widget, const Rect& invalidatedArea) : widge
 
 Canvas::~Canvas()
 {
-    HAL::getInstance()->unlockFrameBuffer(); //lint !e1551
+    HAL::getInstance()->unlockFrameBuffer();
 }
 
 void Canvas::moveTo(CWRUtil::Q5 x, CWRUtil::Q5 y)
@@ -177,7 +201,7 @@ void Canvas::lineTo(CWRUtil::Q5 x, CWRUtil::Q5 y)
     previousOutside = outside;
 }
 
-bool Canvas::render()
+bool Canvas::render(uint8_t customAlpha)
 {
     // If the invalidated rect is too wide compared to the allocated buffer for CWR,
     // redrawing will not help. The CanvasWidget needs to know about this situation
@@ -198,15 +222,16 @@ bool Canvas::render()
         return true; // Nothing drawn. Done
     }
 
-    if (widget->getAlpha() == 0)
+    const uint8_t alpha = LCD::div255(widget->getAlpha() * customAlpha);
+    if (alpha == 0)
     {
         return true; // Invisible. Done
     }
 
     close();
 
-    widget->getPainter().setOffset(offsetX/*+widget->getX()*/, offsetY/*+widget->getY()*/);
-    widget->getPainter().setWidgetAlpha(widget->getAlpha());
+    widget->getPainter().setOffset(offsetX /*+widget->getX()*/, offsetY /*+widget->getY()*/);
+    widget->getPainter().setWidgetAlpha(alpha);
     Renderer renderer(rbuf, widget->getPainter());
     return ras.render(renderer);
 }
@@ -270,4 +295,4 @@ void Canvas::close()
     }
     penUp = false;
 }
-}
+} // namespace touchgfx

@@ -1,132 +1,103 @@
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
+
 /**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.12.3 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+ * @file touchgfx/events/GestureEvent.hpp
+ *
+ * Declares the touchgfx::GestureEvent class.
+ */
+#ifndef TOUCHGFX_GESTUREEVENT_HPP
+#define TOUCHGFX_GESTUREEVENT_HPP
 
-#ifndef GESTUREEVENT_HPP
-#define GESTUREEVENT_HPP
-
-#include <touchgfx/Event.hpp>
 #include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Event.hpp>
 
 namespace touchgfx
 {
 /**
- * @class GestureEvent GestureEvent.hpp touchgfx/events/GestureEvent.hpp
- *
- * @brief A gesture event.
- *
- *        A gesture event. The only gesture events currently supported is SWIPE_HORIZONTAL and
- *        SWIPE_VERTICAL, which will be issued every time the input system detects a swipe.
+ * A gesture event. The only gesture events currently supported is #SWIPE_HORIZONTAL and
+ * #SWIPE_VERTICAL, which will be issued every time the input system detects a swipe.
  *
  * @see Event
  */
 class GestureEvent : public Event
 {
 public:
-
-    /**
-     * @typedef enum GestureType
-     *
-     * @brief The gesture event types.
-     */
-    typedef enum
+    /** Values that represent gesture types. */
+    enum GestureEventType
     {
         SWIPE_HORIZONTAL, ///< An enum constant representing a horizontal swipe
         SWIPE_VERTICAL    ///< An enum constant representing a vertical swipe
-    } GestureType;
+    };
 
     /**
-     * @fn GestureEvent::GestureEvent(GestureType t, int16_t v, int16_t x_coord, int16_t y_coord)
+     * Constructor. Create a gesture event of the specified type with the specified
+     * coordinates.
      *
-     * @brief Constructor.
-     *
-     *        Constructor. Create a gesture event of the specified type with the specified
-     *        coordinates.
-     *
-     * @param t       The type of the gesture event.
-     * @param v       The velocity of this gesture (swipe)
-     * @param x_coord The x coordinate of the gesture.
-     * @param y_coord The y coordinate of the gesture.
+     * @param  type     The type of the gesture event.
+     * @param  velocity The velocity of this gesture (swipe)
+     * @param  x        The x coordinate of the gesture.
+     * @param  y        The y coordinate of the gesture.
      */
-    GestureEvent(GestureType t, int16_t v, int16_t x_coord, int16_t y_coord) :
-        type(t),
-        velocity(v),
-        x(x_coord),
-        y(y_coord)
+    GestureEvent(GestureEventType type, int16_t velocity, int16_t x, int16_t y)
+        : gestureEventType(type),
+          gestureVelocity(velocity),
+          gestureX(x),
+          gestureY(y)
     {
     }
 
     /**
-     * @fn int16_t GestureEvent::getVelocity() const
-     *
-     * @brief Gets the velocity of this gesture event.
-     *
-     *        Gets the velocity of this gesture event.
+     * Gets the velocity of this gesture event.
      *
      * @return The velocity of this gesture event.
      */
     int16_t getVelocity() const
     {
-        return velocity;
+        return gestureVelocity;
     }
 
     /**
-     * @fn GestureType GestureEvent::getType() const
-     *
-     * @brief Gets the type of this gesture event.
-     *
-     *        Gets the type of this gesture event.
+     * Gets the type of this gesture event.
      *
      * @return The type of this gesture event.
      */
-    GestureType getType() const
+    GestureEventType getType() const
     {
-        return type;
+        return gestureEventType;
     }
 
     /**
-     * @fn int16_t GestureEvent::getX() const
-     *
-     * @brief Gets the x coordinate of this gesture event.
-     *
-     *        Gets the x coordinate of this gesture event.
+     * Gets the x coordinate of this gesture event.
      *
      * @return The x coordinate of this gesture event.
      */
     int16_t getX() const
     {
-        return x;
+        return gestureX;
     }
 
     /**
-     * @fn int16_t GestureEvent::getY() const
-     *
-     * @brief Gets the y coordinate of this gesture event.
-     *
-     *        Gets the y coordinate of this gesture event.
+     * Gets the y coordinate of this gesture event.
      *
      * @return The y coordinate of this gesture event.
      */
     int16_t getY() const
     {
-        return y;
+        return gestureY;
     }
 
     /**
-     * @fn virtual Event::EventType GestureEvent::getEventType()
-     *
-     * @brief Gets event type.
+     * Gets event type.
      *
      * @return The type of this event.
      */
@@ -136,11 +107,18 @@ public:
     }
 
 private:
-    GestureEvent() { }
-    GestureType type;
-    int16_t velocity;
-    int16_t x;
-    int16_t y;
+    /** Initializes a new instance of the GestureEvent class. */
+    GestureEvent()
+        : gestureEventType(SWIPE_HORIZONTAL), gestureVelocity(0), gestureX(0), gestureY(0)
+    {
+    }
+
+    GestureEventType gestureEventType;
+    int16_t gestureVelocity;
+    int16_t gestureX;
+    int16_t gestureY;
 };
+
 } // namespace touchgfx
-#endif // GESTUREEVENT_HPP
+
+#endif // TOUCHGFX_GESTUREEVENT_HPP

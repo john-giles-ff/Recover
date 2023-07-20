@@ -1,64 +1,39 @@
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
+
 /**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.12.3 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+ * @file platform/driver/touch/NoTouchController.hpp
+ *
+ * Declares the touchgfx::NoTouchController class.
+ */
+#ifndef TOUCHGFX_NOTOUCHCONTROLLER_HPP
+#define TOUCHGFX_NOTOUCHCONTROLLER_HPP
 
-#ifndef NOTOUCHCONTROLLER_HPP
-#define NOTOUCHCONTROLLER_HPP
-
+#include <touchgfx/hal/Types.hpp>
 #include <platform/driver/touch/TouchController.hpp>
 
 namespace touchgfx
 {
 /**
- * Empty TouchController implementation which does nothing. Use this if your display does
- * not have touch input capabilities.
+ * Empty TouchController implementation which does nothing. Use this if your display does not
+ * have touch input capabilities.
  */
 class NoTouchController : public TouchController
 {
 public:
-    /**
-     * @fn virtual void NoTouchController::init()
-     *
-     * @brief Empty initialization.
-     *
-     *        Empty initialization.
-     */
     virtual void init()
     {
     }
 
-    /**
-     * @fn virtual NoTouchController::~NoTouchController()
-     *
-     * @brief Destructor.
-     *
-     *        Destructor.
-     */
-    virtual ~NoTouchController()
-    {
-    }
-
-    /**
-     * @fn virtual bool NoTouchController::sampleTouch(int32_t& x, int32_t& y)
-     *
-     * @brief Does nothing.
-     *
-     * @param [out] x unused.
-     * @param [out] y unused.
-     *
-     * @return false.
-     */
     virtual bool sampleTouch(int32_t& x, int32_t& y)
     {
         return false;
@@ -67,4 +42,4 @@ public:
 
 } // namespace touchgfx
 
-#endif // NOTOUCHCONTROLLER_HPP
+#endif // TOUCHGFX_NOTOUCHCONTROLLER_HPP

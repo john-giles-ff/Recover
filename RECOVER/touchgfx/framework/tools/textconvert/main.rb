@@ -1,16 +1,13 @@
-##############################################################################
-# This file is part of the TouchGFX 4.12.3 distribution.
+# Copyright (c) 2018(-2021) STMicroelectronics.
+# All rights reserved.
 #
-# <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-# All rights reserved.</center></h2>
+# This file is part of the TouchGFX 4.17.0 distribution.
 #
-# This software component is licensed by ST under Ultimate Liberty license
-# SLA0044, the "License"; You may not use this file except in compliance with
-# the License. You may obtain a copy of the License at:
-#                             www.st.com/SLA0044
+# This software is licensed under terms that can be found in the LICENSE file in
+# the root directory of this software component.
+# If no LICENSE file comes with this software, it is provided AS-IS.
 #
-##############################################################################
-
+###############################################################################/
 $:.unshift File.dirname(__FILE__)
 
 WINDOWS_LINE_ENDINGS = "\r\n"
@@ -28,12 +25,13 @@ class Main
     <<-BANNER
 Create binary and cpp text files from excel translations
 
-Usage: #{File.basename($0)} file.xlsx path/to/fontconvert.out path/to/fonts_output_dir path/to/localization_output_dir path/to/font/asset calling_path {remap|yes|no} {A4|A8} {binary_translations} {binary_fonts} {RGB565|RGB888|BW|GRAY2|GRAY4|ARGB2222|ABGR2222|RGBA2222|BGRA2222}
+Usage: #{File.basename($0)} file.xlsx path/to/fontconvert.out path/to/fonts_output_dir path/to/localization_output_dir path/to/font/asset calling_path {remap|yes|no} {A1|A2|A4|A8} {binary_translations} {binary_fonts} {RGB565|RGB888|BW|GRAY2|GRAY4|ARGB2222|ABGR2222|RGBA2222|BGRA2222}
 Where 'remap'/'yes' will map identical texts to the same memory area to save space
-      'A4'/'A8' is will generate fonts in the given format
+      'A1'/'A2'/'A4'/'A8' will generate fonts in the given format
       'binary_translations' will generate binary translations instead of cpp files
       'binary_fonts' will generate binary font files instead of cpp files
       last argument is the framebuffer format (used to limit the bit depth of the generated fonts)
+      Configuration specified in the application.config file take precedence over the commandline arguments
 BANNER
   end
 
@@ -43,9 +41,11 @@ BANNER
   end
 
   if __FILE__ == $0
-    if ARGV.count < 7
+
+    if ARGV.count < 6
       abort self.banner
     end
+
     file_name = ARGV.shift
     font_convert_path = ARGV.shift
     @fonts_output_path = ARGV.shift
@@ -54,31 +54,15 @@ BANNER
     $calling_path = ARGV.shift
 
     #optional arguments
-    if ARGV.include?("yes") or ARGV.include?("remap")
-      remap_identical_texts = "yes"
-    end
+    remap_identical_texts = ARGV.include?("yes") || ARGV.include?("remap") ? "yes" : "no"
 
-    data_format = ""
-    if ARGV.include?("A4")
-      data_format = "A4"
-    end
-    if ARGV.include?("A8")
-      data_format = "A8"
-    end
+    data_format_a1 = ARGV.include?("A1") ? "A1" : ""
+    data_format_a2 = ARGV.include?("A2") ? "A2" : ""
+    data_format_a4 = ARGV.include?("A4") ? "A4" : ""
+    data_format_a8 = ARGV.include?("A8") ? "A8" : ""
 
-    generate_binary_language_files = ""
-    if ARGV.include?("binary_translations")
-      generate_binary_language_files = "yes"
-      if remap_identical_texts == "yes"
-        puts "Disabling remapping of identical texts, because binary language files are generated"
-        remap_identical_texts = "no"
-      end
-    end
-
-    generate_binary_font_files = "no"
-    if ARGV.include?("binary_fonts")
-      generate_binary_font_files = "yes"
-    end
+    generate_binary_translations = ARGV.include?("binary_translations") ? "yes" : "no"
+    generate_binary_fonts = ARGV.include?("binary_fonts") ? "yes" : "no"
 
     framebuffer_bpp = ""
     ["BPP32", "BPP24", "BPP16", "BPP8", "BPP4", "BPP2", "BPP1"].each do |format|
@@ -90,6 +74,67 @@ BANNER
     require 'fileutils'
     require 'json'
     require 'lib/file_io'
+
+    generate_font_format = "0" # 0 = normal font format, 1 = unmapped_flash_font_format
+
+    application_config = File.join($calling_path, "application.config")
+    if File.file?(application_config)
+      text_conf = JSON.parse(File.read(application_config))["text_configuration"] || {}
+
+      remap = text_conf["remap"]
+      if !remap.nil?
+        remap_identical_texts = remap == "yes" ? "yes" : "no"
+      end
+
+      a1 = text_conf["a1"]
+      if !a1.nil?
+        data_format_a1 = a1 == "yes" ? "A1" : ""
+      end
+      a2 = text_conf["a2"]
+      if !a2.nil?
+        data_format_a2 = a2 == "yes" ? "A2" : ""
+      end
+      a4 = text_conf["a4"]
+      if !a4.nil?
+        data_format_a4 = a4 == "yes" ? "A4" : ""
+      end
+      a8 = text_conf["a8"]
+      if !a8.nil?
+        data_format_a8 = a8 == "yes" ? "A8" : ""
+      end
+
+      binary_translations = text_conf["binary_translations"]
+      if !binary_translations.nil?
+        generate_binary_translations = binary_translations == "yes" ? "yes" : "no"
+      end
+
+      binary_fonts = text_conf["binary_fonts"]
+      if !binary_fonts.nil?
+        generate_binary_fonts = binary_fonts== "yes" ? "yes" : "no"
+      end
+
+      bpp = text_conf["framebuffer_bpp"]
+      if !bpp.nil?
+        framebuffer_bpp = "BPP" + bpp
+      end
+
+      font_format = text_conf["font_format"]
+      if !font_format.nil?
+        values = ["0", "1"]
+        if values.include? font_format
+          generate_font_format = font_format
+        else
+          puts "Font format #{font_format} not correct, using default: \"0\""
+        end
+      end
+    end
+
+    data_format = "#{data_format_a1}#{data_format_a2}#{data_format_a4}#{data_format_a8}"
+    if generate_binary_translations == "yes" && remap_identical_texts == "yes"
+      puts "Disabling remapping of identical texts, because binary language files are generated"
+      remap_identical_texts = "no"
+    end
+
     begin
       # 1. if text_converter is newer than compile_time.cache, remove all files under generated/texts and generated/fonts
       # 1b if generated/fonts/include/fonts/ApplicationFontProvider.hpp is missing, force generation of TextKeysAndLanguages.hpp
@@ -121,8 +166,15 @@ BANNER
       force_run = false
       options_file = "#{@localization_output_path}/cache/options.cache"
       options = File.exists?(options_file) && File.read(options_file)
-      new_options = ARGV.to_json      
-      if(options != new_options)
+
+      new_options = { :remap => remap_identical_texts,
+                      :data_format => data_format,
+                      :binary_translations => generate_binary_translations,
+                      :binary_fonts => generate_binary_fonts,
+                      :font_format => generate_font_format,
+                      :framebuffer_bpp => framebuffer_bpp }.to_json
+
+      if (options != new_options)
         force_run = true
         FileIO.write_file_silent(options_file, new_options)
       end
@@ -150,10 +202,8 @@ BANNER
       require 'rubygems'
       require 'lib/generator'
       require 'lib/emitters/fonts_cpp'
-
       FontsCpp.font_convert = font_convert_path
-      Generator.new.run(file_name, @fonts_output_path, @localization_output_path, font_asset_path, data_format, remap_identical_texts, generate_binary_language_files, generate_binary_font_files, framebuffer_bpp)
-
+      Generator.new.run(file_name, @fonts_output_path, @localization_output_path, font_asset_path, data_format, remap_identical_texts, generate_binary_translations, generate_binary_fonts, framebuffer_bpp, generate_font_format)
       #touch the cache compile time that we rely on in the makefile
       FileUtils.touch "#{@localization_output_path}/cache/compile_time.cache"
 

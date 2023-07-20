@@ -1,94 +1,68 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.12.3 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
-#ifndef ABSTRACTDIRECTIONPROGRESS_HPP
-#define ABSTRACTDIRECTIONPROGRESS_HPP
+/**
+ * @file touchgfx/containers/progress_indicators/AbstractDirectionProgress.hpp
+ *
+ * Declares the touchgfx::AbstractDirectionProgress class.
+ */
+#ifndef TOUCHGFX_ABSTRACTDIRECTIONPROGRESS_HPP
+#define TOUCHGFX_ABSTRACTDIRECTIONPROGRESS_HPP
 
 #include <touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp>
 
 namespace touchgfx
 {
 /**
- * @class AbstractDirectionProgress AbstractDirectionProgress.hpp touchgfx/containers/progress_indicators/AbstractDirectionProgress.hpp
- *
- * @brief An abstract direction progress.
- *
- *        An abstract direction progress for progress indicators that need a direction to be specified.
+ * An abstract class for progress indicators that need a horizontal or vertical direction to be
+ * specified.
  */
 class AbstractDirectionProgress : public AbstractProgressIndicator
 {
 public:
-
-    /**
-     * @typedef enum DirectionType
-     *
-     * @brief Values that represent directions.
-     *
-     *        Values that represent directions.
-     */
-    typedef enum
+    /** Values that represent directions. */
+    enum DirectionType
     {
-        RIGHT,
-        LEFT,
-        DOWN,
-        UP
-    } DirectionType;
+        RIGHT, ///< Progress should be from left to right
+        LEFT,  ///< Progress should be from right to left
+        DOWN,  ///< Progress should be down (top to bottom)
+        UP     ///< Progress should be up (bottom to top)
+    };
 
-    /**
-     * @fn AbstractDirectionProgress::AbstractDirectionProgress();
-     *
-     * @brief Default constructor.
-     *
-     *        Default constructor.
-     */
     AbstractDirectionProgress();
 
     /**
-     * @fn virtual AbstractDirectionProgress::~AbstractDirectionProgress();
+     * Sets a direction for the progress indicator. This will re-calculate the current value
+     * according to the new direction.
      *
-     * @brief Destructor.
+     * @param  direction The direction.
      *
-     *        Destructor.
-     */
-    virtual ~AbstractDirectionProgress();
-
-    /**
-     * @fn virtual void AbstractDirectionProgress::setDirection(DirectionType direction);
-     *
-     * @brief Sets a direction.
-     *
-     *        Sets a direction.
-     *
-     * @param direction The direction.
+     * @see getDirection
      */
     virtual void setDirection(DirectionType direction);
 
     /**
-     * @fn virtual DirectionType AbstractDirectionProgress::getDirection() const;
-     *
-     * @brief Gets the direction.
-     *
-     *        Gets the direction.
+     * Gets the current direction for the progress indicator.
      *
      * @return The direction.
+     *
+     * @see setDirection
      */
     virtual DirectionType getDirection() const;
 
 protected:
-    DirectionType progressDirection;    ///< The progress direction
+    DirectionType progressDirection; ///< The progress direction
 };
-}
 
-#endif // ABSTRACTDIRECTIONPROGRESS_HPP
+} // namespace touchgfx
+
+#endif // TOUCHGFX_ABSTRACTDIRECTIONPROGRESS_HPP

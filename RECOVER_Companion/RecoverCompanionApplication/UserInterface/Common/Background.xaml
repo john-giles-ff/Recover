@@ -30,13 +30,24 @@
                     Grid.Column="2"                
                     Height="2"
                     Background="{StaticResource FFGreenBrush}"/>
+                
             </Grid>
+            
+            <TextBlock Text="{Binding Path=Version, Source={x:Static Application.Current}}"
+                       Grid.ColumnSpan="3"
+                       FontSize="12"
+                       HorizontalAlignment="Right"
+                       TextAlignment="Right"
+                       VerticalAlignment="Bottom"
+                       Margin="0, 0, 40, 1"/>
+            
 
             <Image Source="/RecoverCompanionApplication;component/Resources/Images/Recover_Logo.png" 
                    Stretch="Uniform"
                    Width="200"
                VerticalAlignment="Top" 
                Margin="0, 20" />
+                        
 
             <Button x:Name="BtnExit"
                 Click="Exit_Clicked"                        

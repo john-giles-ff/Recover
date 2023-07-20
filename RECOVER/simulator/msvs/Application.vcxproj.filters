@@ -74,6 +74,12 @@
     <Filter Include="Header Files\TouchGFX\platform\hal\simulator\sdl2">
       <UniqueIdentifier>{EA3962C0-553C-4CFD-A89B-A116A9493818}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\generated">
+      <UniqueIdentifier>{29C60541-803D-4F44-8783-028D9DA5E0CC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\simulator">
+      <UniqueIdentifier>{29C60541-803D-4F43-8683-028D9DA5E0CC}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{92BBFF14-FBDB-4755-BA47-A830D863D92B}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;ttf;otf;bdf;png;wav;xlsx;props;mfcribbon-ms</Extensions>
@@ -115,203 +121,206 @@
     <Filter Include="Source Files\TouchGFX\platform\hal\simulator\sdl2">
       <UniqueIdentifier>{B48CB42B-0F9E-4815-BFE1-1ACC1150ED8A}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui">
-      <UniqueIdentifier>930C41FE-4BD8-4694-B666-6E090BC04F90</UniqueIdentifier>
+    <Filter Include="Source Files\simulator">
+      <UniqueIdentifier>{C07B03A9-A55E-47AA-AD61-59A6AAD754E6}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\generated">
-      <UniqueIdentifier>C43651B4-B4D4-4591-A139-49F93E1E45D8</UniqueIdentifier>
+      <UniqueIdentifier>{C07B02B9-A55E-47AB-AD61-59A6AAD754E6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\simulator">
+      <UniqueIdentifier>{C07B02B9-A55E-47AA-AD61-59A6AAD754E6}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\gui">
-      <UniqueIdentifier>E8791D14-1AB9-458B-A786-372B16C323D8</UniqueIdentifier>
+      <UniqueIdentifier>1D5705BF-9F66-D46F-9B92-3DEC905412E3</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated">
-      <UniqueIdentifier>20CB47FA-28ED-4918-8CAC-D4E126DCD248</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated">
-      <UniqueIdentifier>F5FA1EA8-6441-483F-A87D-BF3D92AC0C7F</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated">
-      <UniqueIdentifier>1C04B36E-AC5B-45CC-ADE8-FC48D73089CB</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\model">
-      <UniqueIdentifier>C2CD8524-66FD-4033-9610-E43AD5E68703</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\common">
-      <UniqueIdentifier>6210FE42-A2A8-47FD-A33C-9038EA60F381</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\common">
-      <UniqueIdentifier>691AD1B6-810E-4E7B-BF5E-794CE56E94DC</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\model">
-      <UniqueIdentifier>EF13981A-40D6-49E9-A4A8-A9A0B02A03E7</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\common">
-      <UniqueIdentifier>30D73B5F-15E4-4900-9499-7411986297E8</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\common">
-      <UniqueIdentifier>6685B13D-B95A-48A8-99A5-583738A8C1B0</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\mainscreen_screen">
-      <UniqueIdentifier>BBAD08DD-B3E1-40E3-9AB1-04D15377E3FB</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\mainscreen_screen">
-      <UniqueIdentifier>BDE11250-CF7F-4A76-AFE3-47A4606CAC6B</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\mainscreen_screen">
-      <UniqueIdentifier>9F528303-33EB-4C4C-9CC6-F789C1FFD6FB</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\mainscreen_screen">
-      <UniqueIdentifier>275D3A7A-7338-4A2C-9AAA-5C6B10B73D95</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\idlescreen_screen">
-      <UniqueIdentifier>1AF8E236-233D-4617-9EF0-CFB2747E3660</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\idlescreen_screen">
-      <UniqueIdentifier>2921A400-1190-4823-9FA1-818B085AB13F</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\idlescreen_screen">
-      <UniqueIdentifier>443D3916-C3BD-438A-9789-A3FF732B9BD1</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\idlescreen_screen">
-      <UniqueIdentifier>874AB0FA-D462-4822-8697-22B8AC9E95D4</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\processscreen_screen">
-      <UniqueIdentifier>4C9E5BC9-55AE-4AE3-9391-CC247DF92D56</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\processscreen_screen">
-      <UniqueIdentifier>F3AFFA3D-804B-4426-ADE7-39E96F4A846E</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\processscreen_screen">
-      <UniqueIdentifier>A46588EE-29B6-45A2-9029-6E53C9BEEDF7</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\processscreen_screen">
-      <UniqueIdentifier>C5D31ABF-15F1-49DE-96BF-93C143D914C7</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\settingsscreen_screen">
-      <UniqueIdentifier>5D39B837-6A6E-4BF4-A3B9-77292651FD90</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\settingsscreen_screen">
-      <UniqueIdentifier>8D1978ED-1C5F-45FA-B032-CD7E90C0769C</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\settingsscreen_screen">
-      <UniqueIdentifier>6B6DB2F1-9B44-4252-9A69-EB4B790C8B4A</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\settingsscreen_screen">
-      <UniqueIdentifier>8EABE76F-4599-4CF0-86F4-CDDDD5573B8C</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\containers">
-      <UniqueIdentifier>DB10F714-C0F9-4DC0-B2CF-037C7F6E5462</UniqueIdentifier>
+    <Filter Include="Header Files\gui">
+      <UniqueIdentifier>369BBFC6-8F68-5F30-0F04-670DD77020A6</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\containers">
-      <UniqueIdentifier>C3390996-56EB-4662-AA79-58F3A5873FB1</UniqueIdentifier>
+      <UniqueIdentifier>660C5ABB-1ED3-FCA0-1B2E-EA711C79B14D</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\containers">
-      <UniqueIdentifier>F5F1493D-EDAA-4E4A-99FC-AFF1F96D90D7</UniqueIdentifier>
+    <Filter Include="Source Files\gui\containers">
+      <UniqueIdentifier>A657DEEA-1E9A-56EB-628D-572FDC5C0A17</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\containers">
-      <UniqueIdentifier>8E4A659F-B4C1-4B02-8D9C-4E95AFE7154E</UniqueIdentifier>
+    <Filter Include="Source Files\generated\gui_generated">
+      <UniqueIdentifier>94F475EE-8B7C-8AFF-0E32-71CF1FC40FCE</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\auditscreen_screen">
-      <UniqueIdentifier>61C07E21-8A8A-44C1-B467-20157B45C9F6</UniqueIdentifier>
+    <Filter Include="Header Files\generated\gui_generated">
+      <UniqueIdentifier>96601F6A-FF1E-15C2-5DA1-00919E3EFB23</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\auditscreen_screen">
-      <UniqueIdentifier>0227FD8C-61D2-422E-B937-9A6AED82EF80</UniqueIdentifier>
+    <Filter Include="Source Files\gui\mainscreen_screen">
+      <UniqueIdentifier>D57D263E-2699-6A76-1208-DF00743B098E</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\auditscreen_screen">
-      <UniqueIdentifier>6DE2CED1-4916-428A-AE72-155B7900A168</UniqueIdentifier>
+    <Filter Include="Header Files\gui\mainscreen_screen">
+      <UniqueIdentifier>FBFB7DD1-C90E-CE6B-A43E-07710EA683BD</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\auditscreen_screen">
-      <UniqueIdentifier>89831BEA-8247-4A84-A04B-D7D412388F04</UniqueIdentifier>
+    <Filter Include="Header Files\gui\common">
+      <UniqueIdentifier>1EB367BD-FDEA-03B3-879C-EC10AD4E5730</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\freda_screen">
-      <UniqueIdentifier>56B5B2A4-2B25-4CF1-BB05-CC73EDC4CF52</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\freda_screen">
-      <UniqueIdentifier>35C355A7-9DF7-4BC7-B99E-A345F03E0AA5</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\freda_screen">
-      <UniqueIdentifier>2C1224AF-0CCE-491F-9222-1B9B8DF6EB2C</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\eggscreen_screen">
-      <UniqueIdentifier>05BD1230-427A-4BB7-A378-E7A5A88E83E0</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\eggscreen_screen">
-      <UniqueIdentifier>A4845305-CE85-4818-B5E3-1CCC730670F3</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\eggscreen_screen">
-      <UniqueIdentifier>E53E7CDD-F11B-48B9-BDED-786BBBC1FDD3</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\eggscreen_screen">
-      <UniqueIdentifier>9BDBE156-8B40-4F4A-926C-81F4E875FD33</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\freda_screen">
-      <UniqueIdentifier>391DF00C-5820-4365-882E-BBC54103CA86</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\LFT">
-      <UniqueIdentifier>8B54A7EB-81AF-4802-9E7D-FDFE1B210D9F</UniqueIdentifier>
+    <Filter Include="Source Files\gui\common">
+      <UniqueIdentifier>E2E1ECF6-DC0C-131D-47C7-C84881DAD2EB</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\LFT">
-      <UniqueIdentifier>BBF3EABB-C525-459E-8E76-190B97634229</UniqueIdentifier>
+      <UniqueIdentifier>29A801AE-2C26-34F4-C3DF-C5DFABE2900A</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\common\graph_widget">
-      <UniqueIdentifier>0135BC19-C28C-4BDF-8B01-038AEB7E0DF2</UniqueIdentifier>
+    <Filter Include="Source Files\gui\LFT">
+      <UniqueIdentifier>0507C9E4-42A5-929F-B5C8-A12280BC8DDB</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\common\graph_widget">
-      <UniqueIdentifier>DD21C6E6-FA21-4CD7-8657-1F21BFF89F66</UniqueIdentifier>
+    <Filter Include="Source Files\gui\model">
+      <UniqueIdentifier>1E7E00A5-423A-9539-D9AE-095604B39620</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\usbmode_screen">
-      <UniqueIdentifier>49B14123-051B-4F31-A652-1BE4F7CC9837</UniqueIdentifier>
+    <Filter Include="Header Files\gui\model">
+      <UniqueIdentifier>F2EBF79F-5263-3FFD-41F2-F7EDE6E1775B</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\usbmode_screen">
-      <UniqueIdentifier>EAE85166-B4A2-41CA-83C0-14640B6F94C4</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\usbmode_screen">
-      <UniqueIdentifier>95E42095-308E-422B-B7B9-4E82ECC7EC0D</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\usbmode_screen">
-      <UniqueIdentifier>A59071F3-186A-4CBA-8066-6D80C04E2DD6</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\graphscreen_screen">
-      <UniqueIdentifier>1B0BA5BE-2CCC-46CB-A4BA-050C71033D01</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\graphscreen_screen">
-      <UniqueIdentifier>17D1CB4E-27E8-4B3E-BE1E-2366F672668E</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\graphscreen_screen">
-      <UniqueIdentifier>6C359DF7-07C9-4368-BA8F-52B2D2A7E186</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\graphscreen_screen">
-      <UniqueIdentifier>480875FF-9666-4319-89B0-73D392DED3F8</UniqueIdentifier>
+    <Filter Include="Header Files\gui\idlescreen_screen">
+      <UniqueIdentifier>08DBDBC7-12E9-21D5-BD13-349903791F05</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\gui\powerlossrecoveryscreen_screen">
-      <UniqueIdentifier>02B6918E-6F3D-46EC-8D4E-79FB8F12B530</UniqueIdentifier>
+      <UniqueIdentifier>C3C563B9-978F-04C7-9908-1F8B39435C38</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\idlescreen_screen">
+      <UniqueIdentifier>043B94F0-0EF5-794F-98F2-DF08898D35D5</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\powerlossrecoveryscreen_screen">
-      <UniqueIdentifier>28D0F40F-55D0-4276-AF88-904E10086398</UniqueIdentifier>
+      <UniqueIdentifier>60773FE2-81B7-955F-4B3C-C1A978DB186B</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\powerlossrecoveryscreen_screen">
-      <UniqueIdentifier>B5C52792-604B-4CFD-BCD7-60C21BF3F5EE</UniqueIdentifier>
+    <Filter Include="Header Files\gui\usbmode_screen">
+      <UniqueIdentifier>FDAA5470-0A99-12FA-CC90-524DF7A8936A</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\powerlossrecoveryscreen_screen">
-      <UniqueIdentifier>3A74A8C7-F68A-4D38-8806-95E017F4EA12</UniqueIdentifier>
+    <Filter Include="Header Files\gui\graphscreen_screen">
+      <UniqueIdentifier>CA0392ED-1687-5E78-3BE3-ACD210223E88</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\LFT\Definitions">
-      <UniqueIdentifier>FBFB207C-D061-4F2B-B881-5C686C6CAC8F</UniqueIdentifier>
+    <Filter Include="Source Files\gui\usbmode_screen">
+      <UniqueIdentifier>E9CC5E90-5CE7-DEC3-C65C-0D077DB72B63</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\touchtestscreen_screen">
-      <UniqueIdentifier>15B3EE4B-0F7D-44DF-AA5E-6CA3ABA84CEA</UniqueIdentifier>
+    <Filter Include="Source Files\gui\graphscreen_screen">
+      <UniqueIdentifier>556D13D2-B17B-CACA-2908-E86F96682A96</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\auditscreen_screen">
+      <UniqueIdentifier>8F0AEB61-D145-81F6-F316-E01D3F2FB80D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\auditscreen_screen">
+      <UniqueIdentifier>97F314A8-2A05-58C7-3786-8AC011358BCB</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\processscreen_screen">
+      <UniqueIdentifier>6346D1D6-4986-FB17-E16A-36ABD583AC36</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\processscreen_screen">
+      <UniqueIdentifier>0F16017E-438D-39B7-41CB-9F2E3F2631DB</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\settingsscreen_screen">
+      <UniqueIdentifier>4F37799D-B81A-EB33-0AFE-FAE5E0F22190</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\settingsscreen_screen">
+      <UniqueIdentifier>BAE48D10-E14A-6481-B07F-365B4AAC6A40</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\freda_screen">
+      <UniqueIdentifier>43DB60BE-0F2D-8E76-11A8-27D9FA1544B7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\freda_screen">
+      <UniqueIdentifier>647576C2-A5CB-0606-5880-37E6DF7E7EC5</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\touchtestscreen_screen">
-      <UniqueIdentifier>0DD56DC5-0F8F-4527-9A8D-052D8E9691E2</UniqueIdentifier>
+      <UniqueIdentifier>CED54943-9A93-EB65-8CAF-5BBAAF21A3EE</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\touchtestscreen_screen">
-      <UniqueIdentifier>EA5460A9-9125-428A-B801-FFCB1F6082B8</UniqueIdentifier>
+    <Filter Include="Source Files\gui\touchtestscreen_screen">
+      <UniqueIdentifier>A1934BC6-907F-66C8-ABCB-737A14C05B9A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\eggscreen_screen">
+      <UniqueIdentifier>C40047D5-8682-6F40-2ED4-FA70457376EA</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\eggscreen_screen">
+      <UniqueIdentifier>9ECFA235-2CA2-5E3F-C15C-F61D0D2E8585</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\containers">
+      <UniqueIdentifier>FDB2F95B-E2B7-55DF-8E90-55338B1BC5C8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\containers">
+      <UniqueIdentifier>617C42D4-CFA5-EE6B-F63E-24454F58675E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\eggscreen_screen">
+      <UniqueIdentifier>0AA94E94-92C9-0648-EE99-A8AB5A08C5AD</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\eggscreen_screen">
+      <UniqueIdentifier>A0FB5257-E894-1E86-D8B9-C9C9F2BC6CA3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\LFT\Definitions">
+      <UniqueIdentifier>46037A1D-C7F9-03B9-B7BD-262944B9A2E5</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\generated\gui_generated\touchtestscreen_screen">
-      <UniqueIdentifier>EBA54334-66EA-4BB1-B37C-368DC5DAFB88</UniqueIdentifier>
+      <UniqueIdentifier>514B328D-5E87-CF29-1467-E70AAFEFFBBA</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\common">
+      <UniqueIdentifier>C8B5F31E-7A28-AA59-2040-5128F36D0AF4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\settingsscreen_screen">
+      <UniqueIdentifier>E3EA3711-0533-D027-E4B2-F50F5080EA90</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\touchtestscreen_screen">
+      <UniqueIdentifier>DBAEC566-324D-DBD2-8E8D-5ACBF02FD626</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\settingsscreen_screen">
+      <UniqueIdentifier>F5539BBB-7DB9-421E-E4D1-D6D74C31B814</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\freda_screen">
+      <UniqueIdentifier>53CBDB80-4184-9336-FFFA-9639616D46B9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\freda_screen">
+      <UniqueIdentifier>AF0F613F-0B7A-0232-B16C-67E5FD30CCA0</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\common">
+      <UniqueIdentifier>47658D4D-8466-90F3-BCFF-D6DF1438F722</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\gui\LFT\Definitions">
-      <UniqueIdentifier>{0521e566-103d-4399-b9d3-23fe1020e9c2}</UniqueIdentifier>
+      <UniqueIdentifier>CF75601A-E2D9-BB4F-5B71-8824BC0B3CB8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\common\graph_widget">
+      <UniqueIdentifier>AD381ED2-CD13-C073-0BF3-49403BA12338</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\common\graph_widget">
+      <UniqueIdentifier>57B8C7BF-9528-19DC-E284-83E9CA4622CE</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\auditscreen_screen">
+      <UniqueIdentifier>659AE4ED-D6FB-6466-1E89-C15B4FFE6C83</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\processscreen_screen">
+      <UniqueIdentifier>5EC589AE-6741-C326-4335-6D31EECE4323</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\auditscreen_screen">
+      <UniqueIdentifier>880DBE1E-5AC7-7F97-B732-FB29E99153B6</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\processscreen_screen">
+      <UniqueIdentifier>8A80530A-17DD-CEC4-E9E3-AF44F4AE3D35</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\powerlossrecoveryscreen_screen">
+      <UniqueIdentifier>C8C4BB7A-AE03-BB52-ED8B-6D2FD33AAE7B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\powerlossrecoveryscreen_screen">
+      <UniqueIdentifier>ED7FC6F2-BDF4-DB30-0C23-D911BA78AEF0</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\graphscreen_screen">
+      <UniqueIdentifier>B6272080-44B1-DA18-2EE2-BF7E2A1B47C4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\graphscreen_screen">
+      <UniqueIdentifier>24454D22-591A-DE8C-9EA3-36A8907DC182</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\idlescreen_screen">
+      <UniqueIdentifier>8ED02ADF-2EB2-3C9A-0954-5B142599318C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\idlescreen_screen">
+      <UniqueIdentifier>8BD440AB-8D99-0C98-AAF2-6DFF61ABE774</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\usbmode_screen">
+      <UniqueIdentifier>58C70D31-D8B5-ADBA-1C74-08750BC32BE2</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\usbmode_screen">
+      <UniqueIdentifier>9D670655-227A-F247-D9DB-7FC534AEFD49</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\mainscreen_screen">
+      <UniqueIdentifier>4F4D7212-65F9-1314-4999-23772018029A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\mainscreen_screen">
+      <UniqueIdentifier>CA29E9BD-5A35-307C-1029-1D2A8EFB283E</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -327,53 +336,26 @@
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\hal\simulator\sdl2\OSWrappers.cpp">
       <Filter>Source Files\TouchGFX\platform\hal\simulator\sdl2</Filter>
     </ClCompile>
-    <ClCompile Include="..\main.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="$(ApplicationRoot)\simulator\main.cpp">
+      <Filter>Source Files\simulator</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\common\FrontendApplication.cpp">
-      <Filter>Source Files\gui\common</Filter>
+    <ClCompile Include="$(ApplicationRoot)\generated\simulator\src\mainBase.cpp">
+      <Filter>Source Files\generated\simulator</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\common\FrontendApplicationBase.cpp">
-      <Filter>Source Files\generated\gui_generated\common</Filter>
+    <ClCompile Include="..\..\gui\src\containers\AbortingWindow.cpp">
+      <Filter>Source Files\gui\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\model\Model.cpp">
-      <Filter>Source Files\gui\model</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\AbortingWindowBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\mainscreen_screen\MainScreenPresenter.cpp">
-      <Filter>Source Files\gui\mainscreen_screen</Filter>
+    <ClCompile Include="..\..\gui\src\common\graph_widget\AbstractGraph.cpp">
+      <Filter>Source Files\gui\common\graph_widget</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\mainscreen_screen\MainScreenView.cpp">
-      <Filter>Source Files\gui\mainscreen_screen</Filter>
+    <ClCompile Include="..\..\gui\src\containers\AuditLog.cpp">
+      <Filter>Source Files\gui\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\mainscreen_screen\MainScreenViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\mainscreen_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\idlescreen_screen\IdleScreenPresenter.cpp">
-      <Filter>Source Files\gui\idlescreen_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\idlescreen_screen\IdleScreenView.cpp">
-      <Filter>Source Files\gui\idlescreen_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\idlescreen_screen\IdleScreenViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\idlescreen_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\processscreen_screen\ProcessScreenPresenter.cpp">
-      <Filter>Source Files\gui\processscreen_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\processscreen_screen\ProcessScreenView.cpp">
-      <Filter>Source Files\gui\processscreen_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\processscreen_screen\ProcessScreenViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\processscreen_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\settingsscreen_screen\SettingsScreenPresenter.cpp">
-      <Filter>Source Files\gui\settingsscreen_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\settingsscreen_screen\SettingsScreenView.cpp">
-      <Filter>Source Files\gui\settingsscreen_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\settingsscreen_screen\SettingsScreenViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\settingsscreen_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\AuditLogBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\auditscreen_screen\AuditScreenPresenter.cpp">
       <Filter>Source Files\gui\auditscreen_screen</Filter>
@@ -384,35 +366,29 @@
     <ClCompile Include="..\..\generated\gui_generated\src\auditscreen_screen\AuditScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\auditscreen_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\AuditLog.cpp">
+    <ClCompile Include="..\..\gui\src\containers\Background.cpp">
       <Filter>Source Files\gui\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\AuditLogBase.cpp">
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\BackgroundBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\freda_screen\FREDAPresenter.cpp">
-      <Filter>Source Files\gui\freda_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\freda_screen\FREDAView.cpp">
-      <Filter>Source Files\gui\freda_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\freda_screen\FREDAViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\freda_screen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\common\CustomKeyboard.cpp">
       <Filter>Source Files\gui\common</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\common\Lever.cpp">
+    <ClCompile Include="..\..\gui\src\common\date.cpp">
       <Filter>Source Files\gui\common</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\common\Unlock.cpp">
-      <Filter>Source Files\gui\common</Filter>
+    <ClCompile Include="..\..\gui\src\containers\DatePicker.cpp">
+      <Filter>Source Files\gui\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\common\PatternCode.cpp">
-      <Filter>Source Files\gui\common</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\DatePickerBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\common\Pong.cpp">
-      <Filter>Source Files\gui\common</Filter>
+    <ClCompile Include="..\..\gui\src\containers\DeadSpaceAnimation.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\DeadSpaceAnimationBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\eggscreen_screen\EggScreenPresenter.cpp">
       <Filter>Source Files\gui\eggscreen_screen</Filter>
@@ -423,19 +399,10 @@
     <ClCompile Include="..\..\generated\gui_generated\src\eggscreen_screen\EggScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\eggscreen_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\common\TextRadioButton.cpp">
-      <Filter>Source Files\gui\common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\common\date.cpp">
-      <Filter>Source Files\gui\common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\common\LFTDebug.cpp">
-      <Filter>Source Files\gui\common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\Background.cpp">
+    <ClCompile Include="..\..\gui\src\containers\EngineerOverlay.cpp">
       <Filter>Source Files\gui\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\BackgroundBase.cpp">
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\EngineerOverlayBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\containers\ErrorBox.cpp">
@@ -443,111 +410,6 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\ErrorBoxBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\common\ProgressBar.cpp">
-      <Filter>Source Files\gui\common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\common\String.cpp">
-      <Filter>Source Files\gui\common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\DeadSpaceAnimation.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\DeadSpaceAnimationBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\UsageInstructions.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\UsageInstructionsBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\common\ProductionTestStep.cpp">
-      <Filter>Source Files\gui\common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\LFT\LFT.cpp">
-      <Filter>Source Files\gui\LFT</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\LFT\LFT_Auto.cpp">
-      <Filter>Source Files\gui\LFT</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\LFT\LFT_Information.cpp">
-      <Filter>Source Files\gui\LFT</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\LFT\LFT_Manual.cpp">
-      <Filter>Source Files\gui\LFT</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\LFT\LFT_ProductionTests.cpp">
-      <Filter>Source Files\gui\LFT</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\common\graph_widget\AbstractGraph.cpp">
-      <Filter>Source Files\gui\common\graph_widget</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\common\graph_widget\Graph.cpp">
-      <Filter>Source Files\gui\common\graph_widget</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\common\graph_widget\GraphBelow.cpp">
-      <Filter>Source Files\gui\common\graph_widget</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\common\graph_widget\GraphDots.cpp">
-      <Filter>Source Files\gui\common\graph_widget</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\common\graph_widget\GraphLine.cpp">
-      <Filter>Source Files\gui\common\graph_widget</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\common\graph_widget\PainterVerticalAlpha.cpp">
-      <Filter>Source Files\gui\common\graph_widget</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\EngineerOverlay.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\EngineerOverlayBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\LFT\LFT_Settings.cpp">
-      <Filter>Source Files\gui\LFT</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\usbmode_screen\UsbModePresenter.cpp">
-      <Filter>Source Files\gui\usbmode_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\usbmode_screen\UsbModeView.cpp">
-      <Filter>Source Files\gui\usbmode_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\usbmode_screen\UsbModeViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\usbmode_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\LFT\LFT_Logs.cpp">
-      <Filter>Source Files\gui\LFT</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\MsgBox.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\MsgBoxBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\graphscreen_screen\GraphScreenPresenter.cpp">
-      <Filter>Source Files\gui\graphscreen_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\graphscreen_screen\GraphScreenView.cpp">
-      <Filter>Source Files\gui\graphscreen_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\graphscreen_screen\GraphScreenViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\graphscreen_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\AbortingWindow.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\AbortingWindowBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\powerlossrecoveryscreen_screen\PowerlossRecoveryScreenPresenter.cpp">
-      <Filter>Source Files\gui\powerlossrecoveryscreen_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\powerlossrecoveryscreen_screen\PowerlossRecoveryScreenView.cpp">
-      <Filter>Source Files\gui\powerlossrecoveryscreen_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\powerlossrecoveryscreen_screen\PowerlossRecoveryScreenViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\powerlossrecoveryscreen_screen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\containers\ExternalSwitchErrorWindow.cpp">
       <Filter>Source Files\gui\containers</Filter>
@@ -561,34 +423,55 @@
     <ClCompile Include="..\..\generated\gui_generated\src\containers\FilterStateMessageBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\gui\src\freda_screen\FREDAPresenter.cpp">
+      <Filter>Source Files\gui\freda_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\freda_screen\FREDAView.cpp">
+      <Filter>Source Files\gui\freda_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\freda_screen\FREDAViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\freda_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\FrontendApplication.cpp">
+      <Filter>Source Files\gui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\common\FrontendApplicationBase.cpp">
+      <Filter>Source Files\generated\gui_generated\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\graph_widget\Graph.cpp">
+      <Filter>Source Files\gui\common\graph_widget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\graph_widget\GraphBelow.cpp">
+      <Filter>Source Files\gui\common\graph_widget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\graph_widget\GraphDots.cpp">
+      <Filter>Source Files\gui\common\graph_widget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\graph_widget\GraphLine.cpp">
+      <Filter>Source Files\gui\common\graph_widget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\graphscreen_screen\GraphScreenPresenter.cpp">
+      <Filter>Source Files\gui\graphscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\graphscreen_screen\GraphScreenView.cpp">
+      <Filter>Source Files\gui\graphscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\graphscreen_screen\GraphScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\graphscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\idlescreen_screen\IdleScreenPresenter.cpp">
+      <Filter>Source Files\gui\idlescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\idlescreen_screen\IdleScreenView.cpp">
+      <Filter>Source Files\gui\idlescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\idlescreen_screen\IdleScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\idlescreen_screen</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\gui\src\containers\InternalSwitchError.cpp">
       <Filter>Source Files\gui\containers</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\InternalSwitchErrorBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\LogsExporting.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\LogsExportingBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\LowPressureMessage.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\LowPressureMessageBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\DatePicker.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\DatePickerBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\Tab.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\TabBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\containers\Keypad.cpp">
@@ -596,6 +479,117 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\KeypadBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\Lever.cpp">
+      <Filter>Source Files\gui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\LFT\LFT.cpp">
+      <Filter>Source Files\gui\LFT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\LFT\LFT_Auto.cpp">
+      <Filter>Source Files\gui\LFT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\LFT\LFT_AutoClean.cpp">
+      <Filter>Source Files\gui\LFT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\LFT\LFT_Information.cpp">
+      <Filter>Source Files\gui\LFT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\LFT\LFT_Logs.cpp">
+      <Filter>Source Files\gui\LFT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\LFT\LFT_Manual.cpp">
+      <Filter>Source Files\gui\LFT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\LFT\LFT_ProductionTests.cpp">
+      <Filter>Source Files\gui\LFT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\LFT\LFT_Settings.cpp">
+      <Filter>Source Files\gui\LFT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\LFTDebug.cpp">
+      <Filter>Source Files\gui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\LogsExporting.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\LogsExportingBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\mainscreen_screen\MainScreenPresenter.cpp">
+      <Filter>Source Files\gui\mainscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\mainscreen_screen\MainScreenView.cpp">
+      <Filter>Source Files\gui\mainscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\mainscreen_screen\MainScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\mainscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\model\Model.cpp">
+      <Filter>Source Files\gui\model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\MsgBox.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\MsgBoxBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\graph_widget\PainterVerticalAlpha.cpp">
+      <Filter>Source Files\gui\common\graph_widget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\PatternCode.cpp">
+      <Filter>Source Files\gui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\Pong.cpp">
+      <Filter>Source Files\gui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\powerlossrecoveryscreen_screen\PowerlossRecoveryScreenPresenter.cpp">
+      <Filter>Source Files\gui\powerlossrecoveryscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\powerlossrecoveryscreen_screen\PowerlossRecoveryScreenView.cpp">
+      <Filter>Source Files\gui\powerlossrecoveryscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\powerlossrecoveryscreen_screen\PowerlossRecoveryScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\powerlossrecoveryscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\processscreen_screen\ProcessScreenPresenter.cpp">
+      <Filter>Source Files\gui\processscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\processscreen_screen\ProcessScreenView.cpp">
+      <Filter>Source Files\gui\processscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\processscreen_screen\ProcessScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\processscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\ProductionTestStep.cpp">
+      <Filter>Source Files\gui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\ProgressBar.cpp">
+      <Filter>Source Files\gui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\LFT\Definitions\ProgressStages.cpp">
+      <Filter>Source Files\gui\LFT\Definitions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\settingsscreen_screen\SettingsScreenPresenter.cpp">
+      <Filter>Source Files\gui\settingsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\settingsscreen_screen\SettingsScreenView.cpp">
+      <Filter>Source Files\gui\settingsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\settingsscreen_screen\SettingsScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\settingsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\String.cpp">
+      <Filter>Source Files\gui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\Tab.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\TabBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\TextRadioButton.cpp">
+      <Filter>Source Files\gui\common</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\containers\TouchTest.cpp">
       <Filter>Source Files\gui\containers</Filter>
@@ -612,18 +606,42 @@
     <ClCompile Include="..\..\generated\gui_generated\src\touchtestscreen_screen\TouchTestScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\touchtestscreen_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\LFT\LFT_AutoClean.cpp">
-      <Filter>Source Files\gui\LFT</Filter>
+    <ClCompile Include="..\..\gui\src\common\Unlock.cpp">
+      <Filter>Source Files\gui\common</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\LFT\Definitions\ProgressStages.cpp">
-      <Filter>Source Files\gui\LFT\Definitions</Filter>
+    <ClCompile Include="..\..\gui\src\containers\UsageInstructions.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\UsageInstructionsBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usbmode_screen\UsbModePresenter.cpp">
+      <Filter>Source Files\gui\usbmode_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usbmode_screen\UsbModeView.cpp">
+      <Filter>Source Files\gui\usbmode_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\usbmode_screen\UsbModeViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\usbmode_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\ViewDiagnostics.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\ViewDiagnosticsBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\MoistureDetectedMessage.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\MoistureDetectedMessageBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\assets\texts\texts.xlsx">
+    <None Include="$(ApplicationRoot)\assets\texts\texts.xlsx">
       <Filter>Resource Files\assets\texts</Filter>
     </None>
-    <None Include="..\..\config\msvs\Application.props">
+    <None Include="$(ApplicationRoot)\config\msvs\Application.props">
       <Filter>Resource Files\config\msvs</Filter>
     </None>
   </ItemGroup>
@@ -1027,65 +1045,23 @@
     <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\Widget.hpp">
       <Filter>Header Files\TouchGFX\touchgfx\widgets</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\common\FrontendApplication.hpp">
-      <Filter>Header Files\gui\common</Filter>
+    <ClInclude Include="$(ApplicationRoot)\generated\simulator\include\simulator\mainBase.hpp">
+      <Filter>Header Files\generated\simulator</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendApplicationBase.hpp">
-      <Filter>Header Files\generated\gui_generated\common</Filter>
+    <ClInclude Include="..\..\gui\include\gui\containers\AbortingWindow.hpp">
+      <Filter>Header Files\gui\containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\common\FrontendHeap.hpp">
-      <Filter>Header Files\gui\common</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\AbortingWindowBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendHeapBase.hpp">
-      <Filter>Header Files\generated\gui_generated\common</Filter>
+    <ClInclude Include="..\..\gui\include\gui\common\graph_widget\AbstractGraph.hpp">
+      <Filter>Header Files\gui\common\graph_widget</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\model\Model.hpp">
-      <Filter>Header Files\gui\model</Filter>
+    <ClInclude Include="..\..\gui\include\gui\containers\AuditLog.hpp">
+      <Filter>Header Files\gui\containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp">
-      <Filter>Header Files\gui\model</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp">
-      <Filter>Header Files\generated\gui_generated\common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\mainscreen_screen\MainScreenPresenter.hpp">
-      <Filter>Header Files\gui\mainscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\mainscreen_screen\MainScreenView.hpp">
-      <Filter>Header Files\gui\mainscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\mainscreen_screen\MainScreenViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\mainscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\idlescreen_screen\IdleScreenPresenter.hpp">
-      <Filter>Header Files\gui\idlescreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\idlescreen_screen\IdleScreenView.hpp">
-      <Filter>Header Files\gui\idlescreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\idlescreen_screen\IdleScreenViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\idlescreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\common\Utils.hpp">
-      <Filter>Header Files\gui\common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\processscreen_screen\ProcessScreenPresenter.hpp">
-      <Filter>Header Files\gui\processscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\processscreen_screen\ProcessScreenView.hpp">
-      <Filter>Header Files\gui\processscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\processscreen_screen\ProcessScreenViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\processscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\settingsscreen_screen\SettingsScreenPresenter.hpp">
-      <Filter>Header Files\gui\settingsscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\settingsscreen_screen\SettingsScreenView.hpp">
-      <Filter>Header Files\gui\settingsscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\settingsscreen_screen\SettingsScreenViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\settingsscreen_screen</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\AuditLogBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\auditscreen_screen\AuditScreenPresenter.hpp">
       <Filter>Header Files\gui\auditscreen_screen</Filter>
@@ -1096,35 +1072,35 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\auditscreen_screen\AuditScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\auditscreen_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\AuditLog.hpp">
+    <ClInclude Include="..\..\gui\include\gui\containers\Background.hpp">
       <Filter>Header Files\gui\containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\AuditLogBase.hpp">
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\BackgroundBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\freda_screen\FREDAViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\freda_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\common\KeyboardLayout.hpp">
+    <ClInclude Include="..\..\gui\include\gui\common\Build.hpp">
       <Filter>Header Files\gui\common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\common\KeyboardKeyMapping.hpp">
+    <ClInclude Include="..\..\gui\include\gui\common\Cipher.hpp">
       <Filter>Header Files\gui\common</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\common\CustomKeyboard.hpp">
       <Filter>Header Files\gui\common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\common\Lever.hpp">
+    <ClInclude Include="..\..\gui\include\gui\common\date.hpp">
       <Filter>Header Files\gui\common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\common\Unlock.hpp">
-      <Filter>Header Files\gui\common</Filter>
+    <ClInclude Include="..\..\gui\include\gui\containers\DatePicker.hpp">
+      <Filter>Header Files\gui\containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\common\PatternCode.hpp">
-      <Filter>Header Files\gui\common</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\DatePickerBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\common\Pong.hpp">
-      <Filter>Header Files\gui\common</Filter>
+    <ClInclude Include="..\..\gui\include\gui\containers\DeadSpaceAnimation.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\DeadSpaceAnimationBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\eggscreen_screen\EggScreenPresenter.hpp">
       <Filter>Header Files\gui\eggscreen_screen</Filter>
@@ -1135,28 +1111,10 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\eggscreen_screen\EggScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\eggscreen_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\freda_screen\FREDAView.hpp">
-      <Filter>Header Files\gui\freda_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\freda_screen\FREDAPresenter.hpp">
-      <Filter>Header Files\gui\freda_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\common\TextRadioButton.hpp">
-      <Filter>Header Files\gui\common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\common\Build.hpp">
-      <Filter>Header Files\gui\common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\common\date.hpp">
-      <Filter>Header Files\gui\common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\common\LFTDebug.hpp">
-      <Filter>Header Files\gui\common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\Background.hpp">
+    <ClInclude Include="..\..\gui\include\gui\containers\EngineerOverlay.hpp">
       <Filter>Header Files\gui\containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\BackgroundBase.hpp">
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\EngineerOverlayBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\containers\ErrorBox.hpp">
@@ -1164,114 +1122,6 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ErrorBoxBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\common\ProgressBar.hpp">
-      <Filter>Header Files\gui\common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\common\String.hpp">
-      <Filter>Header Files\gui\common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\DeadSpaceAnimation.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\DeadSpaceAnimationBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\UsageInstructions.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\UsageInstructionsBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\common\ProductionTestStep.hpp">
-      <Filter>Header Files\gui\common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\LFT\LFT.hpp">
-      <Filter>Header Files\gui\LFT</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\LFT\LFT_Auto.hpp">
-      <Filter>Header Files\gui\LFT</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\LFT\LFT_Information.hpp">
-      <Filter>Header Files\gui\LFT</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\LFT\LFT_Manual.hpp">
-      <Filter>Header Files\gui\LFT</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\LFT\LFT_ProductionTests.hpp">
-      <Filter>Header Files\gui\LFT</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\common\graph_widget\AbstractGraph.hpp">
-      <Filter>Header Files\gui\common\graph_widget</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\common\graph_widget\Graph.hpp">
-      <Filter>Header Files\gui\common\graph_widget</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\common\graph_widget\GraphBelow.hpp">
-      <Filter>Header Files\gui\common\graph_widget</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\common\graph_widget\GraphDots.hpp">
-      <Filter>Header Files\gui\common\graph_widget</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\common\graph_widget\GraphLine.hpp">
-      <Filter>Header Files\gui\common\graph_widget</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\common\graph_widget\PainterVerticalAlpha.hpp">
-      <Filter>Header Files\gui\common\graph_widget</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\LFT\LFT_TestValues.hpp">
-      <Filter>Header Files\gui\LFT</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\EngineerOverlay.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\EngineerOverlayBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\LFT\LFT_Settings.hpp">
-      <Filter>Header Files\gui\LFT</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\usbmode_screen\UsbModePresenter.hpp">
-      <Filter>Header Files\gui\usbmode_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\usbmode_screen\UsbModeView.hpp">
-      <Filter>Header Files\gui\usbmode_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usbmode_screen\UsbModeViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\usbmode_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\LFT\LFT_Logs.hpp">
-      <Filter>Header Files\gui\LFT</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\MsgBox.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\MsgBoxBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\graphscreen_screen\GraphScreenPresenter.hpp">
-      <Filter>Header Files\gui\graphscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\graphscreen_screen\GraphScreenView.hpp">
-      <Filter>Header Files\gui\graphscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\graphscreen_screen\GraphScreenViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\graphscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\AbortingWindow.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\AbortingWindowBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\powerlossrecoveryscreen_screen\PowerlossRecoveryScreenPresenter.hpp">
-      <Filter>Header Files\gui\powerlossrecoveryscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\powerlossrecoveryscreen_screen\PowerlossRecoveryScreenView.hpp">
-      <Filter>Header Files\gui\powerlossrecoveryscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\powerlossrecoveryscreen_screen\PowerlossRecoveryScreenViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\powerlossrecoveryscreen_screen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\containers\ExternalSwitchErrorWindow.hpp">
       <Filter>Header Files\gui\containers</Filter>
@@ -1285,17 +1135,107 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\FilterStateMessageBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\freda_screen\FREDAPresenter.hpp">
+      <Filter>Header Files\gui\freda_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\freda_screen\FREDAView.hpp">
+      <Filter>Header Files\gui\freda_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\freda_screen\FREDAViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\freda_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\FrontendApplication.hpp">
+      <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendApplicationBase.hpp">
+      <Filter>Header Files\generated\gui_generated\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\FrontendHeap.hpp">
+      <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendHeapBase.hpp">
+      <Filter>Header Files\generated\gui_generated\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\graph_widget\Graph.hpp">
+      <Filter>Header Files\gui\common\graph_widget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\graph_widget\GraphBelow.hpp">
+      <Filter>Header Files\gui\common\graph_widget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\graph_widget\GraphDots.hpp">
+      <Filter>Header Files\gui\common\graph_widget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\graph_widget\GraphLine.hpp">
+      <Filter>Header Files\gui\common\graph_widget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\graphscreen_screen\GraphScreenPresenter.hpp">
+      <Filter>Header Files\gui\graphscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\graphscreen_screen\GraphScreenView.hpp">
+      <Filter>Header Files\gui\graphscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\graphscreen_screen\GraphScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\graphscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\idlescreen_screen\IdleScreenPresenter.hpp">
+      <Filter>Header Files\gui\idlescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\idlescreen_screen\IdleScreenView.hpp">
+      <Filter>Header Files\gui\idlescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\idlescreen_screen\IdleScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\idlescreen_screen</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\containers\InternalSwitchError.hpp">
       <Filter>Header Files\gui\containers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\InternalSwitchErrorBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\common\ThreadSafe.hpp">
+    <ClInclude Include="..\..\gui\include\gui\common\KeyboardKeyMapping.hpp">
       <Filter>Header Files\gui\common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\LFT\Definitions\RecoverLog.hpp">
-      <Filter>Header Files\gui\LFT\Definitions</Filter>
+    <ClInclude Include="..\..\gui\include\gui\common\KeyboardLayout.hpp">
+      <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\Keypad.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\KeypadBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\Lever.hpp">
+      <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\LFT\LFT.hpp">
+      <Filter>Header Files\gui\LFT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\LFT\LFT_Auto.hpp">
+      <Filter>Header Files\gui\LFT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\LFT\LFT_AutoClean.hpp">
+      <Filter>Header Files\gui\LFT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\LFT\LFT_Information.hpp">
+      <Filter>Header Files\gui\LFT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\LFT\LFT_Logs.hpp">
+      <Filter>Header Files\gui\LFT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\LFT\LFT_Manual.hpp">
+      <Filter>Header Files\gui\LFT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\LFT\LFT_ProductionTests.hpp">
+      <Filter>Header Files\gui\LFT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\LFT\LFT_Settings.hpp">
+      <Filter>Header Files\gui\LFT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\LFT\LFT_TestValues.hpp">
+      <Filter>Header Files\gui\LFT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\LFTDebug.hpp">
+      <Filter>Header Files\gui\common</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\containers\LogsExporting.hpp">
       <Filter>Header Files\gui\containers</Filter>
@@ -1303,20 +1243,83 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\LogsExportingBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\mainscreen_screen\MainScreenPresenter.hpp">
+      <Filter>Header Files\gui\mainscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\mainscreen_screen\MainScreenView.hpp">
+      <Filter>Header Files\gui\mainscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\mainscreen_screen\MainScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\mainscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\model\Model.hpp">
+      <Filter>Header Files\gui\model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp">
+      <Filter>Header Files\gui\model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\MsgBox.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\MsgBoxBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\graph_widget\PainterVerticalAlpha.hpp">
+      <Filter>Header Files\gui\common\graph_widget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\PatternCode.hpp">
+      <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\Pong.hpp">
+      <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\powerlossrecoveryscreen_screen\PowerlossRecoveryScreenPresenter.hpp">
+      <Filter>Header Files\gui\powerlossrecoveryscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\powerlossrecoveryscreen_screen\PowerlossRecoveryScreenView.hpp">
+      <Filter>Header Files\gui\powerlossrecoveryscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\powerlossrecoveryscreen_screen\PowerlossRecoveryScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\powerlossrecoveryscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\processscreen_screen\ProcessScreenPresenter.hpp">
+      <Filter>Header Files\gui\processscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\processscreen_screen\ProcessScreenView.hpp">
+      <Filter>Header Files\gui\processscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\processscreen_screen\ProcessScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\processscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\ProductionTestStep.hpp">
+      <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\ProgressBar.hpp">
+      <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\LFT\Definitions\ProgressStages.hpp">
+      <Filter>Header Files\gui\LFT\Definitions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\LFT\Definitions\RecoverLog.hpp">
+      <Filter>Header Files\gui\LFT\Definitions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\settingsscreen_screen\SettingsScreenPresenter.hpp">
+      <Filter>Header Files\gui\settingsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\settingsscreen_screen\SettingsScreenView.hpp">
+      <Filter>Header Files\gui\settingsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\settingsscreen_screen\SettingsScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\settingsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp">
+      <Filter>Header Files\generated\gui_generated\common</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\LFT\Definitions\Stages.hpp">
       <Filter>Header Files\gui\LFT\Definitions</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\LowPressureMessage.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\LowPressureMessageBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\DatePicker.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\DatePickerBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    <ClInclude Include="..\..\gui\include\gui\common\String.hpp">
+      <Filter>Header Files\gui\common</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\containers\Tab.hpp">
       <Filter>Header Files\gui\containers</Filter>
@@ -1324,11 +1327,11 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\TabBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\Keypad.hpp">
-      <Filter>Header Files\gui\containers</Filter>
+    <ClInclude Include="..\..\gui\include\gui\common\TextRadioButton.hpp">
+      <Filter>Header Files\gui\common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\KeypadBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    <ClInclude Include="..\..\gui\include\gui\common\ThreadSafe.hpp">
+      <Filter>Header Files\gui\common</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\containers\TouchTest.hpp">
       <Filter>Header Files\gui\containers</Filter>
@@ -1345,24 +1348,42 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\touchtestscreen_screen\TouchTestScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\touchtestscreen_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\touchgfx\framework\include\touchgfx\widgets\BoxWithBorder.hpp">
-      <Filter>Header Files\TouchGFX\touchgfx\widgets</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\LFT\LFT_AutoClean.hpp">
-      <Filter>Header Files\gui\LFT</Filter>
-    </ClInclude>
-    <ClInclude Include="ProgressStages.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\LFT\Definitions\ProgressStages.hpp">
-      <Filter>Header Files\gui\LFT\Definitions</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\common\Cipher.hpp">
+    <ClInclude Include="..\..\gui\include\gui\common\Unlock.hpp">
       <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\UsageInstructions.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\UsageInstructionsBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usbmode_screen\UsbModePresenter.hpp">
+      <Filter>Header Files\gui\usbmode_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usbmode_screen\UsbModeView.hpp">
+      <Filter>Header Files\gui\usbmode_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usbmode_screen\UsbModeViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\usbmode_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\Utils.hpp">
+      <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\ViewDiagnostics.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ViewDiagnosticsBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\MoistureDetectedMessage.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\MoistureDetectedMessageBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="..\touchgfx.rc">
+    <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>

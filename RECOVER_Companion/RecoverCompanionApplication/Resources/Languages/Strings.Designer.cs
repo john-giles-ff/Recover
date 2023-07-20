@@ -241,7 +241,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Connection Successful .
+        ///   Looks up a localized string similar to Connection Successful.
         /// </summary>
         public static string ConnectionSuccesful {
             get {
@@ -693,11 +693,20 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Printing in progress.
+        ///   Looks up a localized string similar to Printing in progress....
         /// </summary>
         public static string PrintingInProgress {
             get {
                 return ResourceManager.GetString("PrintingInProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Program Device.
+        /// </summary>
+        public static string ProgramDevice {
+            get {
+                return ResourceManager.GetString("ProgramDevice", resourceCulture);
             }
         }
         
@@ -752,6 +761,15 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Resources.Languages {
         public static string ServicePackCreated {
             get {
                 return ResourceManager.GetString("ServicePackCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Service Pack Creation Cancelled!.
+        /// </summary>
+        public static string ServicePackCreatingCancelled {
+            get {
+                return ResourceManager.GetString("ServicePackCreatingCancelled", resourceCulture);
             }
         }
         

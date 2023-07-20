@@ -1,95 +1,78 @@
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
+
 /**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.12.3 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+ * @file touchgfx/containers/buttons/AnimatedImageButtonStyle.hpp
+ *
+ * Declares the touchgfx::AnimatedImageButtonStyle class.
+ */
+#ifndef TOUCHGFX_ANIMATEDIMAGEBUTTONSTYLE_HPP
+#define TOUCHGFX_ANIMATEDIMAGEBUTTONSTYLE_HPP
 
-#ifndef ANIMATEDIMAGEBUTTONSTYLE_HPP
-#define ANIMATEDIMAGEBUTTONSTYLE_HPP
-
+#include <touchgfx/Bitmap.hpp>
+#include <touchgfx/containers/buttons/AbstractButtonContainer.hpp>
 #include <touchgfx/widgets/AnimatedImage.hpp>
 
 namespace touchgfx
 {
 /**
- * @class AnimatedImageButtonStyle AnimatedImageButtonStyle.hpp touchgfx/containers/buttons/AnimatedImageButtonStyle.hpp
+ * An animated image button style.  An animated image button style. This class is supposed to be
+ * used with one of the ButtonTrigger classes to create a functional button. This class
+ * will show the first or last image of an animated image depending on the state of the
+ * button (pressed or released). When the state changes the button will show the
+ * sequence of images in forward or reversed order.
  *
- * @brief An animated image button style.  An animated image button
- *        style. This class is supposed to be used with one of the
- *        ButtonTrigger classes to create a functional button. This
- *        class will show the first or last image of an animated image
- *        depending on the state of the button (pressed or
- *        released). When the state changes the button will show the
- *        sequence of images in forward or reversed order.
+ * The AnimatedImageButtonStyle will set the size of the enclosing container (normally
+ * AbstractButtonContainer) to the size of the first Bitmap. This can be overridden by
+ * calling setWidth/setHeight after setting the bitmaps.
  *
- *        The AnimatedImageButtonStyle will set the size of the enclosing
- *        container (normally AbstractButtonContainer) to the size of
- *        the first Bitmap. This can be overridden by calling
- *        setWidth/setHeight after setting the bitmaps.
- *
- *        The position of the bitmap can be adjusted with setBitmapXY
- *        (default is upper left corner).
+ * The position of the bitmap can be adjusted with setBitmapXY (default is upper left
+ * corner).
  *
  * @tparam T Generic type parameter. Typically a AbstractButtonContainer subclass.
  *
  * @see AbstractButtonContainer
  */
-template<class T>
+template <class T>
 class AnimatedImageButtonStyle : public T
 {
 public:
-    /**
-     * @fn AnimatedImageButtonStyle::AnimatedImageButtonStyle()
-     *
-     * @brief Default constructor.
-     */
-    AnimatedImageButtonStyle() : T(), buttonAnimatedImage()
+    AnimatedImageButtonStyle()
+        : T(), buttonAnimatedImage()
     {
         buttonAnimatedImage.setXY(0, 0);
         T::add(buttonAnimatedImage);
     }
 
     /**
-     * @fn virtual AnimatedImageButtonStyle::~AnimatedImageButtonStyle()
+     * Sets the bitmaps.
      *
-     * @brief Destructor.
+     * @param  bitmapStart The bitmap start.
+     * @param  bitmapEnd   The bitmap end.
      */
-    virtual ~AnimatedImageButtonStyle() { }
-
-    /**
-     * @fn void AnimatedImageButtonStyle::setBitmaps(const Bitmap& bmpStart, const Bitmap& bmpEnd)
-     *
-     * @brief Sets the bitmaps.
-     *
-     * @param bmpStart The bitmap start.
-     * @param bmpEnd   The bitmap end.
-     */
-    void setBitmaps(const Bitmap& bmpStart, const Bitmap& bmpEnd)
+    void setBitmaps(const Bitmap& bitmapStart, const Bitmap& bitmapEnd)
     {
-        buttonAnimatedImage.setBitmaps(bmpStart.getId(), bmpEnd.getId());
+        buttonAnimatedImage.setBitmaps(bitmapStart.getId(), bitmapEnd.getId());
 
-        AbstractButtonContainer::setWidth(bmpStart.getWidth());
-        AbstractButtonContainer::setHeight(bmpStart.getHeight());
+        AbstractButtonContainer::setWidthHeight(bitmapStart);
 
         handlePressedUpdated();
     }
 
     /**
-     * @fn void AnimatedImageButtonStyle::setBitmapXY(uint16_t x, uint16_t y)
+     * Sets bitmap x and y.
      *
-     * @brief Sets bitmap xy.
-     *
-     * @param x An uint16_t to process.
-     * @param y An uint16_t to process.
+     * @param  x An uint16_t to process.
+     * @param  y An uint16_t to process.
      */
     void setBitmapXY(uint16_t x, uint16_t y)
     {
@@ -97,11 +80,9 @@ public:
     }
 
     /**
-     * @fn void AnimatedImageButtonStyle::setUpdateTicksInterval(uint8_t updateInterval)
+     * Sets update ticks interval.
      *
-     * @brief Sets update ticks interval.
-     *
-     * @param updateInterval The update interval.
+     * @param  updateInterval The update interval.
      */
     void setUpdateTicksInterval(uint8_t updateInterval)
     {
@@ -109,30 +90,23 @@ public:
     }
 
 protected:
-    AnimatedImage buttonAnimatedImage;  ///< The button animated image
+    AnimatedImage buttonAnimatedImage; ///< The button animated image
 
-    /**
-     * @fn virtual void AnimatedImageButtonStyle::handlePressedUpdated()
-     *
-     * @brief Handles the pressed updated.
-     */
+    /** @copydoc AbstractButtonContainer::handlePressedUpdated() */
     virtual void handlePressedUpdated()
     {
         buttonAnimatedImage.startAnimation(AbstractButtonContainer::pressed, true, false);
         T::handlePressedUpdated();
     }
 
-    /**
-     * @fn virtual void AnimatedImageButtonStyle::handleAlphaUpdated()
-     *
-     * @brief Handles the alpha updated.
-     */
+    /** @copydoc AbstractButtonContainer::handleAlphaUpdated() */
     virtual void handleAlphaUpdated()
     {
         buttonAnimatedImage.setAlpha(T::getAlpha());
         T::handleAlphaUpdated();
     }
 };
-}
 
-#endif // ANIMATEDIMAGEBUTTONSTYLE_HPP
+} // namespace touchgfx
+
+#endif // TOUCHGFX_ANIMATEDIMAGEBUTTONSTYLE_HPP

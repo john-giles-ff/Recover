@@ -1,24 +1,31 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.12.3 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Application.hpp>
+#include <touchgfx/Callback.hpp>
+#include <touchgfx/Drawable.hpp>
+#include <touchgfx/EasingEquations.hpp>
+#include <touchgfx/Utils.hpp>
+#include <touchgfx/containers/Container.hpp>
 #include <touchgfx/containers/scrollers/ScrollBase.hpp>
+#include <touchgfx/events/DragEvent.hpp>
+#include <touchgfx/events/GestureEvent.hpp>
 
 namespace touchgfx
 {
 ScrollBase::ScrollBase()
     : Container(),
+      list(),
       numberOfDrawables(0),
       distanceBeforeAlignedItem(0),
       itemSize(0),
@@ -174,7 +181,7 @@ void ScrollBase::allowVerticalDrag(bool enable)
 void ScrollBase::animateToItem(int16_t itemIndex, int16_t animationSteps /*= -1*/)
 {
     int32_t position = getPositionForItem(itemIndex);
-    animateToPosition(position, animationSteps < 0 ? defaultAnimationSteps : animationSteps);
+    animateToPosition(position, animationSteps);
 }
 
 void ScrollBase::setItemSelectedCallback(GenericCallback<int16_t>& callback)
@@ -207,27 +214,28 @@ void ScrollBase::stopAnimation()
     currentAnimationState = NO_ANIMATION;
 }
 
-void ScrollBase::handleDragEvent(const DragEvent& evt)
+void ScrollBase::handleDragEvent(const DragEvent& event)
 {
     stopAnimation();
     currentAnimationState = ANIMATING_DRAG;
-    int32_t newOffset = getOffset() + (getHorizontal() ? evt.getDeltaX() : evt.getDeltaY()) * dragAcceleration / 10;
+    int32_t newOffset = getOffset() + (getHorizontal() ? event.getDeltaX() : event.getDeltaY()) * dragAcceleration / 10;
     newOffset = keepOffsetInsideLimits(newOffset, itemSize * 3 / 4);
     setOffset(newOffset);
 }
 
-void ScrollBase::handleGestureEvent(const GestureEvent& evt)
+void ScrollBase::handleGestureEvent(const GestureEvent& event)
 {
-    if (evt.getType() == (getHorizontal() ? GestureEvent::SWIPE_HORIZONTAL : GestureEvent::SWIPE_VERTICAL))
+    if (event.getType() == (getHorizontal() ? GestureEvent::SWIPE_HORIZONTAL : GestureEvent::SWIPE_VERTICAL))
     {
-        int16_t velocity = abs(evt.getVelocity());
-        int16_t direction = evt.getVelocity() < 0 ? -1 : 1;
+        int16_t velocity = abs(event.getVelocity());
+        int16_t direction = event.getVelocity() < 0 ? -1 : 1;
         int16_t steps = MAX(1, velocity - 4) * 7;
         int32_t newOffset = getOffset() + direction * steps * swipeAcceleration / 10;
         if (maxSwipeItems > 0)
         {
-            newOffset = MIN(newOffset, initialSwipeOffset + maxSwipeItems * itemSize);
-            newOffset = MAX(newOffset, initialSwipeOffset - maxSwipeItems * itemSize);
+            int32_t maxDistance = maxSwipeItems * itemSize;
+            newOffset = MIN(newOffset, initialSwipeOffset + maxDistance);
+            newOffset = MAX(newOffset, initialSwipeOffset - maxDistance);
         }
         newOffset = keepOffsetInsideLimits(newOffset, 0);
         steps = MIN(steps, defaultAnimationSteps);
@@ -247,7 +255,9 @@ void ScrollBase::handleTickEvent()
             currentAnimationState = NO_ANIMATION;
             gestureStep = 0;
             Application::getInstance()->unregisterTimerWidget(this);
-            setOffset(getNormalizedOffset(getOffset()));
+            setOffset(getNormalizedOffset(gestureEnd));
+            // Also adjust initialSwipeOffset in case it is being used.
+            initialSwipeOffset += getOffset() - gestureEnd;
 
             //Item has settled, call back
             if (animationEndedCallback && animationEndedCallback->isValid())
@@ -282,11 +292,7 @@ int ScrollBase::getNormalizedOffset(int offset) const
     }
     int32_t listSize = numItems * itemSize;
     offset %= listSize;
-    if (offset > 0)
-    {
-        offset -= listSize;
-    }
-    return offset;
+    return offset > 0 ? offset - listSize : offset;
 }
 
 int32_t ScrollBase::getNearestAlignedOffset(int32_t offset) const
@@ -309,18 +315,21 @@ int32_t ScrollBase::getNearestAlignedOffset(int32_t offset) const
 
 void ScrollBase::animateToPosition(int32_t position, int16_t steps)
 {
+    int32_t currentPosition = getOffset();
     position = getNearestAlignedOffset(position);
     if (steps < 0)
     {
         steps = defaultAnimationSteps;
     }
+    steps = MIN(steps, abs(position - currentPosition));
     if (steps < 1)
     {
         setOffset(position);
+        currentAnimationState = NO_ANIMATION;
     }
     else
     {
-        gestureStart = getOffset();
+        gestureStart = currentPosition;
         gestureEnd = position;
         gestureStep = 0;
         gestureStepsTotal = steps;

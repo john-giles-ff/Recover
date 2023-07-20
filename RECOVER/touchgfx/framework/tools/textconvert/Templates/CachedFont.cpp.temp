@@ -35,7 +35,7 @@ const GlyphNode* CachedFont::getGlyph(Unicode::UnicodeChar unicode, const uint8_
     {
         Unicode::UnicodeChar fallbackChar = flashFont->getFallbackChar();
         n = flashFont->find(fallbackChar);
-        if(n == 0)
+        if (n == 0)
         {
             n = cache->getGlyph(fallbackChar, fontId);
         }
@@ -55,4 +55,4 @@ int8_t CachedFont::getKerning(Unicode::UnicodeChar prevChar, const GlyphNode* gl
     //Kerning is not supported by Font Caching
     return 0;
 }
-}
+} // namespace touchgfx

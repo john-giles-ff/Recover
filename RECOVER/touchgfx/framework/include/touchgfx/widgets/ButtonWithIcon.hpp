@@ -1,75 +1,81 @@
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
+
 /**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.12.3 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+ * @file touchgfx/widgets/ButtonWithIcon.hpp
+ *
+ * Declares the touchgfx::ButtonWithIcon class.
+ */
+#ifndef TOUCHGFX_BUTTONWITHICON_HPP
+#define TOUCHGFX_BUTTONWITHICON_HPP
 
-#ifndef BUTTONWITHICON_HPP
-#define BUTTONWITHICON_HPP
-
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Bitmap.hpp>
 #include <touchgfx/widgets/Button.hpp>
 
 namespace touchgfx
 {
 /**
- * @class ButtonWithIcon ButtonWithIcon.hpp touchgfx/widgets/ButtonWithIcon.hpp
+ * A Button that has a bitmap with an icon on top of it. It is possible to have two different
+ * icons depending on the current state of the button (released or pressed).
  *
- * @brief A Button specialization that also displays an icon on top of the button bitmap.
- *
- *        A Button specialization that also displays an icon on top of the button bitmap.
- *
- * @see Button
+ * Typical use case could be a blue button with a released and a pressed image. Those
+ * images can be reused across several buttons. The ButtonWithIcon will then allow an
+ * image to superimposed on top of the blue button.
  */
 class ButtonWithIcon : public Button
 {
 public:
     ButtonWithIcon();
 
-#ifdef __IAR_SYSTEMS_ICC__  // Only include in IAR compilation
-#pragma diag_suppress=Pe997 // Suppress warning for intentional virtual function override
-#elif __ARMCC_VERSION
+#ifdef __IAR_SYSTEMS_ICC__ // Only include in IAR compilation
+#pragma diag_suppress = Pe997 // Suppress warning for intentional virtual function override
+#elif defined(__ARMCC_VERSION) && (__ARMCC_VERSION < 6000000)
 #pragma diag_suppress 997
 #endif
 
     /**
-     * @fn virtual void ButtonWithIcon::setBitmaps(const Bitmap& newBackgroundReleased, const Bitmap& newBackgroundPressed, const Bitmap& newIconReleased, const Bitmap& newIconPressed);
+     * Sets the four bitmaps used by this button. The last two bitmaps are drawn on top of
+     * the first two, again depending on the current state of the Button. This means that
+     * when the button state is released (normal), the newIconReleased is drawn on top of
+     * the newBackgroundReleased, and when the button state is pressed, the newIconPressed
+     * is drawn on top of the newBackgroundPressed.
      *
-     * @brief Sets the bitmaps used by this button.
+     * The default position if the icons is set to the center of the bitmaps. The two icons
+     * are assumed to have the same dimensions. The size of the released icon is used to
+     * position the icons centered on the Button.
      *
-     *        Sets the bitmaps used by this button.
+     * @param  newBackgroundReleased Bitmap to use when button is released.
+     * @param  newBackgroundPressed  Bitmap to use when button is pressed.
+     * @param  newIconReleased       The bitmap for the icon in the released (normal) button state.
+     * @param  newIconPressed        The bitmap for the icon in the pressed button state.
      *
-     * @param newBackgroundReleased Bitmap to use when button is released.
-     * @param newBackgroundPressed  Bitmap to use when button is pressed.
-     * @param newIconReleased       The bitmap for the icon in the released/unpressed button
-     *                              state.
-     * @param newIconPressed        The bitmap for the icon in the pressed button state.
+     * @note The user code must call invalidate() in order to update the button on the display.
      */
     virtual void setBitmaps(const Bitmap& newBackgroundReleased, const Bitmap& newBackgroundPressed,
                             const Bitmap& newIconReleased, const Bitmap& newIconPressed);
-#ifdef __IAR_SYSTEMS_ICC__  // Only include in IAR compilation
-#pragma diag_default=Pe997
+#ifdef __IAR_SYSTEMS_ICC__ // Only include in IAR compilation
+#pragma diag_default = Pe997
 #endif
 
     /**
-     * @fn void ButtonWithIcon::setIconX(int16_t x)
+     * Sets the x coordinate of the icon bitmaps. The same x coordinate is used for both
+     * icons (released and pressed).
      *
-     * @brief Sets the x coordinate of the icon bitmap.
+     * @param  x The new x value, relative to the background bitmap. A negative value is
+     *           allowed.
      *
-     *        Sets the x coordinate of the icon bitmap.
-     *
-     * @note Changing this does not automatically yield a redraw.
-     * @note The value will be overwritten by calling.
-     *
-     * @param x The new x value, relative to the background bitmap. A negative value is allowed.
+     * @note The user code must call invalidate() in order to update the button on the display.
+     * @note The value set is overwritten on a subsequent call to setBitmaps.
      */
     void setIconX(int16_t x)
     {
@@ -77,15 +83,14 @@ public:
     }
 
     /**
-     * @fn void ButtonWithIcon::setIconY(int16_t y)
+     * Sets the y coordinate of the icon bitmaps. The same y coordinate is used for both
+     * icons (released and pressed).
      *
-     * @brief Sets the y coordinate of the icon bitmap.
+     * @param  y The new y value, relative to the background bitmap. A negative value is
+     *           allowed.
      *
-     *        Sets the y coordinate of the icon bitmap.
-     *
-     * @note Changing this does not automatically yield a redraw.
-     *
-     * @param y The new y value, relative to the background bitmap. A negative value is allowed.
+     * @note The user code must call invalidate() in order to update the button on the display.
+     * @note The value set is overwritten on a subsequent call to setBitmaps.
      */
     void setIconY(int16_t y)
     {
@@ -93,16 +98,16 @@ public:
     }
 
     /**
-     * @fn void ButtonWithIcon::setIconXY(int16_t x, int16_t y)
+     * Sets the x and y coordinates of the icon bitmap. Same as calling setIconX and
+     * setIconY.
      *
-     * @brief Sets the x and y coordinates of the icon bitmap.
+     * @param  x The new x value, relative to the background bitmap. A negative value is
+     *           allowed.
+     * @param  y The new y value, relative to the background bitmap. A negative value is
+     *           allowed.
      *
-     *        Sets the x and y coordinates of the icon bitmap.
-     *
-     * @note Changing this does not automatically yield a redraw.
-     *
-     * @param x The new x value, relative to the background bitmap. A negative value is allowed.
-     * @param y The new y value, relative to the background bitmap. A negative value is allowed.
+     * @note The user code must call invalidate() in order to update the button on the display.
+     * @note The values set are overwritten on a subsequent call to setBitmaps.
      */
     void setIconXY(int16_t x, int16_t y)
     {
@@ -111,12 +116,8 @@ public:
     }
 
     /**
-     * @fn Bitmap ButtonWithIcon::getCurrentlyDisplayedIcon() const
-     *
-     * @brief Function to obtain the currently displayed icon.
-     *
-     *        Function to obtain the currently displayed icon, which depends on the button's
-     *        pressed state.
+     * Gets currently displayed icon. This depends on the current state of the button,
+     * released (normal) or pressed.
      *
      * @return The icon currently displayed.
      */
@@ -126,11 +127,7 @@ public:
     }
 
     /**
-     * @fn int16_t ButtonWithIcon::getIconX() const
-     *
-     * @brief Gets the x coordinate of the icon bitmap.
-     *
-     *        Gets the x coordinate of the icon bitmap.
+     * Gets the x coordinate of the icon bitmap.
      *
      * @return The x coordinate of the icon bitmap.
      */
@@ -140,11 +137,7 @@ public:
     }
 
     /**
-     * @fn int16_t ButtonWithIcon::getIconY() const
-     *
-     * @brief Gets the y coordinate of the icon bitmap.
-     *
-     *        Gets the y coordinate of the icon bitmap.
+     * Gets the y coordinate of the icon bitmap.
      *
      * @return The y coordinate of the icon bitmap.
      */
@@ -155,25 +148,13 @@ public:
 
     virtual void draw(const Rect& invalidatedArea) const;
 
-    /**
-     * @fn virtual uint16_t ButtonWithIcon::getType() const
-     *
-     * @brief For GUI testing only. Returns type of this drawable.
-     *
-     *        For GUI testing only. Returns type of this drawable.
-     *
-     * @return TYPE_BUTTONWITHICON.
-     */
-    virtual uint16_t getType() const
-    {
-        return (uint16_t)TYPE_BUTTONWITHICON;
-    }
 protected:
-    Bitmap  iconReleased; ///< Icon to display when button is not pressed.
-    Bitmap  iconPressed;  ///< Icon to display when button is pressed.
-    int16_t iconX;        ///< x coordinate offset for icon.
-    int16_t iconY;        ///< y coordinate offset for icon.
+    Bitmap iconReleased; ///< Icon to display when button is not pressed.
+    Bitmap iconPressed;  ///< Icon to display when button is pressed.
+    int16_t iconX;       ///< x coordinate offset for icon.
+    int16_t iconY;       ///< y coordinate offset for icon.
 };
+
 } // namespace touchgfx
 
-#endif // BUTTONWITHICON_HPP
+#endif // TOUCHGFX_BUTTONWITHICON_HPP

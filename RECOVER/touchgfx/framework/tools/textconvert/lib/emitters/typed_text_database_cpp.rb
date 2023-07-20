@@ -1,22 +1,20 @@
-##############################################################################
-# This file is part of the TouchGFX 4.12.3 distribution.
+# Copyright (c) 2018(-2021) STMicroelectronics.
+# All rights reserved.
 #
-# <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-# All rights reserved.</center></h2>
+# This file is part of the TouchGFX 4.17.0 distribution.
 #
-# This software component is licensed by ST under Ultimate Liberty license
-# SLA0044, the "License"; You may not use this file except in compliance with
-# the License. You may obtain a copy of the License at:
-#                             www.st.com/SLA0044
+# This software is licensed under terms that can be found in the LICENSE file in
+# the root directory of this software component.
+# If no LICENSE file comes with this software, it is provided AS-IS.
 #
-##############################################################################
-
+###############################################################################/
 class TypedTextDatabaseCpp < Template
   TypedTextPresenter = Struct.new(:alignment, :direction, :typography)
 
-  def initialize(text_entries, typographies, output_directory, generate_binary_language_files)
+  def initialize(text_entries, typographies, output_directory, generate_binary_translations, generate_font_format)
     super(text_entries, typographies, output_directory)
-    @generate_binary_language_files = generate_binary_language_files
+    @generate_binary_translations = generate_binary_translations
+    @generate_font_format = generate_font_format
     @cache = {}
   end
 
@@ -45,6 +43,7 @@ class TypedTextDatabaseCpp < Template
     @cache["databases"] = databases
     @cache["database_list"]=language_db_list
     @cache["fonts"] = fontmap
+    @cache["generate_font_format"] = @generate_font_format
 
     new_cache_file = false
     if not File::exists?(cache_file)
@@ -84,7 +83,7 @@ class TypedTextDatabaseCpp < Template
   end
 
   def generate_binary_files?
-    @generate_binary_language_files=="yes"
+    @generate_binary_translations=="yes"
   end
 
   def layouts
@@ -116,6 +115,10 @@ class TypedTextDatabaseCpp < Template
         end
         fontmap
       end
+  end
+
+  def font_class_name
+    @generate_font_format == "1" ? "UnmappedDataFont" : "GeneratedFont"
   end
 
   def input_path

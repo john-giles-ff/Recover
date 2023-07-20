@@ -26,6 +26,9 @@ namespace FosterAndFreeman.Internal
 
         public void OpenComPort(string portName)
         {
+            if (_applicationPort.IsOpen)
+                _applicationPort.Close();
+
             //Open port specified
             _applicationPort.PortName = portName;
             _applicationPort.Open();

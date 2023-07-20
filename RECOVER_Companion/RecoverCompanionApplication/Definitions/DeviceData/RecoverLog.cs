@@ -165,10 +165,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// </summary>
         public int Index
         {
-            get
-            {
-                return _index;
-            }
+            get => _index;            
             set
             {
                 _index = value;
@@ -181,10 +178,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// </summary>
         public DateTime StartTime
         {
-            get
-            {
-                return _startTime;
-            }
+            get => _startTime;            
             set
             {
                 _startTime = value;
@@ -197,10 +191,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// </summary>
         public int BaseHeaterSetPoint
         {
-            get
-            {
-                return _baseHeaterSetpoint;
-            }
+            get => _baseHeaterSetpoint;
             set
             {
                 _baseHeaterSetpoint = value;
@@ -213,10 +204,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// </summary>
         public int PrecursorHeaterSetPoint
         {
-            get
-            {
-                return _precursorHeaterSetpoint;
-            }
+            get => _precursorHeaterSetpoint;
             set
             {
                 _precursorHeaterSetpoint = value;
@@ -229,10 +217,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// </summary>
         public int VacuumSetPoint
         {
-            get
-            {
-                return _vacuumSetPoint;
-            }
+            get => _vacuumSetPoint;
             set
             {
                 _vacuumSetPoint = value;
@@ -245,10 +230,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// </summary>
         public int FinalBaseHeaterTemperature
         {
-            get
-            {
-                return _finalBaseHeaterTemperature;
-            }
+            get => _finalBaseHeaterTemperature;
             set
             {
                 _finalBaseHeaterTemperature = value;
@@ -261,10 +243,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// </summary>
         public int FullPrecursorTemperature
         {
-            get
-            {
-                return _fullPrecursorTemperature;
-            }
+            get => _fullPrecursorTemperature;
             set
             {
                 _fullPrecursorTemperature = value;
@@ -278,10 +257,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// </summary>
         public int FinalPrecusorHeaterTemperature
         {
-            get
-            {
-                return _finalPrecusorHeaterTemperature;
-            }
+            get =>  _finalPrecusorHeaterTemperature;
             set
             {
                 _finalPrecusorHeaterTemperature = value;
@@ -294,10 +270,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// </summary>
         public int FinalPressureMeasurement
         {
-            get
-            {
-                return _finalPressureMeasurement;
-            }
+            get => _finalPressureMeasurement;
             set
             {
                 _finalPressureMeasurement = value;
@@ -310,10 +283,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// </summary>
         public int LeakTest1Result
         {
-            get
-            {
-                return _leakTest1Result;
-            }
+            get => _leakTest1Result;
             set
             {
                 _leakTest1Result = value;
@@ -326,10 +296,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// </summary>
         public int LeakTest2Result
         {
-            get
-            {
-                return _leakTest2Result;
-            }
+            get => _leakTest2Result;
             set
             {
                 _leakTest2Result = value;
@@ -342,10 +309,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// </summary>
         public int PumpDownRunTime
         {
-            get
-            {
-                return _pumpdownRunTime;
-            }
+            get => _pumpdownRunTime;
             set
             {
                 _pumpdownRunTime = value;
@@ -358,10 +322,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// </summary>
         public int HeatRunTime
         {
-            get
-            {
-                return _heatRunTime;
-            }
+            get => _heatRunTime;
             set
             {
                 _heatRunTime = value;
@@ -374,10 +335,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// </summary>
         public int NumberOfSamples
         {
-            get
-            {
-                return _numberOfSamples;
-            }
+            get => _numberOfSamples;
             set
             {
                 _numberOfSamples = value;
@@ -388,145 +346,73 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// <summary>
         /// If Base is hotter than -10% Setpoint Deviation and lower than 60C
         /// </summary>
-        public bool BaseHeaterWithinTolerance
-        {
-            get
-            {
-                return BaseHeaterSetpointDeviation > -10 && FinalBaseHeaterTemperature < 60;
-            }
-        }
+        public bool BaseHeaterWithinTolerance => 
+            BaseHeaterSetpointDeviation > -10 && FinalBaseHeaterTemperature < 60;
 
         /// <summary>
         /// Amount of deviation from baseheater setpoint to actual
         /// </summary>
-        public float BaseHeaterSetpointDeviation
-        {
-            get
-            {
-                var percentage = ((float)FinalBaseHeaterTemperature / BaseHeaterSetPoint) * 100;
-                return percentage - 100.0f;
-            }
-        }
+        public float BaseHeaterSetpointDeviation => 
+            ((float)FinalBaseHeaterTemperature / BaseHeaterSetPoint * 100) - 100.0f;
 
         /// <summary>
         /// String Describing Base Tolerance
         /// </summary>
-        public string BaseString
-        {
-            get
-            {
-                var state = BaseHeaterWithinTolerance ? Strings.TestSuccess : Strings.TestFail;
-                //return $"{state}({BaseHeaterSetpointDeviation.ToString("+#;-#;+0")}%)";
-                //Was asked to remove the deviation values, keeping here just incase
-                return state;
-            }
-        }
+        public string BaseString => 
+            BaseHeaterWithinTolerance ? Strings.TestSuccess : Strings.TestFail;
 
         /// <summary>
         /// If Precusor Deviation is withing +- 5%
         /// </summary>
-        public bool PrecursorHeaterWithinTolerance
-        {
-            get
-            {
-                return PrecusorSetpointDeviation > -5 && PrecusorSetpointDeviation < 5;
-            }
-        }
+        public bool PrecursorHeaterWithinTolerance => 
+            PrecusorSetpointDeviation > -5 && PrecusorSetpointDeviation < 5;
 
         /// <summary>
         /// Amount of deviation from precusor setpoint to actual
         /// </summary>
-        public float PrecusorSetpointDeviation
-        {
-            get
-            {
-                var percentage = ((float)FullPrecursorTemperature / PrecursorHeaterSetPoint) * 100;
-                return percentage - 100.0f;
-            }
-        }
+        public float PrecusorSetpointDeviation => 
+            ((float)FullPrecursorTemperature / PrecursorHeaterSetPoint * 100) - 100.0f;
 
         /// <summary>
         /// String describing precursor tolerance
         /// </summary>
-        public string PrecursorString
-        {
-            get
-            {
-                var state = PrecursorHeaterWithinTolerance ? Strings.TestSuccess : Strings.TestFail;
-                //return $"{state}({PrecusorSetpointDeviation.ToString("+#;-#;+0")}%)";
-                //Was asked to remove the deviation values, keeping here just incase
-                return state;
-            }
-        }
+        public string PrecursorString => 
+            PrecursorHeaterWithinTolerance ? Strings.TestSuccess : Strings.TestFail;
 
         /// <summary>
         /// Check that pressure is below 1000millTorr after run
         /// </summary>
-        public bool PressureDeviationWithinTolerance
-        {
-            get
-            {
-                return FinalPressureMeasurement < 1000 && FinalPressureMeasurement != 0;
-            }
-        }
+        public bool PressureDeviationWithinTolerance => 
+            FinalPressureMeasurement < 1000 && FinalPressureMeasurement != 0;
 
         /// <summary>
         /// Amount of deviation from pressure setpoint to actual
         /// </summary>
-        public float PressureSetpointDeviation
-        {
-            get
-            {
-                var percentage = ((float)FinalPressureMeasurement / VacuumSetPoint) * 100;
-                return percentage - 100.0f;
-            }
-        }
+        public float PressureSetpointDeviation => 
+            ((float)FinalPressureMeasurement / VacuumSetPoint * 100) - 100.0f;
 
         /// <summary>
         /// String describing Pressure tolerance
         /// </summary>
-        public string PressureString
-        {
-            get
-            {
-                var state = PressureDeviationWithinTolerance ? Strings.TestSuccess : Strings.TestFail;
-                //return $"{state}({PressureSetpointDeviation.ToString("+#;-#;+0")}%)";
-                //Was asked to remove the deviation values, keeping here just incase
-                return state;
-            }
-        }
+        public string PressureString => 
+            PressureDeviationWithinTolerance ? Strings.TestSuccess : Strings.TestFail;
 
         /// <summary>
         /// If the First Leak test passed
         /// </summary>
-        public bool LeakTest1
-        {
-            get
-            {
-                return LeakTest1Result < 75;
-            }
-        }
+        public bool LeakTest1 => LeakTest1Result < 75;
 
         /// <summary>
         /// If the second leak test passed
         /// </summary>
-        public bool LeakTest2
-        {
-            get
-            {
-                return LeakTest2Result < 75;
-            }
-        }
+        public bool LeakTest2 => LeakTest2Result < 75;
 
         /// <summary>
         /// Time to reach Vacuum Setpoint
         /// </summary>
         public int TimeToReachVacuumSetpoint
         {
-            get
-            {
-                return _timeToReachVacuumSetpoint;
-            }
+            get => _timeToReachVacuumSetpoint;
             set
             {
                 _timeToReachVacuumSetpoint = value;
@@ -539,10 +425,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// </summary>
         public int MaximumLeakSetting
         {
-            get
-            {
-                return _maximumLeakSetting;
-            }
+            get => _maximumLeakSetting;
             set
             {
                 _maximumLeakSetting = value;
@@ -556,10 +439,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// </summary>
         public bool ChamberSize
         {
-            get
-            {
-                return _chamberSize;
-            }
+            get => _chamberSize;
             set
             {
                 _chamberSize = value;
@@ -572,26 +452,14 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// <summary>
         /// Chamber size as string
         /// </summary>
-        public string ChamberSizeString
-        {
-            get
-            {
-                if (_chamberSize)
-                    return Strings.LargeChamber;
-                else
-                    return Strings.SmallChamber;
-            }
-        }
+        public string ChamberSizeString => _chamberSize ? Strings.LargeChamber : Strings.SmallChamber;
 
         /// <summary>
         /// Number of cycles since process filter counter was reset.
         /// </summary>
         public int FilterCount
         {
-            get
-            {
-                return _filterCount;
-            }
+            get => _filterCount;
             set
             {
                 _filterCount = value;
@@ -604,10 +472,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// </summary>
         public int TotalRunCount
         {
-            get
-            {
-                return _totalRunCount;
-            }
+            get => _totalRunCount;
             set
             {
                 _totalRunCount = value;
@@ -620,10 +485,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// </summary>
         public int TimeForPSW2ToOperate
         {
-            get
-            {
-                return _timeForPSW2toOperate;
-            }
+            get => _timeForPSW2toOperate;
             set
             {
                 _timeForPSW2toOperate = value;
@@ -636,10 +498,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// </summary>
         public int PressureWhenPSW2Operates
         {
-            get
-            {
-                return _pressureWhenPSW2Operates;
-            }
+            get => _pressureWhenPSW2Operates;
             set
             {
                 _pressureWhenPSW2Operates = value;
@@ -652,10 +511,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// </summary>
         public int LowVacSetting
         {
-            get
-            {
-                return _lowVacSetting;
-            }
+            get => _lowVacSetting;
             set
             {
                 _lowVacSetting = value;
@@ -668,10 +524,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// </summary>
         public int SampleRatePumpdown
         {
-            get
-            {
-                return _sampleRatePumpdown;
-            }
+            get => _sampleRatePumpdown;
             set
             {
                 _sampleRatePumpdown = value;
@@ -684,10 +537,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// </summary>
         public int SampleRateDevelop
         {
-            get
-            {
-                return _sampleRateDevelop;
-            }
+            get => _sampleRateDevelop;
             set
             {
                 _sampleRateDevelop = value;
@@ -700,10 +550,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// </summary>
         public int FirmwareBuild
         {
-            get
-            {
-                return _firmwareBuild;
-            }
+            get => _firmwareBuild;
             set
             {
                 _firmwareBuild = value;
@@ -716,10 +563,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// </summary>
         public string SerialNumber
         {
-            get
-            {
-                return _serialNumber;
-            }
+            get => _serialNumber;
             set
             {
                 _serialNumber = value;
@@ -733,10 +577,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// </summary>
         public bool MetalType
         {
-            get
-            {
-                return _metalType;
-            }
+            get => _metalType;
             set
             {
                 _metalType = value;
@@ -749,16 +590,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// <summary>
         /// Metal Type as String
         /// </summary>
-        public string MetalTypeString
-        {
-            get
-            {
-                if (_metalType)
-                    return Strings.SilverColoured;
-                else
-                    return Strings.CopperBased;
-            }
-        }
+        public string MetalTypeString => _metalType ? Strings.SilverColoured : Strings.CopperBased;
 
         /// <summary>
         /// DevelopR type based off of MetalType and Chamber Size
@@ -790,13 +622,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         }
 
         [XmlIgnore()]
-        public bool HasCaseReference
-        {
-            get
-            {
-                return !string.IsNullOrWhiteSpace(CaseReference);
-            }
-        }
+        public bool HasCaseReference => !string.IsNullOrWhiteSpace(CaseReference);
 
         [XmlIgnore()]
         /// <summary>
@@ -827,13 +653,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         }
 
         [XmlIgnore()]
-        public bool HasCaseOperator
-        {
-            get
-            {
-                return !string.IsNullOrWhiteSpace(CaseOperator);
-            }
-        }
+        public bool HasCaseOperator => !string.IsNullOrWhiteSpace(CaseOperator);
 
         [XmlIgnore()]
         /// <summary>
@@ -863,13 +683,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
             }
         }
 
-        public bool HasNotes
-        {
-            get
-            {
-                return !string.IsNullOrWhiteSpace(Notes);
-            }
-        }
+        public bool HasNotes => !string.IsNullOrWhiteSpace(Notes);
 
         public string Notes
         {
@@ -894,15 +708,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         }
 
         [XmlIgnore()]
-        public bool HasExtraInformation
-        {
-            get
-            {
-                var result = !(string.IsNullOrWhiteSpace(CaseReference) && string.IsNullOrWhiteSpace(CaseOperator) && string.IsNullOrWhiteSpace(Notes));
-
-                return result;
-            }
-        }
+        public bool HasExtraInformation => !(string.IsNullOrWhiteSpace(CaseReference) && string.IsNullOrWhiteSpace(CaseOperator) && string.IsNullOrWhiteSpace(Notes));
 
         /// <summary>
         /// If the samples have finished loading
@@ -910,10 +716,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         [XmlIgnore()]
         public bool SamplesLoaded
         {
-            get
-            {
-                return _samplesLoaded;
-            }
+            get => _samplesLoaded;
             set
             {
                 _samplesLoaded = value;
@@ -927,10 +730,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         [XmlIgnore()]
         public IEnumerable<Sample> Samples
         {
-            get
-            {
-                return _samples;
-            }
+            get => _samples;
             set
             {
                 _samples = value;
@@ -941,13 +741,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
 
         public Sample[] SerializableSamples
         {
-            get
-            {
-                if (Samples == null)
-                    return null;
-
-                return Samples.ToArray();
-            }
+            get => Samples?.ToArray();
             set
             {
                 Samples = value;
@@ -958,86 +752,39 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// <summary>
         /// Time when Pumpdown was started
         /// </summary>
-        public DateTime PumpDownStart
-        {
-            get
-            {
-                if (Samples == null)
-                    return new DateTime();
-
-                var firstPumpdownSample = Samples.FirstOrDefault(a => a.Mode == SampleMode.SAMPLE_PUMPDOWN);
-                return firstPumpdownSample.SampleTime;
-            }
-        }
+        public DateTime PumpDownStart => 
+            Samples == null ? DateTime.MinValue : Samples.FirstOrDefault(a => a.Mode == SampleMode.SAMPLE_PUMPDOWN).SampleTime;
 
         /// <summary>
         /// Time when heat was started
         /// </summary>
-        public DateTime HeatStart
-        {
-            get
-            {
-                if (Samples == null)
-                    return new DateTime();
-
-                var firstHeatSample = Samples.FirstOrDefault(a => a.Mode == SampleMode.SAMPLE_HEAT);
-                return firstHeatSample.SampleTime;
-            }
-        }
+        public DateTime HeatStart => 
+            Samples == null ? DateTime.MinValue : Samples.FirstOrDefault(a => a.Mode == SampleMode.SAMPLE_HEAT).SampleTime;
 
         /// <summary>
         /// Time when cool was started
         /// </summary>
-        public DateTime CoolStart
-        {
-            get
-            {
-                if (Samples == null)
-                    return new DateTime();
-
-                var firstCoolSample = Samples.FirstOrDefault(a => a.Mode == SampleMode.SAMPLE_COOL);
-                return firstCoolSample.SampleTime;
-            }
-        }
+        public DateTime CoolStart => 
+            Samples == null ? DateTime.MinValue : Samples.FirstOrDefault(a => a.Mode == SampleMode.SAMPLE_COOL).SampleTime;
 
         /// <summary>
         /// Time whe breakseal was started
         /// </summary>
-        public DateTime BreakSealStart
-        {
-            get
-            {
-                if (Samples == null)
-                    return new DateTime();
-
-                var firstBreakSealSample = Samples.FirstOrDefault(a => a.Mode == SampleMode.SAMPLE_BREAKSEAL);
-                return firstBreakSealSample.SampleTime;
-            }
-        }
+        public DateTime BreakSealStart => 
+            Samples == null ? DateTime.MinValue : Samples.FirstOrDefault(a => a.Mode == SampleMode.SAMPLE_BREAKSEAL).SampleTime;
 
         /// <summary>
         /// End time 
         /// </summary>
-        public DateTime EndTime
-        {
-            get
-            {
-                if (Samples == null)
-                    return new DateTime();
-
-                return Samples.Last().SampleTime;
-            }
-        }
+        public DateTime EndTime => 
+            Samples == null ? DateTime.MinValue : Samples.Last().SampleTime;
 
         /// <summary>
         /// If log is USB log or not
         /// </summary>
         public bool IsUSB
         {
-            get
-            {
-                return _isUSB;
-            }
+            get => _isUSB;
             set
             {
                 _isUSB = value;
@@ -1047,10 +794,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
 
         public string FileName
         {
-            get
-            {
-                return _filename;
-            }
+            get => _filename;
             set
             {
                 _filename = value;
@@ -1081,19 +825,19 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
                 PrecursorHeaterSetPoint = int.Parse(datas[2]);
                 VacuumSetPoint = int.Parse(datas[3]);
                 FinalBaseHeaterTemperature = int.Parse(datas[4]);
-                FinalPrecusorHeaterTemperature = int.Parse(datas[5]);
+                FullPrecursorTemperature = int.Parse(datas[5]);
                 FinalPressureMeasurement = int.Parse(datas[6]);
                 LeakTest1Result = int.Parse(datas[7]);
                 LeakTest2Result = int.Parse(datas[8]);
                 PumpDownRunTime = int.Parse(datas[9]);
-                HeatRunTime = int.Parse(datas[10]);
+                HeatRunTime = int.Parse(datas[10]); //Old 8 bit value, no longer used
 
                 //Samples will return \ if there are no samples (Happens when the process fails)
                 if (int.TryParse(datas[11], out int samples))
                     NumberOfSamples = samples;
 
 
-                FullPrecursorTemperature = int.Parse(datas[12]);
+                FinalPrecusorHeaterTemperature = int.Parse(datas[12]);
                 TimeToReachVacuumSetpoint = int.Parse(datas[13]);
                 MaximumLeakSetting = int.Parse(datas[14]);
                 ChamberSize = int.Parse(datas[15]) == 1;
@@ -1108,6 +852,11 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
                 SerialNumber = datas[24];
                 //There is a skipped case number variable here
                 MetalType = int.Parse(datas[26]) == 1;
+
+                //New 16 bit value
+                int heatTime16bit = int.Parse(datas[33]);
+                if (heatTime16bit > HeatRunTime)
+                    HeatRunTime = heatTime16bit;
 
             }
             catch (Exception) { };

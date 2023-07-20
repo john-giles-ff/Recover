@@ -1,91 +1,57 @@
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
+
 /**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.12.3 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+ * @file touchgfx/transitions/CoverTransition.hpp
+ *
+ * Declares the touchgfx::CoverTransition class.
+ */
+#ifndef TOUCHGFX_COVERTRANSITION_HPP
+#define TOUCHGFX_COVERTRANSITION_HPP
 
-#ifndef COVERTRANSITION_HPP
-#define COVERTRANSITION_HPP
-
-#include <touchgfx/hal/HAL.hpp>
-#include <touchgfx/containers/Container.hpp>
-#include <touchgfx/transitions/Transition.hpp>
 #include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Callback.hpp>
+#include <touchgfx/Drawable.hpp>
 #include <touchgfx/EasingEquations.hpp>
+#include <touchgfx/containers/Container.hpp>
+#include <touchgfx/hal/HAL.hpp>
+#include <touchgfx/lcd/LCD.hpp>
+#include <touchgfx/transitions/Transition.hpp>
 #include <touchgfx/widgets/Widget.hpp>
 
 namespace touchgfx
 {
-class Container;
-class Widget;
-
 /**
- * @class CoverTransition CoverTransition.hpp touchgfx/transitions/CoverTransition.hpp
- *
- * @brief A Transition that slides from one screen to the next.
- *
- *        A Transition that slides the new screen over the previous.
- *
- * @tparam templateDirection Type of the template direction.
- *
- * @see Transition
+ * A Transition that slides the new screen over the previous \e from the given direction.
  */
 template <Direction templateDirection>
 class CoverTransition : public Transition
 {
 public:
-
     /**
-    * @class FullSolidRect
-    *
-    * @brief A Widget that returns a solid rect of the same size
-    *        as the application.
-    */
-    class FullSolidRect : public Widget
-    {
-    public:
-        FullSolidRect() : Widget()
-        {}
-
-        virtual ~FullSolidRect() {}
-
-        virtual Rect getSolidRect() const
-        {
-            return Rect(0U, 0U, HAL::DISPLAY_WIDTH, HAL::DISPLAY_HEIGHT);
-        }
-
-        virtual void draw(const Rect& area) const { }
-    };
-
-    /**
-     * @fn CoverTransition::CoverTransition(const uint8_t transitionSteps = 20) : Transition(), handleTickCallback(this, &CoverTransition::tickMoveDrawable), direction(templateDirection), animationSteps(transitionSteps), animationCounter(0), calculatedValue(0), movedToPos(0)
+     * Initializes a new instance of the CoverTransition class.
      *
-     * @brief Constructor.
-     *
-     *        Constructor.
-     *
-     * @param transitionSteps Number of steps in the transition animation.
+     * @param  transitionSteps (Optional) Number of steps in the transition animation.
      */
     CoverTransition(const uint8_t transitionSteps = 20)
         : Transition(),
           handleTickCallback(this, &CoverTransition::tickMoveDrawable),
-          direction(templateDirection),
           animationSteps(transitionSteps),
           animationCounter(0),
           calculatedValue(0),
           movedToPos(0),
           solid()
     {
-        switch (direction)
+        switch (templateDirection)
         {
         case EAST:
             targetValue = -HAL::DISPLAY_WIDTH;
@@ -110,25 +76,9 @@ public:
     }
 
     /**
-     * @fn virtual CoverTransition::~CoverTransition()
-     *
-     * @brief Destructor.
-     *
-     *        Destructor.
-     */
-    virtual ~CoverTransition()
-    {
-    }
-
-    /**
-     * @fn virtual void CoverTransition::handleTickEvent()
-     *
-     * @brief Handles the tick event when transitioning.
-     *
-     *        Handles the tick event when transitioning. It moves the
-     *        contents of the Screen's container. The direction of the
-     *        transition determines the direction the contents of the
-     *        container moves.
+     * Handles the tick event when transitioning. It moves the contents of the Screen's
+     * container. The direction of the transition determines the direction the contents of
+     * the container moves.
      */
     virtual void handleTickEvent()
     {
@@ -169,7 +119,7 @@ public:
         if (animationCounter == 1 && HAL::USE_DOUBLE_BUFFERING)
         {
             Rect rect;
-            switch (direction)
+            switch (templateDirection)
             {
             case EAST:
                 rect.x = 0;
@@ -217,29 +167,11 @@ public:
         screenContainer->forEachChild(&handleTickCallback);
     }
 
-    /**
-     * @fn virtual void CoverTransition::tearDown()
-     *
-     * @brief Tear down.
-     *
-     *        Tear down.
-     *
-     * @see Transition::tearDown()
-     */
     virtual void tearDown()
     {
         screenContainer->remove(solid);
     }
 
-    /**
-     * @fn virtual void CoverTransition::init()
-     *
-     * @brief Initializes this object.
-     *
-     *        Initializes this object.
-     *
-     * @see Transition::init()
-     */
     virtual void init()
     {
         Transition::init();
@@ -249,20 +181,15 @@ public:
     }
 
 protected:
-
     /**
-     * @fn virtual void CoverTransition::initMoveDrawable(Drawable& d)
-     *
-     * @brief Moves the Drawable to its initial position.
-     *
-     *        Moves the Drawable to its initial position outside of
-     *        the visible area.
+     * Moves the Drawable to its initial position just outside of the visible area of the
+     * display.
      *
      * @param [in] d The Drawable to move.
      */
     virtual void initMoveDrawable(Drawable& d)
     {
-        switch (direction)
+        switch (templateDirection)
         {
         case EAST:
             d.moveRelative(HAL::DISPLAY_WIDTH, 0);
@@ -283,17 +210,13 @@ protected:
     }
 
     /**
-     * @fn virtual void CoverTransition::tickMoveDrawable(Drawable& d)
-     *
-     * @brief Moves the Drawable.
-     *
-     *        Moves the Drawable.
+     * Moves the Drawable to the new position as calculated in handleTickEvent().
      *
      * @param [in] d The Drawable to move.
      */
     virtual void tickMoveDrawable(Drawable& d)
     {
-        switch (direction)
+        switch (templateDirection)
         {
         case EAST:
         case WEST:
@@ -311,15 +234,29 @@ protected:
     }
 
 private:
-    Callback<CoverTransition, Drawable&> handleTickCallback;    ///< Callback used for tickMoveDrawable().
+    class FullSolidRect : public Widget
+    {
+    public:
+        virtual Rect getSolidRect() const
+        {
+            return Rect(0, 0, getWidth(), getHeight());
+        }
 
-    Direction     direction;        ///< The direction of the transition.
-    const uint8_t animationSteps;   ///< Number of steps the transition should move per complete animation.
-    uint8_t       animationCounter; ///< Current step in the transition animation.
-    int16_t       targetValue;      ///< The target value for the transition animation.
-    int16_t       calculatedValue;  ///< The calculated X or Y value for the snapshot and the children.
-    int16_t       movedToPos;
-    FullSolidRect solid;            ///< A solid rect that covers the entire screen to avoid copying elements outside
+        virtual void draw(const Rect& area) const
+        {
+        }
+    };
+
+    Callback<CoverTransition, Drawable&> handleTickCallback; ///< Callback used for tickMoveDrawable().
+
+    const uint8_t animationSteps; ///< Number of steps the transition should move per complete animation.
+    uint8_t animationCounter;     ///< Current step in the transition animation.
+    int16_t targetValue;          ///< The target value for the transition animation.
+    int16_t calculatedValue;      ///< The calculated X or Y value to move the snapshot and the children.
+    int16_t movedToPos;
+    FullSolidRect solid; ///< A solid rect that covers the entire screen to avoid copying elements outside
 };
+
 } // namespace touchgfx
-#endif // COVERTRANSITION_HPP
+
+#endif // TOUCHGFX_COVERTRANSITION_HPP

@@ -1,16 +1,13 @@
-##############################################################################
-# This file is part of the TouchGFX 4.12.3 distribution.
+# Copyright (c) 2018(-2021) STMicroelectronics.
+# All rights reserved.
 #
-# <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-# All rights reserved.</center></h2>
+# This file is part of the TouchGFX 4.17.0 distribution.
 #
-# This software component is licensed by ST under Ultimate Liberty license
-# SLA0044, the "License"; You may not use this file except in compliance with
-# the License. You may obtain a copy of the License at:
-#                             www.st.com/SLA0044
+# This software is licensed under terms that can be found in the LICENSE file in
+# the root directory of this software component.
+# If no LICENSE file comes with this software, it is provided AS-IS.
 #
-##############################################################################
-
+###############################################################################/
 class UnicodesTxt
   def initialize(text_entries, typographies, output_directory)
     @text_entries = text_entries
@@ -393,8 +390,8 @@ class UnicodeForTypographyTxt
 
   def check_for_rtl(unicodes)
     return if @text_entries.is_rtl # No need to look for unicode if RTL already detected
-    # Look for hebrew (0x0500-0x05ff) or arabic (0x0600-0x06ff) + arabic ligatures (0xFE70-0xFEFF)
-    @text_entries.unicode_uses_rtl if unicodes.any?{|u| u.between?(0x0500, 0x05FF) || u.between?(0x0600, 0x06FF) || u.between?(0xFE70, 0xFEFF) }
+    # Look for hebrew (0x0590-0x05ff) or arabic (0x0600-0x06ff) + arabic ligatures (0xFE70-0xFEFF)
+    @text_entries.unicode_uses_rtl if unicodes.any?{|u| u.between?(0x0590, 0x05FF) || u.between?(0x0600, 0x06FF) || u.between?(0xFE70, 0xFEFE) }
   end
 
   def decode_ranges(str)
@@ -528,6 +525,10 @@ class UnicodeForTypographyTxt
     unicodes = mirror_brackes(unicodes)
 
     unicodes = add_thai(unicodes)
+
+    unicodes.delete(0x0002) # TouchGFX wildcard character
+    unicodes.delete(0x200B) # ZERO WIDTH SPACE
+    unicodes.delete(0xFEFF) # ZERO WIDTH NO-BREAK SPACE
 
     unicodes = unicodes.uniq.sort
 

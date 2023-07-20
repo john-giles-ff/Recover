@@ -1,16 +1,22 @@
 #include <gui/LFT/LFT_ProductionTests.hpp>
 
-LFT_ProductionTests::LFT_ProductionTests(LFT_Information * lft_information, LFT_Manual * lft_manual, LFT_Auto * lft_auto, LFT_Settings * lft_settings)
-{
-	_information = lft_information;
-	_manual = lft_manual;
-	_auto = lft_auto;
-	_settings = lft_settings;
+LFT_ProductionTests::LFT_ProductionTests(LFT_Information* lft_information, LFT_Manual* lft_manual, LFT_Auto* lft_auto, LFT_Settings* lft_settings) :
+	_model(0),
+	_information(lft_information),
+	_manual(lft_manual),
+	_auto(lft_auto),
+	_settings(lft_settings)
+{	
+	//LFTActual[StatusMaximumPoints];
+	for (int i = 0; i < StatusMaximumPoints; i++)
+		LFTActual[i] = LFT_Status();
+
 
 	SoakTestStatus.SetSemaphore(_information->xSemaphore);
 	SoakTestCount.SetSemaphore(_information->xSemaphore);	
 	IsPumpdownTestQued.SetSemaphore(_information->xSemaphore);
 	IsSoakTestQued.SetSemaphore(_information->xSemaphore);	
+	NumberOfTests.SetSemaphore(_information->xSemaphore);
 	maxBaseCurrent.SetSemaphore(_information->xSemaphore);
 	maxPreCurrent.SetSemaphore(_information->xSemaphore);
 	LFT_ACTUAL_LENGTH.SetSemaphore(_information->xSemaphore);
@@ -126,9 +132,11 @@ void LFT_ProductionTests::GraphPumpdown()
 	_manual->SetBypassState(false);
 }
 
-void LFT_ProductionTests::QueSoakTest()
+
+void LFT_ProductionTests::QueSoakTest(int numberOfTests)
 {
 	IsSoakTestQued = true;
+	NumberOfTests = numberOfTests;
 }
 
 void LFT_ProductionTests::SoakTest()
@@ -140,6 +148,12 @@ void LFT_ProductionTests::SoakTest()
 	_isAborted = false;
 	while (!_isAborted)
 	{		
+		//Quit if maximum number of tests has been reached
+		if (NumberOfTests != -1 && SoakTestCount >= NumberOfTests)
+			break;
+
+
+
 		//Put lid down until switch triggered
 		_manual->LidDown();		
 		SoakTestStatus = 2;
@@ -165,10 +179,11 @@ void LFT_ProductionTests::SoakTest()
 #endif
 
 		//Set Settings
-		_auto->SetSettings();		
+		_auto->SetSettings();				
 		_auto->SetChamberSize(false);
 		_auto->SetMetalType(false);
 		_auto->SetStirTime(1);				
+		_auto->SetSampleRate(10);		
 
 		//Start Prechecks
 		_auto->StartPreChecks();

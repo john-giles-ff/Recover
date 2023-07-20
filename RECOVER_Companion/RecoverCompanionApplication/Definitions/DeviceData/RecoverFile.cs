@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+
+[assembly: InternalsVisibleTo("RecoverCompanionApplication.Tests")]
 
 namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
 {
@@ -86,7 +89,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.DeviceData
         /// Get File in byte form
         /// </summary>
         /// <returns>File In Byte Form</returns>
-        private byte[] GetBytes()
+        internal byte[] GetBytes()
         {
             if (FirmwareLength == 0 && SoftwareLength == 0)
                 throw new InvalidOperationException("No Firmware or Software to write to file");

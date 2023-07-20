@@ -220,17 +220,25 @@ namespace RecoverLogInspector
                     if (logs.Count() == 0)
                         continue;
 
-                    var stats = new Stats(logs);
+                    try
+                    {                    
+                        var stats = new Stats(logs);
 
-                    // Get log averages
-                    sampleAvgs_baseTemp.Add(stats.AvgTemp_PeakBase);
-                    sampleAvgs_baseTime.Add(stats.AvgTime_PeakBase);
-                    sampleAvgs_pumpdown.Add(stats.AvgTime_Pumpdown);
-                    sampleAvgs_precursor.Add(stats.AvgTime_Precursor);
-                    sampleNames.Add(logs.First().SerialNumber);
+                        // Get log averages
+                        sampleAvgs_baseTemp.Add(stats.AvgTemp_PeakBase);
+                        sampleAvgs_baseTime.Add(stats.AvgTime_PeakBase);
+                        sampleAvgs_pumpdown.Add(stats.AvgTime_Pumpdown);
+                        sampleAvgs_precursor.Add(stats.AvgTime_Precursor);
+                        sampleNames.Add(logs.First().SerialNumber);
 
-                    cachedDirectories.Add(new UnitDirectory { Path = directory, Logs = logs, UnitStats = stats });
-                    index++;                    
+                        cachedDirectories.Add(new UnitDirectory { Path = directory, Logs = logs, UnitStats = stats });
+                        index++;
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Windows.MessageBox.Show($"Unable to parse files for directory:\n{Path.GetFileName(directory)}\n{ex.Message}");
+                    }
+
                 }
 
                 // Plot peak base temp x-bar chart
@@ -274,7 +282,7 @@ namespace RecoverLogInspector
 
             barView.baseTimeHCL.Value = settings.AverageBaseTimeHCL;
             barView.baseTimeAVG.Value = settings.AverageBaseTimeAVG;
-            barView.baseTimeLCL.Value = settings.AverageBaseTimeLCL;
+            barView.baseTimeLCL.Value = settings.AverageBaseTimeLCL;            
 
             barView.pumpdownHCL.Value = settings.AveragePumpdownTimeHCL;
             barView.pumpdownAVG.Value = settings.AveragePumpdownTimeAVG;
@@ -284,23 +292,30 @@ namespace RecoverLogInspector
             barView.precursorAVG.Value = settings.AveragePrecursorTimeAVG;
             barView.precursorLCL.Value = settings.AveragePrecursorTimeLCL;
 
-
-
+            
             logView.baseTempHCL.Value = settings.IndividualPeakBaseTemperatureHCL;
             logView.baseTempAVG.Value = settings.IndividualPeakBaseTemperatureAVG;
             logView.baseTempLCL.Value = settings.IndividualPeakBaseTemperatureLCL;
+            logView.baseTempAxis.MinValue = settings.IndividualPeakBaseTemperatureMin;
+            logView.baseTempAxis.MaxValue = settings.IndividualPeakBaseTemperatureMax;
 
             logView.baseTimeHCL.Value = settings.IndividualBaseTimeHCL;
             logView.baseTimeAVG.Value = settings.IndividualBaseTimeAVG;
             logView.baseTimeLCL.Value = settings.IndividualBaseTimeLCL;
+            logView.baseTimeAxis.MinValue = settings.IndividualBaseTimeMin;
+            logView.baseTimeAxis.MaxValue = settings.IndividualBaseTimeMax;
 
             logView.pumpdownHCL.Value = settings.IndividualPumpdownTimeHCL;
             logView.pumpdownAVG.Value = settings.IndividualPumpdownTimeAVG;
             logView.pumpdownLCL.Value = settings.IndividualPumpdownTimeLCL;
+            logView.pumpdownAxis.MinValue = settings.IndividualPumpdownTimeMin;
+            logView.pumpdownAxis.MaxValue = settings.IndividualPumpdownTimeMax;
 
             logView.precursorHCL.Value = settings.IndividualPrecursorTimeHCL;
             logView.precursorAVG.Value = settings.IndividualPrecursorTimeAVG;
             logView.precursorLCL.Value = settings.IndividualPrecursorTimeLCL;
+            logView.precursorAxis.MinValue = settings.IndividualPrecursorTimeMin;
+            logView.precursorAxis.MaxValue = settings.IndividualPrecursorTimeMax;
         }
 
         private void OpenSettings(object sender, RoutedEventArgs e)

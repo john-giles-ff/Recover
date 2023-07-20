@@ -1,201 +1,112 @@
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
+
 /**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.12.3 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+ * @file touchgfx/widgets/BoxWithBorder.hpp
+ *
+ * Declares the touchgfx::BoxWithBorder class.
+ */
+#ifndef TOUCHGFX_BOXWITHBORDER_HPP
+#define TOUCHGFX_BOXWITHBORDER_HPP
 
-#ifndef BOXWITHBORDER_HPP
-#define BOXWITHBORDER_HPP
-
-#include <touchgfx/widgets/Widget.hpp>
-#include <touchgfx/Bitmap.hpp>
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/widgets/Box.hpp>
 
 namespace touchgfx
 {
 /**
- * @class BoxWithBorder BoxWithBorder.hpp touchgfx/containers/buttons/BoxWithBorder.hpp
- *
- * @brief A box with border.
+ * The BoxWithBorder class is used to create objects that can draw a box with a border on the
+ * display. The width of the border can be specified. If the border width is 0 the
+ * BoxWithBorder will function just like a Box.
  */
-class BoxWithBorder : public Widget
+class BoxWithBorder : public Box
 {
 public:
-    /**
-     * @fn BoxWithBorder::BoxWithBorder()
-     *
-     * @brief Default constructor.
-     */
-    BoxWithBorder() : Widget(), alpha(255), color(0), borderColor(0), borderSize(0)
+    BoxWithBorder()
+        : Box(), borderColor(0), borderSize(0)
     {
     }
 
     /**
-     * @fn BoxWithBorder::BoxWithBorder(uint16_t width, uint16_t height, colortype color, colortype borderColor, uint8_t borderSize, uint8_t alpha = 255)
+     * Constructor that allows specification of dimensions and colors of the BoxWithBorder.
      *
-     * @brief Constructor.
-     *
-     * @param width       The width.
-     * @param height      The height.
-     * @param color       The color.
-     * @param borderColor The border color.
-     * @param borderSize  Size of the border.
-     * @param alpha       (Optional) The alpha.
+     * @param  width       The width.
+     * @param  height      The height.
+     * @param  color       The color.
+     * @param  borderColor The border color.
+     * @param  borderSize  Size of the border.
+     * @param  alpha       (Optional) The alpha.
      */
-    BoxWithBorder(uint16_t width, uint16_t height, colortype color, colortype borderColor, uint8_t borderSize, uint8_t alpha = 255) : Widget(),
-        alpha(alpha), color(color)
+    BoxWithBorder(uint16_t width, uint16_t height, colortype color, colortype borderColor, uint16_t borderSize, uint8_t alpha = 255)
+        : Box(width, height, color, alpha), borderColor(borderColor), borderSize(borderSize)
     {
         rect.width = width;
         rect.height = height;
     }
 
     /**
-     * @fn virtual BoxWithBorder::~BoxWithBorder()
+     * Sets the color of the border drawn along the edge of the BoxWithBorder.
      *
-     * @brief Destructor.
-     */
-    virtual ~BoxWithBorder() {}
-
-    /**
-     * @fn virtual Rect BoxWithBorder::getSolidRect() const;
-     *
-     * @brief Gets solid rectangle.
-     *
-     * @return The solid rectangle.
-     */
-    virtual Rect getSolidRect() const;
-
-    /**
-     * @fn void BoxWithBorder::setColor(colortype color)
-     *
-     * @brief Sets a color.
-     *
-     * @param color The color.
-     */
-    void setColor(colortype color)
-    {
-        this->color = color;
-    }
-
-    /**
-     * @fn inline colortype BoxWithBorder::getColor() const
-     *
-     * @brief Gets the color.
-     *
-     * @return The color.
-     */
-    inline colortype getColor() const
-    {
-        return color;
-    }
-
-    /**
-     * @fn void BoxWithBorder::setBorderColor(colortype color)
-     *
-     * @brief Sets border color.
-     *
-     * @param color The color.
+     * @param  color The color of the border.
+     * @see setColor, getBorderColor, Color::getColorFrom24BitRGB
      */
     void setBorderColor(colortype color)
     {
-        this->borderColor = color;
+        borderColor = color;
     }
 
     /**
-     * @fn inline colortype BoxWithBorder::getBorderColor() const
+     * Gets the color of the border drawn along the edge of the BoxWithBorder.
      *
-     * @brief Gets border color.
-     *
-     * @return The border color.
+     * @return The color of the border.
+     * @see setBorderColor, getColor, Color::getRed, Color::getGreen, Color::getRed
      */
-    inline colortype getBorderColor() const
+    FORCE_INLINE_FUNCTION colortype getBorderColor() const
     {
         return borderColor;
     }
 
     /**
-     * @fn void BoxWithBorder::setBorderSize(uint8_t size)
+     * Sets the width of the border. If the width is set to 0, the BoxWithBorder will look
+     * exactly like a Box.
      *
-     * @brief Sets border size.
+     * @param  size The width of the border.
      *
-     * @param size The size.
+     * @see getBorderSize
      */
-    void setBorderSize(uint8_t size)
+    void setBorderSize(uint16_t size)
     {
         borderSize = size;
     }
 
     /**
-     * @fn inline uint8_t BoxWithBorder::getBorderSize() const
+     * Gets the width of the border.
      *
-     * @brief Gets border size.
+     * @return The width of the border.
      *
-     * @return The border size.
+     * @see setBorderSize
      */
-    inline uint8_t getBorderSize() const
+    FORCE_INLINE_FUNCTION uint16_t getBorderSize() const
     {
         return borderSize;
     }
 
-    /**
-     * @fn void BoxWithBorder::setAlpha(uint8_t alpha)
-     *
-     * @brief Sets an alpha.
-     *
-     * @param alpha The alpha.
-     */
-    void setAlpha(uint8_t alpha)
-    {
-        this->alpha = alpha;
-    }
-
-    /**
-     * @fn inline uint8_t BoxWithBorder::getAlpha() const
-     *
-     * @brief Gets the alpha.
-     *
-     * @return The alpha.
-     */
-    inline uint8_t getAlpha() const
-    {
-        return alpha;
-    }
-
-    /**
-     * @fn virtual void BoxWithBorder::draw(const Rect& area) const;
-     *
-     * @brief Draws the given area.
-     *
-     * @param area The area.
-     */
     virtual void draw(const Rect& area) const;
 
-    /**
-     * @fn virtual uint16_t BoxWithBorder::getType() const
-     *
-     * @brief Gets the type.
-     *
-     * @return The type.
-     */
-    virtual uint16_t getType() const
-    {
-        return (uint16_t)TYPE_BOX;
-    }
-
 protected:
-    uint8_t     alpha;         ///< The alpha
-    colortype   color;         ///< The color
-    colortype   borderColor;   ///< The border color
-    uint8_t     borderSize;    ///< Size of the border
+    colortype borderColor; ///< The color of the border along the edge
+    uint16_t borderSize;   ///< Width of the border along the edge
 };
+
 } // namespace touchgfx
 
-#endif // BOXWITHBORDER_HPP
+#endif // TOUCHGFX_BOXWITHBORDER_HPP

@@ -9,6 +9,7 @@ RECOVER/simulator/msvs/.vs/
 RECOVER/screenshots/
 RECOVER/build/
 RECOVER/generated/
+RECOVER/touchgfx_backup*/
 
 Autoflash/bin/
 Autoflash/obj/
@@ -29,7 +30,14 @@ RecoverControl/bin/
 RecoverControl/obj/
 
 
+RECOVER_Companion/Installer/RecoverCompanion-cache/
 RECOVER_Companion/Installer/Output/
+
+RecoverControl.Tests/bin/
+RecoverControl.Tests/obj/
+
+RecoverCompanionApplication.Tests/bin/
+RecoverCompanionApplication.Tests/obj/
 
 packages/
 .vs/
@@ -41,3 +49,4 @@ PressureCurveLinearizing/obj/
 
 UserDecode/bin/
 UserDecode/obj/
+RECOVER/simulator/msvs/screenshots/

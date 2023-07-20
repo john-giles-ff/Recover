@@ -1,33 +1,35 @@
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
+
 /**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.12.3 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+ * @file touchgfx/widgets/Widget.hpp
+ *
+ * Declares the touchgfx::Widget class.
+ */
+#ifndef TOUCHGFX_WIDGET_HPP
+#define TOUCHGFX_WIDGET_HPP
 
-#ifndef WIDGET_HPP
-#define WIDGET_HPP
-
-#include <assert.h>
+#include <touchgfx/hal/Types.hpp>
 #include <touchgfx/Drawable.hpp>
+
 namespace touchgfx
 {
 /**
- * @class Widget Widget.hpp touchgfx/widgets/Widget.hpp
+ * A Widget is an element which can be displayed (drawn) in the framebuffer. Hence a Widget is a
+ * subclass of Drawable. It implements getLastChild(), but leaves the implementation of
+ * draw() and getSolidRect() to subclasses of Widget, so it is still an abstract class.
  *
- * @brief A Widget is a Drawable leaf (i.e. not a container).
- *
- *        A Widget is a Drawable leaf (i.e. not a container). It does not currently contain any
- *        implementation code, since the Drawable base class handles everything related to leaf
- *        nodes. Extend this when implementing custom widgets.
+ * If a Widget contains more than one logical element, consider implementing several
+ * subclasses of Widget and create a Container with the Widgets.
  *
  * @see Drawable
  */
@@ -35,64 +37,24 @@ class Widget : public Drawable
 {
 public:
     /**
-     * @fn Widget::Widget()
+     * Since a Widget is only one Drawable, Widget::getLastChild simply yields itself as
+     * result, but only if the Widget isVisible and isTouchable.
      *
-     * @brief Default constructor.
-     *
-     *        Default constructor.
-     */
-    Widget() : Drawable() { }
-
-    /**
-     * @fn virtual Widget::~Widget()
-     *
-     * @brief Destructor.
-     *
-     *        Destructor.
-     */
-    virtual ~Widget() { }
-
-    /**
-     * @fn virtual void Widget::getLastChild(int16_t x, int16_t y, Drawable** last)
-     *
-     * @brief Function for obtaining the the last child of this widget that intersects with the
-     *        specified point.
-     *
-     *        Function for obtaining the the last child of this widget that intersects with the
-     *        specified point. Used in input event handling for obtaining the appropriate drawable
-     *        that should receive the event. Note that input events must be delegated to the last
-     *        drawable of the tree (meaning highest z-order / front-most drawable).
-     *
-     *        Only containers can have children, so this implementation simply yields itself as
-     *        result. The container implementation will filter children that do not intersect with
-     *        the point or are not visible/enabled, so performing those checks are unnecessary.
-     *
-     * @param x          The point of intersection expressed in coordinates relative to the parent.
-     * @param y          The y coordinate.
-     * @param [out] last Result will be placed here.
+     * @param       x    Not used since this Widget is the only "child".
+     * @param       y    Not used since this Widget is the only "child".
+     * @param [out] last Result, the address of the actual instance of the Widget.
      */
     virtual void getLastChild(int16_t x, int16_t y, Drawable** last)
     {
+        (void)x;
+        (void)y;
         if (isVisible() && isTouchable())
         {
             *last = this;
         }
     }
-
-    /**
-     * @fn virtual uint16_t Widget::getType() const
-     *
-     * @brief For GUI testing only.
-     *
-     *        For GUI testing only. Returns type of this drawable.
-     *
-     * @return TYPE_WIDGET.
-     */
-    virtual uint16_t getType() const
-    {
-        return (uint16_t)TYPE_WIDGET;
-    }
 };
+
 } // namespace touchgfx
 
-#endif // WIDGET_HPP
+#endif // TOUCHGFX_WIDGET_HPP

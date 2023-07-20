@@ -38,7 +38,7 @@ void ProcessScreenView::setupScreen()
 	TxtConfirmFumehood.setVisible(false);
 
 	BtnExternal.setVisible(false);
-	BtnLowPressure.setVisible(false);
+	BtnSystemUnderperforming.setVisible(false);
 
 	//Setup Error Box
 	ErrorWindow.setXY(0, 0);
@@ -48,9 +48,9 @@ void ProcessScreenView::setupScreen()
 	FilterStateMessageWindow.setXY(0, 0);
 	FilterStateMessageWindow.setVisible(false);
 
-	//Setup Low Pressure Window
-	LowPressureWindow.setXY(0, 0);
-	LowPressureWindow.setVisible(false);
+	//Setup moisture Window
+	MoistureMessage.setXY(0, 0);
+	MoistureMessage.setVisible(false);
 
 	//Setup Powerloss Window
 	PowerLossWindow.setXY(0, 0);
@@ -105,7 +105,7 @@ void ProcessScreenView::setupScreen()
 	add(HintInstructions);
 	add(ConfirmLogOverwrite);
 	add(FilterStateMessageWindow);
-	add(LowPressureWindow);
+	add(MoistureMessage);
 	add(PowerLossWindow);
 	add(ExtSwitchErrorWindow);
 	add(InternalSwitchErrorWindow);
@@ -135,6 +135,7 @@ void ProcessScreenView::setupScreen()
 		LFT::Information.PowerlossDetected = false;
 		ShowPowerLossDetected();
 	}
+	
 }
 
 void ProcessScreenView::tearDownScreen()
@@ -341,6 +342,8 @@ void ProcessScreenView::checkLFTValues()
 	//Status up to date is false if an error has been deleted since the status was last polled.	
 	if (status > 0 && LFT::Information.StatusUpToDate)
 	{
+		_isUpdateCipherAllowed = false;
+
 		//Read All Errors		
 		ErrorMessage errorBuffer[32];
 		for (int i = 0; i <= status; i++)
@@ -369,11 +372,15 @@ void ProcessScreenView::checkLFTValues()
 	}
 
 	//If User Cipher mode is on then update the values
-	if (LFT::Information.UserCipherMode)
-	{		
-		long cipher = Cipher().GetCipher(LFT::Information.Pressure, LFT::Information.BaseTemp, LFT::Information.PreTemp);
-		Unicode::snprintf(TxtUserCipherBuffer, TXTUSERCIPHER_SIZE, "%X", cipher);
-		TxtUserCipher.invalidate();
+	if (_isUpdateCipherAllowed)
+	{				
+		_cipher = Cipher().GetCipher(LFT::Information.Pressure, LFT::Information.BaseTemp, LFT::Information.PreTemp);
+
+		if (LFT::Information.UserCipherMode)
+		{
+			Unicode::snprintf(TxtUserCipherBuffer, TXTUSERCIPHER_SIZE, "%X", _cipher);
+			TxtUserCipher.invalidate();
+		}
 	}
 
 
@@ -400,6 +407,23 @@ void ProcessScreenView::checkLFTValues()
 			InternalSwitchErrorWindow.invalidate();
 		}
 	}
+
+	//System underperforming
+	if (stage == LFT_STAGE_CHAMBER_CONDITIONING && LFT::Information.Pressure < 10.0f)
+	{
+		LFT::Information.CheckPerformance();
+		bool performance = LFT::Information.Performance();
+		if (!performance && !BtnSystemUnderperforming.isVisible())
+		{
+			BtnSystemUnderperforming.setVisible(true);
+			BtnSystemUnderperforming.invalidate();
+			RepositionErrors();
+
+
+			//TODO: Show message about how it's underperforming and give user option to dry
+		}
+	}
+
 
 	/* DEPRECIATED!
 	* This is kept here incase it needs to come back in the future. The error code is also kept but should never be shown
@@ -437,18 +461,23 @@ void ProcessScreenView::checkLFTValues()
 	//Update Fuming Time
 	if (stage == LFT_STAGE_FUMING)
 	{
-		DateTime dateTime = (DateTime)LFT::Information.Time;
-		if (dateTime.isValid())
+		if (((DateTime)LFT::Information.FumingStartTime).isValid())
 		{
-			STime time(dateTime.getRaw());
-			int minutes = time.GetTotalMinutes();
+			DateTime current = (DateTime)LFT::Information.GetCurrentTime();
+			DateTime startTime = (DateTime)LFT::Information.FumingStartTime;
 
-			if (minutes < 0)
+			STime time(current.getRaw() - startTime.getRaw());
+			int minutes = time.GetTotalMinutes();
+			if (current.getRaw() == 0 || startTime.getRaw() == 0)
 				minutes = 0;
-						
+
+#ifdef SIMULATOR
+			minutes = 13;
+#endif		
+
 			Unicode::snprintf(TxtFumeTimerBuffer, TXTFUMETIMER_SIZE, "%d", minutes);
-			TxtFumeTimer.invalidate();					
-		}
+			TxtFumeTimer.invalidate();
+	    }		
 	}
 	if (stage == LFT_STAGE_CHAMBER_CONDITIONING)
 	{
@@ -459,6 +488,9 @@ void ProcessScreenView::checkLFTValues()
 
 			STime time(current.getRaw() - startTime.getRaw());
 			int minutes = time.GetTotalMinutes();
+
+			if (current.getRaw() == 0 || startTime.getRaw() == 0)
+				minutes = 0;
 
 #ifdef SIMULATOR
 			minutes = 10;
@@ -551,27 +583,27 @@ void ProcessScreenView::RepositionErrors()
 		binVal += 4;
 	if (BtnExternal.isVisible())
 		binVal += 2;
-	if (BtnLowPressure.isVisible())
+	if (BtnSystemUnderperforming.isVisible())
 		binVal += 1;	
 
 	//Organise soft errors
 	switch (binVal)
 	{
 	case 1:
-		BtnLowPressure.setX(highValue);
+		BtnSystemUnderperforming.setX(highValue);
 		break;
 	case 2:
 		BtnExternal.setX(highValue);
 		break;
 	case 3:
-		BtnLowPressure.setX(medValue);
+		BtnSystemUnderperforming.setX(medValue);
 		BtnExternal.setX(highValue);
 		break;
 	case 4:
 		BtnFilter.setX(highValue);
 		break;
 	case 5:
-		BtnLowPressure.setX(medValue);
+		BtnSystemUnderperforming.setX(medValue);
 		BtnFilter.setX(highValue);
 		break;
 	case 6:
@@ -579,7 +611,7 @@ void ProcessScreenView::RepositionErrors()
 		BtnFilter.setX(highValue);
 		break;
 	case 7:
-		BtnLowPressure.setX(lowValue);
+		BtnSystemUnderperforming.setX(lowValue);
 		BtnExternal.setX(medValue);
 		BtnFilter.setX(highValue);
 		break;
@@ -588,7 +620,7 @@ void ProcessScreenView::RepositionErrors()
 
 	BtnFilter.invalidate();
 	BtnExternal.invalidate();	
-	BtnLowPressure.invalidate();
+	BtnSystemUnderperforming.invalidate();
 }
 
 void ProcessScreenView::UpdateExternalSwitch(int state)
@@ -749,6 +781,19 @@ void ProcessScreenView::UpdateStage()
 	}
 	else if (stage == LFT_STAGE_FINISHED)
 	{
+		//Update Ciphers
+		int* ciphers = LFT::Settings.GetCiphers();
+		for (int i = CIPHER_COUNT - 2; i >= 0; i--)
+		{
+			ciphers[i + 1] = ciphers[i];
+
+			if (i == 0)
+				ciphers[i] = _cipher;
+		}
+		LFT::Settings.SetCiphers(ciphers);
+
+
+		//Reposition UI
 		lvrLidControl.setXY(LVR_POS_END_X, LVR_POS_END_Y);
 		txtFinalLidControl.setY(LVR_POS_END_Y);
 		lvrLidControl.setVisible(true);
@@ -851,8 +896,13 @@ void ProcessScreenView::UpdateStage()
 		break; 	
 
 	}
+
 	//Update External Switch error for this state
 	UpdateExternalSwitch(LFT::Information.ExternalSwitchValue);
+
+	//Reset elapsed time to 0
+	Unicode::snprintf(TxtFumeTimerBuffer, TXTFUMETIMER_SIZE, "%d", 0);
+	TxtFumeTimer.invalidate();
 
 	//Invalidate controls so that they update
 	Backdrop.invalidate();
@@ -1183,7 +1233,10 @@ void ProcessScreenView::DemoProcess()
 	case LFT_STAGE_PRECHECKS:
 	case LFT_STAGE_CHAMBER_CONDITIONING:
 	case LFT_STAGE_COOLDOWN:
-		progressBar.SetValue(tickCounter);
+		progressBar.SetValue(tickCounter);		
+#ifndef _MSC_VER 
+		[[fallthrough]];
+#endif
 	case LFT_STAGE_FUMING:
 		pulseStageText();
 		break;	
@@ -1255,10 +1308,10 @@ void ProcessScreenView::ShowRunsRemaining()
 	FilterStateMessageWindow.invalidate();
 }
 
-void ProcessScreenView::ShowLowPressureErrorWindow()
+void ProcessScreenView::ShowMoistureDetectedWindow()
 {
-	LowPressureWindow.setVisible(true);
-	LowPressureWindow.invalidate();
+	MoistureMessage.setVisible(true);
+	MoistureMessage.invalidate();
 }
 
 void ProcessScreenView::ShowProcessSelectorChamber()
@@ -1283,7 +1336,13 @@ void ProcessScreenView::StartProcess()
 
 void ProcessScreenView::StartProcess(bool skipOverwriteCheck)
 {	
+#ifdef SIMULATOR
+	LFT::Auto.SetSettings();
+#endif
+
+
 	_processSuccess = true;
+	_isUpdateCipherAllowed = true;
 
 	if (!application().isDemoModeOn)
 	{
@@ -1303,7 +1362,7 @@ void ProcessScreenView::StartProcess(bool skipOverwriteCheck)
 
 		//Set Parameters then start
 		LFT::Auto.SetChamberSize(_chamberSelected);
-		LFT::Auto.SetMetalType(_typeSelected);		
+		LFT::Auto.SetMetalType(_typeSelected);
 		LFT::Auto.QuePrechecks();
 		UpdateStage();
 		tickCounter = 0;
@@ -1334,6 +1393,7 @@ void ProcessScreenView::StartCool()
 void ProcessScreenView::AbortProcess()
 {	
 	_processSuccess = false;
+	_isUpdateCipherAllowed = false;
 
 	//Hide Abort Confirmation
 	AbortConfirmWindow.setVisible(false);
@@ -1350,13 +1410,14 @@ void ProcessScreenView::AbortProcess()
 
 	//Show Abort Happening Window
 	AbortInProcessWindow.setVisible(true);
-	AbortInProcessWindow.invalidate();
-
-	
+	AbortInProcessWindow.invalidate();	
 }
 
 void ProcessScreenView::GotoHome()
 {
+
+
+
 	LFT::Auto.SetStage(LFT_STAGE_LID_CONTROL);
 	LFT::AutoClean.SetStage(AUTOCLEAN_STAGE_NONE);
 	LFT::Manual.SetBaseFanState(false);

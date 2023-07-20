@@ -15,7 +15,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
 {
     static class ServiceReport
     {
-        public static void Create()
+        public static void Create(bool encrypt = true)
         {
             var totalSamples = 0;
             foreach (var log in App.Logs)
@@ -27,7 +27,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
                 Text = Strings.CreatingServicePack,
                 Maximum = totalSamples,
                 Value = 0
-            };            
+            };
 
             RecoverManager.OnSampleLoaded = (a, b) =>
             {
@@ -49,8 +49,8 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
                             var valueBefore = 0d;
                             Application.Current.Dispatcher.Invoke(() =>
                             {
-                                valueBefore = progressWindow.Value;                                
-                            });                            
+                                valueBefore = progressWindow.Value;
+                            });
 
                             //Only fetch is not previously fetched
                             if (log.Samples == null || !log.Samples.Any())
@@ -68,7 +68,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
                             break;
                         }
                         catch (Exception) { }
-                    } while (true);                    
+                    } while (true);
                 }
 
                 Application.Current.Dispatcher.Invoke(() =>
@@ -101,33 +101,73 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
 
                 //Ask for location to save
                 bool success = false;
-                var filename = string.Empty;
-                
+                var path = string.Empty;
+                bool dialogSuccess = false;
 
                 Application.Current.Dispatcher.Invoke(() =>
-                {                    
-                    var saveFileDialog = new Ookii.Dialogs.Wpf.VistaSaveFileDialog()
+                {
+                    if (encrypt)
                     {
-                        FileName = RecoverManager.SerialNumber,
-                        Filter = "*.LFT_SVC|*.LFT_SVC",
-                        AddExtension = true,
-                    };
+                        var saveFileDialog = new Ookii.Dialogs.Wpf.VistaSaveFileDialog()
+                        {
+                            FileName = RecoverManager.SerialNumber,
+                            Filter = "RECOVER Service Pack (*.LFT_SVC)|*.LFT_SVC",
+                            AddExtension = true,
+                        };
+                        dialogSuccess = saveFileDialog.ShowDialog() == true;
+                        path = saveFileDialog.FileName;
 
-                    if (saveFileDialog.ShowDialog() != true)
+                        if (Path.HasExtension(path))
+                            path = Path.ChangeExtension(path, "LFT_SVC");
+                        else
+                            path += ".LFT_SVC";
+                    }
+                    else
+                    {
+                        var saveDirectoryDialog = new Ookii.Dialogs.Wpf.VistaFolderBrowserDialog();
+                        dialogSuccess = saveDirectoryDialog.ShowDialog() == true;
+                        path = saveDirectoryDialog.SelectedPath;
+
+
+                    }
+
+
+                    if (!dialogSuccess)
+                    {
+
+
                         return;
-
-                    filename = saveFileDialog.FileName;
-                    success = true;
+                    }
                 });
 
-                if (!success)
+
+                //If dialog was not selected, send message and return
+                if (!dialogSuccess)
+                {
+                    Application.Current.Dispatcher.Invoke(() => {
+                        progressWindow.Text = Strings.ServicePackCreatingCancelled;
+                        progressWindow.IsCloseAllowed = true;
+                    });
                     return;
+                }
 
                 //Save
-                File.WriteAllBytes(filename, data.ToArray());
+                if (encrypt)
+                    File.WriteAllBytes(path, data.ToArray());
+                else
+                {
+                    SaveDataToDirectory(data.ToArray(), path);
+                    foreach (var log in App.Logs)
+                    {
+                        var logFilename = Path.Combine(path, $"{log.StartTime:yyyy-MM-dd-HH-mm-ss}.PDF");
+                        log.Export.Execute(logFilename);
+                    }
 
+                }
+
+                //Report finished
                 Application.Current.Dispatcher.Invoke(() =>
-                {                    
+                {
                     progressWindow.Text = Strings.ServicePackCreated;
                     progressWindow.IsCloseAllowed = true;
                 });
@@ -140,7 +180,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
         {
             var openFileDialog = new Ookii.Dialogs.Wpf.VistaOpenFileDialog()
             {
-                Filter = "*.LFT_SVC|*.LFT_SVC",
+                Filter = "RECOVER Service Pack (*.LFT_SVC)|*.LFT_SVC",
             };
 
             if (openFileDialog.ShowDialog() != true)
@@ -150,7 +190,13 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
             if (saveDirectoryDialog.ShowDialog() != true)
                 return;
 
-            var bytes = File.ReadAllBytes(openFileDialog.FileName);            
+            var bytes = File.ReadAllBytes(openFileDialog.FileName);
+            SaveDataToDirectory(bytes, saveDirectoryDialog.SelectedPath);            
+        }
+
+
+        private static void SaveDataToDirectory(byte[] bytes, string directory)
+        {
             int index = 0;
             do
             {
@@ -165,7 +211,7 @@ namespace FosterAndFreeman.RecoverCompanionApplication.Definitions.Misc
                 var xmlDoc = new XmlDocument();
                 xmlDoc.LoadXml(decryptedString);
                 var startTime = DateTime.Parse(xmlDoc["RecoverLog"]["StartTime"].FirstChild.Value);
-                var logFilename = Path.Combine(saveDirectoryDialog.SelectedPath, $"{startTime.ToString("yyyy-MM-dd-HH-mm-ss")}.XML");
+                var logFilename = Path.Combine(directory, $"{startTime:yyyy-MM-dd-HH-mm-ss}.XML");
 
                 File.WriteAllText(logFilename, decryptedString);
             }

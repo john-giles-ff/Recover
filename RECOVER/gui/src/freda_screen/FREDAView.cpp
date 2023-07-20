@@ -1,6 +1,5 @@
 #include <gui/freda_screen/FREDAView.hpp>
 
-
 void FREDAView::setupScreen()
 {	
 	//Language should always be english in the engineer mode
@@ -233,6 +232,12 @@ void FREDAView::Clear()
 }
 
 
+void FREDAView::SoakTest30()
+{
+	LFT::Information.ResetTimer();
+	LFT::ProductionTests.QueSoakTest(30);
+}
+
 void FREDAView::SoakTest()
 {
 	LFT::Information.ResetTimer();
@@ -329,8 +334,7 @@ void FREDAView::GotoGraphs()
 
 void FREDAView::handleTickEvent()
 {	
-	GetValues();			
-	StepsScroll.invalidate();	
+	GetValues();
 
 	if (CntBigClock.isVisible())
 	{
@@ -347,15 +351,30 @@ void FREDAView::handleTickEvent()
 		int minute = time.GetMinute();
 		int second = time.GetSecond();		
 
-		touchgfx::Unicode::snprintf(TxtBigClockBuffer, TXTBIGCLOCK_SIZE, "%02d:%02d:%02d", hour, minute, second);
-		TxtBigClock.invalidate();
+		if (_second != second)
+		{
+			_second = second;
+
+			touchgfx::Unicode::snprintf(TxtBigClockBuffer, TXTBIGCLOCK_SIZE, "%02d:%02d:%02d", hour, minute, second);
+			TxtBigClock.invalidate();
+		}
 	}
 	else if (IsBigClockVisible)
 	{
 		LFT::Information.AlwaysUpdateRTC = false;
 		IsBigClockVisible = false;
 	}
+	else if (SoakTestWindow.isVisible())
+	{
+		int extSwitchValue = LFT::Information.ExternalSwitchValue;
 
+		if (BtnStartSoakTest.isVisible() != (extSwitchValue == 0))
+		{
+			BtnStartSoakTest.setVisible(extSwitchValue == 0);
+			BtnStartSoakTest30.setVisible(extSwitchValue == 0);
+			TxtFumePlug.setVisible(extSwitchValue == 1);
+		}
+	}	
 
 
 	//Update Graph Values
@@ -415,34 +434,59 @@ void FREDAView::handleTickEvent()
 	}
 
 	//Update SoakTest Values
+	SoakTestStatus soakTestStatus = SoakTestStatus::Stopped;
 	if (LFT::ProductionTests.IsSoakTestQued)
+		soakTestStatus = LFT::ProductionTests.GetProductionTestAborted() ? SoakTestStatus::Aborted : SoakTestStatus::Running;
+
+	int soakTestCount = LFT::ProductionTests.SoakTestCount;
+	int soakTotal = LFT::Information.RunCounter;
+	int runSoakStatus = LFT::ProductionTests.SoakTestStatus;
+	bool runValuesChanged =
+		soakTestStatus == SoakTestStatus::Running &&
+		(_soakTestCount != soakTestCount ||
+		_soakTestTotal != soakTotal ||
+		_soakTestRunValue != runSoakStatus);
+
+
+	if (_soakTestStatus != soakTestStatus || runValuesChanged)
 	{
-		if (LFT::ProductionTests.GetProductionTestAborted())
+		switch (soakTestStatus)
 		{
+		case SoakTestStatus::Stopped:
+			Unicode::snprintf(TxtSoakTestStatusBuffer, TXTSOAKTESTCOUNT_SIZE, "Stopped");
+			break;
+
+		case SoakTestStatus::Aborted:
 			Unicode::snprintf(TxtSoakTestStatusBuffer, TXTSOAKTESTSTATUS_SIZE, "Aborting");
-		}
-		else
-		{
-			Unicode::snprintf(TxtSoakTestCountBuffer, TXTSOAKTESTCOUNT_SIZE, "%d", LFT::ProductionTests.SoakTestCount);
-			Unicode::snprintf(TxtSoakTestTotalBuffer, TXTSOAKTESTTOTAL_SIZE, "%d", LFT::Information.RunCounter);
-			Unicode::snprintf(TxtSoakTestStatusBuffer, TXTSOAKTESTSTATUS_SIZE, "%d Running", LFT::ProductionTests.SoakTestStatus);
+			break;
+
+		case SoakTestStatus::ForceUpdate:
+		case SoakTestStatus::Running:
+			Unicode::snprintf(TxtSoakTestCountBuffer, TXTSOAKTESTCOUNT_SIZE, "%d", soakTestCount);
+			Unicode::snprintf(TxtSoakTestTotalBuffer, TXTSOAKTESTTOTAL_SIZE, "%d", soakTotal);
+			Unicode::snprintf(TxtSoakTestStatusBuffer, TXTSOAKTESTSTATUS_SIZE, "%d Running", runSoakStatus);
+
+			_soakTestCount = soakTestCount;
+			_soakTestTotal = _soakTestTotal;
+			_soakTestRunValue = runSoakStatus;
+
+			TxtSoakTestCount.invalidate();
+			TxtSoakTestTotal.invalidate();
+			break;
 		}
 
-		TxtSoakTestCount.invalidate();
-		TxtSoakTestStatus.invalidate();
-	}	
-	else if (SoakTestWindow.isVisible())
-	{
-		Unicode::snprintf(TxtSoakTestStatusBuffer, TXTSOAKTESTCOUNT_SIZE, "Stopped");
+		_soakTestStatus = soakTestStatus;
+
+		
 		TxtSoakTestStatus.invalidate();
 	}
+
 
 }
 
 void FREDAView::GetValues()
 {		
 	LFT::Information.UpdateLFTDebug(&lftDebug);	
-	lftDebug.invalidate();
 }
 
 void FREDAView::ToggleActualVisible()

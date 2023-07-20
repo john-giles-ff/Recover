@@ -143,7 +143,7 @@
 {0}</value>
   </data>
   <data name="ConnectionSuccesful" xml:space="preserve">
-    <value>Connection Successful </value>
+    <value>Connection Successful</value>
   </data>
   <data name="UnableToEnumerateDevices" xml:space="preserve">
     <value>Unable to Enumerate Devices</value>
@@ -368,7 +368,7 @@
     <value>USB Mode</value>
   </data>
   <data name="PrintingInProgress" xml:space="preserve">
-    <value>Printing in progress</value>
+    <value>Printing in progress...</value>
   </data>
   <data name="PrintingFinished" xml:space="preserve">
     <value>Printing Finished</value>
@@ -418,5 +418,11 @@ This may take a few minutes.</value>
   </data>
   <data name="ServicePackCreated" xml:space="preserve">
     <value>Service Pack Created!</value>
+  </data>
+  <data name="ServicePackCreatingCancelled" xml:space="preserve">
+    <value>Service Pack Creation Cancelled!</value>
+  </data>
+  <data name="ProgramDevice" xml:space="preserve">
+    <value>Program Device</value>
   </data>
 </root>

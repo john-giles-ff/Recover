@@ -14,8 +14,8 @@ void DatePicker::initialize()
 
 void DatePicker::Confirm()
 {	
+#ifndef SIMULATOR
 	STime out(time.getRaw());
-
 
 	LFT::Information.SetRTC(
 		out.GetYear(),
@@ -24,6 +24,7 @@ void DatePicker::Confirm()
 		out.GetHour(),
 		out.GetMinute(),
 		out.GetSecond());
+#endif
 
 	invalidate();
 }

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:RecoverLogInspector"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
-        Title="SettingsWindow" Height="450" Width="800">
+        Title="SettingsWindow" Height="450" Width="1100">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -23,6 +23,9 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
             <ColumnDefinition />
             <ColumnDefinition />
             <ColumnDefinition />
@@ -46,9 +49,21 @@
                    Grid.Column="3"
                    TextAlignment="Center"
                    Text="AVG"/>
-        
-        
-        
+        <TextBlock Grid.Row="0"
+                   Grid.Column="4"
+                   TextAlignment="Center"
+                   Text="Min"/>
+        <TextBlock Grid.Row="0"
+                   Grid.Column="5"
+                   TextAlignment="Center"
+                   Text="Max"/>
+        <TextBlock Grid.Row="0"
+                   Grid.Column="6"
+                   TextAlignment="Center"
+                   Text="Tolerance (%)"/>
+
+
+
         <!-- Peak Base Temperature -->
         <TextBlock Grid.Row="1"                   
                    Grid.Column="0"
@@ -106,6 +121,8 @@
         <TextBox x:Name="TxtIndividualPeakBaseTempLCL" Grid.Row="6" Grid.Column="1" TextAlignment="Center" VerticalAlignment="Center" Padding="2" Margin="2"/>
         <TextBox x:Name="TxtIndividualPeakBaseTempHCL" Grid.Row="6" Grid.Column="2" TextAlignment="Center" VerticalAlignment="Center" Padding="2" Margin="2"/>
         <TextBox x:Name="TxtIndividualPeakBaseTempAVG" Grid.Row="6" Grid.Column="3" TextAlignment="Center" VerticalAlignment="Center" Padding="2" Margin="2"/>
+        <TextBox x:Name="TxtIndividualPeakBaseTempMin" Grid.Row="6" Grid.Column="4" TextAlignment="Center" VerticalAlignment="Center" Padding="2" Margin="2"/>
+        <TextBox x:Name="TxtIndividualPeakBaseTempMax" Grid.Row="6" Grid.Column="5" TextAlignment="Center" VerticalAlignment="Center" Padding="2" Margin="2"/>
 
         <!-- Indvidual Time to reach Peak Base Temp -->
         <TextBlock Grid.Row="7"
@@ -113,10 +130,13 @@
                    TextAlignment="Center"
                    VerticalAlignment="Center"
                    TextWrapping="Wrap"
-                   Text="Individual Time to reach peak temperature"/>
+                   Text="Individual Time to reach peak base temperature"/>
         <TextBox x:Name="TxtIndividualTimeToReachPeakBaseTemperatureLCL" Grid.Row="7" Grid.Column="1" TextAlignment="Center" VerticalAlignment="Center" Padding="2" Margin="2"/>
         <TextBox x:Name="TxtIndividualTimeToReachPeakBaseTemperatureHCL" Grid.Row="7" Grid.Column="2" TextAlignment="Center" VerticalAlignment="Center" Padding="2" Margin="2"/>
         <TextBox x:Name="TxtIndividualTimeToReachPeakBaseTemperatureAVG" Grid.Row="7" Grid.Column="3" TextAlignment="Center" VerticalAlignment="Center" Padding="2" Margin="2"/>
+        <TextBox x:Name="TxtIndividualTimeToReachPeakBaseTemperatureMin" Grid.Row="7" Grid.Column="4" TextAlignment="Center" VerticalAlignment="Center" Padding="2" Margin="2"/>
+        <TextBox x:Name="TxtIndividualTimeToReachPeakBaseTemperatureMax" Grid.Row="7" Grid.Column="5" TextAlignment="Center" VerticalAlignment="Center" Padding="2" Margin="2"/>
+        <TextBox x:Name="TxtIndividualTimeToReachPeakBaseTemperatureTolerance" Grid.Row="7" Grid.Column="6" TextAlignment="Center" VerticalAlignment="Center" Padding="2" Margin="2"/>
         
 
         <!-- Indvidual Pumpdown Time -->
@@ -129,7 +149,9 @@
         <TextBox x:Name="TxtIndividualPumpdownTimeLCL" Grid.Row="8" Grid.Column="1" TextAlignment="Center" VerticalAlignment="Center" Padding="2" Margin="2"/>
         <TextBox x:Name="TxtIndividualPumpdownTimeHCL" Grid.Row="8" Grid.Column="2" TextAlignment="Center" VerticalAlignment="Center" Padding="2" Margin="2"/>
         <TextBox x:Name="TxtIndividualPumpdownTimeAVG" Grid.Row="8" Grid.Column="3" TextAlignment="Center" VerticalAlignment="Center" Padding="2" Margin="2"/>
-        
+        <TextBox x:Name="TxtIndividualPumpdownTimeMin" Grid.Row="8" Grid.Column="4" TextAlignment="Center" VerticalAlignment="Center" Padding="2" Margin="2"/>
+        <TextBox x:Name="TxtIndividualPumpdownTimeMax" Grid.Row="8" Grid.Column="5" TextAlignment="Center" VerticalAlignment="Center" Padding="2" Margin="2"/>
+
         <!-- Individual time to reach precursor temperature -->
         <TextBlock Grid.Row="9"                   
                    Grid.Column="0"
@@ -140,6 +162,9 @@
         <TextBox x:Name="TxtIndividualTimeToReachPrecursorTempLCL" Grid.Row="9" Grid.Column="1" TextAlignment="Center" VerticalAlignment="Center" Padding="2" Margin="2"/>
         <TextBox x:Name="TxtIndividualTimeToReachPrecursorTempHCL" Grid.Row="9" Grid.Column="2" TextAlignment="Center" VerticalAlignment="Center" Padding="2" Margin="2"/>
         <TextBox x:Name="TxtIndividualTimeToReachPrecursorTempAVG" Grid.Row="9" Grid.Column="3" TextAlignment="Center" VerticalAlignment="Center" Padding="2" Margin="2"/>
+        <TextBox x:Name="TxtIndividualTimeToReachPrecursorTempMin" Grid.Row="9" Grid.Column="4" TextAlignment="Center" VerticalAlignment="Center" Padding="2" Margin="2"/>
+        <TextBox x:Name="TxtIndividualTimeToReachPrecursorTempMax" Grid.Row="9" Grid.Column="5" TextAlignment="Center" VerticalAlignment="Center" Padding="2" Margin="2"/>
+        <TextBox x:Name="TxtIndividualTimeToReachPrecursorTempTolerance" Grid.Row="9" Grid.Column="6" TextAlignment="Center" VerticalAlignment="Center" Padding="2" Margin="2"/>
 
 
         <StackPanel Grid.Row="11"

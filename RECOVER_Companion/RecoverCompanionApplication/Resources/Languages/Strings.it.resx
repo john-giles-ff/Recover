@@ -143,7 +143,7 @@
 {0}</value>
   </data>
   <data name="ConnectionSuccesful" xml:space="preserve">
-    <value>Connessione riuscita </value>
+    <value>Connessione riuscita</value>
   </data>
   <data name="UnableToEnumerateDevices" xml:space="preserve">
     <value>Impossibile enumerare i dispositivi</value>
@@ -366,5 +366,63 @@
   </data>
   <data name="USBMode" xml:space="preserve">
     <value>Modalità USB</value>
+  </data>
+  <data name="PrintingInProgress" xml:space="preserve">
+    <value>Stampa in corso...</value>
+  </data>
+  <data name="PrintingFinished" xml:space="preserve">
+    <value>Stampa terminata</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>Pagina</value>
+  </data>
+  <data name="SelectAuditLogstoPrint" xml:space="preserve">
+    <value>Selezionare i registri di controllo da stampare:</value>
+  </data>
+  <data name="CheckAll" xml:space="preserve">
+    <value>Selezionare tutto</value>
+  </data>
+  <data name="UncheckAll" xml:space="preserve">
+    <value>Deselezionare tutto</value>
+  </data>
+  <data name="SinglePageMode" xml:space="preserve">
+    <value>Usare una pagina singola per registro</value>
+  </data>
+  <data name="CaseReference" xml:space="preserve">
+    <value>Riferimento:</value>
+  </data>
+  <data name="CaseOperator" xml:space="preserve">
+    <value>Utente:</value>
+  </data>
+  <data name="EnterExtraInformation" xml:space="preserve">
+    <value>Inserire sotto il riferimento del caso e l'operatore.</value>
+  </data>
+  <data name="ConfirmWriteExtraData" xml:space="preserve">
+    <value>AVVERTENZA: Queste modifiche non possono essere annullate.</value>
+  </data>
+  <data name="ThisCannotBeUndone" xml:space="preserve">
+    <value>Queste modifiche sono permanenti e non possono essere modificate in un secondo momento.</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>Note:</value>
+  </data>
+  <data name="UnableToOpenFileRightNow" xml:space="preserve">
+    <value>Impossibile aprire il file ora. Si prega di riprovare più tardi.</value>
+  </data>
+  <data name="CreateServicePack" xml:space="preserve">
+    <value>Creare File di supporto</value>
+  </data>
+  <data name="CreatingServicePack" xml:space="preserve">
+    <value>Creazione del File di supporto in corso… 
+L'operazione potrebbe richiedere alcuni minuti.</value>
+  </data>
+  <data name="ServicePackCreated" xml:space="preserve">
+    <value>File di supporto creato!</value>
+  </data>
+  <data name="ServicePackCreatingCancelled" xml:space="preserve">
+    <value>File di supporto annullato!</value>
+  </data>
+  <data name="ProgramDevice" xml:space="preserve">
+    <value>Dispositivo di programma</value>
   </data>
 </root>

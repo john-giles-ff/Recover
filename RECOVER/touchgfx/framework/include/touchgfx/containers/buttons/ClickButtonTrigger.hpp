@@ -1,65 +1,48 @@
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
+
 /**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.12.3 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+ * @file touchgfx/containers/buttons/ClickButtonTrigger.hpp
+ *
+ * Declares the touchgfx::ClickButtonTrigger class.
+ */
+#ifndef TOUCHGFX_CLICKBUTTONTRIGGER_HPP
+#define TOUCHGFX_CLICKBUTTONTRIGGER_HPP
 
-#ifndef CLICKBUTTONTRIGGER_HPP
-#define CLICKBUTTONTRIGGER_HPP
-
+#include <touchgfx/hal/Types.hpp>
 #include <touchgfx/containers/buttons/AbstractButtonContainer.hpp>
+#include <touchgfx/events/ClickEvent.hpp>
 
 namespace touchgfx
 {
 /**
- * @class ClickButtonTrigger ClickButtonTrigger.hpp touchgfx/containers/buttons/ClickButtonTrigger.hpp
+ * A click button trigger. This trigger will create a button that reacts on clicks. This means
+ * it will call the set action when it gets a touch released event. The
+ * ClickButtonTrigger can be combined with one or more of the ButtonStyle classes to
+ * create a fully functional button.
  *
- * @brief A click button trigger.
- *
- *        A click button trigger. This trigger will create a button
- *        that reacts on clicks. This means it will call the action
- *        when it gets a touch released event.
- *
- *        The ClickButtonTrigger can be combined with one or more of
- *        the ButtonStyle classes to create a functional button.
+ * @see TouchButtonTrigger
  */
 class ClickButtonTrigger : public AbstractButtonContainer
 {
 public:
     /**
-     * @fn ClickButtonTrigger::ClickButtonTrigger()
+     * Handles a ClickAvent. The action callback is called when the ClickButtonTrigger
+     * receives a ClickEvent::RELEASED event in PRESSED state. Function setPressed() will
+     * be called with the new button state.
      *
-     * @brief Default constructor.
-     */
-    ClickButtonTrigger() :
-        AbstractButtonContainer() { }
-
-    /**
-     * @fn virtual ClickButtonTrigger::~ClickButtonTrigger()
+     * @param  event The click event.
      *
-     * @brief Destructor.
-     */
-    virtual ~ClickButtonTrigger() { }
-
-    /**
-     * @fn virtual void ClickButtonTrigger::handleClickEvent(const ClickEvent& event)
-     *
-     * @brief Handles the click event described by event.
-     *
-     *        Handles the click event described by event. The action
-     *        callback is called when receiving a REALEASED event in
-     *        PRESSED state.
-     *
-     * @param event The event.
+     * @see setAction, setPressed, getPressed
      */
     virtual void handleClickEvent(const ClickEvent& event)
     {
@@ -70,15 +53,13 @@ public:
             setPressed(newPressedValue);
             invalidate();
         }
-        if (wasPressed && (event.getType() == ClickEvent::RELEASED) && action)
+        if (wasPressed && (event.getType() == ClickEvent::RELEASED))
         {
-            if (action->isValid())
-            {
-                action->execute(*this);
-            }
+            executeAction();
         }
     }
 };
+
 } // namespace touchgfx
 
-#endif // CLICKBUTTONTRIGGER_HPP
+#endif // TOUCHGFX_CLICKBUTTONTRIGGER_HPP

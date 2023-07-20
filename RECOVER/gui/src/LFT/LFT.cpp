@@ -11,7 +11,7 @@ LFT_ProductionTests LFT::ProductionTests(&LFT::Information, &LFT::Manual, &LFT::
 int LFT::progressContinueOverride(0);
 
 Model* LFT::_model = 0;
-bool LFT::_initalised;
+bool LFT::_initalised = false;
 
 void LFT::Initialise()
 {
@@ -154,7 +154,7 @@ void LFT::LFTThreadProcess()
 		Information.ReadProgress();				
 	
 	//Check if next stage should be called
-	CheckForNextStage();	
+	CheckForNextStage();
 
 	//Check if a PC has requested PC Mode
 	CheckPCMode();
@@ -214,6 +214,9 @@ void LFT::Initialisation()
 	Information.ReadFilterCounter();
 	Information.RefreshValuesProgress = Information.RefreshValuesProgress + 1;
 
+	Information.ReadManifoldVersion();
+	Information.RefreshValuesProgress = Information.RefreshValuesProgress + 1;
+
 	Settings.ReadUsePurgeFans();
 	Information.RefreshValuesProgress = Information.RefreshValuesProgress + 1;
 
@@ -224,6 +227,7 @@ void LFT::Initialisation()
 	Settings.SetPCMode(0);
 	Information.RefreshValuesProgress = Information.RefreshValuesProgress + 1;
 	
+	Settings.ReadCiphers();
 	Information.RefreshValuesProgress = Information.RefreshValuesProgress + 1;
 
 	Information.ReadRTC();
@@ -273,6 +277,7 @@ void LFT::CheckPCMode()
 	}
 }
 
+
 void LFT::CheckForNextStage()
 {
 	//If progress is repeatedly reporting 100%, then allow stage auto progression is overriden
@@ -287,13 +292,14 @@ void LFT::CheckForNextStage()
 		return;
 
 	//For the precheck and cooldown stage, progress continues when 100% is reached
-	if (Information.Progress == 100 && (Auto.GetStage() == LFT_STAGE_PRECHECKS || Auto.GetStage() == LFT_STAGE_COOLDOWN))
+	if (Information.Progress == 100 && (Auto.GetStage() == LFT_STAGE_PRECHECKS || Auto.GetStage() == LFT_STAGE_COOLDOWN || Auto.GetStage() == LFT_STAGE_CHAMBER_CONDITIONING))
 		GotoNextStage();	
 
 	//For the chamber conditioning stage, progress continues when the correct pressure is reached
-	float vacValueFloat = (float)(Information.VAC_VALUE / 1000.0f);
+	//DONE THE NORMAL WAY!
+	/*float vacValueFloat = (float)(Information.VAC_VALUE / 1000.0f);
 	if (Auto.GetStage() == LFT_STAGE_CHAMBER_CONDITIONING && Information.Pressure > 0 && Information.Pressure <= vacValueFloat)
-		GotoNextStage();
+		GotoNextStage();*/
 	
 }
 

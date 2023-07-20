@@ -95,6 +95,7 @@ LFTDebug::LFTDebug() :
 	TxtDelta.setTypedText(touchgfx::TypedText(T_DELTA));
 	TxtDeltaBuffer[0] = 0;
 	TxtDelta.setWildcard(TxtDeltaBuffer);
+	TxtDelta.setWideTextAction(touchgfx::WIDE_TEXT_CHARWRAP);
 	add(TxtDelta);
 
 }
@@ -154,7 +155,13 @@ void LFTDebug::SetHideSensitiveValues(bool state)
 
 void LFTDebug::SetBuild(int value)
 {	
+	if (value == _build)
+		return;
+
+	_build = value;
+
 	touchgfx::Unicode::snprintf(TxtBuildBuffer, GENERIC_BUFFER_SIZE, "%d.%d", Build::Number, value);
+	TxtBuild.invalidate();
 }
 
 void LFTDebug::SetBaseTemperature(int setPoint, int actual)
@@ -165,9 +172,15 @@ void LFTDebug::SetBaseTemperature(int setPoint, int actual)
 		actual = (int)(((float)actual / 35.0f) * 100);
 	}
 
+	if (setPoint == _baseSetpoint && actual == _baseActual)
+		return;
+
+	_baseSetpoint = setPoint;
+	_baseActual = actual;
 
 	touchgfx::Unicode::snprintf(TxtBaseTemperatureBuffer1, GENERIC_BUFFER_SIZE, "%d", setPoint);
 	touchgfx::Unicode::snprintf(TxtBaseTemperatureBuffer2, GENERIC_BUFFER_SIZE, "%d", actual);	
+	TxtBaseTemperature.invalidate();
 }
 
 void LFTDebug::SetPrecursorTemperature(int setPoint, int actual)
@@ -178,8 +191,15 @@ void LFTDebug::SetPrecursorTemperature(int setPoint, int actual)
 		actual = (int)(((float)actual / 190.0f) * 100);
 	}
 
+	if (setPoint == _precursorSetpoint && actual == _precursorActual)
+		return;
+
+	_precursorSetpoint = setPoint;
+	_precursorActual = actual;
+
 	touchgfx::Unicode::snprintf(TxtPrecursorTemperatureBuffer1, GENERIC_BUFFER_SIZE, "%d", setPoint);
 	touchgfx::Unicode::snprintf(TxtPrecursorTemperatureBuffer2, GENERIC_BUFFER_SIZE, "%d", actual);
+	TxtPrecursorTemperature.invalidate();
 }
 
 void LFTDebug::SetPressure(float value)
@@ -187,42 +207,100 @@ void LFTDebug::SetPressure(float value)
 	if (hideSensitiveValues)
 		value = (std::abs(20.475f - (float)value) / 20.475f) * 100;
 
+	if (abs(value - _pressure) < 0.001)
+		return;
+
+	_pressure = value;
+
 	touchgfx::Unicode::snprintfFloat(TxtPressureBuffer, GENERIC_BUFFER_SIZE, "%f", value);
+	TxtPressure.invalidate();
 }
 
 void LFTDebug::SetInternalSwitch(int value1, int value2)
 {
+	if (value1 == _internalSwitch1 && value2 == _internalSwitch2)
+		return;
+
+	_internalSwitch1 = value1;
+	_internalSwitch2 = value2;
+
+
 	touchgfx::Unicode::snprintf(TxtInternalSwitchBuffer1, GENERIC_BUFFER_SIZE, "%d", value1);
 	touchgfx::Unicode::snprintf(TxtInternalSwitchBuffer2, GENERIC_BUFFER_SIZE, "%d", value2);
+	TxtInternalSwitch.invalidate();
 }
 
 
 void LFTDebug::SetExternalSwitch(int value)
 {
+	if (value == _externalSwitch)
+		return;
+
+	_externalSwitch = value;
+
 	touchgfx::Unicode::snprintf(TxtExternalSwitchBuffer, GENERIC_BUFFER_SIZE, "%d", value);
+	TxtExternalSwitch.invalidate();
 }
 
 void LFTDebug::SetStatus(int value)
 {
+	if (value == _status)
+		return;
+
+	_status = value;
+
 	touchgfx::Unicode::snprintf(TxtStatusBuffer, GENERIC_BUFFER_SIZE, "%d", value);
+	TxtStatus.invalidate();
 }
 
 void LFTDebug::SetProgress(int value)
 {
+	if (value == _progress)
+		return;
+
+	_progress = value;
+
 	touchgfx::Unicode::snprintf(TxtProgressBuffer, GENERIC_BUFFER_SIZE, "%d", value);
+	TxtProgress.invalidate();
 }
 
 void LFTDebug::SetTimer(int hour, int minute, int second)
 {
+	if (hour == _timerHour && minute == _timerMinute && second == _timerSecond)
+		return;
+
+	_timerHour = hour;
+	_timerMinute = minute;
+	_timerSecond = second;
+
 	touchgfx::Unicode::snprintf(TxtTimerBuffer, GENERIC_BUFFER_SIZE, "%02d:%02d:%02d", hour, minute, second);
+	TxtTimer.invalidate();
 }
 
 void LFTDebug::SetValves(bool inlet, bool purge, bool bypass)
 {
+	if (inlet == _inletValve && purge == _purgeValve && bypass == _bypassValve)
+		return;
+
+	_inletValve = inlet;
+	_purgeValve = purge;
+	_bypassValve = bypass;
+
 	touchgfx::Unicode::snprintf(TxtValvesBuffer, GENERIC_BUFFER_SIZE, "%d|%d|%d", (int)inlet, (int)purge, (int)bypass);
+	TxtValves.invalidate();
 }
 
-void LFTDebug::SetDelta(int delta)
+void LFTDebug::SetDelta(int delta, int avgDelta, int minDelta)
 {
-	touchgfx::Unicode::snprintf(TxtDeltaBuffer, GENERIC_BUFFER_SIZE, "%d", delta);
+	if (delta == _delta && avgDelta == _avgDelta && minDelta == _minDelta)
+		return;
+
+	_delta = delta;
+	_avgDelta = avgDelta;
+	_minDelta = minDelta;
+
+	touchgfx::Unicode::snprintf(TxtDeltaBuffer, GENERIC_BUFFER_SIZE, "%d|%d|%d", delta, avgDelta, minDelta);
+	TxtDelta.invalidate();
+	TxtDelta.resizeHeightToCurrentText();
+	TxtDelta.invalidate();
 }

@@ -1,28 +1,28 @@
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
+
 /**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.12.3 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+ * @file touchgfx/Screen.hpp
+ *
+ * Declares the touchgfx::Screen class.
+ */
+#ifndef TOUCHGFX_SCREEN_HPP
+#define TOUCHGFX_SCREEN_HPP
 
-#ifndef SCREEN_HPP
-#define SCREEN_HPP
-
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/containers/Container.hpp>
 #include <touchgfx/events/ClickEvent.hpp>
 #include <touchgfx/events/DragEvent.hpp>
 #include <touchgfx/events/GestureEvent.hpp>
-#include <touchgfx/Application.hpp>
-#include <touchgfx/containers/Container.hpp>
-#include <touchgfx/lcd/LCD.hpp>
-#include <touchgfx/JSMOCHelper.hpp>
 
 namespace touchgfx
 {
@@ -30,194 +30,132 @@ class Drawable;
 class Transition;
 
 /**
- * @class Screen Screen.hpp touchgfx/Screen.hpp
- *
- * @brief A Screen represents a full-screen drawable area.  Applications create specific screens by
- *        subclassing this class.
- *
- *        A Screen represents a full-screen drawable area.  Applications create specific
- *        screens by subclassing this class.
- *
- *        Each screen has a root container to which drawables can be added.
- *
- *        This class makes sure to delegate draw requests and various events to the appropriate
- *        drawables in correct order.
+ * A Screen represents a full-screen drawable area. Applications create specific screens by
+ * subclassing this class. Each Screen has a root container to which drawables are
+ * added. The Screen makes sure to delegate draw requests and various events to the
+ * appropriate drawables in correct order.
  */
 class Screen
 {
 public:
-
-    /**
-     * @fn Screen::Screen();
-     *
-     * @brief Default constructor.
-     *
-     *        Default constructor.
-     */
+    /** Initializes a new instance of the Screen class. */
     Screen();
 
-    /**
-     * @fn virtual Screen::~Screen()
-     *
-     * @brief Destructor.
-     *
-     *        Destructor.
-     */
-    virtual ~Screen() { }
+    /** Finalizes an instance of the Screen class. */
+    virtual ~Screen()
+    {
+    }
 
     /**
-     * @fn void Screen::draw();
-     *
-     * @brief Tells the screen to draw its entire area.
-     *
-     *        Tells the screen to draw its entire area.
+     * Tells the screen to draw its entire area.
      *
      * @note The more specific draw(Rect&amp;) version is preferred when possible.
      */
     void draw();
 
     /**
-     * @fn void Screen::startSMOC(const Rect& invalidatedArea);
-     *
-     * @brief Starts a JSMOC run, analyzing what parts of what widgets should be redrawn.
-     *
-     *        Starts a JSMOC run, analyzing what parts of what widgets should be redrawn.
+     * Starts a JSMOC run, analyzing what parts of what widgets should be redrawn.
      *
      * @param [in] invalidatedArea The area to redraw, expressed in absolute coordinates.
+     *
+     * @note SMOC is an abbreviation of <em>S&oslash;ren &amp; Martin's Occlusion Culling</em>.
      */
     void startSMOC(const Rect& invalidatedArea);
 
     /**
-     * @fn void Screen::JSMOC(const Rect& invalidatedArea, Drawable* widgetToDraw);
-     *
-     * @brief Recursive JSMOC function. This is the actual occlusion culling implementation.
-     *
-     *        Recursive JSMOC function. This is the actual occlusion culling implementation.
+     * Recursive JSMOC function. This is the actual occlusion culling implementation.
      *
      * @param [in] invalidatedArea The area to redraw, expressed in absolute coordinates.
      * @param [in] widgetToDraw    Widget currently being drawn.
+     *
+     * @note JSMOC is an abbreviation of <em>Jesper, S&oslash;ren &amp; Martin's Occlusion Culling</em>.
      */
     void JSMOC(const Rect& invalidatedArea, Drawable* widgetToDraw);
 
     /**
-     * @fn virtual void Screen::draw(Rect& rect);
-     *
-     * @brief Tell the screen to draw the specified area.
-     *
-     *        Tell the screen to draw the specified area. Will traverse the drawables tree in z-
-     *        order and delegate draw to them.
-     *
-     * @note The given rect must be in absolute coordinates.
+     * Tell the screen to draw the specified area. Will traverse the drawables tree from in
+     * z-order and delegate draw to them.
      *
      * @param [in] rect The area in absolute coordinates.
+     *
+     * @note The given rect must be in absolute coordinates.
      */
     virtual void draw(Rect& rect);
 
     /**
-     * @fn virtual void Screen::setupScreen()
+     * Called by Application::switchScreen() when this screen is going to be displayed. Base
+     * version does nothing, but place any screen specific initialization code in an
+     * overridden version.
      *
-     * @brief Called by Application::switchScreen() when this screen is going to be displayed.
-     *
-     *        Called by Application::switchScreen() when this screen is going to be displayed.
-     *        Base version does nothing, but place any screen specific initialization code in
-     *        an overridden version.
-     *
-     * @see touchgfx::Application::switchScreen()
+     * @see Application::switchScreen
      */
-    virtual void setupScreen() { }
+    virtual void setupScreen()
+    {
+    }
 
     /**
-     * @fn virtual void Screen::afterTransition()
+     * Called by Application::handleTickEvent() when the transition to the screen is done. Base
+     * version does nothing, but override to do screen specific initialization code that has
+     * to be done after the transition to the screen.
      *
-     * @brief Called by Application::handleTick() when the transition to the screen is done.
-     *
-     *        Called by Application::handleTick() when the transition to the screen is done.
-     *        Base version does nothing, but override to do screen specific initialization code
-     *        that has to be done after the transition to the screen.
-     *
-     * @see touchgfx::Application::handleTick()
+     * @see Application::handleTickEvent
      */
-    virtual void afterTransition() { }
+    virtual void afterTransition()
+    {
+    }
 
     /**
-     * @fn virtual void Screen::tearDownScreen()
+     * Called by Application::switchScreen() when this screen will no longer be displayed.
+     * Base version does nothing, but place any screen specific cleanup code in an
+     * overridden version.
      *
-     * @brief Called by Application::switchScreen() when this screen will no longer be displayed.
-     *
-     *        Called by Application::switchScreen() when this screen will no longer be
-     *        displayed. Base version does nothing, but place any screen specific cleanup code
-     *        in an overridden version.
-     *
-     * @see touchgfx::Application::switchScreen()
+     * @see Application::switchScreen
      */
-    virtual void tearDownScreen() { }
+    virtual void tearDownScreen()
+    {
+    }
 
     /**
-     * @fn virtual void Screen::handleClickEvent(const ClickEvent& evt);
+     * Traverse the drawables in reverse z-order and notify them of a click event.
      *
-     * @brief Traverse the drawables in reverse z-order and notify them of a click event.
-     *
-     *        Traverse the drawables in reverse z-order and notify them of a click event.
-     *
-     * @param evt The event to handle.
+     * @param  event The event to handle.
      */
-    virtual void handleClickEvent(const ClickEvent& evt);
+    virtual void handleClickEvent(const ClickEvent& event);
 
     /**
-     * @fn virtual void Screen::handleDragEvent(const DragEvent& evt);
+     * Traverse the drawables in reverse z-order and notify them of a drag event.
      *
-     * @brief Traverse the drawables in reverse z-order and notify them of a drag event.
-     *
-     *        Traverse the drawables in reverse z-order and notify them of a drag event.
-     *
-     * @param evt The event to handle.
+     * @param  event The event to handle.
      */
-    virtual void handleDragEvent(const DragEvent& evt);
+    virtual void handleDragEvent(const DragEvent& event);
 
     /**
-     * @fn virtual void Screen::handleGestureEvent(const GestureEvent& evt);
+     * Handle gestures. Traverses drawables in reverse-z and notifies them of the gesture.
      *
-     * @brief Handle gestures. Traverses drawables in reverse-z and notifies them of the gesture.
-     *
-     *        Handle gestures. Traverses drawables in reverse-z and notifies them of the
-     *        gesture.
-     *
-     * @param evt The event to handle.
+     * @param  event The event to handle.
      */
-    virtual void handleGestureEvent(const GestureEvent& evt);
+    virtual void handleGestureEvent(const GestureEvent& event);
 
     /**
-     * @fn virtual void Screen::handleTickEvent()
-     *
-     * @brief Called by the Application on the current screen with a frequency of
-     *        Application::TICK_INTERVAL_MS.
-     *
-     *        Called by the Application on the current screen with a frequency of
-     *        Application::TICK_INTERVAL_MS.
+     * Called by the Application on the current screen with a frequency of
+     * Application::TICK_INTERVAL_MS.
      */
     virtual void handleTickEvent()
     {
     }
 
     /**
-     * @fn virtual void Screen::handleKeyEvent(uint8_t key)
+     * Called by the Application on the reception of a "key", the meaning of which is
+     * platform/application specific. Default implementation does nothing.
      *
-     * @brief Called by the Application on the reception of a "key", the meaning of which is
-     *        platform/application specific.
-     *
-     *        Called by the Application on the reception of a "key", the meaning of which is
-     *        platform/application specific. Default implementation does nothing.
-     *
-     * @param key The key to handle.
+     * @param  key The key to handle.
      */
     virtual void handleKeyEvent(uint8_t key)
     {
     }
 
     /**
-     * @fn bool Screen::usingSMOC() const
-     *
-     * @brief Determines if using JSMOC.
+     * Determines if using JSMOC.
      *
      * @return true if this screen uses the JSMOC drawing algorithm.
      */
@@ -227,22 +165,14 @@ public:
     }
 
     /**
-     * @fn void Screen::bindTransition(Transition& trans);
-     *
-     * @brief Enables the transition to access the containers.
-     *
-     *        Enables the transition to access the containers.
+     * Enables the transition to access the containers.
      *
      * @param [in] trans The transition to bind.
      */
     void bindTransition(Transition& trans);
 
     /**
-     * @fn Container& Screen::getRootContainer()
-     *
-     * @brief Obtain a reference to the root container of this screen.
-     *
-     *        Obtain a reference to the root container of this screen.
+     * Obtain a reference to the root container of this screen.
      *
      * @return The root container.
      */
@@ -251,31 +181,42 @@ public:
         return container;
     }
 
-protected:
+    /**
+     * Gets width of the current screen. In most cases, this is the same as HAL::DISPLAY_WIDTH.
+     *
+     * @return  The screen width.
+     */
+    int16_t getScreenWidth() const
+    {
+        return container.getWidth();
+    }
 
     /**
-     * @fn void Screen::useSMOCDrawing(bool enabled);
+     * Gets height of the current screen. In most cases, this is the same as HAL::DISPLAY_HEIGHT.
      *
-     * @brief Determines whether to use JSMOC or painter's algorithm for drawing.
+     * @return  The screen height.
+     */
+    int16_t getScreenHeight() const
+    {
+        return container.getHeight();
+    }
+
+protected:
+    /**
+     * Determines whether to use JSMOC or painter's algorithm for drawing.
      *
-     *        Determines whether to use JSMOC or painter's algorithm for drawing.
-     *
-     * @param enabled true if JSMOC should be enabled, false if disabled (meaning painter's
-     *                algorithm is employed instead).
+     * @param  enabled true if JSMOC should be enabled, false if disabled (meaning painter's
+     *                 algorithm is employed instead).
      */
     void useSMOCDrawing(bool enabled);
 
     /**
-     * @fn void Screen::add(Drawable& d)
+     * Add a drawable to the content container.
      *
-     * @brief Add a drawable to the content container.
-     *
-     *        Add a drawable to the content container.
+     * @param [in] d The Drawable to add.
      *
      * @note Must not be called with a Drawable that was already added to the screen. If in doubt,
      *       call remove() first.
-     *
-     * @param [in] d The Drawable to add.
      */
     void add(Drawable& d)
     {
@@ -283,12 +224,48 @@ protected:
     }
 
     /**
-     * @fn void Screen::remove(Drawable& d)
+     * Inserts a Drawable after a specific child node. See Container::insert.
      *
-     * @brief Removes a drawable from the content container.
+     * @param [in] previous The Drawable to insert after. If null, insert as header.
+     * @param [in] d        The Drawable to insert.
      *
-     *        Removes a drawable from the content container. Safe to call even if the drawable
-     *        was never added (in which case nothing happens).
+     * @see Container::insert
+     *
+     * @note As with add, do not add the same drawable twice.
+     */
+    void insert(Drawable* previous, Drawable& d)
+    {
+        container.insert(previous, d);
+    }
+
+    /**
+     * Request that a region of this screen is redrawn. See Container::invalidateRect.
+     *
+     * To invalidate the entire Screen, use invalidate()
+     *
+     * @param [in] invalidatedArea The area of this drawable to redraw expressed in relative
+     *                             coordinates.
+     *
+     * @see Container::invalidateRect
+     */
+    void invalidateRect(Rect& invalidatedArea) const
+    {
+        container.invalidateRect(invalidatedArea);
+    }
+
+    /**
+     * Tell the framework that this entire Screen needs to be redrawn.
+     *
+     * @see Container::invalidate
+     */
+    void invalidate() const
+    {
+        container.invalidate();
+    }
+
+    /**
+     * Removes a drawable from the content container. Safe to call even if the drawable was
+     * never added (in which case nothing happens).
      *
      * @param [in] d The Drawable to remove.
      */
@@ -297,16 +274,16 @@ protected:
         container.remove(d);
     }
 
-    Container container;    ///< The container contains the contents of the screen.
+    Container container; ///< The container contains the contents of the screen.
 
-protected:
-    Drawable* focus;      ///< The drawable currently in focus (set when DOWN_PRESSED is received).
+    Drawable* focus; ///< The drawable currently in focus (set when DOWN_PRESSED is received).
 
 private:
     int16_t fingerAdjustmentX;
     int16_t fingerAdjustmentY;
     bool useSMOC;
 };
+
 } // namespace touchgfx
 
-#endif // SCREEN_HPP
+#endif // TOUCHGFX_SCREEN_HPP

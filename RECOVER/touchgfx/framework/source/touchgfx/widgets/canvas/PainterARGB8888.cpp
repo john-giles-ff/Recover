@@ -1,101 +1,54 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.12.3 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/lcd/LCD.hpp>
 #include <touchgfx/widgets/canvas/PainterARGB8888.hpp>
-#include <touchgfx/Color.hpp>
 
 namespace touchgfx
 {
-PainterARGB8888::PainterARGB8888(colortype color, uint8_t alpha) :
-    AbstractPainterARGB8888()
-{
-    setColor(color, alpha);
-}
-
-void PainterARGB8888::setColor(colortype color, uint8_t alpha)
-{
-    painterRed = Color::getRedColor(color);
-    painterGreen = Color::getGreenColor(color);
-    painterBlue = Color::getBlueColor(color);
-    setAlpha(alpha);
-}
-
-touchgfx::colortype PainterARGB8888::getColor() const
-{
-    return Color::getColorFrom24BitRGB(painterRed, painterGreen, painterBlue);
-}
-
-void PainterARGB8888::setAlpha(uint8_t alpha)
-{
-    painterAlpha = alpha;
-}
-
-uint8_t PainterARGB8888::getAlpha() const
-{
-    return painterAlpha;
-}
-
 void PainterARGB8888::render(uint8_t* ptr, int x, int xAdjust, int /*y*/, unsigned count, const uint8_t* covers)
 {
-    uint8_t* p = reinterpret_cast<uint8_t*>(ptr) + ((x + xAdjust) * 4);
-    uint8_t pByte;
-    uint8_t totalAlpha = LCD::div255(widgetAlpha * painterAlpha);
-    if (totalAlpha == 0xFF)
+    uint8_t* p = ptr + (x + xAdjust) * 4;
+    const uint8_t* const p_lineend = p + 4 * count;
+    do
     {
-        do
+        const uint8_t alphaFg = LCD::div255(*covers++ * widgetAlpha);
+        const uint8_t alphaBg = p[3];
+        if (alphaFg == 255 || alphaBg == 0)
         {
-            uint8_t alpha = *covers++;
-            if (alpha == 0xFF)
-            {
-                *p++ = painterBlue;
-                *p++ = painterGreen;
-                *p++ = painterRed;
-                *p++ = 0xff;
-            }
-            else
-            {
-                uint8_t ialpha = 0xFF - alpha;
-                pByte = *p;
-                *p++ = LCD::div255(painterBlue * alpha + pByte * ialpha);
-                pByte = *p;
-                *p++ = LCD::div255(painterGreen * alpha + pByte * ialpha);
-                pByte = *p;
-                *p++ = LCD::div255(painterRed * alpha + pByte * ialpha);
-                pByte = *p;
-                *p++ = pByte + alpha - LCD::div255(pByte * alpha);
-            }
+            *p++ = painterBlue;
+            *p++ = painterGreen;
+            *p++ = painterRed;
+            *p++ = alphaFg;
         }
-        while (--count != 0);
-    }
-    else if (totalAlpha != 0)
-    {
-        do
+        else if (alphaFg > 0)
         {
-            uint8_t alpha = LCD::div255(*covers++ * totalAlpha);
-            uint8_t ialpha = 0xFF - alpha;
-            pByte = *p;
-            *p++ = LCD::div255(painterBlue * alpha + pByte * ialpha);
-            pByte = *p;
-            *p++ = LCD::div255(painterGreen * alpha + pByte * ialpha);
-            pByte = *p;
-            *p++ = LCD::div255(painterRed * alpha + pByte * ialpha);
-            pByte = *p;
-            *p++ = pByte + alpha - LCD::div255(pByte * alpha);
+            const uint8_t alphaMult = LCD::div255(alphaFg * alphaBg);
+            const uint8_t alphaOut = alphaFg + alphaBg - alphaMult;
+
+            const uint8_t blueBg = *p;
+            *p++ = (painterBlue * alphaFg + blueBg * alphaBg - blueBg * alphaMult) / alphaOut;
+            const uint8_t greenBg = *p;
+            *p++ = (painterGreen * alphaFg + greenBg * alphaBg - greenBg * alphaMult) / alphaOut;
+            const uint8_t redBg = *p;
+            *p++ = (painterRed * alphaFg + redBg * alphaBg - redBg * alphaMult) / alphaOut;
+            *p++ = alphaOut;
         }
-        while (--count != 0);
-    }
+        else
+        {
+            p += 4;
+        }
+    } while (p < p_lineend);
 }
 
 bool PainterARGB8888::renderNext(uint8_t& red, uint8_t& green, uint8_t& blue, uint8_t& alpha)
@@ -103,7 +56,7 @@ bool PainterARGB8888::renderNext(uint8_t& red, uint8_t& green, uint8_t& blue, ui
     red = painterRed;
     green = painterGreen;
     blue = painterBlue;
-    alpha = painterAlpha;
+    alpha = 0xFF;
     return true;
 }
 } // namespace touchgfx

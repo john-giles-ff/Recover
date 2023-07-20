@@ -1,9 +1,9 @@
 #include <gui/LFT/LFT_Logs.hpp>
 
-LFT_Logs::LFT_Logs(LFT_Information * information)
-{
-	_information = information;
-	_model = { 0 };
+LFT_Logs::LFT_Logs(LFT_Information* information) :
+	_model(0),
+	_information(information)
+{	
 
 	GetSamplesRequired.SetSemaphore(_information->xSemaphore);
 	GetLogsRequired.SetSemaphore(_information->xSemaphore);
@@ -25,16 +25,22 @@ void LFT_Logs::SetModel(Model * model)
 
 RecoverLog LFT_Logs::GetHeader(int index)
 {		
-	String result = _model->SendIntReadString("READHEADER", index);
-	
-	//If no log, return log where Exists = false
-	if (result.index('\t') == -1 || result.index('\0') != -1)
-	{		
-		return RecoverLog();
-	}	
+	//Attempt read 10 times
+	for (int i = 0; i < 10; i++)
+	{
+		String result = _model->SendIntReadString("READHEADER", index);
 
+		if (result[0] == '-' && result[1] == '1')
+			break;
 
-	return RecoverLog(result, index);
+		//If mis-read then try again
+		if (result.index('\t') == -1 || result.index('\0') != -1)
+			continue;
+
+		return RecoverLog(result, index);
+	}
+
+	return RecoverLog();	
 }
 
 bool LFT_Logs::IsNextLogPresent()
@@ -145,17 +151,7 @@ void LFT_Logs::GetAllHeaders()
 	}
 
 #ifdef SIMULATOR
-	LoadedLogs[0] = RecoverLog("Tue Feb 19 11:07:04 2019	35	190	750	37	190	743	19	8	23	4	251	189	23	75	0	65	65	6	4596	6000	10	10	1050	1236-00006	__________	0	0	0	0", 0);
-	LoadedLogs[1] = RecoverLog("Tue Feb 05 08:38:00 2019	35	190	750	42	189	747	19	8	25	21	365	189	24	25	1	43	43	6	4590	850	10	10	1032	1236-00006	__________	0	0	0	0", 1);
-	LoadedLogs[2] = RecoverLog("Tue Feb 05 14:04:28 2019	35	190	750	36	189	743	18	10	24	4	253	189	24	25	0	44	44	6	4593	850	10	10	1032	1236-00006	__________	1	0	0	0", 2);
-	LoadedLogs[3] = RecoverLog("Tue Feb 05 14:06:28 2019	35	190	750	36	189	743	18	10	24	4	253	189	24	25	1	44	44	6	4593	850	10	10	1032	1236-00006	__________	1	0	0	0", 3);
-	LoadedLogs[4] = RecoverLog("Tue Feb 04 12:06:28 2019	35	190	750	36	189	743	18	10	24	4	253	189	24	25	1	44	44	6	4593	850	10	10	1032	1236-00006	__________	1	0	0	0", 3);
-	LoadedLogs[5] = RecoverLog("Tue Feb 04 11:06:28 2019	35	190	750	36	189	743	18	10	24	4	253	189	24	25	1	44	44	6	4593	850	10	10	1032	1236-00006	__________	1	0	0	0", 3);
-	LoadedLogs[6] = RecoverLog("Tue Feb 04 10:06:28 2019	35	190	750	36	189	743	18	10	24	4	253	189	24	25	1	44	44	6	4593	850	10	10	1032	1236-00006	__________	1	0	0	0", 3);
-	LoadedLogs[7] = RecoverLog("Tue Feb 04 09:06:28 2019	35	190	750	36	189	743	18	10	24	4	253	189	24	25	1	44	44	6	4593	850	10	10	1032	1236-00006	__________	1	0	0	0", 3);
-	LoadedLogs[8] = RecoverLog("Tue Feb 05 08:06:28 2019	35	190	750	36	189	743	18	10	24	4	253	189	24	25	1	44	44	6	4593	850	10	10	1032	1236-00006	__________	1	0	0	0", 3);
-	LoadedLogs[9] = RecoverLog("Tue Feb 05 07:06:28 2019	35	190	750	36	189	743	18	10	24	4	253	189	24	25	1	44	44	6	4593	850	10	10	1032	1236-00006	__________	1	0	0	0", 3);
-	LoadedLogs[10] = RecoverLog("Tue Feb 05 06:06:28 2019	35	190	750	36	189	743	18	10	24	4	253	189	24	25	1	44	44	6	4593	850	10	10	1032	1236-00006	__________	1	0	0	0", 3);
+	LoadedLogs[0] = RecoverLog("Tue Nov 26 09:12:31 2019	35	190	750	35	190	743	8	3	22	0	6514	189	22	75	0	56	54	6	4609	900	10	10	1128	1236-00001	__________	0	0	0	0	30	26	65	1052	", 0);	
 #endif
 
 	//Sort Headers	

@@ -1,38 +1,33 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.12.3 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
-#include <touchgfx/widgets/TextArea.hpp>
+#include <stdarg.h>
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/TextProvider.hpp>
+#include <touchgfx/Unicode.hpp>
 #include <touchgfx/hal/HAL.hpp>
+#include <touchgfx/lcd/LCD.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 namespace touchgfx
 {
 int16_t TextArea::getTextHeight()
 {
-    if (typedText.hasValidId())
-    {
-        return getTextHeightInternal(typedText.getText());
-    }
-    else
-    {
-        return 0;
-    }
+    return typedText.hasValidId() ? calculateTextHeight(typedText.getText(), 0, 0) : 0;
 }
 
 uint16_t TextArea::getTextWidth() const
 {
-    return typedText.hasValidId() ? typedText.getFont()->getStringWidth(typedText.getTextDirection(), typedText.getText()) : 0;
+    return typedText.hasValidId() ? typedText.getFont()->getStringWidth(typedText.getTextDirection(), typedText.getText(), 0, 0) : 0;
 }
 
 void TextArea::draw(const Rect& area) const
@@ -48,12 +43,12 @@ void TextArea::draw(const Rect& area) const
     }
 }
 
-void TextArea::setTypedText(TypedText t)
+void TextArea::setTypedText(const TypedText& t)
 {
     typedText = t;
     // If this TextArea does not yet have a width and height,
     // just assign the smallest possible size to fit current text.
-    if ((getWidth() == 0) && (getHeight() == 0))
+    if (getWidth() == 0 && getHeight() == 0)
     {
         resizeToCurrentText();
     }
@@ -67,13 +62,11 @@ void TextArea::resizeToCurrentText()
         uint16_t h = getTextHeight();
         if (rotation == TEXT_ROTATE_0 || rotation == TEXT_ROTATE_180)
         {
-            setWidth(w);
-            setHeight(h);
+            setWidthHeight(w, h);
         }
         else
         {
-            setWidth(h);
-            setHeight(w);
+            setWidthHeight(h, w);
         }
     }
 }
@@ -107,8 +100,7 @@ void TextArea::resizeToCurrentTextWithAlignment()
                 uint16_t old_y = getY();
                 setY(old_y + (old_height - text_height));
             }
-            setWidth(text_width);
-            setHeight(text_height);
+            setWidthHeight(text_width, text_height);
         }
         else
         {
@@ -132,8 +124,7 @@ void TextArea::resizeToCurrentTextWithAlignment()
                 uint16_t old_x = getX();
                 setX(old_x + (old_width - text_height));
             }
-            setWidth(text_height);
-            setHeight(text_width);
+            setWidthHeight(text_height, text_width);
         }
     }
 }
@@ -154,8 +145,39 @@ void TextArea::resizeHeightToCurrentText()
     }
 }
 
-int16_t TextArea::getTextHeightInternal(const Unicode::UnicodeChar* format, ...) const
+void TextArea::resizeHeightToCurrentTextWithRotation()
 {
+    if (typedText.hasValidId())
+    {
+        uint16_t h = getTextHeight();
+        switch (rotation)
+        {
+        default:
+        case TEXT_ROTATE_0:
+            setHeight(h);
+            break;
+        case TEXT_ROTATE_90:
+            setX(rect.right() - h);
+            setWidth(h);
+            break;
+        case TEXT_ROTATE_180:
+            setY(rect.bottom() - h);
+            setHeight(h);
+            break;
+        case TEXT_ROTATE_270:
+            setWidth(h);
+            break;
+        }
+    }
+}
+
+int16_t TextArea::calculateTextHeight(const Unicode::UnicodeChar* format, ...) const
+{
+    if (!typedText.hasValidId())
+    {
+        return 0;
+    }
+
     va_list pArg;
     va_start(pArg, format);
 
@@ -163,11 +185,12 @@ int16_t TextArea::getTextHeightInternal(const Unicode::UnicodeChar* format, ...)
     int16_t textHeight = fontToDraw->getMinimumTextHeight();
 
     TextProvider textProvider;
-    textProvider.initialize(format, pArg, fontToDraw->getGSUBTable());
+    textProvider.initialize(format, pArg, fontToDraw->getGSUBTable(), fontToDraw->getContextualFormsTable());
 
     int16_t numLines = LCD::getNumLines(textProvider, wideTextAction, typedText.getTextDirection(), typedText.getFont(), getWidth());
 
     va_end(pArg);
-    return (textHeight + linespace > 0) ? (numLines * textHeight + (numLines - 1) * linespace) : (numLines > 0) ? (textHeight) : 0;
+    return (textHeight + linespace > 0) ? (numLines * textHeight + (numLines - 1) * linespace) : (numLines > 0) ? (textHeight)
+                                                                                                                : 0;
 }
 } // namespace touchgfx

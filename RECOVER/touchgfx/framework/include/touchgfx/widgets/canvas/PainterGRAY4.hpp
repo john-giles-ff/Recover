@@ -1,108 +1,79 @@
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
+
 /**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.12.3 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+ * @file touchgfx/widgets/canvas/PainterGRAY4.hpp
+ *
+ * Declares the touchgfx::PainterGRAY4 class.
+ */
+#ifndef TOUCHGFX_PAINTERGRAY4_HPP
+#define TOUCHGFX_PAINTERGRAY4_HPP
 
-#ifndef PAINTERGRAY4_HPP
-#define PAINTERGRAY4_HPP
-
-#include <stdint.h>
-#include <touchgfx/widgets/canvas/AbstractPainterGRAY4.hpp>
 #include <touchgfx/hal/Types.hpp>
+#include <touchgfx/widgets/canvas/AbstractPainterGRAY4.hpp>
+#include <platform/driver/lcd/LCD4bpp.hpp>
 
 namespace touchgfx
 {
 /**
- * @class PainterGRAY4 PainterGRAY4.hpp touchgfx/widgets/canvas/PainterGRAY4.hpp
- *
- * @brief A Painter that will paint using a color and an alpha value.
- *
- *        The PainterGRAY4 class allows a shape to be filled with a given color and alpha
- *        value. This allows transparent, anti-aliased elements to be drawn.
+ * The PainterGRAY4 class allows a shape to be filled with a given color and alpha
+ * value. This allows transparent, anti-aliased elements to be drawn.
  *
  * @see AbstractPainter
  */
 class PainterGRAY4 : public AbstractPainterGRAY4
 {
 public:
-
     /**
-     * @fn PainterGRAY4::PainterGRAY4(colortype color = 0, uint8_t alpha = 255);
+     * Initializes a new instance of the PainterGRAY4 class.
      *
-     * @brief Constructor.
-     *
-     *        Constructor.
-     *
-     * @param color the color.
-     * @param alpha the alpha.
+     * @param  color (Optional) the color, default is black.
      */
-    PainterGRAY4(colortype color = 0, uint8_t alpha = 255);
+    PainterGRAY4(colortype color = 0)
+        : AbstractPainterGRAY4(), painterColor(0), painterGray(0)
+    {
+        setColor(color);
+    }
 
     /**
-     * @fn void PainterGRAY4::setColor(colortype color, uint8_t alpha = 255);
+     * Sets color to use when drawing the CanvasWidget.
      *
-     * @brief Sets color and alpha to use when drawing the CanvasWidget.
-     *
-     *        Sets color and alpha to use when drawing the CanvasWidget.
-     *
-     * @param color The color.
-     * @param alpha The alpha.
+     * @param  color The color.
      */
-    void setColor(colortype color, uint8_t alpha = 255);
+    void setColor(colortype color)
+    {
+        painterColor = color;
+        painterGray = LCD4bpp::getNativeColor(color);
+    }
 
     /**
-     * @fn colortype PainterGRAY4::getColor() const;
-     *
-     * @brief Gets the current color.
-     *
-     *        Gets the current color.
+     * Gets the current color.
      *
      * @return The color.
      */
-    colortype getColor() const;
-
-    /**
-     * @fn void PainterGRAY4::setAlpha(uint8_t alpha);
-     *
-     * @brief Sets an alpha value for the painter.
-     *
-     *        Sets an alpha value for the painter.
-     *
-     * @param alpha The alpha value to use.
-     */
-    void setAlpha(uint8_t alpha);
-
-    /**
-     * @fn uint8_t PainterGRAY4::getAlpha() const;
-     *
-     * @brief Gets the current alpha value.
-     *
-     *        Gets the current alpha value.
-     *
-     * @return The current alpha value.
-     *
-     * @see setAlpha
-     */
-    uint8_t getAlpha() const;
+    colortype getColor() const
+    {
+        return painterColor;
+    }
 
     virtual void render(uint8_t* ptr, int x, int xAdjust, int y, unsigned count, const uint8_t* covers);
 
 protected:
     virtual bool renderNext(uint8_t& gray, uint8_t& alpha);
 
-    uint8_t painterGray;  ///< The grey color
-    uint8_t painterAlpha; ///< The alpha value
-}; // class PainterGRAY4
+    colortype painterColor; ///< The painter color
+    uint8_t painterGray;    ///< The gray color
+};
+
 } // namespace touchgfx
 
-#endif // PAINTERGRAY4_HPP
+#endif // TOUCHGFX_PAINTERGRAY4_HPP

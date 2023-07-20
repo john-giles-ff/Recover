@@ -62,7 +62,7 @@
             <Button x:Name="BtnProgramDevice" 
                     HorizontalAlignment="Right" 
                     Margin="0, 5"
-                    Content="Program Device"                                    
+                    Content="{x:Static languages:Strings.ProgramDevice}"
                     Click="ProgramDevice_Click"/>
 
             <!--  Progress Bars  -->

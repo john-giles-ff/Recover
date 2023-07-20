@@ -1,32 +1,31 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.12.3 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
-#ifndef CELL_HPP
-#define CELL_HPP
+/**
+ * @file touchgfx/canvas_widget_renderer/Cell.hpp
+ *
+ * Declares the touchgfx::Cell struct. Used internally by CanvasWidgetRenderer.
+ */
+#ifndef TOUCHGFX_CELL_HPP
+#define TOUCHGFX_CELL_HPP
 
 #include <touchgfx/hal/Types.hpp>
 
+/// @cond
 namespace touchgfx
 {
 /**
- * @struct Cell Cell.hpp touchgfx/canvas_widget_renderer/Cell.hpp
- *
- * @brief A pixel cell.
- *
- *        A pixel cell. There are no constructors defined and it was done intentionally in
- *        order to avoid extra overhead when allocating an array of cells.
+ * A pixel cell. There are no constructors defined and it was done intentionally in order to
+ * avoid extra overhead when allocating an array of cells.
  */
 struct Cell
 {
@@ -36,16 +35,12 @@ struct Cell
     int16_t area;  ///< The area (see http://projects.tuxee.net/cl-vectors/section-the-cl-aa-algorithm for further information).
 
     /**
-     * @fn void set(int _x, int _y, int _cover, int _area)
+     * Sets all the Cell parameters.
      *
-     * @brief Sets all the Cell parameters.
-     *
-     *        Sets all the Cell parameters.
-     *
-     * @param _x     The x coordinate.
-     * @param _y     The y coordinate.
-     * @param _cover The cover.
-     * @param _area  The area.
+     * @param  _x     The x coordinate.
+     * @param  _y     The y coordinate.
+     * @param  _cover The cover.
+     * @param  _area  The area.
      */
     void set(int _x, int _y, int _cover, int _area)
     {
@@ -54,14 +49,10 @@ struct Cell
     }
 
     /**
-     * @fn void setCoord(int _x, int _y)
+     * Sets the coordinate of the Cell.
      *
-     * @brief Sets the coordinate of the Cell.
-     *
-     *        Sets the coordinate of the Cell.
-     *
-     * @param _x The Cell's x coordinate.
-     * @param _y The Cell's y coordinate.
+     * @param  _x The Cell's x coordinate.
+     * @param  _y The Cell's y coordinate.
      */
     void setCoord(int _x, int _y)
     {
@@ -70,14 +61,10 @@ struct Cell
     }
 
     /**
-     * @fn void setCover(int _cover, int _area)
+     * Sets the cover of area cell.
      *
-     * @brief Sets the cover of area cell.
-     *
-     *        Sets the cover of area cell.
-     *
-     * @param _cover The cover.
-     * @param _area  The area.
+     * @param  _cover The cover.
+     * @param  _area  The area.
      */
     void setCover(int _cover, int _area)
     {
@@ -86,14 +73,10 @@ struct Cell
     }
 
     /**
-     * @fn void addCover(int _cover, int _area)
+     * Adds a cover to a Cell.
      *
-     * @brief Adds a cover to a Cell.
-     *
-     *        Adds a cover to a Cell.
-     *
-     * @param _cover The cover to add to the Cell.
-     * @param _area  The area to add to the Cell.
+     * @param  _cover The cover to add to the Cell.
+     * @param  _area  The area to add to the Cell.
      */
     void addCover(int _cover, int _area)
     {
@@ -102,20 +85,32 @@ struct Cell
     }
 
     /**
-     * @fn int packedCoord() const
-     *
-     * @brief Packed coordinates of the Cell.
-     *
-     *        Packed coordinates of the Cell. By packing the x coordinate and y coordinate into
-     *        one int, it is possible to sort Cells using a single comparison.
+     * Packed coordinates of the Cell. By packing the x coordinate and y coordinate into one int,
+     * it is possible to sort Cells using a single comparison.
      *
      * @return The packed coordinates with y in the high part and x in the low part.
      */
-    int packedCoord() const
+    FORCE_INLINE_FUNCTION int packedCoord() const
+    {
+        return packedCoord(x, y);
+    }
+
+    /**
+     * Packed x,y coordinates. By packing the x coordinate and y coordinate into one int, it is
+     * possible to sort Cells using a single comparison.
+     *
+     * @param  x The x coordinate.
+     * @param  y The y coordinate.
+     *
+     * @return The packed coordinates with y in the high part and x in the low part.
+     */
+    FORCE_INLINE_FUNCTION static int packedCoord(int16_t x, int16_t y)
     {
         return (y << 16) + x;
     }
 }; // struct Cell
-} // namespace touchgfx
 
-#endif // CELL_HPP
+} // namespace touchgfx
+/// @endcond
+
+#endif // TOUCHGFX_CELL_HPP

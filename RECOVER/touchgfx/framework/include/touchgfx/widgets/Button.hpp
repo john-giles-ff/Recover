@@ -1,115 +1,69 @@
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
+
 /**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.12.3 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+ * @file touchgfx/widgets/Button.hpp
+ *
+ * Declares the touchgfx::Button class.
+ */
+#ifndef TOUCHGFX_BUTTON_HPP
+#define TOUCHGFX_BUTTON_HPP
 
-#ifndef BUTTON_HPP
-#define BUTTON_HPP
-
-#include <touchgfx/widgets/AbstractButton.hpp>
+#include <touchgfx/hal/Types.hpp>
 #include <touchgfx/Bitmap.hpp>
+#include <touchgfx/widgets/AbstractButton.hpp>
 
 namespace touchgfx
 {
 /**
- * @class Button Button.hpp touchgfx/widgets/Button.hpp
- *
- * @brief A button with two states.
- *
- *        A button consists of two images, one for its normal state and one when it is pressed
- *        down.
- *
- * @see AbstractButton
+ * A button with two images. One image showing the unpressed button and one image showing the
+ * pressed state.
  */
 class Button : public AbstractButton
 {
 public:
+    Button()
+        : AbstractButton(), up(), down(), alpha(255)
+    {
+    }
 
-    /**
-     * @fn Button::Button()
-     *
-     * @brief Default constructor.
-     *
-     *        Default constructor.
-     */
-    Button() : AbstractButton(), up(), down(), alpha(255) { }
-
-    /**
-     * @fn virtual Button::~Button()
-     *
-     * @brief Destructor.
-     *
-     *        Destructor.
-     */
-    virtual ~Button() { }
-
-    /**
-     * @fn virtual void Button::draw(const Rect& invalidatedArea) const;
-     *
-     * @brief Draws the given invalidated area.
-     *
-     * @param invalidatedArea The rectangle to draw, with coordinates relative to this drawable.
-     *
-     * @see Drawable::draw()
-     */
     virtual void draw(const Rect& invalidatedArea) const;
 
     /**
-     * @fn virtual void Button::setBitmaps(const Bitmap& bmpReleased, const Bitmap& bmpPressed);
+     * Sets the two bitmaps used by this button. One bitmap for the released (normal) state
+     * and one bitmap for the pressed state. The images are expected to be of the same
+     * dimensions, and the Button is resized to the dimensions of the pressed Bitmap.
      *
-     * @brief Sets the bitmaps used by this button.
+     * @param  bitmapReleased Bitmap to use when button is released.
+     * @param  bitmapPressed  Bitmap to use when button is pressed.
      *
-     *        Sets the bitmaps used by this button.
-     *
-     * @param bmpReleased Bitmap to use when button is released.
-     * @param bmpPressed  Bitmap to use when button is pressed.
+     * @note It is assumed that the dimensions of the bitmaps are the same. Unexpected (visual)
+     *       behavior may be observed if the bitmaps are of different sizes.
+     * @note The user code must call invalidate() in order to update the button on the display.
      */
-    virtual void setBitmaps(const Bitmap& bmpReleased, const Bitmap& bmpPressed);
+    virtual void setBitmaps(const Bitmap& bitmapReleased, const Bitmap& bitmapPressed);
 
-    /**
-     * @fn virtual Rect Button::getSolidRect() const;
-     *
-     * @brief Gets solid rectangle.
-     *
-     *        Gets solid rectangle.
-     *
-     * @return largest possible solid rect. Delegated to the largest solid rect of the button
-     *         bitmap(s).
-     */
     virtual Rect getSolidRect() const;
 
     /**
-     * @fn void Button::setAlpha(uint8_t alpha)
-     *
-     * @brief Sets the alpha value for the image.
-     *
-     *        Sets the alpha value for the image.
-     *
-     * @param alpha The alpha value. 255 = completely solid.
+     * @copydoc Image::setAlpha
      */
-    void setAlpha(uint8_t alpha)
+    void setAlpha(uint8_t newAlpha)
     {
-        this->alpha = alpha;
+        alpha = newAlpha;
     }
 
     /**
-     * @fn uint8_t Button::getAlpha() const
-     *
-     * @brief Gets the current alpha value.
-     *
-     *        Gets the current alpha value.
-     *
-     * @return The current alpha value.
+     * @copydoc Image::getAlpha
      */
     uint8_t getAlpha() const
     {
@@ -117,39 +71,22 @@ public:
     }
 
     /**
-     * @fn Bitmap Button::getCurrentlyDisplayedBitmap() const
-     *
-     * @brief Gets currently displayed bitmap.
-     *
-     *        Function to obtain the currently displayed bitmap, which depends on the button's
-     *        pressed state.
+     * Gets currently displayed bitmap. This depends on the current state of the button,
+     * released (normal) or pressed.
      *
      * @return The bitmap currently displayed.
      */
     Bitmap getCurrentlyDisplayedBitmap() const
     {
-        return (AbstractButton::pressed ? down : up);
-    }
-
-    /**
-     * @fn virtual uint16_t Button::getType() const
-     *
-     * @brief For GUI testing only.
-     *
-     *        For GUI testing only. Returns type of this drawable.
-     *
-     * @return TYPE_BUTTON.
-     */
-    virtual uint16_t getType() const
-    {
-        return (uint16_t)TYPE_BUTTON;
+        return (pressed ? down : up);
     }
 
 protected:
-    Bitmap  up;    ///< The image to display when button is released.
-    Bitmap  down;  ///< The image to display when button is pressed.
-    uint8_t alpha; ///< The current alpha value. 255 denotes solid, 0 denotes completely transparent.
+    Bitmap up;     ///< The image to display when button is released (normal state).
+    Bitmap down;   ///< The image to display when button is pressed.
+    uint8_t alpha; ///< The current alpha value. 255=solid, 0=invisible.
 };
+
 } // namespace touchgfx
 
-#endif // BUTTON_HPP
+#endif // TOUCHGFX_BUTTON_HPP
