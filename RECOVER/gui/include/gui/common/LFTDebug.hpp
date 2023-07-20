@@ -38,6 +38,19 @@ private:
 	touchgfx::colortype enabledColor;
 	touchgfx::colortype disabledColor;
 
+	int _build = -99;
+	int _baseSetpoint = -99, _baseActual = -99;
+	int _precursorSetpoint = -99, _precursorActual = -99;
+	float _pressure = -99;
+	int _internalSwitch1 = -99, _internalSwitch2 = -99;
+	int _externalSwitch = -99;
+	int _status = -99;
+	int _progress = -99;
+	int _timerHour = -99, _timerMinute = -99, _timerSecond = -99;
+	bool _inletValve, _purgeValve, _bypassValve;
+	int _delta = -99, _avgDelta = -99, _minDelta = -99;
+
+
 	bool hideSensitiveValues;
 	/*
 	 *	Text Areas

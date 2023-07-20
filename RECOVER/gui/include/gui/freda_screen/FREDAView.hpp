@@ -14,6 +14,14 @@
 
 constexpr int STANDBYBUTTON_COUNT = 7;
 
+enum SoakTestStatus
+{
+	Stopped = 0,
+	Running,
+	Aborted,
+	ForceUpdate
+};
+
 class FREDAView : public FREDAViewBase
 {
 public:
@@ -124,6 +132,11 @@ private:
 	int onScreenActualValues;
 	float onScreenMaxBaseCurrent;
 	float onScreenMaxPreCurrent;
+
+	//Values to stop invalidating all the time
+	int _second;
+	SoakTestStatus _soakTestStatus = SoakTestStatus::ForceUpdate;
+	int _soakTestCount, _soakTestTotal, _soakTestRunValue;
 
 	LanguageId currentLanguage;
 
