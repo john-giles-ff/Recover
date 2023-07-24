@@ -65,6 +65,7 @@ public:
 	//Drying
 	void StartDrying(int min = -1);
 	int ReadDryingPercentage();
+	GenericCallback<>* OnDryingStarted = nullptr;
 
 	void AbortCleanup();	
 
@@ -80,6 +81,8 @@ private:
 	LFT_Manual * _manual;
 	LFT_Settings * _settings;
 	LFT_AutoClean* _autoClean;
+
+	bool _isDried = false;
 
 
 

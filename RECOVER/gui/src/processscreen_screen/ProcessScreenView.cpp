@@ -1,5 +1,11 @@
 #include <gui/processscreen_screen/ProcessScreenView.hpp>
 
+ProcessScreenView::ProcessScreenView():
+	LidControlValueChangedCallback(this, &ProcessScreenView::LidControlValueChanged),
+	LogOverwriteMsgBoxReturnedCallback(this, &ProcessScreenView::LogOverwriteMsgBoxReturned),
+	OnDryingCallback(this, &ProcessScreenView::OnDrying)
+{}
+
 void ProcessScreenView::setupScreen()
 {	
 	//Stop screensaver
@@ -38,7 +44,6 @@ void ProcessScreenView::setupScreen()
 	TxtConfirmFumehood.setVisible(false);
 
 	BtnExternal.setVisible(false);
-	BtnSystemUnderperforming.setVisible(false);
 
 	//Setup Error Box
 	ErrorWindow.setXY(0, 0);
@@ -49,6 +54,8 @@ void ProcessScreenView::setupScreen()
 	FilterStateMessageWindow.setVisible(false);
 
 	//Setup moisture Window
+	LFT::Auto.OnDryingStarted = &OnDryingCallback;
+
 	MoistureMessage.setXY(0, 0);
 	MoistureMessage.setVisible(false);
 
@@ -142,6 +149,9 @@ void ProcessScreenView::tearDownScreen()
 {	
 	//Allow screen saver
 	presenter->SetScreensaverState(true);
+
+	//Clear callbacks
+	LFT::Auto.OnDryingStarted = nullptr;
 }
 
 void ProcessScreenView::handleTickEvent()
@@ -286,6 +296,11 @@ void ProcessScreenView::LogOverwriteMsgBoxReturned(const MsgBox & u, bool state)
 		StartProcess(true);
 }
 
+void ProcessScreenView::OnDrying()
+{
+	MoistureMessage.StartDrying();
+}
+
 void ProcessScreenView::pulseStageText()
 {
 	stageTextCounter++;
@@ -405,22 +420,6 @@ void ProcessScreenView::checkLFTValues()
 			InternalSwitchErrorWindow.SetState(true);
 			InternalSwitchErrorWindow.setVisible(true);
 			InternalSwitchErrorWindow.invalidate();
-		}
-	}
-
-	//System underperforming
-	if (stage == LFT_STAGE_CHAMBER_CONDITIONING && LFT::Information.Pressure < 10.0f)
-	{
-		LFT::Information.CheckPerformance();
-		bool performance = LFT::Information.Performance();
-		if (!performance && !BtnSystemUnderperforming.isVisible())
-		{
-			BtnSystemUnderperforming.setVisible(true);
-			BtnSystemUnderperforming.invalidate();
-			RepositionErrors();
-
-
-			//TODO: Show message about how it's underperforming and give user option to dry
 		}
 	}
 
@@ -574,53 +573,29 @@ void ProcessScreenView::showError(ErrorMessage * errors, int count)
 
 void ProcessScreenView::RepositionErrors()
 {
-	const int lowValue = 560;
-	const int medValue = 620;	
-	const int highValue = 680;
+	//Declare all buttons that are at the top right
+	auto buttons = {
+		&BtnAbort, &BtnExternal, &BtnFilter
+	};
 
-	int binVal = 0;
-	if (BtnFilter.isVisible())
-		binVal += 4;
-	if (BtnExternal.isVisible())
-		binVal += 2;
-	if (BtnSystemUnderperforming.isVisible())
-		binVal += 1;	
+	//Declare far right x
+	int xPosition = getScreenWidth();
 
-	//Organise soft errors
-	switch (binVal)
+	//Loop through buttons
+	for (auto button : buttons)
 	{
-	case 1:
-		BtnSystemUnderperforming.setX(highValue);
-		break;
-	case 2:
-		BtnExternal.setX(highValue);
-		break;
-	case 3:
-		BtnSystemUnderperforming.setX(medValue);
-		BtnExternal.setX(highValue);
-		break;
-	case 4:
-		BtnFilter.setX(highValue);
-		break;
-	case 5:
-		BtnSystemUnderperforming.setX(medValue);
-		BtnFilter.setX(highValue);
-		break;
-	case 6:
-		BtnExternal.setX(medValue);
-		BtnFilter.setX(highValue);
-		break;
-	case 7:
-		BtnSystemUnderperforming.setX(lowValue);
-		BtnExternal.setX(medValue);
-		BtnFilter.setX(highValue);
-		break;
+		//If not visible button, don't add a space for it
+		if (!button->isVisible())
+			continue;
 
+		//Offset to button width
+		xPosition -= button->getWidth();
+
+		//Move button to new position
+		button->invalidate();
+		button->setX(xPosition);
+		button->invalidate();
 	}
-
-	BtnFilter.invalidate();
-	BtnExternal.invalidate();	
-	BtnSystemUnderperforming.invalidate();
 }
 
 void ProcessScreenView::UpdateExternalSwitch(int state)
@@ -1306,12 +1281,6 @@ void ProcessScreenView::ShowRunsRemaining()
 {
 	FilterStateMessageWindow.setVisible(true);
 	FilterStateMessageWindow.invalidate();
-}
-
-void ProcessScreenView::ShowMoistureDetectedWindow()
-{
-	MoistureMessage.setVisible(true);
-	MoistureMessage.invalidate();
 }
 
 void ProcessScreenView::ShowProcessSelectorChamber()

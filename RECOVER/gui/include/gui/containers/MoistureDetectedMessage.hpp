@@ -3,19 +3,12 @@
 
 #include <gui_generated/containers/MoistureDetectedMessageBase.hpp>
 
-enum class MSGMOISTURE_STATE
-{
-    DETECTED,
-    DRYING
-};
 
 class MoistureDetectedMessage : public MoistureDetectedMessageBase
 {
 public:
     MoistureDetectedMessage();
     virtual ~MoistureDetectedMessage() {}
-
-    void SetState(MSGMOISTURE_STATE state);
 
     virtual void initialize();
     virtual void Dismiss();
@@ -26,9 +19,9 @@ protected:
     virtual void handleTickEvent();
 
 private:
-    MSGMOISTURE_STATE _state;
 
     int _tick = 0;
+    bool _running = false;
 };
 
 #endif // MOISTUREDETECTEDMESSAGE_HPP

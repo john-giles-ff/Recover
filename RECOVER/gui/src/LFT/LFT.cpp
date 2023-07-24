@@ -279,7 +279,12 @@ void LFT::CheckPCMode()
 
 
 void LFT::CheckForNextStage()
-{
+{	
+	//If we're in chamber conditioning, then we must check the performance
+	if (Auto.GetStage() == LFT_STAGE_CHAMBER_CONDITIONING && !Information.CheckPerformance())	
+		Auto.StartDrying();
+
+
 	//If progress is repeatedly reporting 100%, then allow stage auto progression is overriden
 	if (Information.Progress == 100)
 		progressContinueOverride++;

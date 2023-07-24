@@ -378,27 +378,27 @@ void LFT_Information::ClearPerformance()
 		_deltaAvgs[i] = 0x0;
 }
 
-void LFT_Information::CheckPerformance()
+bool LFT_Information::CheckPerformance()
 {
 	//If already flagged as underperforming don't bother checking again
 	if (!_performance)
-		return;
+		return _performance;
 
 	//Check delta is valid
 	int delta = Delta;
 	if (delta < 0)
-		return;
+		return _performance;
 
 	//if not in correct range don't bother checking
 	float pressure = Pressure;
 	if (pressure > 10.0f)
-		return;
+		return _performance;
 	
 
 	//Check if its been 10 seconds since we last checked
 	long long time = GetCurrentTime().getRaw();
 	if (time - _lastPerfCheckTime < 10)
-		return;
+		return _performance;
 
 	//Add current delta to average delta array and update tracker values
 	_deltaAvgs[_deltaAvgsIndex] = delta;
@@ -415,8 +415,15 @@ void LFT_Information::CheckPerformance()
 	//See if we're performing
 	_performance = deltaAvg > minDelta;
 
+	//If we're before V2, this doesn't matter
+	if (ManifoldVersion < MANIFOLD_VERSION::V2)
+		_performance = true;
+
 	//Update time so we don't do this too often
 	_lastPerfCheckTime = time;
+
+
+	return _performance;
 }
 
 float LFT_Information::ActualAverageDelta()

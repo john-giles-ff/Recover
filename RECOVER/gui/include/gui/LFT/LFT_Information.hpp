@@ -182,7 +182,7 @@ public:
 	const int DEFAULT_TIMEOUT1 = 30;
 	const int DEFAULT_TIMEOUT2 = 45;
 
-	const int LEAKRATE_MAX = 2400;
+	const int LEAKRATE_MAX = 0xfe; //2400; //Is stored as a byte in firmware, 0xff defaults, so max value is 0xfe
 
 	const int STIRRING_TIME = 10;
 
@@ -242,7 +242,7 @@ public:
 
 	//Performance	
 	void ClearPerformance();
-	void CheckPerformance();
+	bool CheckPerformance();
 	float ActualAverageDelta();
 	float AvgDeltaAtPressure(float pressure);
 	float MinDeltaAtPressure(float pressure);

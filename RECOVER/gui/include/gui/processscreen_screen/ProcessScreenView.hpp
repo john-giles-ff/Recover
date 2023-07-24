@@ -53,10 +53,7 @@ enum LIDCONTROL_STAGE
 class ProcessScreenView : public ProcessScreenViewBase
 {
 public:
-	ProcessScreenView() :
-		LidControlValueChangedCallback(this, &ProcessScreenView::LidControlValueChanged),
-		LogOverwriteMsgBoxReturnedCallback(this, &ProcessScreenView::LogOverwriteMsgBoxReturned)
-	{}
+	ProcessScreenView();
     virtual ~ProcessScreenView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
@@ -83,7 +80,6 @@ public:
 
 	virtual void ShowPowerLossDetected();
 	virtual void ShowRunsRemaining();
-	virtual void ShowMoistureDetectedWindow();
 	virtual void ShowProcessSelectorChamber();	
 	virtual void ShowProcessSelectorType();
 	virtual void StartProcess();
@@ -118,6 +114,9 @@ protected:
 
 	void LogOverwriteMsgBoxReturned(const MsgBox& u, bool state);
 	touchgfx::Callback<ProcessScreenView, const MsgBox&, bool> LogOverwriteMsgBoxReturnedCallback;
+
+	void OnDrying();
+	touchgfx::Callback<ProcessScreenView> OnDryingCallback;
 
 	LFTDebug lftDebug;
 

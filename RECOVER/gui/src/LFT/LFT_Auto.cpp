@@ -196,11 +196,19 @@ void LFT_Auto::Abort()
 
 void LFT_Auto::StartDrying(int min)
 {
+	//Don't run more than once
+	if (_isDried)
+		return;
+	_isDried = true;
+
 	if (min == -1)
 		min = 15;
 
 	_model->SendInt("DRYING", min);
 	_model->SendCommand("DRYING");
+
+	if (OnDryingStarted && OnDryingStarted->isValid())
+		OnDryingStarted->execute();
 }
 
 int LFT_Auto::ReadDryingPercentage()
@@ -379,6 +387,9 @@ void LFT_Auto::StartPreChecks()
 void LFT_Auto::StartChamberConditioning()
 {
 	_model->SendCommand("PUMPDOWN");
+
+	//Reset if dry has been ran
+	_isDried = false;
 
 	//Remove Que'd Command
 	_information->ChamberConditioningRequired = false;

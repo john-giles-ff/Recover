@@ -547,29 +547,6 @@
             "Pressed": "transparent\\transparent.png",
             "Released": "transparent\\transparent.png",
             "Alpha": 255,
-            "IconPressed": "States\\water.png",
-            "IconReleased": "States\\water.png",
-            "IconX": 14,
-            "IconY": 14,
-            "IconHeight": 32,
-            "IconWidth": 32,
-            "Name": "BtnSystemUnderperforming",
-            "X": 560,
-            "Y": 0,
-            "Width": 60,
-            "Height": 60,
-            "Visible": true,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "ButtonWithIcon",
-            "Pressed": "transparent\\transparent.png",
-            "Released": "transparent\\transparent.png",
-            "Alpha": 255,
             "IconPressed": "states\\fan_bad.png",
             "IconReleased": "states\\fan_bad.png",
             "IconX": 14,
@@ -9216,136 +9193,6 @@
           {
             "Components": [
               {
-                "Type": "FlexButton",
-                "Alpha": 255,
-                "ButtonTrigger": {
-                  "Type": "ClickButtonTrigger"
-                },
-                "ButtonStyles": [
-                  {
-                    "Type": "TextButtonStyle",
-                    "X": 0,
-                    "Y": 5,
-                    "TextId": "SingleUseId259",
-                    "TextRotation": "0",
-                    "ColorReleased": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "ColorPressed": {
-                      "Red": 10,
-                      "Green": 10,
-                      "Blue": 10
-                    }
-                  },
-                  {
-                    "Type": "BoxWithBorderButtonStyle",
-                    "X": 0,
-                    "Y": 0,
-                    "Width": 366,
-                    "Height": 47,
-                    "LockToFlexButtonSize": true,
-                    "BorderSize": 2,
-                    "ColorReleased": {
-                      "Red": 0,
-                      "Green": 0,
-                      "Blue": 0
-                    },
-                    "ColorPressed": {
-                      "Red": 46,
-                      "Green": 172,
-                      "Blue": 98
-                    },
-                    "ColorBorderReleased": {
-                      "Red": 46,
-                      "Green": 172,
-                      "Blue": 98
-                    },
-                    "ColorBorderPressed": {
-                      "Red": 46,
-                      "Green": 172,
-                      "Blue": 98
-                    }
-                  }
-                ],
-                "Name": "BtnStartDrying",
-                "X": 20,
-                "Y": 183,
-                "Width": 366,
-                "Height": 47,
-                "Visible": true,
-                "LockPosition": false,
-                "Draggable": false,
-                "Clickable": false,
-                "Fadeable": false,
-                "Moveable": false
-              },
-              {
-                "Type": "TextArea",
-                "TextId": "SingleUseId260",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
-                },
-                "Alpha": 255,
-                "AutoSize": false,
-                "LineSpacing": 0,
-                "Name": "txtMessage",
-                "X": 20,
-                "Y": 50,
-                "Width": 366,
-                "Height": 133,
-                "Visible": true,
-                "LockPosition": false,
-                "Draggable": false,
-                "Clickable": false,
-                "Fadeable": false,
-                "Moveable": false
-              },
-              {
-                "Type": "ButtonWithIcon",
-                "Pressed": "transparent\\transparent.png",
-                "Released": "transparent\\transparent.png",
-                "Alpha": 255,
-                "IconPressed": "x.png",
-                "IconReleased": "x.png",
-                "IconX": 14,
-                "IconY": 14,
-                "IconHeight": 32,
-                "IconWidth": 32,
-                "Name": "BtnExit",
-                "X": 356,
-                "Y": -10,
-                "Width": 60,
-                "Height": 60,
-                "Visible": true,
-                "LockPosition": false,
-                "Draggable": false,
-                "Clickable": false,
-                "Fadeable": false,
-                "Moveable": false
-              }
-            ],
-            "Type": "Container",
-            "IsCacheableContainer": false,
-            "Name": "conStart",
-            "X": 197,
-            "Y": 115,
-            "Width": 406,
-            "Height": 250,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Components": [
-              {
                 "Type": "TextArea",
                 "TextId": "SingleUseId261",
                 "TextRotation": "0",
@@ -9408,7 +9255,7 @@
             "Y": 115,
             "Width": 406,
             "Height": 250,
-            "Visible": false,
+            "Visible": true,
             "LockPosition": false,
             "Draggable": false,
             "Clickable": false,
@@ -9416,32 +9263,7 @@
             "Moveable": false
           }
         ],
-        "Interactions": [
-          {
-            "InteractionName": "Dismiss",
-            "HasCompletedTrigger": false,
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "BtnExit"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "Dismiss"
-            }
-          },
-          {
-            "InteractionName": "StartDrying",
-            "HasCompletedTrigger": false,
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "BtnStartDrying"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "StartDrying"
-            }
-          }
-        ],
+        "Interactions": [],
         "Name": "MoistureDetectedMessage",
         "X": 0,
         "Y": 0,
@@ -11829,14 +11651,6 @@
       {
         "TextEntryId": "Language_RO",
         "IsResource": true
-      },
-      {
-        "TextEntryId": "SingleUseId259",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId260",
-        "IsResource": false
       },
       {
         "TextEntryId": "SingleUseId261",

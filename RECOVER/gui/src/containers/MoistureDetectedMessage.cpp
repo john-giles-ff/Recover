@@ -3,27 +3,10 @@
 
 MoistureDetectedMessage::MoistureDetectedMessage()
 {
-    txtMessage.setWideTextAction(touchgfx::WideTextAction::WIDE_TEXT_WORDWRAP);
-    txtDrying.setWideTextAction(touchgfx::WideTextAction::WIDE_TEXT_WORDWRAP);
-
-    SetState(MSGMOISTURE_STATE::DETECTED);
+    txtDrying.setWideTextAction(touchgfx::WideTextAction::WIDE_TEXT_WORDWRAP);    
 
     Application::getInstance()->registerTimerWidget(this);
 
-}
-
-void MoistureDetectedMessage::SetState(MSGMOISTURE_STATE state)
-{
-    _state = state;
-
-    bool isAbleToDry = LFT::Information.ManifoldVersion > MANIFOLD_VERSION::V1;
-
-    BtnStartDrying.setVisible(isAbleToDry);
-    conStart.setVisible(state == MSGMOISTURE_STATE::DETECTED);
-    conDrying.setVisible(state == MSGMOISTURE_STATE::DRYING);
-
-
-    invalidate();   
 }
 
 void MoistureDetectedMessage::initialize()
@@ -39,35 +22,37 @@ void MoistureDetectedMessage::Dismiss()
 
 void MoistureDetectedMessage::StartDrying()
 {
+    if (_running)
+        return;
+
+    setVisible(true);
     pbrDrying.setValue(0);
-    pbrDrying.invalidate();
-
-
-    LFT::Auto.StartDrying();
-
-    SetState(MSGMOISTURE_STATE::DRYING);
+    invalidate();
+    
+    _running = true;
+    
 
 }
 
 void MoistureDetectedMessage::handleTickEvent()
 {
-    if (_state != MSGMOISTURE_STATE::DRYING)
-        return;
-
+    //Only run this tick every 4 seconds
     _tick++;
     _tick %= 60 * 4;
-
     if (_tick != 0)
         return;
 
+
+    //Get Percentage
     int dryingPercentage = LFT::Auto.ReadDryingPercentage();
     
+    //Print
     pbrDrying.setValue(dryingPercentage);
     pbrDrying.invalidate();
 
+    //Finish
     if (dryingPercentage > 99)
-    {
-        SetState(MSGMOISTURE_STATE::DETECTED);
+    {        
         Dismiss();
     }
 
